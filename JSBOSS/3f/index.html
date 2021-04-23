@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>JS地下城：3F-計算機 | Mandy's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.1/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.1/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.1/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-149155162-1','auto');ga('send','pageview');
+</script><script type="text/javascript" src="//lib.baomitu.com/clipboard.js/2.0.4/clipboard.min.js"></script><script type="text/javascript" src="//lib.baomitu.com/toastr.js/2.1.4/toastr.min.js"></script><link rel="stylesheet" href="//lib.baomitu.com/toastr.js/2.1.4/toastr.min.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">JS地下城：3F-計算機</h1><a id="logo" href="/.">Mandy's blog</a><p class="description">學習記錄</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首頁</i></a><a href="/archives/"><i class="fa fa-archive"> 所有文章</i></a><a href="/atom.xml"><i class="fa fa-rss"> 訂閱</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">JS地下城：3F-計算機</h1><div class="post-meta">2019-02-21<span> | </span><span class="category"><a href="/categories/JS%E5%9C%B0%E4%B8%8B%E5%9F%8E/">JS地下城</a></span></div><a class="disqus-comment-count" data-disqus-identifier="JSBOSS/3f/" href="/JSBOSS/3f/#disqus_thread"></a><div class="post-content"><img src="../../images/JSBOSS/3f/cover.png" width="100%"/>
+
+<h1 id="規則"><a href="#規則" class="headerlink" title="規則"></a>規則</h1><ul>
+<li>【特定技術】數字位數過多時，不能因此而破版，計算機功能皆須齊全</li>
+</ul>
+<hr>
+<p>這次使用 原生 JS 來挑戰這次關卡</p>
+<p><a href="https://mtwmt.github.io/jsboss/public/3f/">demo 頁</a><br><a target="_blank" rel="noopener" href="https://github.com/mtwmt/jsboss/tree/master/sourse/3f">sourse code</a></p>
+<hr>
+<p>處理的問題有以下</p>
+<ul>
+<li>ieee754 浮點數</li>
+<li>字數過長 不造成破版</li>
+<li>eval 加總</li>
+<li>千分位進位</li>
+<li>決定面版顯示資訊 做個 flag</li>
+<li>鍵盤輸入</li>
+</ul>
+<hr>
+<p>這裡我做兩個空陣列儲存健入的數值 分別為 <code>tempFormula</code> <code>tempResult</code></p>
+<p><code>tempFormula</code> 用來顯示所有的算式<br><code>tempResult</code> 當遇到運算式的時後會清空 做下一個動作，最後用來顯示計算結果</p>
+<p>使用 switch case 過濾鍵入的資訊</p>
+<h2 id="ieee754-浮點數"><a href="#ieee754-浮點數" class="headerlink" title="ieee754 浮點數"></a>ieee754 浮點數</h2><p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/IEEE_754">ieee754 維基百科</a><br>我這裡的處理方式是 加總後 *100 再做四捨五入<code>Math.round()</code> 後 再除以 100<br>因為小於 1 的數不能做四捨五入 所以 先*100 讓數值大於 1 後 做四捨五入 再除 100 回來<br>*100 /100 就是取到小數點第二位做處理，所以最多也只能計算到小數點第二位的值<br>算是有點偷吃步的寫法 XD</p>
+<h2 id="字數過長-不造成破版"><a href="#字數過長-不造成破版" class="headerlink" title="字數過長 不造成破版"></a>字數過長 不造成破版</h2><p>當字數的總寬大於輸入框的總寬時 字型大小就自動 -2px 持續執行 直到字數總寬小於輸入框<br>這裡我學到了 while 的用法(參考其他人的寫法)，跟 for 迴圈的用法比較不一樣</p>
+<p>題外話 在寫這篇文時 試著用 for 迴圈的寫法來寫，我想它們的不同處應該就是差在效率吧</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// while</span></span><br><span class="line">textSize = <span class="function"><span class="keyword">function</span> (<span class="params">textW</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> fz = <span class="built_in">parseInt</span>($hdresult.style.fontSize, <span class="number">10</span>);</span><br><span class="line">  <span class="keyword">while</span> (textW &gt; calboxW) &#123;</span><br><span class="line">    fz -= <span class="number">2</span>;</span><br><span class="line">    $hdresult.style.fontSize = <span class="string">`<span class="subst">$&#123;fz&#125;</span>px`</span>;</span><br><span class="line">    textW = $hdresult.clientWidth;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// for</span></span><br><span class="line">textSize = <span class="function"><span class="keyword">function</span> (<span class="params">textW</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> fz = <span class="built_in">parseInt</span>($hdresult.style.fontSize, <span class="number">10</span>);</span><br><span class="line">  <span class="keyword">if</span>( fz; textW &gt; calboxW; fz - <span class="number">2</span>  )&#123;</span><br><span class="line">    $hdresult.style.fontSize = <span class="string">`<span class="subst">$&#123;fz&#125;</span>px`</span>;</span><br><span class="line">    textW = $hdresult.clientWidth;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="eval-加總"><a href="#eval-加總" class="headerlink" title="eval 加總"></a>eval 加總</h2><p>這次是使用 eval 加總 處理一連串的算式 蠻方便的 可參照<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/eval">MDN-eval()</a></p>
+<h2 id="千分位進位-正規表示"><a href="#千分位進位-正規表示" class="headerlink" title="千分位進位(正規表示)"></a>千分位進位(正規表示)</h2><p>參照了這篇的正規做處理<br><a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000012664753">正規千分位處理</a><br>另外也看到了<br><a target="_blank" rel="noopener" href="https://cloudlab.tw/wp/sampleFiles/RegExp/">正規表示 線上產生器</a></p>
+<h2 id="決定面版顯示資訊-做個-flag"><a href="#決定面版顯示資訊-做個-flag" class="headerlink" title="決定面版顯示資訊 做個 flag"></a>決定面版顯示資訊 做個 flag</h2><p>在計算的過程中 會遇到一些顯示上的問題<br>比如 按了 +−×÷ 後 再次輸入新的數字<br>結果框會清空之前的數值 然後新的值填上去<br>按了 = 後<br>全部清空 等等的這些呈現方式</p>
+<p>我使用 flag 去做記錄 處理這些顯示問題</p>
+<h2 id="鍵盤輸入"><a href="#鍵盤輸入" class="headerlink" title="鍵盤輸入"></a>鍵盤輸入</h2><p>最後!! 我真的覺得用滑鼠點的計算很難按 所以就加上了鍵盤輸入<br>先前在 <a href="https://mtwmt.github.io/blog/JS30/01_JavaScript-Drum-Kit/">js30 天的第一個單元</a> 有練習到了鍵盤監聽事件 不過當時 是使用 keyCode 來監聽 這次使用的是 key</p>
+<p>以上是我在寫這次計算機的處理過程<br>如有看不懂的地方 也歡迎詢問 XDD</p>
+</div><div id="donate"><link rel="stylesheet" type="text/css" href="/css/donate.css"><script type="text/javascript" src="/js/donate.js" successtext="複製成功！"></script><div id="DonateText">Donate</div><ul class="list pos-f" id="donateBox"><li id="jkopay" qr="/images/qrcode/jkopay.jpg"></li><li id="linepay" qr="/images/qrcode/linepay.jpg"></li><li id="twpay" qr="/images/qrcode/twpay.jpg"></li></ul><div class="msg pos-f">如果這整篇文章有幫助到你的話 也歡迎請我喝杯飲料 ^_^</div><div class="pos-f left-100" id="QRBox"><div id="MainBox"></div></div></div><div class="tags"><a href="/tags/css/"><i class="fa fa-tag"></i>css</a><a href="/tags/javascript/"><i class="fa fa-tag"></i>javascript</a><a href="/tags/JS%E5%9C%B0%E4%B8%8B%E5%9F%8E/"><i class="fa fa-tag"></i>JS地下城</a></div><div class="post-nav"><a class="pre" href="/JSBOSS/8f/">JS地下城：8F-井字遊戲</a><a class="next" href="/JSBOSS/6f/">JS地下城：6F-60秒算數遊戲</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'https://mtwmt.github.io/JSBOSS/3f/';
+    this.page.identifier = 'JSBOSS/3f/';
+    this.page.title = 'JS地下城：3F-計算機';
+  };</script><script type="text/javascript" id="disqus-lazy-load-script">$.ajax({
+url: 'https://disqus.com/next/config.json',
+timeout: 2500,
+type: 'GET',
+success: function(){
+  var d = document;
+  var s = d.createElement('script');
+  s.src = '//mandys-blog-1.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', + new Date());
+  (d.head || d.body).appendChild(s);
+  $('.disqus_click_btn').css('display', 'none');
+},
+error: function() {
+  $('.disqus_click_btn').css('display', 'block');
+}
+});</script><script type="text/javascript" id="disqus-click-load">$('.btn_click_load').click(() => {  //click to load comments
+    (() => { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//mandys-blog-1.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    $('.disqus_click_btn').css('display','none');
+});</script><script type="text/javascript" id="disqus-count-script">$(function() {
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '//disqus.com/next/config.json', true);
+     xhr.timeout = 2500;
+     xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+         $('.post-meta .post-comments-count').show();
+         var s = document.createElement('script');
+         s.id = 'dsq-count-scr';
+         s.src = 'https://mandys-blog-1.disqus.com/count.js';
+         s.async = true;
+         (document.head || document.body).appendChild(s);
+       }
+     };
+     xhr.ontimeout = function () { xhr.abort(); };
+     xhr.send(null);
+   });
+</script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分類</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AMP/">AMP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular-Material/">Angular Material</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/D3/">D3</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS30/">JS30</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS%E5%9C%B0%E4%B8%8B%E5%9F%8E/">JS地下城</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RxJS/">RxJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/agGrid/">agGrid</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/api/">api</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gulp/">gulp</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery/">jquery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/scully/">scully</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/typescript/">typescript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vscode/">vscode</a><span class="category-list-count">4</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/life/newcomputer/">礦潮下的新電腦</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_lib-build-css/">如何將 Angular library 裡的 scss/sass 正確導出</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_ngif-viewchild-undefined/">Angular viewchild undefined with ngIf</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_template-strings/">JS Template Strings ( 模版字串 / 樣版字串 )</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_destructuring-assignment/">JS 解構賦值</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo/hexo_git_push_case/">hexo：git 上傳佈署後 檔名大小寫問題</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_object_property/">JS Object 物件的屬性特徵</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_httpParams/">Angular HttpParams</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_router/">Angular Router 筆記</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/scully_install/">初探 Scully 建立 blog</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近評論</i></div><script type="text/javascript" src="//mandys-blog-1.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">Mandy's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="複製成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

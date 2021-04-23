@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>JS地下城：10F-Chrome 應用程式(幹話產生器) | Mandy's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.1/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.1/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.1/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-149155162-1','auto');ga('send','pageview');
+</script><script type="text/javascript" src="//lib.baomitu.com/clipboard.js/2.0.4/clipboard.min.js"></script><script type="text/javascript" src="//lib.baomitu.com/toastr.js/2.1.4/toastr.min.js"></script><link rel="stylesheet" href="//lib.baomitu.com/toastr.js/2.1.4/toastr.min.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">JS地下城：10F-Chrome 應用程式(幹話產生器)</h1><a id="logo" href="/.">Mandy's blog</a><p class="description">學習記錄</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首頁</i></a><a href="/archives/"><i class="fa fa-archive"> 所有文章</i></a><a href="/atom.xml"><i class="fa fa-rss"> 訂閱</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">JS地下城：10F-Chrome 應用程式(幹話產生器)</h1><div class="post-meta">2019-04-14<span> | </span><span class="category"><a href="/categories/JS%E5%9C%B0%E4%B8%8B%E5%9F%8E/">JS地下城</a></span></div><a class="disqus-comment-count" data-disqus-identifier="JSBOSS/10f/" href="/JSBOSS/10f/#disqus_thread"></a><div class="post-content"><img src="../../images/JSBOSS/10f/cover.png" width="100%"/>
+
+<h1 id="規則"><a href="#規則" class="headerlink" title="規則"></a>規則</h1><ul>
+<li>【特定技術】請開發 Chrome extension，不需上架，投稿時請提供安裝檔放在雲端，以供 GM 下載測試。</li>
+<li>【特定技術】打開 Chrome 新頁(tab)時，會隨機顯示你自己新增的語錄，或者是幹話。</li>
+<li>【特定技術】可切換夜間/日間模式</li>
+<li>【特定技術】新增語錄時，有兩種方式新增，一種是在頁面裡新增，另一種是點選瀏覽器右上角 icon 來新增</li>
+<li>【特定技術】背景插圖固定即可，</li>
+</ul>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://github.com/mtwmt/jsboss/raw/master/sourse/10f/dist-zip/10f-v1.0.0.zip">zip 下載</a><br><a target="_blank" rel="noopener" href="https://github.com/mtwmt/jsboss/tree/master/sourse/10f">sourse code</a></p>
+<hr>
+<p>斷斷續續寫好久 終於寫完了 從來沒有想過會做瀏覽器的應用程式 剛好趁著這次機會 就來試試看囉 還是要動手做過才會知道</p>
+<p>先吐口水一下</p>
+<p>這次改用 webpak + vue 來處理<br>原本是試了 vue-cli 來 處理 但 vue-cli 有太多的預設值在裡面</p>
+<p>直接寫 vue 會發生</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vue CSP</span><br><span class="line">[Vue warn]: It seems you are using the standalone build of Vue.js in an environment with Content Security Policy that prohibits unsafe-eval. The template compiler cannot work in this environment. Consider relaxing the policy to allow unsafe-eval or pre-compiling your templates into render functions.</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016755248">CSP (Content Security Policy) 内容安全策略</a><br>算是小小雷之一<br>需要封裝後才能正常顯示<br>在封裝發佈過程中也搞蠻久的 主要也是對 webpack 不熟的原因 QQ</p>
+<hr>
+<h3 id="檢示擴充功能頁面"><a href="#檢示擴充功能頁面" class="headerlink" title="檢示擴充功能頁面"></a>檢示擴充功能頁面</h3><img src="../../images/JSBOSS/10f/001.png" width="100%"/>
+<img src="../../images/JSBOSS/10f/002.png" width="100%"/>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">id &#x3D; ID：ofhppbjbjineikemijlgmbflohenglaa</span><br><span class="line">檔案名稱：pupup.html</span><br><span class="line">chrome-extension:&#x2F;&#x2F;ofhppbjbjineikemijlgmbflohenglaa&#x2F;popup.html</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="chrome-預設頁面"><a href="#chrome-預設頁面" class="headerlink" title="chrome 預設頁面"></a>chrome 預設頁面</h3><table>
+<thead>
+<tr>
+<th align="left">bookmarks</th>
+<th align="left">history</th>
+<th align="left">newtab</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">書籤管理器</td>
+<td align="left">歷史記錄</td>
+<td align="left">新預增分頁</td>
+</tr>
+<tr>
+<td align="left">chrome://bookmarks</td>
+<td align="left">chrome://history</td>
+<td align="left">chrome://newtab</td>
+</tr>
+</tbody></table>
+<p>Override 替代頁<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/chrome_url_overrides">MDN-chrome_url_overrides</a></p>
+<hr>
+<h1 id="Chrome-Extension-的架構"><a href="#Chrome-Extension-的架構" class="headerlink" title="Chrome Extension 的架構"></a>Chrome Extension 的架構</h1><p><a target="_blank" rel="noopener" href="https://crxdoc-zh.appspot.com/extensions/manifest">文件清單格式</a></p>
+<p><code>manifest.json</code>: 很重要的一支檔案，用來定義整個 Chrome Extension 的描述，權限等等各種資訊。<br><code>icon.png</code>: 瀏覽器右上角的 icon</p>
+<h3 id="開發頁面"><a href="#開發頁面" class="headerlink" title="開發頁面"></a>開發頁面</h3><p>基本上會有以下幾種頁面可供選擇<br><code>background.js</code>：背景頁面</p>
+<p><code>popup.html</code>: 擊點瀏覽器右上角 icon 所彈出的小視窗<br><code>popup.js</code>: popup.html 執行的互動事件(腳本)</p>
+<p><code>newtab.html</code>：開新分頁<br><code>newtab.js</code>：newtab.html 執行的互動事件(腳本)</p>
+<hr>
+<p>卡了許多雷<br>其中是又是以 <code>newtab</code> 與 <code>popup</code> 同步的問題處理最久，<br>後來証明其實是自己想太多 簡單的在 vue 上 宣告好 就可以了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 獲取chrome 瀏覽器資料</span></span><br><span class="line">chrome.storage.sync.get(<span class="literal">null</span>, <span class="function"><span class="keyword">function</span>(<span class="params">items</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 將資料以物件方式丟入</span></span><br><span class="line">  chrome.storage.sync.set(&#123; <span class="attr">quote</span>: _self.quote &#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// callback</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 監聽 chrome.storage.sync 是否更新，有更新即執行</span></span><br><span class="line">chrome.storage.onChanged.addListener(<span class="function">(<span class="params">data, type</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> data) &#123;</span><br><span class="line">    _self[i] = data[i].newValue;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>基本上 可以正確取得 <code>chrome.storage</code> 裡的東西後<br>再將要更動的資料以 <code>set</code> 方式傳入<br>再去進行 <code>onChanged</code> 監聽 即可達到 <code>popup</code> 與 <code>newtab</code> 同步</p>
+<hr>
+<h2 id="實作部份"><a href="#實作部份" class="headerlink" title="實作部份"></a>實作部份</h2><p><code>個人小記錄 供參</code></p>
+<h2 id="隨機顯示語錄"><a href="#隨機顯示語錄" class="headerlink" title="隨機顯示語錄"></a>隨機顯示語錄</h2><p>開新頁面後會隨機產生語錄<br>在撰寫的過程中，發現 只要新增或刪除資料後，原本的語錄就會跳掉</p>
+<p>為了固定一開始的語錄 另外做了些小處理</p>
+<p><code>新增</code><br>最新一筆會放在整個陣列的第一筆裡<br>所以 當新增一筆資料的時後，原本隨機的數值就會+1</p>
+<p><code>刪除</code><br>若是刪除的資料比隨機產生的資料還新 數值就會 -1，否則不變</p>
+<hr>
+<h2 id="vue-filters-處理語錄斷行"><a href="#vue-filters-處理語錄斷行" class="headerlink" title="vue filters 處理語錄斷行"></a>vue filters 處理語錄斷行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p @click&#x3D;&quot;isPageEdit()&quot; v-if&#x3D;&quot;!pagequote&quot;&gt;&#123;&#123; quote[random].text | txtformat &#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p @click&#x3D;&quot;isPageEdit()&quot; v-if&#x3D;&quot;!pagequote&quot; v-html&#x3D;&quot;$options.filters.txtformat(quote[random].text)&quot;&gt;&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>參考：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/29b7eaabd1ba">https://www.jianshu.com/p/29b7eaabd1ba</a></p>
+</div><div id="donate"><link rel="stylesheet" type="text/css" href="/css/donate.css"><script type="text/javascript" src="/js/donate.js" successtext="複製成功！"></script><div id="DonateText">Donate</div><ul class="list pos-f" id="donateBox"><li id="jkopay" qr="/images/qrcode/jkopay.jpg"></li><li id="linepay" qr="/images/qrcode/linepay.jpg"></li><li id="twpay" qr="/images/qrcode/twpay.jpg"></li></ul><div class="msg pos-f">如果這整篇文章有幫助到你的話 也歡迎請我喝杯飲料 ^_^</div><div class="pos-f left-100" id="QRBox"><div id="MainBox"></div></div></div><div class="tags"><a href="/tags/css/"><i class="fa fa-tag"></i>css</a><a href="/tags/javascript/"><i class="fa fa-tag"></i>javascript</a><a href="/tags/JS%E5%9C%B0%E4%B8%8B%E5%9F%8E/"><i class="fa fa-tag"></i>JS地下城</a></div><div class="post-nav"><a class="pre" href="/typescript/">初探 Typescript</a><a class="next" href="/js/js_fn/">JS 常用 function 整理</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'https://mtwmt.github.io/JSBOSS/10f/';
+    this.page.identifier = 'JSBOSS/10f/';
+    this.page.title = 'JS地下城：10F-Chrome 應用程式(幹話產生器)';
+  };</script><script type="text/javascript" id="disqus-lazy-load-script">$.ajax({
+url: 'https://disqus.com/next/config.json',
+timeout: 2500,
+type: 'GET',
+success: function(){
+  var d = document;
+  var s = d.createElement('script');
+  s.src = '//mandys-blog-1.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', + new Date());
+  (d.head || d.body).appendChild(s);
+  $('.disqus_click_btn').css('display', 'none');
+},
+error: function() {
+  $('.disqus_click_btn').css('display', 'block');
+}
+});</script><script type="text/javascript" id="disqus-click-load">$('.btn_click_load').click(() => {  //click to load comments
+    (() => { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//mandys-blog-1.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    $('.disqus_click_btn').css('display','none');
+});</script><script type="text/javascript" id="disqus-count-script">$(function() {
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '//disqus.com/next/config.json', true);
+     xhr.timeout = 2500;
+     xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+         $('.post-meta .post-comments-count').show();
+         var s = document.createElement('script');
+         s.id = 'dsq-count-scr';
+         s.src = 'https://mandys-blog-1.disqus.com/count.js';
+         s.async = true;
+         (document.head || document.body).appendChild(s);
+       }
+     };
+     xhr.ontimeout = function () { xhr.abort(); };
+     xhr.send(null);
+   });
+</script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分類</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AMP/">AMP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular-Material/">Angular Material</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/D3/">D3</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS30/">JS30</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS%E5%9C%B0%E4%B8%8B%E5%9F%8E/">JS地下城</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RxJS/">RxJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/agGrid/">agGrid</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/api/">api</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gulp/">gulp</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery/">jquery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/scully/">scully</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/typescript/">typescript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vscode/">vscode</a><span class="category-list-count">4</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/life/newcomputer/">礦潮下的新電腦</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_lib-build-css/">如何將 Angular library 裡的 scss/sass 正確導出</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_ngif-viewchild-undefined/">Angular viewchild undefined with ngIf</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_template-strings/">JS Template Strings ( 模版字串 / 樣版字串 )</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_destructuring-assignment/">JS 解構賦值</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo/hexo_git_push_case/">hexo：git 上傳佈署後 檔名大小寫問題</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_object_property/">JS Object 物件的屬性特徵</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_httpParams/">Angular HttpParams</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_router/">Angular Router 筆記</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/scully_install/">初探 Scully 建立 blog</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近評論</i></div><script type="text/javascript" src="//mandys-blog-1.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">Mandy's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="複製成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

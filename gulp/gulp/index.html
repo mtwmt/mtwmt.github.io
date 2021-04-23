@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>gulp4 與 gulp-cli | Mandy's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.1/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.1/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.1/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-149155162-1','auto');ga('send','pageview');
+</script><script type="text/javascript" src="//lib.baomitu.com/clipboard.js/2.0.4/clipboard.min.js"></script><script type="text/javascript" src="//lib.baomitu.com/toastr.js/2.1.4/toastr.min.js"></script><link rel="stylesheet" href="//lib.baomitu.com/toastr.js/2.1.4/toastr.min.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">gulp4 與 gulp-cli</h1><a id="logo" href="/.">Mandy's blog</a><p class="description">學習記錄</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首頁</i></a><a href="/archives/"><i class="fa fa-archive"> 所有文章</i></a><a href="/atom.xml"><i class="fa fa-rss"> 訂閱</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">gulp4 與 gulp-cli</h1><div class="post-meta">2019-01-24<span> | </span><span class="category"><a href="/categories/gulp/">gulp</a></span></div><a class="disqus-comment-count" data-disqus-identifier="gulp/gulp/" href="/gulp/gulp/#disqus_thread"></a><div class="post-content"><h1 id="npm-套件安裝"><a href="#npm-套件安裝" class="headerlink" title="npm 套件安裝"></a>npm 套件安裝</h1><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>縮寫</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>npm install</td>
+<td>npm i</td>
+</tr>
+<tr>
+<td>npm install –save</td>
+<td>npm i -S</td>
+</tr>
+<tr>
+<td>npm install –save-dev</td>
+<td>npm i -D</td>
+</tr>
+</tbody></table>
+<p>–save 將此文件 安裝到本地資料夾<br>-dev 將安裝的 gulp 訊息存在 package.json 裡</p>
+<p>若要安裝特定版本 <code>npm i -D gulp@4.0.2</code></p>
+<hr>
+<p>gulp 與之前版本的差異 3 到 4 的轉換<br>這次多了 gulp-cli 需在全域裡加裝</p>
+<h2 id="gulp4-有什麼新東西"><a href="#gulp4-有什麼新東西" class="headerlink" title="gulp4 有什麼新東西"></a>gulp4 有什麼新東西</h2><p>提供了兩種新的 流程控制方法 <code>series()</code> 與 <code>parallel()</code><br>取消了 task 的用法</p>
+<h2 id="無痛升級-gulp4"><a href="#無痛升級-gulp4" class="headerlink" title="無痛升級 gulp4"></a>無痛升級 gulp4</h2><p>先在 cmd 裡查看<br>node 版本(支援 node8.11.1 以上)<br><img src="../../images/gulp/node-v.jpg" /><br>npm 版本(支援 5.6.0 以上)<br><img src="../../images/gulp/node-v.jpg" /></p>
+<p>確認 gulp 跟 npm 版本後 再來就是安裝 gulp-cli</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --global gulp-cli</span><br><span class="line">或</span><br><span class="line">npm i gulp-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>安裝完後 確認版本<br><img src="../../images/gulp/gulpcli-v.jpg" /><br>出現版本資訊 表示<code>gulp-cli</code>安裝成功</p>
+<hr>
+<h2 id="寫法差異"><a href="#寫法差異" class="headerlink" title="寫法差異"></a>寫法差異</h2><p>將 task 移除</p>
+<p>過去版本寫法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">&#x27;css&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// doSomething</span></span><br><span class="line">&#125;);</span><br><span class="line">gulp.task(<span class="string">&#x27;js&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// doSomething</span></span><br><span class="line">&#125;);</span><br><span class="line">gulp.task(<span class="string">&#x27;default&#x27;</span>, [<span class="string">&#x27;css&#x27;</span>, <span class="string">&#x27;js&#x27;</span>]);</span><br></pre></td></tr></table></figure>
+
+<p>4.0 改為</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">css</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// doSomething</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">js</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// doSomething</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> build = gulp.series(css, js);</span><br><span class="line"><span class="built_in">exports</span>.default = build;</span><br></pre></td></tr></table></figure>
+
+<p>bulid 新增 使用 <code>lastRun()</code></p>
+<hr>
+<h2 id="執行方式"><a href="#執行方式" class="headerlink" title="執行方式"></a>執行方式</h2><p>新增<code>series()</code> 與 <code>parallel()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; series &#125; = <span class="built_in">require</span>(<span class="string">&#x27;gulp&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clean</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// body omitted</span></span><br><span class="line">  cb();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">build</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// body omitted</span></span><br><span class="line">  cb();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">watch</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// body omitted</span></span><br><span class="line">  cb();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//單一執行</span></span><br><span class="line"><span class="built_in">exports</span>.build = build;</span><br><span class="line"></span><br><span class="line"><span class="comment">//逐行執行</span></span><br><span class="line"><span class="built_in">exports</span>.default = series(clean, build, watch);</span><br><span class="line"></span><br><span class="line"><span class="comment">//組合執行 (深度執行)(同步執行)</span></span><br><span class="line"><span class="built_in">exports</span>.default = series(clean, parallel(build, watch));</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="排除"><a href="#排除" class="headerlink" title="排除"></a>排除</h2><h3 id="資料夾排除"><a href="#資料夾排除" class="headerlink" title="資料夾排除"></a>資料夾排除</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;dist/**&#x27;</span>, <span class="string">&#x27;!dist/noDel&#x27;</span>, <span class="string">&#x27;!dist/noDel/**&#x27;</span>];</span><br></pre></td></tr></table></figure>
+
+<p>除了 noDel 外的資料夾，其他通通都會吃到設定！</p>
+<h3 id="檔案排除"><a href="#檔案排除" class="headerlink" title="檔案排除"></a>檔案排除</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="string">&#x27;src/**/!(_)*.html&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>除了 檔案前綴有 _ 外 也都會吃到設定！</p>
+<hr>
+<p>以上介紹 有錯歡迎指正</p>
+<h3 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.gulpjs.com.cn/">https://www.gulpjs.com.cn/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pixemweb.com/blog/gulp-4-0-0-with-nodejs-imagemin-browsersync-sass-sourcemaps-cleancss-more/">https://www.pixemweb.com/blog/gulp-4-0-0-with-nodejs-imagemin-browsersync-sass-sourcemaps-cleancss-more/</a></li>
+</ul>
+</div><div id="donate"><link rel="stylesheet" type="text/css" href="/css/donate.css"><script type="text/javascript" src="/js/donate.js" successtext="複製成功！"></script><div id="DonateText">Donate</div><ul class="list pos-f" id="donateBox"><li id="jkopay" qr="/images/qrcode/jkopay.jpg"></li><li id="linepay" qr="/images/qrcode/linepay.jpg"></li><li id="twpay" qr="/images/qrcode/twpay.jpg"></li></ul><div class="msg pos-f">如果這整篇文章有幫助到你的話 也歡迎請我喝杯飲料 ^_^</div><div class="pos-f left-100" id="QRBox"><div id="MainBox"></div></div></div><div class="tags"><a href="/tags/node/"><i class="fa fa-tag"></i>node</a><a href="/tags/gulp/"><i class="fa fa-tag"></i>gulp</a></div><div class="post-nav"><a class="pre" href="/JS30/05_Flex%20Panel%20Gallery/">JS30：05_Flex Panel Gallery</a><a class="next" href="/JS30/07_Array-Cardio-Day-2/">JS30：07_Array Cardio Day 2</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'https://mtwmt.github.io/gulp/gulp/';
+    this.page.identifier = 'gulp/gulp/';
+    this.page.title = 'gulp4 與 gulp-cli';
+  };</script><script type="text/javascript" id="disqus-lazy-load-script">$.ajax({
+url: 'https://disqus.com/next/config.json',
+timeout: 2500,
+type: 'GET',
+success: function(){
+  var d = document;
+  var s = d.createElement('script');
+  s.src = '//mandys-blog-1.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', + new Date());
+  (d.head || d.body).appendChild(s);
+  $('.disqus_click_btn').css('display', 'none');
+},
+error: function() {
+  $('.disqus_click_btn').css('display', 'block');
+}
+});</script><script type="text/javascript" id="disqus-click-load">$('.btn_click_load').click(() => {  //click to load comments
+    (() => { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//mandys-blog-1.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    $('.disqus_click_btn').css('display','none');
+});</script><script type="text/javascript" id="disqus-count-script">$(function() {
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '//disqus.com/next/config.json', true);
+     xhr.timeout = 2500;
+     xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+         $('.post-meta .post-comments-count').show();
+         var s = document.createElement('script');
+         s.id = 'dsq-count-scr';
+         s.src = 'https://mandys-blog-1.disqus.com/count.js';
+         s.async = true;
+         (document.head || document.body).appendChild(s);
+       }
+     };
+     xhr.ontimeout = function () { xhr.abort(); };
+     xhr.send(null);
+   });
+</script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分類</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AMP/">AMP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular-Material/">Angular Material</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/D3/">D3</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS30/">JS30</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS%E5%9C%B0%E4%B8%8B%E5%9F%8E/">JS地下城</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RxJS/">RxJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/agGrid/">agGrid</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/api/">api</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gulp/">gulp</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery/">jquery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/scully/">scully</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/typescript/">typescript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vscode/">vscode</a><span class="category-list-count">4</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/life/newcomputer/">礦潮下的新電腦</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_lib-build-css/">如何將 Angular library 裡的 scss/sass 正確導出</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_ngif-viewchild-undefined/">Angular viewchild undefined with ngIf</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_template-strings/">JS Template Strings ( 模版字串 / 樣版字串 )</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_destructuring-assignment/">JS 解構賦值</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo/hexo_git_push_case/">hexo：git 上傳佈署後 檔名大小寫問題</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_object_property/">JS Object 物件的屬性特徵</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_httpParams/">Angular HttpParams</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_router/">Angular Router 筆記</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/scully_install/">初探 Scully 建立 blog</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近評論</i></div><script type="text/javascript" src="//mandys-blog-1.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">Mandy's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="複製成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

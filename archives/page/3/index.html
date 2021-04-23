@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>Mandy's blog | 學習記錄</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.1/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.1/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.1/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-149155162-1','auto');ga('send','pageview');
+</script><script type="text/javascript" src="//lib.baomitu.com/clipboard.js/2.0.4/clipboard.min.js"></script><script type="text/javascript" src="//lib.baomitu.com/toastr.js/2.1.4/toastr.min.js"></script><link rel="stylesheet" href="//lib.baomitu.com/toastr.js/2.1.4/toastr.min.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Mandy's blog</h1><a id="logo" href="/.">Mandy's blog</a><p class="description">學習記錄</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首頁</i></a><a class="current" href="/archives/"><i class="fa fa-archive"> 所有文章</i></a><a href="/atom.xml"><i class="fa fa-rss"> 訂閱</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"><a href="/css/css_line_chart/">利用 js 搭配 css 繪製折線圖</a></h1><div class="post-meta">2019-05-12</div><a class="disqus-comment-count" data-disqus-identifier="css/css_line_chart/" href="/css/css_line_chart/#disqus_thread"></a><div class="post-content">概念
+利用 畢氏定理 畫出兩點間的斜線
+
+算斜率有兩種函數 分別為 Math.atan() 與 Math.atan2()
+Math.atan()Math.atan() 接受一個參數，用法如下：
+12//slope 值計算為 y/x (斜率比值無法判斷 y、x 方向，如 -1/-1、1/-1 等情況 )angel = atan(slope);
+
+angel 為一個角度的弧度值，slope是直線的斜率，是一個數字，這個數字可以是負的無窮大到正的無窮大之間的任何一個值(tan 的取值範圍)
+1tanθ&#x3D;tan(θ+180)
+
+不過，利用它進行計算比較複雜。因為它的周期性，一個數字的反正切值</div><p class="readmore"><a href="/css/css_line_chart/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/typescript/">初探 Typescript</a></h1><div class="post-meta">2019-05-01</div><a class="disqus-comment-count" data-disqus-identifier="typescript/" href="/typescript/#disqus_thread"></a><div class="post-content">interface 定義型別( 規格 )12345678interface Person &#123;  firstName: string;  lastName: string;&#125;function greeter(person: Person) &#123;  return person.firstName + &#x27;&#x27; + person.lastName;&#125;
+
+繼承
+12345678910interface Shape &#123;  color: string;&#125;interface Square extends Shape &#123;  s</div><p class="readmore"><a href="/typescript/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JSBOSS/10f/">JS地下城：10F-Chrome 應用程式(幹話產生器)</a></h1><div class="post-meta">2019-04-14</div><a class="disqus-comment-count" data-disqus-identifier="JSBOSS/10f/" href="/JSBOSS/10f/#disqus_thread"></a><div class="post-content">
+
+規則
+【特定技術】請開發 Chrome extension，不需上架，投稿時請提供安裝檔放在雲端，以供 GM 下載測試。
+【特定技術】打開 Chrome 新頁(tab)時，會隨機顯示你自己新增的語錄，或者是幹話。
+【特定技術】可切換夜間/日間模式
+【特定技術】新增語錄時，有兩種方式新增，一種是在頁面裡新增，另一種是點選瀏覽器右上角 icon 來新增
+【特定技術】背景插圖固定即可，
+
+
+zip 下載sourse code
+
+斷斷續續寫好久 終於寫完了 從來沒有想過會做瀏覽器的應用程式 剛好趁著這次機會 就來試試看囉 還是要動手做過才會知道
+先吐口水一下
+這次改用 webpak + vue 來</div><p class="readmore"><a href="/JSBOSS/10f/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/js/js_fn/">JS 常用 function 整理</a></h1><div class="post-meta">2019-03-15</div><a class="disqus-comment-count" data-disqus-identifier="js/js_fn/" href="/js/js_fn/#disqus_thread"></a><div class="post-content">此篇不定時更新, 便利健忘的自己 XD
+轉 emoji 編碼1234567891011121314151617hex2char = function (code) &#123;  if (!code) return &#x27;&#x27;;  var _hex2char = function (hex) &#123;    var result = &#x27;&#x27;,      n = parseInt(hex, 16);    if (n &lt;= 0xffff) &#123;      result += String.fromCharCode(n);    &#125; el</div><p class="readmore"><a href="/js/js_fn/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JSBOSS/9f/">JS地下城：9F-抽獎轉盤</a></h1><div class="post-meta">2019-03-12</div><a class="disqus-comment-count" data-disqus-identifier="JSBOSS/9f/" href="/JSBOSS/9f/#disqus_thread"></a><div class="post-content">
+
+規則
+【特定技術】2017 遊戲輪盤規則輪盤只能轉 20 次，人人有獎Flight：1 份Child：4 份Anything：5 份Wifi：5 份Wish：5 份已經被抽到的獎項，就不可再次出現
+
+【特定技術】2018 遊戲輪盤規則編號 20：69 份編號 19：20 份編號 18：10 份編號 17：5 份編號 16~2：各編號皆 1 份編號 1：1 份
+請移除獎品名稱與 icon，僅單純顯示編號已經被抽到的獎項，就不可再次出現
+
+【特定技術】以上兩個遊戲轉盤，不可直接寫死樣式在網頁上，請將品項以「JSON」格式來儲存，再藉由 JS 跑迴圈依序顯示獎項在輪盤上，此舉用意為若日後輪盤會新</div><p class="readmore"><a href="/JSBOSS/9f/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JSBOSS/7f/">JS地下城：7F-畫版</a></h1><div class="post-meta">2019-03-08</div><a class="disqus-comment-count" data-disqus-identifier="JSBOSS/7f/" href="/JSBOSS/7f/#disqus_thread"></a><div class="post-content">
+
+規則
+【特定技術】繪圖區請使用 Canvas 來設計，上方的控制列與下方的畫筆調整可不用SAVE ：點擊後可直接下載轉出的 PNG 圖片CLEAR ALL：清除畫版樣式UNDO、REDO：上一步、下一步點擊箭頭時，功能列介面皆可進行收闔
+【擴充功能】請再自行增加「兩個功能」
+
+
+這次最大的收獲應該就是克服了 canvas 的心理障礙 XDD寫完後發現 其實也還好嘛 (笑～
+demo 頁sourse code
+
+canvas 起手式先在 html 上 訂出一塊 canvas 的畫布 決定這次的繪畫範圍
+1&lt;canvas&gt;&lt;/canvas&gt;
+
+設定畫布12var $ca</div><p class="readmore"><a href="/JSBOSS/7f/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JSBOSS/8f/">JS地下城：8F-井字遊戲</a></h1><div class="post-meta">2019-03-06</div><a class="disqus-comment-count" data-disqus-identifier="JSBOSS/8f/" href="/JSBOSS/8f/#disqus_thread"></a><div class="post-content">
+
+規則
+【特定技術】先手為 O，後手為 X，某方獲勝時，上方會紀錄各方的獲勝戰績
+【特定技術】每回合結束後，會判定結果頁(平手、Ｏ 獲勝、X 獲勝)
+【特定技術】需符合 RWD，能在低螢幕解析度也能遊玩，介面不能超出 x 軸，至少在以下解析度能夠遊玩。iPhone SE 320pxiPhone 8 375pxiPhone PLUS 414px
+【特定技術】請使用瀏覽器離線儲存技術，將戰績保留起來，重新打開遊戲也仍可觀看到歷史戰績。技術請任選以下幾種CookielocalStorage
+
+
+這次使用 vue 挑戰此次的關卡
+demo 頁sourse code
+
+css 外框字文字陰影方式(te</div><p class="readmore"><a href="/JSBOSS/8f/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JSBOSS/3f/">JS地下城：3F-計算機</a></h1><div class="post-meta">2019-02-21</div><a class="disqus-comment-count" data-disqus-identifier="JSBOSS/3f/" href="/JSBOSS/3f/#disqus_thread"></a><div class="post-content">
+
+規則
+【特定技術】數字位數過多時，不能因此而破版，計算機功能皆須齊全
+
+
+這次使用 原生 JS 來挑戰這次關卡
+demo 頁sourse code
+
+處理的問題有以下
+
+ieee754 浮點數
+字數過長 不造成破版
+eval 加總
+千分位進位
+決定面版顯示資訊 做個 flag
+鍵盤輸入
+
+
+這裡我做兩個空陣列儲存健入的數值 分別為 tempFormula tempResult
+tempFormula 用來顯示所有的算式tempResult 當遇到運算式的時後會清空 做下一個動作，最後用來顯示計算結果
+使用 switch case 過濾鍵入的資訊
+ieee754 浮點數ieee754 維基百</div><p class="readmore"><a href="/JSBOSS/3f/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JSBOSS/6f/">JS地下城：6F-60秒算數遊戲</a></h1><div class="post-meta">2019-02-17</div><a class="disqus-comment-count" data-disqus-identifier="JSBOSS/6f/" href="/JSBOSS/6f/#disqus_thread"></a><div class="post-content">
+
+規則
+【特定技術】020 秒為 1 位數計算 (5-3)，2140 秒為 2 位數計算 (30*19)，4160 秒為 3 位數計算 (332+312)，加減乘除規則請用隨機產生，不可寫死題目，60 秒內可無限次數答題。040 秒答對加一分，41~60 秒答對加五分，答錯扣一分，最多僅能扣到零分
+
+【特定技術】不可設計跳轉頁面，都得在同一頁內部切換頁面完成。
+
+
+
+這次使用 vue 挑戰此次的關卡
+demo 頁sourse code
+
+刻畫面
+字型載入設計稿所使用的的字型 為 Roboto Condensed 並非電腦裡的內建字型所以需要到 GoogleFont 裡搜尋後取得字型連結 讓頁</div><p class="readmore"><a href="/JSBOSS/6f/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JSBOSS/5f/">JS地下城：5F-全台空氣指標儀表板</a></h1><div class="post-meta">2019-02-11</div><a class="disqus-comment-count" data-disqus-identifier="JSBOSS/5f/" href="/JSBOSS/5f/#disqus_thread"></a><div class="post-content">
+
+規則
+【特定技術】必須使用 AJAX 技術串接資料 API，不可直些寫死資料在變數上。
+【特定技術】上方切換城市(高雄、台北)後，下方會切換該城市的各地區
+
+
+這次的關卡比較大的問題點就應該就是在 CORS 的問題處理上畢竟要用前端處理公開 api 這件事，本應由後經由後端處理，前端只要負責串接即可但因為安全考量，API 端如果沒有開啟 CORS 的話，就變成只能看得到吃不到 RRRRR
+選用 vue 來處理這次關卡
+demo 頁sourse code
+
+將 api 資料撈出來因為先前在寫另一個 ubike 練習時就遇過CORS這問題了，當時花了近一天的時間才找到答案可參考 利用 goog</div><p class="readmore"><a href="/JSBOSS/5f/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JSBOSS/2f/">JS地下城：2F-時鐘</a></h1><div class="post-meta">2019-02-07</div><a class="disqus-comment-count" data-disqus-identifier="JSBOSS/2f/" href="/JSBOSS/2f/#disqus_thread"></a><div class="post-content">
+
+規則
+【特定技術】需使用 JS 原生語法的 getDate() 撈取時間，不可用套件
+【特定技術】需使用 JS 原生語法的 setTimeout() 或 setInterval()，持續讓秒針、分針、時針能夠以台北時區移動
+
+
+這次時鐘的關卡，之前js30 天的第二單元已經練習過了，所以這次主要挑戰的就是用 css 畫出設計稿上的內容!!!
+demo 頁sourse code
+
+準備寫這個題目時 也算晚了，所以在這之前已經有很多大大的作品在上面了，看到幾位大大的時鐘都是使用三角函式算角度去繪製出來，所以也爬了一些三角函數的教學，奈何資質駑鈍，看了好久 怎麼看都看不懂…… 角度怎麼麼算都算不</div><p class="readmore"><a href="/JSBOSS/2f/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JS30/05_Flex%20Panel%20Gallery/">JS30：05_Flex Panel Gallery</a></h1><div class="post-meta">2019-01-29</div><a class="disqus-comment-count" data-disqus-identifier="JS30/05_Flex Panel Gallery/" href="/JS30/05_Flex%20Panel%20Gallery/#disqus_thread"></a><div class="post-content">Flex Panel Gallery這次要來做的 點擊圖片後 動畫展開的效果
+摘要
+了解 flex 裡的空間分配
+了解 js 的 toggle 與 includes 事件
+
+CSS了解 flex 裡的空間分配 (對容器裡的物件做分配flex-grow 剩餘空間分配比例flex-shirk 壓縮比例flex-basis 預約剩餘空間
+三個值的縮寫為
+1flex: flex-grow flex-shirk flex-basis
+
+若是 flex 只有一個值的話 則是
+1flex: flex-grow
+
+可參考以下資料 這裡就不多做說明了 XD：深入理解 css3 中的 flex-grow、flex</div><p class="readmore"><a href="/JS30/05_Flex%20Panel%20Gallery/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/gulp/gulp/">gulp4 與 gulp-cli</a></h1><div class="post-meta">2019-01-24</div><a class="disqus-comment-count" data-disqus-identifier="gulp/gulp/" href="/gulp/gulp/#disqus_thread"></a><div class="post-content">npm 套件安裝
+
+
+指令
+縮寫
+
+
+
+npm install
+npm i
+
+
+npm install –save
+npm i -S
+
+
+npm install –save-dev
+npm i -D
+
+
+–save 將此文件 安裝到本地資料夾-dev 將安裝的 gulp 訊息存在 package.json 裡
+若要安裝特定版本 npm i -D gulp@4.0.2
+
+gulp 與之前版本的差異 3 到 4 的轉換這次多了 gulp-cli 需在全域裡加裝
+gulp4 有什麼新東西提供了兩種新的 流程控制方法 series() 與 parallel()取消了 task 的用法
+無痛升級 gul</div><p class="readmore"><a href="/gulp/gulp/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JS30/07_Array-Cardio-Day-2/">JS30：07_Array Cardio Day 2</a></h1><div class="post-meta">2019-01-18</div><a class="disqus-comment-count" data-disqus-identifier="JS30/07_Array-Cardio-Day-2/" href="/JS30/07_Array-Cardio-Day-2/#disqus_thread"></a><div class="post-content">Array Cardio (陣列練習 2)延續 04_Array Cardio Day 的後續，繼續悉其他操作陣列的方法
+摘要這次作者提供了 people 與 comments 兩組資料做練習
+練習的題目依序是
+
+people 是否有人滿 19 歲 (some)
+people 是否全部人滿 19 歲 (every)
+從 comments 找到 id 是 823423 的資料 (find ,findIndex)
+從 comments 刪除 id 是 823423 這筆資料 (splice, slice)
+
+somepeople 是否有人滿 19 歲
+123456const isAdult = p</div><p class="readmore"><a href="/JS30/07_Array-Cardio-Day-2/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JS30/04_Array-Cardio-Day-1/">JS30：04_Array Cardio Day 1</a></h1><div class="post-meta">2019-01-16</div><a class="disqus-comment-count" data-disqus-identifier="JS30/04_Array-Cardio-Day-1/" href="/JS30/04_Array-Cardio-Day-1/#disqus_thread"></a><div class="post-content">Array Cardio (陣列練習)摘要此次主要是練習陣列的一些用法分別有八個例子作者一開始在 html 上提供了三組資料給大家練習
+inventors是一組是發明家的列表 裡面包含 姓、名、出生年份、死亡年份
+練習的題目依序是
+
+篩選出 1500年 ~ 1600前出生的人 (filter)
+將inventors陣列裡的 first 跟 last 串起來 (map)
+按出生日期排列，由小到大 (sort)
+計算出所有發明家共活了多少年 (reduce)
+按照發明家活了多少年來排序 (sort)
+從作者提供的維基網址裡 篩選出 含有de的路名 ( map 與 filter 整合應用 )
+對發明</div><p class="readmore"><a href="/JS30/04_Array-Cardio-Day-1/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/googlemap_bounds/">利用 google.maps.LatLngBounds 讓googlemap自動縮放到適合的大小</a></h1><div class="post-meta">2019-01-14</div><a class="disqus-comment-count" data-disqus-identifier="googlemap_bounds/" href="/googlemap_bounds/#disqus_thread"></a><div class="post-content">如何讓所有地圖標記自動縮放都在可視範圍的區域
+首先 可以先了解地圖的邊界值
+先上 codeGoogleMap event 參照html
+12&lt;div id&#x3D;&quot;map&quot;&gt;&lt;&#x2F;div&gt;&lt;div id&#x3D;&quot;info&quot;&gt;&lt;&#x2F;div&gt;
+
+javascript
+123456789101112131415161718function initMap() &#123;  &#x2F;&#x2F; 設定估狗地圖  var map &#x3D; new google.maps.Map(do</div><p class="readmore"><a href="/googlemap_bounds/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/amp/">淺談AMP</a></h1><div class="post-meta">2019-01-11</div><a class="disqus-comment-count" data-disqus-identifier="amp/" href="/amp/#disqus_thread"></a><div class="post-content">AMP 是 GOOGLE 力推的一項技術。重點就是「快」目前大部份使用於行動裝置上
+優勢
+速度快
+
+
+當 GOOGLE 的爬蟲爬到你的 AMP 頁面時 他會把你的網頁自動 CACHE 到 GOOGLE 的伺服器存放一份，因此再次載入時會先從 GOOGLE 的伺服器裡載入，更有效率的快速載入頁面
+同時限制 CSS 圖片 多媒體 等檔案大小，也支援異步加載(不過都要做 AMP 了 JS 這部份當然能省就省了)
+
+
+SEO 效果好
+
+
+更精準的投放到對產品有興趣的客層
+
+
+提高 GOOGLE 搜尋排名
+
+缺點
+使用自訂的 TAG 所以開發者必需依照 AMP 的規範撰寫 (廢話 XD
+
+有些人會有疑問</div><p class="readmore"><a href="/amp/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/api_cors_error/">利用 google apps script 做中繼點跨網域遠端取得api資料</a></h1><div class="post-meta">2018-12-24</div><a class="disqus-comment-count" data-disqus-identifier="api_cors_error/" href="/api_cors_error/#disqus_thread"></a><div class="post-content">最近在練習 vue 時 會去政府公開 api 取資料 但有些 api 會有跨網域讀取限的問題一開始在開發環境vue-cli有提供http-proxy-middleware做 proxy 處理跟網域這部份但到了要發佈的時後 資料出現一樣會出現異常啊啊啊啊 像這樣
+沒有主機 沒有後端資源的我們該怎麼辦呢 (抱頭)這時後 估狗好朋友出現了 它提供了google app script
+首先 要先有一個 google 帳號 開啟雲端硬碟服務新增 google apps script如果沒有 可以到連結更多應用程式裡去找
+接下來就是開新專案
+
+
+將程式碼修改如下
+123456789function doG</div><p class="readmore"><a href="/api_cors_error/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/hexo/hexo_cannot%20find%20module/">hexo：Error:Cannot find module</a></h1><div class="post-meta">2018-12-20</div><a class="disqus-comment-count" data-disqus-identifier="hexo/hexo_cannot find module/" href="/hexo/hexo_cannot%20find%20module/#disqus_thread"></a><div class="post-content">一陣子沒更新的 blog想記錄一下這幾天遇到的問題就在寫好之際 想預覽一下 發現 hexo 也出問題了!!!噴了一堆錯
+估狗了一下 原來是前陣子在練習 vue 的時後為了安裝 vue-cli 所以升級了 node 版本想不到啊想不到 當下使用的 hexo 只能使用舊版 node6 以下執行
+人生啊…(喝口茶 只好繼續找解決方案了
+總而言之呢 就是先把舊版的hexo-cli移除後再裝上執行以下指令 (是的 我是 mac 用戶 所以就是 mac 指令了
+123$ sudo npm uninstall hexo-cli -g$ sudo npm uninstall dtrace-provider -</div><p class="readmore"><a href="/hexo/hexo_cannot%20find%20module/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JS30/03_CSS-Variables/">JS30：03_CSS Variables</a></h1><div class="post-meta">2018-12-03</div><a class="disqus-comment-count" data-disqus-identifier="JS30/03_CSS-Variables/" href="/JS30/03_CSS-Variables/#disqus_thread"></a><div class="post-content">CSS Variables (CSS 變數)這次認識到 input 裡更多的 type 屬性 range 、 color 因為平常不太會用到 所以特別去查了一下原來是 html5 裡新增的屬性 可參照 HTML5 input type 屬性
+摘要
+了解 css 變數
+利用 js 綁定監聽 input 變動的值 對應到頁面中的 img 元素 達到即時調整的效果
+
+css 變數宣告1234567891011121314//宣告變數:root&#123;  --base: #70653e;  --spacing: 10px;  --blur: 10px;&#125;//在使用時img&#123;  </div><p class="readmore"><a href="/JS30/03_CSS-Variables/">閱讀全文</a></p></div><nav class="page-navigator"><a class="extend prev" rel="prev" href="/archives/page/2/">上一頁</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/4/">下一頁</a></nav><script id="dsq-count-scr" src="//mandys-blog-1.disqus.com/count.js" async></script></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分類</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AMP/">AMP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular-Material/">Angular Material</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/D3/">D3</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS30/">JS30</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS%E5%9C%B0%E4%B8%8B%E5%9F%8E/">JS地下城</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RxJS/">RxJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/agGrid/">agGrid</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/api/">api</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gulp/">gulp</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery/">jquery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/scully/">scully</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/typescript/">typescript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vscode/">vscode</a><span class="category-list-count">4</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/life/newcomputer/">礦潮下的新電腦</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_lib-build-css/">如何將 Angular library 裡的 scss/sass 正確導出</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_ngif-viewchild-undefined/">Angular viewchild undefined with ngIf</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_template-strings/">JS Template Strings ( 模版字串 / 樣版字串 )</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_destructuring-assignment/">JS 解構賦值</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo/hexo_git_push_case/">hexo：git 上傳佈署後 檔名大小寫問題</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_object_property/">JS Object 物件的屬性特徵</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_httpParams/">Angular HttpParams</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_router/">Angular Router 筆記</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/scully_install/">初探 Scully 建立 blog</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近評論</i></div><script type="text/javascript" src="//mandys-blog-1.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">Mandy's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="複製成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

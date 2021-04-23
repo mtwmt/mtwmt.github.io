@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>Mandy's blog | 學習記錄</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.1/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.1/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.1/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-149155162-1','auto');ga('send','pageview');
+</script><script type="text/javascript" src="//lib.baomitu.com/clipboard.js/2.0.4/clipboard.min.js"></script><script type="text/javascript" src="//lib.baomitu.com/toastr.js/2.1.4/toastr.min.js"></script><link rel="stylesheet" href="//lib.baomitu.com/toastr.js/2.1.4/toastr.min.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Mandy's blog</h1><a id="logo" href="/.">Mandy's blog</a><p class="description">學習記錄</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首頁</i></a><a class="current" href="/archives/"><i class="fa fa-archive"> 所有文章</i></a><a href="/atom.xml"><i class="fa fa-rss"> 訂閱</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"><a href="/JS30/05_Flex%20Panel%20Gallery/">JS30：05_Flex Panel Gallery</a></h1><div class="post-meta">2019-01-29</div><a class="disqus-comment-count" data-disqus-identifier="JS30/05_Flex Panel Gallery/" href="/JS30/05_Flex%20Panel%20Gallery/#disqus_thread"></a><div class="post-content">Flex Panel Gallery這次要來做的 點擊圖片後 動畫展開的效果
+摘要
+了解 flex 裡的空間分配
+了解 js 的 toggle 與 includes 事件
+
+CSS了解 flex 裡的空間分配 (對容器裡的物件做分配flex-grow 剩餘空間分配比例flex-shirk 壓縮比例flex-basis 預約剩餘空間
+三個值的縮寫為
+1flex: flex-grow flex-shirk flex-basis
+
+若是 flex 只有一個值的話 則是
+1flex: flex-grow
+
+可參考以下資料 這裡就不多做說明了 XD：深入理解 css3 中的 flex-grow、flex</div><p class="readmore"><a href="/JS30/05_Flex%20Panel%20Gallery/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JS30/07_Array-Cardio-Day-2/">JS30：07_Array Cardio Day 2</a></h1><div class="post-meta">2019-01-18</div><a class="disqus-comment-count" data-disqus-identifier="JS30/07_Array-Cardio-Day-2/" href="/JS30/07_Array-Cardio-Day-2/#disqus_thread"></a><div class="post-content">Array Cardio (陣列練習 2)延續 04_Array Cardio Day 的後續，繼續悉其他操作陣列的方法
+摘要這次作者提供了 people 與 comments 兩組資料做練習
+練習的題目依序是
+
+people 是否有人滿 19 歲 (some)
+people 是否全部人滿 19 歲 (every)
+從 comments 找到 id 是 823423 的資料 (find ,findIndex)
+從 comments 刪除 id 是 823423 這筆資料 (splice, slice)
+
+somepeople 是否有人滿 19 歲
+123456const isAdult = p</div><p class="readmore"><a href="/JS30/07_Array-Cardio-Day-2/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JS30/04_Array-Cardio-Day-1/">JS30：04_Array Cardio Day 1</a></h1><div class="post-meta">2019-01-16</div><a class="disqus-comment-count" data-disqus-identifier="JS30/04_Array-Cardio-Day-1/" href="/JS30/04_Array-Cardio-Day-1/#disqus_thread"></a><div class="post-content">Array Cardio (陣列練習)摘要此次主要是練習陣列的一些用法分別有八個例子作者一開始在 html 上提供了三組資料給大家練習
+inventors是一組是發明家的列表 裡面包含 姓、名、出生年份、死亡年份
+練習的題目依序是
+
+篩選出 1500年 ~ 1600前出生的人 (filter)
+將inventors陣列裡的 first 跟 last 串起來 (map)
+按出生日期排列，由小到大 (sort)
+計算出所有發明家共活了多少年 (reduce)
+按照發明家活了多少年來排序 (sort)
+從作者提供的維基網址裡 篩選出 含有de的路名 ( map 與 filter 整合應用 )
+對發明</div><p class="readmore"><a href="/JS30/04_Array-Cardio-Day-1/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JS30/03_CSS-Variables/">JS30：03_CSS Variables</a></h1><div class="post-meta">2018-12-03</div><a class="disqus-comment-count" data-disqus-identifier="JS30/03_CSS-Variables/" href="/JS30/03_CSS-Variables/#disqus_thread"></a><div class="post-content">CSS Variables (CSS 變數)這次認識到 input 裡更多的 type 屬性 range 、 color 因為平常不太會用到 所以特別去查了一下原來是 html5 裡新增的屬性 可參照 HTML5 input type 屬性
+摘要
+了解 css 變數
+利用 js 綁定監聽 input 變動的值 對應到頁面中的 img 元素 達到即時調整的效果
+
+css 變數宣告1234567891011121314//宣告變數:root&#123;  --base: #70653e;  --spacing: 10px;  --blur: 10px;&#125;//在使用時img&#123;  </div><p class="readmore"><a href="/JS30/03_CSS-Variables/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JS30/02_JS-and-CSS-Clock/">JS30：02_JS and CSS Clock</a></h1><div class="post-meta">2018-12-02</div><a class="disqus-comment-count" data-disqus-identifier="JS30/02_JS-and-CSS-Clock/" href="/JS30/02_JS-and-CSS-Clock/#disqus_thread"></a><div class="post-content">JS and CSS Clock (時鐘)摘要
+認識 css transform與 transition 調整時鐘指針
+使用new Date()來讀取當前的時間
+認識setInterval()計時
+
+CSS 處理12345border-radius: 40%;transform-origin: 100%;transform: rotate(90deg);transition: all 0.05s;transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1)
+
+
+transform css 變形transform-oragin 設定變形軸</div><p class="readmore"><a href="/JS30/02_JS-and-CSS-Clock/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JS30/01_JavaScript-Drum-Kit/">JS30：01_JavaScript Drum Kit</a></h1><div class="post-meta">2018-12-01</div><a class="disqus-comment-count" data-disqus-identifier="JS30/01_JavaScript-Drum-Kit/" href="/JS30/01_JavaScript-Drum-Kit/#disqus_thread"></a><div class="post-content">JavaScript Drum Kit (鍵盤打鼓)摘要
+了解鍵盤監聽事件 keyCode(鍵盤數字代碼)
+鍵盤與聲音對應
+畫面顯示所按到的鍵 (更改樣式)
+
+CSS 排版此次排版主要是以 flex 為主FLEX 速查小抄
+查詢鍵盤數字代碼123window.addEventListener(&#39;keydown&#39;,function(e)&#123;  console.log(e.keyCode)&#125;);
+
+key code 速查
+
+windows 監聽事件1234567891011function playSound(e) &#123;  const audio = do</div><p class="readmore"><a href="/JS30/01_JavaScript-Drum-Kit/">閱讀全文</a></p></div><div class="post"><h1 class="post-title"><a href="/JS30/30_Whack-A-Mole/">JS30：30_Whack A Mole!</a></h1><div class="post-meta">2018-11-26</div><a class="disqus-comment-count" data-disqus-identifier="JS30/30_Whack-A-Mole/" href="/JS30/30_Whack-A-Mole/#disqus_thread"></a><div class="post-content">Whack A Mole! (打地鼠)摘要
+先規劃地鼠出現時間 ( 亂數時間出現 )
+設定地鼠出現位置
+將出現時間跟地鼠出現位置整合
+點按鈕控制遊戲開始
+打地鼠計分!!
+
+初始變數設定123const holes = document.querySelectorAll(&#x27;.hole&#x27;);const scoreBoard = document.querySelector(&#x27;.score&#x27;);const moles = document.querySelectorAll(&#x27;.mole&#x27;);
+
+地鼠出現時間12345// 取最小值&amp;</div><p class="readmore"><a href="/JS30/30_Whack-A-Mole/">閱讀全文</a></p></div><script id="dsq-count-scr" src="//mandys-blog-1.disqus.com/count.js" async></script></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分類</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AMP/">AMP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular-Material/">Angular Material</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/D3/">D3</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS30/">JS30</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS%E5%9C%B0%E4%B8%8B%E5%9F%8E/">JS地下城</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RxJS/">RxJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/agGrid/">agGrid</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/api/">api</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gulp/">gulp</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery/">jquery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/scully/">scully</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/typescript/">typescript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vscode/">vscode</a><span class="category-list-count">4</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/life/newcomputer/">礦潮下的新電腦</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_lib-build-css/">如何將 Angular library 裡的 scss/sass 正確導出</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_ngif-viewchild-undefined/">Angular viewchild undefined with ngIf</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_template-strings/">JS Template Strings ( 模版字串 / 樣版字串 )</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_destructuring-assignment/">JS 解構賦值</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo/hexo_git_push_case/">hexo：git 上傳佈署後 檔名大小寫問題</a></li><li class="post-list-item"><a class="post-list-link" href="/js/js_object_property/">JS Object 物件的屬性特徵</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_httpParams/">Angular HttpParams</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/ng_router/">Angular Router 筆記</a></li><li class="post-list-item"><a class="post-list-link" href="/angular/scully_install/">初探 Scully 建立 blog</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近評論</i></div><script type="text/javascript" src="//mandys-blog-1.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">Mandy's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="複製成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
