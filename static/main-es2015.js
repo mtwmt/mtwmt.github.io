@@ -357,11 +357,7 @@ class MetaComponent {
     }
 }
 MetaComponent.ɵfac = function MetaComponent_Factory(t) { return new (t || MetaComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_meta_service__WEBPACK_IMPORTED_MODULE_3__["MetaService"])); };
-MetaComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: MetaComponent, selectors: [["app-meta"]], inputs: { title: "title", description: "description", tags: "tags", keywords: "keywords", route: "route", image: "image", twitterImage: "twitterImage", ogImage: "ogImage", robots: "robots", authorFirstName: "authorFirstName", authorLastName: "authorLastName", authorUserName: "authorUserName", articlePublishedAt: "articlePublishedAt", articleUpdatedAt: "articleUpdatedAt", articleAuthors: "articleAuthors" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]], decls: 2, vars: 0, template: function MetaComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "meta works!");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtZXRhLmNvbXBvbmVudC5zY3NzIn0= */"] });
+MetaComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: MetaComponent, selectors: [["app-meta"]], inputs: { title: "title", description: "description", tags: "tags", keywords: "keywords", route: "route", image: "image", twitterImage: "twitterImage", ogImage: "ogImage", robots: "robots", authorFirstName: "authorFirstName", authorLastName: "authorLastName", authorUserName: "authorUserName", articlePublishedAt: "articlePublishedAt", articleUpdatedAt: "articleUpdatedAt", articleAuthors: "articleAuthors" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]], decls: 0, vars: 0, template: function MetaComponent_Template(rf, ctx) { }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtZXRhLmNvbXBvbmVudC5zY3NzIn0= */"] });
 
 
 /***/ }),

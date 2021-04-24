@@ -722,17 +722,9 @@
           articleAuthors: "articleAuthors"
         },
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]],
-        decls: 2,
+        decls: 0,
         vars: 0,
-        template: function MetaComponent_Template(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "meta works!");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-          }
-        },
+        template: function MetaComponent_Template(rf, ctx) {},
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtZXRhLmNvbXBvbmVudC5zY3NzIn0= */"]
       });
       /***/
