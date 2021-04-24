@@ -637,7 +637,6 @@
         }, {
           key: "updateMetaTags",
           value: function updateMetaTags() {
-            console.log('updateMetaTags', this.title);
             this.metaService.generateMetaTags({
               title: this.title,
               description: this.title,
@@ -889,7 +888,6 @@
         }, {
           key: "setDescription",
           value: function setDescription(description) {
-            console.log('description', description);
             this.meta.updateTag({
               name: 'description',
               content: description
@@ -915,7 +913,6 @@
           key: "generateMetaTags",
           value: function generateMetaTags() {
             var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-            console.log('generateMetaTags', config);
             config = Object.assign(Object.assign(Object.assign({}, this.defaultConfig), config), {
               keywords: config.keywords ? [].concat(_toConsumableArray(_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].keywords), _toConsumableArray(config.keywords)) : _environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].keywords
             });
@@ -1767,7 +1764,6 @@
 
                   return ((_a = link.categories) === null || _a === void 0 ? void 0 : _a[0]) != null && link.categories.includes(categories.toLowerCase());
                 });
-                console.log('categories', newLink);
                 return newLink;
               }));
             }));

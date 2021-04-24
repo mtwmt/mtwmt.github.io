@@ -604,13 +604,13 @@ class BlogComponent {
         this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
     }
     ngOnInit() {
-        this.blog$.subscribe(res => {
-            console.log('blog', res);
-        });
+        // this.blog$.subscribe(res => {
+        //   console.log('blog', res)
+        // })
         Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["fromEvent"])(window, 'AngularReady')
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(this.destroy$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(() => (this.allowHighlight = false)))
             .subscribe(res => {
-            console.log('AngularReady', res);
+            // console.log('AngularReady', res);
         });
     }
     ngAfterContentInit() {

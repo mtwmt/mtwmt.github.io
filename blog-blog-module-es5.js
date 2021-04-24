@@ -971,13 +971,12 @@
           value: function ngOnInit() {
             var _this3 = this;
 
-            this.blog$.subscribe(function (res) {
-              console.log('blog', res);
-            });
+            // this.blog$.subscribe(res => {
+            //   console.log('blog', res)
+            // })
             Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["fromEvent"])(window, 'AngularReady').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(this.destroy$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function () {
               return _this3.allowHighlight = false;
-            })).subscribe(function (res) {
-              console.log('AngularReady', res);
+            })).subscribe(function (res) {// console.log('AngularReady', res);
             });
           }
         }, {

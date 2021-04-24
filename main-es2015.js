@@ -308,7 +308,6 @@ class MetaComponent {
         this.updateMetaTags();
     }
     updateMetaTags() {
-        console.log('updateMetaTags', this.title);
         this.metaService.generateMetaTags({
             title: this.title,
             description: this.title,
@@ -452,7 +451,6 @@ class MetaService {
         this.title.setTitle(title);
     }
     setDescription(description) {
-        console.log('description', description);
         this.meta.updateTag({ name: 'description', content: description });
     }
     updateRobots(robots) {
@@ -462,7 +460,6 @@ class MetaService {
         this.meta.updateTag({ name: 'keywords', content: keywords.join(', ') });
     }
     generateMetaTags(config = {}) {
-        console.log('generateMetaTags', config);
         config = Object.assign(Object.assign(Object.assign({}, this.defaultConfig), config), { keywords: config.keywords
                 ? [..._environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].keywords, ...config.keywords]
                 : _environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].keywords });
@@ -925,7 +922,6 @@ class BlogListCategoriesComponent {
                     return ((_a = link.categories) === null || _a === void 0 ? void 0 : _a[0]) != null &&
                         link.categories.includes(categories.toLowerCase());
                 });
-                console.log('categories', newLink);
                 return newLink;
             }));
         }));
