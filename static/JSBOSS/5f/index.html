@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <title>JS地下城：5F-全台空氣指標儀表板</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149155162-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149155162-1');
+    </script>
+  <link rel="stylesheet" href="styles.css"><style>.social[_ngcontent-roc-c18]   li[_ngcontent-roc-c18] {
+  display: inline-block;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcYXBwLmNvbXBvbmVudC5zY3NzIiwiLi4vLi4vbm9kZV9tb2R1bGVzL3RhaWx3aW5kY3NzL2xpYi9saWIvc3Vic3RpdHV0ZUNsYXNzQXBwbHlBdFJ1bGVzLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdFO0VDREYscUJBQW1CO0FEQW5CIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5cclxuLnNvY2lhbCB7XHJcbiAgbGkge1xyXG4gICAgQGFwcGx5IGlubGluZS1ibG9jaztcclxuICB9XHJcbn1cclxuIiwiQHRhaWx3aW5kIGJhc2U7XG5AdGFpbHdpbmQgY29tcG9uZW50cztcbkB0YWlsd2luZCB1dGlsaXRpZXM7Il19 */</style><script charset="utf-8" src="blog-blog-module-es2015.js"></script><script charset="utf-8" src="home-home-module-es2015.js"></script><style>.prose[_ngcontent-roc-c27] {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important;
+}
+
+.prose[_ngcontent-roc-c27]   h1[_ngcontent-roc-c27] {
+  font-family: Dosis, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.prose[_ngcontent-roc-c27]   h2[_ngcontent-roc-c27] {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+}
+
+.prose[_ngcontent-roc-c27]   h3[_ngcontent-roc-c27] {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.prose[_ngcontent-roc-c27]   p[_ngcontent-roc-c27] {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose[_ngcontent-roc-c27]   pre[_ngcontent-roc-c27] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose[_ngcontent-roc-c27]   img[_ngcontent-roc-c27] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose[_ngcontent-roc-c27]   hr[_ngcontent-roc-c27] {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+[_nghost-roc-c27]   .toolbar-item[_ngcontent-roc-c27] {
+  position: relative;
+  background: #159;
+}
+
+[_nghost-roc-c27]   .toolbar-item[_ngcontent-roc-c27]   .toolbar[_ngcontent-roc-c27] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGJsb2cuY29tcG9uZW50LnNjc3MiLCIuLi8uLi8uLi9ub2RlX21vZHVsZXMvdGFpbHdpbmRjc3MvbGliL2xpYi9zdWJzdGl0dXRlQ2xhc3NBcHBseUF0UnVsZXMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUNFQSxlQUFtQjtFQUFuQixtQkFBbUI7RURBakIsZ01BQUE7QUFDRjs7QUFHRTtFQ0pGLG1PQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsbUJBQW1CO0FESW5COztBQUlFO0VDUkYsZ0JBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixpQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGtCQUFtQjtBRE9uQjs7QUFLRTtFQ1pGLGdCQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsb0JBQW1CO0VBQW5CLHFCQUFtQjtFQUFuQixnQkFBbUI7QURVbkI7O0FBTUU7RUNoQkYsa0JBQW1CO0VBQW5CLHFCQUFtQjtBRGFuQjs7QUFPRTtFQ3BCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0FEZ0JuQjs7QUFRRTtFQ3hCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixrQkFBbUI7QURtQm5COztBQVNFO0VDNUJGLGdCQUFtQjtFQUFuQixtQkFBbUI7QURzQm5COztBQVlFO0VBQ0Usa0JBQUE7RUFDQSxnQkFBQTtBQVRKOztBQVVJO0VBQ0Usa0JBQUE7RUFDQSxNQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7QUFSTiIsImZpbGUiOiJibG9nLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb3NlIHtcclxuICBAYXBwbHkgdGV4dC1iYXNlO1xyXG4gIGZvbnQtZmFtaWx5OiAnUGluZ0ZhbmdTQy1SZWd1bGFyJywgSGVsdmV0aWNhLCAnSGVsdmV0aWNhIE5ldWUnLCAnU2Vnb2UgVUknLFxyXG4gICAgJ0hpcmFnaW5vIFNhbnMgR0InLCAnU291cmNlIEhhbiBTYW5zIENOJywgJ01pY3Jvc29mdCBZYUhlaScsICdTVEhlaXRpJyxcclxuICAgICdXZW5RdWFuWWkgTWljcm8gSGVpJywgc2Fucy1zZXJpZiAhaW1wb3J0YW50O1xyXG5cclxuICBoMSB7XHJcbiAgICBAYXBwbHkgdGV4dC00eGwgZm9udC1zYW5zO1xyXG4gIH1cclxuXHJcbiAgaDIge1xyXG4gICAgQGFwcGx5IG10LTEwIG1iLTQgdGV4dC0yeGwgZm9udC1ib2xkO1xyXG4gIH1cclxuXHJcbiAgaDMge1xyXG4gICAgQGFwcGx5IG10LTQgbWItMiB0ZXh0LXhsIGZvbnQtYm9sZDtcclxuICB9XHJcblxyXG4gIHAge1xyXG4gICAgQGFwcGx5IG15LTI7XHJcbiAgfVxyXG5cclxuICBwcmUge1xyXG4gICAgQGFwcGx5IG15LTQ7XHJcbiAgfVxyXG5cclxuICBpbWcge1xyXG4gICAgQGFwcGx5IG15LTQgbXgtYXV0bztcclxuICB9XHJcblxyXG4gIGhyIHtcclxuICAgIEBhcHBseSBteS04O1xyXG4gIH1cclxufVxyXG5cclxuOmhvc3Qge1xyXG4gIC50b29sYmFyLWl0ZW0ge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgYmFja2dyb3VuZDogIzE1OTtcclxuICAgIC50b29sYmFyIHtcclxuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICB0b3A6IDA7XHJcbiAgICAgIHJpZ2h0OiAwO1xyXG4gICAgICBjb2xvcjogI2ZmZjtcclxuICAgIH1cclxuICB9XHJcbn1cclxuXHJcbi8vIDo6c2xvdHRlZChoMSkge1xyXG4vLyAgIGNvbG9yOiByZ2IoNTEsIDYsIDM3KTtcclxuLy8gICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQ4LCAyMTEsIDIzNik7XHJcbi8vICAgcGFkZGluZzogNXB4O1xyXG4vLyAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuLy8gICB3aWR0aDogZml0LWNvbnRlbnQ7XHJcbi8vIH1cclxuXHJcbi8vIC5saW5lIHtcclxuLy8gICBoZWlnaHQ6IDFweDtcclxuLy8gICB3aWR0aDogMTAwJTtcclxuLy8gICBtYXJnaW4tdG9wOiAxMnB4O1xyXG4vLyAgIEBhcHBseSBiZy1ncmF5LTkwMDtcclxuLy8gfVxyXG5cclxuLy8gYXBwLWJsb2ctbmF2IHtcclxuLy8gICB0b3A6IDExMnB4O1xyXG4vLyB9XHJcbiIsIkB0YWlsd2luZCBiYXNlO1xuQHRhaWx3aW5kIGNvbXBvbmVudHM7XG5AdGFpbHdpbmQgdXRpbGl0aWVzOyJdfQ== */</style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtZXRhLmNvbXBvbmVudC5zY3NzIn0= */</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJibG9nLW5hdi5jb21wb25lbnQuc2NzcyJ9 */</style><meta name="description" content="JS地下城：5F-全台空氣指標儀表板"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, css, javascript, JS地下城, cors"><meta property="og:title" content="JS地下城：5F-全台空氣指標儀表板"><meta property="og:description" content="JS地下城：5F-全台空氣指標儀表板"><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.github.io/JSBOSS/5f"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="JS地下城：5F-全台空氣指標儀表板"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="en_US"><script>window['ScullyIO']='generated';</script></head>
+  <body class="theme-light" scully-version="1.1.1">
+    <app-root _nghost-roc-c18="" ng-version="11.2.11"><header _ngcontent-roc-c18="" class="fixed z-999 top-0 left-0 flex justify-between items-center w-full bg-secondary p-4 border-b-4 border-solid border-primary"><h1 _ngcontent-roc-c18="" class="text-2xl font-semibold"><a _ngcontent-roc-c18="" routerlink="/" class="text-primary" ng-reflect-router-link="/" href="/">Mandy's <span _ngcontent-roc-c18="" class="display-inlinie font-light text-text">Web</span></a></h1><nav _ngcontent-roc-c18="" class="social"><ul _ngcontent-roc-c18=""><li _ngcontent-roc-c18=""><a _ngcontent-roc-c18="" class="btn" ng-reflect-router-link="/" href="/">Blog</a></li><li _ngcontent-roc-c18=""><a _ngcontent-roc-c18="" class="btn" ng-reflect-router-link="/website" href="/website">Portfolio</a></li><li _ngcontent-roc-c18=""><a _ngcontent-roc-c18="" href="//github.com/mtwmt" target="_blank" class="btn">GitHub</a></li></ul></nav></header><div _ngcontent-roc-c18="" class="container mx-auto pt-24 pb-8"><router-outlet _ngcontent-roc-c18=""></router-outlet><app-blog _nghost-roc-c27=""><app-meta _ngcontent-roc-c27="" _nghost-roc-c24="" ng-reflect-title="JS地下城：5F-全台空氣指標儀表板" ng-reflect-route="/JSBOSS/5f" ng-reflect-tags="css,javascript,JS地下城,cors" ng-reflect-twitter-image="/JSBOSS/5f" ng-reflect-og-image="/JSBOSS/5f"><p _ngcontent-roc-c24="">meta works!</p></app-meta><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}-->
+
+  
+
+
+<article _ngcontent-roc-c27="" class="p-4 max-w-screen-xl mx-auto">
+  <div _ngcontent-roc-c27="" class="max-w-container space-y-4">
+    <header _ngcontent-roc-c27="" class="space-y-4">
+      
+      <div _ngcontent-roc-c27="" class="prose max-w-none md:prose-lgspace-y-1">
+        <dl _ngcontent-roc-c27="">
+          <div _ngcontent-roc-c27="">
+            <dt _ngcontent-roc-c27="" class="sr-only">Published at</dt>
+            <dd _ngcontent-roc-c27="" class="text-base leading-6 font-medium text-color-light">
+              <time _ngcontent-roc-c27="" datetime="undefined">
+                
+              </time>
+            </dd>
+          </div>
+        </dl>
+
+        <h1 _ngcontent-roc-c27="">
+          JS地下城：5F-全台空氣指標儀表板
+        </h1>
+        
+      </div>
+    </header>
+    <div _ngcontent-roc-c27="" class="grid grid-cols-1 md:grid-cols-3 md:gap-x-4 lg:grid-cols-4 lg:gap-x-6">
+      <div _ngcontent-roc-c27="" class="prose prose-toc max-w-none md:prose-lg md:col-span-2 lg:col-span-3">
+        <!--scullyContent-begin--><img src="assets/images/JSBOSS/5f/cover.png" width="100%" _ngcontent-roc-c27="">
+
+<h1 id="規則" _ngcontent-roc-c27="">規則</h1>
+<ul _ngcontent-roc-c27="">
+<li _ngcontent-roc-c27="">【特定技術】必須使用 AJAX 技術串接資料 API，不可直些寫死資料在變數上。</li>
+<li _ngcontent-roc-c27="">【特定技術】上方切換城市(高雄、台北)後，下方會切換該城市的各地區</li>
+</ul>
+<hr _ngcontent-roc-c27="">
+<p _ngcontent-roc-c27="">這次的關卡比較大的問題點就應該就是在 <code _ngcontent-roc-c27="">CORS</code> 的問題處理上畢竟要用前端處理公開 api
+這件事，本應由後經由後端處理，前端只要負責串接即可但因為安全考量，API 端如果沒有
+開啟 CORS 的話，就變成只能看得到吃不到 RRRRR</p>
+<p _ngcontent-roc-c27="">選用 vue 來處理這次關卡</p>
+<p _ngcontent-roc-c27=""><a href="https://mtwmt.github.io/jsboss/public/5f/" _ngcontent-roc-c27="">demo 頁</a>
+<a href="https://github.com/mtwmt/jsboss/tree/master/sourse/5f" _ngcontent-roc-c27="">sourse code</a></p>
+<hr _ngcontent-roc-c27="">
+<h1 id="將-api-資料撈出來" _ngcontent-roc-c27="">將 api 資料撈出來</h1>
+<p _ngcontent-roc-c27="">因為先前在寫另一個 ubike 練習時就遇過<code _ngcontent-roc-c27="">CORS</code>這問題了，當時花了近一天的時間才找到
+答案可參考
+<a href="https://mtwmt.github.io/api_cors_error/" _ngcontent-roc-c27="">利用 google apps script 做中繼點跨網域遠端取得 api 資料</a>
+這篇文章</p>
+<p _ngcontent-roc-c27="">所以次非常快速的就處理掉這個問題 XDDD</p>
+<h1 id="切換區域" _ngcontent-roc-c27="">切換區域</h1>
+<p _ngcontent-roc-c27="">我這裡的處理方式 就是先將 API 的縣市 用 filter 篩選出來 將他放到下拉式選單裡做選
+取值選到對應的縣市後 再列出縣市區域下去做篩選 做出頁面上的互動效果</p>
+<h1 id="底層-xmlhttprequest、fetch-api-的差異" _ngcontent-roc-c27="">底層 XMLHttpRequest、Fetch API 的差異</h1>
+<p _ngcontent-roc-c27="">簡單來說 <code _ngcontent-roc-c27="">Fetch</code> 的出現，補足了 <code _ngcontent-roc-c27="">XMLHttpRequest</code> 的缺陷這篇文章寫的還蠻清楚
+<a href="https://www.ithome.com.tw/voice/121435" _ngcontent-roc-c27="">從 XHR 到 Fetch</a></p>
+<h4 id="xmlhttprequest-請求方式" _ngcontent-roc-c27="">XMLHttpRequest 請求方式</h4>
+<pre class="language-javascript" _ngcontent-roc-c27=""><code class="language-javascript" _ngcontent-roc-c27=""><span class="token keyword" _ngcontent-roc-c27="">var</span> xhr <span class="token operator" _ngcontent-roc-c27="">=</span> <span class="token keyword" _ngcontent-roc-c27="">new</span> <span class="token class-name" _ngcontent-roc-c27="">XMLHttpRequest</span><span class="token punctuation" _ngcontent-roc-c27="">(</span><span class="token punctuation" _ngcontent-roc-c27="">)</span><span class="token punctuation" _ngcontent-roc-c27="">;</span>
+xhr<span class="token punctuation" _ngcontent-roc-c27="">.</span><span class="token function" _ngcontent-roc-c27="">open</span><span class="token punctuation" _ngcontent-roc-c27="">(</span><span class="token string" _ngcontent-roc-c27="">'GET'</span><span class="token punctuation" _ngcontent-roc-c27="">,</span> url<span class="token punctuation" _ngcontent-roc-c27="">)</span><span class="token punctuation" _ngcontent-roc-c27="">;</span>
+xhr<span class="token punctuation" _ngcontent-roc-c27="">.</span>responseType <span class="token operator" _ngcontent-roc-c27="">=</span> <span class="token string" _ngcontent-roc-c27="">'json'</span><span class="token punctuation" _ngcontent-roc-c27="">;</span>
+xhr<span class="token punctuation" _ngcontent-roc-c27="">.</span><span class="token function-variable function" _ngcontent-roc-c27="">onload</span> <span class="token operator" _ngcontent-roc-c27="">=</span> <span class="token keyword" _ngcontent-roc-c27="">function</span> <span class="token punctuation" _ngcontent-roc-c27="">(</span><span class="token punctuation" _ngcontent-roc-c27="">)</span> <span class="token punctuation" _ngcontent-roc-c27="">{</span>
+  console<span class="token punctuation" _ngcontent-roc-c27="">.</span><span class="token function" _ngcontent-roc-c27="">log</span><span class="token punctuation" _ngcontent-roc-c27="">(</span>xhr<span class="token punctuation" _ngcontent-roc-c27="">.</span>response<span class="token punctuation" _ngcontent-roc-c27="">)</span><span class="token punctuation" _ngcontent-roc-c27="">;</span>
+<span class="token punctuation" _ngcontent-roc-c27="">}</span><span class="token punctuation" _ngcontent-roc-c27="">;</span>
+xhr<span class="token punctuation" _ngcontent-roc-c27="">.</span><span class="token function-variable function" _ngcontent-roc-c27="">onerror</span> <span class="token operator" _ngcontent-roc-c27="">=</span> <span class="token keyword" _ngcontent-roc-c27="">function</span> <span class="token punctuation" _ngcontent-roc-c27="">(</span><span class="token punctuation" _ngcontent-roc-c27="">)</span> <span class="token punctuation" _ngcontent-roc-c27="">{</span>
+  console<span class="token punctuation" _ngcontent-roc-c27="">.</span><span class="token function" _ngcontent-roc-c27="">log</span><span class="token punctuation" _ngcontent-roc-c27="">(</span><span class="token string" _ngcontent-roc-c27="">'error'</span><span class="token punctuation" _ngcontent-roc-c27="">)</span><span class="token punctuation" _ngcontent-roc-c27="">;</span>
+<span class="token punctuation" _ngcontent-roc-c27="">}</span><span class="token punctuation" _ngcontent-roc-c27="">;</span>
+xhr<span class="token punctuation" _ngcontent-roc-c27="">.</span><span class="token function" _ngcontent-roc-c27="">send</span><span class="token punctuation" _ngcontent-roc-c27="">(</span><span class="token punctuation" _ngcontent-roc-c27="">)</span><span class="token punctuation" _ngcontent-roc-c27="">;</span></code></pre><p _ngcontent-roc-c27="">更多介紹
+<a href="https://developer.mozilla.org/zh-TW/docs/Web/API/XMLHttpRequest" _ngcontent-roc-c27="">MDN-XMLHttpRequest</a></p>
+<h4 id="fetch-請求方式" _ngcontent-roc-c27="">fetch 請求方式</h4>
+<pre class="language-javascript" _ngcontent-roc-c27=""><code class="language-javascript" _ngcontent-roc-c27=""><span class="token function" _ngcontent-roc-c27="">fetch</span><span class="token punctuation" _ngcontent-roc-c27="">(</span>url<span class="token punctuation" _ngcontent-roc-c27="">)</span>
+  <span class="token punctuation" _ngcontent-roc-c27="">.</span><span class="token function" _ngcontent-roc-c27="">then</span><span class="token punctuation" _ngcontent-roc-c27="">(</span><span class="token parameter" _ngcontent-roc-c27="">response</span> <span class="token operator" _ngcontent-roc-c27="">=&gt;</span> response<span class="token punctuation" _ngcontent-roc-c27="">.</span><span class="token function" _ngcontent-roc-c27="">json</span><span class="token punctuation" _ngcontent-roc-c27="">(</span><span class="token punctuation" _ngcontent-roc-c27="">)</span><span class="token punctuation" _ngcontent-roc-c27="">)</span>
+  <span class="token punctuation" _ngcontent-roc-c27="">.</span><span class="token function" _ngcontent-roc-c27="">then</span><span class="token punctuation" _ngcontent-roc-c27="">(</span><span class="token parameter" _ngcontent-roc-c27="">data</span> <span class="token operator" _ngcontent-roc-c27="">=&gt;</span> console<span class="token punctuation" _ngcontent-roc-c27="">.</span><span class="token function" _ngcontent-roc-c27="">log</span><span class="token punctuation" _ngcontent-roc-c27="">(</span>data<span class="token punctuation" _ngcontent-roc-c27="">)</span><span class="token punctuation" _ngcontent-roc-c27="">)</span>
+  <span class="token punctuation" _ngcontent-roc-c27="">.</span><span class="token function" _ngcontent-roc-c27="">catch</span><span class="token punctuation" _ngcontent-roc-c27="">(</span><span class="token parameter" _ngcontent-roc-c27="">e</span> <span class="token operator" _ngcontent-roc-c27="">=&gt;</span> console<span class="token punctuation" _ngcontent-roc-c27="">.</span><span class="token function" _ngcontent-roc-c27="">log</span><span class="token punctuation" _ngcontent-roc-c27="">(</span><span class="token string" _ngcontent-roc-c27="">'error'</span><span class="token punctuation" _ngcontent-roc-c27="">,</span> e<span class="token punctuation" _ngcontent-roc-c27="">)</span><span class="token punctuation" _ngcontent-roc-c27="">)</span><span class="token punctuation" _ngcontent-roc-c27="">;</span></code></pre><p _ngcontent-roc-c27="">更多介紹
+<a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch" _ngcontent-roc-c27="">MDN-Using Fetch</a></p>
+<hr _ngcontent-roc-c27="">
+<p _ngcontent-roc-c27="">這次選用了 <code _ngcontent-roc-c27="">axios</code> 來處理 api 也是 Vue 官方推薦的 ajax 套件
+<a href="https://github.com/axios/axios" _ngcontent-roc-c27="">axios github</a>
+<a href="https://www.kancloud.cn/yunye/axios/234845" _ngcontent-roc-c27="">axios 中文文檔</a></p>
+<p _ngcontent-roc-c27="">處理的過程大致上就是這樣囉，如有任何問題歡迎留言給我 也請各位多多請教！！</p>
+<!--scullyContent-end--><scully-content _ngcontent-roc-c27=""></scully-content>
+      <script>try {window['scullyContent'] = {cssId:"_ngcontent-roc-c27",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+      <div _ngcontent-roc-c27="" class="order-first md:order-none">
+        <div _ngcontent-roc-c27="" class="sticky top-32 space-y-4">
+          <app-blog-nav _ngcontent-roc-c27="" _nghost-roc-c26="" class="block"><ul _ngcontent-roc-c26=""><h2 _ngcontent-roc-c26="" class="text-xl font-semibold">目錄</h2><li _ngcontent-roc-c26="" class="cursor-pointer"><a _ngcontent-roc-c26="" class="text-base"> Top of Page </a><!--bindings={
+  "ng-reflect-ng-if": "/JSBOSS/5f"
+}--></li><li _ngcontent-roc-c26="" class="cursor-pointer"><a _ngcontent-roc-c26="" ng-reflect-ng-class="text-sm," class="text-sm"> XMLHttpRequest 請求方式 </a><!--bindings={
+  "ng-reflect-ng-if": "/JSBOSS/5f"
+}--></li><li _ngcontent-roc-c26="" class="cursor-pointer"><a _ngcontent-roc-c26="" ng-reflect-ng-class="text-sm," class="text-sm"> fetch 請求方式 </a><!--bindings={
+  "ng-reflect-ng-if": "/JSBOSS/5f"
+}--></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object HTMLHeadingElement],[o"
+}--></ul></app-blog-nav>
+          <div _ngcontent-roc-c27="">
+            <h2 _ngcontent-roc-c27="" class="text-xl font-semibold">主題</h2>
+            
+              
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}-->
+</app-blog><!--container--></div></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule="" defer=""></script><script src="polyfills-es5.js" nomodule="" defer=""></script><script src="polyfills-es2015.js" type="module"></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule="" defer=""></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule="" defer=""></script>
+
+</body></html>

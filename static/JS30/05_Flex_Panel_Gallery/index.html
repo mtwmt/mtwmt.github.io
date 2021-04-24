@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <title>JS30：05_Flex Panel Gallery</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149155162-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149155162-1');
+    </script>
+  <link rel="stylesheet" href="styles.css"><style>.social[_ngcontent-nhx-c18]   li[_ngcontent-nhx-c18] {
+  display: inline-block;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcYXBwLmNvbXBvbmVudC5zY3NzIiwiLi4vLi4vbm9kZV9tb2R1bGVzL3RhaWx3aW5kY3NzL2xpYi9saWIvc3Vic3RpdHV0ZUNsYXNzQXBwbHlBdFJ1bGVzLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdFO0VDREYscUJBQW1CO0FEQW5CIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5cclxuLnNvY2lhbCB7XHJcbiAgbGkge1xyXG4gICAgQGFwcGx5IGlubGluZS1ibG9jaztcclxuICB9XHJcbn1cclxuIiwiQHRhaWx3aW5kIGJhc2U7XG5AdGFpbHdpbmQgY29tcG9uZW50cztcbkB0YWlsd2luZCB1dGlsaXRpZXM7Il19 */</style><script charset="utf-8" src="blog-blog-module-es2015.js"></script><script charset="utf-8" src="home-home-module-es2015.js"></script><style>.prose[_ngcontent-nhx-c27] {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important;
+}
+
+.prose[_ngcontent-nhx-c27]   h1[_ngcontent-nhx-c27] {
+  font-family: Dosis, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.prose[_ngcontent-nhx-c27]   h2[_ngcontent-nhx-c27] {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+}
+
+.prose[_ngcontent-nhx-c27]   h3[_ngcontent-nhx-c27] {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.prose[_ngcontent-nhx-c27]   p[_ngcontent-nhx-c27] {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose[_ngcontent-nhx-c27]   pre[_ngcontent-nhx-c27] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose[_ngcontent-nhx-c27]   img[_ngcontent-nhx-c27] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose[_ngcontent-nhx-c27]   hr[_ngcontent-nhx-c27] {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+[_nghost-nhx-c27]   .toolbar-item[_ngcontent-nhx-c27] {
+  position: relative;
+  background: #159;
+}
+
+[_nghost-nhx-c27]   .toolbar-item[_ngcontent-nhx-c27]   .toolbar[_ngcontent-nhx-c27] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGJsb2cuY29tcG9uZW50LnNjc3MiLCIuLi8uLi8uLi9ub2RlX21vZHVsZXMvdGFpbHdpbmRjc3MvbGliL2xpYi9zdWJzdGl0dXRlQ2xhc3NBcHBseUF0UnVsZXMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUNFQSxlQUFtQjtFQUFuQixtQkFBbUI7RURBakIsZ01BQUE7QUFDRjs7QUFHRTtFQ0pGLG1PQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsbUJBQW1CO0FESW5COztBQUlFO0VDUkYsZ0JBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixpQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGtCQUFtQjtBRE9uQjs7QUFLRTtFQ1pGLGdCQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsb0JBQW1CO0VBQW5CLHFCQUFtQjtFQUFuQixnQkFBbUI7QURVbkI7O0FBTUU7RUNoQkYsa0JBQW1CO0VBQW5CLHFCQUFtQjtBRGFuQjs7QUFPRTtFQ3BCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0FEZ0JuQjs7QUFRRTtFQ3hCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixrQkFBbUI7QURtQm5COztBQVNFO0VDNUJGLGdCQUFtQjtFQUFuQixtQkFBbUI7QURzQm5COztBQVlFO0VBQ0Usa0JBQUE7RUFDQSxnQkFBQTtBQVRKOztBQVVJO0VBQ0Usa0JBQUE7RUFDQSxNQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7QUFSTiIsImZpbGUiOiJibG9nLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb3NlIHtcclxuICBAYXBwbHkgdGV4dC1iYXNlO1xyXG4gIGZvbnQtZmFtaWx5OiAnUGluZ0ZhbmdTQy1SZWd1bGFyJywgSGVsdmV0aWNhLCAnSGVsdmV0aWNhIE5ldWUnLCAnU2Vnb2UgVUknLFxyXG4gICAgJ0hpcmFnaW5vIFNhbnMgR0InLCAnU291cmNlIEhhbiBTYW5zIENOJywgJ01pY3Jvc29mdCBZYUhlaScsICdTVEhlaXRpJyxcclxuICAgICdXZW5RdWFuWWkgTWljcm8gSGVpJywgc2Fucy1zZXJpZiAhaW1wb3J0YW50O1xyXG5cclxuICBoMSB7XHJcbiAgICBAYXBwbHkgdGV4dC00eGwgZm9udC1zYW5zO1xyXG4gIH1cclxuXHJcbiAgaDIge1xyXG4gICAgQGFwcGx5IG10LTEwIG1iLTQgdGV4dC0yeGwgZm9udC1ib2xkO1xyXG4gIH1cclxuXHJcbiAgaDMge1xyXG4gICAgQGFwcGx5IG10LTQgbWItMiB0ZXh0LXhsIGZvbnQtYm9sZDtcclxuICB9XHJcblxyXG4gIHAge1xyXG4gICAgQGFwcGx5IG15LTI7XHJcbiAgfVxyXG5cclxuICBwcmUge1xyXG4gICAgQGFwcGx5IG15LTQ7XHJcbiAgfVxyXG5cclxuICBpbWcge1xyXG4gICAgQGFwcGx5IG15LTQgbXgtYXV0bztcclxuICB9XHJcblxyXG4gIGhyIHtcclxuICAgIEBhcHBseSBteS04O1xyXG4gIH1cclxufVxyXG5cclxuOmhvc3Qge1xyXG4gIC50b29sYmFyLWl0ZW0ge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgYmFja2dyb3VuZDogIzE1OTtcclxuICAgIC50b29sYmFyIHtcclxuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICB0b3A6IDA7XHJcbiAgICAgIHJpZ2h0OiAwO1xyXG4gICAgICBjb2xvcjogI2ZmZjtcclxuICAgIH1cclxuICB9XHJcbn1cclxuXHJcbi8vIDo6c2xvdHRlZChoMSkge1xyXG4vLyAgIGNvbG9yOiByZ2IoNTEsIDYsIDM3KTtcclxuLy8gICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQ4LCAyMTEsIDIzNik7XHJcbi8vICAgcGFkZGluZzogNXB4O1xyXG4vLyAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuLy8gICB3aWR0aDogZml0LWNvbnRlbnQ7XHJcbi8vIH1cclxuXHJcbi8vIC5saW5lIHtcclxuLy8gICBoZWlnaHQ6IDFweDtcclxuLy8gICB3aWR0aDogMTAwJTtcclxuLy8gICBtYXJnaW4tdG9wOiAxMnB4O1xyXG4vLyAgIEBhcHBseSBiZy1ncmF5LTkwMDtcclxuLy8gfVxyXG5cclxuLy8gYXBwLWJsb2ctbmF2IHtcclxuLy8gICB0b3A6IDExMnB4O1xyXG4vLyB9XHJcbiIsIkB0YWlsd2luZCBiYXNlO1xuQHRhaWx3aW5kIGNvbXBvbmVudHM7XG5AdGFpbHdpbmQgdXRpbGl0aWVzOyJdfQ== */</style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtZXRhLmNvbXBvbmVudC5zY3NzIn0= */</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJibG9nLW5hdi5jb21wb25lbnQuc2NzcyJ9 */</style><meta name="description" content="JS30：05_Flex Panel Gallery"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, JavaScript, JavaScript 30 天, flex"><meta property="og:title" content="JS30：05_Flex Panel Gallery"><meta property="og:description" content="JS30：05_Flex Panel Gallery"><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.github.io/JS30/05_Flex_Panel_Gallery"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="JS30：05_Flex Panel Gallery"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="en_US"><script>window['ScullyIO']='generated';</script></head>
+  <body class="theme-light" scully-version="1.1.1">
+    <app-root _nghost-nhx-c18="" ng-version="11.2.11"><header _ngcontent-nhx-c18="" class="fixed z-999 top-0 left-0 flex justify-between items-center w-full bg-secondary p-4 border-b-4 border-solid border-primary"><h1 _ngcontent-nhx-c18="" class="text-2xl font-semibold"><a _ngcontent-nhx-c18="" routerlink="/" class="text-primary" ng-reflect-router-link="/" href="/">Mandy's <span _ngcontent-nhx-c18="" class="display-inlinie font-light text-text">Web</span></a></h1><nav _ngcontent-nhx-c18="" class="social"><ul _ngcontent-nhx-c18=""><li _ngcontent-nhx-c18=""><a _ngcontent-nhx-c18="" class="btn" ng-reflect-router-link="/" href="/">Blog</a></li><li _ngcontent-nhx-c18=""><a _ngcontent-nhx-c18="" class="btn" ng-reflect-router-link="/website" href="/website">Portfolio</a></li><li _ngcontent-nhx-c18=""><a _ngcontent-nhx-c18="" href="//github.com/mtwmt" target="_blank" class="btn">GitHub</a></li></ul></nav></header><div _ngcontent-nhx-c18="" class="container mx-auto pt-24 pb-8"><router-outlet _ngcontent-nhx-c18=""></router-outlet><app-blog _nghost-nhx-c27=""><app-meta _ngcontent-nhx-c27="" _nghost-nhx-c24="" ng-reflect-title="JS30：05_Flex Panel Gallery" ng-reflect-route="/JS30/05_Flex_Panel_Gallery" ng-reflect-tags="JavaScript,JavaScript 30 天,fle" ng-reflect-twitter-image="/JS30/05_Flex_Panel_Gallery" ng-reflect-og-image="/JS30/05_Flex_Panel_Gallery"><p _ngcontent-nhx-c24="">meta works!</p></app-meta><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}-->
+
+  
+
+
+<article _ngcontent-nhx-c27="" class="p-4 max-w-screen-xl mx-auto">
+  <div _ngcontent-nhx-c27="" class="max-w-container space-y-4">
+    <header _ngcontent-nhx-c27="" class="space-y-4">
+      
+      <div _ngcontent-nhx-c27="" class="prose max-w-none md:prose-lgspace-y-1">
+        <dl _ngcontent-nhx-c27="">
+          <div _ngcontent-nhx-c27="">
+            <dt _ngcontent-nhx-c27="" class="sr-only">Published at</dt>
+            <dd _ngcontent-nhx-c27="" class="text-base leading-6 font-medium text-color-light">
+              <time _ngcontent-nhx-c27="" datetime="undefined">
+                
+              </time>
+            </dd>
+          </div>
+        </dl>
+
+        <h1 _ngcontent-nhx-c27="">
+          JS30：05_Flex Panel Gallery
+        </h1>
+        
+      </div>
+    </header>
+    <div _ngcontent-nhx-c27="" class="grid grid-cols-1 md:grid-cols-3 md:gap-x-4 lg:grid-cols-4 lg:gap-x-6">
+      <div _ngcontent-nhx-c27="" class="prose prose-toc max-w-none md:prose-lg md:col-span-2 lg:col-span-3">
+        <!--scullyContent-begin--><h1 id="flex-panel-gallery" _ngcontent-nhx-c27="">Flex Panel Gallery</h1>
+<p _ngcontent-nhx-c27="">這次要來做的 點擊圖片後 動畫展開的效果</p>
+<h2 id="摘要" _ngcontent-nhx-c27="">摘要</h2>
+<ul _ngcontent-nhx-c27="">
+<li _ngcontent-nhx-c27="">了解 flex 裡的空間分配</li>
+<li _ngcontent-nhx-c27="">了解 js 的 toggle 與 includes 事件</li>
+</ul>
+<h2 id="css" _ngcontent-nhx-c27="">CSS</h2>
+<h4 id="了解-flex-裡的空間分配-對容器裡的物件做分配" _ngcontent-nhx-c27="">了解 flex 裡的空間分配 (對容器裡的物件做分配</h4>
+<p _ngcontent-nhx-c27=""><code _ngcontent-nhx-c27="">flex-grow</code> 剩餘空間分配比例
+<code _ngcontent-nhx-c27="">flex-shirk</code> 壓縮比例
+<code _ngcontent-nhx-c27="">flex-basis</code> 預約剩餘空間</p>
+<p _ngcontent-nhx-c27="">三個值的縮寫為</p>
+<pre _ngcontent-nhx-c27=""><code _ngcontent-nhx-c27="">flex<span class="token operator" _ngcontent-nhx-c27="">:</span> flex<span class="token operator" _ngcontent-nhx-c27="">-</span>grow flex<span class="token operator" _ngcontent-nhx-c27="">-</span>shirk flex<span class="token operator" _ngcontent-nhx-c27="">-</span>basis</code></pre><p _ngcontent-nhx-c27="">若是 flex 只有一個值的話 則是</p>
+<pre _ngcontent-nhx-c27=""><code _ngcontent-nhx-c27="">flex<span class="token operator" _ngcontent-nhx-c27="">:</span> flex<span class="token operator" _ngcontent-nhx-c27="">-</span>grow</code></pre><p _ngcontent-nhx-c27="">可參考以下資料 這裡就不多做說明了 XD：
+<a href="http://zhoon.github.io/css3/2014/08/23/flex.html" _ngcontent-nhx-c27="">深入理解 css3 中的 flex-grow、flex-shrink、flex-basis</a></p>
+<p _ngcontent-nhx-c27=""><a href="https://www.oxxostudio.tw/articles/201501/css-flexbox.html" _ngcontent-nhx-c27="">深入解析 CSS Flexbox</a></p>
+<p _ngcontent-nhx-c27=""><a href="https://darekkay.com/dev/flexbox-cheatsheet.html" _ngcontent-nhx-c27="">FLEX 速查小抄</a></p>
+<ul _ngcontent-nhx-c27="">
+<li _ngcontent-nhx-c27="">FLEX IE9 以下不支援，若要支援 IE9 以下的瀏覽器 只好乖乖回去使用<code _ngcontent-nhx-c27="">float</code>排版囉</li>
+</ul>
+<p _ngcontent-nhx-c27="">css 瀏覽器支援度 可查照 <a href="https://caniuse.com/" _ngcontent-nhx-c27="">Can I use</a></p>
+<hr _ngcontent-nhx-c27="">
+<h3 id="js" _ngcontent-nhx-c27="">JS</h3>
+<pre class="language-javascript" _ngcontent-nhx-c27=""><code class="language-javascript" _ngcontent-nhx-c27=""><span class="token comment" _ngcontent-nhx-c27="">// 先將panels宣告</span>
+<span class="token keyword" _ngcontent-nhx-c27="">const</span> panels <span class="token operator" _ngcontent-nhx-c27="">=</span> document<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">querySelectorAll</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'.panel'</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+
+<span class="token comment" _ngcontent-nhx-c27="">// 寫一個open切換的function</span>
+<span class="token keyword" _ngcontent-nhx-c27="">function</span> <span class="token function" _ngcontent-nhx-c27="">toggleOpen</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token parameter" _ngcontent-nhx-c27="">e</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span> <span class="token punctuation" _ngcontent-nhx-c27="">{</span>
+  <span class="token keyword" _ngcontent-nhx-c27="">this</span><span class="token punctuation" _ngcontent-nhx-c27="">.</span>classList<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">toggle</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'open'</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+<span class="token punctuation" _ngcontent-nhx-c27="">}</span>
+
+<span class="token comment" _ngcontent-nhx-c27="">// 尋找panels下所有的div</span>
+panels<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">forEach</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token keyword" _ngcontent-nhx-c27="">function</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token parameter" _ngcontent-nhx-c27="">panel</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span> <span class="token punctuation" _ngcontent-nhx-c27="">{</span>
+  <span class="token comment" _ngcontent-nhx-c27="">// 將toggleOpen的function提出來寫的一種方式，適合重復使用</span>
+  panel<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">addEventListener</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'click'</span><span class="token punctuation" _ngcontent-nhx-c27="">,</span> toggleOpen<span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+
+  <span class="token comment" _ngcontent-nhx-c27="">// 直譯式</span>
+  panel<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">addEventListener</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'transitionend'</span><span class="token punctuation" _ngcontent-nhx-c27="">,</span> <span class="token keyword" _ngcontent-nhx-c27="">function</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token parameter" _ngcontent-nhx-c27="">e</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span> <span class="token punctuation" _ngcontent-nhx-c27="">{</span>
+    <span class="token keyword" _ngcontent-nhx-c27="">if</span> <span class="token punctuation" _ngcontent-nhx-c27="">(</span>e<span class="token punctuation" _ngcontent-nhx-c27="">.</span>propertyName<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">includes</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'flex'</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span> <span class="token punctuation" _ngcontent-nhx-c27="">{</span>
+      <span class="token keyword" _ngcontent-nhx-c27="">this</span><span class="token punctuation" _ngcontent-nhx-c27="">.</span>classList<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">toggle</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'open-active'</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+      console<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">log</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span>e<span class="token punctuation" _ngcontent-nhx-c27="">.</span>propertyName<span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+    <span class="token punctuation" _ngcontent-nhx-c27="">}</span>
+  <span class="token punctuation" _ngcontent-nhx-c27="">}</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+<span class="token punctuation" _ngcontent-nhx-c27="">}</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span></code></pre><p _ngcontent-nhx-c27="">值得一提的是 <code _ngcontent-nhx-c27="">NodeList</code>有內建 forEach 功能
+小嫩嫩如我 這在之前 以為 <code _ngcontent-nhx-c27="">NodeList</code>(註 1)是個陣列，想說試著使用 map 等其他事件跑跑看，都出現錯誤
+若要使用 map 等其他事件時 需將 NodeList 轉為陣列 才能執行</p>
+<p _ngcontent-nhx-c27="">原</p>
+<pre class="language-javascript" _ngcontent-nhx-c27=""><code class="language-javascript" _ngcontent-nhx-c27=""><span class="token keyword" _ngcontent-nhx-c27="">const</span> panels <span class="token operator" _ngcontent-nhx-c27="">=</span> document<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">querySelectorAll</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'.panel'</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+panels<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">forEach</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token keyword" _ngcontent-nhx-c27="">function</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token parameter" _ngcontent-nhx-c27="">panel</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span> <span class="token punctuation" _ngcontent-nhx-c27="">{</span>
+  console<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">log</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span>panel<span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+<span class="token punctuation" _ngcontent-nhx-c27="">}</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span></code></pre><p _ngcontent-nhx-c27="">若要使用其他陣列事件的話 就該這麼做</p>
+<pre class="language-javascript" _ngcontent-nhx-c27=""><code class="language-javascript" _ngcontent-nhx-c27=""><span class="token keyword" _ngcontent-nhx-c27="">const</span> panels <span class="token operator" _ngcontent-nhx-c27="">=</span> document<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">querySelectorAll</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'.panel'</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+<span class="token keyword" _ngcontent-nhx-c27="">const</span> panelsToArray <span class="token operator" _ngcontent-nhx-c27="">=</span> <span class="token function" _ngcontent-nhx-c27="">Array</span><span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">apply</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token keyword" _ngcontent-nhx-c27="">null</span><span class="token punctuation" _ngcontent-nhx-c27="">,</span> panels<span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+panelsToArray<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">map</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token keyword" _ngcontent-nhx-c27="">function</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token parameter" _ngcontent-nhx-c27="">panel</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span> <span class="token punctuation" _ngcontent-nhx-c27="">{</span>
+  console<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">log</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span>panel<span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+<span class="token punctuation" _ngcontent-nhx-c27="">}</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+
+<span class="token comment" _ngcontent-nhx-c27="">// panelsToArray.map(...);</span>
+<span class="token comment" _ngcontent-nhx-c27="">// panelsToArray.slice(...);</span></code></pre><p _ngcontent-nhx-c27="">註 1：<a href="https://developer.mozilla.org/zh-TW/docs/Web/API/NodeList" _ngcontent-nhx-c27="">NodeList</a></p>
+<p _ngcontent-nhx-c27=""><a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach" _ngcontent-nhx-c27="">NodeList.prototype.forEach()</a></p>
+<p _ngcontent-nhx-c27=""><a href="http://www.jstips.co/zh_tw/javascript/3-array-hacks/" _ngcontent-nhx-c27="">使用 Array 的三個技巧</a></p>
+<p _ngcontent-nhx-c27=""><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Element/classList" _ngcontent-nhx-c27="">Element.classList</a></p>
+<p _ngcontent-nhx-c27=""><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/includes" _ngcontent-nhx-c27="">Array.prototype.includes()</a></p>
+<p _ngcontent-nhx-c27=""><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/contains" _ngcontent-nhx-c27="">https://developer.mozilla.org/zh-CN/docs/Web/API/Node/contains</a></p>
+<h2 id="後記" _ngcontent-nhx-c27="">後記</h2>
+<p _ngcontent-nhx-c27="">作者的範例 開打後 要再點一次才能縮回來
+我試著改寫為 打開後 再點另一個圖 之前所打開的會自動縮回</p>
+<p _ngcontent-nhx-c27="">程式碼如下</p>
+<pre class="language-javascript" _ngcontent-nhx-c27=""><code class="language-javascript" _ngcontent-nhx-c27=""><span class="token keyword" _ngcontent-nhx-c27="">const</span> panels <span class="token operator" _ngcontent-nhx-c27="">=</span> document<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">querySelectorAll</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'.panel'</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+
+<span class="token keyword" _ngcontent-nhx-c27="">function</span> <span class="token function" _ngcontent-nhx-c27="">toggleOpen</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token parameter" _ngcontent-nhx-c27="">e</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span> <span class="token punctuation" _ngcontent-nhx-c27="">{</span>
+  panels<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">forEach</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token keyword" _ngcontent-nhx-c27="">function</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token parameter" _ngcontent-nhx-c27="">el</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span> <span class="token punctuation" _ngcontent-nhx-c27="">{</span>
+    <span class="token keyword" _ngcontent-nhx-c27="">if</span> <span class="token punctuation" _ngcontent-nhx-c27="">(</span>el<span class="token punctuation" _ngcontent-nhx-c27="">.</span>classList<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">contains</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'open'</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span> <span class="token punctuation" _ngcontent-nhx-c27="">{</span>
+      el<span class="token punctuation" _ngcontent-nhx-c27="">.</span>classList<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">remove</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'open'</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+    <span class="token punctuation" _ngcontent-nhx-c27="">}</span>
+  <span class="token punctuation" _ngcontent-nhx-c27="">}</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+  <span class="token keyword" _ngcontent-nhx-c27="">this</span><span class="token punctuation" _ngcontent-nhx-c27="">.</span>classList<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">add</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'open'</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+<span class="token punctuation" _ngcontent-nhx-c27="">}</span>
+
+panels<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">forEach</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token keyword" _ngcontent-nhx-c27="">function</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token parameter" _ngcontent-nhx-c27="">panel</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span> <span class="token punctuation" _ngcontent-nhx-c27="">{</span>
+  panel<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">addEventListener</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'click'</span><span class="token punctuation" _ngcontent-nhx-c27="">,</span> toggleOpen<span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+  panel<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">addEventListener</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'transitionend'</span><span class="token punctuation" _ngcontent-nhx-c27="">,</span> <span class="token keyword" _ngcontent-nhx-c27="">function</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token parameter" _ngcontent-nhx-c27="">e</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span> <span class="token punctuation" _ngcontent-nhx-c27="">{</span>
+    <span class="token keyword" _ngcontent-nhx-c27="">if</span> <span class="token punctuation" _ngcontent-nhx-c27="">(</span>e<span class="token punctuation" _ngcontent-nhx-c27="">.</span>propertyName<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">includes</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'flex'</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span> <span class="token punctuation" _ngcontent-nhx-c27="">{</span>
+      <span class="token keyword" _ngcontent-nhx-c27="">this</span><span class="token punctuation" _ngcontent-nhx-c27="">.</span>classList<span class="token punctuation" _ngcontent-nhx-c27="">.</span><span class="token function" _ngcontent-nhx-c27="">toggle</span><span class="token punctuation" _ngcontent-nhx-c27="">(</span><span class="token string" _ngcontent-nhx-c27="">'open-active'</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+    <span class="token punctuation" _ngcontent-nhx-c27="">}</span>
+  <span class="token punctuation" _ngcontent-nhx-c27="">}</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span>
+<span class="token punctuation" _ngcontent-nhx-c27="">}</span><span class="token punctuation" _ngcontent-nhx-c27="">)</span><span class="token punctuation" _ngcontent-nhx-c27="">;</span></code></pre><p _ngcontent-nhx-c27="">此次課程雖多著重於 css 用法上，但 js 基礎不好的我 還是花了比較多時間在 js 的認識，也較了解 js 在 NodeList 上的執行方式</p>
+<p _ngcontent-nhx-c27=""><a href="https://www.youtube.com/watch?v=9eif30i26jg" _ngcontent-nhx-c27="">YOUTUBE 影片教學連結</a></p>
+<!--scullyContent-end--><scully-content _ngcontent-nhx-c27=""></scully-content>
+      <script>try {window['scullyContent'] = {cssId:"_ngcontent-nhx-c27",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+      <div _ngcontent-nhx-c27="" class="order-first md:order-none">
+        <div _ngcontent-nhx-c27="" class="sticky top-32 space-y-4">
+          <app-blog-nav _ngcontent-nhx-c27="" _nghost-nhx-c26="" class="block"><ul _ngcontent-nhx-c26=""><h2 _ngcontent-nhx-c26="" class="text-xl font-semibold">目錄</h2><li _ngcontent-nhx-c26="" class="cursor-pointer"><a _ngcontent-nhx-c26="" class="text-base"> Top of Page </a><!--bindings={
+  "ng-reflect-ng-if": "/JS30/05_Flex_Panel_Gallery"
+}--></li><li _ngcontent-nhx-c26="" class="cursor-pointer"><a _ngcontent-nhx-c26="" ng-reflect-ng-class="text-lg font-semibold," class="text-lg font-semibold"> 摘要 </a><!--bindings={
+  "ng-reflect-ng-if": "/JS30/05_Flex_Panel_Gallery"
+}--></li><li _ngcontent-nhx-c26="" class="cursor-pointer"><a _ngcontent-nhx-c26="" ng-reflect-ng-class="text-lg font-semibold," class="text-lg font-semibold"> CSS </a><!--bindings={
+  "ng-reflect-ng-if": "/JS30/05_Flex_Panel_Gallery"
+}--></li><li _ngcontent-nhx-c26="" class="cursor-pointer"><a _ngcontent-nhx-c26="" ng-reflect-ng-class="text-sm," class="text-sm"> 了解 flex 裡的空間分配 (對容器裡的物件做分配 </a><!--bindings={
+  "ng-reflect-ng-if": "/JS30/05_Flex_Panel_Gallery"
+}--></li><li _ngcontent-nhx-c26="" class="cursor-pointer"><a _ngcontent-nhx-c26="" ng-reflect-ng-class="text-base," class="text-base"> JS </a><!--bindings={
+  "ng-reflect-ng-if": "/JS30/05_Flex_Panel_Gallery"
+}--></li><li _ngcontent-nhx-c26="" class="cursor-pointer"><a _ngcontent-nhx-c26="" ng-reflect-ng-class="text-lg font-semibold," class="text-lg font-semibold"> 後記 </a><!--bindings={
+  "ng-reflect-ng-if": "/JS30/05_Flex_Panel_Gallery"
+}--></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object HTMLHeadingElement],[o"
+}--></ul></app-blog-nav>
+          <div _ngcontent-nhx-c27="">
+            <h2 _ngcontent-nhx-c27="" class="text-xl font-semibold">主題</h2>
+            
+              
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}-->
+</app-blog><!--container--></div></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule="" defer=""></script><script src="polyfills-es5.js" nomodule="" defer=""></script><script src="polyfills-es2015.js" type="module"></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule="" defer=""></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule="" defer=""></script>
+
+</body></html>

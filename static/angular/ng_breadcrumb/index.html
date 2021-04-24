@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <title>如何在 Angular9 建立 Breadcrumb (麵包屑)</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149155162-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149155162-1');
+    </script>
+  <link rel="stylesheet" href="styles.css"><style>.social[_ngcontent-opk-c18]   li[_ngcontent-opk-c18] {
+  display: inline-block;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcYXBwLmNvbXBvbmVudC5zY3NzIiwiLi4vLi4vbm9kZV9tb2R1bGVzL3RhaWx3aW5kY3NzL2xpYi9saWIvc3Vic3RpdHV0ZUNsYXNzQXBwbHlBdFJ1bGVzLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdFO0VDREYscUJBQW1CO0FEQW5CIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5cclxuLnNvY2lhbCB7XHJcbiAgbGkge1xyXG4gICAgQGFwcGx5IGlubGluZS1ibG9jaztcclxuICB9XHJcbn1cclxuIiwiQHRhaWx3aW5kIGJhc2U7XG5AdGFpbHdpbmQgY29tcG9uZW50cztcbkB0YWlsd2luZCB1dGlsaXRpZXM7Il19 */</style><script charset="utf-8" src="blog-blog-module-es2015.js"></script><script charset="utf-8" src="home-home-module-es2015.js"></script><style>.prose[_ngcontent-opk-c27] {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important;
+}
+
+.prose[_ngcontent-opk-c27]   h1[_ngcontent-opk-c27] {
+  font-family: Dosis, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.prose[_ngcontent-opk-c27]   h2[_ngcontent-opk-c27] {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+}
+
+.prose[_ngcontent-opk-c27]   h3[_ngcontent-opk-c27] {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.prose[_ngcontent-opk-c27]   p[_ngcontent-opk-c27] {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose[_ngcontent-opk-c27]   pre[_ngcontent-opk-c27] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose[_ngcontent-opk-c27]   img[_ngcontent-opk-c27] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose[_ngcontent-opk-c27]   hr[_ngcontent-opk-c27] {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+[_nghost-opk-c27]   .toolbar-item[_ngcontent-opk-c27] {
+  position: relative;
+  background: #159;
+}
+
+[_nghost-opk-c27]   .toolbar-item[_ngcontent-opk-c27]   .toolbar[_ngcontent-opk-c27] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGJsb2cuY29tcG9uZW50LnNjc3MiLCIuLi8uLi8uLi9ub2RlX21vZHVsZXMvdGFpbHdpbmRjc3MvbGliL2xpYi9zdWJzdGl0dXRlQ2xhc3NBcHBseUF0UnVsZXMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUNFQSxlQUFtQjtFQUFuQixtQkFBbUI7RURBakIsZ01BQUE7QUFDRjs7QUFHRTtFQ0pGLG1PQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsbUJBQW1CO0FESW5COztBQUlFO0VDUkYsZ0JBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixpQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGtCQUFtQjtBRE9uQjs7QUFLRTtFQ1pGLGdCQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsb0JBQW1CO0VBQW5CLHFCQUFtQjtFQUFuQixnQkFBbUI7QURVbkI7O0FBTUU7RUNoQkYsa0JBQW1CO0VBQW5CLHFCQUFtQjtBRGFuQjs7QUFPRTtFQ3BCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0FEZ0JuQjs7QUFRRTtFQ3hCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixrQkFBbUI7QURtQm5COztBQVNFO0VDNUJGLGdCQUFtQjtFQUFuQixtQkFBbUI7QURzQm5COztBQVlFO0VBQ0Usa0JBQUE7RUFDQSxnQkFBQTtBQVRKOztBQVVJO0VBQ0Usa0JBQUE7RUFDQSxNQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7QUFSTiIsImZpbGUiOiJibG9nLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb3NlIHtcclxuICBAYXBwbHkgdGV4dC1iYXNlO1xyXG4gIGZvbnQtZmFtaWx5OiAnUGluZ0ZhbmdTQy1SZWd1bGFyJywgSGVsdmV0aWNhLCAnSGVsdmV0aWNhIE5ldWUnLCAnU2Vnb2UgVUknLFxyXG4gICAgJ0hpcmFnaW5vIFNhbnMgR0InLCAnU291cmNlIEhhbiBTYW5zIENOJywgJ01pY3Jvc29mdCBZYUhlaScsICdTVEhlaXRpJyxcclxuICAgICdXZW5RdWFuWWkgTWljcm8gSGVpJywgc2Fucy1zZXJpZiAhaW1wb3J0YW50O1xyXG5cclxuICBoMSB7XHJcbiAgICBAYXBwbHkgdGV4dC00eGwgZm9udC1zYW5zO1xyXG4gIH1cclxuXHJcbiAgaDIge1xyXG4gICAgQGFwcGx5IG10LTEwIG1iLTQgdGV4dC0yeGwgZm9udC1ib2xkO1xyXG4gIH1cclxuXHJcbiAgaDMge1xyXG4gICAgQGFwcGx5IG10LTQgbWItMiB0ZXh0LXhsIGZvbnQtYm9sZDtcclxuICB9XHJcblxyXG4gIHAge1xyXG4gICAgQGFwcGx5IG15LTI7XHJcbiAgfVxyXG5cclxuICBwcmUge1xyXG4gICAgQGFwcGx5IG15LTQ7XHJcbiAgfVxyXG5cclxuICBpbWcge1xyXG4gICAgQGFwcGx5IG15LTQgbXgtYXV0bztcclxuICB9XHJcblxyXG4gIGhyIHtcclxuICAgIEBhcHBseSBteS04O1xyXG4gIH1cclxufVxyXG5cclxuOmhvc3Qge1xyXG4gIC50b29sYmFyLWl0ZW0ge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgYmFja2dyb3VuZDogIzE1OTtcclxuICAgIC50b29sYmFyIHtcclxuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICB0b3A6IDA7XHJcbiAgICAgIHJpZ2h0OiAwO1xyXG4gICAgICBjb2xvcjogI2ZmZjtcclxuICAgIH1cclxuICB9XHJcbn1cclxuXHJcbi8vIDo6c2xvdHRlZChoMSkge1xyXG4vLyAgIGNvbG9yOiByZ2IoNTEsIDYsIDM3KTtcclxuLy8gICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQ4LCAyMTEsIDIzNik7XHJcbi8vICAgcGFkZGluZzogNXB4O1xyXG4vLyAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuLy8gICB3aWR0aDogZml0LWNvbnRlbnQ7XHJcbi8vIH1cclxuXHJcbi8vIC5saW5lIHtcclxuLy8gICBoZWlnaHQ6IDFweDtcclxuLy8gICB3aWR0aDogMTAwJTtcclxuLy8gICBtYXJnaW4tdG9wOiAxMnB4O1xyXG4vLyAgIEBhcHBseSBiZy1ncmF5LTkwMDtcclxuLy8gfVxyXG5cclxuLy8gYXBwLWJsb2ctbmF2IHtcclxuLy8gICB0b3A6IDExMnB4O1xyXG4vLyB9XHJcbiIsIkB0YWlsd2luZCBiYXNlO1xuQHRhaWx3aW5kIGNvbXBvbmVudHM7XG5AdGFpbHdpbmQgdXRpbGl0aWVzOyJdfQ== */</style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtZXRhLmNvbXBvbmVudC5zY3NzIn0= */</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJibG9nLW5hdi5jb21wb25lbnQuc2NzcyJ9 */</style><meta name="description" content="如何在 Angular9 建立 Breadcrumb (麵包屑)"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, Angular"><meta property="og:title" content="如何在 Angular9 建立 Breadcrumb (麵包屑)"><meta property="og:description" content="如何在 Angular9 建立 Breadcrumb (麵包屑)"><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.github.io/angular/ng_breadcrumb"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="如何在 Angular9 建立 Breadcrumb (麵包屑)"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="en_US"><script>window['ScullyIO']='generated';</script></head>
+  <body class="theme-light" scully-version="1.1.1">
+    <app-root _nghost-opk-c18="" ng-version="11.2.11"><header _ngcontent-opk-c18="" class="fixed z-999 top-0 left-0 flex justify-between items-center w-full bg-secondary p-4 border-b-4 border-solid border-primary"><h1 _ngcontent-opk-c18="" class="text-2xl font-semibold"><a _ngcontent-opk-c18="" routerlink="/" class="text-primary" ng-reflect-router-link="/" href="/">Mandy's <span _ngcontent-opk-c18="" class="display-inlinie font-light text-text">Web</span></a></h1><nav _ngcontent-opk-c18="" class="social"><ul _ngcontent-opk-c18=""><li _ngcontent-opk-c18=""><a _ngcontent-opk-c18="" class="btn" ng-reflect-router-link="/" href="/">Blog</a></li><li _ngcontent-opk-c18=""><a _ngcontent-opk-c18="" class="btn" ng-reflect-router-link="/website" href="/website">Portfolio</a></li><li _ngcontent-opk-c18=""><a _ngcontent-opk-c18="" href="//github.com/mtwmt" target="_blank" class="btn">GitHub</a></li></ul></nav></header><div _ngcontent-opk-c18="" class="container mx-auto pt-24 pb-8"><router-outlet _ngcontent-opk-c18=""></router-outlet><app-blog _nghost-opk-c27=""><app-meta _ngcontent-opk-c27="" _nghost-opk-c24="" ng-reflect-title="如何在 Angular9 建立 Breadcrumb (麵包" ng-reflect-route="/angular/ng_breadcrumb" ng-reflect-tags="Angular" ng-reflect-twitter-image="/angular/ng_breadcrumb" ng-reflect-og-image="/angular/ng_breadcrumb"><p _ngcontent-opk-c24="">meta works!</p></app-meta><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}-->
+
+  
+
+
+<article _ngcontent-opk-c27="" class="p-4 max-w-screen-xl mx-auto">
+  <div _ngcontent-opk-c27="" class="max-w-container space-y-4">
+    <header _ngcontent-opk-c27="" class="space-y-4">
+      
+      <div _ngcontent-opk-c27="" class="prose max-w-none md:prose-lgspace-y-1">
+        <dl _ngcontent-opk-c27="">
+          <div _ngcontent-opk-c27="">
+            <dt _ngcontent-opk-c27="" class="sr-only">Published at</dt>
+            <dd _ngcontent-opk-c27="" class="text-base leading-6 font-medium text-color-light">
+              <time _ngcontent-opk-c27="" datetime="undefined">
+                
+              </time>
+            </dd>
+          </div>
+        </dl>
+
+        <h1 _ngcontent-opk-c27="">
+          如何在 Angular9 建立 Breadcrumb (麵包屑)
+        </h1>
+        
+      </div>
+    </header>
+    <div _ngcontent-opk-c27="" class="grid grid-cols-1 md:grid-cols-3 md:gap-x-4 lg:grid-cols-4 lg:gap-x-6">
+      <div _ngcontent-opk-c27="" class="prose prose-toc max-w-none md:prose-lg md:col-span-2 lg:col-span-3">
+        <!--scullyContent-begin--><p _ngcontent-opk-c27="">麵包屑 為提供網站裡的導航，讓使用者容易了解當下所在的位置</p>
+<blockquote _ngcontent-opk-c27="">
+<p _ngcontent-opk-c27=""><code _ngcontent-opk-c27="">現在位置：首頁 / 列表 / 內容</code></p>
+</blockquote>
+<h2 id="了解-router-架構" _ngcontent-opk-c27="">了解 router 架構</h2>
+<p _ngcontent-opk-c27="">Angular 裡的 router 架構 通常會命名為 <code _ngcontent-opk-c27="">app-routing.module.ts</code></p>
+<pre class="language-js" _ngcontent-opk-c27=""><code class="language-js" _ngcontent-opk-c27=""><span class="token keyword" _ngcontent-opk-c27="">const</span> routes<span class="token operator" _ngcontent-opk-c27="">:</span> Routes <span class="token operator" _ngcontent-opk-c27="">=</span> <span class="token punctuation" _ngcontent-opk-c27="">[</span>
+  <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+    path<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token string" _ngcontent-opk-c27="">''</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+    children<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token punctuation" _ngcontent-opk-c27="">[</span>
+      <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+        path<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token string" _ngcontent-opk-c27="">'about/:name'</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+        component<span class="token operator" _ngcontent-opk-c27="">:</span> AboutComponent<span class="token punctuation" _ngcontent-opk-c27="">,</span>
+        data<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+          breadcrumb<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token string" _ngcontent-opk-c27="">'關於'</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+        <span class="token punctuation" _ngcontent-opk-c27="">}</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+      <span class="token punctuation" _ngcontent-opk-c27="">}</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+      <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+        path<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token string" _ngcontent-opk-c27="">'list'</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+        component<span class="token operator" _ngcontent-opk-c27="">:</span> ListComponent<span class="token punctuation" _ngcontent-opk-c27="">,</span>
+        data<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+          breadcrumb<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token string" _ngcontent-opk-c27="">'列表'</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+        <span class="token punctuation" _ngcontent-opk-c27="">}</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+        children<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token punctuation" _ngcontent-opk-c27="">[</span>
+          <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+            path<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token string" _ngcontent-opk-c27="">'detail'</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+            component<span class="token operator" _ngcontent-opk-c27="">:</span> DetailComponent<span class="token punctuation" _ngcontent-opk-c27="">,</span>
+            data<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+              breadcrumb<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token string" _ngcontent-opk-c27="">'內容'</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+            <span class="token punctuation" _ngcontent-opk-c27="">}</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+          <span class="token punctuation" _ngcontent-opk-c27="">}</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+        <span class="token punctuation" _ngcontent-opk-c27="">]</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+      <span class="token punctuation" _ngcontent-opk-c27="">}</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+    <span class="token punctuation" _ngcontent-opk-c27="">]</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+  <span class="token punctuation" _ngcontent-opk-c27="">}</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+<span class="token punctuation" _ngcontent-opk-c27="">]</span><span class="token punctuation" _ngcontent-opk-c27="">;</span>
+
+@<span class="token function" _ngcontent-opk-c27="">NgModule</span><span class="token punctuation" _ngcontent-opk-c27="">(</span><span class="token punctuation" _ngcontent-opk-c27="">{</span>
+  imports<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token punctuation" _ngcontent-opk-c27="">[</span>RouterModule<span class="token punctuation" _ngcontent-opk-c27="">.</span><span class="token function" _ngcontent-opk-c27="">forRoot</span><span class="token punctuation" _ngcontent-opk-c27="">(</span>routes<span class="token punctuation" _ngcontent-opk-c27="">)</span><span class="token punctuation" _ngcontent-opk-c27="">]</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+  exports<span class="token operator" _ngcontent-opk-c27="">:</span> <span class="token punctuation" _ngcontent-opk-c27="">[</span>RouterModule<span class="token punctuation" _ngcontent-opk-c27="">]</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+<span class="token punctuation" _ngcontent-opk-c27="">}</span><span class="token punctuation" _ngcontent-opk-c27="">)</span>
+<span class="token keyword" _ngcontent-opk-c27="">export</span> <span class="token keyword" _ngcontent-opk-c27="">class</span> <span class="token class-name" _ngcontent-opk-c27="">AppRoutingModule</span> <span class="token punctuation" _ngcontent-opk-c27="">{</span><span class="token punctuation" _ngcontent-opk-c27="">}</span></code></pre><h2 id="如何建立麵包屑" _ngcontent-opk-c27="">如何建立麵包屑</h2>
+<h3 id="監聽路由事件" _ngcontent-opk-c27="">監聽路由事件</h3>
+<p _ngcontent-opk-c27="">這裡會需要帶點 <code _ngcontent-opk-c27="">rxjs</code> 的概念</p>
+<pre class="language-js" _ngcontent-opk-c27=""><code class="language-js" _ngcontent-opk-c27=""><span class="token keyword" _ngcontent-opk-c27="">this</span><span class="token punctuation" _ngcontent-opk-c27="">.</span>breadcrumbs$ <span class="token operator" _ngcontent-opk-c27="">=</span> <span class="token keyword" _ngcontent-opk-c27="">this</span><span class="token punctuation" _ngcontent-opk-c27="">.</span>router<span class="token punctuation" _ngcontent-opk-c27="">.</span>events<span class="token punctuation" _ngcontent-opk-c27="">.</span><span class="token function" _ngcontent-opk-c27="">pipe</span><span class="token punctuation" _ngcontent-opk-c27="">(</span>
+  <span class="token function" _ngcontent-opk-c27="">filter</span><span class="token punctuation" _ngcontent-opk-c27="">(</span><span class="token punctuation" _ngcontent-opk-c27="">(</span><span class="token parameter" _ngcontent-opk-c27="">event</span><span class="token punctuation" _ngcontent-opk-c27="">)</span> <span class="token operator" _ngcontent-opk-c27="">=&gt;</span> event <span class="token keyword" _ngcontent-opk-c27="">instanceof</span> <span class="token class-name" _ngcontent-opk-c27="">NavigationEnd</span><span class="token punctuation" _ngcontent-opk-c27="">)</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+  <span class="token function" _ngcontent-opk-c27="">distinctUntilChanged</span><span class="token punctuation" _ngcontent-opk-c27="">(</span><span class="token punctuation" _ngcontent-opk-c27="">)</span><span class="token punctuation" _ngcontent-opk-c27="">,</span>
+  <span class="token function" _ngcontent-opk-c27="">map</span><span class="token punctuation" _ngcontent-opk-c27="">(</span><span class="token punctuation" _ngcontent-opk-c27="">(</span><span class="token parameter" _ngcontent-opk-c27="">event</span><span class="token punctuation" _ngcontent-opk-c27="">)</span> <span class="token operator" _ngcontent-opk-c27="">=&gt;</span> <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+    <span class="token keyword" _ngcontent-opk-c27="">let</span> root<span class="token operator" _ngcontent-opk-c27="">:</span> ActivatedRoute <span class="token operator" _ngcontent-opk-c27="">=</span> <span class="token keyword" _ngcontent-opk-c27="">this</span><span class="token punctuation" _ngcontent-opk-c27="">.</span>activatedRoute<span class="token punctuation" _ngcontent-opk-c27="">.</span>root<span class="token punctuation" _ngcontent-opk-c27="">;</span>
+    <span class="token keyword" _ngcontent-opk-c27="">return</span> <span class="token keyword" _ngcontent-opk-c27="">this</span><span class="token punctuation" _ngcontent-opk-c27="">.</span><span class="token function" _ngcontent-opk-c27="">createBreadcrumbs</span><span class="token punctuation" _ngcontent-opk-c27="">(</span>root<span class="token punctuation" _ngcontent-opk-c27="">)</span><span class="token punctuation" _ngcontent-opk-c27="">;</span>
+  <span class="token punctuation" _ngcontent-opk-c27="">}</span><span class="token punctuation" _ngcontent-opk-c27="">)</span>
+<span class="token punctuation" _ngcontent-opk-c27="">)</span><span class="token punctuation" _ngcontent-opk-c27="">;</span></code></pre><p _ngcontent-opk-c27="">router 每次更改的時後 都會觸發許多事件，但我們只需要獲取 <code _ngcontent-opk-c27="">NavigationEnd</code> 這個事件就可以了
+<code _ngcontent-opk-c27="">distinctUntilChanged</code> 只要 網址有更新 才會觸發此事件，可以檔掉許多連續觸發
+接下來再將拿到的參數進行操作</p>
+<h3 id="建立-breadcrumb--麵包屑-" _ngcontent-opk-c27="">建立 Breadcrumb ( 麵包屑 )</h3>
+<p _ngcontent-opk-c27="">在 router 裡 我們可以得到一些資訊 如...
+當前路徑
+當前路徑裡的參數
+子節點
+當前所使用的組件
+等.....各種資訊</p>
+<p _ngcontent-opk-c27="">可以在 <a href="https://angular.tw/api/router/ActivatedRoute" _ngcontent-opk-c27="">Angular ActivatedRoute</a> 得到更多資訊</p>
+<h4 id="概念" _ngcontent-opk-c27="">概念</h4>
+<blockquote _ngcontent-opk-c27="">
+<p _ngcontent-opk-c27="">每次一次來就檢測是否有下一個子節點，若是有的話 就繼續再跑一次迴圈如此重覆將麵包屑組起來，到達最後一個子節點時 會是一個 <code _ngcontent-opk-c27="">null</code> 值，我們就能將先前組好的麵包屑回傳出來，這時後會是一個陣列，接著再將它拿到 HTML 上顯示！</p>
+</blockquote>
+<p _ngcontent-opk-c27="">JS</p>
+<pre class="language-js" _ngcontent-opk-c27=""><code class="language-js" _ngcontent-opk-c27=""><span class="token function" _ngcontent-opk-c27="">createBreadcrumbs</span><span class="token punctuation" _ngcontent-opk-c27="">(</span> route<span class="token punctuation" _ngcontent-opk-c27="">,</span> url<span class="token operator" _ngcontent-opk-c27="">:</span> string <span class="token operator" _ngcontent-opk-c27="">=</span> <span class="token string" _ngcontent-opk-c27="">''</span><span class="token punctuation" _ngcontent-opk-c27="">,</span> breadcrumbs <span class="token operator" _ngcontent-opk-c27="">=</span> <span class="token punctuation" _ngcontent-opk-c27="">[</span><span class="token punctuation" _ngcontent-opk-c27="">]</span> <span class="token punctuation" _ngcontent-opk-c27="">)</span> <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+  <span class="token keyword" _ngcontent-opk-c27="">const</span> children <span class="token operator" _ngcontent-opk-c27="">=</span> route<span class="token punctuation" _ngcontent-opk-c27="">.</span>firstChild<span class="token punctuation" _ngcontent-opk-c27="">;</span>
+
+  <span class="token keyword" _ngcontent-opk-c27="">if</span><span class="token punctuation" _ngcontent-opk-c27="">(</span> <span class="token operator" _ngcontent-opk-c27="">!</span>children <span class="token punctuation" _ngcontent-opk-c27="">)</span> <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+    <span class="token keyword" _ngcontent-opk-c27="">return</span> breadcrumbs<span class="token punctuation" _ngcontent-opk-c27="">;</span>
+  <span class="token punctuation" _ngcontent-opk-c27="">}</span>
+
+  <span class="token keyword" _ngcontent-opk-c27="">const</span> routeURL<span class="token operator" _ngcontent-opk-c27="">:</span> string <span class="token operator" _ngcontent-opk-c27="">=</span> children<span class="token punctuation" _ngcontent-opk-c27="">.</span>snapshot<span class="token punctuation" _ngcontent-opk-c27="">.</span>url
+    <span class="token punctuation" _ngcontent-opk-c27="">.</span><span class="token function" _ngcontent-opk-c27="">map</span><span class="token punctuation" _ngcontent-opk-c27="">(</span><span class="token parameter" _ngcontent-opk-c27="">segment</span> <span class="token operator" _ngcontent-opk-c27="">=&gt;</span> segment<span class="token punctuation" _ngcontent-opk-c27="">.</span>path<span class="token punctuation" _ngcontent-opk-c27="">)</span>
+    <span class="token punctuation" _ngcontent-opk-c27="">.</span><span class="token function" _ngcontent-opk-c27="">join</span><span class="token punctuation" _ngcontent-opk-c27="">(</span><span class="token string" _ngcontent-opk-c27="">'/'</span><span class="token punctuation" _ngcontent-opk-c27="">)</span><span class="token punctuation" _ngcontent-opk-c27="">;</span>
+
+  <span class="token keyword" _ngcontent-opk-c27="">const</span> label <span class="token operator" _ngcontent-opk-c27="">=</span> children<span class="token punctuation" _ngcontent-opk-c27="">.</span>snapshot<span class="token punctuation" _ngcontent-opk-c27="">.</span>data<span class="token punctuation" _ngcontent-opk-c27="">[</span><span class="token string" _ngcontent-opk-c27="">'breadcrumb'</span><span class="token punctuation" _ngcontent-opk-c27="">]</span><span class="token punctuation" _ngcontent-opk-c27="">;</span>
+
+  <span class="token keyword" _ngcontent-opk-c27="">if</span><span class="token punctuation" _ngcontent-opk-c27="">(</span> <span class="token operator" _ngcontent-opk-c27="">!</span>label <span class="token punctuation" _ngcontent-opk-c27="">)</span> <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+    <span class="token keyword" _ngcontent-opk-c27="">return</span> <span class="token keyword" _ngcontent-opk-c27="">this</span><span class="token punctuation" _ngcontent-opk-c27="">.</span><span class="token function" _ngcontent-opk-c27="">createBreadcrumbs</span><span class="token punctuation" _ngcontent-opk-c27="">(</span> children<span class="token punctuation" _ngcontent-opk-c27="">,</span> url<span class="token punctuation" _ngcontent-opk-c27="">,</span>  breadcrumbs<span class="token punctuation" _ngcontent-opk-c27="">)</span>
+  <span class="token punctuation" _ngcontent-opk-c27="">}</span>
+
+  <span class="token keyword" _ngcontent-opk-c27="">if</span> <span class="token punctuation" _ngcontent-opk-c27="">(</span> <span class="token operator" _ngcontent-opk-c27="">!</span>routeURL <span class="token punctuation" _ngcontent-opk-c27="">)</span> <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+    url <span class="token operator" _ngcontent-opk-c27="">+=</span> <span class="token template-string" _ngcontent-opk-c27=""><span class="token template-punctuation string" _ngcontent-opk-c27="">`</span><span class="token string" _ngcontent-opk-c27="">/</span><span class="token interpolation" _ngcontent-opk-c27=""><span class="token interpolation-punctuation punctuation" _ngcontent-opk-c27="">${</span>routeURL<span class="token interpolation-punctuation punctuation" _ngcontent-opk-c27="">}</span></span><span class="token template-punctuation string" _ngcontent-opk-c27="">`</span></span><span class="token punctuation" _ngcontent-opk-c27="">;</span>
+  <span class="token punctuation" _ngcontent-opk-c27="">}</span>
+
+  <span class="token keyword" _ngcontent-opk-c27="">const</span> breadcrumb <span class="token operator" _ngcontent-opk-c27="">=</span> <span class="token punctuation" _ngcontent-opk-c27="">{</span>
+    label<span class="token operator" _ngcontent-opk-c27="">:</span> label<span class="token punctuation" _ngcontent-opk-c27="">,</span>
+    params<span class="token operator" _ngcontent-opk-c27="">:</span> children<span class="token punctuation" _ngcontent-opk-c27="">.</span>snapshot<span class="token punctuation" _ngcontent-opk-c27="">.</span>params<span class="token punctuation" _ngcontent-opk-c27="">,</span>
+    url<span class="token operator" _ngcontent-opk-c27="">:</span> routeURL
+  <span class="token punctuation" _ngcontent-opk-c27="">}</span>
+
+  <span class="token keyword" _ngcontent-opk-c27="">return</span> <span class="token keyword" _ngcontent-opk-c27="">this</span><span class="token punctuation" _ngcontent-opk-c27="">.</span><span class="token function" _ngcontent-opk-c27="">createBreadcrumbs</span><span class="token punctuation" _ngcontent-opk-c27="">(</span> children<span class="token punctuation" _ngcontent-opk-c27="">,</span> url<span class="token punctuation" _ngcontent-opk-c27="">,</span>  <span class="token punctuation" _ngcontent-opk-c27="">[</span><span class="token operator" _ngcontent-opk-c27="">...</span>breadcrumbs<span class="token punctuation" _ngcontent-opk-c27="">,</span> breadcrumb<span class="token punctuation" _ngcontent-opk-c27="">]</span><span class="token punctuation" _ngcontent-opk-c27="">)</span>
+<span class="token punctuation" _ngcontent-opk-c27="">}</span></code></pre><p _ngcontent-opk-c27="">先前我們將麵包屑建立為一個 Observable，就直接到 html 裡 使用 <code _ngcontent-opk-c27="">async</code> 訂閱
+再來就可以撰寫出我們想要的麵包屑樣式囉</p>
+<p _ngcontent-opk-c27="">HTML</p>
+<pre class="language-html" _ngcontent-opk-c27=""><code class="language-html" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token punctuation" _ngcontent-opk-c27="">&lt;</span>ul</span> <span class="token attr-name" _ngcontent-opk-c27="">class</span><span class="token attr-value" _ngcontent-opk-c27=""><span class="token punctuation attr-equals" _ngcontent-opk-c27="">=</span><span class="token punctuation" _ngcontent-opk-c27="">"</span>breadcrumb<span class="token punctuation" _ngcontent-opk-c27="">"</span></span><span class="token punctuation" _ngcontent-opk-c27="">&gt;</span></span>
+  <span class="token tag" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token punctuation" _ngcontent-opk-c27="">&lt;</span>li</span> <span class="token attr-name" _ngcontent-opk-c27="">*ngFor</span><span class="token attr-value" _ngcontent-opk-c27=""><span class="token punctuation attr-equals" _ngcontent-opk-c27="">=</span><span class="token punctuation" _ngcontent-opk-c27="">"</span>let breadcrumb of breadcrumbs$ | async; last as isLast<span class="token punctuation" _ngcontent-opk-c27="">"</span></span><span class="token punctuation" _ngcontent-opk-c27="">&gt;</span></span>
+    <span class="token tag" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token punctuation" _ngcontent-opk-c27="">&lt;</span>a</span> <span class="token attr-name" _ngcontent-opk-c27="">[routerLink]</span><span class="token attr-value" _ngcontent-opk-c27=""><span class="token punctuation attr-equals" _ngcontent-opk-c27="">=</span><span class="token punctuation" _ngcontent-opk-c27="">"</span>breadcrumb?.url<span class="token punctuation" _ngcontent-opk-c27="">"</span></span> <span class="token attr-name" _ngcontent-opk-c27="">*ngIf</span><span class="token attr-value" _ngcontent-opk-c27=""><span class="token punctuation attr-equals" _ngcontent-opk-c27="">=</span><span class="token punctuation" _ngcontent-opk-c27="">"</span>!isLast else last<span class="token punctuation" _ngcontent-opk-c27="">"</span></span><span class="token punctuation" _ngcontent-opk-c27="">&gt;</span></span>
+      {{ breadcrumb.label }}
+      <span class="token tag" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token punctuation" _ngcontent-opk-c27="">&lt;</span>ng-container</span> <span class="token attr-name" _ngcontent-opk-c27="">*ngIf</span><span class="token attr-value" _ngcontent-opk-c27=""><span class="token punctuation attr-equals" _ngcontent-opk-c27="">=</span><span class="token punctuation" _ngcontent-opk-c27="">"</span>breadcrumb?.params.name<span class="token punctuation" _ngcontent-opk-c27="">"</span></span><span class="token punctuation" _ngcontent-opk-c27="">&gt;</span></span>
+        - {{ breadcrumb?.params.name }}
+      <span class="token tag" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token punctuation" _ngcontent-opk-c27="">&lt;/</span>ng-container</span><span class="token punctuation" _ngcontent-opk-c27="">&gt;</span></span>
+    <span class="token tag" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token punctuation" _ngcontent-opk-c27="">&lt;/</span>a</span><span class="token punctuation" _ngcontent-opk-c27="">&gt;</span></span>
+    <span class="token tag" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token punctuation" _ngcontent-opk-c27="">&lt;</span>ng-template</span> <span class="token attr-name" _ngcontent-opk-c27="">#last</span><span class="token punctuation" _ngcontent-opk-c27="">&gt;</span></span>
+      {{ breadcrumb.label }}
+      <span class="token tag" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token punctuation" _ngcontent-opk-c27="">&lt;</span>ng-container</span> <span class="token attr-name" _ngcontent-opk-c27="">*ngIf</span><span class="token attr-value" _ngcontent-opk-c27=""><span class="token punctuation attr-equals" _ngcontent-opk-c27="">=</span><span class="token punctuation" _ngcontent-opk-c27="">"</span>breadcrumb?.params.name<span class="token punctuation" _ngcontent-opk-c27="">"</span></span><span class="token punctuation" _ngcontent-opk-c27="">&gt;</span></span>
+        - {{ breadcrumb?.params.name }}
+      <span class="token tag" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token punctuation" _ngcontent-opk-c27="">&lt;/</span>ng-container</span><span class="token punctuation" _ngcontent-opk-c27="">&gt;</span></span>
+    <span class="token tag" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token punctuation" _ngcontent-opk-c27="">&lt;/</span>ng-template</span><span class="token punctuation" _ngcontent-opk-c27="">&gt;</span></span>
+  <span class="token tag" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token punctuation" _ngcontent-opk-c27="">&lt;/</span>li</span><span class="token punctuation" _ngcontent-opk-c27="">&gt;</span></span>
+<span class="token tag" _ngcontent-opk-c27=""><span class="token tag" _ngcontent-opk-c27=""><span class="token punctuation" _ngcontent-opk-c27="">&lt;/</span>ul</span><span class="token punctuation" _ngcontent-opk-c27="">&gt;</span></span></code></pre><hr _ngcontent-opk-c27="">
+<p _ngcontent-opk-c27="">實作如下：
+<a href="https://stackblitz.com/edit/angular-routing-breadcrumb" _ngcontent-opk-c27="">https://stackblitz.com/edit/angular-routing-breadcrumb</a></p>
+<!--scullyContent-end--><scully-content _ngcontent-opk-c27=""></scully-content>
+      <script>try {window['scullyContent'] = {cssId:"_ngcontent-opk-c27",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+      <div _ngcontent-opk-c27="" class="order-first md:order-none">
+        <div _ngcontent-opk-c27="" class="sticky top-32 space-y-4">
+          <app-blog-nav _ngcontent-opk-c27="" _nghost-opk-c26="" class="block"><ul _ngcontent-opk-c26=""><h2 _ngcontent-opk-c26="" class="text-xl font-semibold">目錄</h2><li _ngcontent-opk-c26="" class="cursor-pointer"><a _ngcontent-opk-c26="" class="text-base"> Top of Page </a><!--bindings={
+  "ng-reflect-ng-if": "/angular/ng_breadcrumb"
+}--></li><li _ngcontent-opk-c26="" class="cursor-pointer"><a _ngcontent-opk-c26="" ng-reflect-ng-class="text-lg font-semibold," class="text-lg font-semibold"> 了解 router 架構 </a><!--bindings={
+  "ng-reflect-ng-if": "/angular/ng_breadcrumb"
+}--></li><li _ngcontent-opk-c26="" class="cursor-pointer"><a _ngcontent-opk-c26="" ng-reflect-ng-class="text-lg font-semibold," class="text-lg font-semibold"> 如何建立麵包屑 </a><!--bindings={
+  "ng-reflect-ng-if": "/angular/ng_breadcrumb"
+}--></li><li _ngcontent-opk-c26="" class="cursor-pointer"><a _ngcontent-opk-c26="" ng-reflect-ng-class="text-base," class="text-base"> 監聽路由事件 </a><!--bindings={
+  "ng-reflect-ng-if": "/angular/ng_breadcrumb"
+}--></li><li _ngcontent-opk-c26="" class="cursor-pointer"><a _ngcontent-opk-c26="" ng-reflect-ng-class="text-base," class="text-base"> 建立 Breadcrumb ( 麵包屑 ) </a><!--bindings={
+  "ng-reflect-ng-if": "/angular/ng_breadcrumb"
+}--></li><li _ngcontent-opk-c26="" class="cursor-pointer"><a _ngcontent-opk-c26="" ng-reflect-ng-class="text-sm," class="text-sm"> 概念 </a><!--bindings={
+  "ng-reflect-ng-if": "/angular/ng_breadcrumb"
+}--></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object HTMLHeadingElement],[o"
+}--></ul></app-blog-nav>
+          <div _ngcontent-opk-c27="">
+            <h2 _ngcontent-opk-c27="" class="text-xl font-semibold">主題</h2>
+            
+              
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}-->
+</app-blog><!--container--></div></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule="" defer=""></script><script src="polyfills-es5.js" nomodule="" defer=""></script><script src="polyfills-es2015.js" type="module"></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule="" defer=""></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule="" defer=""></script>
+
+</body></html>

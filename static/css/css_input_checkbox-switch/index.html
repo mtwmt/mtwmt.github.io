@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <title>如何利用純 css 寫 switch 開關</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149155162-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149155162-1');
+    </script>
+  <link rel="stylesheet" href="styles.css"><style>.social[_ngcontent-wja-c18]   li[_ngcontent-wja-c18] {
+  display: inline-block;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcYXBwLmNvbXBvbmVudC5zY3NzIiwiLi4vLi4vbm9kZV9tb2R1bGVzL3RhaWx3aW5kY3NzL2xpYi9saWIvc3Vic3RpdHV0ZUNsYXNzQXBwbHlBdFJ1bGVzLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdFO0VDREYscUJBQW1CO0FEQW5CIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5cclxuLnNvY2lhbCB7XHJcbiAgbGkge1xyXG4gICAgQGFwcGx5IGlubGluZS1ibG9jaztcclxuICB9XHJcbn1cclxuIiwiQHRhaWx3aW5kIGJhc2U7XG5AdGFpbHdpbmQgY29tcG9uZW50cztcbkB0YWlsd2luZCB1dGlsaXRpZXM7Il19 */</style><script charset="utf-8" src="blog-blog-module-es2015.js"></script><script charset="utf-8" src="home-home-module-es2015.js"></script><style>.prose[_ngcontent-wja-c27] {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important;
+}
+
+.prose[_ngcontent-wja-c27]   h1[_ngcontent-wja-c27] {
+  font-family: Dosis, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.prose[_ngcontent-wja-c27]   h2[_ngcontent-wja-c27] {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+}
+
+.prose[_ngcontent-wja-c27]   h3[_ngcontent-wja-c27] {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.prose[_ngcontent-wja-c27]   p[_ngcontent-wja-c27] {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose[_ngcontent-wja-c27]   pre[_ngcontent-wja-c27] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose[_ngcontent-wja-c27]   img[_ngcontent-wja-c27] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose[_ngcontent-wja-c27]   hr[_ngcontent-wja-c27] {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+[_nghost-wja-c27]   .toolbar-item[_ngcontent-wja-c27] {
+  position: relative;
+  background: #159;
+}
+
+[_nghost-wja-c27]   .toolbar-item[_ngcontent-wja-c27]   .toolbar[_ngcontent-wja-c27] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGJsb2cuY29tcG9uZW50LnNjc3MiLCIuLi8uLi8uLi9ub2RlX21vZHVsZXMvdGFpbHdpbmRjc3MvbGliL2xpYi9zdWJzdGl0dXRlQ2xhc3NBcHBseUF0UnVsZXMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUNFQSxlQUFtQjtFQUFuQixtQkFBbUI7RURBakIsZ01BQUE7QUFDRjs7QUFHRTtFQ0pGLG1PQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsbUJBQW1CO0FESW5COztBQUlFO0VDUkYsZ0JBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixpQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGtCQUFtQjtBRE9uQjs7QUFLRTtFQ1pGLGdCQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsb0JBQW1CO0VBQW5CLHFCQUFtQjtFQUFuQixnQkFBbUI7QURVbkI7O0FBTUU7RUNoQkYsa0JBQW1CO0VBQW5CLHFCQUFtQjtBRGFuQjs7QUFPRTtFQ3BCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0FEZ0JuQjs7QUFRRTtFQ3hCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixrQkFBbUI7QURtQm5COztBQVNFO0VDNUJGLGdCQUFtQjtFQUFuQixtQkFBbUI7QURzQm5COztBQVlFO0VBQ0Usa0JBQUE7RUFDQSxnQkFBQTtBQVRKOztBQVVJO0VBQ0Usa0JBQUE7RUFDQSxNQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7QUFSTiIsImZpbGUiOiJibG9nLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb3NlIHtcclxuICBAYXBwbHkgdGV4dC1iYXNlO1xyXG4gIGZvbnQtZmFtaWx5OiAnUGluZ0ZhbmdTQy1SZWd1bGFyJywgSGVsdmV0aWNhLCAnSGVsdmV0aWNhIE5ldWUnLCAnU2Vnb2UgVUknLFxyXG4gICAgJ0hpcmFnaW5vIFNhbnMgR0InLCAnU291cmNlIEhhbiBTYW5zIENOJywgJ01pY3Jvc29mdCBZYUhlaScsICdTVEhlaXRpJyxcclxuICAgICdXZW5RdWFuWWkgTWljcm8gSGVpJywgc2Fucy1zZXJpZiAhaW1wb3J0YW50O1xyXG5cclxuICBoMSB7XHJcbiAgICBAYXBwbHkgdGV4dC00eGwgZm9udC1zYW5zO1xyXG4gIH1cclxuXHJcbiAgaDIge1xyXG4gICAgQGFwcGx5IG10LTEwIG1iLTQgdGV4dC0yeGwgZm9udC1ib2xkO1xyXG4gIH1cclxuXHJcbiAgaDMge1xyXG4gICAgQGFwcGx5IG10LTQgbWItMiB0ZXh0LXhsIGZvbnQtYm9sZDtcclxuICB9XHJcblxyXG4gIHAge1xyXG4gICAgQGFwcGx5IG15LTI7XHJcbiAgfVxyXG5cclxuICBwcmUge1xyXG4gICAgQGFwcGx5IG15LTQ7XHJcbiAgfVxyXG5cclxuICBpbWcge1xyXG4gICAgQGFwcGx5IG15LTQgbXgtYXV0bztcclxuICB9XHJcblxyXG4gIGhyIHtcclxuICAgIEBhcHBseSBteS04O1xyXG4gIH1cclxufVxyXG5cclxuOmhvc3Qge1xyXG4gIC50b29sYmFyLWl0ZW0ge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgYmFja2dyb3VuZDogIzE1OTtcclxuICAgIC50b29sYmFyIHtcclxuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICB0b3A6IDA7XHJcbiAgICAgIHJpZ2h0OiAwO1xyXG4gICAgICBjb2xvcjogI2ZmZjtcclxuICAgIH1cclxuICB9XHJcbn1cclxuXHJcbi8vIDo6c2xvdHRlZChoMSkge1xyXG4vLyAgIGNvbG9yOiByZ2IoNTEsIDYsIDM3KTtcclxuLy8gICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQ4LCAyMTEsIDIzNik7XHJcbi8vICAgcGFkZGluZzogNXB4O1xyXG4vLyAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuLy8gICB3aWR0aDogZml0LWNvbnRlbnQ7XHJcbi8vIH1cclxuXHJcbi8vIC5saW5lIHtcclxuLy8gICBoZWlnaHQ6IDFweDtcclxuLy8gICB3aWR0aDogMTAwJTtcclxuLy8gICBtYXJnaW4tdG9wOiAxMnB4O1xyXG4vLyAgIEBhcHBseSBiZy1ncmF5LTkwMDtcclxuLy8gfVxyXG5cclxuLy8gYXBwLWJsb2ctbmF2IHtcclxuLy8gICB0b3A6IDExMnB4O1xyXG4vLyB9XHJcbiIsIkB0YWlsd2luZCBiYXNlO1xuQHRhaWx3aW5kIGNvbXBvbmVudHM7XG5AdGFpbHdpbmQgdXRpbGl0aWVzOyJdfQ== */</style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtZXRhLmNvbXBvbmVudC5zY3NzIn0= */</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJibG9nLW5hdi5jb21wb25lbnQuc2NzcyJ9 */</style><meta name="description" content="如何利用純 css 寫 switch 開關"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, css, scss, input"><meta property="og:title" content="如何利用純 css 寫 switch 開關"><meta property="og:description" content="如何利用純 css 寫 switch 開關"><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.github.io/css/css_input_checkbox-switch"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="如何利用純 css 寫 switch 開關"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="en_US"><script>window['ScullyIO']='generated';</script></head>
+  <body class="theme-light" scully-version="1.1.1">
+    <app-root _nghost-wja-c18="" ng-version="11.2.11"><header _ngcontent-wja-c18="" class="fixed z-999 top-0 left-0 flex justify-between items-center w-full bg-secondary p-4 border-b-4 border-solid border-primary"><h1 _ngcontent-wja-c18="" class="text-2xl font-semibold"><a _ngcontent-wja-c18="" routerlink="/" class="text-primary" ng-reflect-router-link="/" href="/">Mandy's <span _ngcontent-wja-c18="" class="display-inlinie font-light text-text">Web</span></a></h1><nav _ngcontent-wja-c18="" class="social"><ul _ngcontent-wja-c18=""><li _ngcontent-wja-c18=""><a _ngcontent-wja-c18="" class="btn" ng-reflect-router-link="/" href="/">Blog</a></li><li _ngcontent-wja-c18=""><a _ngcontent-wja-c18="" class="btn" ng-reflect-router-link="/website" href="/website">Portfolio</a></li><li _ngcontent-wja-c18=""><a _ngcontent-wja-c18="" href="//github.com/mtwmt" target="_blank" class="btn">GitHub</a></li></ul></nav></header><div _ngcontent-wja-c18="" class="container mx-auto pt-24 pb-8"><router-outlet _ngcontent-wja-c18=""></router-outlet><app-blog _nghost-wja-c27=""><app-meta _ngcontent-wja-c27="" _nghost-wja-c24="" ng-reflect-title="如何利用純 css 寫 switch 開關" ng-reflect-route="/css/css_input_checkbox-switch" ng-reflect-tags="css,scss,input" ng-reflect-twitter-image="/css/css_input_checkbox-switch" ng-reflect-og-image="/css/css_input_checkbox-switch"><p _ngcontent-wja-c24="">meta works!</p></app-meta><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}-->
+
+  
+
+
+<article _ngcontent-wja-c27="" class="p-4 max-w-screen-xl mx-auto">
+  <div _ngcontent-wja-c27="" class="max-w-container space-y-4">
+    <header _ngcontent-wja-c27="" class="space-y-4">
+      
+      <div _ngcontent-wja-c27="" class="prose max-w-none md:prose-lgspace-y-1">
+        <dl _ngcontent-wja-c27="">
+          <div _ngcontent-wja-c27="">
+            <dt _ngcontent-wja-c27="" class="sr-only">Published at</dt>
+            <dd _ngcontent-wja-c27="" class="text-base leading-6 font-medium text-color-light">
+              <time _ngcontent-wja-c27="" datetime="undefined">
+                
+              </time>
+            </dd>
+          </div>
+        </dl>
+
+        <h1 _ngcontent-wja-c27="">
+          如何利用純 css 寫 switch 開關
+        </h1>
+        
+      </div>
+    </header>
+    <div _ngcontent-wja-c27="" class="grid grid-cols-1 md:grid-cols-3 md:gap-x-4 lg:grid-cols-4 lg:gap-x-6">
+      <div _ngcontent-wja-c27="" class="prose prose-toc max-w-none md:prose-lg md:col-span-2 lg:col-span-3">
+        <!--scullyContent-begin--><h2 id="概念" _ngcontent-wja-c27="">概念</h2>
+<blockquote _ngcontent-wja-c27="">
+<p _ngcontent-wja-c27="">利用 input checkbox 的 checked 特性來做到開關效果</p>
+</blockquote>
+<p _ngcontent-wja-c27="">效果如下：
+{% iframe //codepen.io/mtw/embed/pwJxEw/ 100% 300 %}</p>
+<h3 id="html" _ngcontent-wja-c27="">HTML</h3>
+<pre class="language-html" _ngcontent-wja-c27=""><code class="language-html" _ngcontent-wja-c27=""><span class="token tag" _ngcontent-wja-c27=""><span class="token tag" _ngcontent-wja-c27=""><span class="token punctuation" _ngcontent-wja-c27="">&lt;</span>div</span> <span class="token attr-name" _ngcontent-wja-c27="">data</span><span class="token attr-value" _ngcontent-wja-c27=""><span class="token punctuation attr-equals" _ngcontent-wja-c27="">=</span><span class="token punctuation" _ngcontent-wja-c27="">"</span>checkbox-switch<span class="token punctuation" _ngcontent-wja-c27="">"</span></span><span class="token punctuation" _ngcontent-wja-c27="">&gt;</span></span>
+  <span class="token tag" _ngcontent-wja-c27=""><span class="token tag" _ngcontent-wja-c27=""><span class="token punctuation" _ngcontent-wja-c27="">&lt;</span>input</span> <span class="token attr-name" _ngcontent-wja-c27="">type</span><span class="token attr-value" _ngcontent-wja-c27=""><span class="token punctuation attr-equals" _ngcontent-wja-c27="">=</span><span class="token punctuation" _ngcontent-wja-c27="">"</span>checkbox<span class="token punctuation" _ngcontent-wja-c27="">"</span></span> <span class="token attr-name" _ngcontent-wja-c27="">id</span><span class="token attr-value" _ngcontent-wja-c27=""><span class="token punctuation attr-equals" _ngcontent-wja-c27="">=</span><span class="token punctuation" _ngcontent-wja-c27="">"</span>switch<span class="token punctuation" _ngcontent-wja-c27="">"</span></span> <span class="token punctuation" _ngcontent-wja-c27="">/&gt;</span></span>
+  <span class="token tag" _ngcontent-wja-c27=""><span class="token tag" _ngcontent-wja-c27=""><span class="token punctuation" _ngcontent-wja-c27="">&lt;</span>label</span> <span class="token attr-name" _ngcontent-wja-c27="">for</span><span class="token attr-value" _ngcontent-wja-c27=""><span class="token punctuation attr-equals" _ngcontent-wja-c27="">=</span><span class="token punctuation" _ngcontent-wja-c27="">"</span>switch<span class="token punctuation" _ngcontent-wja-c27="">"</span></span><span class="token punctuation" _ngcontent-wja-c27="">&gt;</span></span><span class="token tag" _ngcontent-wja-c27=""><span class="token tag" _ngcontent-wja-c27=""><span class="token punctuation" _ngcontent-wja-c27="">&lt;/</span>label</span><span class="token punctuation" _ngcontent-wja-c27="">&gt;</span></span>
+<span class="token tag" _ngcontent-wja-c27=""><span class="token tag" _ngcontent-wja-c27=""><span class="token punctuation" _ngcontent-wja-c27="">&lt;/</span>div</span><span class="token punctuation" _ngcontent-wja-c27="">&gt;</span></span></code></pre><blockquote _ngcontent-wja-c27="">
+<p _ngcontent-wja-c27="">可用 html 裡的 data 來當作選取器 避免 classname 過多造成混亂
+注意!! input 裡的 id 跟 label for 裡的名字記得要一樣 不然不會動 RRRR
+一個 id 只能取單一個名稱 所以之後要避免取相同名字哦</p>
+</blockquote>
+<h3 id="scss" _ngcontent-wja-c27="">SCSS</h3>
+<pre class="language-scss" _ngcontent-wja-c27=""><code class="language-scss" _ngcontent-wja-c27="">[data='checkbox-switch'] {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  input[type='checkbox'] {
+    opacity: 0;
+    &amp; ~ label {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #ccc;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s;
+      &amp;:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+        background-color: #fff;
+        transition: all 0.3s;
+      }
+    }
+    &amp;:checked ~ label {
+      background: #005599;
+      &amp;:after {
+        left: 30px;
+        border-color: #005599;
+      }
+    }
+  }
+}</code></pre><h3 id="做成組件客製化使用" _ngcontent-wja-c27="">做成組件客製化使用</h3>
+<table _ngcontent-wja-c27="">
+<thead _ngcontent-wja-c27="">
+<tr _ngcontent-wja-c27="">
+<th _ngcontent-wja-c27="">變數</th>
+<th _ngcontent-wja-c27="">名稱</th>
+</tr>
+</thead>
+<tbody _ngcontent-wja-c27=""><tr _ngcontent-wja-c27="">
+<td _ngcontent-wja-c27="">$w</td>
+<td _ngcontent-wja-c27="">元件寬</td>
+</tr>
+<tr _ngcontent-wja-c27="">
+<td _ngcontent-wja-c27="">$h</td>
+<td _ngcontent-wja-c27="">元件高</td>
+</tr>
+<tr _ngcontent-wja-c27="">
+<td _ngcontent-wja-c27="">$border_w</td>
+<td _ngcontent-wja-c27="">元件鈕邊框寬</td>
+</tr>
+<tr _ngcontent-wja-c27="">
+<td _ngcontent-wja-c27="">$bg_default</td>
+<td _ngcontent-wja-c27="">元件 off 顏色</td>
+</tr>
+<tr _ngcontent-wja-c27="">
+<td _ngcontent-wja-c27="">$bg_cover</td>
+<td _ngcontent-wja-c27="">元件 on 顏色</td>
+</tr>
+</tbody></table>
+<h3 id="scss-套用" _ngcontent-wja-c27="">SCSS 套用</h3>
+<pre class="language-scss" _ngcontent-wja-c27=""><code class="language-scss" _ngcontent-wja-c27="">[data='checkbox-switch'] {
+  @include checkbox-switch(60px, 30px, 2px, #ccc, #159);
+}</code></pre><h3 id="mixin" _ngcontent-wja-c27="">mixin</h3>
+<pre class="language-scss" _ngcontent-wja-c27=""><code class="language-scss" _ngcontent-wja-c27="">@mixin checkbox-switch($w, $h, $border_w, $bg_default, $bg_cover) {
+  position: relative;
+  width: $w;
+  height: $h;
+  input[type='checkbox'] {
+    opacity: 0;
+    &amp; ~ label {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $bg_default;
+      border-radius: $h;
+      cursor: pointer;
+      transition: all 0.3s;
+      &amp;:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: $h - $border_w * 2;
+        height: $h - $border_w * 2;
+        border-radius: 50%;
+        border: $border_w solid $bg_default;
+        background-color: #fff;
+        transition: all 0.3s;
+      }
+    }
+    &amp;:checked ~ label {
+      background: $bg_cover;
+      &amp;:after {
+        left: $w - $h;
+        border-color: $bg_cover;
+      }
+    }
+  }
+}</code></pre><!--scullyContent-end--><scully-content _ngcontent-wja-c27=""></scully-content>
+      <script>try {window['scullyContent'] = {cssId:"_ngcontent-wja-c27",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+      <div _ngcontent-wja-c27="" class="order-first md:order-none">
+        <div _ngcontent-wja-c27="" class="sticky top-32 space-y-4">
+          <app-blog-nav _ngcontent-wja-c27="" _nghost-wja-c26="" class="block"><ul _ngcontent-wja-c26=""><h2 _ngcontent-wja-c26="" class="text-xl font-semibold">目錄</h2><li _ngcontent-wja-c26="" class="cursor-pointer"><a _ngcontent-wja-c26="" class="text-base"> Top of Page </a><!--bindings={
+  "ng-reflect-ng-if": "/css/css_input_checkbox-switch"
+}--></li><li _ngcontent-wja-c26="" class="cursor-pointer"><a _ngcontent-wja-c26="" ng-reflect-ng-class="text-lg font-semibold," class="text-lg font-semibold"> 概念 </a><!--bindings={
+  "ng-reflect-ng-if": "/css/css_input_checkbox-switch"
+}--></li><li _ngcontent-wja-c26="" class="cursor-pointer"><a _ngcontent-wja-c26="" ng-reflect-ng-class="text-base," class="text-base"> HTML </a><!--bindings={
+  "ng-reflect-ng-if": "/css/css_input_checkbox-switch"
+}--></li><li _ngcontent-wja-c26="" class="cursor-pointer"><a _ngcontent-wja-c26="" ng-reflect-ng-class="text-base," class="text-base"> SCSS </a><!--bindings={
+  "ng-reflect-ng-if": "/css/css_input_checkbox-switch"
+}--></li><li _ngcontent-wja-c26="" class="cursor-pointer"><a _ngcontent-wja-c26="" ng-reflect-ng-class="text-base," class="text-base"> 做成組件客製化使用 </a><!--bindings={
+  "ng-reflect-ng-if": "/css/css_input_checkbox-switch"
+}--></li><li _ngcontent-wja-c26="" class="cursor-pointer"><a _ngcontent-wja-c26="" ng-reflect-ng-class="text-base," class="text-base"> SCSS 套用 </a><!--bindings={
+  "ng-reflect-ng-if": "/css/css_input_checkbox-switch"
+}--></li><li _ngcontent-wja-c26="" class="cursor-pointer"><a _ngcontent-wja-c26="" ng-reflect-ng-class="text-base," class="text-base"> mixin </a><!--bindings={
+  "ng-reflect-ng-if": "/css/css_input_checkbox-switch"
+}--></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object HTMLHeadingElement],[o"
+}--></ul></app-blog-nav>
+          <div _ngcontent-wja-c27="">
+            <h2 _ngcontent-wja-c27="" class="text-xl font-semibold">主題</h2>
+            
+              
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}-->
+</app-blog><!--container--></div></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule="" defer=""></script><script src="polyfills-es5.js" nomodule="" defer=""></script><script src="polyfills-es2015.js" type="module"></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule="" defer=""></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule="" defer=""></script>
+
+</body></html>
