@@ -612,6 +612,7 @@ class BlogComponent {
         // blog$: Observable<ScullyRoute> = this.scullyRoutesService.getCurrent();
         this.blog$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["defer"])(() => {
             if (this.isProd && this.swUpdate.isEnabled) {
+                console.log('defer');
                 return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["combineLatest"])([
                     this.scullyRoutesService.getCurrent(),
                     Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["from"])(this.swUpdate.checkForUpdate()).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["switchMapTo"])(this.swUpdate.available.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["timeout"])(5000), // timeout 5s

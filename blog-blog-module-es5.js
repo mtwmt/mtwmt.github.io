@@ -987,6 +987,7 @@
 
           this.blog$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["defer"])(function () {
             if (_this3.isProd && _this3.swUpdate.isEnabled) {
+              console.log('defer');
               return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["combineLatest"])([_this3.scullyRoutesService.getCurrent(), Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["from"])(_this3.swUpdate.checkForUpdate()).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["switchMapTo"])(_this3.swUpdate.available.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["timeout"])(5000), // timeout 5s
               Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mapTo"])(true), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["startWith"])(false), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["pairwise"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function () {
                 return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["of"])([false, false]);
