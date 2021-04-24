@@ -39,10 +39,6 @@ class HomeComponent {
         this.blogListService = blogListService;
     }
     ngOnInit() {
-        // this.metaService.resetMeta();
-        // this.blogListService.blogCategories$.subscribe(res => {
-        //   console.log(222, res)
-        // })
     }
 }
 HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shared_services_meta_service__WEBPACK_IMPORTED_MODULE_1__["MetaService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_blog_list_blog_list_service__WEBPACK_IMPORTED_MODULE_2__["BlogListService"])); };

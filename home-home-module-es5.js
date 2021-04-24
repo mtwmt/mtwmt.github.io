@@ -96,11 +96,7 @@
 
         _createClass(HomeComponent, [{
           key: "ngOnInit",
-          value: function ngOnInit() {// this.metaService.resetMeta();
-            // this.blogListService.blogCategories$.subscribe(res => {
-            //   console.log(222, res)
-            // })
-          }
+          value: function ngOnInit() {}
         }]);
 
         return HomeComponent;
