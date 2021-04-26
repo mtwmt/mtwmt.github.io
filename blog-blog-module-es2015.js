@@ -634,6 +634,7 @@ class BlogComponent {
         this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
     }
     ngOnInit() {
+        console.log('swUpdate', this.swUpdate.isEnabled);
         // this.blog$.subscribe(res => {
         //   console.log('blog', res)
         // })

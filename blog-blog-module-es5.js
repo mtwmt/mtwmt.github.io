@@ -1037,9 +1037,10 @@
           value: function ngOnInit() {
             var _this4 = this;
 
-            // this.blog$.subscribe(res => {
+            console.log('swUpdate', this.swUpdate.isEnabled); // this.blog$.subscribe(res => {
             //   console.log('blog', res)
             // })
+
             Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["fromEvent"])(window, 'AngularReady').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(this.destroy$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function () {
               return _this4.allowHighlight = false;
             })).subscribe(function (res) {// console.log('AngularReady', res);
