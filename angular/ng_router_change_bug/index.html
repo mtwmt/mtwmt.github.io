@@ -1,1 +1,213 @@
-<!doctype html><html lang="en"><head><meta name="generator" content="Scully 1.1.1"><meta charset="utf-8"><title>Angular Router Change 踩雷日記</title><base href="/"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><script async src="https://www.google-analytics.com/analytics.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-149155162-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-149155162-1")</script><link rel="stylesheet" href="styles.css"><style>.social[_ngcontent-fsx-c19] li[_ngcontent-fsx-c19]{display:inline-block}</style><script charset="utf-8" src="blog-blog-module-es2015.js"></script><script charset="utf-8" src="home-home-module-es2015.js"></script><style>.prose[_ngcontent-fsx-c27]{font-size:1rem;line-height:1.5rem;font-family:PingFangSC-Regular,Helvetica,"Helvetica Neue","Segoe UI","Hiragino Sans GB","Source Han Sans CN","Microsoft YaHei",STHeiti,"WenQuanYi Micro Hei",sans-serif!important}.prose[_ngcontent-fsx-c27] h1[_ngcontent-fsx-c27]{font-family:Dosis,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:2.25rem;line-height:2.5rem}.prose[_ngcontent-fsx-c27] h2[_ngcontent-fsx-c27]{font-weight:700;font-size:1.5rem;line-height:2rem;margin-bottom:1rem;margin-top:2.5rem}.prose[_ngcontent-fsx-c27] h3[_ngcontent-fsx-c27]{font-weight:700;font-size:1.25rem;line-height:1.75rem;margin-bottom:.5rem;margin-top:1rem}.prose[_ngcontent-fsx-c27] p[_ngcontent-fsx-c27]{margin-top:.5rem;margin-bottom:.5rem}.prose[_ngcontent-fsx-c27] pre[_ngcontent-fsx-c27]{margin-top:1rem;margin-bottom:1rem}.prose[_ngcontent-fsx-c27] img[_ngcontent-fsx-c27]{margin-top:1rem;margin-bottom:1rem;margin-left:auto;margin-right:auto}.prose[_ngcontent-fsx-c27] hr[_ngcontent-fsx-c27]{margin-top:2rem;margin-bottom:2rem}[_nghost-fsx-c27] .toolbar-item[_ngcontent-fsx-c27]{position:relative;background:#159}[_nghost-fsx-c27] .toolbar-item[_ngcontent-fsx-c27] .toolbar[_ngcontent-fsx-c27]{position:absolute;top:0;right:0;color:#fff}</style><style></style><style>:host{display:none}scully-content{display:none}</style><style></style><meta name="description" content="Angular Router Change 踩雷日記"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, Angular, life"><meta property="og:title" content="Angular Router Change 踩雷日記"><meta property="og:description" content="Angular Router Change 踩雷日記"><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.github.io/angular/ng_router_change_bug"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="Angular Router Change 踩雷日記"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="en_US"><script>window.ScullyIO="generated"</script></head><body class="theme-light" scully-version="1.1.1"><app-root _nghost-fsx-c19="" ng-version="11.2.11"><header _ngcontent-fsx-c19="" class="fixed z-999 top-0 left-0 flex justify-between items-center w-full bg-secondary p-4 border-b-4 border-solid border-primary"><h1 _ngcontent-fsx-c19="" class="text-2xl font-semibold"><a _ngcontent-fsx-c19="" routerlink="/" class="text-primary" ng-reflect-router-link="/" href="/">Mandy's <span _ngcontent-fsx-c19="" class="display-inlinie font-light text-text">Web</span></a></h1><nav _ngcontent-fsx-c19="" class="social"><ul _ngcontent-fsx-c19=""><li _ngcontent-fsx-c19=""><a _ngcontent-fsx-c19="" class="btn" ng-reflect-router-link="/" href="/">Blog</a></li><li _ngcontent-fsx-c19=""><a _ngcontent-fsx-c19="" href="https://mtwmt.github.io/website/" class="btn" rel="noreferrer noopener">Portfolio</a></li><li _ngcontent-fsx-c19=""><a _ngcontent-fsx-c19="" href="//github.com/mtwmt" target="_blank" class="btn" rel="noreferrer noopener">GitHub</a></li></ul></nav></header><div _ngcontent-fsx-c19="" class="container mx-auto pt-24 pb-8"><router-outlet _ngcontent-fsx-c19=""></router-outlet><app-blog _nghost-fsx-c27=""><app-meta _ngcontent-fsx-c27="" _nghost-fsx-c24="" ng-reflect-title="Angular Router Change 踩雷日記" ng-reflect-route="/angular/ng_router_change_bug" ng-reflect-tags="Angular,life" ng-reflect-twitter-image="/angular/ng_router_change_bug" ng-reflect-og-image="/angular/ng_router_change_bug"></app-meta><article _ngcontent-fsx-c27="" class="p-4 max-w-screen-xl mx-auto"><div _ngcontent-fsx-c27="" class="max-w-container space-y-4"><header _ngcontent-fsx-c27="" class="space-y-4"><div _ngcontent-fsx-c27="" class="prose max-w-none md:prose-lgspace-y-1"><dl _ngcontent-fsx-c27=""><div _ngcontent-fsx-c27=""><dt _ngcontent-fsx-c27="" class="sr-only">Published at</dt><dd _ngcontent-fsx-c27="" class="text-base leading-6 font-medium text-color-light"><time _ngcontent-fsx-c27="" datetime="undefined"></time></dd></div></dl><h1 _ngcontent-fsx-c27="">Angular Router Change 踩雷日記</h1></div></header><div _ngcontent-fsx-c27="" class="grid grid-cols-1 md:grid-cols-3 md:gap-x-4 lg:grid-cols-4 lg:gap-x-6"><div _ngcontent-fsx-c27="" class="prose prose-toc max-w-none md:prose-lg md:col-span-2 lg:col-span-3"><!--scullyContent-begin--><p _ngcontent-fsx-c27="">最近在專案上出現了一個，點導址按鈕導頁後，出現 api 重覆打的情形 而且還是在特定會在 side bar 點了才會出現這 bug 奇怪了，之前做的都沒遇過這問題呀，寫的方式也都是一樣</p><p _ngcontent-fsx-c27="">花了好多間找問題點 怎麼找都找不到 找過 <code _ngcontent-fsx-c27="">router</code>, <code _ngcontent-fsx-c27="">reslover</code> 各種設定都看過 也都試過了 就還是試不出來 餵狗也餵了好久 就是想不透</p><p _ngcontent-fsx-c27="">就這就盲目的試了好久 花了好多時間 後來 就去上了個洗手間 在解放的過程中 突然想到同事曾經過我說過我這個 bug 的關鍵字 <code _ngcontent-fsx-c27="">last navigator to</code>，當時還拿筆記了下來</p><p _ngcontent-fsx-c27="">但為時已晚 就收收下班回家了</p><p _ngcontent-fsx-c27="">到家後，打了同事說的關鍵字，估狗到了這篇文 <a href="https://stackoverflow.com/questions/41038970/how-to-determine-previous-page-url-in-angular" _ngcontent-fsx-c27="" rel="noreferrer noopener">How to determine previous page URL in Angular?</a></p><p _ngcontent-fsx-c27="">試著把網址變化 console 出來 結果發現 原來第二次還有在網址上多加了預設參數</p><hr _ngcontent-fsx-c27=""><p _ngcontent-fsx-c27="">專案情境 先取得當下的時間 然後利用當下的時間 去取得 a 資料 再利用 a 資料 當參數取得 b 資料</p><p _ngcontent-fsx-c27="">所以我把參數丟到網址上 當網址有變化時 就會再打一次api 而我這裡又有設定 網址有變化時 就會去要一次api</p><p _ngcontent-fsx-c27="">真相一切都大白了!!! 雷都是自己埋的RRRRRRRRRRRRR</p><p _ngcontent-fsx-c27="">找到問題點後 就好處理了 QQ</p><hr _ngcontent-fsx-c27=""><p _ngcontent-fsx-c27="">此篇是為了記念自己逝去的青春 😭😭😭😭</p><!--scullyContent-end--><scully-content _ngcontent-fsx-c27=""></scully-content><script>try{window.scullyContent={cssId:"_ngcontent-fsx-c27",html:document.body.innerHTML.split("\x3c!--scullyContent-begin--\x3e")[1].split("\x3c!--scullyContent-end--\x3e")[0]}}catch(n){console.error("scully could not parse content")}</script></div><div _ngcontent-fsx-c27="" class="order-first md:order-none"><div _ngcontent-fsx-c27="" class="sticky top-32 space-y-4"><app-blog-nav _ngcontent-fsx-c27="" _nghost-fsx-c26="" class="block"><ul _ngcontent-fsx-c26=""><h2 _ngcontent-fsx-c26="" class="text-xl font-semibold">目錄</h2><li _ngcontent-fsx-c26="" class="cursor-pointer"><a _ngcontent-fsx-c26="" class="text-base">Top of Page</a></li><li _ngcontent-fsx-c26="" class="cursor-pointer"><a _ngcontent-fsx-c26="" ng-reflect-ng-class="text-lg font-semibold," class="text-lg font-semibold">Sorry, could not load static page content</a></li></ul></app-blog-nav><div _ngcontent-fsx-c27=""><h2 _ngcontent-fsx-c27="" class="text-xl font-semibold">主題</h2></div></div></div></div></div></article></app-blog></div></app-root><script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule="" defer></script><script src="polyfills-es5.js" nomodule="" defer></script><script src="polyfills-es2015.js" type="module"></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule="" defer></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule="" defer></script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <title>Angular Router Change 踩雷日記</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149155162-1"></script>
+    <script>
+      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      // ga('create','UA-149155162-1','auto');ga('send','pageview');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149155162-1');
+    </script>
+  <link rel="stylesheet" href="styles.css"><style>.social[_ngcontent-lfu-c18]   li[_ngcontent-lfu-c18] {
+  display: inline-block;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcYXBwLmNvbXBvbmVudC5zY3NzIiwiLi4vLi4vbm9kZV9tb2R1bGVzL3RhaWx3aW5kY3NzL2xpYi9saWIvc3Vic3RpdHV0ZUNsYXNzQXBwbHlBdFJ1bGVzLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdFO0VDREYscUJBQW1CO0FEQW5CIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5cclxuLnNvY2lhbCB7XHJcbiAgbGkge1xyXG4gICAgQGFwcGx5IGlubGluZS1ibG9jaztcclxuICB9XHJcbn1cclxuIiwiQHRhaWx3aW5kIGJhc2U7XG5AdGFpbHdpbmQgY29tcG9uZW50cztcbkB0YWlsd2luZCB1dGlsaXRpZXM7Il19 */</style><script charset="utf-8" src="blog-blog-module-es2015.js"></script><script charset="utf-8" src="home-home-module-es2015.js"></script><style>.prose[_ngcontent-lfu-c27] {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important;
+}
+
+.prose[_ngcontent-lfu-c27]   h1[_ngcontent-lfu-c27] {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.prose[_ngcontent-lfu-c27]   h2[_ngcontent-lfu-c27] {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+}
+
+.prose[_ngcontent-lfu-c27]   h3[_ngcontent-lfu-c27] {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.prose[_ngcontent-lfu-c27]   p[_ngcontent-lfu-c27] {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose[_ngcontent-lfu-c27]   pre[_ngcontent-lfu-c27] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose[_ngcontent-lfu-c27]   img[_ngcontent-lfu-c27] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose[_ngcontent-lfu-c27]   hr[_ngcontent-lfu-c27] {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+[_nghost-lfu-c27]   .toolbar-item[_ngcontent-lfu-c27] {
+  position: relative;
+  background: #159;
+}
+
+[_nghost-lfu-c27]   .toolbar-item[_ngcontent-lfu-c27]   .toolbar[_ngcontent-lfu-c27] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+}
+
+.gotop[_ngcontent-lfu-c27] {
+  position: fixed;
+  bottom: 4rem;
+  right: 2rem;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.gotop[_ngcontent-lfu-c27]   .btn[_ngcontent-lfu-c27] {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.gotop[_ngcontent-lfu-c27]   .btn[_ngcontent-lfu-c27]:before, .gotop[_ngcontent-lfu-c27]   .btn[_ngcontent-lfu-c27]:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  margin-left: -0.25rem;
+  border-radius: 0.1875rem;
+  content: "";
+  width: 1rem;
+  height: 0.3125rem;
+  background: var(--primary);
+}
+
+.gotop[_ngcontent-lfu-c27]   .btn[_ngcontent-lfu-c27]:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  margin-left: 0.25rem;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGJsb2cuY29tcG9uZW50LnNjc3MiLCIuLi8uLi8uLi9ub2RlX21vZHVsZXMvdGFpbHdpbmRjc3MvbGliL2xpYi9zdWJzdGl0dXRlQ2xhc3NBcHBseUF0UnVsZXMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUNBQSxlQUFtQjtFQUFuQixtQkFBbUI7RURFakIsZ01BQUE7QUFERjs7QUFLRTtFQ05GLDROQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsbUJBQW1CO0FESW5COztBQU1FO0VDVkYsZ0JBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixpQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGtCQUFtQjtBRE9uQjs7QUFPRTtFQ2RGLGdCQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsb0JBQW1CO0VBQW5CLHFCQUFtQjtFQUFuQixnQkFBbUI7QURVbkI7O0FBUUU7RUNsQkYsa0JBQW1CO0VBQW5CLHFCQUFtQjtBRGFuQjs7QUFTRTtFQ3RCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0FEZ0JuQjs7QUFVRTtFQzFCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixrQkFBbUI7QURtQm5COztBQVdFO0VDOUJGLGdCQUFtQjtFQUFuQixtQkFBbUI7QURzQm5COztBQWNFO0VBQ0Usa0JBQUE7RUFDQSxnQkFBQTtBQVhKOztBQVlJO0VBQ0Usa0JBQUE7RUFDQSxNQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7QUFWTjs7QUFnQkE7RUFDRSxlQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxVQUFBO0VBQ0EsZ0JBQUE7QUFiRjs7QUFjRTtFQUNFLGFBQUE7RUFDQSxjQUFBO0FBWko7O0FBY0k7RUFFRSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsK0NBQUE7RUFDQSxxQkFBQTtFQUNBLHdCQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7RUFDQSxpQkFBQTtFQUNBLDBCQUFBO0FBYk47O0FBZUk7RUFDRSw4Q0FBQTtFQUNBLG9CQUFBO0FBYk4iLCJmaWxlIjoiYmxvZy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4vLi4vLi4vYXNzZXRzL3Njc3MvY29tbW9uJztcclxuXHJcbi5wcm9zZSB7XHJcbiAgQGFwcGx5IHRleHQtYmFzZTtcclxuICBmb250LWZhbWlseTogJ1BpbmdGYW5nU0MtUmVndWxhcicsIEhlbHZldGljYSwgJ0hlbHZldGljYSBOZXVlJywgJ1NlZ29lIFVJJyxcclxuICAgICdIaXJhZ2lubyBTYW5zIEdCJywgJ1NvdXJjZSBIYW4gU2FucyBDTicsICdNaWNyb3NvZnQgWWFIZWknLCAnU1RIZWl0aScsXHJcbiAgICAnV2VuUXVhbllpIE1pY3JvIEhlaScsIHNhbnMtc2VyaWYgIWltcG9ydGFudDtcclxuXHJcbiAgaDEge1xyXG4gICAgQGFwcGx5IHRleHQtNHhsIGZvbnQtc2FucztcclxuICB9XHJcblxyXG4gIGgyIHtcclxuICAgIEBhcHBseSBtdC0xMCBtYi00IHRleHQtMnhsIGZvbnQtYm9sZDtcclxuICB9XHJcblxyXG4gIGgzIHtcclxuICAgIEBhcHBseSBtdC00IG1iLTIgdGV4dC14bCBmb250LWJvbGQ7XHJcbiAgfVxyXG5cclxuICBwIHtcclxuICAgIEBhcHBseSBteS0yO1xyXG4gIH1cclxuXHJcbiAgcHJlIHtcclxuICAgIEBhcHBseSBteS00O1xyXG4gIH1cclxuXHJcbiAgaW1nIHtcclxuICAgIEBhcHBseSBteS00IG14LWF1dG87XHJcbiAgfVxyXG5cclxuICBociB7XHJcbiAgICBAYXBwbHkgbXktODtcclxuICB9XHJcbn1cclxuXHJcbjpob3N0IHtcclxuICAudG9vbGJhci1pdGVtIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGJhY2tncm91bmQ6ICMxNTk7XHJcbiAgICAudG9vbGJhciB7XHJcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgdG9wOiAwO1xyXG4gICAgICByaWdodDogMDtcclxuICAgICAgY29sb3I6ICNmZmY7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcblxyXG5cclxuLmdvdG9wIHtcclxuICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgYm90dG9tOiByZW0oNjRweCk7XHJcbiAgcmlnaHQ6IHJlbSgzMnB4KTtcclxuICBvcGFjaXR5OiAxO1xyXG4gIHRyYW5zaXRpb246IDAuM3M7XHJcbiAgLmJ0biB7XHJcbiAgICB3aWR0aDogcmVtKDQwcHgpO1xyXG4gICAgaGVpZ2h0OiByZW0oNDBweCk7XHJcblxyXG4gICAgJjpiZWZvcmUsXHJcbiAgICAmOmFmdGVyIHtcclxuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICB0b3A6IDUwJTtcclxuICAgICAgbGVmdDogNTAlO1xyXG4gICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKSByb3RhdGUoLTQ1ZGVnKTtcclxuICAgICAgbWFyZ2luLWxlZnQ6IHJlbSgtNHB4KTtcclxuICAgICAgYm9yZGVyLXJhZGl1czogcmVtKDNweCk7XHJcbiAgICAgIGNvbnRlbnQ6ICcnO1xyXG4gICAgICB3aWR0aDogcmVtKDE2cHgpO1xyXG4gICAgICBoZWlnaHQ6IHJlbSg1cHgpO1xyXG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1wcmltYXJ5KTtcclxuICAgIH1cclxuICAgICY6YWZ0ZXIge1xyXG4gICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKSByb3RhdGUoNDVkZWcpO1xyXG4gICAgICBtYXJnaW4tbGVmdDogcmVtKDRweCk7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcbiIsIkB0YWlsd2luZCBiYXNlO1xuQHRhaWx3aW5kIGNvbXBvbmVudHM7XG5AdGFpbHdpbmQgdXRpbGl0aWVzOyJdfQ== */</style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtZXRhLmNvbXBvbmVudC5zY3NzIn0= */</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJibG9nLW5hdi5jb21wb25lbnQuc2NzcyJ9 */</style><meta name="description" content="Angular Router Change 踩雷日記"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, Angular, life"><meta property="og:title" content="Angular Router Change 踩雷日記"><meta property="og:description" content="Angular Router Change 踩雷日記"><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.github.io/angular/ng_router_change_bug"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="Angular Router Change 踩雷日記"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="en_US"><script>window['ScullyIO']='generated';</script></head>
+  <body class="theme-light" scully-version="1.1.1">
+    <app-root _nghost-lfu-c18="" ng-version="11.2.11"><header _ngcontent-lfu-c18="" class="fixed z-999 top-0 left-0 flex justify-between items-center w-full bg-secondary p-4 border-b-4 border-solid border-primary"><h1 _ngcontent-lfu-c18="" class="text-2xl font-semibold font-dosis"><a _ngcontent-lfu-c18="" routerlink="/" class="text-primary" ng-reflect-router-link="/" href="/">Mandy's <span _ngcontent-lfu-c18="" class="display-inlinie font-light text-text">Web</span></a></h1><nav _ngcontent-lfu-c18="" class="social"><ul _ngcontent-lfu-c18=""><li _ngcontent-lfu-c18=""><a _ngcontent-lfu-c18="" class="btn" ng-reflect-router-link="/" href="/">Blog</a></li><li _ngcontent-lfu-c18=""><a _ngcontent-lfu-c18="" class="btn" ng-reflect-router-link="portfolio" href="/portfolio">Portfolio</a></li><li _ngcontent-lfu-c18=""><a _ngcontent-lfu-c18="" href="//github.com/mtwmt" target="_blank" class="btn">GitHub</a></li></ul></nav></header><div _ngcontent-lfu-c18="" class="container mx-auto pt-24 pb-8"><router-outlet _ngcontent-lfu-c18=""></router-outlet><app-blog _nghost-lfu-c27="">
+  <app-meta _ngcontent-lfu-c27="" _nghost-lfu-c24="" ng-reflect-title="Angular Router Change 踩雷日記" ng-reflect-route="/angular/ng_router_change_bug" ng-reflect-tags="Angular,life" ng-reflect-twitter-image="/angular/ng_router_change_bug" ng-reflect-og-image="/angular/ng_router_change_bug" ng-reflect-article-published-at="2020/09/13" ng-reflect-article-updated-at="2020/09/13"></app-meta>
+  <article _ngcontent-lfu-c27="" class="relative p-4 max-w-screen-xl mx-auto">
+    <div _ngcontent-lfu-c27="" class="max-w-container space-y-4">
+      <header _ngcontent-lfu-c27="" class="space-y-4">
+        
+        <div _ngcontent-lfu-c27="" class="prose max-w-none md:prose-lgspace-y-1">
+          <dl _ngcontent-lfu-c27="">
+            <div _ngcontent-lfu-c27="">
+              <dt _ngcontent-lfu-c27="" class="sr-only">Published at</dt>
+              <dd _ngcontent-lfu-c27="" class="text-base leading-6 font-medium text-color-light">
+                <time _ngcontent-lfu-c27="" datetime="2020/09/13">
+                  13 September 2020
+                </time>
+              </dd>
+            </div>
+          </dl>
+
+          <h1 _ngcontent-lfu-c27="">
+            Angular Router Change 踩雷日記
+          </h1>
+          
+        </div>
+      </header>
+      <div _ngcontent-lfu-c27="" class="grid grid-cols-1 md:grid-cols-3 md:gap-x-4 lg:grid-cols-4 lg:gap-x-6">
+        <div _ngcontent-lfu-c27="" class="prose prose-toc max-w-none md:prose-lg md:col-span-2 lg:col-span-3">
+          <!--scullyContent-begin--><p _ngcontent-lfu-c27="">最近在專案上出現了一個，點導址按鈕導頁後，出現 api 重覆打的情形
+而且還是在特定會在 side bar 點了才會出現這 bug
+奇怪了，之前做的都沒遇過這問題呀，寫的方式也都是一樣</p>
+<p _ngcontent-lfu-c27="">花了好多間找問題點 怎麼找都找不到 找過 <code _ngcontent-lfu-c27="">router</code>, <code _ngcontent-lfu-c27="">reslover</code> 各種設定都看過 也都試過了 就還是試不出來 餵狗也餵了好久 就是想不透</p>
+<p _ngcontent-lfu-c27="">就這就盲目的試了好久 花了好多時間
+後來 就去上了個洗手間 在解放的過程中 突然想到同事曾經過我說過我這個 bug 的關鍵字 <code _ngcontent-lfu-c27="">last navigator to </code>，當時還拿筆記了下來</p>
+<p _ngcontent-lfu-c27="">但為時已晚 就收收下班回家了</p>
+<p _ngcontent-lfu-c27="">到家後，打了同事說的關鍵字，估狗到了這篇文 <a href="https://stackoverflow.com/questions/41038970/how-to-determine-previous-page-url-in-angular" _ngcontent-lfu-c27="">How to determine previous page URL in Angular?</a></p>
+<p _ngcontent-lfu-c27="">試著把網址變化 console 出來
+結果發現 原來第二次還有在網址上多加了預設參數</p>
+<hr _ngcontent-lfu-c27="">
+<p _ngcontent-lfu-c27="">專案情境
+先取得當下的時間 然後利用當下的時間 去取得 a 資料
+再利用 a 資料 當參數取得 b 資料</p>
+<p _ngcontent-lfu-c27="">所以我把參數丟到網址上 當網址有變化時 就會再打一次api
+而我這裡又有設定 網址有變化時 就會去要一次api</p>
+<p _ngcontent-lfu-c27="">真相一切都大白了!!!
+雷都是自己埋的RRRRRRRRRRRRR</p>
+<p _ngcontent-lfu-c27="">找到問題點後 就好處理了 QQ</p>
+<hr _ngcontent-lfu-c27="">
+<p _ngcontent-lfu-c27="">此篇是為了記念自己逝去的青春 😭😭😭😭</p>
+<!--scullyContent-end--><scully-content _ngcontent-lfu-c27=""></scully-content>
+          <p _ngcontent-lfu-c27="" class="flex justify-between my-16 pt-4 border-t-2 divide-solid">
+            <a _ngcontent-lfu-c27="" ng-reflect-router-link="/angular/ng_reactive_form_Erro" href="/angular/ng_reactive_form_Error"><span _ngcontent-lfu-c27="" aria-hidden="true" class="mr-2">←</span><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--> Reactive Forms in Angular Disabled Warning ( 響應式表單 Disabled Warning )</a>
+            <a _ngcontent-lfu-c27="" ng-reflect-router-link="/angular/ng_breadcrumb" href="/angular/ng_breadcrumb">如何在 Angular9 建立 Breadcrumb (麵包屑) <span _ngcontent-lfu-c27="" aria-hidden="true" class="ml-2">→</span><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></a>
+          </p>
+        <script>try {window['scullyContent'] = {cssId:"_ngcontent-lfu-c27",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+        <div _ngcontent-lfu-c27="" class="order-first md:order-none">
+          <div _ngcontent-lfu-c27="" class="sticky top-32 space-y-4">
+            <app-blog-nav _ngcontent-lfu-c27="" _nghost-lfu-c26="" class="block"><ul _ngcontent-lfu-c26=""><p _ngcontent-lfu-c26="" class="text-xl font-semibold">Index</p><li _ngcontent-lfu-c26="" class="cursor-pointer"><a _ngcontent-lfu-c26="" ng-reflect-ng-class="text-base leading-8," class="text-base leading-8"> Sorry, could not load static page content </a><!--bindings={
+  "ng-reflect-ng-if": "/angular/ng_router_change_bug"
+}--></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object HTMLHeadingElement]"
+}--></ul></app-blog-nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+<!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}-->
+
+
+
+
+<a _ngcontent-lfu-c27="" class="gotop" ng-reflect-ng-style="[object Object]" style="opacity: 0;">
+  <i _ngcontent-lfu-c27="" class="btn"></i>
+</a><!--bindings={
+  "ng-reflect-ng-if": "/angular/ng_router_change_bug"
+}-->
+</app-blog><!--container--></div></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule="" defer=""></script><script src="polyfills-es5.js" nomodule="" defer=""></script><script src="polyfills-es2015.js" type="module"></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule="" defer=""></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule="" defer=""></script>
+
+</body></html>
