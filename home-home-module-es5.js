@@ -81,7 +81,7 @@
         selectors: [["app-home"]],
         decls: 6,
         vars: 0,
-        consts: [[1, "grid", "gap-x-4", "grid-cols-1", "lg:grid-cols-4", "px-4"], [1, "col-span-4", "lg:col-span-1"], [1, "col-span-4", "lg:col-span-3"], [1, "rounded"]],
+        consts: [[1, "grid", "gap-x-4", "grid-cols-1", "lg:grid-cols-4"], [1, "col-span-4", "lg:col-span-1"], [1, "col-span-4", "lg:col-span-3"], [1, "rounded"]],
         template: function HomeComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
