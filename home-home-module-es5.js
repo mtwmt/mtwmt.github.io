@@ -257,7 +257,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "p", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " hey!\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " hey hello world !\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
