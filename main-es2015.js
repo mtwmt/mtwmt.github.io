@@ -106,7 +106,7 @@ class BlogListComponent {
     ngOnInit() { }
 }
 BlogListComponent.ɵfac = function BlogListComponent_Factory(t) { return new (t || BlogListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_blog_list_service__WEBPACK_IMPORTED_MODULE_2__["BlogListService"])); };
-BlogListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: BlogListComponent, selectors: [["app-blog-list"]], decls: 4, vars: 3, consts: [[1, "flex", "flex-col", "divide-y", "divide-gray-300", "p-4", "card"], ["class", "py-4", 4, "ngFor", "ngForOf"], [1, "py-4"], [1, "flex", "justify-between", "items-center"], [1, "font-light", "text-gray-medium"], [4, "ngIf"], ["class", "px-2 py-1 text-sm text-secondary font-bold rounded hover:text-white hover:bg-secondary transition-colors duration-200 ease-in-out cursor-pointer", 3, "routerLink", 4, "ngIf"], [1, "mt-2"], [1, "text-2xl", "font-bold", "hover:text-gray-medium", "transition-colors", "duration-200", "ease-in-out", 3, "routerLink"], [1, "mt-2", "font-thin", "text-gray-dark"], [1, "px-2", "py-1", "text-sm", "text-secondary", "font-bold", "rounded", "hover:text-white", "hover:bg-secondary", "transition-colors", "duration-200", "ease-in-out", "cursor-pointer", 3, "routerLink"]], template: function BlogListComponent_Template(rf, ctx) { if (rf & 1) {
+BlogListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: BlogListComponent, selectors: [["app-blog-list"]], decls: 4, vars: 3, consts: [[1, "flex", "flex-col", "divide-y", "divide-gray-300", "p-4", "card"], ["class", "py-4", 4, "ngFor", "ngForOf"], [1, "py-4"], [1, "flex", "justify-between", "items-center"], [1, "font-light", "text-gray-medium", "lg:text-base", "sm:text-xs"], [4, "ngIf"], ["class", "px-2 py-1 lg:text-sm sm:text-xs text-secondary font-bold rounded hover:text-white hover:bg-secondary transition-colors duration-200 ease-in-out cursor-pointer", 3, "routerLink", 4, "ngIf"], [1, "mt-2"], [1, "md:text-2xl", "text-xl", "font-bold", "hover:text-gray-medium", "transition-colors", "duration-200", "ease-in-out", 3, "routerLink"], [1, "mt-2", "font-thin", "text-gray-dark"], [1, "px-2", "py-1", "lg:text-sm", "sm:text-xs", "text-secondary", "font-bold", "rounded", "hover:text-white", "hover:bg-secondary", "transition-colors", "duration-200", "ease-in-out", "cursor-pointer", 3, "routerLink"]], template: function BlogListComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, BlogListComponent_div_1_Template, 12, 11, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](2, "async");
@@ -604,7 +604,7 @@ const _c0 = function () { return ["./"]; };
 const _c1 = function (a0) { return { page: a0 }; };
 function BlogListPaginationComponent_a_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "a", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " previous ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " << ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
@@ -617,14 +617,14 @@ function BlogListPaginationComponent_a_3_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const page_r3 = ctx.$implicit;
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("btn-active", page_r3 === ctx_r1.correctPage - 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](5, _c0))("queryParams", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](6, _c1, page_r3 + 1));
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("btn-active", page_r3 === ctx_r1.correctPage);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](5, _c0))("queryParams", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](6, _c1, page_r3));
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", page_r3 + 1, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", page_r3, " ");
 } }
 function BlogListPaginationComponent_a_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "a", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Next ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " >> ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
@@ -638,6 +638,7 @@ class BlogListPaginationComponent {
         this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
         this.pageSize = 10;
         this.link = [''];
+        this.pageLimit = 10;
     }
     ngOnInit() {
         this.activatedRoute.params
@@ -656,11 +657,22 @@ class BlogListPaginationComponent {
                         return routes;
                     }
                 }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])((links) => {
-                    const total = Math.ceil(links.length / this.pageSize);
-                    this.total = Array(total)
-                        .fill(total)
-                        .map((e, i) => i);
                     this.correctPage = page;
+                    let totalPage = Math.floor(links.length / this.pageSize);
+                    (totalPage % this.pageSize == 0) ? totalPage = totalPage : totalPage = totalPage + 1;
+                    this.totalPage = totalPage;
+                    const start = page - ((page - 1) % this.pageLimit);
+                    const limit = Math.min((page - ((page - 1) % this.pageLimit) + (this.pageLimit - 1)), totalPage);
+                    this.total = Array(limit)
+                        .fill(limit)
+                        .filter((e, i) => {
+                        return i < this.pageLimit;
+                    }).map((e, i) => {
+                        return i + start;
+                    })
+                        .filter((e, i) => {
+                        return e <= totalPage;
+                    });
                 }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((links) => {
                     return links.slice((page - 1) * this.pageSize, page * this.pageSize);
                 }));
@@ -676,7 +688,7 @@ class BlogListPaginationComponent {
     }
 }
 BlogListPaginationComponent.ɵfac = function BlogListPaginationComponent_Factory(t) { return new (t || BlogListPaginationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_blog_list_service__WEBPACK_IMPORTED_MODULE_4__["BlogListService"])); };
-BlogListPaginationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: BlogListPaginationComponent, selectors: [["app-blog-list-pagination"]], inputs: { params: "params", name: "name" }, decls: 5, vars: 3, consts: [[1, "mt-8"], [1, "flex", "justify-end"], ["class", "btn bg-white", 3, "routerLink", "queryParams", 4, "ngIf"], ["class", "btn bg-white", "routerLinkActive", "active", 3, "btn-active", "routerLink", "queryParams", 4, "ngFor", "ngForOf"], [1, "btn", "bg-white", 3, "routerLink", "queryParams"], ["routerLinkActive", "active", 1, "btn", "bg-white", 3, "routerLink", "queryParams"]], template: function BlogListPaginationComponent_Template(rf, ctx) { if (rf & 1) {
+BlogListPaginationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: BlogListPaginationComponent, selectors: [["app-blog-list-pagination"]], inputs: { params: "params", name: "name" }, decls: 5, vars: 3, consts: [[1, "mt-8"], [1, "text-right"], ["class", "btn bg-white mb-4", 3, "routerLink", "queryParams", 4, "ngIf"], ["class", "btn bg-white mb-4", "routerLinkActive", "active", 3, "btn-active", "routerLink", "queryParams", 4, "ngFor", "ngForOf"], [1, "btn", "bg-white", "mb-4", 3, "routerLink", "queryParams"], ["routerLinkActive", "active", 1, "btn", "bg-white", "mb-4", 3, "routerLink", "queryParams"]], template: function BlogListPaginationComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, BlogListPaginationComponent_a_2_Template, 2, 5, "a", 2);
@@ -690,7 +702,7 @@ BlogListPaginationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.total);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.correctPage < (ctx.total == null ? null : ctx.total.length));
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.correctPage < ctx.totalPage);
     } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLinkWithHref"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLinkActive"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJibG9nLWxpc3QtcGFnaW5hdGlvbi5jb21wb25lbnQuc2NzcyJ9 */"] });
 
 
