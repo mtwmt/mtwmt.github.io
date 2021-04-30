@@ -35,6 +35,7 @@ h6 {
   --table-even-row: theme('colors.gray.700');
   --shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1),
     0 4px 6px -2px rgba(255, 255, 255, 0.05);
+  --text-link-color: theme('colors.blue.300');
 }
 
 :root .theme-light {
@@ -44,9 +45,11 @@ h6 {
   --secondary: #fdb111;
   --background-color: theme('colors.white');
   --text-color: #444;
+  --text-color-contrast: theme('colors.white');
   --gray-light: theme('colors.gray.500');
   --gray-medium: theme('colors.gray.600');
   --gray-dark: theme('colors.gray.700');
   --table-even-row: theme('colors.gray.200');
   --shadow: theme('boxShadow.lg');
+  --text-link-color: theme('colors.blue.500');
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.1.1">
+<!DOCTYPE html><html lang="zh-Hant"><head><meta name="generator" content="Scully 1.1.1">
     <meta charset="utf-8">
     <title>gulp4 與 gulp-cli</title>
     <base href="/">
@@ -20,22 +20,141 @@
 
       gtag('config', 'UA-149155162-1');
     </script>
-  <link rel="stylesheet" href="styles.css"><style>.social[_ngcontent-ywi-c18]   li[_ngcontent-ywi-c18] {
+  <link rel="stylesheet" href="styles.css"><style>.hamburger[_ngcontent-roa-c18] {
+  position: absolute;
+  right: 1.875rem;
+  margin: auto;
+  width: 1.875rem;
+  height: 1.5625rem;
+  z-index: 999;
+}
+
+.hamburger[_ngcontent-roa-c18]   span[_ngcontent-roa-c18] {
+  display: inline-block;
+  text-indent: -9999px;
+  transition: 0.5s;
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  width: 30px;
+  height: 5px;
+  background: var(--primary);
+  margin: 10px 0;
+}
+
+.hamburger[_ngcontent-roa-c18]   span[_ngcontent-roa-c18]:before {
+  transition: 0.5s;
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  display: block;
+  width: 30px;
+  height: 5px;
+  background: var(--primary);
+}
+
+.hamburger[_ngcontent-roa-c18]   span[_ngcontent-roa-c18]:after {
+  transition: 0.5s;
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: block;
+  width: 30px;
+  height: 5px;
+  background: var(--primary);
+}
+
+.hamburger.active[_ngcontent-roa-c18]   span[_ngcontent-roa-c18] {
+  transform: rotate(180deg);
+  background-color: transparent;
+}
+
+.hamburger.active[_ngcontent-roa-c18]   span[_ngcontent-roa-c18]:before {
+  top: -10px;
+  transform: translateY(10.5px) rotate(45deg);
+}
+
+.hamburger.active[_ngcontent-roa-c18]   span[_ngcontent-roa-c18]:after {
+  top: -10px;
+  transform: translateY(10.5px) rotate(-45deg);
+}
+
+.social[_ngcontent-roa-c18] {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+@media (min-width: 640px) {
+  .social[_ngcontent-roa-c18] {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .social[_ngcontent-roa-c18] {
+    position: static;
+  }
+}
+
+.social[_ngcontent-roa-c18]   li[_ngcontent-roa-c18] {
   display: inline-block;
 }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcYXBwLmNvbXBvbmVudC5zY3NzIiwiLi4vLi4vbm9kZV9tb2R1bGVzL3RhaWx3aW5kY3NzL2xpYi9saWIvc3Vic3RpdHV0ZUNsYXNzQXBwbHlBdFJ1bGVzLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdFO0VDREYscUJBQW1CO0FEQW5CIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5cclxuLnNvY2lhbCB7XHJcbiAgbGkge1xyXG4gICAgQGFwcGx5IGlubGluZS1ibG9jaztcclxuICB9XHJcbn1cclxuIiwiQHRhaWx3aW5kIGJhc2U7XG5AdGFpbHdpbmQgY29tcG9uZW50cztcbkB0YWlsd2luZCB1dGlsaXRpZXM7Il19 */</style><script charset="utf-8" src="blog-blog-module-es2015.js"></script><script charset="utf-8" src="home-home-module-es2015.js"></script><style>.prose[_ngcontent-ywi-c27] {
+
+@media (max-width: 768px) {
+  .social[_ngcontent-roa-c18] {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    display: block;
+    padding-top: 5rem;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    transition: 0.5s;
+    transform: translateX(-100%);
+    z-index: 99;
+    background: white;
+    box-shadow: 0px 1px 0.5rem 0px rgba(214, 214, 214, 0.7);
+  }
+
+  .social.active[_ngcontent-roa-c18] {
+    transform: translateX(0%);
+    overflow: hidden;
+  }
+
+  .social[_ngcontent-roa-c18]   li[_ngcontent-roa-c18] {
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center;
+    line-height: 2;
+  }
+
+  .social[_ngcontent-roa-c18]   li[_ngcontent-roa-c18]   a[_ngcontent-roa-c18] {
+    width: 70%;
+  }
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcYXBwLmNvbXBvbmVudC5zY3NzIiwiLi4vLi4vbm9kZV9tb2R1bGVzL3RhaWx3aW5kY3NzL2xpYi9saWIvc3Vic3RpdHV0ZUNsYXNzQXBwbHlBdFJ1bGVzLmpzIiwiPG5vIHNvdXJjZT4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBa0NBO0VBRUUsa0JBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtFQUNBLFlBQUE7QUFsQ0Y7O0FBbUNFO0VBQ0UscUJBQUE7RUFDQSxvQkFBQTtFQUNBLGdCQUFBO0VBMUNGLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7RUFDQSxXQXdDcUM7RUF2Q3JDLFdBQUE7RUFDQSwwQkFzQ3FCO0VBckNyQixjQUFBO0FBVUY7O0FBVEU7RUFDRSxnQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxPQUFBO0VBQ0EsY0FBQTtFQUNBLFdBNkJtQztFQTVCbkMsV0FBQTtFQUNBLDBCQTJCbUI7QUFoQnZCOztBQVRFO0VBQ0UsZ0JBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsT0FBQTtFQUNBLGNBQUE7RUFDQSxXQWtCbUM7RUFqQm5DLFdBQUE7RUFDQSwwQkFnQm1CO0FBTHZCOztBQVFJO0VBRUUseUJBQUE7RUFDQSw2QkFBQTtBQVBOOztBQVFNO0VBQ0UsVUFBQTtFQUNBLDJDQUFBO0FBTlI7O0FBUU07RUFDRSxVQUFBO0VBQ0EsNENBQUE7QUFOUjs7QUFZQTtFQy9EQSx5SUFBbUI7RUFBbkIsaUlBQW1CO0VBQW5CLDBKQUFtQjtFQUFuQix3REFBbUI7RUFBbkIsMEJBQW1CO0VBQW5CLHdEQUFtQjtFQUFuQiwwQkFBbUI7QUR1RG5COztBRXpEQTtFREVBO0lBQUEsa0JBQW1CO0lBQW5CLFFBQW1CO0lBQW5CO0VBQW1CO0NDRm5COztBQUFBO0VERUE7SUFBQTtFQUFtQjtDQ0ZuQjs7QUZrRUU7RUNoRUYscUJBQW1CO0FEMERuQjs7QUFhQTtFQUNFO0lBQ0UsZUFBQTtJQUNBLFNBQUE7SUFDQSxPQUFBO0lBQ0EsY0FBQTtJQUNBLGlCQUFBO0lBQ0EsV0FBQTtJQUNBLFlBQUE7SUFDQSxTQUFBO0lBQ0EsZ0JBQUE7SUFDQSw0QkFBQTtJQUNBLFdBQUE7SUFDQSxpQkFBQTtJQUNBLHVEQUFBO0VBVkY7O0VBV0U7SUFDRSx5QkFBQTtJQUNBLGdCQUFBO0VBVEo7O0VBWUU7SUMzRkosbUJBQW1CO0lENkZiLGNBQUE7SUFDQSxrQkFBQTtJQUNBLGNBQUE7RUFWSjs7RUFZSTtJQUNFLFVBQUE7RUFWTjtBQUNGIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uL2Fzc2V0cy9zY3NzL2NvbW1vbic7XHJcblxyXG5AbWl4aW4gaGFtYnVyZ2VyKCRjb2xvciwgJGljb25XKSB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICB3aWR0aDogJGljb25XO1xyXG4gIGhlaWdodDogJGljb25XLzY7XHJcbiAgYmFja2dyb3VuZDogJGNvbG9yO1xyXG4gIG1hcmdpbjogJGljb25XLzMgMDtcclxuICAmOmJlZm9yZSB7XHJcbiAgICB0cmFuc2l0aW9uOiAwLjVzO1xyXG4gICAgY29udGVudDogJyc7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IC0kaWNvblcvMztcclxuICAgIGxlZnQ6IDA7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHdpZHRoOiAkaWNvblc7XHJcbiAgICBoZWlnaHQ6ICRpY29uVy82O1xyXG4gICAgYmFja2dyb3VuZDogJGNvbG9yO1xyXG4gIH1cclxuICAmOmFmdGVyIHtcclxuICAgIHRyYW5zaXRpb246IDAuNXM7XHJcbiAgICBjb250ZW50OiAnJztcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogJGljb25XLzM7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogJGljb25XO1xyXG4gICAgaGVpZ2h0OiAkaWNvblcvNjtcclxuICAgIGJhY2tncm91bmQ6ICRjb2xvcjtcclxuICB9XHJcbn1cclxuXHJcbi5oYW1idXJnZXIge1xyXG4gIC8vIGRpc3BsYXk6IG5vbmU7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHJpZ2h0OiByZW0oMzBweCk7XHJcbiAgbWFyZ2luOiBhdXRvO1xyXG4gIHdpZHRoOiByZW0oMzBweCk7XHJcbiAgaGVpZ2h0OiByZW0oMjVweCk7XHJcbiAgei1pbmRleDogOTk5O1xyXG4gIHNwYW4ge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgdGV4dC1pbmRlbnQ6IC05OTk5cHg7XHJcbiAgICB0cmFuc2l0aW9uOiAwLjVzO1xyXG4gICAgQGluY2x1ZGUgaGFtYnVyZ2VyKHZhcigtLXByaW1hcnkpLCAzMHB4KTtcclxuICB9XHJcbiAgJi5hY3RpdmUge1xyXG4gICAgc3BhbiB7XHJcbiAgICAgIC8vIHJpZ2h0OiByZW0oMTVweCk7XHJcbiAgICAgIHRyYW5zZm9ybTogcm90YXRlKDE4MGRlZyk7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gICAgICAmOmJlZm9yZSB7XHJcbiAgICAgICAgdG9wOiAtMTBweDtcclxuICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMTAuNXB4KSByb3RhdGUoNDVkZWcpO1xyXG4gICAgICB9XHJcbiAgICAgICY6YWZ0ZXIge1xyXG4gICAgICAgIHRvcDogLTEwcHg7XHJcbiAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDEwLjVweCkgcm90YXRlKC00NWRlZyk7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbn1cclxuXHJcbi5zb2NpYWwge1xyXG4gIGxpIHtcclxuICAgIEBhcHBseSBpbmxpbmUtYmxvY2s7XHJcbiAgfVxyXG5cclxuICBAYXBwbHkgbWQ6c3RhdGljIHNtOmFic29sdXRlIHNtOnRvcC0wIHNtOmxlZnQtMCB0cmFuc2l0aW9uIGR1cmF0aW9uLTMwMCBlYXNlLWluLW91dDtcclxufVxyXG5cclxuQG1lZGlhIChtYXgtd2lkdGg6IDc2OHB4KSB7XHJcbiAgLnNvY2lhbCB7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICB0b3A6IDY4cHg7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBwYWRkaW5nLXRvcDogcmVtKDgwcHgpO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBib3JkZXI6IDA7XHJcbiAgICB0cmFuc2l0aW9uOiAwLjVzO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC0xMDAlKTtcclxuICAgIHotaW5kZXg6IDk5O1xyXG4gICAgYmFja2dyb3VuZDogbGlnaHRlbigjZWZlZmVmLCAxMCUpO1xyXG4gICAgYm94LXNoYWRvdzogMHB4IDFweCByZW0oOHB4KSAwcHggcmdiYShkYXJrZW4oI2VmZWZlZiwgMTAlKSwgMC43KTtcclxuICAgICYuYWN0aXZlIHtcclxuICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDAlKTtcclxuICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIH1cclxuXHJcbiAgICBsaSB7XHJcbiAgICAgIEBhcHBseSBtYi00O1xyXG4gICAgICBkaXNwbGF5OiBibG9jaztcclxuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICBsaW5lLWhlaWdodDogMjtcclxuXHJcbiAgICAgIGEge1xyXG4gICAgICAgIHdpZHRoOiA3MCU7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbn1cclxuIiwiQHRhaWx3aW5kIGJhc2U7XG5AdGFpbHdpbmQgY29tcG9uZW50cztcbkB0YWlsd2luZCB1dGlsaXRpZXM7IixudWxsXX0= */</style><script charset="utf-8" src="blog-blog-module-es2015.js"></script><script charset="utf-8" src="home-home-module-es2015.js"></script><style>.prose[_ngcontent-roa-c27] {
   font-size: 1rem;
   line-height: 1.5rem;
   font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important;
 }
 
-.prose[_ngcontent-ywi-c27]   h1[_ngcontent-ywi-c27] {
+.prose[_ngcontent-roa-c27]   h1[_ngcontent-roa-c27] {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
 
-.prose[_ngcontent-ywi-c27]   h2[_ngcontent-ywi-c27] {
+.prose[_ngcontent-roa-c27]   h2[_ngcontent-roa-c27] {
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -43,7 +162,7 @@
   margin-top: 2.5rem;
 }
 
-.prose[_ngcontent-ywi-c27]   h3[_ngcontent-ywi-c27] {
+.prose[_ngcontent-roa-c27]   h3[_ngcontent-roa-c27] {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -51,41 +170,74 @@
   margin-top: 1rem;
 }
 
-.prose[_ngcontent-ywi-c27]   p[_ngcontent-ywi-c27] {
+.prose[_ngcontent-roa-c27]   p[_ngcontent-roa-c27] {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-.prose[_ngcontent-ywi-c27]   pre[_ngcontent-ywi-c27] {
+.prose[_ngcontent-roa-c27]   pre[_ngcontent-roa-c27] {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.prose[_ngcontent-ywi-c27]   img[_ngcontent-ywi-c27] {
+.prose[_ngcontent-roa-c27]   img[_ngcontent-roa-c27] {
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-.prose[_ngcontent-ywi-c27]   hr[_ngcontent-ywi-c27] {
+.prose[_ngcontent-roa-c27]   hr[_ngcontent-roa-c27] {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-[_nghost-ywi-c27]   .toolbar-item[_ngcontent-ywi-c27] {
+[_nghost-roa-c27]   .toolbar-item[_ngcontent-roa-c27] {
   position: relative;
   background: #159;
 }
 
-[_nghost-ywi-c27]   .toolbar-item[_ngcontent-ywi-c27]   .toolbar[_ngcontent-ywi-c27] {
+[_nghost-roa-c27]   .toolbar-item[_ngcontent-roa-c27]   .toolbar[_ngcontent-roa-c27] {
   position: absolute;
   top: 0;
   right: 0;
   color: #fff;
 }
 
-.gotop[_ngcontent-ywi-c27] {
+a[_ngcontent-roa-c27] {
+  text-decoration: underline;
+  transform: 0.3s;
+}
+
+a[_ngcontent-roa-c27]:hover {
+  text-decoration: none;
+}
+
+table[_ngcontent-roa-c27] {
+  margin: 1rem 0 0.5rem 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table[_ngcontent-roa-c27]   caption[_ngcontent-roa-c27] {
+  line-height: 48px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+table[_ngcontent-roa-c27]   th[_ngcontent-roa-c27] {
+  color: var(--text-color);
+  background: var(--table-even-row);
+}
+
+table[_ngcontent-roa-c27]   th[_ngcontent-roa-c27], table[_ngcontent-roa-c27]   td[_ngcontent-roa-c27] {
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  line-height: 1.2;
+  border: 1px solid var(--table-even-row);
+}
+
+.gotop[_ngcontent-roa-c27] {
   position: fixed;
   bottom: 4rem;
   right: 2rem;
@@ -93,12 +245,12 @@
   transition: 0.3s;
 }
 
-.gotop[_ngcontent-ywi-c27]   .btn[_ngcontent-ywi-c27] {
+.gotop[_ngcontent-roa-c27]   .btn[_ngcontent-roa-c27] {
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.gotop[_ngcontent-ywi-c27]   .btn[_ngcontent-ywi-c27]:before, .gotop[_ngcontent-ywi-c27]   .btn[_ngcontent-ywi-c27]:after {
+.gotop[_ngcontent-roa-c27]   .btn[_ngcontent-roa-c27]:before, .gotop[_ngcontent-roa-c27]   .btn[_ngcontent-roa-c27]:after {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -111,11 +263,11 @@
   background: var(--primary);
 }
 
-.gotop[_ngcontent-ywi-c27]   .btn[_ngcontent-ywi-c27]:after {
+.gotop[_ngcontent-roa-c27]   .btn[_ngcontent-roa-c27]:after {
   transform: translate(-50%, -50%) rotate(45deg);
   margin-left: 0.25rem;
 }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGJsb2cuY29tcG9uZW50LnNjc3MiLCIuLi8uLi8uLi9ub2RlX21vZHVsZXMvdGFpbHdpbmRjc3MvbGliL2xpYi9zdWJzdGl0dXRlQ2xhc3NBcHBseUF0UnVsZXMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUNBQSxlQUFtQjtFQUFuQixtQkFBbUI7RURFakIsZ01BQUE7QUFERjs7QUFLRTtFQ05GLDROQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsbUJBQW1CO0FESW5COztBQU1FO0VDVkYsZ0JBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixpQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGtCQUFtQjtBRE9uQjs7QUFPRTtFQ2RGLGdCQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsb0JBQW1CO0VBQW5CLHFCQUFtQjtFQUFuQixnQkFBbUI7QURVbkI7O0FBUUU7RUNsQkYsa0JBQW1CO0VBQW5CLHFCQUFtQjtBRGFuQjs7QUFTRTtFQ3RCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0FEZ0JuQjs7QUFVRTtFQzFCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixrQkFBbUI7QURtQm5COztBQVdFO0VDOUJGLGdCQUFtQjtFQUFuQixtQkFBbUI7QURzQm5COztBQWNFO0VBQ0Usa0JBQUE7RUFDQSxnQkFBQTtBQVhKOztBQVlJO0VBQ0Usa0JBQUE7RUFDQSxNQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7QUFWTjs7QUFnQkE7RUFDRSxlQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxVQUFBO0VBQ0EsZ0JBQUE7QUFiRjs7QUFjRTtFQUNFLGFBQUE7RUFDQSxjQUFBO0FBWko7O0FBY0k7RUFFRSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsK0NBQUE7RUFDQSxxQkFBQTtFQUNBLHdCQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7RUFDQSxpQkFBQTtFQUNBLDBCQUFBO0FBYk47O0FBZUk7RUFDRSw4Q0FBQTtFQUNBLG9CQUFBO0FBYk4iLCJmaWxlIjoiYmxvZy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4vLi4vLi4vYXNzZXRzL3Njc3MvY29tbW9uJztcclxuXHJcbi5wcm9zZSB7XHJcbiAgQGFwcGx5IHRleHQtYmFzZTtcclxuICBmb250LWZhbWlseTogJ1BpbmdGYW5nU0MtUmVndWxhcicsIEhlbHZldGljYSwgJ0hlbHZldGljYSBOZXVlJywgJ1NlZ29lIFVJJyxcclxuICAgICdIaXJhZ2lubyBTYW5zIEdCJywgJ1NvdXJjZSBIYW4gU2FucyBDTicsICdNaWNyb3NvZnQgWWFIZWknLCAnU1RIZWl0aScsXHJcbiAgICAnV2VuUXVhbllpIE1pY3JvIEhlaScsIHNhbnMtc2VyaWYgIWltcG9ydGFudDtcclxuXHJcbiAgaDEge1xyXG4gICAgQGFwcGx5IHRleHQtNHhsIGZvbnQtc2FucztcclxuICB9XHJcblxyXG4gIGgyIHtcclxuICAgIEBhcHBseSBtdC0xMCBtYi00IHRleHQtMnhsIGZvbnQtYm9sZDtcclxuICB9XHJcblxyXG4gIGgzIHtcclxuICAgIEBhcHBseSBtdC00IG1iLTIgdGV4dC14bCBmb250LWJvbGQ7XHJcbiAgfVxyXG5cclxuICBwIHtcclxuICAgIEBhcHBseSBteS0yO1xyXG4gIH1cclxuXHJcbiAgcHJlIHtcclxuICAgIEBhcHBseSBteS00O1xyXG4gIH1cclxuXHJcbiAgaW1nIHtcclxuICAgIEBhcHBseSBteS00IG14LWF1dG87XHJcbiAgfVxyXG5cclxuICBociB7XHJcbiAgICBAYXBwbHkgbXktODtcclxuICB9XHJcbn1cclxuXHJcbjpob3N0IHtcclxuICAudG9vbGJhci1pdGVtIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGJhY2tncm91bmQ6ICMxNTk7XHJcbiAgICAudG9vbGJhciB7XHJcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgdG9wOiAwO1xyXG4gICAgICByaWdodDogMDtcclxuICAgICAgY29sb3I6ICNmZmY7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcblxyXG5cclxuLmdvdG9wIHtcclxuICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgYm90dG9tOiByZW0oNjRweCk7XHJcbiAgcmlnaHQ6IHJlbSgzMnB4KTtcclxuICBvcGFjaXR5OiAxO1xyXG4gIHRyYW5zaXRpb246IDAuM3M7XHJcbiAgLmJ0biB7XHJcbiAgICB3aWR0aDogcmVtKDQwcHgpO1xyXG4gICAgaGVpZ2h0OiByZW0oNDBweCk7XHJcblxyXG4gICAgJjpiZWZvcmUsXHJcbiAgICAmOmFmdGVyIHtcclxuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICB0b3A6IDUwJTtcclxuICAgICAgbGVmdDogNTAlO1xyXG4gICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKSByb3RhdGUoLTQ1ZGVnKTtcclxuICAgICAgbWFyZ2luLWxlZnQ6IHJlbSgtNHB4KTtcclxuICAgICAgYm9yZGVyLXJhZGl1czogcmVtKDNweCk7XHJcbiAgICAgIGNvbnRlbnQ6ICcnO1xyXG4gICAgICB3aWR0aDogcmVtKDE2cHgpO1xyXG4gICAgICBoZWlnaHQ6IHJlbSg1cHgpO1xyXG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1wcmltYXJ5KTtcclxuICAgIH1cclxuICAgICY6YWZ0ZXIge1xyXG4gICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKSByb3RhdGUoNDVkZWcpO1xyXG4gICAgICBtYXJnaW4tbGVmdDogcmVtKDRweCk7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcbiIsIkB0YWlsd2luZCBiYXNlO1xuQHRhaWx3aW5kIGNvbXBvbmVudHM7XG5AdGFpbHdpbmQgdXRpbGl0aWVzOyJdfQ== */</style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGJsb2cuY29tcG9uZW50LnNjc3MiLCIuLi8uLi8uLi9ub2RlX21vZHVsZXMvdGFpbHdpbmRjc3MvbGliL2xpYi9zdWJzdGl0dXRlQ2xhc3NBcHBseUF0UnVsZXMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUNBQSxlQUFtQjtFQUFuQixtQkFBbUI7RURFakIsZ01BQUE7QUFERjs7QUFLRTtFQ05GLDROQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsbUJBQW1CO0FESW5COztBQU1FO0VDVkYsZ0JBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixpQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGtCQUFtQjtBRE9uQjs7QUFPRTtFQ2RGLGdCQUFtQjtFQUFuQixrQkFBbUI7RUFBbkIsb0JBQW1CO0VBQW5CLHFCQUFtQjtFQUFuQixnQkFBbUI7QURVbkI7O0FBUUU7RUNsQkYsa0JBQW1CO0VBQW5CLHFCQUFtQjtBRGFuQjs7QUFTRTtFQ3RCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0FEZ0JuQjs7QUFVRTtFQzFCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixrQkFBbUI7QURtQm5COztBQVdFO0VDOUJGLGdCQUFtQjtFQUFuQixtQkFBbUI7QURzQm5COztBQWNFO0VBQ0Usa0JBQUE7RUFDQSxnQkFBQTtBQVhKOztBQVlJO0VBQ0Usa0JBQUE7RUFDQSxNQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7QUFWTjs7QUFlQTtFQUNFLDBCQUFBO0VBQ0EsZUFBQTtBQVpGOztBQWFFO0VBQ0UscUJBQUE7QUFYSjs7QUFlQTtFQUNFLHVCQUFBO0VBQ0EsV0FBQTtFQUNBLHlCQUFBO0FBWkY7O0FBY0E7RUFDRSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsaUJBQUE7QUFYRjs7QUFhQTtFQUNFLHdCQUFBO0VBQ0EsaUNBQUE7QUFWRjs7QUFjQTs7RUFFRSx1QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFFQSx1Q0FBQTtBQVpGOztBQWVBO0VBQ0UsZUFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EsVUFBQTtFQUNBLGdCQUFBO0FBWkY7O0FBYUU7RUFDRSxhQUFBO0VBQ0EsY0FBQTtBQVhKOztBQWFJO0VBRUUsa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLCtDQUFBO0VBQ0EscUJBQUE7RUFDQSx3QkFBQTtFQUNBLFdBQUE7RUFDQSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSwwQkFBQTtBQVpOOztBQWNJO0VBQ0UsOENBQUE7RUFDQSxvQkFBQTtBQVpOIiwiZmlsZSI6ImJsb2cuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLy4uLy4uL2Fzc2V0cy9zY3NzL2NvbW1vbic7XHJcblxyXG4ucHJvc2Uge1xyXG4gIEBhcHBseSB0ZXh0LWJhc2U7XHJcbiAgZm9udC1mYW1pbHk6ICdQaW5nRmFuZ1NDLVJlZ3VsYXInLCBIZWx2ZXRpY2EsICdIZWx2ZXRpY2EgTmV1ZScsICdTZWdvZSBVSScsXHJcbiAgICAnSGlyYWdpbm8gU2FucyBHQicsICdTb3VyY2UgSGFuIFNhbnMgQ04nLCAnTWljcm9zb2Z0IFlhSGVpJywgJ1NUSGVpdGknLFxyXG4gICAgJ1dlblF1YW5ZaSBNaWNybyBIZWknLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcblxyXG4gIGgxIHtcclxuICAgIEBhcHBseSB0ZXh0LTR4bCBmb250LXNhbnM7XHJcbiAgfVxyXG5cclxuICBoMiB7XHJcbiAgICBAYXBwbHkgbXQtMTAgbWItNCB0ZXh0LTJ4bCBmb250LWJvbGQ7XHJcbiAgfVxyXG5cclxuICBoMyB7XHJcbiAgICBAYXBwbHkgbXQtNCBtYi0yIHRleHQteGwgZm9udC1ib2xkO1xyXG4gIH1cclxuXHJcbiAgcCB7XHJcbiAgICBAYXBwbHkgbXktMjtcclxuICB9XHJcblxyXG4gIHByZSB7XHJcbiAgICBAYXBwbHkgbXktNDtcclxuICB9XHJcblxyXG4gIGltZyB7XHJcbiAgICBAYXBwbHkgbXktNCBteC1hdXRvO1xyXG4gIH1cclxuXHJcbiAgaHIge1xyXG4gICAgQGFwcGx5IG15LTg7XHJcbiAgfVxyXG59XHJcblxyXG46aG9zdCB7XHJcbiAgLnRvb2xiYXItaXRlbSB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBiYWNrZ3JvdW5kOiAjMTU5O1xyXG4gICAgLnRvb2xiYXIge1xyXG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgIHRvcDogMDtcclxuICAgICAgcmlnaHQ6IDA7XHJcbiAgICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgfVxyXG4gIH1cclxufVxyXG5cclxuYSB7XHJcbiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XHJcbiAgdHJhbnNmb3JtOiAuM3M7XHJcbiAgJjpob3ZlciB7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgfVxyXG59XHJcblxyXG50YWJsZSB7XHJcbiAgbWFyZ2luOiByZW0oMTZweCkgMCByZW0oOHB4KSAwO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XHJcbn1cclxudGFibGUgY2FwdGlvbiB7XHJcbiAgbGluZS1oZWlnaHQ6IDQ4cHg7XHJcbiAgZm9udC1zaXplOiByZW0oMjBweCk7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxudGFibGUgdGgge1xyXG4gIGNvbG9yOiB2YXIoLS10ZXh0LWNvbG9yKTtcclxuICBiYWNrZ3JvdW5kOiB2YXIoLS10YWJsZS1ldmVuLXJvdyk7XHJcbiAgLy8gY29sb3I6IGNvbG9yKCRwcmltYXJ5LCBkZWZhdWx0LWNvbnRyYXN0KTtcclxuICAvLyBiYWNrZ3JvdW5kOiBjb2xvcigkdGhlbWUsIGRpc2FibGVkKTtcclxufVxyXG50YWJsZSB0aCxcclxudGFibGUgdGQge1xyXG4gIHBhZGRpbmc6IHJlbSg4cHgpIHJlbSg0cHgpO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBsaW5lLWhlaWdodDogMS4yO1xyXG4gIC8vIGJvcmRlcjogMXB4IHNvbGlkIGNvbG9yKCR0aGVtZSwgZGl2aWRlcnMpO1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLXRhYmxlLWV2ZW4tcm93KTtcclxufVxyXG5cclxuLmdvdG9wIHtcclxuICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgYm90dG9tOiByZW0oNjRweCk7XHJcbiAgcmlnaHQ6IHJlbSgzMnB4KTtcclxuICBvcGFjaXR5OiAxO1xyXG4gIHRyYW5zaXRpb246IDAuM3M7XHJcbiAgLmJ0biB7XHJcbiAgICB3aWR0aDogcmVtKDQwcHgpO1xyXG4gICAgaGVpZ2h0OiByZW0oNDBweCk7XHJcblxyXG4gICAgJjpiZWZvcmUsXHJcbiAgICAmOmFmdGVyIHtcclxuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICB0b3A6IDUwJTtcclxuICAgICAgbGVmdDogNTAlO1xyXG4gICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKSByb3RhdGUoLTQ1ZGVnKTtcclxuICAgICAgbWFyZ2luLWxlZnQ6IHJlbSgtNHB4KTtcclxuICAgICAgYm9yZGVyLXJhZGl1czogcmVtKDNweCk7XHJcbiAgICAgIGNvbnRlbnQ6ICcnO1xyXG4gICAgICB3aWR0aDogcmVtKDE2cHgpO1xyXG4gICAgICBoZWlnaHQ6IHJlbSg1cHgpO1xyXG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1wcmltYXJ5KTtcclxuICAgIH1cclxuICAgICY6YWZ0ZXIge1xyXG4gICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKSByb3RhdGUoNDVkZWcpO1xyXG4gICAgICBtYXJnaW4tbGVmdDogcmVtKDRweCk7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcbiIsIkB0YWlsd2luZCBiYXNlO1xuQHRhaWx3aW5kIGNvbXBvbmVudHM7XG5AdGFpbHdpbmQgdXRpbGl0aWVzOyJdfQ== */</style><style>
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtZXRhLmNvbXBvbmVudC5zY3NzIn0= */</style><style>
       :host {
         display: none;
@@ -124,144 +276,148 @@
         display: none;
       }
     </style><style>
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJibG9nLW5hdi5jb21wb25lbnQuc2NzcyJ9 */</style><meta name="description" content="gulp4 與 gulp-cli"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, gulp, node"><meta property="og:title" content="gulp4 與 gulp-cli"><meta property="og:description" content="gulp4 與 gulp-cli"><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.github.io/gulp/gulp"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="gulp4 與 gulp-cli"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="en_US"><script>window['ScullyIO']='generated';</script></head>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJibG9nLW5hdi5jb21wb25lbnQuc2NzcyJ9 */</style><meta name="description" content="gulp4 與 gulp-cli"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, gulp, node"><meta property="og:title" content="gulp4 與 gulp-cli"><meta property="og:description" content="gulp4 與 gulp-cli"><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.github.io/gulp/gulp"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="gulp4 與 gulp-cli"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="zh_tw"><script>window['ScullyIO']='generated';</script></head>
   <body class="theme-light" scully-version="1.1.1">
-    <app-root _nghost-ywi-c18="" ng-version="11.2.11"><header _ngcontent-ywi-c18="" class="fixed z-999 top-0 left-0 flex justify-between items-center w-full bg-secondary p-4 border-b-4 border-solid border-primary"><h1 _ngcontent-ywi-c18="" class="text-2xl font-semibold font-dosis"><a _ngcontent-ywi-c18="" routerlink="/" class="text-primary" ng-reflect-router-link="/" href="/">Mandy's <span _ngcontent-ywi-c18="" class="display-inlinie font-light text-text">Web</span></a></h1><nav _ngcontent-ywi-c18="" class="social"><ul _ngcontent-ywi-c18=""><li _ngcontent-ywi-c18=""><a _ngcontent-ywi-c18="" class="btn" ng-reflect-router-link="/" href="/">Blog</a></li><li _ngcontent-ywi-c18=""><a _ngcontent-ywi-c18="" class="btn" ng-reflect-router-link="portfolio" href="/portfolio">Portfolio</a></li><li _ngcontent-ywi-c18=""><a _ngcontent-ywi-c18="" href="//github.com/mtwmt" target="_blank" class="btn">GitHub</a></li></ul></nav></header><div _ngcontent-ywi-c18="" class="container mx-auto pt-24 pb-8"><router-outlet _ngcontent-ywi-c18=""></router-outlet><app-blog _nghost-ywi-c27="">
-  <app-meta _ngcontent-ywi-c27="" _nghost-ywi-c24="" ng-reflect-title="gulp4 與 gulp-cli" ng-reflect-route="/gulp/gulp" ng-reflect-tags="gulp,node" ng-reflect-twitter-image="/gulp/gulp" ng-reflect-og-image="/gulp/gulp" ng-reflect-article-published-at="2019/01/24" ng-reflect-article-updated-at="2019/01/24"></app-meta>
-  <article _ngcontent-ywi-c27="" class="relative p-4 max-w-screen-xl mx-auto">
-    <div _ngcontent-ywi-c27="" class="max-w-container space-y-4">
-      <header _ngcontent-ywi-c27="" class="space-y-4">
+    <app-root _nghost-roa-c18="" ng-version="11.2.11"><header _ngcontent-roa-c18="" class="fixed z-999 top-0 left-0 flex justify-between items-center w-full bg-secondary p-4 border-b-4 border-solid border-primary"><h1 _ngcontent-roa-c18="" class="text-2xl font-semibold font-dosis"><a _ngcontent-roa-c18="" routerlink="/" class="text-primary" ng-reflect-router-link="/" href="/">Mandy's<span _ngcontent-roa-c18="" class="display-inlinie font-light text-text">Web</span></a></h1><a _ngcontent-roa-c18="" href="javascript:void(0);" title="MENU" class="hamburger md:hidden sm:block" ng-reflect-ng-class=""><span _ngcontent-roa-c18="">MENU</span></a><nav _ngcontent-roa-c18="" class="social md:block" ng-reflect-ng-class=""><ul _ngcontent-roa-c18=""><li _ngcontent-roa-c18=""><a _ngcontent-roa-c18="" class="btn" ng-reflect-router-link="/" href="/">Blog</a></li><li _ngcontent-roa-c18=""><a _ngcontent-roa-c18="" class="btn" ng-reflect-router-link="portfolio" href="/portfolio">Portfolio</a></li><li _ngcontent-roa-c18=""><a _ngcontent-roa-c18="" href="//github.com/mtwmt" target="_blank" class="btn">GitHub</a></li></ul></nav></header><div _ngcontent-roa-c18="" class="container mx-auto pt-24 pb-8"><router-outlet _ngcontent-roa-c18=""></router-outlet><app-blog _nghost-roa-c27="">
+  <app-meta _ngcontent-roa-c27="" _nghost-roa-c24="" ng-reflect-title="gulp4 與 gulp-cli" ng-reflect-route="/gulp/gulp" ng-reflect-tags="gulp,node" ng-reflect-twitter-image="/gulp/gulp" ng-reflect-og-image="/gulp/gulp" ng-reflect-article-published-at="2019/01/24" ng-reflect-article-updated-at="2019/01/24"></app-meta>
+  <article _ngcontent-roa-c27="" class="relative p-4 max-w-screen-xl mx-auto">
+    <div _ngcontent-roa-c27="" class="max-w-container space-y-4">
+      <header _ngcontent-roa-c27="" class="space-y-4">
         
-        <div _ngcontent-ywi-c27="" class="prose max-w-none md:prose-lgspace-y-1">
-          <dl _ngcontent-ywi-c27="">
-            <div _ngcontent-ywi-c27="">
-              <dt _ngcontent-ywi-c27="" class="sr-only">Published at</dt>
-              <dd _ngcontent-ywi-c27="" class="text-base leading-6 font-medium text-color-light">
-                <time _ngcontent-ywi-c27="" datetime="2019/01/24">
+        <div _ngcontent-roa-c27="" class="prose max-w-none md:prose-lgspace-y-1">
+          <dl _ngcontent-roa-c27="">
+            <div _ngcontent-roa-c27="">
+              <dt _ngcontent-roa-c27="" class="sr-only">Published at</dt>
+              <dd _ngcontent-roa-c27="" class="text-base leading-6 font-medium text-color-light">
+                <time _ngcontent-roa-c27="" datetime="2019/01/24">
                   24 January 2019
                 </time>
               </dd>
             </div>
           </dl>
 
-          <h1 _ngcontent-ywi-c27="">
+          <h1 _ngcontent-roa-c27="">
             gulp4 與 gulp-cli
           </h1>
           
         </div>
       </header>
-      <div _ngcontent-ywi-c27="" class="grid grid-cols-1 md:grid-cols-3 md:gap-x-4 lg:grid-cols-4 lg:gap-x-6">
-        <div _ngcontent-ywi-c27="" class="prose prose-toc max-w-none md:prose-lg md:col-span-2 lg:col-span-3">
-          <!--scullyContent-begin--><h1 id="npm-套件安裝" _ngcontent-ywi-c27="">npm 套件安裝</h1>
-<table _ngcontent-ywi-c27="">
-<thead _ngcontent-ywi-c27="">
-<tr _ngcontent-ywi-c27="">
-<th _ngcontent-ywi-c27="">指令</th>
-<th _ngcontent-ywi-c27="">縮寫</th>
+      <div _ngcontent-roa-c27="" class="grid grid-cols-1 md:grid-cols-3 md:gap-x-4 lg:grid-cols-4 lg:gap-x-6">
+        <div _ngcontent-roa-c27="" class="prose prose-toc max-w-none md:prose-lg md:col-span-2 lg:col-span-3">
+          <!--scullyContent-begin--><h1 id="npm-套件安裝" _ngcontent-roa-c27="">npm 套件安裝</h1>
+<table _ngcontent-roa-c27="">
+<thead _ngcontent-roa-c27="">
+<tr _ngcontent-roa-c27="">
+<th _ngcontent-roa-c27="">指令</th>
+<th _ngcontent-roa-c27="">縮寫</th>
 </tr>
 </thead>
-<tbody _ngcontent-ywi-c27=""><tr _ngcontent-ywi-c27="">
-<td _ngcontent-ywi-c27="">npm install</td>
-<td _ngcontent-ywi-c27="">npm i</td>
+<tbody _ngcontent-roa-c27=""><tr _ngcontent-roa-c27="">
+<td _ngcontent-roa-c27="">npm install</td>
+<td _ngcontent-roa-c27="">npm i</td>
 </tr>
-<tr _ngcontent-ywi-c27="">
-<td _ngcontent-ywi-c27="">npm install --save</td>
-<td _ngcontent-ywi-c27="">npm i -S</td>
+<tr _ngcontent-roa-c27="">
+<td _ngcontent-roa-c27="">npm install --save</td>
+<td _ngcontent-roa-c27="">npm i -S</td>
 </tr>
-<tr _ngcontent-ywi-c27="">
-<td _ngcontent-ywi-c27="">npm install --save-dev</td>
-<td _ngcontent-ywi-c27="">npm i -D</td>
+<tr _ngcontent-roa-c27="">
+<td _ngcontent-roa-c27="">npm install --save-dev</td>
+<td _ngcontent-roa-c27="">npm i -D</td>
 </tr>
 </tbody></table>
-<p _ngcontent-ywi-c27="">--save 將此文件 安裝到本地資料夾 -dev 將安裝的 gulp 訊息存在 package.json 裡</p>
-<p _ngcontent-ywi-c27="">若要安裝特定版本 <code _ngcontent-ywi-c27="">npm i -D gulp@4.0.2</code></p>
-<hr _ngcontent-ywi-c27="">
-<p _ngcontent-ywi-c27="">gulp 與之前版本的差異 3 到 4 的轉換這次多了 gulp-cli 需在全域裡加裝</p>
-<h2 id="gulp4-有什麼新東西" _ngcontent-ywi-c27="">gulp4 有什麼新東西</h2>
-<p _ngcontent-ywi-c27="">提供了兩種新的 流程控制方法 <code _ngcontent-ywi-c27="">series()</code> 與 <code _ngcontent-ywi-c27="">parallel()</code> 取消了 task 的用法</p>
-<h2 id="無痛升級-gulp4" _ngcontent-ywi-c27="">無痛升級 gulp4</h2>
-<p _ngcontent-ywi-c27="">先在 cmd 裡查看 node 版本(支援 node8.11.1 以上)
-<img src="assets/images/gulp/node-v.jpg" _ngcontent-ywi-c27=""> npm 版本(支援 5.6.0 以上)
-<img src="assets/images/gulp/node-v.jpg" _ngcontent-ywi-c27=""></p>
-<p _ngcontent-ywi-c27="">確認 gulp 跟 npm 版本後 再來就是安裝 gulp-cli</p>
-<pre _ngcontent-ywi-c27=""><code _ngcontent-ywi-c27="">npm install <span class="token operator" _ngcontent-ywi-c27="">--</span>global gulp<span class="token operator" _ngcontent-ywi-c27="">-</span>cli
+<p _ngcontent-roa-c27="">--save 將此文件 安裝到本地資料夾 -dev 將安裝的 gulp 訊息存在 package.json 裡</p>
+<p _ngcontent-roa-c27="">若要安裝特定版本 <code _ngcontent-roa-c27="">npm i -D gulp@4.0.2</code></p>
+<hr _ngcontent-roa-c27="">
+<p _ngcontent-roa-c27="">gulp 與之前版本的差異 3 到 4 的轉換這次多了 gulp-cli 需在全域裡加裝</p>
+<h2 id="gulp4-有什麼新東西" _ngcontent-roa-c27="">gulp4 有什麼新東西</h2>
+<p _ngcontent-roa-c27="">提供了兩種新的 流程控制方法 <code _ngcontent-roa-c27="">series()</code> 與 <code _ngcontent-roa-c27="">parallel()</code> 取消了 task 的用法</p>
+<h2 id="無痛升級-gulp4" _ngcontent-roa-c27="">無痛升級 gulp4</h2>
+<p _ngcontent-roa-c27="">先在 cmd 裡查看 node 版本(支援 node8.11.1 以上)
+<img src="assets/images/gulp/node-v.jpg" _ngcontent-roa-c27=""> npm 版本(支援 5.6.0 以上)
+<img src="assets/images/gulp/node-v.jpg" _ngcontent-roa-c27=""></p>
+<p _ngcontent-roa-c27="">確認 gulp 跟 npm 版本後 再來就是安裝 gulp-cli</p>
+<pre _ngcontent-roa-c27=""><code _ngcontent-roa-c27="">npm install <span class="token operator" _ngcontent-roa-c27="">--</span>global gulp<span class="token operator" _ngcontent-roa-c27="">-</span>cli
 或
-npm i gulp<span class="token operator" _ngcontent-ywi-c27="">-</span>cli <span class="token operator" _ngcontent-ywi-c27="">-</span>g</code></pre><p _ngcontent-ywi-c27="">安裝完後 確認版本 <img src="assets/images/gulp/gulpcli-v.jpg" _ngcontent-ywi-c27=""> 出現版本資訊 表
-示<code _ngcontent-ywi-c27="">gulp-cli</code>安裝成功</p>
-<hr _ngcontent-ywi-c27="">
-<h2 id="寫法差異" _ngcontent-ywi-c27="">寫法差異</h2>
-<p _ngcontent-ywi-c27="">將 task 移除</p>
-<p _ngcontent-ywi-c27="">過去版本寫法</p>
-<pre class="language-js" _ngcontent-ywi-c27=""><code class="language-js" _ngcontent-ywi-c27="">gulp<span class="token punctuation" _ngcontent-ywi-c27="">.</span><span class="token function" _ngcontent-ywi-c27="">task</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token string" _ngcontent-ywi-c27="">'css'</span><span class="token punctuation" _ngcontent-ywi-c27="">,</span> <span class="token keyword" _ngcontent-ywi-c27="">function</span> <span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span> <span class="token punctuation" _ngcontent-ywi-c27="">{</span>
-  <span class="token comment" _ngcontent-ywi-c27="">// doSomething</span>
-<span class="token punctuation" _ngcontent-ywi-c27="">}</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span><span class="token punctuation" _ngcontent-ywi-c27="">;</span>
-gulp<span class="token punctuation" _ngcontent-ywi-c27="">.</span><span class="token function" _ngcontent-ywi-c27="">task</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token string" _ngcontent-ywi-c27="">'js'</span><span class="token punctuation" _ngcontent-ywi-c27="">,</span> <span class="token keyword" _ngcontent-ywi-c27="">function</span> <span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span> <span class="token punctuation" _ngcontent-ywi-c27="">{</span>
-  <span class="token comment" _ngcontent-ywi-c27="">// doSomething</span>
-<span class="token punctuation" _ngcontent-ywi-c27="">}</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span><span class="token punctuation" _ngcontent-ywi-c27="">;</span>
-gulp<span class="token punctuation" _ngcontent-ywi-c27="">.</span><span class="token function" _ngcontent-ywi-c27="">task</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token string" _ngcontent-ywi-c27="">'default'</span><span class="token punctuation" _ngcontent-ywi-c27="">,</span> <span class="token punctuation" _ngcontent-ywi-c27="">[</span><span class="token string" _ngcontent-ywi-c27="">'css'</span><span class="token punctuation" _ngcontent-ywi-c27="">,</span> <span class="token string" _ngcontent-ywi-c27="">'js'</span><span class="token punctuation" _ngcontent-ywi-c27="">]</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span><span class="token punctuation" _ngcontent-ywi-c27="">;</span></code></pre><p _ngcontent-ywi-c27="">4.0 改為</p>
-<pre class="language-js" _ngcontent-ywi-c27=""><code class="language-js" _ngcontent-ywi-c27=""><span class="token keyword" _ngcontent-ywi-c27="">function</span> <span class="token function" _ngcontent-ywi-c27="">css</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span> <span class="token punctuation" _ngcontent-ywi-c27="">{</span>
-  <span class="token comment" _ngcontent-ywi-c27="">// doSomething</span>
-<span class="token punctuation" _ngcontent-ywi-c27="">}</span>
-<span class="token keyword" _ngcontent-ywi-c27="">function</span> <span class="token function" _ngcontent-ywi-c27="">js</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span> <span class="token punctuation" _ngcontent-ywi-c27="">{</span>
-  <span class="token comment" _ngcontent-ywi-c27="">// doSomething</span>
-<span class="token punctuation" _ngcontent-ywi-c27="">}</span>
-<span class="token keyword" _ngcontent-ywi-c27="">var</span> build <span class="token operator" _ngcontent-ywi-c27="">=</span> gulp<span class="token punctuation" _ngcontent-ywi-c27="">.</span><span class="token function" _ngcontent-ywi-c27="">series</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span>css<span class="token punctuation" _ngcontent-ywi-c27="">,</span> js<span class="token punctuation" _ngcontent-ywi-c27="">)</span><span class="token punctuation" _ngcontent-ywi-c27="">;</span>
-exports<span class="token punctuation" _ngcontent-ywi-c27="">.</span>default <span class="token operator" _ngcontent-ywi-c27="">=</span> build<span class="token punctuation" _ngcontent-ywi-c27="">;</span></code></pre><p _ngcontent-ywi-c27="">bulid 新增 使用 <code _ngcontent-ywi-c27="">lastRun()</code></p>
-<hr _ngcontent-ywi-c27="">
-<h2 id="執行方式" _ngcontent-ywi-c27="">執行方式</h2>
-<p _ngcontent-ywi-c27="">新增<code _ngcontent-ywi-c27="">series()</code> 與 <code _ngcontent-ywi-c27="">parallel()</code></p>
-<pre class="language-js" _ngcontent-ywi-c27=""><code class="language-js" _ngcontent-ywi-c27=""><span class="token keyword" _ngcontent-ywi-c27="">const</span> <span class="token punctuation" _ngcontent-ywi-c27="">{</span> series <span class="token punctuation" _ngcontent-ywi-c27="">}</span> <span class="token operator" _ngcontent-ywi-c27="">=</span> <span class="token function" _ngcontent-ywi-c27="">require</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token string" _ngcontent-ywi-c27="">'gulp'</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span><span class="token punctuation" _ngcontent-ywi-c27="">;</span>
+npm i gulp<span class="token operator" _ngcontent-roa-c27="">-</span>cli <span class="token operator" _ngcontent-roa-c27="">-</span>g</code></pre><p _ngcontent-roa-c27="">安裝完後 確認版本 <img src="assets/images/gulp/gulpcli-v.jpg" _ngcontent-roa-c27=""> 出現版本資訊 表
+示<code _ngcontent-roa-c27="">gulp-cli</code>安裝成功</p>
+<hr _ngcontent-roa-c27="">
+<h2 id="寫法差異" _ngcontent-roa-c27="">寫法差異</h2>
+<p _ngcontent-roa-c27="">將 task 移除</p>
+<p _ngcontent-roa-c27="">過去版本寫法</p>
+<pre class="language-js" _ngcontent-roa-c27=""><code class="language-js" _ngcontent-roa-c27="">gulp<span class="token punctuation" _ngcontent-roa-c27="">.</span><span class="token function" _ngcontent-roa-c27="">task</span><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token string" _ngcontent-roa-c27="">'css'</span><span class="token punctuation" _ngcontent-roa-c27="">,</span> <span class="token keyword" _ngcontent-roa-c27="">function</span> <span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token punctuation" _ngcontent-roa-c27="">)</span> <span class="token punctuation" _ngcontent-roa-c27="">{</span>
+  <span class="token comment" _ngcontent-roa-c27="">// doSomething</span>
+<span class="token punctuation" _ngcontent-roa-c27="">}</span><span class="token punctuation" _ngcontent-roa-c27="">)</span><span class="token punctuation" _ngcontent-roa-c27="">;</span>
+gulp<span class="token punctuation" _ngcontent-roa-c27="">.</span><span class="token function" _ngcontent-roa-c27="">task</span><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token string" _ngcontent-roa-c27="">'js'</span><span class="token punctuation" _ngcontent-roa-c27="">,</span> <span class="token keyword" _ngcontent-roa-c27="">function</span> <span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token punctuation" _ngcontent-roa-c27="">)</span> <span class="token punctuation" _ngcontent-roa-c27="">{</span>
+  <span class="token comment" _ngcontent-roa-c27="">// doSomething</span>
+<span class="token punctuation" _ngcontent-roa-c27="">}</span><span class="token punctuation" _ngcontent-roa-c27="">)</span><span class="token punctuation" _ngcontent-roa-c27="">;</span>
+gulp<span class="token punctuation" _ngcontent-roa-c27="">.</span><span class="token function" _ngcontent-roa-c27="">task</span><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token string" _ngcontent-roa-c27="">'default'</span><span class="token punctuation" _ngcontent-roa-c27="">,</span> <span class="token punctuation" _ngcontent-roa-c27="">[</span><span class="token string" _ngcontent-roa-c27="">'css'</span><span class="token punctuation" _ngcontent-roa-c27="">,</span> <span class="token string" _ngcontent-roa-c27="">'js'</span><span class="token punctuation" _ngcontent-roa-c27="">]</span><span class="token punctuation" _ngcontent-roa-c27="">)</span><span class="token punctuation" _ngcontent-roa-c27="">;</span></code></pre><p _ngcontent-roa-c27="">4.0 改為</p>
+<pre class="language-js" _ngcontent-roa-c27=""><code class="language-js" _ngcontent-roa-c27=""><span class="token keyword" _ngcontent-roa-c27="">function</span> <span class="token function" _ngcontent-roa-c27="">css</span><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token punctuation" _ngcontent-roa-c27="">)</span> <span class="token punctuation" _ngcontent-roa-c27="">{</span>
+  <span class="token comment" _ngcontent-roa-c27="">// doSomething</span>
+<span class="token punctuation" _ngcontent-roa-c27="">}</span>
+<span class="token keyword" _ngcontent-roa-c27="">function</span> <span class="token function" _ngcontent-roa-c27="">js</span><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token punctuation" _ngcontent-roa-c27="">)</span> <span class="token punctuation" _ngcontent-roa-c27="">{</span>
+  <span class="token comment" _ngcontent-roa-c27="">// doSomething</span>
+<span class="token punctuation" _ngcontent-roa-c27="">}</span>
+<span class="token keyword" _ngcontent-roa-c27="">var</span> build <span class="token operator" _ngcontent-roa-c27="">=</span> gulp<span class="token punctuation" _ngcontent-roa-c27="">.</span><span class="token function" _ngcontent-roa-c27="">series</span><span class="token punctuation" _ngcontent-roa-c27="">(</span>css<span class="token punctuation" _ngcontent-roa-c27="">,</span> js<span class="token punctuation" _ngcontent-roa-c27="">)</span><span class="token punctuation" _ngcontent-roa-c27="">;</span>
+exports<span class="token punctuation" _ngcontent-roa-c27="">.</span>default <span class="token operator" _ngcontent-roa-c27="">=</span> build<span class="token punctuation" _ngcontent-roa-c27="">;</span></code></pre><p _ngcontent-roa-c27="">bulid 新增 使用 <code _ngcontent-roa-c27="">lastRun()</code></p>
+<hr _ngcontent-roa-c27="">
+<h2 id="執行方式" _ngcontent-roa-c27="">執行方式</h2>
+<p _ngcontent-roa-c27="">新增<code _ngcontent-roa-c27="">series()</code> 與 <code _ngcontent-roa-c27="">parallel()</code></p>
+<pre class="language-js" _ngcontent-roa-c27=""><code class="language-js" _ngcontent-roa-c27=""><span class="token keyword" _ngcontent-roa-c27="">const</span> <span class="token punctuation" _ngcontent-roa-c27="">{</span> series <span class="token punctuation" _ngcontent-roa-c27="">}</span> <span class="token operator" _ngcontent-roa-c27="">=</span> <span class="token function" _ngcontent-roa-c27="">require</span><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token string" _ngcontent-roa-c27="">'gulp'</span><span class="token punctuation" _ngcontent-roa-c27="">)</span><span class="token punctuation" _ngcontent-roa-c27="">;</span>
 
-<span class="token keyword" _ngcontent-ywi-c27="">function</span> <span class="token function" _ngcontent-ywi-c27="">clean</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token parameter" _ngcontent-ywi-c27="">cb</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span> <span class="token punctuation" _ngcontent-ywi-c27="">{</span>
-  <span class="token comment" _ngcontent-ywi-c27="">// body omitted</span>
-  <span class="token function" _ngcontent-ywi-c27="">cb</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span><span class="token punctuation" _ngcontent-ywi-c27="">;</span>
-<span class="token punctuation" _ngcontent-ywi-c27="">}</span>
+<span class="token keyword" _ngcontent-roa-c27="">function</span> <span class="token function" _ngcontent-roa-c27="">clean</span><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token parameter" _ngcontent-roa-c27="">cb</span><span class="token punctuation" _ngcontent-roa-c27="">)</span> <span class="token punctuation" _ngcontent-roa-c27="">{</span>
+  <span class="token comment" _ngcontent-roa-c27="">// body omitted</span>
+  <span class="token function" _ngcontent-roa-c27="">cb</span><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token punctuation" _ngcontent-roa-c27="">)</span><span class="token punctuation" _ngcontent-roa-c27="">;</span>
+<span class="token punctuation" _ngcontent-roa-c27="">}</span>
 
-<span class="token keyword" _ngcontent-ywi-c27="">function</span> <span class="token function" _ngcontent-ywi-c27="">build</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token parameter" _ngcontent-ywi-c27="">cb</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span> <span class="token punctuation" _ngcontent-ywi-c27="">{</span>
-  <span class="token comment" _ngcontent-ywi-c27="">// body omitted</span>
-  <span class="token function" _ngcontent-ywi-c27="">cb</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span><span class="token punctuation" _ngcontent-ywi-c27="">;</span>
-<span class="token punctuation" _ngcontent-ywi-c27="">}</span>
-<span class="token keyword" _ngcontent-ywi-c27="">function</span> <span class="token function" _ngcontent-ywi-c27="">watch</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token parameter" _ngcontent-ywi-c27="">cb</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span> <span class="token punctuation" _ngcontent-ywi-c27="">{</span>
-  <span class="token comment" _ngcontent-ywi-c27="">// body omitted</span>
-  <span class="token function" _ngcontent-ywi-c27="">cb</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span><span class="token punctuation" _ngcontent-ywi-c27="">;</span>
-<span class="token punctuation" _ngcontent-ywi-c27="">}</span>
+<span class="token keyword" _ngcontent-roa-c27="">function</span> <span class="token function" _ngcontent-roa-c27="">build</span><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token parameter" _ngcontent-roa-c27="">cb</span><span class="token punctuation" _ngcontent-roa-c27="">)</span> <span class="token punctuation" _ngcontent-roa-c27="">{</span>
+  <span class="token comment" _ngcontent-roa-c27="">// body omitted</span>
+  <span class="token function" _ngcontent-roa-c27="">cb</span><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token punctuation" _ngcontent-roa-c27="">)</span><span class="token punctuation" _ngcontent-roa-c27="">;</span>
+<span class="token punctuation" _ngcontent-roa-c27="">}</span>
+<span class="token keyword" _ngcontent-roa-c27="">function</span> <span class="token function" _ngcontent-roa-c27="">watch</span><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token parameter" _ngcontent-roa-c27="">cb</span><span class="token punctuation" _ngcontent-roa-c27="">)</span> <span class="token punctuation" _ngcontent-roa-c27="">{</span>
+  <span class="token comment" _ngcontent-roa-c27="">// body omitted</span>
+  <span class="token function" _ngcontent-roa-c27="">cb</span><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token punctuation" _ngcontent-roa-c27="">)</span><span class="token punctuation" _ngcontent-roa-c27="">;</span>
+<span class="token punctuation" _ngcontent-roa-c27="">}</span>
 
-<span class="token comment" _ngcontent-ywi-c27="">//單一執行</span>
-exports<span class="token punctuation" _ngcontent-ywi-c27="">.</span>build <span class="token operator" _ngcontent-ywi-c27="">=</span> build<span class="token punctuation" _ngcontent-ywi-c27="">;</span>
+<span class="token comment" _ngcontent-roa-c27="">//單一執行</span>
+exports<span class="token punctuation" _ngcontent-roa-c27="">.</span>build <span class="token operator" _ngcontent-roa-c27="">=</span> build<span class="token punctuation" _ngcontent-roa-c27="">;</span>
 
-<span class="token comment" _ngcontent-ywi-c27="">//逐行執行</span>
-exports<span class="token punctuation" _ngcontent-ywi-c27="">.</span>default <span class="token operator" _ngcontent-ywi-c27="">=</span> <span class="token function" _ngcontent-ywi-c27="">series</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span>clean<span class="token punctuation" _ngcontent-ywi-c27="">,</span> build<span class="token punctuation" _ngcontent-ywi-c27="">,</span> watch<span class="token punctuation" _ngcontent-ywi-c27="">)</span><span class="token punctuation" _ngcontent-ywi-c27="">;</span>
+<span class="token comment" _ngcontent-roa-c27="">//逐行執行</span>
+exports<span class="token punctuation" _ngcontent-roa-c27="">.</span>default <span class="token operator" _ngcontent-roa-c27="">=</span> <span class="token function" _ngcontent-roa-c27="">series</span><span class="token punctuation" _ngcontent-roa-c27="">(</span>clean<span class="token punctuation" _ngcontent-roa-c27="">,</span> build<span class="token punctuation" _ngcontent-roa-c27="">,</span> watch<span class="token punctuation" _ngcontent-roa-c27="">)</span><span class="token punctuation" _ngcontent-roa-c27="">;</span>
 
-<span class="token comment" _ngcontent-ywi-c27="">//組合執行 (深度執行)(同步執行)</span>
-exports<span class="token punctuation" _ngcontent-ywi-c27="">.</span>default <span class="token operator" _ngcontent-ywi-c27="">=</span> <span class="token function" _ngcontent-ywi-c27="">series</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span>clean<span class="token punctuation" _ngcontent-ywi-c27="">,</span> <span class="token function" _ngcontent-ywi-c27="">parallel</span><span class="token punctuation" _ngcontent-ywi-c27="">(</span>build<span class="token punctuation" _ngcontent-ywi-c27="">,</span> watch<span class="token punctuation" _ngcontent-ywi-c27="">)</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span><span class="token punctuation" _ngcontent-ywi-c27="">;</span></code></pre><hr _ngcontent-ywi-c27="">
-<h2 id="排除" _ngcontent-ywi-c27="">排除</h2>
-<h3 id="資料夾排除" _ngcontent-ywi-c27="">資料夾排除</h3>
-<pre class="language-js" _ngcontent-ywi-c27=""><code class="language-js" _ngcontent-ywi-c27=""><span class="token punctuation" _ngcontent-ywi-c27="">[</span><span class="token string" _ngcontent-ywi-c27="">'dist/**'</span><span class="token punctuation" _ngcontent-ywi-c27="">,</span> <span class="token string" _ngcontent-ywi-c27="">'!dist/noDel'</span><span class="token punctuation" _ngcontent-ywi-c27="">,</span> <span class="token string" _ngcontent-ywi-c27="">'!dist/noDel/**'</span><span class="token punctuation" _ngcontent-ywi-c27="">]</span><span class="token punctuation" _ngcontent-ywi-c27="">;</span></code></pre><p _ngcontent-ywi-c27="">除了 noDel 外的資料夾，其他通通都會吃到設定！</p>
-<h3 id="檔案排除" _ngcontent-ywi-c27="">檔案排除</h3>
-<pre class="language-js" _ngcontent-ywi-c27=""><code class="language-js" _ngcontent-ywi-c27=""><span class="token punctuation" _ngcontent-ywi-c27="">(</span><span class="token string" _ngcontent-ywi-c27="">'src/**/!(_)*.html'</span><span class="token punctuation" _ngcontent-ywi-c27="">)</span><span class="token punctuation" _ngcontent-ywi-c27="">;</span></code></pre><p _ngcontent-ywi-c27="">除了 檔案前綴有 _ 外 也都會吃到設定！</p>
-<hr _ngcontent-ywi-c27="">
-<p _ngcontent-ywi-c27="">以上介紹 有錯歡迎指正</p>
-<h3 id="參考文件" _ngcontent-ywi-c27="">參考文件</h3>
-<ul _ngcontent-ywi-c27="">
-<li _ngcontent-ywi-c27=""><a href="https://www.gulpjs.com.cn/" _ngcontent-ywi-c27="">https://www.gulpjs.com.cn/</a></li>
-<li _ngcontent-ywi-c27=""><a href="https://www.pixemweb.com/blog/gulp-4-0-0-with-nodejs-imagemin-browsersync-sass-sourcemaps-cleancss-more/" _ngcontent-ywi-c27="">https://www.pixemweb.com/blog/gulp-4-0-0-with-nodejs-imagemin-browsersync-sass-sourcemaps-cleancss-more/</a></li>
+<span class="token comment" _ngcontent-roa-c27="">//組合執行 (深度執行)(同步執行)</span>
+exports<span class="token punctuation" _ngcontent-roa-c27="">.</span>default <span class="token operator" _ngcontent-roa-c27="">=</span> <span class="token function" _ngcontent-roa-c27="">series</span><span class="token punctuation" _ngcontent-roa-c27="">(</span>clean<span class="token punctuation" _ngcontent-roa-c27="">,</span> <span class="token function" _ngcontent-roa-c27="">parallel</span><span class="token punctuation" _ngcontent-roa-c27="">(</span>build<span class="token punctuation" _ngcontent-roa-c27="">,</span> watch<span class="token punctuation" _ngcontent-roa-c27="">)</span><span class="token punctuation" _ngcontent-roa-c27="">)</span><span class="token punctuation" _ngcontent-roa-c27="">;</span></code></pre><hr _ngcontent-roa-c27="">
+<h2 id="排除" _ngcontent-roa-c27="">排除</h2>
+<h3 id="資料夾排除" _ngcontent-roa-c27="">資料夾排除</h3>
+<pre class="language-js" _ngcontent-roa-c27=""><code class="language-js" _ngcontent-roa-c27=""><span class="token punctuation" _ngcontent-roa-c27="">[</span><span class="token string" _ngcontent-roa-c27="">'dist/**'</span><span class="token punctuation" _ngcontent-roa-c27="">,</span> <span class="token string" _ngcontent-roa-c27="">'!dist/noDel'</span><span class="token punctuation" _ngcontent-roa-c27="">,</span> <span class="token string" _ngcontent-roa-c27="">'!dist/noDel/**'</span><span class="token punctuation" _ngcontent-roa-c27="">]</span><span class="token punctuation" _ngcontent-roa-c27="">;</span></code></pre><p _ngcontent-roa-c27="">除了 noDel 外的資料夾，其他通通都會吃到設定！</p>
+<h3 id="檔案排除" _ngcontent-roa-c27="">檔案排除</h3>
+<pre class="language-js" _ngcontent-roa-c27=""><code class="language-js" _ngcontent-roa-c27=""><span class="token punctuation" _ngcontent-roa-c27="">(</span><span class="token string" _ngcontent-roa-c27="">'src/**/!(_)*.html'</span><span class="token punctuation" _ngcontent-roa-c27="">)</span><span class="token punctuation" _ngcontent-roa-c27="">;</span></code></pre><p _ngcontent-roa-c27="">除了 檔案前綴有 _ 外 也都會吃到設定！</p>
+<hr _ngcontent-roa-c27="">
+<p _ngcontent-roa-c27="">以上介紹 有錯歡迎指正</p>
+<h3 id="參考文件" _ngcontent-roa-c27="">參考文件</h3>
+<ul _ngcontent-roa-c27="">
+<li _ngcontent-roa-c27=""><a href="https://www.gulpjs.com.cn/" _ngcontent-roa-c27="">https://www.gulpjs.com.cn/</a></li>
+<li _ngcontent-roa-c27=""><a href="https://www.pixemweb.com/blog/gulp-4-0-0-with-nodejs-imagemin-browsersync-sass-sourcemaps-cleancss-more/" _ngcontent-roa-c27="">https://www.pixemweb.com/blog/gulp-4-0-0-with-nodejs-imagemin-browsersync-sass-sourcemaps-cleancss-more/</a></li>
 </ul>
-<!--scullyContent-end--><scully-content _ngcontent-ywi-c27=""></scully-content>
-          <p _ngcontent-ywi-c27="" class="flex justify-between my-16 pt-4 border-t-2 divide-solid">
-            <a _ngcontent-ywi-c27="" ng-reflect-router-link="/JS30/05_Flex_Panel_Gallery" href="/JS30/05_Flex_Panel_Gallery"><span _ngcontent-ywi-c27="" aria-hidden="true" class="mr-2">←</span><!--bindings={
+<!--scullyContent-end--><scully-content _ngcontent-roa-c27=""></scully-content>
+          <p _ngcontent-roa-c27="" class="flex justify-between my-16 pt-4 border-t-2 divide-solid">
+            <a _ngcontent-roa-c27="" ng-reflect-router-link="/JS30/07_Array-Cardio-Day-2" href="/JS30/07_Array-Cardio-Day-2"><span _ngcontent-roa-c27="" aria-hidden="true" class="ml-2">←</span> JS30：07_Array Cardio Day 2</a><!--bindings={
   "ng-reflect-ng-if": "true"
-}--> JS30：05_Flex Panel Gallery</a>
-            <a _ngcontent-ywi-c27="" ng-reflect-router-link="/JS30/07_Array-Cardio-Day-2" href="/JS30/07_Array-Cardio-Day-2">JS30：07_Array Cardio Day 2 <span _ngcontent-ywi-c27="" aria-hidden="true" class="ml-2">→</span><!--bindings={
+}-->
+            <a _ngcontent-roa-c27="" class="flex-1 text-right" ng-reflect-router-link="/JS30/05_Flex_Panel_Gallery" href="/JS30/05_Flex_Panel_Gallery">JS30：05_Flex Panel Gallery <span _ngcontent-roa-c27="" aria-hidden="true" class="mr-2">→</span></a><!--bindings={
   "ng-reflect-ng-if": "true"
-}--></a>
+}-->
           </p>
-        <script>try {window['scullyContent'] = {cssId:"_ngcontent-ywi-c27",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
-        <div _ngcontent-ywi-c27="" class="order-first md:order-none">
-          <div _ngcontent-ywi-c27="" class="sticky top-32 space-y-4">
-            <app-blog-nav _ngcontent-ywi-c27="" _nghost-ywi-c26="" class="block"><ul _ngcontent-ywi-c26=""><p _ngcontent-ywi-c26="" class="text-xl font-semibold">Index</p><li _ngcontent-ywi-c26="" class="cursor-pointer"><a _ngcontent-ywi-c26="" ng-reflect-ng-class="text-base leading-8," class="text-base leading-8"> Sorry, could not load static page content </a><!--bindings={
+        <script>try {window['scullyContent'] = {cssId:"_ngcontent-roa-c27",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+        <div _ngcontent-roa-c27="" class="order-first md:order-none">
+          <div _ngcontent-roa-c27="" class="sticky top-32 space-y-4">
+            <app-blog-nav _ngcontent-roa-c27="" _nghost-roa-c26="" class="block"><ul _ngcontent-roa-c26=""><p _ngcontent-roa-c26="" class="text-xl font-semibold">Index</p><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><li _ngcontent-roa-c26="" class="cursor-pointer"><a _ngcontent-roa-c26="" ng-reflect-ng-class="text-base leading-8," class="text-base leading-8"> Sorry, could not load static page content </a><!--bindings={
   "ng-reflect-ng-if": "/gulp/gulp"
 }--></li><!--bindings={
   "ng-reflect-ng-for-of": "[object HTMLHeadingElement]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "[object HTMLHeadingElement]"
 }--></ul></app-blog-nav>
           </div>
         </div>
@@ -275,8 +431,8 @@ exports<span class="token punctuation" _ngcontent-ywi-c27="">.</span>default <sp
 
 
 
-<a _ngcontent-ywi-c27="" class="gotop" ng-reflect-ng-style="[object Object]" style="opacity: 0;">
-  <i _ngcontent-ywi-c27="" class="btn"></i>
+<a _ngcontent-roa-c27="" class="gotop" ng-reflect-ng-style="[object Object]" style="opacity: 0;">
+  <i _ngcontent-roa-c27="" class="btn bg-white"></i>
 </a><!--bindings={
   "ng-reflect-ng-if": "/gulp/gulp"
 }-->
