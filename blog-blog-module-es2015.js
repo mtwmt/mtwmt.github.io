@@ -3257,6 +3257,11 @@ class BlogNavComponent {
         return 'block';
     }
     ngOnInit() {
+        // let t = <HTMLAnchorElement>document.getElementById('title'); t.href = '/';
+        // let t = document.getElementById('page-title'); t.title = 'Page Title';
+        // let t = {} as HTMLAnchorElement; t.href = '/';
+        // let t = {}; t.href = '/';
+        // console.log('t',t)
         this.nav$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["fromEvent"])(window, 'AngularReady').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(ev => {
             return Array.from(this.document.querySelectorAll('.prose h2,.prose h3,.prose h4'));
         }));
