@@ -25,7 +25,7 @@ h6 {
 :root .theme-dark {
   /* --primary: theme('colors.yellow.400');
   --secondary: theme('colors.purple.400'); */
-  --primary: #fdc336;
+  --primary: #00aaaa;
   --secondary: #6b6966;
   --background-color: theme('colors.gray.800');
   --text-color: theme('colors.white');
@@ -42,7 +42,7 @@ h6 {
   /* --primary: theme('colors.purple.600');
   --secondary: theme('colors.yellow.600'); */
   --primary: #4a4744;
-  --secondary: #fdb111;
+  --secondary: #00aaaa;
   --background-color: theme('colors.white');
   --text-color: #444;
   --text-color-contrast: theme('colors.white');
