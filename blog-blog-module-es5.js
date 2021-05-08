@@ -1038,7 +1038,7 @@
         },
         decls: 6,
         vars: 6,
-        consts: [[4, "ngIf"], ["class", "gotop", 3, "ngStyle", "click", 4, "ngIf"], [3, "title", "route", "tags", "keywords", "twitterImage", "ogImage", "articlePublishedAt", "articleUpdatedAt"], [1, "relative", "py-4", "max-w-screen-xl", "mx-auto"], [1, "max-w-container", "mx-2"], [1, "px-4"], [1, "prose", "text-sm", "max-w-none", "md:prose-lgspace-y-1"], [3, "dateTime"], [1, "font-bold", "text-gray-700", "leading-relaxed"], [1, "block", "lg:flex", "lg:flex-row-reverse", "lg:space-x-2"], [1, "w-full", "lg:w-1/4", "px-4", "lg:pl-0"], [1, "sticky", "top-32", "mb-4"], [1, "w-full", "lg:w-3/4", "px-4", "lg:pl-0"], [1, "prose"], [1, "gotop", 3, "ngStyle", "click"], [1, "btn", "bg-white"]],
+        consts: [[4, "ngIf"], ["class", "gotop", 3, "ngStyle", "click", 4, "ngIf"], [3, "title", "route", "tags", "keywords", "twitterImage", "ogImage", "articlePublishedAt", "articleUpdatedAt"], [1, "relative", "py-4", "max-w-screen-xl", "mx-auto"], [1, "max-w-container", "mx-2"], [1, "px-4", "lg:px-2"], [1, "prose", "text-sm", "max-w-none", "md:prose-lgspace-y-1"], [3, "dateTime"], [1, "font-bold", "text-gray-700", "leading-relaxed"], [1, "block", "lg:flex", "lg:flex-row-reverse", "lg:space-x-2"], [1, "w-full", "lg:w-1/4", "px-4", "lg:pl-0"], [1, "sticky", "top-32", "mb-4"], [1, "w-full", "lg:w-3/4", "px-4", "lg:pl-0"], [1, "prose"], [1, "gotop", 3, "ngStyle", "click"], [1, "btn", "bg-white"]],
         template: function BlogComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, BlogComponent_ng_container_0_Template, 43, 14, "ng-container", 0);
