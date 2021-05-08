@@ -1,0 +1,467 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <title>JS地下城：2F-時鐘</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149155162-1"></script>
+    <script>
+      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      // ga('create','UA-149155162-1','auto');ga('send','pageview');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149155162-1');
+    </script>
+  <link rel="stylesheet" href="styles.css"><style>.hamburger[_ngcontent-lek-c22] {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1.25rem;
+  margin: auto;
+  width: 1.875rem;
+  height: 1.5625rem;
+  z-index: 999;
+}
+
+.hamburger[_ngcontent-lek-c22]   span[_ngcontent-lek-c22] {
+  top: 10px;
+  display: inline-block;
+  text-indent: -9999px;
+  transition: 0.5s;
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  width: 30px;
+  height: 5px;
+  background: #fff;
+}
+
+.hamburger[_ngcontent-lek-c22]   span[_ngcontent-lek-c22]:before {
+  transition: 0.5s;
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  display: block;
+  width: 30px;
+  height: 5px;
+  background: #fff;
+}
+
+.hamburger[_ngcontent-lek-c22]   span[_ngcontent-lek-c22]:after {
+  transition: 0.5s;
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: block;
+  width: 30px;
+  height: 5px;
+  background: #fff;
+}
+
+.hamburger.active[_ngcontent-lek-c22]   span[_ngcontent-lek-c22] {
+  transform: rotate(180deg);
+  background-color: transparent;
+}
+
+.hamburger.active[_ngcontent-lek-c22]   span[_ngcontent-lek-c22]:before {
+  top: -10px;
+  transform: translateY(10.5px) rotate(45deg);
+}
+
+.hamburger.active[_ngcontent-lek-c22]   span[_ngcontent-lek-c22]:after {
+  top: -10px;
+  transform: translateY(10.5px) rotate(-45deg);
+}
+
+.social[_ngcontent-lek-c22] {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+@media (min-width: 640px) {
+  .social[_ngcontent-lek-c22] {
+    position: static;
+    top: 0px;
+    left: 0px;
+  }
+}
+
+.social[_ngcontent-lek-c22]   li[_ngcontent-lek-c22] {
+  display: inline-block;
+}
+
+@media (max-width: 640px) {
+  .social[_ngcontent-lek-c22] {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    display: block;
+    padding-top: 5rem;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    transition: 0.5s;
+    transform: translateX(-100%);
+    z-index: 99;
+    background: white;
+    box-shadow: 0px 1px 0.5rem 0px rgba(214, 214, 214, 0.7);
+  }
+
+  .social.active[_ngcontent-lek-c22] {
+    transform: translateX(0%);
+    overflow: hidden;
+  }
+
+  .social[_ngcontent-lek-c22]   li[_ngcontent-lek-c22] {
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center;
+    line-height: 2;
+  }
+
+  .social[_ngcontent-lek-c22]   li[_ngcontent-lek-c22]   a[_ngcontent-lek-c22] {
+    width: 70%;
+  }
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcYXBwLmNvbXBvbmVudC5zY3NzIiwiLi4vLi4vbm9kZV9tb2R1bGVzL3RhaWx3aW5kY3NzL2xpYi9saWIvc3Vic3RpdHV0ZUNsYXNzQXBwbHlBdFJ1bGVzLmpzIiwiPG5vIHNvdXJjZT4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBa0NBO0VBQ0Usa0JBQUE7RUFDQSxRQUFBO0VBQ0EsMkJBQUE7RUFDQSxjQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtFQUNBLFlBQUE7QUFqQ0Y7O0FBa0NFO0VBQ0UsU0FBQTtFQUNBLHFCQUFBO0VBQ0Esb0JBQUE7RUFDQSxnQkFBQTtFQTVDRixrQkFBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0VBQ0EsV0EwQzJCO0VBekMzQixXQUFBO0VBQ0EsZ0JBd0NxQjtBQTNCdkI7O0FBWEU7RUFDRSxnQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxPQUFBO0VBQ0EsY0FBQTtFQUNBLFdBK0J5QjtFQTlCekIsV0FBQTtFQUNBLGdCQTZCbUI7QUFoQnZCOztBQVhFO0VBQ0UsZ0JBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsT0FBQTtFQUNBLGNBQUE7RUFDQSxXQW9CeUI7RUFuQnpCLFdBQUE7RUFDQSxnQkFrQm1CO0FBTHZCOztBQVFJO0VBRUUseUJBQUE7RUFDQSw2QkFBQTtBQVBOOztBQVFNO0VBQ0UsVUFBQTtFQUNBLDJDQUFBO0FBTlI7O0FBUU07RUFDRSxVQUFBO0VBQ0EsNENBQUE7QUFOUjs7QUFZQTtFQ2pFQSx5SUFBbUI7RUFBbkIsaUlBQW1CO0VBQW5CLDBKQUFtQjtFQUFuQix3REFBbUI7RUFBbkIsMEJBQW1CO0VBQW5CLHdEQUFtQjtFQUFuQiwwQkFBbUI7QUR5RG5COztBRTNEQTtFREVBO0lBQUEsZ0JBQW1CO0lBQW5CLFFBQW1CO0lBQW5CO0VBQW1CO0NDRm5COztBRm9FRTtFQ2xFRixxQkFBbUI7QUQ0RG5COztBQVlBO0VBQ0U7SUFDRSxlQUFBO0lBQ0EsU0FBQTtJQUNBLE9BQUE7SUFDQSxjQUFBO0lBQ0EsaUJBQUE7SUFDQSxXQUFBO0lBQ0EsWUFBQTtJQUNBLFNBQUE7SUFDQSxnQkFBQTtJQUNBLDRCQUFBO0lBQ0EsV0FBQTtJQUNBLGlCQUFBO0lBQ0EsdURBQUE7RUFURjs7RUFVRTtJQUNFLHlCQUFBO0lBQ0EsZ0JBQUE7RUFSSjs7RUFXRTtJQzVGSixtQkFBbUI7SUQ4RmIsY0FBQTtJQUNBLGtCQUFBO0lBQ0EsY0FBQTtFQVRKOztFQVdJO0lBQ0UsVUFBQTtFQVROO0FBQ0YiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vYXNzZXRzL3Njc3MvY29tbW9uJztcclxuXHJcbkBtaXhpbiBoYW1idXJnZXIoJGNvbG9yLCAkaWNvblcpIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIHdpZHRoOiAkaWNvblc7XHJcbiAgaGVpZ2h0OiAkaWNvblcvNjtcclxuICBiYWNrZ3JvdW5kOiAkY29sb3I7XHJcbiAgLy8gbWFyZ2luOiAkaWNvblcvMyAwO1xyXG4gICY6YmVmb3JlIHtcclxuICAgIHRyYW5zaXRpb246IDAuNXM7XHJcbiAgICBjb250ZW50OiAnJztcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogLSRpY29uVy8zO1xyXG4gICAgbGVmdDogMDtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6ICRpY29uVztcclxuICAgIGhlaWdodDogJGljb25XLzY7XHJcbiAgICBiYWNrZ3JvdW5kOiAkY29sb3I7XHJcbiAgfVxyXG4gICY6YWZ0ZXIge1xyXG4gICAgdHJhbnNpdGlvbjogMC41cztcclxuICAgIGNvbnRlbnQ6ICcnO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAkaWNvblcvMztcclxuICAgIGxlZnQ6IDA7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHdpZHRoOiAkaWNvblc7XHJcbiAgICBoZWlnaHQ6ICRpY29uVy82O1xyXG4gICAgYmFja2dyb3VuZDogJGNvbG9yO1xyXG4gIH1cclxufVxyXG5cclxuLmhhbWJ1cmdlciB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogNTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICByaWdodDogcmVtKDIwcHgpO1xyXG4gIG1hcmdpbjogYXV0bztcclxuICB3aWR0aDogcmVtKDMwcHgpO1xyXG4gIGhlaWdodDogcmVtKDI1cHgpO1xyXG4gIHotaW5kZXg6IDk5OTtcclxuICBzcGFuIHtcclxuICAgIHRvcDogMTBweDtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHRleHQtaW5kZW50OiAtOTk5OXB4O1xyXG4gICAgdHJhbnNpdGlvbjogMC41cztcclxuICAgIEBpbmNsdWRlIGhhbWJ1cmdlcigjZmZmLCAzMHB4KTtcclxuICB9XHJcbiAgJi5hY3RpdmUge1xyXG4gICAgc3BhbiB7XHJcbiAgICAgIC8vIHJpZ2h0OiByZW0oMTVweCk7XHJcbiAgICAgIHRyYW5zZm9ybTogcm90YXRlKDE4MGRlZyk7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gICAgICAmOmJlZm9yZSB7XHJcbiAgICAgICAgdG9wOiAtMTBweDtcclxuICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMTAuNXB4KSByb3RhdGUoNDVkZWcpO1xyXG4gICAgICB9XHJcbiAgICAgICY6YWZ0ZXIge1xyXG4gICAgICAgIHRvcDogLTEwcHg7XHJcbiAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDEwLjVweCkgcm90YXRlKC00NWRlZyk7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbn1cclxuXHJcbi5zb2NpYWwge1xyXG4gIGxpIHtcclxuICAgIEBhcHBseSBpbmxpbmUtYmxvY2s7XHJcbiAgfVxyXG4gIEBhcHBseSBzbTpzdGF0aWMgc206dG9wLTAgc206bGVmdC0wIHRyYW5zaXRpb24gZHVyYXRpb24tMzAwIGVhc2UtaW4tb3V0O1xyXG59XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogNjQwcHgpIHtcclxuICAuc29jaWFsIHtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHRvcDogNDhweDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHBhZGRpbmctdG9wOiByZW0oODBweCk7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIGJvcmRlcjogMDtcclxuICAgIHRyYW5zaXRpb246IDAuNXM7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTEwMCUpO1xyXG4gICAgei1pbmRleDogOTk7XHJcbiAgICBiYWNrZ3JvdW5kOiBsaWdodGVuKCNlZmVmZWYsIDEwJSk7XHJcbiAgICBib3gtc2hhZG93OiAwcHggMXB4IHJlbSg4cHgpIDBweCByZ2JhKGRhcmtlbigjZWZlZmVmLCAxMCUpLCAwLjcpO1xyXG4gICAgJi5hY3RpdmUge1xyXG4gICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMCUpO1xyXG4gICAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgfVxyXG5cclxuICAgIGxpIHtcclxuICAgICAgQGFwcGx5IG1iLTQ7XHJcbiAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgIGxpbmUtaGVpZ2h0OiAyO1xyXG5cclxuICAgICAgYSB7XHJcbiAgICAgICAgd2lkdGg6IDcwJTtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxufVxyXG4iLCJAdGFpbHdpbmQgYmFzZTtcbkB0YWlsd2luZCBjb21wb25lbnRzO1xuQHRhaWx3aW5kIHV0aWxpdGllczsiLG51bGxdfQ== */</style><script charset="utf-8" src="home-home-module-es2015.js"></script><script charset="utf-8" src="blog-blog-module-es2015.js"></script><style>.prose[_ngcontent-lek-c61] {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(107, 114, 128, var(--tw-text-opacity));
+  font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important;
+}
+
+.prose[_ngcontent-lek-c61]   h1[_ngcontent-lek-c61] {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-text-opacity));
+}
+
+.prose[_ngcontent-lek-c61]   h2[_ngcontent-lek-c61] {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity));
+}
+
+.prose[_ngcontent-lek-c61]   h3[_ngcontent-lek-c61] {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity));
+}
+
+.prose[_ngcontent-lek-c61]   p[_ngcontent-lek-c61] {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose[_ngcontent-lek-c61]   pre[_ngcontent-lek-c61] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose[_ngcontent-lek-c61]   img[_ngcontent-lek-c61] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose[_ngcontent-lek-c61]   hr[_ngcontent-lek-c61] {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.prose[_ngcontent-lek-c61]   iframe[_ngcontent-lek-c61] {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  max-width: 100%;
+  min-height: 100%;
+  min-height: 32rem;
+  width: 100%;
+}
+
+.prose[_ngcontent-lek-c61]   iframe[_ngcontent-lek-c61]    + p[_ngcontent-lek-c61] {
+  margin-top: -0.5rem;
+  text-align: center;
+}
+
+.prose[_ngcontent-lek-c61]   iframe[_ngcontent-lek-c61]    + p[_ngcontent-lek-c61]    > em[_ngcontent-lek-c61] {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.prose[_ngcontent-lek-c61]   blockquote[_ngcontent-lek-c61] {
+  --tw-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+  border-style: solid;
+  border-left-width: 4px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: var(--gray-medium);
+}
+
+.prose[_ngcontent-lek-c61]   ol[_ngcontent-lek-c61] {
+  list-style-type: decimal;
+}
+
+.prose[_ngcontent-lek-c61]   ul[_ngcontent-lek-c61] {
+  list-style-type: disc;
+}
+
+.prose[_ngcontent-lek-c61]   ol[_ngcontent-lek-c61], .prose[_ngcontent-lek-c61]   ul[_ngcontent-lek-c61] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1.25rem;
+}
+
+.prose[_ngcontent-lek-c61]   ol[_ngcontent-lek-c61]   li[_ngcontent-lek-c61]:not(:last-of-type), .prose[_ngcontent-lek-c61]   ul[_ngcontent-lek-c61]   li[_ngcontent-lek-c61]:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+
+.prose[_ngcontent-lek-c61]   [_ngcontent-lek-c61]:not(pre)    > code[_ngcontent-lek-c61] {
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+  border-radius: 0.25rem;
+  font-weight: 100;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  overflow-wrap: break-word;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  font-size: inherit;
+}
+
+[_nghost-lek-c61]   .toolbar-item[_ngcontent-lek-c61] {
+  position: relative;
+  background: #159;
+}
+
+[_nghost-lek-c61]   .toolbar-item[_ngcontent-lek-c61]   .toolbar[_ngcontent-lek-c61] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+}
+
+a[_ngcontent-lek-c61] {
+  display: block;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+a[_ngcontent-lek-c61]:hover {
+  text-decoration: none;
+}
+
+table[_ngcontent-lek-c61] {
+  margin: 1rem 0 0.5rem 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table[_ngcontent-lek-c61]   caption[_ngcontent-lek-c61] {
+  line-height: 48px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+table[_ngcontent-lek-c61]   th[_ngcontent-lek-c61] {
+  color: var(--text-color);
+  background: var(--table-even-row);
+}
+
+table[_ngcontent-lek-c61]   th[_ngcontent-lek-c61], table[_ngcontent-lek-c61]   td[_ngcontent-lek-c61] {
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  line-height: 1.2;
+  border: 1px solid var(--table-even-row);
+}
+
+.gotop[_ngcontent-lek-c61] {
+  position: fixed;
+  bottom: 4rem;
+  left: 50%;
+  margin-left: 25rem;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.gotop[_ngcontent-lek-c61]   .btn[_ngcontent-lek-c61] {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.gotop[_ngcontent-lek-c61]   .btn[_ngcontent-lek-c61]:before, .gotop[_ngcontent-lek-c61]   .btn[_ngcontent-lek-c61]:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  margin-left: -0.25rem;
+  border-radius: 0.1875rem;
+  content: "";
+  width: 1rem;
+  height: 0.3125rem;
+  background: var(--primary);
+}
+
+.gotop[_ngcontent-lek-c61]   .btn[_ngcontent-lek-c61]:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  margin-left: 0.25rem;
+}
+
+@media (max-width: 1024px) {
+  .gotop[_ngcontent-lek-c61] {
+    right: 2rem;
+    left: auto;
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGJsb2cuY29tcG9uZW50LnNjc3MiLCIuLi8uLi8uLi9ub2RlX21vZHVsZXMvdGFpbHdpbmRjc3MvbGliL2xpYi9zdWJzdGl0dXRlQ2xhc3NBcHBseUF0UnVsZXMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUNBQSxlQUFtQjtFQUFuQixtQkFBbUI7RUFBbkIsb0JBQW1CO0VBQW5CLGtEQUFtQjtFREVqQixnTUFBQTtBQURGOztBQUtFO0VDTkYsbUJBQW1CO0VBQW5CLG9CQUFtQjtFQUFuQixvQkFBbUI7RUFBbkIsK0NBQW1CO0FESW5COztBQU1FO0VDVkYsZ0JBQW1CO0VBQW5CLGtCQUFtQjtFQUFuQixvQkFBbUI7RUFBbkIsbUJBQW1CO0VBQW5CLGtCQUFtQjtFQUFuQixvQkFBbUI7RUFBbkIsK0NBQW1CO0FET25COztBQU9FO0VDZEYsZ0JBQW1CO0VBQW5CLG1CQUFtQjtFQUFuQixvQkFBbUI7RUFBbkIscUJBQW1CO0VBQW5CLGdCQUFtQjtFQUFuQixvQkFBbUI7RUFBbkIsK0NBQW1CO0FEVW5COztBQVFFO0VDbEJGLGtCQUFtQjtFQUFuQixxQkFBbUI7QURhbkI7O0FBU0U7RUN0QkYsZ0JBQW1CO0VBQW5CLG1CQUFtQjtBRGdCbkI7O0FBVUU7RUMxQkYsZ0JBQW1CO0VBQW5CLG1CQUFtQjtFQUFuQixpQkFBbUI7RUFBbkIsa0JBQW1CO0FEbUJuQjs7QUFXRTtFQzlCRixnQkFBbUI7RUFBbkIsbUJBQW1CO0FEc0JuQjs7QUFZRTtFQ2xDRixpQkFBbUI7RUFBbkIsa0JBQW1CO0VBQW5CLHFCQUFtQjtFQUFuQixnQkFBbUI7RUFBbkIsZUFBbUI7RUFBbkIsZ0JBQW1CO0VBQW5CLGlCQUFtQjtFQUFuQixXQUFtQjtBRDBCbkI7O0FBVUk7RUNwQ0osbUJBQW1CO0VBQW5CLGtCQUFtQjtBRDZCbkI7O0FBU007RUN0Q04sbUJBQW1CO0VBQW5CLG9CQUFtQjtBRGdDbkI7O0FBYUU7RUM3Q0Ysc0JBQW1CO0VBQW5CLDJEQUFtQjtFQUFuQixtQkFBbUI7RUFBbkIsc0JBQW1CO0VBQW5CLGdCQUFtQjtFQUFuQixtQkFBbUI7RUFBbkIsb0JBQW1CO0VBQW5CLHVCQUFtQjtFQUFuQixvQkFBbUI7RUFBbkIscUJBQW1CO0VBQW5CLHlCQUFtQjtBRG1DbkI7O0FBY0U7RUNqREYsd0JBQW1CO0FEc0NuQjs7QUFlRTtFQ3JERixxQkFBbUI7QUR5Q25COztBQ3pDQTtFQUFBLGdCQUFtQjtFQUFuQixtQkFBbUI7RUFBbkI7QUFBbUI7O0FBQW5CO0VBQUE7QUFBbUI7O0FEaUVqQjtFQ2pFRixrQkFBbUI7RUFBbkIsMkRBQW1CO0VBQW5CLHNCQUFtQjtFQUFuQixnQkFBbUI7RUFBbkIscUJBQW1CO0VBQW5CLHNCQUFtQjtFQUFuQix5QkFBbUI7RURtRWYsbUJBQUE7RUFDQSxzQkFBQTtFQUNBLGtCQUFBO0FBZEo7O0FBbUJFO0VBQ0Usa0JBQUE7RUFDQSxnQkFBQTtBQWhCSjs7QUFpQkk7RUFDRSxrQkFBQTtFQUNBLE1BQUE7RUFDQSxRQUFBO0VBQ0EsV0FBQTtBQWZOOztBQW9CQTtFQUNFLGNBQUE7RUFDQSwwQkFBQTtFQUNBLGdCQUFBO0FBakJGOztBQWtCRTtFQUNFLHFCQUFBO0FBaEJKOztBQW9CQTtFQUNFLHVCQUFBO0VBQ0EsV0FBQTtFQUNBLHlCQUFBO0FBakJGOztBQW1CRTtFQUNFLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxpQkFBQTtBQWpCSjs7QUFtQkU7RUFDRSx3QkFBQTtFQUNBLGlDQUFBO0FBakJKOztBQW9CRTs7RUFFRSx1QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1Q0FBQTtBQWxCSjs7QUFzQkE7RUFDRSxlQUFBO0VBQ0EsWUFBQTtFQUVBLFNBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxnQkFBQTtBQXBCRjs7QUFxQkU7RUFDRSxhQUFBO0VBQ0EsY0FBQTtBQW5CSjs7QUFxQkk7RUFFRSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsK0NBQUE7RUFDQSxxQkFBQTtFQUNBLHdCQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7RUFDQSxpQkFBQTtFQUNBLDBCQUFBO0FBcEJOOztBQXNCSTtFQUNFLDhDQUFBO0VBQ0Esb0JBQUE7QUFwQk47O0FBdUJFO0VBOUJGO0lBK0JJLFdBQUE7SUFDQSxVQUFBO0lBQ0EsU0FBQTtFQXBCRjtBQUNGIiwiZmlsZSI6ImJsb2cuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLy4uLy4uL2Fzc2V0cy9zY3NzL2NvbW1vbic7XHJcblxyXG4ucHJvc2Uge1xyXG4gIEBhcHBseSB0ZXh0LWJhc2UgdGV4dC1ncmF5LTUwMDtcclxuICBmb250LWZhbWlseTogJ1BpbmdGYW5nU0MtUmVndWxhcicsIEhlbHZldGljYSwgJ0hlbHZldGljYSBOZXVlJywgJ1NlZ29lIFVJJyxcclxuICAgICdIaXJhZ2lubyBTYW5zIEdCJywgJ1NvdXJjZSBIYW4gU2FucyBDTicsICdNaWNyb3NvZnQgWWFIZWknLCAnU1RIZWl0aScsXHJcbiAgICAnV2VuUXVhbllpIE1pY3JvIEhlaScsIHNhbnMtc2VyaWYgIWltcG9ydGFudDtcclxuXHJcbiAgaDEge1xyXG4gICAgQGFwcGx5IHRleHQtM3hsIHRleHQtZ3JheS03MDA7XHJcbiAgfVxyXG5cclxuICBoMiB7XHJcbiAgICBAYXBwbHkgbXQtMTAgbWItNCB0ZXh0LXhsIGZvbnQtYm9sZCB0ZXh0LWdyYXktNjAwO1xyXG4gIH1cclxuXHJcbiAgaDMge1xyXG4gICAgQGFwcGx5IG10LTQgbWItMiB0ZXh0LWxnIGZvbnQtYm9sZCB0ZXh0LWdyYXktNjAwO1xyXG4gIH1cclxuXHJcbiAgcCB7XHJcbiAgICBAYXBwbHkgbXktMjtcclxuICB9XHJcblxyXG4gIHByZSB7XHJcbiAgICBAYXBwbHkgbXktNDtcclxuICB9XHJcblxyXG4gIGltZyB7XHJcbiAgICBAYXBwbHkgbXktNCBteC1hdXRvO1xyXG4gIH1cclxuXHJcbiAgaHIge1xyXG4gICAgQGFwcGx5IG15LTg7XHJcbiAgfVxyXG5cclxuICBpZnJhbWUge1xyXG4gICAgQGFwcGx5IG10LTQgbWItMiBteC1hdXRvIG1heC13LWZ1bGwgbWluLWgtZnVsbDtcclxuICAgICYgKyBwIHtcclxuICAgICAgQGFwcGx5IHRleHQtY2VudGVyIG10LTItcmV2O1xyXG4gICAgICAmID4gZW0ge1xyXG4gICAgICAgIEBhcHBseSB0ZXh0LXNtO1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgICBAYXBwbHkgdy1mdWxsIG1pbi1oLTEyODtcclxuICB9XHJcblxyXG4gIGJsb2NrcXVvdGUge1xyXG4gICAgQGFwcGx5IHRleHQtZ3JheS1tZWRpdW0gbXktNCBweS0xIHB4LTIgYm9yZGVyLWwtNCBib3JkZXItZ3JheS00MDAgYm9yZGVyLXNvbGlkO1xyXG4gIH1cclxuXHJcbiAgb2wge1xyXG4gICAgQGFwcGx5IGxpc3QtZGVjaW1hbDtcclxuICB9XHJcblxyXG4gIHVsIHtcclxuICAgIEBhcHBseSBsaXN0LWRpc2M7XHJcbiAgfVxyXG5cclxuICBvbCxcclxuICB1bCB7XHJcbiAgICBAYXBwbHkgbWwtNSBteS00O1xyXG4gICAgJiBsaTpub3QoOmxhc3Qtb2YtdHlwZSkge1xyXG4gICAgICBAYXBwbHkgbWItMjtcclxuICAgIH1cclxuICB9XHJcblxyXG4gIDpub3QocHJlKSA+IGNvZGUge1xyXG4gICAgQGFwcGx5IGJnLWdyYXktMTAwIHJvdW5kZWQgcHgtMSBmb250LXRoaW4gYnJlYWstd29yZHM7XHJcbiAgICBwYWRkaW5nLXRvcDogMC4xcmVtO1xyXG4gICAgcGFkZGluZy1ib3R0b206IDAuMXJlbTtcclxuICAgIGZvbnQtc2l6ZTogaW5oZXJpdDtcclxuICB9XHJcbn1cclxuXHJcbjpob3N0IHtcclxuICAudG9vbGJhci1pdGVtIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGJhY2tncm91bmQ6ICMxNTk7XHJcbiAgICAudG9vbGJhciB7XHJcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgdG9wOiAwO1xyXG4gICAgICByaWdodDogMDtcclxuICAgICAgY29sb3I6ICNmZmY7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcblxyXG5hIHtcclxuICBkaXNwbGF5OiBibG9jaztcclxuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcclxuICB0cmFuc2l0aW9uOiAwLjNzO1xyXG4gICY6aG92ZXIge1xyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG4gIH1cclxufVxyXG5cclxudGFibGUge1xyXG4gIG1hcmdpbjogcmVtKDE2cHgpIDAgcmVtKDhweCkgMDtcclxuICB3aWR0aDogMTAwJTtcclxuICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xyXG5cclxuICBjYXB0aW9uIHtcclxuICAgIGxpbmUtaGVpZ2h0OiA0OHB4O1xyXG4gICAgZm9udC1zaXplOiByZW0oMjBweCk7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICB9XHJcbiAgdGgge1xyXG4gICAgY29sb3I6IHZhcigtLXRleHQtY29sb3IpO1xyXG4gICAgYmFja2dyb3VuZDogdmFyKC0tdGFibGUtZXZlbi1yb3cpO1xyXG4gIH1cclxuXHJcbiAgdGgsXHJcbiAgdGQge1xyXG4gICAgcGFkZGluZzogcmVtKDhweCkgcmVtKDRweCk7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBsaW5lLWhlaWdodDogMS4yO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tdGFibGUtZXZlbi1yb3cpO1xyXG4gIH1cclxufVxyXG5cclxuLmdvdG9wIHtcclxuICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgYm90dG9tOiByZW0oNjRweCk7XHJcbiAgLy8gcmlnaHQ6IHJlbSgzMnB4KTtcclxuICBsZWZ0OiA1MCU7XHJcbiAgbWFyZ2luLWxlZnQ6IHJlbSg0MDBweCk7XHJcbiAgb3BhY2l0eTogMTtcclxuICB0cmFuc2l0aW9uOiAwLjNzO1xyXG4gIC5idG4ge1xyXG4gICAgd2lkdGg6IHJlbSg0MHB4KTtcclxuICAgIGhlaWdodDogcmVtKDQwcHgpO1xyXG5cclxuICAgICY6YmVmb3JlLFxyXG4gICAgJjphZnRlciB7XHJcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgdG9wOiA1MCU7XHJcbiAgICAgIGxlZnQ6IDUwJTtcclxuICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSkgcm90YXRlKC00NWRlZyk7XHJcbiAgICAgIG1hcmdpbi1sZWZ0OiByZW0oLTRweCk7XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IHJlbSgzcHgpO1xyXG4gICAgICBjb250ZW50OiAnJztcclxuICAgICAgd2lkdGg6IHJlbSgxNnB4KTtcclxuICAgICAgaGVpZ2h0OiByZW0oNXB4KTtcclxuICAgICAgYmFja2dyb3VuZDogdmFyKC0tcHJpbWFyeSk7XHJcbiAgICB9XHJcbiAgICAmOmFmdGVyIHtcclxuICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSkgcm90YXRlKDQ1ZGVnKTtcclxuICAgICAgbWFyZ2luLWxlZnQ6IHJlbSg0cHgpO1xyXG4gICAgfVxyXG4gIH1cclxuICBAbWVkaWEgKG1heC13aWR0aDogMTAyNHB4KSB7XHJcbiAgICByaWdodDogcmVtKDMycHgpO1xyXG4gICAgbGVmdDogYXV0bztcclxuICAgIG1hcmdpbjogMDtcclxuICB9XHJcbn1cclxuIiwiQHRhaWx3aW5kIGJhc2U7XG5AdGFpbHdpbmQgY29tcG9uZW50cztcbkB0YWlsd2luZCB1dGlsaXRpZXM7Il19 */</style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtZXRhLmNvbXBvbmVudC5zY3NzIn0= */</style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJibG9nLW5hdi5jb21wb25lbnQuc2NzcyJ9 */</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><meta name="description" content="JS地下城：2F-時鐘"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, css, javascript, JS地下城"><meta property="og:title" content="JS地下城：2F-時鐘"><meta property="og:description" content="JS地下城：2F-時鐘"><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.github.io/blog/JSBOSS/2f"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="JS地下城：2F-時鐘"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="zh_tw"><script>window['ScullyIO']='generated';</script></head>
+  <body class="theme-light" scully-version="1.1.1">
+    <app-root _nghost-lek-c22="" ng-version="11.2.11"><div _ngcontent-lek-c22="" class="relative mx-auto md:max-w-5xl text-gray-700"><header _ngcontent-lek-c22="" class="sticky z-999 top-0 left-0 bg-oreilly-500 flex justify-between px-4 py-2 mb-5 lg:mx-5"><h1 _ngcontent-lek-c22="" class="text-white font-medium text-2xl"><a _ngcontent-lek-c22="" ng-reflect-router-link="/" href="/">Mandy's Web</a></h1><a _ngcontent-lek-c22="" href="javascript:void(0);" title="MENU" class="hamburger sm:hidden" ng-reflect-ng-class=""><span _ngcontent-lek-c22="">MENU</span></a><nav _ngcontent-lek-c22="" class="social" ng-reflect-ng-class=""><ul _ngcontent-lek-c22=""><li _ngcontent-lek-c22=""><a _ngcontent-lek-c22="" class="btn sm:text-white text-primary" ng-reflect-router-link="blog" href="/blog">Blog</a></li><li _ngcontent-lek-c22=""><a _ngcontent-lek-c22="" class="btn sm:text-white text-primary" ng-reflect-router-link="portfolio" href="/portfolio">Portfolio</a></li><li _ngcontent-lek-c22=""><a _ngcontent-lek-c22="" href="//github.com/mtwmt" target="_blank" class="btn sm:text-white text-primary">GitHub</a></li></ul></nav></header><div _ngcontent-lek-c22="" class="content leading-relaxed lg:mx-5"><router-outlet _ngcontent-lek-c22=""></router-outlet><app-blog _nghost-lek-c61="">
+  <app-meta _ngcontent-lek-c61="" _nghost-lek-c25="" ng-reflect-title="JS地下城：2F-時鐘" ng-reflect-route="/blog/JSBOSS/2f" ng-reflect-tags="css,javascript,JS地下城" ng-reflect-twitter-image="/blog/JSBOSS/2f" ng-reflect-og-image="/blog/JSBOSS/2f" ng-reflect-article-published-at="2019/02/07" ng-reflect-article-updated-at="2019/02/07"></app-meta>
+  <article _ngcontent-lek-c61="" class="relative py-4 max-w-screen-xl mx-auto">
+    <div _ngcontent-lek-c61="" class="max-w-container mx-2">
+      <header _ngcontent-lek-c61="" class="px-4">
+        
+        <div _ngcontent-lek-c61="" class="prose text-sm max-w-none md:prose-lgspace-y-1">
+          <time _ngcontent-lek-c61="" datetime="2019/02/07">
+            07 February 2019
+          </time>
+          <h1 _ngcontent-lek-c61="" class="font-bold text-gray-700 leading-relaxed">
+            JS地下城：2F-時鐘
+          </h1>
+        </div>
+      </header>
+      <div _ngcontent-lek-c61="" class="block lg:flex lg:flex-row-reverse lg:space-x-2">
+        <div _ngcontent-lek-c61="" class="w-full lg:w-1/4 px-4 lg:pl-0">
+          <div _ngcontent-lek-c61="" class="sticky top-32 mb-4">
+            <app-blog-nav _ngcontent-lek-c61="" _nghost-lek-c60="" class="block"><p _ngcontent-lek-c60="" class="text-xl font-semibold">索引</p><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ul _ngcontent-lek-c60=""><li _ngcontent-lek-c60="" class="cursor-pointer"><a _ngcontent-lek-c60="" ng-reflect-ng-class="text-base leading-relaxed," class="text-base leading-relaxed"> Sorry, could not load static page content </a><!--bindings={
+  "ng-reflect-ng-if": "/blog/JSBOSS/2f"
+}--></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object HTMLHeadingElement]"
+}--></ul><p _ngcontent-lek-c60="" class="mt-4 text-lg font-semibold">上一篇</p><p _ngcontent-lek-c60=""><a _ngcontent-lek-c60="" ng-reflect-router-link="/blog/JS30/05_Flex_Panel_Galle" href="/blog/JS30/05_Flex_Panel_Gallery">JS30：05_Flex Panel Gallery</a></p><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><p _ngcontent-lek-c60="" class="mt-4 text-lg font-semibold">下一篇</p><p _ngcontent-lek-c60=""><a _ngcontent-lek-c60="" ng-reflect-router-link="/blog/JSBOSS/5f" href="/blog/JSBOSS/5f">JS地下城：5F-全台空氣指標儀表板 </a></p><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "[object HTMLHeadingElement]"
+}--><hr _ngcontent-lek-c60="" class="block lg:hidden my-8"></app-blog-nav>
+          </div>
+        </div>
+        <div _ngcontent-lek-c61="" class="w-full lg:w-3/4 px-4 lg:pl-0">
+          <div _ngcontent-lek-c61="" class="prose">
+            <!--scullyContent-begin--><img src="assets/images/JSBOSS/2f/cover.png" width="100%" _ngcontent-lek-c61="">
+
+<h2 id="規則" _ngcontent-lek-c61="">規則</h2>
+<ul _ngcontent-lek-c61="">
+<li _ngcontent-lek-c61="">【特定技術】需使用 JS 原生語法的 getDate() 撈取時間，不可用套件</li>
+<li _ngcontent-lek-c61="">【特定技術】需使用 JS 原生語法的 setTimeout() 或 setInterval()，持續讓秒針、分
+針、時針能夠以台北時區移動</li>
+</ul>
+<hr _ngcontent-lek-c61="">
+<p _ngcontent-lek-c61="">這次時鐘的關卡，之
+前<a href="https://mtwmt.github.io/blog/JS30/02_JS-and-CSS-Clock/" _ngcontent-lek-c61="">js30 天的第二單元</a>已
+經練習過了，所以這次主要挑戰的就是用 css 畫出設計稿上的內容!!!</p>
+<p _ngcontent-lek-c61=""><a href="https://mtwmt.github.io/jsboss/public/2f/" _ngcontent-lek-c61="">demo 頁</a>
+<a href="https://github.com/mtwmt/jsboss/tree/master/sourse/2f" _ngcontent-lek-c61="">sourse code</a></p>
+<hr _ngcontent-lek-c61="">
+<h2 id="準備" _ngcontent-lek-c61="">準備</h2>
+<p _ngcontent-lek-c61="">寫這個題目時 也算晚了，所以在這之前已經有很多大大的作品在上面了，看到幾位大大的
+時鐘都是使用三角函式算角度去繪製出來，所以也爬了一些三角函數的教學，奈何資質駑鈍
+，看了好久 怎麼看都看不懂…… 角度怎麼麼算都算不出來… (真的很灰心啊… 所以決定使用
+土法煉鋼的方式來處理</p>
+<h2 id="開始" _ngcontent-lek-c61="">開始</h2>
+<p _ngcontent-lek-c61="">首先 當然是先把外框簡單的部份先畫完再來就是處理刻度，算了一下刻度有 72 格 (普通
+不是都 60 格嗎?) 不管了 沒關係</p>
+<h3 id="畫刻度" _ngcontent-lek-c61="">畫刻度</h3>
+<p _ngcontent-lek-c61="">先設定中心點在 css3 裡 有個 <code _ngcontent-lek-c61="">transform-origin</code> 它可以定中心點 以這個點為中心做旋
+轉先試著畫出一個刻度 把位置找出來 如圖
+<img src="assets/images/JSBOSS/2f/001.png" width="300px" _ngcontent-lek-c61=""> 再試著使用 css3 的
+<code _ngcontent-lek-c61="">transform: rotate</code> 轉轉看 看是不是如自己所想的轉動方向</p>
+<p _ngcontent-lek-c61="">接著用 js 下去繪製出其他 71 個刻度
+<img src="assets/images/JSBOSS/2f/002.png" width="300px" _ngcontent-lek-c61=""> 果然沒問題 是我要的!
+接著把刻度的間距拉開</p>
+<p _ngcontent-lek-c61="">一個圓是 360 度 (這個國小有讀過 我還記得 XDDD) 360 / 72 得證 每個刻度的間距是 5
+在 for 迴圈裡 每個刻度再加上 5 的距離 如圖
+<img src="assets/images/JSBOSS/2f/003.png" width="300px" _ngcontent-lek-c61=""></p>
+<p _ngcontent-lek-c61="">接下來就是一連串的樣式處理啦利用 css 的 <code _ngcontent-lek-c61="">nth-child( 6n+1 )</code> (以 6 為單位取第 1
+個… 以此類推畫出如下圖
+<img src="assets/images/JSBOSS/2f/004.png" width="300px" _ngcontent-lek-c61=""> 圖中的刻度的半經離圓
+心有點近，就使用 <code _ngcontent-lek-c61="">transform: translateY</code> 將半徑拉開</p>
+<h3 id="把數字時間填上" _ngcontent-lek-c61="">把數字時間填上</h3>
+<p _ngcontent-lek-c61="">都完成後 接著就將數字補上去( 再次遇到問題 ) 原本想將 <code _ngcontent-lek-c61="">am</code> 跟 <code _ngcontent-lek-c61="">pm</code> 的數字 利用
+css 的 data 屬性來顯示，但發現在 js 裡面不能更改 <code _ngcontent-lek-c61="">:before</code>,<code _ngcontent-lek-c61="">:after</code>的 css 樣式(
+調整樣式的原因是要修改數字的旋轉角度)，只能用 css 寫死，只好又放棄老實的幫數字加
+上 tag 這裡要注意的一點是 要把數字放在刻度的下一層，以刻度當定位點 數字才能跟著
+刻度的角度放好<br _ngcontent-lek-c61="">數字放上去後 如下圖 <img src="assets/images/JSBOSS/2f/005.png" width="300px" _ngcontent-lek-c61=""></p>
+<h3 id="將數字轉正" _ngcontent-lek-c61="">將數字轉正</h3>
+<p _ngcontent-lek-c61="">花了一點時間下去找數字旋轉的角度的規則原本是倒的字加上 180 度就會變成正的所以就
+是 <code _ngcontent-lek-c61="">180 - i(第幾個) * 5(先前得到數值)</code> 就能把所有數字轉正了</p>
+<p _ngcontent-lek-c61="">再來就是使用 css 的 <code _ngcontent-lek-c61="">top</code> <code _ngcontent-lek-c61="">left</code> 將數字拉開了，轉到想要的位置成果如下!!
+<img src="assets/images/JSBOSS/2f/006.png" width="300px" _ngcontent-lek-c61=""></p>
+<h3 id="畫秒針" _ngcontent-lek-c61="">畫秒針</h3>
+<p _ngcontent-lek-c61="">接下來就是用 css 處理時鐘的指針了時針 跟 分針較簡單 所以略過不提了來說說複雜的秒
+針吧困難點在於他中間有兩個小折痕這裡我使用三角形來處理在一個 tag 裡的 <code _ngcontent-lek-c61="">before</code>
+<code _ngcontent-lek-c61="">after</code> 分別寫上兩個三角形重疊 做出三角形的邊框做兩個 另一個做水平鏡向處理
+<code _ngcontent-lek-c61="">transform: scaleX(-1);</code> 再來 就是花時間做微調了 成功!!
+<img src="assets/images/JSBOSS/2f/007.png" width="300px" _ngcontent-lek-c61=""></p>
+<!--scullyContent-end--><scully-content _ngcontent-lek-c61=""></scully-content>
+          <script>try {window['scullyContent'] = {cssId:"_ngcontent-lek-c61",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+        </div>
+      </div>
+    </div>
+  </article>
+<!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}-->
+<a _ngcontent-lek-c61="" class="gotop" ng-reflect-ng-style="[object Object]" style="opacity: 0;">
+  <i _ngcontent-lek-c61="" class="btn bg-white"></i>
+</a><!--bindings={
+  "ng-reflect-ng-if": "/blog/JSBOSS/2f"
+}-->
+</app-blog><!--container--><p _ngcontent-lek-c22="" class="my-2 text-right text-xs">Copyright © 2021 Mandy. All rights reserved.</p></div></div></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule="" defer=""></script><script src="polyfills-es5.js" nomodule="" defer=""></script><script src="polyfills-es2015.js" type="module"></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule="" defer=""></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule="" defer=""></script>
+
+</body></html>
