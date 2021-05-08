@@ -20,9 +20,10 @@
 
       gtag('config', 'UA-149155162-1');
     </script>
-  <link rel="stylesheet" href="styles.css"><style>.hamburger[_ngcontent-wfq-c51] {
+  <link rel="stylesheet" href="styles.css"><style>.hamburger[_ngcontent-kyn-c51] {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   right: 1.25rem;
   margin: auto;
   width: 1.875rem;
@@ -30,7 +31,8 @@
   z-index: 999;
 }
 
-.hamburger[_ngcontent-wfq-c51]   span[_ngcontent-wfq-c51] {
+.hamburger[_ngcontent-kyn-c51]   span[_ngcontent-kyn-c51] {
+  top: 10px;
   display: inline-block;
   text-indent: -9999px;
   transition: 0.5s;
@@ -42,7 +44,7 @@
   background: #fff;
 }
 
-.hamburger[_ngcontent-wfq-c51]   span[_ngcontent-wfq-c51]:before {
+.hamburger[_ngcontent-kyn-c51]   span[_ngcontent-kyn-c51]:before {
   transition: 0.5s;
   content: "";
   position: absolute;
@@ -54,7 +56,7 @@
   background: #fff;
 }
 
-.hamburger[_ngcontent-wfq-c51]   span[_ngcontent-wfq-c51]:after {
+.hamburger[_ngcontent-kyn-c51]   span[_ngcontent-kyn-c51]:after {
   transition: 0.5s;
   content: "";
   position: absolute;
@@ -66,22 +68,22 @@
   background: #fff;
 }
 
-.hamburger.active[_ngcontent-wfq-c51]   span[_ngcontent-wfq-c51] {
+.hamburger.active[_ngcontent-kyn-c51]   span[_ngcontent-kyn-c51] {
   transform: rotate(180deg);
   background-color: transparent;
 }
 
-.hamburger.active[_ngcontent-wfq-c51]   span[_ngcontent-wfq-c51]:before {
+.hamburger.active[_ngcontent-kyn-c51]   span[_ngcontent-kyn-c51]:before {
   top: -10px;
   transform: translateY(10.5px) rotate(45deg);
 }
 
-.hamburger.active[_ngcontent-wfq-c51]   span[_ngcontent-wfq-c51]:after {
+.hamburger.active[_ngcontent-kyn-c51]   span[_ngcontent-kyn-c51]:after {
   top: -10px;
   transform: translateY(10.5px) rotate(-45deg);
 }
 
-.social[_ngcontent-wfq-c51] {
+.social[_ngcontent-kyn-c51] {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
@@ -92,19 +94,19 @@
 }
 
 @media (min-width: 640px) {
-  .social[_ngcontent-wfq-c51] {
+  .social[_ngcontent-kyn-c51] {
     position: static;
     top: 0px;
     left: 0px;
   }
 }
 
-.social[_ngcontent-wfq-c51]   li[_ngcontent-wfq-c51] {
+.social[_ngcontent-kyn-c51]   li[_ngcontent-kyn-c51] {
   display: inline-block;
 }
 
 @media (max-width: 640px) {
-  .social[_ngcontent-wfq-c51] {
+  .social[_ngcontent-kyn-c51] {
     position: fixed;
     top: 48px;
     left: 0;
@@ -120,35 +122,35 @@
     box-shadow: 0px 1px 0.5rem 0px rgba(214, 214, 214, 0.7);
   }
 
-  .social.active[_ngcontent-wfq-c51] {
+  .social.active[_ngcontent-kyn-c51] {
     transform: translateX(0%);
     overflow: hidden;
   }
 
-  .social[_ngcontent-wfq-c51]   li[_ngcontent-wfq-c51] {
+  .social[_ngcontent-kyn-c51]   li[_ngcontent-kyn-c51] {
     margin-bottom: 1rem;
     display: block;
     text-align: center;
     line-height: 2;
   }
 
-  .social[_ngcontent-wfq-c51]   li[_ngcontent-wfq-c51]   a[_ngcontent-wfq-c51] {
+  .social[_ngcontent-kyn-c51]   li[_ngcontent-kyn-c51]   a[_ngcontent-kyn-c51] {
     width: 70%;
   }
 }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcYXBwLmNvbXBvbmVudC5zY3NzIiwiLi4vLi4vbm9kZV9tb2R1bGVzL3RhaWx3aW5kY3NzL2xpYi9saWIvc3Vic3RpdHV0ZUNsYXNzQXBwbHlBdFJ1bGVzLmpzIiwiPG5vIHNvdXJjZT4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBbUNBO0VBRUUsa0JBQUE7RUFDQSxRQUFBO0VBQ0EsY0FBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0FBbkNGOztBQW9DRTtFQUNFLHFCQUFBO0VBQ0Esb0JBQUE7RUFDQSxnQkFBQTtFQTNDRixrQkFBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0VBQ0EsV0F5QzJCO0VBeEMzQixXQUFBO0VBQ0EsZ0JBdUNxQjtBQTdCdkI7O0FBUkU7RUFDRSxnQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxPQUFBO0VBQ0EsY0FBQTtFQUNBLFdBOEJ5QjtFQTdCekIsV0FBQTtFQUNBLGdCQTRCbUI7QUFsQnZCOztBQVJFO0VBQ0UsZ0JBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsT0FBQTtFQUNBLGNBQUE7RUFDQSxXQW1CeUI7RUFsQnpCLFdBQUE7RUFDQSxnQkFpQm1CO0FBUHZCOztBQVVJO0VBRUUseUJBQUE7RUFDQSw2QkFBQTtBQVROOztBQVVNO0VBQ0UsVUFBQTtFQUNBLDJDQUFBO0FBUlI7O0FBVU07RUFDRSxVQUFBO0VBQ0EsNENBQUE7QUFSUjs7QUFjQTtFQ2pFQSx5SUFBbUI7RUFBbkIsaUlBQW1CO0VBQW5CLDBKQUFtQjtFQUFuQix3REFBbUI7RUFBbkIsMEJBQW1CO0VBQW5CLHdEQUFtQjtFQUFuQiwwQkFBbUI7QUR1RG5COztBRXpEQTtFREVBO0lBQUEsZ0JBQW1CO0lBQW5CLFFBQW1CO0lBQW5CO0VBQW1CO0NDRm5COztBRm9FRTtFQ2xFRixxQkFBbUI7QUQwRG5COztBQWdCQTtFQUNFO0lBQ0UsZUFBQTtJQUNBLFNBQUE7SUFDQSxPQUFBO0lBQ0EsY0FBQTtJQUNBLGlCQUFBO0lBQ0EsV0FBQTtJQUNBLFlBQUE7SUFDQSxTQUFBO0lBQ0EsZ0JBQUE7SUFDQSw0QkFBQTtJQUNBLFdBQUE7SUFDQSxpQkFBQTtJQUNBLHVEQUFBO0VBYkY7O0VBY0U7SUFDRSx5QkFBQTtJQUNBLGdCQUFBO0VBWko7O0VBZUU7SUM5RkosbUJBQW1CO0lEZ0diLGNBQUE7SUFDQSxrQkFBQTtJQUNBLGNBQUE7RUFiSjs7RUFlSTtJQUNFLFVBQUE7RUFiTjtBQUNGIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5AaW1wb3J0ICcuLi9hc3NldHMvc2Nzcy9jb21tb24nO1xyXG5cclxuQG1peGluIGhhbWJ1cmdlcigkY29sb3IsICRpY29uVykge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBkaXNwbGF5OiBibG9jaztcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgd2lkdGg6ICRpY29uVztcclxuICBoZWlnaHQ6ICRpY29uVy82O1xyXG4gIGJhY2tncm91bmQ6ICRjb2xvcjtcclxuICAvLyBtYXJnaW46ICRpY29uVy8zIDA7XHJcbiAgJjpiZWZvcmUge1xyXG4gICAgdHJhbnNpdGlvbjogMC41cztcclxuICAgIGNvbnRlbnQ6ICcnO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAtJGljb25XLzM7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogJGljb25XO1xyXG4gICAgaGVpZ2h0OiAkaWNvblcvNjtcclxuICAgIGJhY2tncm91bmQ6ICRjb2xvcjtcclxuICB9XHJcbiAgJjphZnRlciB7XHJcbiAgICB0cmFuc2l0aW9uOiAwLjVzO1xyXG4gICAgY29udGVudDogJyc7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6ICRpY29uVy8zO1xyXG4gICAgbGVmdDogMDtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6ICRpY29uVztcclxuICAgIGhlaWdodDogJGljb25XLzY7XHJcbiAgICBiYWNrZ3JvdW5kOiAkY29sb3I7XHJcbiAgfVxyXG59XHJcblxyXG4uaGFtYnVyZ2VyIHtcclxuICAvLyBkaXNwbGF5OiBub25lO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB0b3A6IDUwJTtcclxuICByaWdodDogcmVtKDIwcHgpO1xyXG4gIG1hcmdpbjogYXV0bztcclxuICB3aWR0aDogcmVtKDMwcHgpO1xyXG4gIGhlaWdodDogcmVtKDI1cHgpO1xyXG4gIHotaW5kZXg6IDk5OTtcclxuICBzcGFuIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHRleHQtaW5kZW50OiAtOTk5OXB4O1xyXG4gICAgdHJhbnNpdGlvbjogMC41cztcclxuICAgIEBpbmNsdWRlIGhhbWJ1cmdlcigjZmZmLCAzMHB4KTtcclxuICB9XHJcbiAgJi5hY3RpdmUge1xyXG4gICAgc3BhbiB7XHJcbiAgICAgIC8vIHJpZ2h0OiByZW0oMTVweCk7XHJcbiAgICAgIHRyYW5zZm9ybTogcm90YXRlKDE4MGRlZyk7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gICAgICAmOmJlZm9yZSB7XHJcbiAgICAgICAgdG9wOiAtMTBweDtcclxuICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMTAuNXB4KSByb3RhdGUoNDVkZWcpO1xyXG4gICAgICB9XHJcbiAgICAgICY6YWZ0ZXIge1xyXG4gICAgICAgIHRvcDogLTEwcHg7XHJcbiAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDEwLjVweCkgcm90YXRlKC00NWRlZyk7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbn1cclxuXHJcbi5zb2NpYWwge1xyXG4gIGxpIHtcclxuICAgIEBhcHBseSBpbmxpbmUtYmxvY2s7XHJcbiAgfVxyXG5cclxuICAvLyBAYXBwbHkgbWQ6c3RhdGljIHNtOmFic29sdXRlIHNtOnRvcC0wIHNtOmxlZnQtMCB0cmFuc2l0aW9uIGR1cmF0aW9uLTMwMCBlYXNlLWluLW91dDtcclxuICBAYXBwbHkgc206c3RhdGljIHNtOnRvcC0wIHNtOmxlZnQtMCB0cmFuc2l0aW9uIGR1cmF0aW9uLTMwMCBlYXNlLWluLW91dDtcclxufVxyXG5cclxuQG1lZGlhIChtYXgtd2lkdGg6IDY0MHB4KSB7XHJcbiAgLnNvY2lhbCB7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICB0b3A6IDQ4cHg7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBwYWRkaW5nLXRvcDogcmVtKDgwcHgpO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBib3JkZXI6IDA7XHJcbiAgICB0cmFuc2l0aW9uOiAwLjVzO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC0xMDAlKTtcclxuICAgIHotaW5kZXg6IDk5O1xyXG4gICAgYmFja2dyb3VuZDogbGlnaHRlbigjZWZlZmVmLCAxMCUpO1xyXG4gICAgYm94LXNoYWRvdzogMHB4IDFweCByZW0oOHB4KSAwcHggcmdiYShkYXJrZW4oI2VmZWZlZiwgMTAlKSwgMC43KTtcclxuICAgICYuYWN0aXZlIHtcclxuICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDAlKTtcclxuICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIH1cclxuXHJcbiAgICBsaSB7XHJcbiAgICAgIEBhcHBseSBtYi00O1xyXG4gICAgICBkaXNwbGF5OiBibG9jaztcclxuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICBsaW5lLWhlaWdodDogMjtcclxuXHJcbiAgICAgIGEge1xyXG4gICAgICAgIHdpZHRoOiA3MCU7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbn1cclxuLy8gLCAobWluLXdpZHRoOiA3NjhweCkiLCJAdGFpbHdpbmQgYmFzZTtcbkB0YWlsd2luZCBjb21wb25lbnRzO1xuQHRhaWx3aW5kIHV0aWxpdGllczsiLG51bGxdfQ== */</style><script charset="utf-8" src="blog-blog-module-es2015.js"></script><script charset="utf-8" src="home-home-module-es2015.js"></script><style>.prose[_ngcontent-wfq-c56] {
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcYXBwLmNvbXBvbmVudC5zY3NzIiwiLi4vLi4vbm9kZV9tb2R1bGVzL3RhaWx3aW5kY3NzL2xpYi9saWIvc3Vic3RpdHV0ZUNsYXNzQXBwbHlBdFJ1bGVzLmpzIiwiPG5vIHNvdXJjZT4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBa0NBO0VBRUUsa0JBQUE7RUFDQSxRQUFBO0VBQ0EsMkJBQUE7RUFDQSxjQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtFQUNBLFlBQUE7QUFsQ0Y7O0FBbUNFO0VBQ0UsU0FBQTtFQUNBLHFCQUFBO0VBQ0Esb0JBQUE7RUFDQSxnQkFBQTtFQTdDRixrQkFBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0VBQ0EsV0EyQzJCO0VBMUMzQixXQUFBO0VBQ0EsZ0JBeUNxQjtBQTVCdkI7O0FBWEU7RUFDRSxnQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxPQUFBO0VBQ0EsY0FBQTtFQUNBLFdBZ0N5QjtFQS9CekIsV0FBQTtFQUNBLGdCQThCbUI7QUFqQnZCOztBQVhFO0VBQ0UsZ0JBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsT0FBQTtFQUNBLGNBQUE7RUFDQSxXQXFCeUI7RUFwQnpCLFdBQUE7RUFDQSxnQkFtQm1CO0FBTnZCOztBQVNJO0VBRUUseUJBQUE7RUFDQSw2QkFBQTtBQVJOOztBQVNNO0VBQ0UsVUFBQTtFQUNBLDJDQUFBO0FBUFI7O0FBU007RUFDRSxVQUFBO0VBQ0EsNENBQUE7QUFQUjs7QUFhQTtFQ2xFQSx5SUFBbUI7RUFBbkIsaUlBQW1CO0VBQW5CLDBKQUFtQjtFQUFuQix3REFBbUI7RUFBbkIsMEJBQW1CO0VBQW5CLHdEQUFtQjtFQUFuQiwwQkFBbUI7QUR5RG5COztBRTNEQTtFREVBO0lBQUEsZ0JBQW1CO0lBQW5CLFFBQW1CO0lBQW5CO0VBQW1CO0NDRm5COztBRnFFRTtFQ25FRixxQkFBbUI7QUQ0RG5COztBQWVBO0VBQ0U7SUFDRSxlQUFBO0lBQ0EsU0FBQTtJQUNBLE9BQUE7SUFDQSxjQUFBO0lBQ0EsaUJBQUE7SUFDQSxXQUFBO0lBQ0EsWUFBQTtJQUNBLFNBQUE7SUFDQSxnQkFBQTtJQUNBLDRCQUFBO0lBQ0EsV0FBQTtJQUNBLGlCQUFBO0lBQ0EsdURBQUE7RUFaRjs7RUFhRTtJQUNFLHlCQUFBO0lBQ0EsZ0JBQUE7RUFYSjs7RUFjRTtJQy9GSixtQkFBbUI7SURpR2IsY0FBQTtJQUNBLGtCQUFBO0lBQ0EsY0FBQTtFQVpKOztFQWNJO0lBQ0UsVUFBQTtFQVpOO0FBQ0YiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vYXNzZXRzL3Njc3MvY29tbW9uJztcclxuXHJcbkBtaXhpbiBoYW1idXJnZXIoJGNvbG9yLCAkaWNvblcpIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIHdpZHRoOiAkaWNvblc7XHJcbiAgaGVpZ2h0OiAkaWNvblcvNjtcclxuICBiYWNrZ3JvdW5kOiAkY29sb3I7XHJcbiAgLy8gbWFyZ2luOiAkaWNvblcvMyAwO1xyXG4gICY6YmVmb3JlIHtcclxuICAgIHRyYW5zaXRpb246IDAuNXM7XHJcbiAgICBjb250ZW50OiAnJztcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogLSRpY29uVy8zO1xyXG4gICAgbGVmdDogMDtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6ICRpY29uVztcclxuICAgIGhlaWdodDogJGljb25XLzY7XHJcbiAgICBiYWNrZ3JvdW5kOiAkY29sb3I7XHJcbiAgfVxyXG4gICY6YWZ0ZXIge1xyXG4gICAgdHJhbnNpdGlvbjogMC41cztcclxuICAgIGNvbnRlbnQ6ICcnO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAkaWNvblcvMztcclxuICAgIGxlZnQ6IDA7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHdpZHRoOiAkaWNvblc7XHJcbiAgICBoZWlnaHQ6ICRpY29uVy82O1xyXG4gICAgYmFja2dyb3VuZDogJGNvbG9yO1xyXG4gIH1cclxufVxyXG5cclxuLmhhbWJ1cmdlciB7XHJcbiAgLy8gZGlzcGxheTogbm9uZTtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiA1MCU7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG4gIHJpZ2h0OiByZW0oMjBweCk7XHJcbiAgbWFyZ2luOiBhdXRvO1xyXG4gIHdpZHRoOiByZW0oMzBweCk7XHJcbiAgaGVpZ2h0OiByZW0oMjVweCk7XHJcbiAgei1pbmRleDogOTk5O1xyXG4gIHNwYW4ge1xyXG4gICAgdG9wOiAxMHB4O1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgdGV4dC1pbmRlbnQ6IC05OTk5cHg7XHJcbiAgICB0cmFuc2l0aW9uOiAwLjVzO1xyXG4gICAgQGluY2x1ZGUgaGFtYnVyZ2VyKCNmZmYsIDMwcHgpO1xyXG4gIH1cclxuICAmLmFjdGl2ZSB7XHJcbiAgICBzcGFuIHtcclxuICAgICAgLy8gcmlnaHQ6IHJlbSgxNXB4KTtcclxuICAgICAgdHJhbnNmb3JtOiByb3RhdGUoMTgwZGVnKTtcclxuICAgICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgICAgICY6YmVmb3JlIHtcclxuICAgICAgICB0b3A6IC0xMHB4O1xyXG4gICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxMC41cHgpIHJvdGF0ZSg0NWRlZyk7XHJcbiAgICAgIH1cclxuICAgICAgJjphZnRlciB7XHJcbiAgICAgICAgdG9wOiAtMTBweDtcclxuICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMTAuNXB4KSByb3RhdGUoLTQ1ZGVnKTtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxufVxyXG5cclxuLnNvY2lhbCB7XHJcbiAgbGkge1xyXG4gICAgQGFwcGx5IGlubGluZS1ibG9jaztcclxuICB9XHJcblxyXG4gIC8vIEBhcHBseSBtZDpzdGF0aWMgc206YWJzb2x1dGUgc206dG9wLTAgc206bGVmdC0wIHRyYW5zaXRpb24gZHVyYXRpb24tMzAwIGVhc2UtaW4tb3V0O1xyXG4gIEBhcHBseSBzbTpzdGF0aWMgc206dG9wLTAgc206bGVmdC0wIHRyYW5zaXRpb24gZHVyYXRpb24tMzAwIGVhc2UtaW4tb3V0O1xyXG59XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogNjQwcHgpIHtcclxuICAuc29jaWFsIHtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHRvcDogNDhweDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHBhZGRpbmctdG9wOiByZW0oODBweCk7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIGJvcmRlcjogMDtcclxuICAgIHRyYW5zaXRpb246IDAuNXM7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTEwMCUpO1xyXG4gICAgei1pbmRleDogOTk7XHJcbiAgICBiYWNrZ3JvdW5kOiBsaWdodGVuKCNlZmVmZWYsIDEwJSk7XHJcbiAgICBib3gtc2hhZG93OiAwcHggMXB4IHJlbSg4cHgpIDBweCByZ2JhKGRhcmtlbigjZWZlZmVmLCAxMCUpLCAwLjcpO1xyXG4gICAgJi5hY3RpdmUge1xyXG4gICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMCUpO1xyXG4gICAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgfVxyXG5cclxuICAgIGxpIHtcclxuICAgICAgQGFwcGx5IG1iLTQ7XHJcbiAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgIGxpbmUtaGVpZ2h0OiAyO1xyXG5cclxuICAgICAgYSB7XHJcbiAgICAgICAgd2lkdGg6IDcwJTtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxufVxyXG4vLyAsIChtaW4td2lkdGg6IDc2OHB4KVxyXG4iLCJAdGFpbHdpbmQgYmFzZTtcbkB0YWlsd2luZCBjb21wb25lbnRzO1xuQHRhaWx3aW5kIHV0aWxpdGllczsiLG51bGxdfQ== */</style><script charset="utf-8" src="blog-blog-module-es2015.js"></script><script charset="utf-8" src="home-home-module-es2015.js"></script><style>.prose[_ngcontent-kyn-c56] {
   font-size: 1rem;
   line-height: 1.5rem;
   font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important;
 }
 
-.prose[_ngcontent-wfq-c56]   h1[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   h1[_ngcontent-kyn-c56] {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
 
-.prose[_ngcontent-wfq-c56]   h2[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   h2[_ngcontent-kyn-c56] {
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -156,7 +158,7 @@
   margin-top: 2.5rem;
 }
 
-.prose[_ngcontent-wfq-c56]   h3[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   h3[_ngcontent-kyn-c56] {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -164,29 +166,29 @@
   margin-top: 1rem;
 }
 
-.prose[_ngcontent-wfq-c56]   p[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   p[_ngcontent-kyn-c56] {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-.prose[_ngcontent-wfq-c56]   pre[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   pre[_ngcontent-kyn-c56] {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.prose[_ngcontent-wfq-c56]   img[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   img[_ngcontent-kyn-c56] {
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-.prose[_ngcontent-wfq-c56]   hr[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   hr[_ngcontent-kyn-c56] {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-.prose[_ngcontent-wfq-c56]   iframe[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   iframe[_ngcontent-kyn-c56] {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0.5rem;
@@ -197,17 +199,17 @@
   width: 100%;
 }
 
-.prose[_ngcontent-wfq-c56]   iframe[_ngcontent-wfq-c56]    + p[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   iframe[_ngcontent-kyn-c56]    + p[_ngcontent-kyn-c56] {
   margin-top: -0.5rem;
   text-align: center;
 }
 
-.prose[_ngcontent-wfq-c56]   iframe[_ngcontent-wfq-c56]    + p[_ngcontent-wfq-c56]    > em[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   iframe[_ngcontent-kyn-c56]    + p[_ngcontent-kyn-c56]    > em[_ngcontent-kyn-c56] {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-.prose[_ngcontent-wfq-c56]   blockquote[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   blockquote[_ngcontent-kyn-c56] {
   --tw-border-opacity: 1;
   border-color: rgba(156, 163, 175, var(--tw-border-opacity));
   border-style: solid;
@@ -221,25 +223,25 @@
   color: var(--gray-medium);
 }
 
-.prose[_ngcontent-wfq-c56]   ol[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   ol[_ngcontent-kyn-c56] {
   list-style-type: decimal;
 }
 
-.prose[_ngcontent-wfq-c56]   ul[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   ul[_ngcontent-kyn-c56] {
   list-style-type: disc;
 }
 
-.prose[_ngcontent-wfq-c56]   ol[_ngcontent-wfq-c56], .prose[_ngcontent-wfq-c56]   ul[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   ol[_ngcontent-kyn-c56], .prose[_ngcontent-kyn-c56]   ul[_ngcontent-kyn-c56] {
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: 1.25rem;
 }
 
-.prose[_ngcontent-wfq-c56]   ol[_ngcontent-wfq-c56]   li[_ngcontent-wfq-c56]:not(:last-of-type), .prose[_ngcontent-wfq-c56]   ul[_ngcontent-wfq-c56]   li[_ngcontent-wfq-c56]:not(:last-of-type) {
+.prose[_ngcontent-kyn-c56]   ol[_ngcontent-kyn-c56]   li[_ngcontent-kyn-c56]:not(:last-of-type), .prose[_ngcontent-kyn-c56]   ul[_ngcontent-kyn-c56]   li[_ngcontent-kyn-c56]:not(:last-of-type) {
   margin-bottom: 0.5rem;
 }
 
-.prose[_ngcontent-wfq-c56]   [_ngcontent-wfq-c56]:not(pre)    > code[_ngcontent-wfq-c56] {
+.prose[_ngcontent-kyn-c56]   [_ngcontent-kyn-c56]:not(pre)    > code[_ngcontent-kyn-c56] {
   --tw-bg-opacity: 1;
   background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
   border-radius: 0.25rem;
@@ -252,53 +254,53 @@
   font-size: inherit;
 }
 
-[_nghost-wfq-c56]   .toolbar-item[_ngcontent-wfq-c56] {
+[_nghost-kyn-c56]   .toolbar-item[_ngcontent-kyn-c56] {
   position: relative;
   background: #159;
 }
 
-[_nghost-wfq-c56]   .toolbar-item[_ngcontent-wfq-c56]   .toolbar[_ngcontent-wfq-c56] {
+[_nghost-kyn-c56]   .toolbar-item[_ngcontent-kyn-c56]   .toolbar[_ngcontent-kyn-c56] {
   position: absolute;
   top: 0;
   right: 0;
   color: #fff;
 }
 
-a[_ngcontent-wfq-c56] {
+a[_ngcontent-kyn-c56] {
   display: block;
   text-decoration: underline;
   transition: 0.3s;
 }
 
-a[_ngcontent-wfq-c56]:hover {
+a[_ngcontent-kyn-c56]:hover {
   text-decoration: none;
 }
 
-table[_ngcontent-wfq-c56] {
+table[_ngcontent-kyn-c56] {
   margin: 1rem 0 0.5rem 0;
   width: 100%;
   border-collapse: collapse;
 }
 
-table[_ngcontent-wfq-c56]   caption[_ngcontent-wfq-c56] {
+table[_ngcontent-kyn-c56]   caption[_ngcontent-kyn-c56] {
   line-height: 48px;
   font-size: 1.25rem;
   font-weight: bold;
 }
 
-table[_ngcontent-wfq-c56]   th[_ngcontent-wfq-c56] {
+table[_ngcontent-kyn-c56]   th[_ngcontent-kyn-c56] {
   color: var(--text-color);
   background: var(--table-even-row);
 }
 
-table[_ngcontent-wfq-c56]   th[_ngcontent-wfq-c56], table[_ngcontent-wfq-c56]   td[_ngcontent-wfq-c56] {
+table[_ngcontent-kyn-c56]   th[_ngcontent-kyn-c56], table[_ngcontent-kyn-c56]   td[_ngcontent-kyn-c56] {
   padding: 0.5rem 0.25rem;
   text-align: center;
   line-height: 1.2;
   border: 1px solid var(--table-even-row);
 }
 
-.gotop[_ngcontent-wfq-c56] {
+.gotop[_ngcontent-kyn-c56] {
   position: fixed;
   bottom: 4rem;
   right: 2rem;
@@ -306,12 +308,12 @@ table[_ngcontent-wfq-c56]   th[_ngcontent-wfq-c56], table[_ngcontent-wfq-c56]   
   transition: 0.3s;
 }
 
-.gotop[_ngcontent-wfq-c56]   .btn[_ngcontent-wfq-c56] {
+.gotop[_ngcontent-kyn-c56]   .btn[_ngcontent-kyn-c56] {
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.gotop[_ngcontent-wfq-c56]   .btn[_ngcontent-wfq-c56]:before, .gotop[_ngcontent-wfq-c56]   .btn[_ngcontent-wfq-c56]:after {
+.gotop[_ngcontent-kyn-c56]   .btn[_ngcontent-kyn-c56]:before, .gotop[_ngcontent-kyn-c56]   .btn[_ngcontent-kyn-c56]:after {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -324,7 +326,7 @@ table[_ngcontent-wfq-c56]   th[_ngcontent-wfq-c56], table[_ngcontent-wfq-c56]   
   background: var(--primary);
 }
 
-.gotop[_ngcontent-wfq-c56]   .btn[_ngcontent-wfq-c56]:after {
+.gotop[_ngcontent-kyn-c56]   .btn[_ngcontent-kyn-c56]:after {
   transform: translate(-50%, -50%) rotate(45deg);
   margin-left: 0.25rem;
 }
@@ -339,163 +341,163 @@ table[_ngcontent-wfq-c56]   th[_ngcontent-wfq-c56], table[_ngcontent-wfq-c56]   
     </style><style>
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJibG9nLW5hdi5jb21wb25lbnQuc2NzcyJ9 */</style><meta name="description" content="JS30：04_Array Cardio Day 1"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, JavaScript, JavaScript 30 天"><meta property="og:title" content="JS30：04_Array Cardio Day 1"><meta property="og:description" content="JS30：04_Array Cardio Day 1"><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.github.io/JS30/04_Array-Cardio-Day-1"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="JS30：04_Array Cardio Day 1"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="zh_tw"><script>window['ScullyIO']='generated';</script></head>
   <body class="theme-light" scully-version="1.1.1">
-    <app-root _nghost-wfq-c51="" ng-version="11.2.11"><div _ngcontent-wfq-c51="" class="mx-auto md:max-w-5xl text-gray-700"><header _ngcontent-wfq-c51="" class="sticky z-999 top-0 left-0 bg-oreilly-500 flex justify-between px-4 py-2 mb-5 lg:mx-5"><h1 _ngcontent-wfq-c51="" class="text-white font-medium text-2xl"><a _ngcontent-wfq-c51="" ng-reflect-router-link="/" href="/">Mandy's Web</a></h1><a _ngcontent-wfq-c51="" href="javascript:void(0);" title="MENU" class="hamburger sm:hidden" ng-reflect-ng-class=""><span _ngcontent-wfq-c51="">MENU</span></a><nav _ngcontent-wfq-c51="" class="social" ng-reflect-ng-class=""><ul _ngcontent-wfq-c51=""><li _ngcontent-wfq-c51=""><a _ngcontent-wfq-c51="" class="btn sm:text-white text-primary" ng-reflect-router-link="blog" href="/blog">Blog</a></li><li _ngcontent-wfq-c51=""><a _ngcontent-wfq-c51="" class="btn sm:text-white text-primary" ng-reflect-router-link="portfolio" href="/portfolio">Portfolio</a></li><li _ngcontent-wfq-c51=""><a _ngcontent-wfq-c51="" href="//github.com/mtwmt" target="_blank" class="btn sm:text-white text-primary">GitHub</a></li></ul></nav></header><div _ngcontent-wfq-c51="" class="content leading-relaxed lg:mx-5"><router-outlet _ngcontent-wfq-c51=""></router-outlet><app-blog _nghost-wfq-c56="">
-  <app-meta _ngcontent-wfq-c56="" _nghost-wfq-c53="" ng-reflect-title="JS30：04_Array Cardio Day 1" ng-reflect-route="/JS30/04_Array-Cardio-Day-1" ng-reflect-tags="JavaScript,JavaScript 30 天" ng-reflect-twitter-image="/JS30/04_Array-Cardio-Day-1" ng-reflect-og-image="/JS30/04_Array-Cardio-Day-1" ng-reflect-article-published-at="2019/01/16" ng-reflect-article-updated-at="2019/01/16"></app-meta>
-  <article _ngcontent-wfq-c56="" class="relative py-4 max-w-screen-xl mx-auto">
-    <div _ngcontent-wfq-c56="" class="max-w-container space-y-4 mx-2">
-      <header _ngcontent-wfq-c56="" class="space-y-4">
+    <app-root _nghost-kyn-c51="" ng-version="11.2.11"><div _ngcontent-kyn-c51="" class="mx-auto md:max-w-5xl text-gray-700" ng-reflect-ng-class=""><header _ngcontent-kyn-c51="" class="sticky z-999 top-0 left-0 bg-oreilly-500 flex justify-between px-4 py-2 mb-5 lg:mx-5"><h1 _ngcontent-kyn-c51="" class="text-white font-medium text-2xl"><a _ngcontent-kyn-c51="" ng-reflect-router-link="/" href="/">Mandy's Web</a></h1><a _ngcontent-kyn-c51="" href="javascript:void(0);" title="MENU" class="hamburger sm:hidden" ng-reflect-ng-class=""><span _ngcontent-kyn-c51="">MENU</span></a><nav _ngcontent-kyn-c51="" class="social" ng-reflect-ng-class=""><ul _ngcontent-kyn-c51=""><li _ngcontent-kyn-c51=""><a _ngcontent-kyn-c51="" class="btn sm:text-white text-primary" ng-reflect-router-link="blog" href="/blog">Blog</a></li><li _ngcontent-kyn-c51=""><a _ngcontent-kyn-c51="" class="btn sm:text-white text-primary" ng-reflect-router-link="portfolio" href="/portfolio">Portfolio</a></li><li _ngcontent-kyn-c51=""><a _ngcontent-kyn-c51="" href="//github.com/mtwmt" target="_blank" class="btn sm:text-white text-primary">GitHub</a></li></ul></nav></header><div _ngcontent-kyn-c51="" class="content leading-relaxed lg:mx-5"><router-outlet _ngcontent-kyn-c51=""></router-outlet><app-blog _nghost-kyn-c56="">
+  <app-meta _ngcontent-kyn-c56="" _nghost-kyn-c53="" ng-reflect-title="JS30：04_Array Cardio Day 1" ng-reflect-route="/JS30/04_Array-Cardio-Day-1" ng-reflect-tags="JavaScript,JavaScript 30 天" ng-reflect-twitter-image="/JS30/04_Array-Cardio-Day-1" ng-reflect-og-image="/JS30/04_Array-Cardio-Day-1" ng-reflect-article-published-at="2019/01/16" ng-reflect-article-updated-at="2019/01/16"></app-meta>
+  <article _ngcontent-kyn-c56="" class="relative py-4 max-w-screen-xl mx-auto">
+    <div _ngcontent-kyn-c56="" class="max-w-container space-y-4 mx-2">
+      <header _ngcontent-kyn-c56="" class="space-y-4">
         
-        <div _ngcontent-wfq-c56="" class="prose max-w-none md:prose-lgspace-y-1">
-          <time _ngcontent-wfq-c56="" datetime="2019/01/16">
+        <div _ngcontent-kyn-c56="" class="prose max-w-none md:prose-lgspace-y-1">
+          <time _ngcontent-kyn-c56="" datetime="2019/01/16">
             16 January 2019
           </time>
-          <h1 _ngcontent-wfq-c56="" class="font-bold text-3xl leading-relaxed">
+          <h1 _ngcontent-kyn-c56="" class="font-bold text-3xl leading-relaxed">
             JS30：04_Array Cardio Day 1
           </h1>
           
         </div>
       </header>
-      <div _ngcontent-wfq-c56="" class="grid grid-cols-1 md:grid-cols-3 md:gap-x-4 lg:grid-cols-4 lg:gap-x-6">
-        <div _ngcontent-wfq-c56="" class="prose prose-toc max-w-none md:prose-lg md:col-span-2 lg:col-span-3">
-          <!--scullyContent-begin--><h1 id="array-cardio-陣列練習" _ngcontent-wfq-c56="">Array Cardio (陣列練習)</h1>
-<h2 id="摘要" _ngcontent-wfq-c56="">摘要</h2>
-<p _ngcontent-wfq-c56="">此次主要是練習陣列的一些用法
+      <div _ngcontent-kyn-c56="" class="grid grid-cols-1 md:grid-cols-3 md:gap-x-4 lg:grid-cols-4 lg:gap-x-6">
+        <div _ngcontent-kyn-c56="" class="prose prose-toc max-w-none md:prose-lg md:col-span-2 lg:col-span-3">
+          <!--scullyContent-begin--><h1 id="array-cardio-陣列練習" _ngcontent-kyn-c56="">Array Cardio (陣列練習)</h1>
+<h2 id="摘要" _ngcontent-kyn-c56="">摘要</h2>
+<p _ngcontent-kyn-c56="">此次主要是練習陣列的一些用法
 分別有八個例子
 作者一開始在 html 上提供了三組資料給大家練習</p>
-<p _ngcontent-wfq-c56=""><code _ngcontent-wfq-c56="">inventors</code>是一組是發明家的列表 裡面包含 姓、名、出生年份、死亡年份</p>
-<p _ngcontent-wfq-c56="">練習的題目依序是</p>
-<ul _ngcontent-wfq-c56="">
-<li _ngcontent-wfq-c56=""><a href="#filter1" _ngcontent-wfq-c56="">篩選出 <code _ngcontent-wfq-c56="">1500年 ~ 1600</code>前出生的人 (filter)</a></li>
-<li _ngcontent-wfq-c56=""><a href="#map1" _ngcontent-wfq-c56="">將<code _ngcontent-wfq-c56="">inventors</code>陣列裡的 <code _ngcontent-wfq-c56="">first</code> 跟 <code _ngcontent-wfq-c56="">last</code> 串起來 (map)</a></li>
-<li _ngcontent-wfq-c56=""><a href="#sort1" _ngcontent-wfq-c56="">按出生日期排列，由小到大 (sort)</a></li>
-<li _ngcontent-wfq-c56=""><a href="#reduce1" _ngcontent-wfq-c56="">計算出所有發明家共活了多少年 (reduce)</a></li>
-<li _ngcontent-wfq-c56=""><a href="#sort2" _ngcontent-wfq-c56="">按照發明家活了多少年來排序 (sort)</a></li>
-<li _ngcontent-wfq-c56=""><a href="#mapfilter" _ngcontent-wfq-c56="">從作者提供的維基網址裡 篩選出 含有<code _ngcontent-wfq-c56="">de</code>的路名 ( map 與 filter 整合應用 )</a></li>
-<li _ngcontent-wfq-c56=""><a href="#sort3" _ngcontent-wfq-c56="">對發明家的姓氏進行排列 (sort)</a></li>
-<li _ngcontent-wfq-c56=""><a href="#reduce2" _ngcontent-wfq-c56="">計算出<code _ngcontent-wfq-c56="">data</code>陣列裡每個種類的數量 (reduce)</a></li>
+<p _ngcontent-kyn-c56=""><code _ngcontent-kyn-c56="">inventors</code>是一組是發明家的列表 裡面包含 姓、名、出生年份、死亡年份</p>
+<p _ngcontent-kyn-c56="">練習的題目依序是</p>
+<ul _ngcontent-kyn-c56="">
+<li _ngcontent-kyn-c56=""><a href="#filter1" _ngcontent-kyn-c56="">篩選出 <code _ngcontent-kyn-c56="">1500年 ~ 1600</code>前出生的人 (filter)</a></li>
+<li _ngcontent-kyn-c56=""><a href="#map1" _ngcontent-kyn-c56="">將<code _ngcontent-kyn-c56="">inventors</code>陣列裡的 <code _ngcontent-kyn-c56="">first</code> 跟 <code _ngcontent-kyn-c56="">last</code> 串起來 (map)</a></li>
+<li _ngcontent-kyn-c56=""><a href="#sort1" _ngcontent-kyn-c56="">按出生日期排列，由小到大 (sort)</a></li>
+<li _ngcontent-kyn-c56=""><a href="#reduce1" _ngcontent-kyn-c56="">計算出所有發明家共活了多少年 (reduce)</a></li>
+<li _ngcontent-kyn-c56=""><a href="#sort2" _ngcontent-kyn-c56="">按照發明家活了多少年來排序 (sort)</a></li>
+<li _ngcontent-kyn-c56=""><a href="#mapfilter" _ngcontent-kyn-c56="">從作者提供的維基網址裡 篩選出 含有<code _ngcontent-kyn-c56="">de</code>的路名 ( map 與 filter 整合應用 )</a></li>
+<li _ngcontent-kyn-c56=""><a href="#sort3" _ngcontent-kyn-c56="">對發明家的姓氏進行排列 (sort)</a></li>
+<li _ngcontent-kyn-c56=""><a href="#reduce2" _ngcontent-kyn-c56="">計算出<code _ngcontent-kyn-c56="">data</code>陣列裡每個種類的數量 (reduce)</a></li>
 </ul>
-<blockquote _ngcontent-wfq-c56="">
-<p _ngcontent-wfq-c56="">這次也認識到了 <code _ngcontent-wfq-c56="">console.table</code> 的用法 幫你將陣列用表格排列 比<code _ngcontent-wfq-c56="">console.log</code>可視性高多了</p>
+<blockquote _ngcontent-kyn-c56="">
+<p _ngcontent-kyn-c56="">這次也認識到了 <code _ngcontent-kyn-c56="">console.table</code> 的用法 幫你將陣列用表格排列 比<code _ngcontent-kyn-c56="">console.log</code>可視性高多了</p>
 </blockquote>
-<h2 id="filter-陣列過濾操作" _ngcontent-wfq-c56="">filter 陣列過濾操作</h2>
-<p _ngcontent-wfq-c56=""><a name="filter1" _ngcontent-wfq-c56=""></a>
+<h2 id="filter-陣列過濾操作" _ngcontent-kyn-c56="">filter 陣列過濾操作</h2>
+<p _ngcontent-kyn-c56=""><a name="filter1" _ngcontent-kyn-c56=""></a>
 篩選出 1500 年 ~ 1600 前出生的人</p>
-<pre class="language-javascript" _ngcontent-wfq-c56=""><code class="language-javascript" _ngcontent-wfq-c56=""><span class="token keyword" _ngcontent-wfq-c56="">const</span> fifteen <span class="token operator" _ngcontent-wfq-c56="">=</span> inventors<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">filter</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token keyword" _ngcontent-wfq-c56="">function</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> <span class="token parameter" _ngcontent-wfq-c56="">inventor</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-  <span class="token keyword" _ngcontent-wfq-c56="">if</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> inventor<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year <span class="token operator" _ngcontent-wfq-c56="">&gt;=</span> <span class="token number" _ngcontent-wfq-c56="">1500</span> <span class="token operator" _ngcontent-wfq-c56="">&amp;&amp;</span> inventor<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year <span class="token operator" _ngcontent-wfq-c56="">&lt;</span> <span class="token number" _ngcontent-wfq-c56="">1600</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-    <span class="token keyword" _ngcontent-wfq-c56="">return</span> <span class="token boolean" _ngcontent-wfq-c56="">true</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-  <span class="token punctuation" _ngcontent-wfq-c56="">}</span>
-<span class="token punctuation" _ngcontent-wfq-c56="">}</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
+<pre class="language-javascript" _ngcontent-kyn-c56=""><code class="language-javascript" _ngcontent-kyn-c56=""><span class="token keyword" _ngcontent-kyn-c56="">const</span> fifteen <span class="token operator" _ngcontent-kyn-c56="">=</span> inventors<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">filter</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token keyword" _ngcontent-kyn-c56="">function</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> <span class="token parameter" _ngcontent-kyn-c56="">inventor</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+  <span class="token keyword" _ngcontent-kyn-c56="">if</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> inventor<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year <span class="token operator" _ngcontent-kyn-c56="">&gt;=</span> <span class="token number" _ngcontent-kyn-c56="">1500</span> <span class="token operator" _ngcontent-kyn-c56="">&amp;&amp;</span> inventor<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year <span class="token operator" _ngcontent-kyn-c56="">&lt;</span> <span class="token number" _ngcontent-kyn-c56="">1600</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+    <span class="token keyword" _ngcontent-kyn-c56="">return</span> <span class="token boolean" _ngcontent-kyn-c56="">true</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+  <span class="token punctuation" _ngcontent-kyn-c56="">}</span>
+<span class="token punctuation" _ngcontent-kyn-c56="">}</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
 
-<span class="token comment" _ngcontent-wfq-c56="">// 簡化成箭頭函式後的寫法</span>
-<span class="token keyword" _ngcontent-wfq-c56="">const</span> fifteen <span class="token operator" _ngcontent-wfq-c56="">=</span> inventors<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">filter</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> <span class="token parameter" _ngcontent-wfq-c56="">inventor</span> <span class="token operator" _ngcontent-wfq-c56="">=&gt;</span> <span class="token punctuation" _ngcontent-wfq-c56="">(</span> inventor<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year <span class="token operator" _ngcontent-wfq-c56="">&gt;=</span> <span class="token number" _ngcontent-wfq-c56="">1500</span> <span class="token operator" _ngcontent-wfq-c56="">&amp;&amp;</span> inventor<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year <span class="token operator" _ngcontent-wfq-c56="">&lt;</span> <span class="token number" _ngcontent-wfq-c56="">1600</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span></code></pre><p _ngcontent-wfq-c56=""><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" _ngcontent-wfq-c56="">MDN-Array.prototype.filter()</a></p>
-<h2 id="map" _ngcontent-wfq-c56="">map</h2>
-<p _ngcontent-wfq-c56=""><a name="map1" _ngcontent-wfq-c56=""></a>
+<span class="token comment" _ngcontent-kyn-c56="">// 簡化成箭頭函式後的寫法</span>
+<span class="token keyword" _ngcontent-kyn-c56="">const</span> fifteen <span class="token operator" _ngcontent-kyn-c56="">=</span> inventors<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">filter</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> <span class="token parameter" _ngcontent-kyn-c56="">inventor</span> <span class="token operator" _ngcontent-kyn-c56="">=&gt;</span> <span class="token punctuation" _ngcontent-kyn-c56="">(</span> inventor<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year <span class="token operator" _ngcontent-kyn-c56="">&gt;=</span> <span class="token number" _ngcontent-kyn-c56="">1500</span> <span class="token operator" _ngcontent-kyn-c56="">&amp;&amp;</span> inventor<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year <span class="token operator" _ngcontent-kyn-c56="">&lt;</span> <span class="token number" _ngcontent-kyn-c56="">1600</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span></code></pre><p _ngcontent-kyn-c56=""><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" _ngcontent-kyn-c56="">MDN-Array.prototype.filter()</a></p>
+<h2 id="map" _ngcontent-kyn-c56="">map</h2>
+<p _ngcontent-kyn-c56=""><a name="map1" _ngcontent-kyn-c56=""></a>
 將 inventors 陣列裡的 first 跟 last 串起來</p>
-<pre class="language-javascript" _ngcontent-wfq-c56=""><code class="language-javascript" _ngcontent-wfq-c56=""><span class="token keyword" _ngcontent-wfq-c56="">const</span> fullname <span class="token operator" _ngcontent-wfq-c56="">=</span> inventors<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">map</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token keyword" _ngcontent-wfq-c56="">function</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> <span class="token parameter" _ngcontent-wfq-c56="">inventor</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-        <span class="token keyword" _ngcontent-wfq-c56="">return</span> inventor<span class="token punctuation" _ngcontent-wfq-c56="">.</span>first <span class="token operator" _ngcontent-wfq-c56="">+</span> <span class="token string" _ngcontent-wfq-c56="">' '</span> <span class="token operator" _ngcontent-wfq-c56="">+</span>inventor<span class="token punctuation" _ngcontent-wfq-c56="">.</span>last<span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-      <span class="token punctuation" _ngcontent-wfq-c56="">}</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span></code></pre><p _ngcontent-wfq-c56="">透過 map 的組合 組成一個新的陣列;
-<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/map" _ngcontent-wfq-c56="">MDN-Array.prototype.map()</a></p>
-<h2 id="sort-排序" _ngcontent-wfq-c56="">sort 排序</h2>
-<p _ngcontent-wfq-c56=""><a name="sort1" _ngcontent-wfq-c56=""></a>
+<pre class="language-javascript" _ngcontent-kyn-c56=""><code class="language-javascript" _ngcontent-kyn-c56=""><span class="token keyword" _ngcontent-kyn-c56="">const</span> fullname <span class="token operator" _ngcontent-kyn-c56="">=</span> inventors<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">map</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token keyword" _ngcontent-kyn-c56="">function</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> <span class="token parameter" _ngcontent-kyn-c56="">inventor</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+        <span class="token keyword" _ngcontent-kyn-c56="">return</span> inventor<span class="token punctuation" _ngcontent-kyn-c56="">.</span>first <span class="token operator" _ngcontent-kyn-c56="">+</span> <span class="token string" _ngcontent-kyn-c56="">' '</span> <span class="token operator" _ngcontent-kyn-c56="">+</span>inventor<span class="token punctuation" _ngcontent-kyn-c56="">.</span>last<span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+      <span class="token punctuation" _ngcontent-kyn-c56="">}</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span></code></pre><p _ngcontent-kyn-c56="">透過 map 的組合 組成一個新的陣列;
+<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/map" _ngcontent-kyn-c56="">MDN-Array.prototype.map()</a></p>
+<h2 id="sort-排序" _ngcontent-kyn-c56="">sort 排序</h2>
+<p _ngcontent-kyn-c56=""><a name="sort1" _ngcontent-kyn-c56=""></a>
 按出生日期排列，由小到大</p>
-<pre class="language-javascript" _ngcontent-wfq-c56=""><code class="language-javascript" _ngcontent-wfq-c56=""><span class="token keyword" _ngcontent-wfq-c56="">const</span> ordered <span class="token operator" _ngcontent-wfq-c56="">=</span> inventors<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">sort</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token keyword" _ngcontent-wfq-c56="">function</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> <span class="token parameter" _ngcontent-wfq-c56="">a<span class="token punctuation" _ngcontent-wfq-c56="">,</span>b</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-        <span class="token keyword" _ngcontent-wfq-c56="">if</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> a<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year <span class="token operator" _ngcontent-wfq-c56="">&gt;</span> b<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-          <span class="token keyword" _ngcontent-wfq-c56="">return</span> <span class="token number" _ngcontent-wfq-c56="">1</span>
-        <span class="token punctuation" _ngcontent-wfq-c56="">}</span><span class="token keyword" _ngcontent-wfq-c56="">else</span><span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-          <span class="token keyword" _ngcontent-wfq-c56="">return</span> <span class="token operator" _ngcontent-wfq-c56="">-</span><span class="token number" _ngcontent-wfq-c56="">1</span>
-        <span class="token punctuation" _ngcontent-wfq-c56="">}</span>
-      <span class="token punctuation" _ngcontent-wfq-c56="">}</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
+<pre class="language-javascript" _ngcontent-kyn-c56=""><code class="language-javascript" _ngcontent-kyn-c56=""><span class="token keyword" _ngcontent-kyn-c56="">const</span> ordered <span class="token operator" _ngcontent-kyn-c56="">=</span> inventors<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">sort</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token keyword" _ngcontent-kyn-c56="">function</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> <span class="token parameter" _ngcontent-kyn-c56="">a<span class="token punctuation" _ngcontent-kyn-c56="">,</span>b</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+        <span class="token keyword" _ngcontent-kyn-c56="">if</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> a<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year <span class="token operator" _ngcontent-kyn-c56="">&gt;</span> b<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+          <span class="token keyword" _ngcontent-kyn-c56="">return</span> <span class="token number" _ngcontent-kyn-c56="">1</span>
+        <span class="token punctuation" _ngcontent-kyn-c56="">}</span><span class="token keyword" _ngcontent-kyn-c56="">else</span><span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+          <span class="token keyword" _ngcontent-kyn-c56="">return</span> <span class="token operator" _ngcontent-kyn-c56="">-</span><span class="token number" _ngcontent-kyn-c56="">1</span>
+        <span class="token punctuation" _ngcontent-kyn-c56="">}</span>
+      <span class="token punctuation" _ngcontent-kyn-c56="">}</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
 
-<span class="token comment" _ngcontent-wfq-c56="">// 簡化成三元運算</span>
-<span class="token keyword" _ngcontent-wfq-c56="">const</span> ordered <span class="token operator" _ngcontent-wfq-c56="">=</span> inventors<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">sort</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token parameter" _ngcontent-wfq-c56="">a<span class="token punctuation" _ngcontent-wfq-c56="">,</span>b</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span> <span class="token operator" _ngcontent-wfq-c56="">=&gt;</span> <span class="token punctuation" _ngcontent-wfq-c56="">(</span>a<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year <span class="token operator" _ngcontent-wfq-c56="">&gt;</span> b<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year<span class="token punctuation" _ngcontent-wfq-c56="">)</span> <span class="token operator" _ngcontent-wfq-c56="">?</span> <span class="token number" _ngcontent-wfq-c56="">1</span> <span class="token operator" _ngcontent-wfq-c56="">:</span> <span class="token operator" _ngcontent-wfq-c56="">-</span><span class="token number" _ngcontent-wfq-c56="">1</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
+<span class="token comment" _ngcontent-kyn-c56="">// 簡化成三元運算</span>
+<span class="token keyword" _ngcontent-kyn-c56="">const</span> ordered <span class="token operator" _ngcontent-kyn-c56="">=</span> inventors<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">sort</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token parameter" _ngcontent-kyn-c56="">a<span class="token punctuation" _ngcontent-kyn-c56="">,</span>b</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span> <span class="token operator" _ngcontent-kyn-c56="">=&gt;</span> <span class="token punctuation" _ngcontent-kyn-c56="">(</span>a<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year <span class="token operator" _ngcontent-kyn-c56="">&gt;</span> b<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year<span class="token punctuation" _ngcontent-kyn-c56="">)</span> <span class="token operator" _ngcontent-kyn-c56="">?</span> <span class="token number" _ngcontent-kyn-c56="">1</span> <span class="token operator" _ngcontent-kyn-c56="">:</span> <span class="token operator" _ngcontent-kyn-c56="">-</span><span class="token number" _ngcontent-kyn-c56="">1</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
 
-<span class="token comment" _ngcontent-wfq-c56="">// 另一種表示</span>
-<span class="token keyword" _ngcontent-wfq-c56="">const</span> ordered <span class="token operator" _ngcontent-wfq-c56="">=</span> inventors<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">sort</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token parameter" _ngcontent-wfq-c56="">a<span class="token punctuation" _ngcontent-wfq-c56="">,</span>b</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span> <span class="token operator" _ngcontent-wfq-c56="">=&gt;</span> <span class="token punctuation" _ngcontent-wfq-c56="">(</span>a<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year <span class="token operator" _ngcontent-wfq-c56="">-</span> b<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year<span class="token punctuation" _ngcontent-wfq-c56="">)</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span></code></pre><p _ngcontent-wfq-c56=""><a name="sort2" _ngcontent-wfq-c56=""></a>
+<span class="token comment" _ngcontent-kyn-c56="">// 另一種表示</span>
+<span class="token keyword" _ngcontent-kyn-c56="">const</span> ordered <span class="token operator" _ngcontent-kyn-c56="">=</span> inventors<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">sort</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token parameter" _ngcontent-kyn-c56="">a<span class="token punctuation" _ngcontent-kyn-c56="">,</span>b</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span> <span class="token operator" _ngcontent-kyn-c56="">=&gt;</span> <span class="token punctuation" _ngcontent-kyn-c56="">(</span>a<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year <span class="token operator" _ngcontent-kyn-c56="">-</span> b<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year<span class="token punctuation" _ngcontent-kyn-c56="">)</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span></code></pre><p _ngcontent-kyn-c56=""><a name="sort2" _ngcontent-kyn-c56=""></a>
 按照發明家活了多少年來排序 (數字排序)</p>
-<pre class="language-javascript" _ngcontent-wfq-c56=""><code class="language-javascript" _ngcontent-wfq-c56=""><span class="token keyword" _ngcontent-wfq-c56="">const</span> oldest <span class="token operator" _ngcontent-wfq-c56="">=</span> inventors<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">sort</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token keyword" _ngcontent-wfq-c56="">function</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> <span class="token parameter" _ngcontent-wfq-c56="">a<span class="token punctuation" _ngcontent-wfq-c56="">,</span>b</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-  <span class="token keyword" _ngcontent-wfq-c56="">const</span> lastGuy <span class="token operator" _ngcontent-wfq-c56="">=</span> a<span class="token punctuation" _ngcontent-wfq-c56="">.</span>passed <span class="token operator" _ngcontent-wfq-c56="">-</span> a<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year<span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-  <span class="token keyword" _ngcontent-wfq-c56="">const</span> nextGuy <span class="token operator" _ngcontent-wfq-c56="">=</span> b<span class="token punctuation" _ngcontent-wfq-c56="">.</span>passed <span class="token operator" _ngcontent-wfq-c56="">-</span> b<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year<span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-  <span class="token keyword" _ngcontent-wfq-c56="">return</span> <span class="token punctuation" _ngcontent-wfq-c56="">(</span>lastGuy <span class="token operator" _ngcontent-wfq-c56="">&gt;</span> nextGuy<span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token operator" _ngcontent-wfq-c56="">?</span> <span class="token number" _ngcontent-wfq-c56="">1</span><span class="token operator" _ngcontent-wfq-c56="">:</span> <span class="token operator" _ngcontent-wfq-c56="">-</span><span class="token number" _ngcontent-wfq-c56="">1</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-<span class="token punctuation" _ngcontent-wfq-c56="">}</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
+<pre class="language-javascript" _ngcontent-kyn-c56=""><code class="language-javascript" _ngcontent-kyn-c56=""><span class="token keyword" _ngcontent-kyn-c56="">const</span> oldest <span class="token operator" _ngcontent-kyn-c56="">=</span> inventors<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">sort</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token keyword" _ngcontent-kyn-c56="">function</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> <span class="token parameter" _ngcontent-kyn-c56="">a<span class="token punctuation" _ngcontent-kyn-c56="">,</span>b</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+  <span class="token keyword" _ngcontent-kyn-c56="">const</span> lastGuy <span class="token operator" _ngcontent-kyn-c56="">=</span> a<span class="token punctuation" _ngcontent-kyn-c56="">.</span>passed <span class="token operator" _ngcontent-kyn-c56="">-</span> a<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year<span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+  <span class="token keyword" _ngcontent-kyn-c56="">const</span> nextGuy <span class="token operator" _ngcontent-kyn-c56="">=</span> b<span class="token punctuation" _ngcontent-kyn-c56="">.</span>passed <span class="token operator" _ngcontent-kyn-c56="">-</span> b<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year<span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+  <span class="token keyword" _ngcontent-kyn-c56="">return</span> <span class="token punctuation" _ngcontent-kyn-c56="">(</span>lastGuy <span class="token operator" _ngcontent-kyn-c56="">&gt;</span> nextGuy<span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token operator" _ngcontent-kyn-c56="">?</span> <span class="token number" _ngcontent-kyn-c56="">1</span><span class="token operator" _ngcontent-kyn-c56="">:</span> <span class="token operator" _ngcontent-kyn-c56="">-</span><span class="token number" _ngcontent-kyn-c56="">1</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+<span class="token punctuation" _ngcontent-kyn-c56="">}</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
 
-</code></pre><p _ngcontent-wfq-c56=""><a name="sort3" _ngcontent-wfq-c56=""></a>
+</code></pre><p _ngcontent-kyn-c56=""><a name="sort3" _ngcontent-kyn-c56=""></a>
 對發明家的姓氏進行排列 (字串排序)</p>
-<pre class="language-javascript" _ngcontent-wfq-c56=""><code class="language-javascript" _ngcontent-wfq-c56=""><span class="token comment" _ngcontent-wfq-c56="">// 作者的寫法</span>
-<span class="token keyword" _ngcontent-wfq-c56="">const</span> alpha <span class="token operator" _ngcontent-wfq-c56="">=</span> people<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">sort</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token keyword" _ngcontent-wfq-c56="">function</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> <span class="token parameter" _ngcontent-wfq-c56="">lastOne<span class="token punctuation" _ngcontent-wfq-c56="">,</span> nextOne</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-  <span class="token keyword" _ngcontent-wfq-c56="">const</span><span class="token punctuation" _ngcontent-wfq-c56="">[</span>alast<span class="token punctuation" _ngcontent-wfq-c56="">,</span> afirst<span class="token punctuation" _ngcontent-wfq-c56="">]</span> <span class="token operator" _ngcontent-wfq-c56="">=</span> lastOne<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">split</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token string" _ngcontent-wfq-c56="">', '</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-  <span class="token keyword" _ngcontent-wfq-c56="">const</span><span class="token punctuation" _ngcontent-wfq-c56="">[</span>blast<span class="token punctuation" _ngcontent-wfq-c56="">,</span> bfirst<span class="token punctuation" _ngcontent-wfq-c56="">]</span> <span class="token operator" _ngcontent-wfq-c56="">=</span> nextOne<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">split</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token string" _ngcontent-wfq-c56="">', '</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-  <span class="token keyword" _ngcontent-wfq-c56="">return</span> <span class="token punctuation" _ngcontent-wfq-c56="">(</span>alast <span class="token operator" _ngcontent-wfq-c56="">&gt;</span> blast<span class="token punctuation" _ngcontent-wfq-c56="">)</span> <span class="token operator" _ngcontent-wfq-c56="">?</span> <span class="token operator" _ngcontent-wfq-c56="">-</span><span class="token number" _ngcontent-wfq-c56="">1</span> <span class="token operator" _ngcontent-wfq-c56="">:</span> <span class="token number" _ngcontent-wfq-c56="">1</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-<span class="token punctuation" _ngcontent-wfq-c56="">}</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span>
+<pre class="language-javascript" _ngcontent-kyn-c56=""><code class="language-javascript" _ngcontent-kyn-c56=""><span class="token comment" _ngcontent-kyn-c56="">// 作者的寫法</span>
+<span class="token keyword" _ngcontent-kyn-c56="">const</span> alpha <span class="token operator" _ngcontent-kyn-c56="">=</span> people<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">sort</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token keyword" _ngcontent-kyn-c56="">function</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> <span class="token parameter" _ngcontent-kyn-c56="">lastOne<span class="token punctuation" _ngcontent-kyn-c56="">,</span> nextOne</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+  <span class="token keyword" _ngcontent-kyn-c56="">const</span><span class="token punctuation" _ngcontent-kyn-c56="">[</span>alast<span class="token punctuation" _ngcontent-kyn-c56="">,</span> afirst<span class="token punctuation" _ngcontent-kyn-c56="">]</span> <span class="token operator" _ngcontent-kyn-c56="">=</span> lastOne<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">split</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token string" _ngcontent-kyn-c56="">', '</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+  <span class="token keyword" _ngcontent-kyn-c56="">const</span><span class="token punctuation" _ngcontent-kyn-c56="">[</span>blast<span class="token punctuation" _ngcontent-kyn-c56="">,</span> bfirst<span class="token punctuation" _ngcontent-kyn-c56="">]</span> <span class="token operator" _ngcontent-kyn-c56="">=</span> nextOne<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">split</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token string" _ngcontent-kyn-c56="">', '</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+  <span class="token keyword" _ngcontent-kyn-c56="">return</span> <span class="token punctuation" _ngcontent-kyn-c56="">(</span>alast <span class="token operator" _ngcontent-kyn-c56="">&gt;</span> blast<span class="token punctuation" _ngcontent-kyn-c56="">)</span> <span class="token operator" _ngcontent-kyn-c56="">?</span> <span class="token operator" _ngcontent-kyn-c56="">-</span><span class="token number" _ngcontent-kyn-c56="">1</span> <span class="token operator" _ngcontent-kyn-c56="">:</span> <span class="token number" _ngcontent-kyn-c56="">1</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+<span class="token punctuation" _ngcontent-kyn-c56="">}</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span>
 
-<span class="token comment" _ngcontent-wfq-c56="">// 我的寫法</span>
-<span class="token keyword" _ngcontent-wfq-c56="">const</span> alpha <span class="token operator" _ngcontent-wfq-c56="">=</span> people<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">sort</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> <span class="token keyword" _ngcontent-wfq-c56="">function</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> <span class="token parameter" _ngcontent-wfq-c56="">a<span class="token punctuation" _ngcontent-wfq-c56="">,</span> b</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-  <span class="token keyword" _ngcontent-wfq-c56="">return</span> <span class="token punctuation" _ngcontent-wfq-c56="">(</span>a<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">split</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token string" _ngcontent-wfq-c56="">', '</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">[</span><span class="token number" _ngcontent-wfq-c56="">0</span><span class="token punctuation" _ngcontent-wfq-c56="">]</span> <span class="token operator" _ngcontent-wfq-c56="">&gt;</span> b<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">split</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token string" _ngcontent-wfq-c56="">', '</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">[</span><span class="token number" _ngcontent-wfq-c56="">0</span><span class="token punctuation" _ngcontent-wfq-c56="">]</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span> <span class="token operator" _ngcontent-wfq-c56="">?</span> <span class="token operator" _ngcontent-wfq-c56="">-</span><span class="token number" _ngcontent-wfq-c56="">1</span> <span class="token operator" _ngcontent-wfq-c56="">:</span> <span class="token number" _ngcontent-wfq-c56="">1</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-<span class="token punctuation" _ngcontent-wfq-c56="">}</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span></code></pre><p _ngcontent-wfq-c56="">其實有點不太能理解作者為什麼會這樣寫 大概是為了再順便介紹 <code _ngcontent-wfq-c56="">split</code>的應用吧</p>
-<p _ngcontent-wfq-c56=""><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" _ngcontent-wfq-c56="">MDN-Array.prototype.sort()</a></p>
-<h2 id="reduce-加總、分類" _ngcontent-wfq-c56="">reduce 加總、分類</h2>
-<p _ngcontent-wfq-c56=""><a name="reduce1" _ngcontent-wfq-c56=""></a>
+<span class="token comment" _ngcontent-kyn-c56="">// 我的寫法</span>
+<span class="token keyword" _ngcontent-kyn-c56="">const</span> alpha <span class="token operator" _ngcontent-kyn-c56="">=</span> people<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">sort</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> <span class="token keyword" _ngcontent-kyn-c56="">function</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> <span class="token parameter" _ngcontent-kyn-c56="">a<span class="token punctuation" _ngcontent-kyn-c56="">,</span> b</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+  <span class="token keyword" _ngcontent-kyn-c56="">return</span> <span class="token punctuation" _ngcontent-kyn-c56="">(</span>a<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">split</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token string" _ngcontent-kyn-c56="">', '</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">[</span><span class="token number" _ngcontent-kyn-c56="">0</span><span class="token punctuation" _ngcontent-kyn-c56="">]</span> <span class="token operator" _ngcontent-kyn-c56="">&gt;</span> b<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">split</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token string" _ngcontent-kyn-c56="">', '</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">[</span><span class="token number" _ngcontent-kyn-c56="">0</span><span class="token punctuation" _ngcontent-kyn-c56="">]</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span> <span class="token operator" _ngcontent-kyn-c56="">?</span> <span class="token operator" _ngcontent-kyn-c56="">-</span><span class="token number" _ngcontent-kyn-c56="">1</span> <span class="token operator" _ngcontent-kyn-c56="">:</span> <span class="token number" _ngcontent-kyn-c56="">1</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+<span class="token punctuation" _ngcontent-kyn-c56="">}</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span></code></pre><p _ngcontent-kyn-c56="">其實有點不太能理解作者為什麼會這樣寫 大概是為了再順便介紹 <code _ngcontent-kyn-c56="">split</code>的應用吧</p>
+<p _ngcontent-kyn-c56=""><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" _ngcontent-kyn-c56="">MDN-Array.prototype.sort()</a></p>
+<h2 id="reduce-加總、分類" _ngcontent-kyn-c56="">reduce 加總、分類</h2>
+<p _ngcontent-kyn-c56=""><a name="reduce1" _ngcontent-kyn-c56=""></a>
 計算出所有發明家共活了多少年</p>
-<pre class="language-javascript" _ngcontent-wfq-c56=""><code class="language-javascript" _ngcontent-wfq-c56=""><span class="token comment" _ngcontent-wfq-c56="">// 以前for迴圈的寫法</span>
-<span class="token keyword" _ngcontent-wfq-c56="">var</span> totalYears <span class="token operator" _ngcontent-wfq-c56="">=</span> <span class="token number" _ngcontent-wfq-c56="">0</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-<span class="token keyword" _ngcontent-wfq-c56="">for</span> <span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token keyword" _ngcontent-wfq-c56="">let</span> i <span class="token operator" _ngcontent-wfq-c56="">=</span> <span class="token number" _ngcontent-wfq-c56="">0</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span> i <span class="token operator" _ngcontent-wfq-c56="">&lt;</span> inventors<span class="token punctuation" _ngcontent-wfq-c56="">.</span>length<span class="token punctuation" _ngcontent-wfq-c56="">;</span> i<span class="token operator" _ngcontent-wfq-c56="">++</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span> <span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-    <span class="token keyword" _ngcontent-wfq-c56="">var</span> liveYear <span class="token operator" _ngcontent-wfq-c56="">=</span> inventors<span class="token punctuation" _ngcontent-wfq-c56="">[</span>i<span class="token punctuation" _ngcontent-wfq-c56="">]</span><span class="token punctuation" _ngcontent-wfq-c56="">.</span>passed <span class="token operator" _ngcontent-wfq-c56="">-</span> inventors<span class="token punctuation" _ngcontent-wfq-c56="">[</span>i<span class="token punctuation" _ngcontent-wfq-c56="">]</span><span class="token punctuation" _ngcontent-wfq-c56="">.</span>year<span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-    totalYears <span class="token operator" _ngcontent-wfq-c56="">+=</span> liveYear<span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-<span class="token punctuation" _ngcontent-wfq-c56="">}</span>
+<pre class="language-javascript" _ngcontent-kyn-c56=""><code class="language-javascript" _ngcontent-kyn-c56=""><span class="token comment" _ngcontent-kyn-c56="">// 以前for迴圈的寫法</span>
+<span class="token keyword" _ngcontent-kyn-c56="">var</span> totalYears <span class="token operator" _ngcontent-kyn-c56="">=</span> <span class="token number" _ngcontent-kyn-c56="">0</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+<span class="token keyword" _ngcontent-kyn-c56="">for</span> <span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token keyword" _ngcontent-kyn-c56="">let</span> i <span class="token operator" _ngcontent-kyn-c56="">=</span> <span class="token number" _ngcontent-kyn-c56="">0</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span> i <span class="token operator" _ngcontent-kyn-c56="">&lt;</span> inventors<span class="token punctuation" _ngcontent-kyn-c56="">.</span>length<span class="token punctuation" _ngcontent-kyn-c56="">;</span> i<span class="token operator" _ngcontent-kyn-c56="">++</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span> <span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+    <span class="token keyword" _ngcontent-kyn-c56="">var</span> liveYear <span class="token operator" _ngcontent-kyn-c56="">=</span> inventors<span class="token punctuation" _ngcontent-kyn-c56="">[</span>i<span class="token punctuation" _ngcontent-kyn-c56="">]</span><span class="token punctuation" _ngcontent-kyn-c56="">.</span>passed <span class="token operator" _ngcontent-kyn-c56="">-</span> inventors<span class="token punctuation" _ngcontent-kyn-c56="">[</span>i<span class="token punctuation" _ngcontent-kyn-c56="">]</span><span class="token punctuation" _ngcontent-kyn-c56="">.</span>year<span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+    totalYears <span class="token operator" _ngcontent-kyn-c56="">+=</span> liveYear<span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+<span class="token punctuation" _ngcontent-kyn-c56="">}</span>
 
-<span class="token comment" _ngcontent-wfq-c56="">//reduce 寫法</span>
-<span class="token keyword" _ngcontent-wfq-c56="">const</span> totalYears <span class="token operator" _ngcontent-wfq-c56="">=</span> inventors<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">reduce</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token parameter" _ngcontent-wfq-c56="">total<span class="token punctuation" _ngcontent-wfq-c56="">,</span> inventor</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span> <span class="token operator" _ngcontent-wfq-c56="">=&gt;</span> <span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-        <span class="token keyword" _ngcontent-wfq-c56="">return</span> total <span class="token operator" _ngcontent-wfq-c56="">+</span> inventor<span class="token punctuation" _ngcontent-wfq-c56="">.</span>passed <span class="token operator" _ngcontent-wfq-c56="">-</span> inventor<span class="token punctuation" _ngcontent-wfq-c56="">.</span>year
-      <span class="token punctuation" _ngcontent-wfq-c56="">}</span><span class="token punctuation" _ngcontent-wfq-c56="">,</span><span class="token number" _ngcontent-wfq-c56="">0</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span></code></pre><p _ngcontent-wfq-c56=""><a name="reduce2" _ngcontent-wfq-c56=""></a>
+<span class="token comment" _ngcontent-kyn-c56="">//reduce 寫法</span>
+<span class="token keyword" _ngcontent-kyn-c56="">const</span> totalYears <span class="token operator" _ngcontent-kyn-c56="">=</span> inventors<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">reduce</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token parameter" _ngcontent-kyn-c56="">total<span class="token punctuation" _ngcontent-kyn-c56="">,</span> inventor</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span> <span class="token operator" _ngcontent-kyn-c56="">=&gt;</span> <span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+        <span class="token keyword" _ngcontent-kyn-c56="">return</span> total <span class="token operator" _ngcontent-kyn-c56="">+</span> inventor<span class="token punctuation" _ngcontent-kyn-c56="">.</span>passed <span class="token operator" _ngcontent-kyn-c56="">-</span> inventor<span class="token punctuation" _ngcontent-kyn-c56="">.</span>year
+      <span class="token punctuation" _ngcontent-kyn-c56="">}</span><span class="token punctuation" _ngcontent-kyn-c56="">,</span><span class="token number" _ngcontent-kyn-c56="">0</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span></code></pre><p _ngcontent-kyn-c56=""><a name="reduce2" _ngcontent-kyn-c56=""></a>
 計算 data 陣列裡相同的種類數量</p>
-<pre class="language-javascript" _ngcontent-wfq-c56=""><code class="language-javascript" _ngcontent-wfq-c56=""><span class="token comment" _ngcontent-wfq-c56="">// 以前筆者自己的寫法</span>
-<span class="token keyword" _ngcontent-wfq-c56="">var</span> transportation <span class="token operator" _ngcontent-wfq-c56="">=</span> <span class="token punctuation" _ngcontent-wfq-c56="">{</span><span class="token punctuation" _ngcontent-wfq-c56="">}</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-data<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">map</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> <span class="token parameter" _ngcontent-wfq-c56="">e</span><span class="token operator" _ngcontent-wfq-c56="">=&gt;</span> <span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-  transportation<span class="token punctuation" _ngcontent-wfq-c56="">[</span>e<span class="token punctuation" _ngcontent-wfq-c56="">]</span> <span class="token operator" _ngcontent-wfq-c56="">=</span> transportation<span class="token punctuation" _ngcontent-wfq-c56="">[</span>e<span class="token punctuation" _ngcontent-wfq-c56="">]</span> <span class="token operator" _ngcontent-wfq-c56="">||</span> <span class="token number" _ngcontent-wfq-c56="">0</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-  <span class="token comment" _ngcontent-wfq-c56="">// transportation[e] = transportation[e] + 1;</span>
-  transportation<span class="token punctuation" _ngcontent-wfq-c56="">[</span>e<span class="token punctuation" _ngcontent-wfq-c56="">]</span> <span class="token operator" _ngcontent-wfq-c56="">++</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-<span class="token punctuation" _ngcontent-wfq-c56="">}</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
+<pre class="language-javascript" _ngcontent-kyn-c56=""><code class="language-javascript" _ngcontent-kyn-c56=""><span class="token comment" _ngcontent-kyn-c56="">// 以前筆者自己的寫法</span>
+<span class="token keyword" _ngcontent-kyn-c56="">var</span> transportation <span class="token operator" _ngcontent-kyn-c56="">=</span> <span class="token punctuation" _ngcontent-kyn-c56="">{</span><span class="token punctuation" _ngcontent-kyn-c56="">}</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+data<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">map</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> <span class="token parameter" _ngcontent-kyn-c56="">e</span><span class="token operator" _ngcontent-kyn-c56="">=&gt;</span> <span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+  transportation<span class="token punctuation" _ngcontent-kyn-c56="">[</span>e<span class="token punctuation" _ngcontent-kyn-c56="">]</span> <span class="token operator" _ngcontent-kyn-c56="">=</span> transportation<span class="token punctuation" _ngcontent-kyn-c56="">[</span>e<span class="token punctuation" _ngcontent-kyn-c56="">]</span> <span class="token operator" _ngcontent-kyn-c56="">||</span> <span class="token number" _ngcontent-kyn-c56="">0</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+  <span class="token comment" _ngcontent-kyn-c56="">// transportation[e] = transportation[e] + 1;</span>
+  transportation<span class="token punctuation" _ngcontent-kyn-c56="">[</span>e<span class="token punctuation" _ngcontent-kyn-c56="">]</span> <span class="token operator" _ngcontent-kyn-c56="">++</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+<span class="token punctuation" _ngcontent-kyn-c56="">}</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
 
 
-<span class="token comment" _ngcontent-wfq-c56="">// 作者的寫法</span>
-<span class="token keyword" _ngcontent-wfq-c56="">const</span> transportation <span class="token operator" _ngcontent-wfq-c56="">=</span> data<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">reduce</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token keyword" _ngcontent-wfq-c56="">function</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> <span class="token parameter" _ngcontent-wfq-c56="">obj<span class="token punctuation" _ngcontent-wfq-c56="">,</span>item</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-      <span class="token keyword" _ngcontent-wfq-c56="">if</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> <span class="token operator" _ngcontent-wfq-c56="">!</span>obj<span class="token punctuation" _ngcontent-wfq-c56="">[</span>item<span class="token punctuation" _ngcontent-wfq-c56="">]</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">{</span>
-        obj<span class="token punctuation" _ngcontent-wfq-c56="">[</span>item<span class="token punctuation" _ngcontent-wfq-c56="">]</span> <span class="token operator" _ngcontent-wfq-c56="">=</span> <span class="token number" _ngcontent-wfq-c56="">0</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-      <span class="token punctuation" _ngcontent-wfq-c56="">}</span>
-      obj<span class="token punctuation" _ngcontent-wfq-c56="">[</span>item<span class="token punctuation" _ngcontent-wfq-c56="">]</span><span class="token operator" _ngcontent-wfq-c56="">++</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-      <span class="token keyword" _ngcontent-wfq-c56="">return</span> obj<span class="token punctuation" _ngcontent-wfq-c56="">;</span>
-    <span class="token punctuation" _ngcontent-wfq-c56="">}</span><span class="token punctuation" _ngcontent-wfq-c56="">,</span><span class="token punctuation" _ngcontent-wfq-c56="">{</span><span class="token punctuation" _ngcontent-wfq-c56="">}</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span></code></pre><p _ngcontent-wfq-c56=""><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" _ngcontent-wfq-c56="">Array.prototype.reduce()</a></p>
-<h2 id="map-與-filter-整合應用" _ngcontent-wfq-c56="">map 與 filter 整合應用</h2>
-<p _ngcontent-wfq-c56=""><a name="mapfilter" _ngcontent-wfq-c56=""></a></p>
-<p _ngcontent-wfq-c56="">首先到作者提供的網址裡 開啟開發者工具做練習，
-使用 <code _ngcontent-wfq-c56="">querySelectorAll</code> 去抓取節點， 所得到的會是一個<code _ngcontent-wfq-c56="">NodeList</code></p>
-<pre class="language-javascript" _ngcontent-wfq-c56=""><code class="language-javascript" _ngcontent-wfq-c56="">cosnt category <span class="token operator" _ngcontent-wfq-c56="">=</span> document<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">querySelectorAll</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token string" _ngcontent-wfq-c56="">'.mw-category a'</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span></code></pre><p _ngcontent-wfq-c56="">所以需要利用 Array.from(obj)轉成陣列</p>
-<pre class="language-javascript" _ngcontent-wfq-c56=""><code class="language-javascript" _ngcontent-wfq-c56=""><span class="token keyword" _ngcontent-wfq-c56="">const</span> links <span class="token operator" _ngcontent-wfq-c56="">=</span> Array<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">from</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span>category<span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span></code></pre><p _ngcontent-wfq-c56="">ps.obj 就是由<code _ngcontent-wfq-c56="">querySelectorAll</code> 取得的 NodeList</p>
-<p _ngcontent-wfq-c56="">接下來就是一連串的 map 與 filter 處理了</p>
-<pre class="language-javascript" _ngcontent-wfq-c56=""><code class="language-javascript" _ngcontent-wfq-c56=""><span class="token keyword" _ngcontent-wfq-c56="">const</span> de <span class="token operator" _ngcontent-wfq-c56="">=</span> links<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">map</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token parameter" _ngcontent-wfq-c56="">link</span><span class="token operator" _ngcontent-wfq-c56="">=&gt;</span> link<span class="token punctuation" _ngcontent-wfq-c56="">.</span>textContent<span class="token punctuation" _ngcontent-wfq-c56="">)</span>
-                <span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">filter</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span> <span class="token parameter" _ngcontent-wfq-c56="">streetName</span> <span class="token operator" _ngcontent-wfq-c56="">=&gt;</span> streetName<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="token function" _ngcontent-wfq-c56="">includes</span><span class="token punctuation" _ngcontent-wfq-c56="">(</span><span class="token string" _ngcontent-wfq-c56="">'de'</span><span class="token punctuation" _ngcontent-wfq-c56="">)</span> <span class="token punctuation" _ngcontent-wfq-c56="">)</span><span class="token punctuation" _ngcontent-wfq-c56="">;</span></code></pre><p _ngcontent-wfq-c56="">值得一得的是 作者在這裡面使用了 <code _ngcontent-wfq-c56="">includes()</code> 做比對，這是 ES2016 裡新增的(不支援 ie)
-取代了以前常使用的 <code _ngcontent-wfq-c56="">indexOf</code></p>
-<p _ngcontent-wfq-c56=""><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/includes" _ngcontent-wfq-c56="">MDN-Array.prototype.includes()</a></p>
-<h2 id="後記" _ngcontent-wfq-c56="">後記</h2>
-<p _ngcontent-wfq-c56="">此次的學習 學到了許多其他之前不曾用過的處理陣列手法，處理方式更簡潔 讚!</p>
-<p _ngcontent-wfq-c56=""><a href="https://www.youtube.com/watch?v=HB1ZC7czKRs" _ngcontent-wfq-c56="">YOUTUBE 影片教學連結</a></p>
-<!--scullyContent-end--><scully-content _ngcontent-wfq-c56=""></scully-content>
+<span class="token comment" _ngcontent-kyn-c56="">// 作者的寫法</span>
+<span class="token keyword" _ngcontent-kyn-c56="">const</span> transportation <span class="token operator" _ngcontent-kyn-c56="">=</span> data<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">reduce</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token keyword" _ngcontent-kyn-c56="">function</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> <span class="token parameter" _ngcontent-kyn-c56="">obj<span class="token punctuation" _ngcontent-kyn-c56="">,</span>item</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+      <span class="token keyword" _ngcontent-kyn-c56="">if</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> <span class="token operator" _ngcontent-kyn-c56="">!</span>obj<span class="token punctuation" _ngcontent-kyn-c56="">[</span>item<span class="token punctuation" _ngcontent-kyn-c56="">]</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">{</span>
+        obj<span class="token punctuation" _ngcontent-kyn-c56="">[</span>item<span class="token punctuation" _ngcontent-kyn-c56="">]</span> <span class="token operator" _ngcontent-kyn-c56="">=</span> <span class="token number" _ngcontent-kyn-c56="">0</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+      <span class="token punctuation" _ngcontent-kyn-c56="">}</span>
+      obj<span class="token punctuation" _ngcontent-kyn-c56="">[</span>item<span class="token punctuation" _ngcontent-kyn-c56="">]</span><span class="token operator" _ngcontent-kyn-c56="">++</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+      <span class="token keyword" _ngcontent-kyn-c56="">return</span> obj<span class="token punctuation" _ngcontent-kyn-c56="">;</span>
+    <span class="token punctuation" _ngcontent-kyn-c56="">}</span><span class="token punctuation" _ngcontent-kyn-c56="">,</span><span class="token punctuation" _ngcontent-kyn-c56="">{</span><span class="token punctuation" _ngcontent-kyn-c56="">}</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span></code></pre><p _ngcontent-kyn-c56=""><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" _ngcontent-kyn-c56="">Array.prototype.reduce()</a></p>
+<h2 id="map-與-filter-整合應用" _ngcontent-kyn-c56="">map 與 filter 整合應用</h2>
+<p _ngcontent-kyn-c56=""><a name="mapfilter" _ngcontent-kyn-c56=""></a></p>
+<p _ngcontent-kyn-c56="">首先到作者提供的網址裡 開啟開發者工具做練習，
+使用 <code _ngcontent-kyn-c56="">querySelectorAll</code> 去抓取節點， 所得到的會是一個<code _ngcontent-kyn-c56="">NodeList</code></p>
+<pre class="language-javascript" _ngcontent-kyn-c56=""><code class="language-javascript" _ngcontent-kyn-c56="">cosnt category <span class="token operator" _ngcontent-kyn-c56="">=</span> document<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">querySelectorAll</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token string" _ngcontent-kyn-c56="">'.mw-category a'</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span></code></pre><p _ngcontent-kyn-c56="">所以需要利用 Array.from(obj)轉成陣列</p>
+<pre class="language-javascript" _ngcontent-kyn-c56=""><code class="language-javascript" _ngcontent-kyn-c56=""><span class="token keyword" _ngcontent-kyn-c56="">const</span> links <span class="token operator" _ngcontent-kyn-c56="">=</span> Array<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">from</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span>category<span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span></code></pre><p _ngcontent-kyn-c56="">ps.obj 就是由<code _ngcontent-kyn-c56="">querySelectorAll</code> 取得的 NodeList</p>
+<p _ngcontent-kyn-c56="">接下來就是一連串的 map 與 filter 處理了</p>
+<pre class="language-javascript" _ngcontent-kyn-c56=""><code class="language-javascript" _ngcontent-kyn-c56=""><span class="token keyword" _ngcontent-kyn-c56="">const</span> de <span class="token operator" _ngcontent-kyn-c56="">=</span> links<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">map</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token parameter" _ngcontent-kyn-c56="">link</span><span class="token operator" _ngcontent-kyn-c56="">=&gt;</span> link<span class="token punctuation" _ngcontent-kyn-c56="">.</span>textContent<span class="token punctuation" _ngcontent-kyn-c56="">)</span>
+                <span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">filter</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span> <span class="token parameter" _ngcontent-kyn-c56="">streetName</span> <span class="token operator" _ngcontent-kyn-c56="">=&gt;</span> streetName<span class="token punctuation" _ngcontent-kyn-c56="">.</span><span class="token function" _ngcontent-kyn-c56="">includes</span><span class="token punctuation" _ngcontent-kyn-c56="">(</span><span class="token string" _ngcontent-kyn-c56="">'de'</span><span class="token punctuation" _ngcontent-kyn-c56="">)</span> <span class="token punctuation" _ngcontent-kyn-c56="">)</span><span class="token punctuation" _ngcontent-kyn-c56="">;</span></code></pre><p _ngcontent-kyn-c56="">值得一得的是 作者在這裡面使用了 <code _ngcontent-kyn-c56="">includes()</code> 做比對，這是 ES2016 裡新增的(不支援 ie)
+取代了以前常使用的 <code _ngcontent-kyn-c56="">indexOf</code></p>
+<p _ngcontent-kyn-c56=""><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/includes" _ngcontent-kyn-c56="">MDN-Array.prototype.includes()</a></p>
+<h2 id="後記" _ngcontent-kyn-c56="">後記</h2>
+<p _ngcontent-kyn-c56="">此次的學習 學到了許多其他之前不曾用過的處理陣列手法，處理方式更簡潔 讚!</p>
+<p _ngcontent-kyn-c56=""><a href="https://www.youtube.com/watch?v=HB1ZC7czKRs" _ngcontent-kyn-c56="">YOUTUBE 影片教學連結</a></p>
+<!--scullyContent-end--><scully-content _ngcontent-kyn-c56=""></scully-content>
           
-        <script>try {window['scullyContent'] = {cssId:"_ngcontent-wfq-c56",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
-        <div _ngcontent-wfq-c56="" class="order-first md:order-none">
-          <div _ngcontent-wfq-c56="" class="sticky top-32 space-y-4">
-            <app-blog-nav _ngcontent-wfq-c56="" _nghost-wfq-c55="" class="block"><p _ngcontent-wfq-c55="" class="text-xl font-semibold">索引</p><!--bindings={
+        <script>try {window['scullyContent'] = {cssId:"_ngcontent-kyn-c56",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+        <div _ngcontent-kyn-c56="" class="order-first md:order-none">
+          <div _ngcontent-kyn-c56="" class="sticky top-32 space-y-4">
+            <app-blog-nav _ngcontent-kyn-c56="" _nghost-kyn-c55="" class="block"><p _ngcontent-kyn-c55="" class="text-xl font-semibold">索引</p><!--bindings={
   "ng-reflect-ng-if": "true"
-}--><ul _ngcontent-wfq-c55=""><li _ngcontent-wfq-c55="" class="cursor-pointer"><a _ngcontent-wfq-c55="" ng-reflect-ng-class="text-base leading-relaxed," class="text-base leading-relaxed"> Sorry, could not load static page content </a><!--bindings={
+}--><ul _ngcontent-kyn-c55=""><li _ngcontent-kyn-c55="" class="cursor-pointer"><a _ngcontent-kyn-c55="" ng-reflect-ng-class="text-base leading-relaxed," class="text-base leading-relaxed"> Sorry, could not load static page content </a><!--bindings={
   "ng-reflect-ng-if": "/JS30/04_Array-Cardio-Day-1"
 }--></li><!--bindings={
   "ng-reflect-ng-for-of": "[object HTMLHeadingElement]"
-}--></ul><p _ngcontent-wfq-c55="" class="mt-4 text-lg font-semibold">上一篇</p><p _ngcontent-wfq-c55=""><a _ngcontent-wfq-c55="" ng-reflect-router-link="/googlemap_bounds" href="/googlemap_bounds">利用 google.maps.LatLngBounds 讓googlemap自動縮放到適合的大小</a></p><!--ng-container--><!--bindings={
+}--></ul><p _ngcontent-kyn-c55="" class="mt-4 text-lg font-semibold">上一篇</p><p _ngcontent-kyn-c55=""><a _ngcontent-kyn-c55="" ng-reflect-router-link="/googlemap_bounds" href="/googlemap_bounds">利用 google.maps.LatLngBounds 讓googlemap自動縮放到適合的大小</a></p><!--ng-container--><!--bindings={
   "ng-reflect-ng-if": "true"
-}--><p _ngcontent-wfq-c55="" class="mt-4 text-lg font-semibold">下一篇</p><p _ngcontent-wfq-c55=""><a _ngcontent-wfq-c55="" ng-reflect-router-link="/JS30/07_Array-Cardio-Day-2" href="/JS30/07_Array-Cardio-Day-2">JS30：07_Array Cardio Day 2 </a></p><!--ng-container--><!--bindings={
+}--><p _ngcontent-kyn-c55="" class="mt-4 text-lg font-semibold">下一篇</p><p _ngcontent-kyn-c55=""><a _ngcontent-kyn-c55="" ng-reflect-router-link="/JS30/07_Array-Cardio-Day-2" href="/JS30/07_Array-Cardio-Day-2">JS30：07_Array Cardio Day 2 </a></p><!--ng-container--><!--bindings={
   "ng-reflect-ng-if": "true"
 }--><!--ng-container--><!--bindings={
   "ng-reflect-ng-if": "[object HTMLHeadingElement]"
-}--><hr _ngcontent-wfq-c55="" class="md:hidden sm:block my-8"></app-blog-nav>
+}--><hr _ngcontent-kyn-c55="" class="md:hidden sm:block my-8"></app-blog-nav>
           </div>
         </div>
       </div>
@@ -508,12 +510,12 @@ data<span class="token punctuation" _ngcontent-wfq-c56="">.</span><span class="t
 
 
 
-<a _ngcontent-wfq-c56="" class="gotop" ng-reflect-ng-style="[object Object]" style="opacity: 0;">
-  <i _ngcontent-wfq-c56="" class="btn bg-white"></i>
+<a _ngcontent-kyn-c56="" class="gotop" ng-reflect-ng-style="[object Object]" style="opacity: 0;">
+  <i _ngcontent-kyn-c56="" class="btn bg-white"></i>
 </a><!--bindings={
   "ng-reflect-ng-if": "/JS30/04_Array-Cardio-Day-1"
 }-->
-</app-blog><!--container--><p _ngcontent-wfq-c51="" class="my-2 text-right text-xs">Copyright © 2021 Mandy. All rights reserved.</p></div></div></app-root>
+</app-blog><!--container--><p _ngcontent-kyn-c51="" class="my-2 text-right text-xs">Copyright © 2021 Mandy. All rights reserved.</p></div></div></app-root>
   <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule="" defer=""></script><script src="polyfills-es5.js" nomodule="" defer=""></script><script src="polyfills-es2015.js" type="module"></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule="" defer=""></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule="" defer=""></script>
 
 </body></html>
