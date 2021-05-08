@@ -41,8 +41,8 @@ h6 {
 :root .theme-light {
   /* --primary: theme('colors.purple.600');
   --secondary: theme('colors.yellow.600'); */
-  --primary: #4a4744;
-  --secondary: #00aaaa;
+  --primary: #00aaaa;
+  --secondary: #4a4744;
   --background-color: theme('colors.white');
   --text-color: #444;
   --text-color-contrast: theme('colors.white');
