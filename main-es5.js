@@ -2040,7 +2040,7 @@
                 return e.toLowerCase();
               });
 
-              if (convertCate.includes(segment)) {
+              if (convertCate.includes(segment) || segment === 'api_cors_error') {
                 return url;
               }
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["filter"])(function (v) {
