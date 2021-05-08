@@ -1066,7 +1066,7 @@ class BlogListCategoriesComponent {
     }
 }
 BlogListCategoriesComponent.ɵfac = function BlogListCategoriesComponent_Factory(t) { return new (t || BlogListCategoriesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_blog_list_service__WEBPACK_IMPORTED_MODULE_4__["BlogListService"])); };
-BlogListCategoriesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: BlogListCategoriesComponent, selectors: [["app-blog-list-categories"]], decls: 7, vars: 3, consts: [[1, "block", "lg:flex", "lg:flex-row-reverse", "lg:space-x-2", "py-4", "mb-10"], [1, "w-full", "lg:w-1/4", "px-6"], [1, "w-full", "lg:w-3/4"], ["class", "py-2", 4, "ngFor", "ngForOf"], [1, "py-2"], [3, "routerLink"]], template: function BlogListCategoriesComponent_Template(rf, ctx) { if (rf & 1) {
+BlogListCategoriesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: BlogListCategoriesComponent, selectors: [["app-blog-list-categories"]], decls: 7, vars: 3, consts: [[1, "block", "lg:flex", "lg:flex-row-reverse", "lg:space-x-2", "py-4", "mb-10"], [1, "w-full", "lg:w-1/4", "px-4", "lg:pl-0"], [1, "w-full", "lg:w-3/4", "px-4", "lg:pl-0"], ["class", "py-2", 4, "ngFor", "ngForOf"], [1, "py-2"], [3, "routerLink"]], template: function BlogListCategoriesComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](2, "app-blog-list-tag");

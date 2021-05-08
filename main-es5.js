@@ -2069,7 +2069,7 @@
         selectors: [["app-blog-list-categories"]],
         decls: 7,
         vars: 3,
-        consts: [[1, "block", "lg:flex", "lg:flex-row-reverse", "lg:space-x-2", "py-4", "mb-10"], [1, "w-full", "lg:w-1/4", "px-6"], [1, "w-full", "lg:w-3/4"], ["class", "py-2", 4, "ngFor", "ngForOf"], [1, "py-2"], [3, "routerLink"]],
+        consts: [[1, "block", "lg:flex", "lg:flex-row-reverse", "lg:space-x-2", "py-4", "mb-10"], [1, "w-full", "lg:w-1/4", "px-4", "lg:pl-0"], [1, "w-full", "lg:w-3/4", "px-4", "lg:pl-0"], ["class", "py-2", 4, "ngFor", "ngForOf"], [1, "py-2"], [3, "routerLink"]],
         template: function BlogListCategoriesComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
