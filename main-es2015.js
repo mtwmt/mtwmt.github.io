@@ -891,6 +891,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./shared/shared.module */ "PCNd");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./not-found/not-found.component */ "nod/");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/platform-browser/animations */ "R1ws");
+
 
 
 
@@ -921,6 +923,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector
             _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormsModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_17__["BrowserAnimationsModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_15__["ReactiveFormsModule"],
             _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_5__["ScullyLibModule"].forRoot({ useTransferState: true, alwaysMonitor: true }),
             _angular_service_worker__WEBPACK_IMPORTED_MODULE_12__["ServiceWorkerModule"].register('ngsw-worker.js', {
@@ -939,6 +942,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector
         _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormsModule"],
+        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_17__["BrowserAnimationsModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_15__["ReactiveFormsModule"], _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_5__["ScullyLibModule"], _angular_service_worker__WEBPACK_IMPORTED_MODULE_12__["ServiceWorkerModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_14__["SharedModule"]] }); })();
 
 
@@ -1199,11 +1203,11 @@ class BlogListTagComponent {
     }
 }
 BlogListTagComponent.ɵfac = function BlogListTagComponent_Factory(t) { return new (t || BlogListTagComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_blog_list_service__WEBPACK_IMPORTED_MODULE_3__["BlogListService"])); };
-BlogListTagComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: BlogListTagComponent, selectors: [["app-blog-list-tag"]], decls: 5, vars: 3, consts: [[1, "shadow", "p-4", "mb-4", "bg-white"], [1, "border-b", "mb-2", "font-bold", "text-gray-700"], ["class", "inline-block rounded mr-2 mt-2 px-3 py-1 bg-gray-100 text-sm transition-colors duration-200 ease-in-out hover:bg-primary hover:text-white", 3, "routerLink", 4, "ngFor", "ngForOf"], [1, "inline-block", "rounded", "mr-2", "mt-2", "px-3", "py-1", "bg-gray-100", "text-sm", "transition-colors", "duration-200", "ease-in-out", "hover:bg-primary", "hover:text-white", 3, "routerLink"]], template: function BlogListTagComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "h3", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "\u985E\u5225");
+BlogListTagComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: BlogListTagComponent, selectors: [["app-blog-list-tag"]], decls: 5, vars: 3, consts: [[1, "mb-1", "ml-2", "font-bold", "text-gray-700"], [1, "shadow", "p-4", "mb-4", "bg-white"], ["class", "inline-block rounded mr-2 mt-2 px-3 py-1 bg-gray-100 text-sm \n    transition-colors duration-200 ease-in-out \n    hover:bg-primary hover:text-white", 3, "routerLink", 4, "ngFor", "ngForOf"], [1, "inline-block", "rounded", "mr-2", "mt-2", "px-3", "py-1", "bg-gray-100", "text-sm", "transition-colors", "duration-200", "ease-in-out", "hover:bg-primary", "hover:text-white", 3, "routerLink"]], template: function BlogListTagComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "h3", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "Categories");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, BlogListTagComponent_a_3_Template, 3, 7, "a", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();

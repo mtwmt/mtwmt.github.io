@@ -82,7 +82,7 @@
         selectors: [["app-home"]],
         decls: 7,
         vars: 0,
-        consts: [[1, "pr-10", "md:pr-10", "text-right", "mt-10"], ["src", "/assets/img/monkey.png", "alt", "welcome to Mandy's website", 1, "inline-block", "w-9/12"], [1, "p-6", "bg-oreilly-500", "text-white"], [1, "text-6xl", "pb-6", "border-b-2", "border-white", "leading-none", "font-serif"], [1, "text-xl", "mt-2", "leading-tight"]],
+        consts: [[1, "pr-10", "md:pr-10", "text-right", "mt-10"], ["src", "/assets/img/monkey.png", "alt", "welcome to Mandy's website", 1, "inline-block", "w-8/12"], [1, "p-6", "bg-oreilly-500", "text-white"], [1, "text-6xl", "pb-6", "border-b-2", "border-white", "leading-none", "font-serif"], [1, "text-xl", "mt-2", "leading-tight"]],
         template: function HomeComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
