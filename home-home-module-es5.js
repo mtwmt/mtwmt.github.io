@@ -80,9 +80,9 @@
       HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: HomeComponent,
         selectors: [["app-home"]],
-        decls: 7,
+        decls: 9,
         vars: 0,
-        consts: [[1, "pr-10", "md:pr-10", "text-right", "mt-10"], ["src", "/assets/img/monkey.png", "alt", "welcome to Mandy's website", 1, "inline-block", "w-8/12"], [1, "p-6", "bg-oreilly-500", "text-white"], [1, "text-6xl", "pb-6", "border-b-2", "border-white", "leading-none", "font-serif"], [1, "text-xl", "mt-2", "leading-tight"]],
+        consts: [[1, "pr-10", "md:pr-10", "text-right", "mt-10"], ["src", "/assets/img/monkey.png", "alt", "welcome to Mandy's website", 1, "inline-block", "w-8/12"], [1, "p-6", "bg-primary-500", "text-white"], [1, "text-4xl", "sm:text-5xl", "pb-6", "border-b-2", "border-white", "leading-none", "font-serif"], [1, "sm:text-lg", "mt-2", "leading-tight"]],
         template: function HomeComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -95,13 +95,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h1", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " \u5F9E\u958B\u59CB\u5230\u653E\u68C4 ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " Hello World ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "p", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "hey hello world !");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Welcome to Mandy's WebSite");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "p", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "\u96A8\u610F\u770B\u770B \u5C31\u4E0D\u62DB\u5F85\u5566");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
