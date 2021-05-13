@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactComponent } from './contact/contact.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 export const EnvironmentToken = new InjectionToken('ENVIRONMENT');
 
@@ -34,11 +35,12 @@ declare let gtag: Function;
     FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    SharedModule,
+    FontAwesomeModule,
     ScullyLibModule.forRoot({ useTransferState: true, alwaysMonitor: true }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
-    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
