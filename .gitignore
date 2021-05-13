@@ -1,7 +1,7 @@
 node_modules
 dist
 e2e
-blog
+blog/*
 _drafts
 package-lock.json
 scully.log

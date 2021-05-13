@@ -44,7 +44,7 @@
   span {
     top: 10px;
     display: inline-block;
-    text-indent: -9999px;
+    // text-indent: 9999px;
     transition: 0.5s;
     @include hamburger(#fff, 30px);
   }
