@@ -18863,7 +18863,7 @@
       var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_91___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_91__);
       /**
        * @license
-       * Copyright Google Inc. All Rights Reserved.
+       * Copyright Google LLC All Rights Reserved.
        *
        * Use of this source code is governed by an MIT-style license that can be
        * found in the LICENSE file at https://angular.io/license
