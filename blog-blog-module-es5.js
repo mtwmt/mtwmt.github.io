@@ -827,14 +827,13 @@
 
       var routes = [{
         path: '',
-        component: _blog_list_blog_list_component__WEBPACK_IMPORTED_MODULE_1__["BlogListComponent"],
-        children: [{
-          path: ':slug',
-          component: _blog_component__WEBPACK_IMPORTED_MODULE_2__["BlogComponent"],
-          data: {
-            breadcrumb: 'categories'
-          }
-        }]
+        component: _blog_list_blog_list_component__WEBPACK_IMPORTED_MODULE_1__["BlogListComponent"]
+      }, {
+        path: ':slug',
+        component: _blog_component__WEBPACK_IMPORTED_MODULE_2__["BlogComponent"],
+        data: {
+          breadcrumb: 'categories'
+        }
       }, {
         path: '**',
         component: _blog_component__WEBPACK_IMPORTED_MODULE_2__["BlogComponent"]

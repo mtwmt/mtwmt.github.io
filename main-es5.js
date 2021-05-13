@@ -340,7 +340,7 @@
         selectors: [["app-about"]],
         decls: 25,
         vars: 4,
-        consts: [[1, "max-w-2xl", "m-auto", "content", "form", "bg-white", "p-6", "my-10", "relative"], [1, "text-2xl", "text-gray-900", "font-semibold"], [1, "mt-2"], [1, "mt-6", "text-lg", "font-bold"], [1, "mt-1"], [1, "mt-6"], [1, "mt-6", "space-x-4"], ["href", "//github.com/mtwmt", "target", "_blank", 1, "text-blue-500"], ["size", "3x", 1, "text-gray-500", "hover:text-gray-800", "transition", "duration-300", 3, "icon"], ["href", "mailto:mtwmt@hotmail.com", "target", "_blank"]],
+        consts: [[1, "max-w-2xl", "m-auto", "content", "form", "bg-white", "p-6", "my-10", "relative"], [1, "text-2xl", "text-gray-900", "font-semibold"], [1, "mt-2"], [1, "mt-6", "text-lg", "font-bold"], [1, "mt-1"], [1, "mt-6"], [1, "mt-6", "space-x-4"], ["href", "//github.com/mtwmt", "target", "_blank", 1, "text-blue-500"], ["size", "3x", 1, "text-gray-500", "hover:text-primary-800", "transition", "duration-300", 3, "icon"], ["href", "mailto:mtwmt@hotmail.com", "target", "_blank"]],
         template: function AboutComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);

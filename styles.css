@@ -1503,9 +1503,9 @@ div.code-toolbar > .toolbar span:focus {
   color: rgba(255, 255, 255, var(--tw-text-opacity)) !important;
 }
 
-.hover\:text-gray-800:hover{
+.hover\:text-primary-800:hover{
   --tw-text-opacity: 1 !important;
-  color: rgba(31, 41, 55, var(--tw-text-opacity)) !important;
+  color: rgba(0, 144, 144, var(--tw-text-opacity)) !important;
 }
 
 .hover\:text-gray-medium:hover{
