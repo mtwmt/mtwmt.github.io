@@ -1,0 +1,18 @@
+<!-- <app-side-avatar></app-side-avatar>
+<app-side-info></app-side-info> -->
+<div
+  class="max-w-full lg:max-w-sm rounded overflow-hidden mb-4 p-4 border-2 border-solid border-gray-300 shadow-card-side"
+>
+  <app-side-avatar></app-side-avatar>
+  <app-side-info></app-side-info>
+</div>
+<div
+  class="max-w-full lg:max-w-sm rounded overflow-hidden mb-4 p-4 border-2 border-solid border-gray-300 shadow-card-side"
+>
+  <a
+    class="inline-block rounded mr-2 mt-2 px-3 py-1 bg-gray-100 hover:bg-gray-500 hover:text-white"
+    *ngFor="let item of blogListService.blogCategories$ | async"
+    [routerLink]="['categories/' + item]"
+    >{{ item }}</a
+  >
+</div>

@@ -1,0 +1,40 @@
+.avatar {
+  background-clip: padding-box; /* !important */
+
+  &:before {
+    content: '';
+    z-index: -1;
+    margin: -10%; /* !important */
+    border-radius: inherit; /* !important */
+    background: linear-gradient(
+      to bottom right,
+      #b827fc 0%,
+      #2c90fc 25%,
+      #b8fd33 50%,
+      #fec837 75%,
+      #fd1892 100%
+    );
+    @apply absolute top-0 right-0 bottom-0 left-0 opacity-0 transition-opacity duration-200 ease-out;
+  }
+
+  &:after {
+    opacity: 0;
+    content: attr(data-tooltip);
+    top: -1rem;
+    left: 100%;
+    transform: translateX(10%) translateY(0);
+    background: transparent;
+    border-color: var(--text-color);
+    color: var(--text-color);
+    transition: opacity 0.2s cubic-bezier(0.64, 0.09, 0.08, 1),
+      transform 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+    @apply block w-32 max-w-32 visible absolute py-1 px-2 border border-solid rounded z-10 text-xs;
+  }
+
+  &.show {
+    &:after,
+    &:before {
+      @apply opacity-100;
+    }
+  }
+}

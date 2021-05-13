@@ -1,0 +1,18 @@
+<div class="mt-4"
+  *ngIf="blog$ | async as tags">
+  <h3 class="mb-1 ml-2 font-bold text-gray-700">Tags</h3>
+    <!-- <i
+      class="inline-block not-italic rounded mr-2 mb-2 px-3 py-1 bg-gray-100 text-sm"
+      *ngFor="let tag of tags"
+      >{{ tag }}</i
+    > -->
+  
+  
+
+  <i
+    class="inline-block rounded mr-2 px-3 py-1 text-sm not-italic border-b shadow"
+    *ngFor="let tag of tags"
+    >{{ tag }}</i
+  >
+
+</div>

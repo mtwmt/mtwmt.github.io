@@ -1,0 +1,36 @@
+name: Scully Publish
+
+on:
+  push:
+    branches:
+      - master
+      - 'static/**'
+      - schematics-helpers
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: 'UA-XXXXXXXXX-X'
+          replace: ${{ secrets.G_TAG_CODE }}
+          include: 'src/environments/environment*' # Replace google Tag
+      - uses: cmgriffing/scully-gh-pages-action@v9
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: gh-pages
+          build-args: '--prod'
+  sync-devto:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: 'DEVTO_API_KEY'
+          replace: ${{ secrets.DEVTO_API_KEY }}
+          include: 'scripts/devto-update.js' # Replace with real API Key
+      - run: cd scripts && npm ci && node devto-update.js

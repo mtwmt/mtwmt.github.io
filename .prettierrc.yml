@@ -1,0 +1,12 @@
+singleQuote: true
+trailingComma: 'es5'
+proseWrap: 'always'
+tslintIntegration: 'always'
+arrowParens: 'avoid'
+printWidth: 80
+tabWidth: 2
+useTabs: false
+semi: true
+quoteProps: "as-needed"
+bracketSpacing: true
+endOfLine: "auto"

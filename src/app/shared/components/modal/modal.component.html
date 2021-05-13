@@ -1,0 +1,16 @@
+<div class="flex justify-center items-center">
+  <div class="bg-white rounded-lg shadow">
+    <div class="w-96 border-t-8 border-primary-600 rounded-lg flex">
+      
+      <div class="w-full pt-9 px-5">
+        <h3 *ngIf="data?.title" class="font-bold text-primary-700">{{ data.title }}</h3>
+        <p *ngIf="data?.content" class="py-4 text-sm text-gray-400">{{ data.content }}</p>
+      </div>
+    </div>
+
+    <div class="p-4 flex space-x-4 justify-end">
+      <!-- <a href="#" class="w-1/2 px-4 py-3 text-center bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-black font-bold rounded-lg text-sm">Cancel</a> -->
+      <a href="#" class="w-1/2 px-4 py-3 text-center text-primary-100 bg-primary-600 rounded-lg hover:bg-primary-700 hover:text-white font-bold text-sm">OK</a>
+    </div>
+  </div>
+</div>

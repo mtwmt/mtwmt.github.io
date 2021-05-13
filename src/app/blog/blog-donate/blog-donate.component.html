@@ -1,0 +1,20 @@
+<div class="donate">
+  <div class="donate__text" [ngClass]="showQR ? 'blur':''">Donate</div>
+  <ul class="donate__box list pos-f" [ngClass]="showQR ? 'blur':''">
+    <li (click)="onQrcode('assets/images/qrcode/jkopay.jpg')" id="jkopay" qr="/images/qrcode/jkopay.jpg"></li>
+    <li (click)="onQrcode('assets/images/qrcode/linepay.jpg')" id="linepay" qr="/images/qrcode/linepay.jpg"></li>
+    <li (click)="onQrcode('assets/images/qrcode/twpay.jpg')" id="twpay" qr="/images/qrcode/twpay.jpg"></li>
+  </ul>
+  <div class="msg pos-f">
+    如果這整篇文章有幫助到你的話 也歡迎請我喝杯飲料 ^_^
+  </div>
+  <div class="donate__qrcode pos-f left-100"  [ngStyle]="{display: (delay$ | async) ? 'block':'none'}">
+    <div
+      style="background-image: url('/images/qrcode/twpay.jpg')"
+      [ngStyle]="{'background-image': 'url(' + qrCodePath + ')'}"
+      (click)="onHideQrCode()"
+       class="donate__qrcode-box"
+      [ngClass]="showQR ? 'showQR':'hideQR'"
+    ></div>
+  </div>
+</div>

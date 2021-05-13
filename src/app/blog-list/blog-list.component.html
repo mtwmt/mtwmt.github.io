@@ -1,0 +1,42 @@
+<div class="block lg:flex lg:flex-row-reverse lg:space-x-2 py-4 mb-10">
+  <div class="w-full lg:w-1/4 px-4 lg:pl-0">
+    <app-breadcrumb></app-breadcrumb>
+
+    <app-blog-list-tag></app-blog-list-tag>
+  </div>
+  <div class="w-full lg:w-3/4 px-4 lg:pl-0">
+    <ng-container *ngIf="blogListService?.blogPageList$ | async as list">
+      <div class="shadow p-4 mb-4 bg-white" *ngFor="let link of list">
+        <div class="text-left">
+          <div class="flex justify-between items-center">
+            <span class="text-gray-700 text-sm">
+              {{ link.date | date: 'mediumDate' }}
+              <span *ngIf="link.readingTime">
+                - {{ link.readingTime | number: '1.0-0' }} {{ link.readingTime > 1 ? 'mins' : 'min' }}
+              </span>
+            </span>
+
+            <a
+              *ngIf="link.categories?.length"
+              class="px-2 py-1 text-sm text-secondary font-bold rounded 
+                hover:text-white hover:bg-primary-500 transition-colors duration-200 ease-in-out cursor-pointer"
+              [routerLink]="['/categories', link.categories[0].toLowerCase()]"
+            >
+              {{ link.categories[0] }}
+            </a>
+           
+          </div>
+          <div class="mt-2">
+            <a
+              [routerLink]="[link.route]"
+              class="text-gray-600 font-bold text-xl"
+            >
+              {{ link.title }}
+            </a>
+          </div>
+        </div>
+      </div>
+      <app-blog-list-pagination></app-blog-list-pagination>
+    </ng-container>
+  </div>
+</div>

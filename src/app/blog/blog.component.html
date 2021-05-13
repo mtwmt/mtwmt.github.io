@@ -1,0 +1,48 @@
+<ng-container *ngIf="blog$ | async as route">
+  <app-meta
+    [title]="route.title"
+    [route]="route.route"
+    [tags]="route.tags"
+    [keywords]="route.keywords"
+    [twitterImage]="route.route"
+    [ogImage]="route.route"
+    [articlePublishedAt]="route.date"
+    [articleUpdatedAt]="route.date"
+  ></app-meta>
+  <article class="relative py-4 max-w-screen-xl mx-auto">
+    <div class="max-w-container mx-2">
+      <header class="px-4 lg:px-2">
+        <div class="prose text-sm max-w-none md:prose-lgspace-y-1">
+          <time [dateTime]="route.date">
+            {{ route.date | date: 'dd MMMM yyyy' }}
+          </time>
+          <h1 class="font-bold text-gray-700 leading-relaxed">
+            {{ route.title }}
+          </h1>
+        </div>
+      </header>
+      <div class="block lg:flex lg:flex-row-reverse lg:space-x-2">
+        <div class="w-full lg:w-1/4 px-4 lg:pl-0">
+          <div class="sticky top-32 mb-4">
+            <app-blog-nav></app-blog-nav>
+            <app-blog-tag></app-blog-tag>
+          </div>
+        </div>
+        <div class="w-full lg:w-3/4 px-4 lg:pl-0">
+          <div class="prose ">
+            <scully-content></scully-content>
+            <app-blog-donate></app-blog-donate>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</ng-container>
+<a
+  class="gotop"
+  [ngStyle]="{ opacity: st >= hh ? 1 : 0 }"
+  *ngIf="(scullyRoutesService.getCurrent() | async)?.route as route"
+  (click)="scrollToTop(route)"
+>
+  <i class="btn bg-white"></i>
+</a>

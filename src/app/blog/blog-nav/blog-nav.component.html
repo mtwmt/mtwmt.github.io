@@ -1,0 +1,34 @@
+<!-- <h2 class="text-xl font-semibold">menu</h2> -->
+<ng-container *ngIf="nav$ | async as nav">
+  <p class="text-xl font-semibold" *ngIf="!!nav.length">索引</p>
+  <ul class="">
+    <li *ngFor="let header of nav" class="cursor-pointer">
+      <a
+        [ngClass]="[headerClasses(header.localName), active(route, header.id)]"
+        *ngIf="(scullyRoutesService.getCurrent() | async)?.route as route"
+        (click)="scrollTo(route, header.id)"
+      >
+        {{ header.innerHTML }}
+      </a>
+    </li>
+  </ul>
+  <!-- <ng-container *ngIf="!!(link$ | async)?.next">
+    <p class="mt-4 text-lg font-semibold">上一篇</p>
+    <p>
+      <a
+        [routerLink]="(link$ | async)?.next.route"
+        >{{ (link$ | async)?.next.title }}</a
+      >
+    </p>
+  </ng-container>
+  <ng-container *ngIf="!!(link$ | async)?.prev">
+    <p class="mt-4 text-lg font-semibold">下一篇</p>
+    <p>
+      <a
+        [routerLink]="(link$ | async)?.prev.route"
+        >{{ (link$ | async)?.prev.title }}
+      </a>
+    </p>
+  </ng-container>
+</ng-container> -->
+<hr class="block lg:hidden my-8" />

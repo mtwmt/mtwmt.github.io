@@ -1,0 +1,49 @@
+@import 'tailwindcss/base';
+// @import './assets/code.scss';
+@import './assets/custom-tailwind-base.css';
+
+@import 'prismjs/themes/prism-tomorrow';
+@import 'prismjs/plugins/toolbar/prism-toolbar';
+// @import 'prismjs/plugins/diff-highlight/prism-diff-highlight';
+
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700';
+
+//px to rem
+@function rem($target, $context: 16px){
+  @if $target == 0 { @return 0 }
+  @return ($target / $context)+ 0rem;
+}
+
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out,
+    border-color 200ms ease-in-out, fill 200ms ease-in-out,
+    stroke 200ms ease-in-out;
+}
+
+.btn {
+  @apply relative py-1 px-4 inline-block font-dosis bg-transparent border-2 border-oreilly-900 rounded-md shadow-btn text-primary-500
+  transition duration-300 ease-in-out uppercase font-dosis;
+  &:hover, &-active {
+    top: 2px;
+    left: 2px;
+    box-shadow: 2px 2px 0 transparent;
+  }
+  &.disabled {
+    @apply bg-gray-100 border-gray-400 text-gray-400;
+    box-shadow: 0px 0px 0 transparent;
+    &:hover, &-active {
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.card {
+  @apply rounded-md border-2 border-solid border-gray-300 shadow-card;
+}

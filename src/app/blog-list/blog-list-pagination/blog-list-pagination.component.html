@@ -1,0 +1,47 @@
+<!-- class="mx-1 px-3 py-2 bg-gray-50 text-gray-500 font-medium rounded-md cursor-not-allowed" -->
+<div class="mt-8">
+  <div class="text-right space-x-2">
+    <a
+      class="btn bg-white mb-4"
+      *ngIf="correctPage !== 1"
+      [routerLink]="['./']"
+      [queryParams]="{ page: 1 }"
+    >
+    |<<
+    </a>
+    <a
+      class="btn bg-white mb-4"
+      *ngIf="correctPage > 1"
+      [routerLink]="['./']"
+      [queryParams]="{ page: correctPage - 1 }"
+    >
+    <<
+    </a>
+    <a
+      *ngFor="let page of total"
+      class="btn bg-white mb-4"
+      [class.btn-active]="page === correctPage"
+      routerLinkActive="active"
+      [routerLink]="['./']"
+      [queryParams]="{ page: page }"
+    >
+      {{ page }}
+    </a>
+    <a
+      class="btn bg-white mb-4"
+      *ngIf="correctPage < totalPage"
+      [routerLink]="['./']"
+      [queryParams]="{ page: correctPage + 1 }"
+    >
+    >>
+    </a>
+    <a
+      class="btn bg-white mb-4"
+      *ngIf="correctPage !== totalPage"
+      [routerLink]="['./']"
+      [queryParams]="{ page: totalPage }"
+    >
+    >>|
+    </a>
+  </div>
+</div>

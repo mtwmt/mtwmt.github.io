@@ -1,0 +1,36 @@
+<div class="block lg:flex lg:flex-row-reverse lg:space-x-2 py-4 mb-10">
+  <div class="w-full lg:w-1/4 px-4 lg:pl-0">
+    <app-blog-list-tag></app-blog-list-tag>
+  </div>
+  <div class="w-full lg:w-3/4 px-4 lg:pl-0">
+    <ul>
+      <li class="py-2" *ngFor="let link of tagList$ | async">
+        <a [routerLink]="[link.route]">{{ link.date }}　{{ link.title }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- <div class="flex flex-col divide-y divide-gray-400">
+  <div class="py-4" *ngFor="let link of tagList$ | async">
+    <div class="flex justify-between items-center">
+      <span class="font-light text-gray-medium">
+        {{ link.date | date: 'mediumDate' }}
+        <span *ngIf="link.readingTime">
+          - {{ link.readingTime | number: '1.0-0' }} min<ng-container *ngIf="link.readingTime > 1">s</ng-container>
+        </span>
+      </span>
+    </div>
+    <div class="mt-2">
+      <a
+        class="text-2xl font-bold hover:text-gray-medium transition-colors duration-200 ease-in-out"
+        [routerLink]="[link.route]"
+      >
+        {{ link.title }}
+      </a>
+      <p class="mt-2 font-thin text-gray-dark">
+        {{ link.description }}
+      </p>
+    </div>
+  </div>
+</div> -->
