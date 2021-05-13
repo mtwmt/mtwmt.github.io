@@ -1150,6 +1150,10 @@ div.code-toolbar > .toolbar span:focus {
   margin-right: auto !important;
 }
 
+.mt-1{
+  margin-top: 0.25rem !important;
+}
+
 .mb-1{
   margin-bottom: 0.25rem !important;
 }
@@ -1457,6 +1461,11 @@ div.code-toolbar > .toolbar span:focus {
   color: rgba(239, 68, 68, var(--tw-text-opacity)) !important;
 }
 
+.text-blue-500{
+  --tw-text-opacity: 1 !important;
+  color: rgba(59, 130, 246, var(--tw-text-opacity)) !important;
+}
+
 .text-primary-100{
   --tw-text-opacity: 1 !important;
   color: rgba(179, 230, 230, var(--tw-text-opacity)) !important;
@@ -1750,16 +1759,6 @@ body {
 }
 
 @media (min-width: 640px){
-  .sm\:space-x-2 > :not([hidden]) ~ :not([hidden]){
-    --tw-space-x-reverse: 0 !important;
-    margin-right: calc(0.5rem * var(--tw-space-x-reverse)) !important;
-    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse))) !important;
-  }
-
-  .sm\:hidden{
-    display: none !important;
-  }
-
   .sm\:text-lg{
     font-size: 1.125rem !important;
     line-height: 1.75rem !important;
@@ -1769,14 +1768,15 @@ body {
     font-size: 3rem !important;
     line-height: 1 !important;
   }
-
-  .sm\:text-white{
-    --tw-text-opacity: 1 !important;
-    color: rgba(255, 255, 255, var(--tw-text-opacity)) !important;
-  }
 }
 
 @media (min-width: 768px){
+  .md\:space-x-2 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-x-reverse: 0 !important;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse)) !important;
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse))) !important;
+  }
+
   .md\:space-x-5 > :not([hidden]) ~ :not([hidden]){
     --tw-space-x-reverse: 0 !important;
     margin-right: calc(1.25rem * var(--tw-space-x-reverse)) !important;
@@ -1795,6 +1795,10 @@ body {
     display: contents !important;
   }
 
+  .md\:hidden{
+    display: none !important;
+  }
+
   .md\:mx-auto{
     margin-left: auto !important;
     margin-right: auto !important;
@@ -1806,6 +1810,11 @@ body {
 
   .md\:pr-10{
     padding-right: 2.5rem !important;
+  }
+
+  .md\:text-white{
+    --tw-text-opacity: 1 !important;
+    color: rgba(255, 255, 255, var(--tw-text-opacity)) !important;
   }
 
   .md\:w-1\/2{
