@@ -122,8 +122,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! zone.js/dist/zone */ "pDpN");
-/* harmony import */ var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! zone.js */ "m+po");
+/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(zone_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var zone_js_dist_task_tracking__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zone.js/dist/task-tracking */ "FGvd");
 /* harmony import */ var zone_js_dist_task_tracking__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(zone_js_dist_task_tracking__WEBPACK_IMPORTED_MODULE_1__);
 /**
@@ -193,10 +193,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "pDpN":
-/*!*****************************************************!*\
-  !*** ./node_modules/zone.js/dist/zone-evergreen.js ***!
-  \*****************************************************/
+/***/ "m+po":
+/*!***********************************************!*\
+  !*** ./node_modules/zone.js/fesm2015/zone.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

@@ -303,6 +303,20 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
+      /* harmony import */
+
+
+      var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @fortawesome/angular-fontawesome */
+      "6NWb");
+
+      var _c0 = function _c0() {
+        return ["fab", "github"];
+      };
+
+      var _c1 = function _c1() {
+        return ["fas", "at"];
+      };
 
       var AboutComponent = /*#__PURE__*/function () {
         function AboutComponent() {
@@ -324,9 +338,9 @@
       AboutComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: AboutComponent,
         selectors: [["app-about"]],
-        decls: 28,
-        vars: 0,
-        consts: [[1, "max-w-2xl", "m-auto", "content", "form", "bg-white", "p-6", "my-10", "relative"], [1, "text-2xl", "text-gray-900", "font-semibold"], [1, "mt-2"], [1, "mt-6", "text-lg", "font-bold"], [1, "mt-1"], [1, "mt-6"], ["href", "//github.com/mtwmt", "target", "_blank", 1, "text-blue-500"], ["href", "mailto:mtwmt@hotmail.com", "target", "_blank", 1, "text-blue-500"]],
+        decls: 25,
+        vars: 4,
+        consts: [[1, "max-w-2xl", "m-auto", "content", "form", "bg-white", "p-6", "my-10", "relative"], [1, "text-2xl", "text-gray-900", "font-semibold"], [1, "mt-2"], [1, "mt-6", "text-lg", "font-bold"], [1, "mt-1"], [1, "mt-6"], [1, "mt-6", "space-x-4"], ["href", "//github.com/mtwmt", "target", "_blank", 1, "text-blue-500"], ["size", "3x", 1, "text-gray-500", "hover:text-gray-800", "transition", "duration-300", 3, "icon"], ["href", "mailto:mtwmt@hotmail.com", "target", "_blank"]],
         template: function AboutComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -389,25 +403,17 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "p", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "GitHub\uFF1A");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "a", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "a", 6);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "https://github.com/mtwmt");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](22, "fa-icon", 8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "a", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "p");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Mail\uFF1A");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "a", 7);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "mtwmt@hotmail.com");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "fa-icon", 8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -415,7 +421,18 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](22);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](2, _c0));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](3, _c1));
+          }
         },
+        directives: [_fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FaIconComponent"]],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhYm91dC5jb21wb25lbnQuc2NzcyJ9 */"]
       });
       /***/
@@ -670,7 +687,7 @@
        * This import should be commented out in production mode because it will have a negative impact
        * on performance if an error is thrown.
        */
-      // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+      // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 
       /***/
     },
@@ -1695,15 +1712,41 @@
       var _contact_contact_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ./contact/contact.component */
       "bzTf");
+      /* harmony import */
+
+
+      var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      /*! @fortawesome/angular-fontawesome */
+      "6NWb");
+      /* harmony import */
+
+
+      var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      /*! @fortawesome/free-solid-svg-icons */
+      "wHSu");
+      /* harmony import */
+
+
+      var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      /*! @fortawesome/free-regular-svg-icons */
+      "twK/");
+      /* harmony import */
+
+
+      var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      /*! @fortawesome/free-brands-svg-icons */
+      "8tEE");
 
       var EnvironmentToken = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('ENVIRONMENT');
 
-      var AppModule = function AppModule() {
+      var AppModule = function AppModule(library) {
         _classCallCheck(this, AppModule);
+
+        library.addIconPacks(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_16__["fas"], _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_17__["far"], _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_18__["fab"]);
       };
 
       AppModule.ɵfac = function AppModule_Factory(t) {
-        return new (t || AppModule)();
+        return new (t || AppModule)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_15__["FaIconLibrary"]));
       };
 
       AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
@@ -1712,18 +1755,18 @@
       });
       AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
         providers: [],
-        imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_13__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"], _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_5__["ScullyLibModule"].forRoot({
+        imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_13__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_10__["SharedModule"], _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_15__["FontAwesomeModule"], _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_5__["ScullyLibModule"].forRoot({
           useTransferState: true,
           alwaysMonitor: true
         }), _angular_service_worker__WEBPACK_IMPORTED_MODULE_8__["ServiceWorkerModule"].register('ngsw-worker.js', {
           enabled: src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].production
-        }), _shared_shared_module__WEBPACK_IMPORTED_MODULE_10__["SharedModule"]]]
+        })]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](AppModule, {
           declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _about_about_component__WEBPACK_IMPORTED_MODULE_4__["AboutComponent"], _portfolio_portfolio_component__WEBPACK_IMPORTED_MODULE_7__["PortfolioComponent"], _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_12__["NotFoundComponent"], _contact_contact_component__WEBPACK_IMPORTED_MODULE_14__["ContactComponent"]],
-          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_13__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"], _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_5__["ScullyLibModule"], _angular_service_worker__WEBPACK_IMPORTED_MODULE_8__["ServiceWorkerModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_10__["SharedModule"]]
+          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_13__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_10__["SharedModule"], _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_15__["FontAwesomeModule"], _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_5__["ScullyLibModule"], _angular_service_worker__WEBPACK_IMPORTED_MODULE_8__["ServiceWorkerModule"]]
         });
       })();
       /***/
