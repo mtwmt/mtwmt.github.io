@@ -11,6 +11,7 @@ import { BlogTagComponent } from './blog-tag/blog-tag.component';
 import { BlogListCategoriesComponent } from '../blog-list/blog-list-categories/blog-list-categories.component';
 import { BlogListPaginationComponent } from '../blog-list/blog-list-pagination/blog-list-pagination.component';
 import { BlogListComponent } from '../blog-list/blog-list.component';
+import { BlogCommentsComponent } from './blog-comments/blog-comments.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { BlogListComponent } from '../blog-list/blog-list.component';
     BlogComponent,
     BlogNavComponent,
     BlogDonateComponent,
-    BlogTagComponent],
+    BlogTagComponent,
+    BlogCommentsComponent
+  ],
   imports: [CommonModule, BlogRoutingModule, ScullyLibModule, SharedModule],
 
 })

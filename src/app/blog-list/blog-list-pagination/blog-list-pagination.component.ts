@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { faCheese, faCoffee, faSearch, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { Subject } from 'rxjs';
 import { takeUntil, pluck, switchMap, map, tap } from 'rxjs/operators';
 import { BlogListService } from '../blog-list.service';
@@ -9,7 +10,7 @@ import { BlogListService } from '../blog-list.service';
   templateUrl: './blog-list-pagination.component.html',
   styleUrls: ['./blog-list-pagination.component.scss']
 })
-export class BlogListPaginationComponent implements OnInit {
+export class BlogListPaginationComponent implements OnInit, OnDestroy {
 
   protected destroy$ = new Subject();
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ScullyRoute } from '@scullyio/ng-lib';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -12,9 +11,7 @@ import { BlogListService } from './blog-list.service';
 })
 export class BlogListComponent implements OnInit {
   links$: Observable<ScullyRoute[]>;
-
   assetsUrl = environment.assetsUrl;
-
 
   constructor(
     public blogListService: BlogListService

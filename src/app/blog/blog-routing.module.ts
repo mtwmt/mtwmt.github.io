@@ -9,15 +9,13 @@ const routes: Routes = [
   {
     path: '',
     component: BlogListComponent,
-    children: [
-      {
-        path: ':slug',
-        component: BlogComponent,
-        data: {
-          breadcrumb: 'categories'
-        }
-      },
-    ]
+  },
+  {
+    path: ':slug',
+    component: BlogComponent,
+    data: {
+      breadcrumb: 'categories'
+    }
   },
   {
     path: '**',

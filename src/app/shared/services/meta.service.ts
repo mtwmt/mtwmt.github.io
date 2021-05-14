@@ -143,23 +143,23 @@ export class MetaService {
     });
   }
 
-  private twitterCard(config: MetaConfig) {
-    this.meta.updateTag({
-      name: 'twitter:card',
-      content: 'summary_large_image',
-    });
-    this.meta.updateTag({ name: 'twitter:site', content: '@notiz_dev' });
-    this.meta.updateTag({ name: 'twitter:creator', content: '@notiz_dev' });
-    this.meta.updateTag({ name: 'twitter:title', content: config.title });
-    this.meta.updateTag({
-      name: 'twitter:description',
-      content: config.description,
-    });
-    this.meta.updateTag({
-      name: 'twitter:image',
-      content: config.twitter_image || config.image,
-    });
-  }
+  // private twitterCard(config: MetaConfig) {
+  //   this.meta.updateTag({
+  //     name: 'twitter:card',
+  //     content: 'summary_large_image',
+  //   });
+  //   this.meta.updateTag({ name: 'twitter:site', content: '@notiz_dev' });
+  //   this.meta.updateTag({ name: 'twitter:creator', content: '@notiz_dev' });
+  //   this.meta.updateTag({ name: 'twitter:title', content: config.title });
+  //   this.meta.updateTag({
+  //     name: 'twitter:description',
+  //     content: config.description,
+  //   });
+  //   this.meta.updateTag({
+  //     name: 'twitter:image',
+  //     content: config.twitter_image || config.image,
+  //   });
+  // }
 
   private absoluteImageUrl(image: string) {
     return `${environment.url}/${image}`;

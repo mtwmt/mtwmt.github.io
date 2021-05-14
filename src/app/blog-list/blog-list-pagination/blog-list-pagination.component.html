@@ -1,4 +1,5 @@
 <!-- class="mx-1 px-3 py-2 bg-gray-50 text-gray-500 font-medium rounded-md cursor-not-allowed" -->
+
 <div class="mt-8">
   <div class="text-right space-x-2">
     <a
@@ -7,7 +8,7 @@
       [routerLink]="['./']"
       [queryParams]="{ page: 1 }"
     >
-    |<<
+      <fa-icon [icon]="['fas', 'angle-double-left']"></fa-icon>
     </a>
     <a
       class="btn bg-white mb-4"
@@ -15,7 +16,7 @@
       [routerLink]="['./']"
       [queryParams]="{ page: correctPage - 1 }"
     >
-    <<
+      <fa-icon [icon]="['fas', 'angle-left']"></fa-icon>
     </a>
     <a
       *ngFor="let page of total"
@@ -33,7 +34,7 @@
       [routerLink]="['./']"
       [queryParams]="{ page: correctPage + 1 }"
     >
-    >>
+      <fa-icon [icon]="['fas', 'angle-right']"></fa-icon>
     </a>
     <a
       class="btn bg-white mb-4"
@@ -41,7 +42,7 @@
       [routerLink]="['./']"
       [queryParams]="{ page: totalPage }"
     >
-    >>|
+      <fa-icon [icon]="['fas', 'angle-double-right']"></fa-icon>
     </a>
   </div>
 </div>

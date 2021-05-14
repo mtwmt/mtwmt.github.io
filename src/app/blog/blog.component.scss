@@ -87,7 +87,8 @@
 }
 
 a {
-  display: block;
+  margin: 0 2px;
+  display: inline-block;
   text-decoration: underline;
   transition: 0.3s;
   &:hover {
