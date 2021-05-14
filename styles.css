@@ -811,25 +811,9 @@ div.code-toolbar > .toolbar span:focus {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse))) !important;
 }
 
-.divide-y > :not([hidden]) ~ :not([hidden]){
-  --tw-divide-y-reverse: 0 !important;
-  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse))) !important;
-  border-bottom-width: calc(1px * var(--tw-divide-y-reverse)) !important;
-}
-
-.divide-gray-400 > :not([hidden]) ~ :not([hidden]){
-  --tw-divide-opacity: 1 !important;
-  border-color: rgba(156, 163, 175, var(--tw-divide-opacity)) !important;
-}
-
 .bg-white{
   --tw-bg-opacity: 1 !important;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity)) !important;
-}
-
-.bg-gray-50{
-  --tw-bg-opacity: 1 !important;
-  background-color: rgba(249, 250, 251, var(--tw-bg-opacity)) !important;
 }
 
 .bg-gray-100{
@@ -915,10 +899,6 @@ div.code-toolbar > .toolbar span:focus {
   border-radius: 0.25rem !important;
 }
 
-.rounded-md{
-  border-radius: 0.375rem !important;
-}
-
 .rounded-lg{
   border-radius: 0.5rem !important;
 }
@@ -963,10 +943,6 @@ div.code-toolbar > .toolbar span:focus {
   cursor: pointer !important;
 }
 
-.cursor-not-allowed{
-  cursor: not-allowed !important;
-}
-
 .block{
   display: block !important;
 }
@@ -1009,14 +985,6 @@ div.code-toolbar > .toolbar span:focus {
 
 .justify-between{
   justify-content: space-between !important;
-}
-
-.font-thin{
-  font-weight: 100 !important;
-}
-
-.font-light{
-  font-weight: 300 !important;
 }
 
 .font-medium{
@@ -1115,11 +1083,6 @@ div.code-toolbar > .toolbar span:focus {
   margin: auto !important;
 }
 
-.mx-1{
-  margin-left: 0.25rem !important;
-  margin-right: 0.25rem !important;
-}
-
 .my-2{
   margin-top: 0.5rem !important;
   margin-bottom: 0.5rem !important;
@@ -1212,10 +1175,6 @@ div.code-toolbar > .toolbar span:focus {
 
 .mb-10{
   margin-bottom: 2.5rem !important;
-}
-
-.mt-20{
-  margin-top: 5rem !important;
 }
 
 .mb-24{
@@ -1485,14 +1444,6 @@ div.code-toolbar > .toolbar span:focus {
   color: var(--secondary) !important;
 }
 
-.text-gray-medium{
-  color: var(--gray-medium) !important;
-}
-
-.text-gray-dark{
-  color: var(--gray-dark) !important;
-}
-
 .hover\:text-black:hover{
   --tw-text-opacity: 1 !important;
   color: rgba(0, 0, 0, var(--tw-text-opacity)) !important;
@@ -1506,10 +1457,6 @@ div.code-toolbar > .toolbar span:focus {
 .hover\:text-primary-800:hover{
   --tw-text-opacity: 1 !important;
   color: rgba(0, 144, 144, var(--tw-text-opacity)) !important;
-}
-
-.hover\:text-gray-medium:hover{
-  color: var(--gray-medium) !important;
 }
 
 .not-italic{
