@@ -771,34 +771,6 @@ div.code-toolbar > .toolbar span:focus {
   text-decoration: none;
 }
 
-.container{
-  width: 100%;
-}
-
-@media (min-width: 640px){
-  .container{
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px){
-  .container{
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px){
-  .container{
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px){
-  .container{
-    max-width: 1280px;
-  }
-}
-
 .space-x-2 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0 !important;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse)) !important;
@@ -903,10 +875,6 @@ div.code-toolbar > .toolbar span:focus {
   border-radius: 0.5rem !important;
 }
 
-.rounded-xl{
-  border-radius: 0.75rem !important;
-}
-
 .rounded-full{
   border-radius: 9999px !important;
 }
@@ -961,14 +929,6 @@ div.code-toolbar > .toolbar span:focus {
 
 .hidden{
   display: none !important;
-}
-
-.flex-row-reverse{
-  flex-direction: row-reverse !important;
-}
-
-.flex-col{
-  flex-direction: column !important;
 }
 
 .items-center{
@@ -1093,11 +1053,6 @@ div.code-toolbar > .toolbar span:focus {
   margin-right: 0.5rem !important;
 }
 
-.my-4{
-  margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
-}
-
 .my-8{
   margin-top: 2rem !important;
   margin-bottom: 2rem !important;
@@ -1169,10 +1124,6 @@ div.code-toolbar > .toolbar span:focus {
   margin-top: 2.5rem !important;
 }
 
-.mr-10{
-  margin-right: 2.5rem !important;
-}
-
 .mb-10{
   margin-bottom: 2.5rem !important;
 }
@@ -1183,18 +1134,6 @@ div.code-toolbar > .toolbar span:focus {
 
 .mt-36{
   margin-top: 9rem !important;
-}
-
-.mr-auto{
-  margin-right: auto !important;
-}
-
-.ml-auto{
-  margin-left: auto !important;
-}
-
-.-mt-3{
-  margin-top: -0.75rem !important;
 }
 
 .max-w-none{
@@ -1299,10 +1238,6 @@ div.code-toolbar > .toolbar span:focus {
   padding-right: 2.5rem !important;
 }
 
-.pointer-events-none{
-  pointer-events: none !important;
-}
-
 .absolute{
   position: absolute !important;
 }
@@ -1332,21 +1267,12 @@ div.code-toolbar > .toolbar span:focus {
   top: 8rem !important;
 }
 
-.top-1\/2{
-  top: 50% !important;
-}
-
 *{
   --tw-shadow: 0 0 #0000;
 }
 
 .shadow{
   --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
-}
-
-.shadow-md{
-  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
@@ -1379,10 +1305,6 @@ div.code-toolbar > .toolbar span:focus {
 
 .text-right{
   text-align: right !important;
-}
-
-.text-justify{
-  text-align: justify !important;
 }
 
 .text-white{
@@ -1467,10 +1389,6 @@ div.code-toolbar > .toolbar span:focus {
   visibility: visible !important;
 }
 
-.w-1{
-  width: 0.25rem !important;
-}
-
 .w-6{
   width: 1.5rem !important;
 }
@@ -1501,34 +1419,6 @@ div.code-toolbar > .toolbar span:focus {
 
 .z-999{
   z-index: 999 !important;
-}
-
-.grid-cols-9{
-  grid-template-columns: repeat(9, minmax(0, 1fr)) !important;
-}
-
-.col-start-1{
-  grid-column-start: 1 !important;
-}
-
-.col-start-5{
-  grid-column-start: 5 !important;
-}
-
-.col-start-6{
-  grid-column-start: 6 !important;
-}
-
-.col-end-5{
-  grid-column-end: 5 !important;
-}
-
-.col-end-6{
-  grid-column-end: 6 !important;
-}
-
-.col-end-10{
-  grid-column-end: 10 !important;
 }
 
 .transform{
@@ -1747,21 +1637,8 @@ body {
     display: flex !important;
   }
 
-  .md\:grid{
-    display: grid !important;
-  }
-
-  .md\:contents{
-    display: contents !important;
-  }
-
   .md\:hidden{
     display: none !important;
-  }
-
-  .md\:mx-auto{
-    margin-left: auto !important;
-    margin-right: auto !important;
   }
 
   .md\:max-w-5xl{

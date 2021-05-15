@@ -2,3 +2,24 @@
   @if $target == 0 { @return 0 }
   @return ($target / $context)+ 0rem;
 }
+
+%clearfix {
+	&:after, &:before {
+		content: '';
+		display: block;
+		width: 100%;
+		clear: both;
+	}
+}
+
+@mixin pc {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin pad {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
