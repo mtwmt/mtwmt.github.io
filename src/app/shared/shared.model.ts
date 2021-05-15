@@ -1,4 +1,4 @@
-import { ScullyRoute } from "@scullyio/ng-lib";
+import { ScullyRoute } from '@scullyio/ng-lib';
 
 export interface Frontmatter extends ScullyRoute {
   description?: string;

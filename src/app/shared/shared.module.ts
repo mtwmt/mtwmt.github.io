@@ -6,12 +6,24 @@ import { RouterModule } from '@angular/router';
 import { ModalComponent } from './components/modal/modal.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { GotopComponent } from './components/gotop/gotop.component';
 
 @NgModule({
-  declarations: [ThemeToggleComponent, MetaComponent, ModalComponent, BreadcrumbComponent],
+  declarations: [
+    ThemeToggleComponent,
+    MetaComponent,
+    ModalComponent,
+    BreadcrumbComponent,
+    GotopComponent,
+  ],
   imports: [CommonModule, RouterModule, FontAwesomeModule],
-  exports: [ThemeToggleComponent, MetaComponent, ModalComponent, BreadcrumbComponent, FontAwesomeModule],
+  exports: [
+    ThemeToggleComponent,
+    MetaComponent,
+    ModalComponent,
+    BreadcrumbComponent,
+    FontAwesomeModule,
+    GotopComponent,
+  ],
 })
-export class SharedModule {
-
-}
+export class SharedModule {}

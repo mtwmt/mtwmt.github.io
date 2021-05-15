@@ -1,0 +1,38 @@
+@import './../../../../assets/scss/common';
+
+.gotop {
+  position: fixed;
+  bottom: rem(64px);
+  left: 50%;
+  margin-left: rem(450px);
+  opacity: 1;
+  transition: 0.3s;
+  
+  .btn {
+    width: rem(40px);
+    height: rem(40px);
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      margin-left: rem(-4px);
+      border-radius: rem(3px);
+      content: '';
+      width: rem(16px);
+      height: rem(5px);
+      background: var(--primary);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(45deg);
+      margin-left: rem(4px);
+    }
+  }
+  @include pad {
+    right: rem(32px);
+    left: auto;
+    margin: 0;
+  }
+}

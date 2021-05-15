@@ -67,12 +67,6 @@ export class BlogComponent implements OnInit, AfterViewChecked, OnDestroy {
       )
       .subscribe(res => {
       });
-
-
-    this.blog$.subscribe(res => {
-      console.log('res', res);
-    });
-
   }
 
   ngAfterViewChecked(): void {
@@ -96,11 +90,4 @@ export class BlogComponent implements OnInit, AfterViewChecked, OnDestroy {
       behavior: 'smooth',
     });
   }
-
-  scrollToTop(url: string): void {
-    this.location.replaceState(`${url}`);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-
 }

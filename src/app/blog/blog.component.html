@@ -39,11 +39,4 @@
     </div>
   </article>
 </ng-container>
-<a
-  class="gotop"
-  [ngStyle]="{ opacity: st >= hh ? 1 : 0 }"
-  *ngIf="(scullyRoutesService.getCurrent() | async)?.route as route"
-  (click)="scrollToTop(route)"
->
-  <i class="btn bg-white"></i>
-</a>
+<app-gotop></app-gotop>

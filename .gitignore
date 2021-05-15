@@ -7,3 +7,4 @@ package-lock.json
 scully.log
 !src/app/blog
 *.log
+scully.website.config.js
