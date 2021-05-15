@@ -6,7 +6,7 @@ $primary: var(--primary);
 .navigation {
   @apply fixed;
   position: fixed;
-  z-index: 999;
+  z-index: 98;
   top: rem(120px);
   left: 50%;
   margin-left: rem(450px);

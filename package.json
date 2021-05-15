@@ -14,6 +14,13 @@
     "scully:serve": "npx scully serve",
     "deploy": "npm run build --prod && npm run scully && npx ngh --dir=dist/static"
   },
+  "keywords": [
+    "Angular",
+    "Scully",
+    "website",
+    "Blog"
+  ],
+  "author": "Mandy",
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.2.13",
