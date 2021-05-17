@@ -92,8 +92,7 @@ class BlogListComponent {
         this.blogListService = blogListService;
         this.assetsUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].assetsUrl;
     }
-    ngOnInit() {
-    }
+    ngOnInit() { }
 }
 BlogListComponent.ɵfac = function BlogListComponent_Factory(t) { return new (t || BlogListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_blog_list_service__WEBPACK_IMPORTED_MODULE_2__["BlogListService"])); };
 BlogListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: BlogListComponent, selectors: [["app-blog-list"]], decls: 6, vars: 3, consts: [[1, "block", "lg:flex", "lg:flex-row-reverse", "lg:space-x-2", "py-4", "mb-10"], [1, "w-full", "lg:w-1/4", "px-4", "lg:pl-0"], [1, "w-full", "lg:w-3/4", "px-4", "lg:pl-0"], [4, "ngIf"], ["class", "shadow p-4 mb-4 bg-white", 4, "ngFor", "ngForOf"], [1, "shadow", "p-4", "mb-4", "bg-white"], [1, "text-left"], [1, "flex", "justify-between", "items-center"], [1, "text-gray-700", "text-sm"], ["class", "px-2 py-1 text-sm text-secondary font-bold rounded \n                hover:text-white hover:bg-primary-500 transition-colors duration-200 ease-in-out cursor-pointer", 3, "routerLink", 4, "ngIf"], [1, "mt-2"], [1, "text-gray-600", "font-bold", "text-xl", 3, "routerLink"], [1, "px-2", "py-1", "text-sm", "text-secondary", "font-bold", "rounded", "hover:text-white", "hover:bg-primary-500", "transition-colors", "duration-200", "ease-in-out", "cursor-pointer", 3, "routerLink"]], template: function BlogListComponent_Template(rf, ctx) { if (rf & 1) {
@@ -460,10 +459,8 @@ Prism.languages.webmanifest = Prism.languages.json;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlogRoutingModule", function() { return BlogRoutingModule; });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _blog_list_blog_list_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blog-list/blog-list.component */ "1SZ1");
-/* harmony import */ var _blog_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blog.component */ "LgBW");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
+/* harmony import */ var _blog_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blog.component */ "LgBW");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 
@@ -471,26 +468,26 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _blog_list_blog_list_component__WEBPACK_IMPORTED_MODULE_1__["BlogListComponent"],
+        loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./../blog-list/blog-list.module */ "zZIL")).then(m => m.BlogListModule),
     },
     {
         path: ':slug',
-        component: _blog_component__WEBPACK_IMPORTED_MODULE_2__["BlogComponent"],
+        component: _blog_component__WEBPACK_IMPORTED_MODULE_1__["BlogComponent"],
         data: {
-            breadcrumb: 'categories'
-        }
+            breadcrumb: 'categories',
+        },
     },
     {
         path: '**',
-        component: _blog_component__WEBPACK_IMPORTED_MODULE_2__["BlogComponent"],
-    }
+        component: _blog_component__WEBPACK_IMPORTED_MODULE_1__["BlogComponent"],
+    },
 ];
 class BlogRoutingModule {
 }
 BlogRoutingModule.ɵfac = function BlogRoutingModule_Factory(t) { return new (t || BlogRoutingModule)(); };
-BlogRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: BlogRoutingModule });
-BlogRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](BlogRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
+BlogRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: BlogRoutingModule });
+BlogRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](BlogRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
 
 
 /***/ }),
@@ -1210,16 +1207,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blog_nav_blog_nav_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blog-nav/blog-nav.component */ "v7c+");
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/shared.module */ "PCNd");
 /* harmony import */ var _blog_donate_blog_donate_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blog-donate/blog-donate.component */ "YDDJ");
-/* harmony import */ var _blog_list_blog_list_tag_blog_list_tag_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../blog-list/blog-list-tag/blog-list-tag.component */ "t4R7");
-/* harmony import */ var _blog_tag_blog_tag_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blog-tag/blog-tag.component */ "FJx7");
-/* harmony import */ var _blog_list_blog_list_categories_blog_list_categories_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../blog-list/blog-list-categories/blog-list-categories.component */ "sPeH");
-/* harmony import */ var _blog_list_blog_list_pagination_blog_list_pagination_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../blog-list/blog-list-pagination/blog-list-pagination.component */ "K2wa");
-/* harmony import */ var _blog_list_blog_list_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../blog-list/blog-list.component */ "1SZ1");
-/* harmony import */ var _blog_comments_blog_comments_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./blog-comments/blog-comments.component */ "cFPF");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-
+/* harmony import */ var _blog_tag_blog_tag_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./blog-tag/blog-tag.component */ "FJx7");
+/* harmony import */ var _blog_comments_blog_comments_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blog-comments/blog-comments.component */ "cFPF");
+/* harmony import */ var _blog_list_blog_list_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../blog-list/blog-list.module */ "zZIL");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 
@@ -1234,17 +1225,62 @@ __webpack_require__.r(__webpack_exports__);
 class BlogModule {
 }
 BlogModule.ɵfac = function BlogModule_Factory(t) { return new (t || BlogModule)(); };
-BlogModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineNgModule"]({ type: BlogModule });
-BlogModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineInjector"]({ imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _blog_routing_module__WEBPACK_IMPORTED_MODULE_2__["BlogRoutingModule"], _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_1__["ScullyLibModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"]]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵsetNgModuleScope"](BlogModule, { declarations: [_blog_list_blog_list_component__WEBPACK_IMPORTED_MODULE_11__["BlogListComponent"],
-        _blog_list_blog_list_pagination_blog_list_pagination_component__WEBPACK_IMPORTED_MODULE_10__["BlogListPaginationComponent"],
-        _blog_list_blog_list_tag_blog_list_tag_component__WEBPACK_IMPORTED_MODULE_7__["BlogListTagComponent"],
-        _blog_list_blog_list_categories_blog_list_categories_component__WEBPACK_IMPORTED_MODULE_9__["BlogListCategoriesComponent"],
-        _blog_component__WEBPACK_IMPORTED_MODULE_3__["BlogComponent"],
+BlogModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({ type: BlogModule });
+BlogModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ imports: [[
+            _angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
+            _blog_routing_module__WEBPACK_IMPORTED_MODULE_2__["BlogRoutingModule"],
+            _blog_list_blog_list_module__WEBPACK_IMPORTED_MODULE_9__["BlogListModule"],
+            _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_1__["ScullyLibModule"],
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"],
+        ]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵsetNgModuleScope"](BlogModule, { declarations: [_blog_component__WEBPACK_IMPORTED_MODULE_3__["BlogComponent"],
         _blog_nav_blog_nav_component__WEBPACK_IMPORTED_MODULE_4__["BlogNavComponent"],
         _blog_donate_blog_donate_component__WEBPACK_IMPORTED_MODULE_6__["BlogDonateComponent"],
-        _blog_tag_blog_tag_component__WEBPACK_IMPORTED_MODULE_8__["BlogTagComponent"],
-        _blog_comments_blog_comments_component__WEBPACK_IMPORTED_MODULE_12__["BlogCommentsComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _blog_routing_module__WEBPACK_IMPORTED_MODULE_2__["BlogRoutingModule"], _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_1__["ScullyLibModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"]] }); })();
+        _blog_tag_blog_tag_component__WEBPACK_IMPORTED_MODULE_7__["BlogTagComponent"],
+        _blog_comments_blog_comments_component__WEBPACK_IMPORTED_MODULE_8__["BlogCommentsComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
+        _blog_routing_module__WEBPACK_IMPORTED_MODULE_2__["BlogRoutingModule"],
+        _blog_list_blog_list_module__WEBPACK_IMPORTED_MODULE_9__["BlogListModule"],
+        _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_1__["ScullyLibModule"],
+        _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"]] }); })();
+
+
+/***/ }),
+
+/***/ "VV3S":
+/*!*******************************************************!*\
+  !*** ./src/app/blog-list/blog-list-routing.module.ts ***!
+  \*******************************************************/
+/*! exports provided: BlogListRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlogListRoutingModule", function() { return BlogListRoutingModule; });
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _blog_blog_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blog/blog.component */ "LgBW");
+/* harmony import */ var _blog_list_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blog-list.component */ "1SZ1");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _blog_list_component__WEBPACK_IMPORTED_MODULE_2__["BlogListComponent"],
+    },
+    {
+        path: '**',
+        component: _blog_blog_component__WEBPACK_IMPORTED_MODULE_1__["BlogComponent"],
+    },
+];
+class BlogListRoutingModule {
+}
+BlogListRoutingModule.ɵfac = function BlogListRoutingModule_Factory(t) { return new (t || BlogListRoutingModule)(); };
+BlogListRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: BlogListRoutingModule });
+BlogListRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](BlogListRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
 
 
 /***/ }),
@@ -2606,6 +2642,82 @@ Prism.languages.scss['atrule'].inside.rest = Prism.languages.scss;
 	});
 
 }());
+
+
+/***/ }),
+
+/***/ "mj2u":
+/*!**************************************************************************!*\
+  !*** ./src/app/blog-list/blog-list-search/blog-list-search.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: BlogListSearchComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlogListSearchComponent", function() { return BlogListSearchComponent; });
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _blog_list_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../blog-list.service */ "9eaD");
+
+
+
+
+
+
+
+const _c0 = ["input"];
+class BlogListSearchComponent {
+    constructor(router, blogListService) {
+        this.router = router;
+        this.blogListService = blogListService;
+        this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('');
+    }
+    ngOnInit() {
+        // this.blogListService.blogAllList$.subscribe(list => {
+        //   console.log('list', list);
+        // });
+        this.search.valueChanges
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["debounceTime"])(300), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["switchMap"])(v => {
+            return this.blogListService.blogAllList$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["map"])(list => {
+                console.log('filter', v, list);
+                return list.filter((e) => e.title.toLowerCase().includes(v.toLowerCase()));
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["switchMap"])(list => {
+                return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["fromEvent"])(this.inputElement.nativeElement, 'keydown').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["filter"])((e) => {
+                    return e.key === 'Enter';
+                }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["map"])(res => {
+                    return { list, fq: v };
+                }));
+            }));
+        }))
+            .subscribe(res => {
+            console.log('re111s', res);
+            this.blogListService.blogPageList$.next(res.list);
+            this.router.navigate(['blog'], { queryParams: { search: res.fq } });
+            // this.router.navigate([{ queryParams: { search: v }]);
+        });
+    }
+}
+BlogListSearchComponent.ɵfac = function BlogListSearchComponent_Factory(t) { return new (t || BlogListSearchComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_blog_list_service__WEBPACK_IMPORTED_MODULE_5__["BlogListService"])); };
+BlogListSearchComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: BlogListSearchComponent, selectors: [["app-blog-list-search"]], viewQuery: function BlogListSearchComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵviewQuery"](_c0, 1);
+    } if (rf & 2) {
+        let _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵloadQuery"]()) && (ctx.inputElement = _t.first);
+    } }, decls: 5, vars: 1, consts: [[1, "mb-4"], [1, "mb-1", "ml-2", "font-bold", "text-gray-700"], ["type", "search", "id", "", "placeholder", "search", 1, "border", "w-full", "p-2", 3, "formControl"], ["input", ""]], template: function BlogListSearchComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "h3", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "\u5217\u8868\u641C\u5C0B");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](3, "input", 2, 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("formControl", ctx.search);
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlDirective"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJibG9nLWxpc3Qtc2VhcmNoLmNvbXBvbmVudC5zY3NzIn0= */"] });
 
 
 /***/ }),
@@ -5457,6 +5569,50 @@ Prism.languages.js = Prism.languages.javascript;
 	}
 
 })();
+
+
+/***/ }),
+
+/***/ "zZIL":
+/*!***********************************************!*\
+  !*** ./src/app/blog-list/blog-list.module.ts ***!
+  \***********************************************/
+/*! exports provided: BlogListModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlogListModule", function() { return BlogListModule; });
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _blog_list_categories_blog_list_categories_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blog-list-categories/blog-list-categories.component */ "sPeH");
+/* harmony import */ var _blog_list_pagination_blog_list_pagination_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blog-list-pagination/blog-list-pagination.component */ "K2wa");
+/* harmony import */ var _blog_list_search_blog_list_search_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blog-list-search/blog-list-search.component */ "mj2u");
+/* harmony import */ var _blog_list_tag_blog_list_tag_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blog-list-tag/blog-list-tag.component */ "t4R7");
+/* harmony import */ var _blog_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blog-list.component */ "1SZ1");
+/* harmony import */ var _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @scullyio/ng-lib */ "sbAP");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/shared.module */ "PCNd");
+/* harmony import */ var _blog_list_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blog-list-routing.module */ "VV3S");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+
+
+
+
+
+
+
+
+class BlogListModule {
+}
+BlogListModule.ɵfac = function BlogListModule_Factory(t) { return new (t || BlogListModule)(); };
+BlogListModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineNgModule"]({ type: BlogListModule });
+BlogListModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({ imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _blog_list_routing_module__WEBPACK_IMPORTED_MODULE_8__["BlogListRoutingModule"], _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_6__["ScullyLibModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__["SharedModule"]]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵsetNgModuleScope"](BlogListModule, { declarations: [_blog_list_component__WEBPACK_IMPORTED_MODULE_5__["BlogListComponent"],
+        _blog_list_pagination_blog_list_pagination_component__WEBPACK_IMPORTED_MODULE_2__["BlogListPaginationComponent"],
+        _blog_list_tag_blog_list_tag_component__WEBPACK_IMPORTED_MODULE_4__["BlogListTagComponent"],
+        _blog_list_categories_blog_list_categories_component__WEBPACK_IMPORTED_MODULE_1__["BlogListCategoriesComponent"],
+        _blog_list_search_blog_list_search_component__WEBPACK_IMPORTED_MODULE_3__["BlogListSearchComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _blog_list_routing_module__WEBPACK_IMPORTED_MODULE_8__["BlogListRoutingModule"], _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_6__["ScullyLibModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__["SharedModule"]] }); })();
 
 
 /***/ })

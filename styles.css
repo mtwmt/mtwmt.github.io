@@ -310,6 +310,11 @@ Correct the cursor style of increment and decrement buttons in Safari.
 2. Correct the outline style in Safari.
 */
 
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
 /**
 Remove the inner padding in Chrome and Safari on macOS.
 */
@@ -488,8 +493,7 @@ textarea::placeholder {
   color: #9ca3af;
 }
 
-button,
-[role="button"] {
+button {
   cursor: pointer;
 }
 
@@ -828,11 +832,6 @@ div.code-toolbar > .toolbar span:focus {
   background-color: rgba(229, 231, 235, var(--tw-bg-opacity)) !important;
 }
 
-.hover\:bg-gray-500:hover{
-  --tw-bg-opacity: 1 !important;
-  background-color: rgba(107, 114, 128, var(--tw-bg-opacity)) !important;
-}
-
 .hover\:bg-blue-500:hover{
   --tw-bg-opacity: 1 !important;
   background-color: rgba(59, 130, 246, var(--tw-bg-opacity)) !important;
@@ -848,18 +847,9 @@ div.code-toolbar > .toolbar span:focus {
   background-color: rgba(0, 153, 153, var(--tw-bg-opacity)) !important;
 }
 
-.border-transparent{
-  border-color: transparent !important;
-}
-
 .border-white{
   --tw-border-opacity: 1 !important;
   border-color: rgba(255, 255, 255, var(--tw-border-opacity)) !important;
-}
-
-.border-gray-300{
-  --tw-border-opacity: 1 !important;
-  border-color: rgba(209, 213, 219, var(--tw-border-opacity)) !important;
 }
 
 .border-primary-600{
@@ -877,18 +867,6 @@ div.code-toolbar > .toolbar span:focus {
 
 .rounded-full{
   border-radius: 9999px !important;
-}
-
-.border-solid{
-  border-style: solid !important;
-}
-
-.border-2{
-  border-width: 2px !important;
-}
-
-.border-4{
-  border-width: 4px !important;
 }
 
 .border{
@@ -973,10 +951,6 @@ div.code-toolbar > .toolbar span:focus {
 
 .h-10{
   height: 2.5rem !important;
-}
-
-.h-16{
-  height: 4rem !important;
 }
 
 .h-0\.5{
@@ -1144,22 +1118,8 @@ div.code-toolbar > .toolbar span:focus {
   max-width: 42rem !important;
 }
 
-.max-w-full{
-  max-width: 100% !important;
-}
-
 .max-w-screen-xl{
   max-width: 1280px !important;
-}
-
-.object-cover{
-  -o-object-fit: cover !important;
-     object-fit: cover !important;
-}
-
-.object-center{
-  -o-object-position: center !important;
-     object-position: center !important;
 }
 
 .overflow-hidden{
@@ -1281,11 +1241,6 @@ div.code-toolbar > .toolbar span:focus {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
-.shadow-card-side{
-  --tw-shadow: 0px 2px 0 var(--gray-light) !important;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
-}
-
 *{
   --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
   --tw-ring-offset-width: 0px;
@@ -1385,20 +1340,12 @@ div.code-toolbar > .toolbar span:focus {
   font-style: normal !important;
 }
 
-.visible{
-  visibility: visible !important;
-}
-
 .w-6{
   width: 1.5rem !important;
 }
 
 .w-10{
   width: 2.5rem !important;
-}
-
-.w-16{
-  width: 4rem !important;
 }
 
 .w-96{
@@ -1697,10 +1644,6 @@ body {
 
   .lg\:mt-80{
     margin-top: 20rem !important;
-  }
-
-  .lg\:max-w-sm{
-    max-width: 24rem !important;
   }
 
   .lg\:px-0{
