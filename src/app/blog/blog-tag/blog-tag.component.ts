@@ -1,9 +1,8 @@
 import { pluck } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { ScullyRoutesService } from '@scullyio/ng-lib';
+import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
 import { Observable } from 'rxjs';
 import { BlogListService } from 'src/app/blog-list/blog-list.service';
-import { Frontmatter } from 'src/app/shared/shared.model';
 
 @Component({
   selector: 'app-blog-tag',
@@ -12,7 +11,7 @@ import { Frontmatter } from 'src/app/shared/shared.model';
 })
 export class BlogTagComponent implements OnInit {
 
-  blog$: Observable<Frontmatter> = this.scullyRoutesService.getCurrent()
+  blog$: Observable<ScullyRoute> = this.scullyRoutesService.getCurrent()
     .pipe(
       pluck('tags')
     );

@@ -7,6 +7,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GotopComponent } from './components/gotop/gotop.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { GotopComponent } from './components/gotop/gotop.component';
   ],
   imports: [CommonModule, RouterModule, FontAwesomeModule],
   exports: [
+    ReactiveFormsModule,
     ThemeToggleComponent,
     MetaComponent,
     ModalComponent,

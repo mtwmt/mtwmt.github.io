@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
 import { Observable } from 'rxjs';
-import { Frontmatter } from '../shared/shared.model';
 import { map } from 'rxjs/operators';
 import { latestByDate } from '../shared/operators/latest-by-date.operator';
 import { BehaviorSubject } from 'rxjs';

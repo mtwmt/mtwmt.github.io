@@ -16,7 +16,6 @@ import { Observable, fromEvent, Subject } from 'rxjs';
 import { tap, takeUntil, first, switchMap, map } from 'rxjs/operators';
 import { BlogListService } from '../blog-list/blog-list.service';
 import { HighlightService } from '../shared/services/highlight.service';
-import { Frontmatter } from '../shared/shared.model';
 
 declare let gtag: Function;
 
@@ -36,7 +35,7 @@ export class BlogComponent implements OnInit, AfterViewChecked, OnDestroy {
   @ViewChild('scully') scullyElement: any;
 
   title: string;
-  blog$: Observable<Frontmatter> = this.scullyRoutesService.getCurrent().pipe(
+  blog$: Observable<ScullyRoute> = this.scullyRoutesService.getCurrent().pipe(
     tap(page => {
       gtag('event', 'page_view', { page_title: page.title, page_path: page.route });
     }),

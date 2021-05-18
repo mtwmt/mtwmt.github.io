@@ -8,19 +8,20 @@ import { BlogComponent } from './blog.component';
 const routes: Routes = [
   {
     path: '',
-    component: BlogListComponent,
+    loadChildren: () =>
+      import('./../blog-list/blog-list.module').then(m => m.BlogListModule),
   },
   {
     path: ':slug',
     component: BlogComponent,
     data: {
-      breadcrumb: 'categories'
-    }
+      breadcrumb: 'categories',
+    },
   },
   {
     path: '**',
     component: BlogComponent,
-  }
+  },
 ];
 
 @NgModule({

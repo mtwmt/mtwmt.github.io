@@ -18,6 +18,5 @@ export class BlogListComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

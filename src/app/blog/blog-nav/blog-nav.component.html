@@ -1,6 +1,6 @@
 <!-- <h2 class="text-xl font-semibold">menu</h2> -->
 <ng-container *ngIf="nav$ | async as nav">
-  <p class="text-xl font-semibold" *ngIf="!!nav.length">索引</p>
+  <p class="text-xl font-semibold" *ngIf="!!nav.length">Content</p>
   <ul class="">
     <li *ngFor="let header of nav" class="cursor-pointer">
       <a

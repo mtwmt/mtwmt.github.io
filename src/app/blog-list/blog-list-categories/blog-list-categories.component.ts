@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ScullyRoutesService } from '@scullyio/ng-lib';
+import { ScullyRoute } from '@scullyio/ng-lib';
 import { Observable, of } from 'rxjs';
 import { map, pluck, switchMap } from 'rxjs/operators';
-import { Frontmatter } from 'src/app/shared/shared.model';
 import { BlogListService } from '../blog-list.service';
 
 @Component({
@@ -13,7 +12,7 @@ import { BlogListService } from '../blog-list.service';
 })
 export class BlogListCategoriesComponent implements OnInit {
 
-  tagList$: Observable<Frontmatter[]>;
+  tagList$: Observable<ScullyRoute[]>;
 
   constructor(
     private activatedRoute: ActivatedRoute,

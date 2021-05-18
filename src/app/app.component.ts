@@ -11,21 +11,22 @@ export class AppComponent implements OnInit {
 
   constructor(
     private readonly renderer: Renderer2,
-    readonly themeService: ThemeService,
+    readonly themeService: ThemeService
   ) {
     themeService.load();
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
-  }
-
-  public setOpen(isBoolean: boolean): void {
-    if (isBoolean) {
-      this.renderer.addClass(document.body, 'overflow-hidden');
-    } else {
-      this.renderer.removeClass(document.body, 'overflow-hidden');
+  public toggle(event?: any, block = false): void {
+    this.isOpen = !this.isOpen;
+    if (block) {
+      event.preventDefault();
     }
   }
 
+  public setNavigate(): void {
+    scroll(0, 0);
+    this.toggle();
+  }
 }
