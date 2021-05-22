@@ -7,6 +7,8 @@
 
   function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+  function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
   function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
   function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -592,24 +594,11 @@
 
           this.metaService = metaService;
           this.blogListService = blogListService;
-          this.foods = [{
-            value: 'steak-0',
-            label: 'Steak'
-          }, {
-            value: 'pizza-1',
-            label: 'Pizza'
-          }, {
-            value: 'tacos-2',
-            label: 'Tacos'
-          }];
         }
 
         _createClass(HomeComponent, [{
           key: "ngOnInit",
-          value: function ngOnInit() {// this.blogListService.blogAllList$.subscribe(res => {
-            //   console.log('we', res)
-            // })
-          }
+          value: function ngOnInit() {}
         }]);
 
         return HomeComponent;
@@ -1436,6 +1425,16 @@
       /*! @angular/common */
       "ofXK");
 
+      var data = [['id', 'name', 'message'], {
+        id: 1,
+        name: 'Mandy',
+        message: 'hello\nworld'
+      }, {
+        id: 2,
+        name: 'Mars',
+        message: 'hello JS'
+      }];
+
       var AppComponent = /*#__PURE__*/function () {
         function AppComponent(renderer, themeService) {
           _classCallCheck(this, AppComponent);
@@ -1449,6 +1448,66 @@
         _createClass(AppComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {}
+        }, {
+          key: "download",
+          value: function download() {
+            var newdata = data.filter(function (e, i) {
+              return i !== 0;
+            }).map(function (e) {
+              return Object.keys(e).reduce(function (acc, curr) {
+                return Object.assign(Object.assign({}, acc), _defineProperty({}, curr, '"' + e[curr] + '"'));
+              }, {});
+            });
+            console.log('newdata', data, [data['0']].concat(_toConsumableArray(newdata))); // this.exportFile(data);
+          }
+        }, {
+          key: "exportFile",
+          value: function exportFile(rows, fileTitle) {
+            var jsonObject = JSON.stringify(rows);
+            var csv = "\uFEFF" + this.convertToCSV(jsonObject); // support Chinese
+
+            var blob = new Blob([csv], {
+              type: 'text/csv;charset=utf-8;'
+            });
+            var link = document.createElement('a');
+            var url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', fileTitle || 'data.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }
+          /* CSV: convert json to json */
+
+        }, {
+          key: "convertToCSV",
+          value: function convertToCSV(objArray) {
+            var array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
+            var str = '';
+
+            var _loop = function _loop(i) {
+              var line = '';
+              Object.entries(array[i]).forEach(function (_ref2) {
+                var _ref3 = _slicedToArray(_ref2, 2),
+                    key = _ref3[0],
+                    value = _ref3[1];
+
+                if (line !== '') {
+                  line += ',';
+                }
+
+                line += value;
+              });
+              str += line + '\r\n';
+            };
+
+            for (var i = 0; i < array.length; i++) {
+              _loop(i);
+            }
+
+            return str;
+          }
         }, {
           key: "toggle",
           value: function toggle(event) {
@@ -2438,10 +2497,10 @@
           value: function ngOnInit() {
             var _this3 = this;
 
-            Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["combineLatest"])([this.activatedRoute.url, this.blogListService.blogCategories$]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (_ref2) {
-              var _ref3 = _slicedToArray(_ref2, 2),
-                  url = _ref3[0],
-                  categories = _ref3[1];
+            Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["combineLatest"])([this.activatedRoute.url, this.blogListService.blogCategories$]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (_ref4) {
+              var _ref5 = _slicedToArray(_ref4, 2),
+                  url = _ref5[0],
+                  categories = _ref5[1];
 
               var segment = url[0].path;
               var convertCate = categories.map(function (e) {

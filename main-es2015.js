@@ -270,16 +270,8 @@ class HomeComponent {
     constructor(metaService, blogListService) {
         this.metaService = metaService;
         this.blogListService = blogListService;
-        this.foods = [
-            { value: 'steak-0', label: 'Steak' },
-            { value: 'pizza-1', label: 'Pizza' },
-            { value: 'tacos-2', label: 'Tacos' }
-        ];
     }
     ngOnInit() {
-        // this.blogListService.blogAllList$.subscribe(res => {
-        //   console.log('we', res)
-        // })
     }
 }
 HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shared_services_meta_service__WEBPACK_IMPORTED_MODULE_1__["MetaService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_blog_list_blog_list_service__WEBPACK_IMPORTED_MODULE_2__["BlogListService"])); };
@@ -765,6 +757,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const data = [
+    ['id', 'name', 'message'],
+    {
+        id: 1,
+        name: 'Mandy',
+        message: 'hello\nworld',
+    },
+    {
+        id: 2,
+        name: 'Mars',
+        message: 'hello JS',
+    },
+];
 class AppComponent {
     constructor(renderer, themeService) {
         this.renderer = renderer;
@@ -773,6 +778,44 @@ class AppComponent {
         themeService.load();
     }
     ngOnInit() { }
+    download() {
+        const newdata = data.filter((e, i) => i !== 0).map(e => {
+            return Object.keys(e).reduce((acc, curr) => {
+                return Object.assign(Object.assign({}, acc), { [curr]: '"' + e[curr] + '"' });
+            }, {});
+        });
+        console.log('newdata', data, [data['0'], ...newdata]);
+        // this.exportFile(data);
+    }
+    exportFile(rows, fileTitle) {
+        const jsonObject = JSON.stringify(rows);
+        const csv = '\ufeff' + this.convertToCSV(jsonObject); // support Chinese
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        const url = URL.createObjectURL(blob);
+        link.setAttribute('href', url);
+        link.setAttribute('download', fileTitle || 'data.csv');
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+    /* CSV: convert json to json */
+    convertToCSV(objArray) {
+        const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
+        let str = '';
+        for (let i = 0; i < array.length; i++) {
+            let line = '';
+            Object.entries(array[i]).forEach(([key, value]) => {
+                if (line !== '') {
+                    line += ',';
+                }
+                line += value;
+            });
+            str += line + '\r\n';
+        }
+        return str;
+    }
     toggle(event, block = false) {
         this.isOpen = !this.isOpen;
         if (block) {
