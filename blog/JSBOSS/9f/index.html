@@ -19,12 +19,28 @@
       border: 0;
     }
   </style>
-  <meta charset="utf-8">
-  <title>JS地下城：9F-抽獎轉盤</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>@import url(https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700);html{-moz-tab-size:4;tab-size:4;line-height:1.15;-webkit-text-size-adjust:100%;}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;}html{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5;}body{font-family:inherit;line-height:inherit;}*,:after,:before{box-sizing:border-box;border:0 solid;}*,:after,:before{--tw-border-opacity:1;border-color:rgba(229,231,235,var(--tw-border-opacity));}*,:after,:before{--tw-shadow:0 0 #0000;}*,:after,:before{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;}:root{--primary:#0aa;--secondary:#4a4744;--background-color:#fff;--text-color:#444;--text-color-contrast:#fff;--gray-light:#6b7280;--gray-medium:#4b5563;--gray-dark:#374151;--table-even-row:#e5e7eb;--shadow:0 10px 15px -3px #0000001a,0 4px 6px -2px #0000000d;--text-link-color:#3b82f6;}</style><link rel="stylesheet" href="styles.9efcc06b1ed91ca25669.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.9efcc06b1ed91ca25669.css"></noscript><style>.hamburger[_ngcontent-dnm-c29]{position:absolute;top:50%;transform:translateY(-50%);right:1.25rem;margin:auto;width:1.875rem;height:1.5625rem;z-index:999}.hamburger[_ngcontent-dnm-c29]   span[_ngcontent-dnm-c29]{top:10px;display:inline-block;cursor:pointer}.hamburger[_ngcontent-dnm-c29]   span[_ngcontent-dnm-c29], .hamburger[_ngcontent-dnm-c29]   span[_ngcontent-dnm-c29]:before{transition:.5s;position:absolute;display:block;width:30px;height:5px;background:#fff}.hamburger[_ngcontent-dnm-c29]   span[_ngcontent-dnm-c29]:before{content:"";top:-10px;left:0}.hamburger[_ngcontent-dnm-c29]   span[_ngcontent-dnm-c29]:after{transition:.5s;content:"";position:absolute;top:10px;left:0;display:block;width:30px;height:5px;background:#fff}.hamburger.active[_ngcontent-dnm-c29]   span[_ngcontent-dnm-c29]{transform:rotate(180deg);background-color:initial}.hamburger.active[_ngcontent-dnm-c29]   span[_ngcontent-dnm-c29]:before{top:-10px;transform:translateY(10.5px) rotate(45deg)}.hamburger.active[_ngcontent-dnm-c29]   span[_ngcontent-dnm-c29]:after{top:-10px;transform:translateY(10.5px) rotate(-45deg)}.social[_ngcontent-dnm-c29]{transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-duration:.15s;transition-duration:.3s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@media (min-width: 640px){.social[_ngcontent-dnm-c29]{position:static;top:0;left:0}}.social[_ngcontent-dnm-c29]   li[_ngcontent-dnm-c29]{display:inline-block}@media (max-width: 768px){.social[_ngcontent-dnm-c29]{position:fixed;top:48px;left:0;display:block;padding-top:5rem;width:100%;height:100%;border:0;transition:.5s;transform:translateX(-100%);z-index:99;background:#fff;box-shadow:0 1px .5rem 0 #d6d6d6b3}.social.active[_ngcontent-dnm-c29]{transform:translateX(0);overflow:hidden}.social[_ngcontent-dnm-c29]   li[_ngcontent-dnm-c29]{margin-bottom:1rem;display:block;text-align:center;line-height:2}.social[_ngcontent-dnm-c29]   li[_ngcontent-dnm-c29]   a[_ngcontent-dnm-c29]{width:70%}}</style><style>.prose[_ngcontent-dnm-c36]{font-size:1rem;line-height:1.5rem;color:rgba(107,114,128,var(--tw-text-opacity));font-family:PingFangSC-Regular,Helvetica,Helvetica Neue,Segoe UI,Hiragino Sans GB,Source Han Sans CN,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,sans-serif!important}.prose[_ngcontent-dnm-c36], .prose[_ngcontent-dnm-c36]   h1[_ngcontent-dnm-c36]{--tw-text-opacity:1}.prose[_ngcontent-dnm-c36]   h1[_ngcontent-dnm-c36]{font-size:1.875rem;line-height:2.25rem;color:rgba(55,65,81,var(--tw-text-opacity))}.prose[_ngcontent-dnm-c36]   h2[_ngcontent-dnm-c36]{margin-top:2.5rem;margin-bottom:1rem;font-size:1.25rem}.prose[_ngcontent-dnm-c36]   h2[_ngcontent-dnm-c36], .prose[_ngcontent-dnm-c36]   h3[_ngcontent-dnm-c36]{line-height:1.75rem;font-weight:700;--tw-text-opacity:1;color:rgba(75,85,99,var(--tw-text-opacity))}.prose[_ngcontent-dnm-c36]   h3[_ngcontent-dnm-c36]{margin-top:1rem;font-size:1.125rem}.prose[_ngcontent-dnm-c36]   h3[_ngcontent-dnm-c36], .prose[_ngcontent-dnm-c36]   p[_ngcontent-dnm-c36]{margin-bottom:.5rem}.prose[_ngcontent-dnm-c36]   p[_ngcontent-dnm-c36]{margin-top:.5rem;white-space:pre-line}.prose[_ngcontent-dnm-c36]   pre[_ngcontent-dnm-c36]{margin-top:1rem;margin-bottom:1rem}.prose[_ngcontent-dnm-c36]   img[_ngcontent-dnm-c36]{margin:1rem auto}.prose[_ngcontent-dnm-c36]   hr[_ngcontent-dnm-c36]{margin-top:2rem;margin-bottom:2rem}.prose[_ngcontent-dnm-c36]   iframe[_ngcontent-dnm-c36]{margin:1rem auto .5rem;min-height:100%;max-width:100%;min-height:32rem;width:100%}.prose[_ngcontent-dnm-c36]   iframe[_ngcontent-dnm-c36] + p[_ngcontent-dnm-c36]{margin-top:-.5rem;text-align:center}.prose[_ngcontent-dnm-c36]   iframe[_ngcontent-dnm-c36] + p[_ngcontent-dnm-c36] > em[_ngcontent-dnm-c36]{font-size:.875rem;line-height:1.25rem}.prose[_ngcontent-dnm-c36]   blockquote[_ngcontent-dnm-c36]{margin-top:1rem;margin-bottom:1rem;--tw-border-opacity:1;border-left:4px;border-color:rgba(156,163,175,var(--tw-border-opacity));border-style:solid;padding:.25rem .5rem;color:var(--gray-medium)}.prose[_ngcontent-dnm-c36]   ol[_ngcontent-dnm-c36]{list-style-type:decimal}.prose[_ngcontent-dnm-c36]   ul[_ngcontent-dnm-c36]{list-style-type:disc}.prose[_ngcontent-dnm-c36]   ol[_ngcontent-dnm-c36], .prose[_ngcontent-dnm-c36]   ul[_ngcontent-dnm-c36]{margin-top:1rem;margin-bottom:1rem;margin-left:1.25rem}.prose[_ngcontent-dnm-c36]   ol[_ngcontent-dnm-c36]   li[_ngcontent-dnm-c36]:not(:last-of-type), .prose[_ngcontent-dnm-c36]   ul[_ngcontent-dnm-c36]   li[_ngcontent-dnm-c36]:not(:last-of-type){margin-bottom:.5rem}.prose[_ngcontent-dnm-c36]   [_ngcontent-dnm-c36]:not(pre) > code[_ngcontent-dnm-c36]{overflow-wrap:break-word;border-radius:.25rem;--tw-bg-opacity:1;background-color:rgba(243,244,246,var(--tw-bg-opacity));font-weight:100;padding:.1rem .25rem;font-size:inherit}[_nghost-dnm-c36]   .toolbar-item[_ngcontent-dnm-c36]{position:relative;background:#159}[_nghost-dnm-c36]   .toolbar-item[_ngcontent-dnm-c36]   .toolbar[_ngcontent-dnm-c36]{position:absolute;top:0;right:0;color:#fff}a[_ngcontent-dnm-c36]{margin:0 2px;display:inline-block;text-decoration:underline;transition:.3s}a[_ngcontent-dnm-c36]:hover{text-decoration:none}table[_ngcontent-dnm-c36]{margin:1rem 0 .5rem;width:100%;border-collapse:collapse}table[_ngcontent-dnm-c36]   caption[_ngcontent-dnm-c36]{line-height:48px;font-size:1.25rem;font-weight:700}table[_ngcontent-dnm-c36]   th[_ngcontent-dnm-c36]{color:var(--text-color);background:var(--table-even-row)}table[_ngcontent-dnm-c36]   td[_ngcontent-dnm-c36], table[_ngcontent-dnm-c36]   th[_ngcontent-dnm-c36]{padding:.5rem .25rem;text-align:center;line-height:1.2;border:1px solid var(--table-even-row)}</style><style>.gotop[_ngcontent-dnm-c32]{position:fixed;bottom:4rem;left:50%;margin-left:28.125rem;opacity:1;transition:.3s}.gotop[_ngcontent-dnm-c32]   .btn[_ngcontent-dnm-c32]{width:2.5rem;height:2.5rem}.gotop[_ngcontent-dnm-c32]   .btn[_ngcontent-dnm-c32]:after, .gotop[_ngcontent-dnm-c32]   .btn[_ngcontent-dnm-c32]:before{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-45deg);margin-left:-.25rem;border-radius:.1875rem;content:"";width:1rem;height:.3125rem;background:var(--primary)}.gotop[_ngcontent-dnm-c32]   .btn[_ngcontent-dnm-c32]:after{transform:translate(-50%,-50%) rotate(45deg);margin-left:.25rem}@media (max-width: 1024px){.gotop[_ngcontent-dnm-c32]{right:2rem;left:auto;margin:0}}</style><style></style><style>
+    <meta charset="utf-8">
+    <title>JS地下城：9F-抽獎轉盤</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149155162-1"></script>
+    <script>
+      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      // ga('create','UA-149155162-1','auto');ga('send','pageview');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-149155162-1");
+    </script>
+  <style>@import url(https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700);html{-moz-tab-size:4;tab-size:4;line-height:1.15;-webkit-text-size-adjust:100%;}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;}html{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5;}body{font-family:inherit;line-height:inherit;}*,:after,:before{box-sizing:border-box;border:0 solid;}*,:after,:before{--tw-border-opacity:1;border-color:rgba(229,231,235,var(--tw-border-opacity));}*,:after,:before{--tw-shadow:0 0 #0000;}*,:after,:before{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;}:root{--primary:#0aa;--secondary:#4a4744;--background-color:#fff;--text-color:#444;--text-color-contrast:#fff;--gray-light:#6b7280;--gray-medium:#4b5563;--gray-dark:#374151;--table-even-row:#e5e7eb;--shadow:0 10px 15px -3px #0000001a,0 4px 6px -2px #0000000d;--text-link-color:#3b82f6;}</style><link rel="stylesheet" href="styles.9efcc06b1ed91ca25669.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.9efcc06b1ed91ca25669.css"></noscript><style>.hamburger[_ngcontent-wpl-c29]{position:absolute;top:50%;transform:translateY(-50%);right:1.25rem;margin:auto;width:1.875rem;height:1.5625rem;z-index:999}.hamburger[_ngcontent-wpl-c29]   span[_ngcontent-wpl-c29]{top:10px;display:inline-block;cursor:pointer}.hamburger[_ngcontent-wpl-c29]   span[_ngcontent-wpl-c29], .hamburger[_ngcontent-wpl-c29]   span[_ngcontent-wpl-c29]:before{transition:.5s;position:absolute;display:block;width:30px;height:5px;background:#fff}.hamburger[_ngcontent-wpl-c29]   span[_ngcontent-wpl-c29]:before{content:"";top:-10px;left:0}.hamburger[_ngcontent-wpl-c29]   span[_ngcontent-wpl-c29]:after{transition:.5s;content:"";position:absolute;top:10px;left:0;display:block;width:30px;height:5px;background:#fff}.hamburger.active[_ngcontent-wpl-c29]   span[_ngcontent-wpl-c29]{transform:rotate(180deg);background-color:initial}.hamburger.active[_ngcontent-wpl-c29]   span[_ngcontent-wpl-c29]:before{top:-10px;transform:translateY(10.5px) rotate(45deg)}.hamburger.active[_ngcontent-wpl-c29]   span[_ngcontent-wpl-c29]:after{top:-10px;transform:translateY(10.5px) rotate(-45deg)}.social[_ngcontent-wpl-c29]{transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-duration:.15s;transition-duration:.3s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@media (min-width: 640px){.social[_ngcontent-wpl-c29]{position:static;top:0;left:0}}.social[_ngcontent-wpl-c29]   li[_ngcontent-wpl-c29]{display:inline-block}@media (max-width: 768px){.social[_ngcontent-wpl-c29]{position:fixed;top:48px;left:0;display:block;padding-top:5rem;width:100%;height:100%;border:0;transition:.5s;transform:translateX(-100%);z-index:99;background:#fff;box-shadow:0 1px .5rem 0 #d6d6d6b3}.social.active[_ngcontent-wpl-c29]{transform:translateX(0);overflow:hidden}.social[_ngcontent-wpl-c29]   li[_ngcontent-wpl-c29]{margin-bottom:1rem;display:block;text-align:center;line-height:2}.social[_ngcontent-wpl-c29]   li[_ngcontent-wpl-c29]   a[_ngcontent-wpl-c29]{width:70%}}</style><style>.prose[_ngcontent-wpl-c36]{font-size:1rem;line-height:1.5rem;color:rgba(107,114,128,var(--tw-text-opacity));font-family:PingFangSC-Regular,Helvetica,Helvetica Neue,Segoe UI,Hiragino Sans GB,Source Han Sans CN,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,sans-serif!important}.prose[_ngcontent-wpl-c36], .prose[_ngcontent-wpl-c36]   h1[_ngcontent-wpl-c36]{--tw-text-opacity:1}.prose[_ngcontent-wpl-c36]   h1[_ngcontent-wpl-c36]{font-size:1.875rem;line-height:2.25rem;color:rgba(55,65,81,var(--tw-text-opacity))}.prose[_ngcontent-wpl-c36]   h2[_ngcontent-wpl-c36]{margin-top:2.5rem;margin-bottom:1rem;font-size:1.25rem}.prose[_ngcontent-wpl-c36]   h2[_ngcontent-wpl-c36], .prose[_ngcontent-wpl-c36]   h3[_ngcontent-wpl-c36]{line-height:1.75rem;font-weight:700;--tw-text-opacity:1;color:rgba(75,85,99,var(--tw-text-opacity))}.prose[_ngcontent-wpl-c36]   h3[_ngcontent-wpl-c36]{margin-top:1rem;font-size:1.125rem}.prose[_ngcontent-wpl-c36]   h3[_ngcontent-wpl-c36], .prose[_ngcontent-wpl-c36]   p[_ngcontent-wpl-c36]{margin-bottom:.5rem}.prose[_ngcontent-wpl-c36]   p[_ngcontent-wpl-c36]{margin-top:.5rem;white-space:pre-line}.prose[_ngcontent-wpl-c36]   pre[_ngcontent-wpl-c36]{margin-top:1rem;margin-bottom:1rem}.prose[_ngcontent-wpl-c36]   img[_ngcontent-wpl-c36]{margin:1rem auto}.prose[_ngcontent-wpl-c36]   hr[_ngcontent-wpl-c36]{margin-top:2rem;margin-bottom:2rem}.prose[_ngcontent-wpl-c36]   iframe[_ngcontent-wpl-c36]{margin:1rem auto .5rem;min-height:100%;max-width:100%;min-height:32rem;width:100%}.prose[_ngcontent-wpl-c36]   iframe[_ngcontent-wpl-c36] + p[_ngcontent-wpl-c36]{margin-top:-.5rem;text-align:center}.prose[_ngcontent-wpl-c36]   iframe[_ngcontent-wpl-c36] + p[_ngcontent-wpl-c36] > em[_ngcontent-wpl-c36]{font-size:.875rem;line-height:1.25rem}.prose[_ngcontent-wpl-c36]   blockquote[_ngcontent-wpl-c36]{margin-top:1rem;margin-bottom:1rem;--tw-border-opacity:1;border-left:4px;border-color:rgba(156,163,175,var(--tw-border-opacity));border-style:solid;padding:.25rem .5rem;color:var(--gray-medium)}.prose[_ngcontent-wpl-c36]   ol[_ngcontent-wpl-c36]{list-style-type:decimal}.prose[_ngcontent-wpl-c36]   ul[_ngcontent-wpl-c36]{list-style-type:disc}.prose[_ngcontent-wpl-c36]   ol[_ngcontent-wpl-c36], .prose[_ngcontent-wpl-c36]   ul[_ngcontent-wpl-c36]{margin-top:1rem;margin-bottom:1rem;margin-left:1.25rem}.prose[_ngcontent-wpl-c36]   ol[_ngcontent-wpl-c36]   li[_ngcontent-wpl-c36]:not(:last-of-type), .prose[_ngcontent-wpl-c36]   ul[_ngcontent-wpl-c36]   li[_ngcontent-wpl-c36]:not(:last-of-type){margin-bottom:.5rem}.prose[_ngcontent-wpl-c36]   [_ngcontent-wpl-c36]:not(pre) > code[_ngcontent-wpl-c36]{overflow-wrap:break-word;border-radius:.25rem;--tw-bg-opacity:1;background-color:rgba(243,244,246,var(--tw-bg-opacity));font-weight:100;padding:.1rem .25rem;font-size:inherit}[_nghost-wpl-c36]   .toolbar-item[_ngcontent-wpl-c36]{position:relative;background:#159}[_nghost-wpl-c36]   .toolbar-item[_ngcontent-wpl-c36]   .toolbar[_ngcontent-wpl-c36]{position:absolute;top:0;right:0;color:#fff}a[_ngcontent-wpl-c36]{margin:0 2px;display:inline-block;text-decoration:underline;transition:.3s}a[_ngcontent-wpl-c36]:hover{text-decoration:none}table[_ngcontent-wpl-c36]{margin:1rem 0 .5rem;width:100%;border-collapse:collapse}table[_ngcontent-wpl-c36]   caption[_ngcontent-wpl-c36]{line-height:48px;font-size:1.25rem;font-weight:700}table[_ngcontent-wpl-c36]   th[_ngcontent-wpl-c36]{color:var(--text-color);background:var(--table-even-row)}table[_ngcontent-wpl-c36]   td[_ngcontent-wpl-c36], table[_ngcontent-wpl-c36]   th[_ngcontent-wpl-c36]{padding:.5rem .25rem;text-align:center;line-height:1.2;border:1px solid var(--table-even-row)}</style><style>.gotop[_ngcontent-wpl-c32]{position:fixed;bottom:4rem;left:50%;margin-left:28.125rem;opacity:1;transition:.3s}.gotop[_ngcontent-wpl-c32]   .btn[_ngcontent-wpl-c32]{width:2.5rem;height:2.5rem}.gotop[_ngcontent-wpl-c32]   .btn[_ngcontent-wpl-c32]:after, .gotop[_ngcontent-wpl-c32]   .btn[_ngcontent-wpl-c32]:before{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-45deg);margin-left:-.25rem;border-radius:.1875rem;content:"";width:1rem;height:.3125rem;background:var(--primary)}.gotop[_ngcontent-wpl-c32]   .btn[_ngcontent-wpl-c32]:after{transform:translate(-50%,-50%) rotate(45deg);margin-left:.25rem}@media (max-width: 1024px){.gotop[_ngcontent-wpl-c32]{right:2rem;left:auto;margin:0}}</style><style></style><style>
       :host {
         display: none;
       }
@@ -32,86 +48,86 @@
         display: none;
       }
     </style><meta name="description" content="JS地下城：9F-抽獎轉盤"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, css, javascript, JS地下城"><meta property="og:title" content="JS地下城：9F-抽獎轉盤"><meta property="og:description" content="JS地下城：9F-抽獎轉盤"><meta property="og:type" content="article"><meta property="og:url" content="https://mtwmt.github.io/blog/JSBOSS/9f"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="JS地下城：9F-抽獎轉盤"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="zh_tw"><meta property="og:article:published_time" content="2019/03/12"><meta property="og:article:modified_time" content="2019/03/12"><meta property="og:article:tag" content="css, javascript, JS地下城"><meta property="og:article:author" content="Mandy"><script>window['ScullyIO']='generated';</script></head>
-<body scully-version="1.1.1">
-  <app-root _nghost-dnm-c29="" ng-version="12.1.5"><div _ngcontent-dnm-c29="" class="relative mx-auto md:max-w-5xl text-gray-700"><header _ngcontent-dnm-c29="" class="sticky z-999 top-0 left-0 bg-primary-500 flex justify-between px-4 py-2 mb-5 lg:mx-5"><h1 _ngcontent-dnm-c29="" class="text-white font-medium text-2xl"><a _ngcontent-dnm-c29="" href="/">Mandy's Web</a></h1><a _ngcontent-dnm-c29="" href="javascript:void(0);" title="MENU" class="hamburger md:hidden"><span _ngcontent-dnm-c29=""></span></a><nav _ngcontent-dnm-c29="" class="social"><ul _ngcontent-dnm-c29="" class="md:space-x-2"><li _ngcontent-dnm-c29=""><a _ngcontent-dnm-c29="" class="px-4 btn md:text-white text-primary-500" href="/about">About</a></li><li _ngcontent-dnm-c29=""><a _ngcontent-dnm-c29="" class="px-4 btn md:text-white text-primary-500" href="/blog">Blog</a></li><li _ngcontent-dnm-c29=""><a _ngcontent-dnm-c29="" class="px-4 btn md:text-white text-primary-500" href="/contact">contact</a></li></ul></nav></header><div _ngcontent-dnm-c29="" class="content leading-relaxed lg:mx-5"><router-outlet _ngcontent-dnm-c29=""></router-outlet><app-blog _nghost-dnm-c36="">
-  <app-meta _ngcontent-dnm-c36="" _nghost-dnm-c33=""></app-meta>
-  <article _ngcontent-dnm-c36="" class="relative py-4 max-w-screen-xl mx-auto">
-    <div _ngcontent-dnm-c36="" class="max-w-container mx-2">
-      <header _ngcontent-dnm-c36="" class="px-4 lg:px-2">
-        <div _ngcontent-dnm-c36="" class="prose text-sm max-w-none md:prose-lgspace-y-1">
-          <time _ngcontent-dnm-c36="" datetime="2019/03/12">
+  <body scully-version="1.1.1">
+    <app-root _nghost-wpl-c29="" ng-version="12.1.5"><div _ngcontent-wpl-c29="" class="relative mx-auto md:max-w-5xl text-gray-700"><header _ngcontent-wpl-c29="" class="sticky z-999 top-0 left-0 bg-primary-500 flex justify-between px-4 py-2 mb-5 lg:mx-5"><h1 _ngcontent-wpl-c29="" class="text-white font-medium text-2xl"><a _ngcontent-wpl-c29="" href="/">Mandy's Web</a></h1><a _ngcontent-wpl-c29="" href="javascript:void(0);" title="MENU" class="hamburger md:hidden"><span _ngcontent-wpl-c29=""></span></a><nav _ngcontent-wpl-c29="" class="social"><ul _ngcontent-wpl-c29="" class="md:space-x-2"><li _ngcontent-wpl-c29=""><a _ngcontent-wpl-c29="" class="px-4 btn md:text-white text-primary-500" href="/about">About</a></li><li _ngcontent-wpl-c29=""><a _ngcontent-wpl-c29="" class="px-4 btn md:text-white text-primary-500" href="/blog">Blog</a></li><li _ngcontent-wpl-c29=""><a _ngcontent-wpl-c29="" class="px-4 btn md:text-white text-primary-500" href="/contact">contact</a></li></ul></nav></header><div _ngcontent-wpl-c29="" class="content leading-relaxed lg:mx-5"><router-outlet _ngcontent-wpl-c29=""></router-outlet><app-blog _nghost-wpl-c36="">
+  <app-meta _ngcontent-wpl-c36="" _nghost-wpl-c33=""></app-meta>
+  <article _ngcontent-wpl-c36="" class="relative py-4 max-w-screen-xl mx-auto">
+    <div _ngcontent-wpl-c36="" class="max-w-container mx-2">
+      <header _ngcontent-wpl-c36="" class="px-4 lg:px-2">
+        <div _ngcontent-wpl-c36="" class="prose text-sm max-w-none md:prose-lgspace-y-1">
+          <time _ngcontent-wpl-c36="" datetime="2019/03/12">
             12 March 2019
           </time>
-          <h1 _ngcontent-dnm-c36="" class="font-bold text-gray-700 leading-relaxed">
+          <h1 _ngcontent-wpl-c36="" class="font-bold text-gray-700 leading-relaxed">
             JS地下城：9F-抽獎轉盤
           </h1>
         </div>
       </header>
-      <div _ngcontent-dnm-c36="" class="block lg:flex lg:flex-row-reverse lg:space-x-2">
-        <div _ngcontent-dnm-c36="" class="w-full lg:w-1/4 px-4 lg:pl-0">
-          <div _ngcontent-dnm-c36="" class="sticky top-32 mb-4">
-            <app-blog-nav _ngcontent-dnm-c36="" _nghost-dnm-c34=""><p _ngcontent-dnm-c34="" class="text-xl font-semibold leading-loose">導覽列</p><!----><ul _ngcontent-dnm-c34=""><li _ngcontent-dnm-c34="" class="cursor-pointer"><a _ngcontent-dnm-c34="" class="text-base leading-relaxed"> Sorry, could not load static page content </a><!----></li><!----></ul><!----><!----><hr _ngcontent-dnm-c34="" class="block lg:hidden my-8"></app-blog-nav>
+      <div _ngcontent-wpl-c36="" class="block lg:flex lg:flex-row-reverse lg:space-x-2">
+        <div _ngcontent-wpl-c36="" class="w-full lg:w-1/4 px-4 lg:pl-0">
+          <div _ngcontent-wpl-c36="" class="sticky top-32 mb-4">
+            <app-blog-nav _ngcontent-wpl-c36="" _nghost-wpl-c34=""><p _ngcontent-wpl-c34="" class="text-xl font-semibold leading-loose">導覽列</p><!----><ul _ngcontent-wpl-c34=""><li _ngcontent-wpl-c34="" class="cursor-pointer"><a _ngcontent-wpl-c34="" class="text-base leading-relaxed"> Sorry, could not load static page content </a><!----></li><!----></ul><!----><!----><hr _ngcontent-wpl-c34="" class="block lg:hidden my-8"></app-blog-nav>
           </div>
         </div>
-        <div _ngcontent-dnm-c36="" class="w-full lg:w-3/4 px-4 lg:pl-0">
-          <div _ngcontent-dnm-c36="" class="prose">
-            <!--scullyContent-begin--><img src="assets/images/JSBOSS/9f/cover.png" width="100%" _ngcontent-dnm-c36="">
+        <div _ngcontent-wpl-c36="" class="w-full lg:w-3/4 px-4 lg:pl-0">
+          <div _ngcontent-wpl-c36="" class="prose">
+            <!--scullyContent-begin--><img src="assets/images/JSBOSS/9f/cover.png" width="100%" _ngcontent-wpl-c36="">
 
-<h2 id="規則" _ngcontent-dnm-c36="">規則</h2>
-<ul _ngcontent-dnm-c36="">
-<li _ngcontent-dnm-c36=""><p _ngcontent-dnm-c36="">【特定技術】2017 遊戲輪盤規則輪盤只能轉 20 次，人人有獎 Flight：1 份 Child：4
+<h2 id="規則" _ngcontent-wpl-c36="">規則</h2>
+<ul _ngcontent-wpl-c36="">
+<li _ngcontent-wpl-c36=""><p _ngcontent-wpl-c36="">【特定技術】2017 遊戲輪盤規則輪盤只能轉 20 次，人人有獎 Flight：1 份 Child：4
 份 Anything：5 份 Wifi：5 份 Wish：5 份已經被抽到的獎項，就不可再次出現</p>
 </li>
-<li _ngcontent-dnm-c36=""><p _ngcontent-dnm-c36="">【特定技術】2018 遊戲輪盤規則編號 20：69 份編號 19：20 份編號 18：10 份編號
+<li _ngcontent-wpl-c36=""><p _ngcontent-wpl-c36="">【特定技術】2018 遊戲輪盤規則編號 20：69 份編號 19：20 份編號 18：10 份編號
 17：5 份編號 16~2：各編號皆 1 份編號 1：1 份</p>
-<p _ngcontent-dnm-c36="">請移除獎品名稱與 icon，僅單純顯示編號已經被抽到的獎項，就不可再次出現</p>
+<p _ngcontent-wpl-c36="">請移除獎品名稱與 icon，僅單純顯示編號已經被抽到的獎項，就不可再次出現</p>
 </li>
-<li _ngcontent-dnm-c36=""><p _ngcontent-dnm-c36="">【特定技術】以上兩個遊戲轉盤，不可直接寫死樣式在網頁上，請將品項以「JSON」格式
+<li _ngcontent-wpl-c36=""><p _ngcontent-wpl-c36="">【特定技術】以上兩個遊戲轉盤，不可直接寫死樣式在網頁上，請將品項以「JSON」格式
 來儲存，再藉由 JS 跑迴圈依序顯示獎項在輪盤上，此舉用意為若日後輪盤會新增獎項時
 ，只要在 JSON 格式上新增即可。</p>
 </li>
-<li _ngcontent-dnm-c36=""><p _ngcontent-dnm-c36="">【特定技術】點選中間的「PRESS」後，指針開始滾動，滾動到一定時間後，就會停止並
+<li _ngcontent-wpl-c36=""><p _ngcontent-wpl-c36="">【特定技術】點選中間的「PRESS」後，指針開始滾動，滾動到一定時間後，就會停止並
 指向到獎項上。</p>
 </li>
-<li _ngcontent-dnm-c36=""><p _ngcontent-dnm-c36="">【特定技術】請考量中獎機率，以 2018 來說，總計有 120 份獎品，所以編號 1 的獎品
+<li _ngcontent-wpl-c36=""><p _ngcontent-wpl-c36="">【特定技術】請考量中獎機率，以 2018 來說，總計有 120 份獎品，所以編號 1 的獎品
 第一次抽中機率是 1/120，而隨著品項變少也會跟著重新計算中獎率。</p>
 </li>
 </ul>
-<hr _ngcontent-dnm-c36="">
-<p _ngcontent-dnm-c36=""><a href="https://mtwmt.github.io/jsboss/public/9f/" _ngcontent-dnm-c36="">demo 頁</a>
-<a href="https://github.com/mtwmt/jsboss/tree/master/sourse/9f" _ngcontent-dnm-c36="">sourse code</a></p>
-<p _ngcontent-dnm-c36="">使用 vue 挑戰此次的關卡</p>
-<p _ngcontent-dnm-c36="">此次的關卡 需要大量計算圓形角度利用這些角度 再去繪製出輪盤的圓餅圖這次依然選用
+<hr _ngcontent-wpl-c36="">
+<p _ngcontent-wpl-c36=""><a href="https://mtwmt.github.io/jsboss/public/9f/" _ngcontent-wpl-c36="">demo 頁</a>
+<a href="https://github.com/mtwmt/jsboss/tree/master/sourse/9f" _ngcontent-wpl-c36="">sourse code</a></p>
+<p _ngcontent-wpl-c36="">使用 vue 挑戰此次的關卡</p>
+<p _ngcontent-wpl-c36="">此次的關卡 需要大量計算圓形角度利用這些角度 再去繪製出輪盤的圓餅圖這次依然選用
 css 去繪製(跟它比較熟 XDD 在計算方式上，沒有用到很複雜的公式</p>
-<hr _ngcontent-dnm-c36="">
-<h2 id="前置" _ngcontent-dnm-c36="">前置</h2>
-<ul _ngcontent-dnm-c36="">
-<li _ngcontent-dnm-c36="">請考量中獎機率，以 2018 來說，總計有 120 份獎品，所以編號 1 的獎品第一次抽中機
+<hr _ngcontent-wpl-c36="">
+<h2 id="前置" _ngcontent-wpl-c36="">前置</h2>
+<ul _ngcontent-wpl-c36="">
+<li _ngcontent-wpl-c36="">請考量中獎機率，以 2018 來說，總計有 120 份獎品，所以編號 1 的獎品第一次抽中機
 率是 1/120，</li>
-<li _ngcontent-dnm-c36="">而隨著品項變少也會跟著重新計算中獎率。</li>
+<li _ngcontent-wpl-c36="">而隨著品項變少也會跟著重新計算中獎率。</li>
 </ul>
-<p _ngcontent-dnm-c36="">在中獎機率上，我把所有的獎項依照他的份數去分配比例，份數多面積佔的大，反之份數少
+<p _ngcontent-wpl-c36="">在中獎機率上，我把所有的獎項依照他的份數去分配比例，份數多面積佔的大，反之份數少
 則面積小被抽中後的獎項會 -1 後 會再次調整每個獎項的圓餅圖大小</p>
-<ul _ngcontent-dnm-c36="">
-<li _ngcontent-dnm-c36="">因應色系的底色 必需要有顏色交錯呈現 (一藍一灰(?)</li>
+<ul _ngcontent-wpl-c36="">
+<li _ngcontent-wpl-c36="">因應色系的底色 必需要有顏色交錯呈現 (一藍一灰(?)</li>
 </ul>
-<p _ngcontent-dnm-c36="">代表上面的獎項需為雙數，但在這之前 獎項若被抽光了 其品項就會有單數的機率所以我這
+<p _ngcontent-wpl-c36="">代表上面的獎項需為雙數，但在這之前 獎項若被抽光了 其品項就會有單數的機率所以我這
 裡調整為若是當下被抽掉的項目 獎項會變成單數時，就暫時不要抽掉 (若剛好轉到的獎項
 是 0 時 就會再重轉一次)等下一個獎項被抽光 變雙數時 再一起抽掉 直到最後兩個 被抽
 光的時後 就會跳出 獎項全被抽光的 alert</p>
-<hr _ngcontent-dnm-c36="">
-<p _ngcontent-dnm-c36="">這裡的命名我會與我的 sourse code 取名一樣，在看的時後會比較好對照</p>
-<h2 id="css-圓餅圖" _ngcontent-dnm-c36="">css 圓餅圖</h2>
-<img src="assets/images/JSBOSS/9f/001.png" _ngcontent-dnm-c36="">
+<hr _ngcontent-wpl-c36="">
+<p _ngcontent-wpl-c36="">這裡的命名我會與我的 sourse code 取名一樣，在看的時後會比較好對照</p>
+<h2 id="css-圓餅圖" _ngcontent-wpl-c36="">css 圓餅圖</h2>
+<img src="assets/images/JSBOSS/9f/001.png" _ngcontent-wpl-c36="">
 如圖 淺黃色 `item` 部份 可以將他視為遮罩 
 藍色`fill` 則是主要顯示區域，紅色框框就是被遮住的部份 
 然後中心點設計在藍色半圓形的中間，層層堆疊後，這樣就能畫出每個獎項所要的範圍
 
-<pre _ngcontent-dnm-c36=""><code class="language-html" _ngcontent-dnm-c36="">&lt;div class="item"&gt;
+<pre _ngcontent-wpl-c36=""><code class="language-html" _ngcontent-wpl-c36="">&lt;div class="item"&gt;
   &lt;div class="fill"&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<pre _ngcontent-dnm-c36=""><code class="language-css" _ngcontent-dnm-c36="">.item {
+<pre _ngcontent-wpl-c36=""><code class="language-css" _ngcontent-wpl-c36="">.item {
   position: relative;
   top: 50px;
   left: 300px;
@@ -133,33 +149,33 @@ css 去繪製(跟它比較熟 XDD 在計算方式上，沒有用到很複雜的�
   }
 }
 </code></pre>
-<p _ngcontent-dnm-c36="">在 <code _ngcontent-dnm-c36="">transform: rotate(0deg)</code> 的時後 圓餅所呈現的是 90 度，所以我們必需將它 減
--90 度 <code _ngcontent-dnm-c36="">transform: rotate(-90deg)</code> 才會是圓餅圖範圍的起始點</p>
-<p _ngcontent-dnm-c36="">但!! 人生就是有這個 but!! 這樣的圓餅圖最多只能畫到 180 度 那若是其中一種獎項的份
+<p _ngcontent-wpl-c36="">在 <code _ngcontent-wpl-c36="">transform: rotate(0deg)</code> 的時後 圓餅所呈現的是 90 度，所以我們必需將它 減
+-90 度 <code _ngcontent-wpl-c36="">transform: rotate(-90deg)</code> 才會是圓餅圖範圍的起始點</p>
+<p _ngcontent-wpl-c36="">但!! 人生就是有這個 but!! 這樣的圓餅圖最多只能畫到 180 度 那若是其中一種獎項的份
 數太多超過 180 度 多出的角度就會空出一塊!!!</p>
-<p _ngcontent-dnm-c36="">我這裡處理的方式是 再多畫一塊 fill，命名為 <code _ngcontent-dnm-c36="">fill2</code> (超沒創意 XD) 去補足另一塊所
+<p _ngcontent-wpl-c36="">我這裡處理的方式是 再多畫一塊 fill，命名為 <code _ngcontent-wpl-c36="">fill2</code> (超沒創意 XD) 去補足另一塊所
 缺的角度例 有一塊的角度 算出來是 235 度，那就是 235-180 = 55 那多出的那一塊就是
 畫 55 度去補上</p>
-<p _ngcontent-dnm-c36="">要注意的是 因為補上的這一塊是另一半的圓，所以這個半圓的啟起點要從 180 度下去計算
-<code _ngcontent-dnm-c36="">transform: rotate(90deg)</code> 才會是多出來的這一塊半圓的起始點 然後記得 這要把這個
-<code _ngcontent-dnm-c36="">item</code> 的 <code _ngcontent-dnm-c36="">overflow:hidden</code> 打開 多出的那一塊才會看的見 如下圖</p>
-<img src="assets/images/JSBOSS/9f/002.png" _ngcontent-dnm-c36="">
+<p _ngcontent-wpl-c36="">要注意的是 因為補上的這一塊是另一半的圓，所以這個半圓的啟起點要從 180 度下去計算
+<code _ngcontent-wpl-c36="">transform: rotate(90deg)</code> 才會是多出來的這一塊半圓的起始點 然後記得 這要把這個
+<code _ngcontent-wpl-c36="">item</code> 的 <code _ngcontent-wpl-c36="">overflow:hidden</code> 打開 多出的那一塊才會看的見 如下圖</p>
+<img src="assets/images/JSBOSS/9f/002.png" _ngcontent-wpl-c36="">
 
-<p _ngcontent-dnm-c36="">這裡看到我畫出來的樣子： </p>
+<p _ngcontent-wpl-c36="">這裡看到我畫出來的樣子： </p>
 <!-- {% iframe //codepen.io/mtw/embed/NJaepN/ 100% 400 %} -->
-<iframe src="//codepen.io/mtw/embed/NJaepN/" _ngcontent-dnm-c36=""></iframe>
+<iframe src="//codepen.io/mtw/embed/NJaepN/" _ngcontent-wpl-c36=""></iframe>
 
 
-<h2 id="用程式畫大餅" _ngcontent-dnm-c36="">用程式畫大餅</h2>
-<p _ngcontent-dnm-c36="">基本的圖形畫完後，接著就可以讓程式把大餅畫出來啦～</p>
-<p _ngcontent-dnm-c36="">2017 年獎項 ( 因為題目上似乎有 bug 圖上的顯示有 6 款品項，而列出來的只有 5 項，
+<h2 id="用程式畫大餅" _ngcontent-wpl-c36="">用程式畫大餅</h2>
+<p _ngcontent-wpl-c36="">基本的圖形畫完後，接著就可以讓程式把大餅畫出來啦～</p>
+<p _ngcontent-wpl-c36="">2017 年獎項 ( 因為題目上似乎有 bug 圖上的顯示有 6 款品項，而列出來的只有 5 項，
 所以在份數這方面我就另外自訂啦～</p>
-<p _ngcontent-dnm-c36="">Flight：1 份 Wish：5 份 Anything：3 份 Wifi：4 份 Child：2 份 Movie : 5 份</p>
-<p _ngcontent-dnm-c36="">合計共 20 份</p>
-<p _ngcontent-dnm-c36="">360 / 20 = 18</p>
-<p _ngcontent-dnm-c36="">每份所分得的角度是 18 度 然後再用這角度分別 算出每個獎項所需要的角度</p>
-<h3 id="json-列表設計" _ngcontent-dnm-c36="">json 列表設計</h3>
-<pre _ngcontent-dnm-c36=""><code class="language-json" _ngcontent-dnm-c36="">"item": {
+<p _ngcontent-wpl-c36="">Flight：1 份 Wish：5 份 Anything：3 份 Wifi：4 份 Child：2 份 Movie : 5 份</p>
+<p _ngcontent-wpl-c36="">合計共 20 份</p>
+<p _ngcontent-wpl-c36="">360 / 20 = 18</p>
+<p _ngcontent-wpl-c36="">每份所分得的角度是 18 度 然後再用這角度分別 算出每個獎項所需要的角度</p>
+<h3 id="json-列表設計" _ngcontent-wpl-c36="">json 列表設計</h3>
+<pre _ngcontent-wpl-c36=""><code class="language-json" _ngcontent-wpl-c36="">"item": {
   // 名稱: [ 份數, ICON ]
   "Flight": [1,"fas fa-plane"],
   "Wish": [7,"fas fa-birthday-cake"],
@@ -167,15 +183,15 @@ css 去繪製(跟它比較熟 XDD 在計算方式上，沒有用到很複雜的�
   "Wifi": [1,"fas fa-star"]
 }
 </code></pre>
-<h3 id="取出物件名稱" _ngcontent-dnm-c36="">取出物件名稱</h3>
-<pre _ngcontent-dnm-c36=""><code class="language-javascript" _ngcontent-dnm-c36="">getItem(){
+<h3 id="取出物件名稱" _ngcontent-wpl-c36="">取出物件名稱</h3>
+<pre _ngcontent-wpl-c36=""><code class="language-javascript" _ngcontent-wpl-c36="">getItem(){
   return Object.keys(this.item);
 },
 </code></pre>
-<p _ngcontent-dnm-c36="">可用 <code _ngcontent-dnm-c36="">Object.keys</code> 取 或 <code _ngcontent-dnm-c36="">for-in</code>
-<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/keys" _ngcontent-dnm-c36="">MDN-Object.keys()</a></p>
-<h3 id="算出每個獎項的角度" _ngcontent-dnm-c36="">算出每個獎項的角度</h3>
-<pre _ngcontent-dnm-c36=""><code class="language-javascript" _ngcontent-dnm-c36="">
+<p _ngcontent-wpl-c36="">可用 <code _ngcontent-wpl-c36="">Object.keys</code> 取 或 <code _ngcontent-wpl-c36="">for-in</code>
+<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/keys" _ngcontent-wpl-c36="">MDN-Object.keys()</a></p>
+<h3 id="算出每個獎項的角度" _ngcontent-wpl-c36="">算出每個獎項的角度</h3>
+<pre _ngcontent-wpl-c36=""><code class="language-javascript" _ngcontent-wpl-c36="">
 getAngle(){
   let _self = this,
       cnt = cnt || 0,
@@ -215,16 +231,16 @@ getAngle(){
   }
 },
 </code></pre>
-<ul _ngcontent-dnm-c36="">
-<li _ngcontent-dnm-c36="">註：在陣列累加這部份有稍微小小卡了一下，一直在思考要怎麼寫出來，後來鎖性一個一
+<ul _ngcontent-wpl-c36="">
+<li _ngcontent-wpl-c36="">註：在陣列累加這部份有稍微小小卡了一下，一直在思考要怎麼寫出來，後來鎖性一個一
 個寫出來出來 列到最後 看出它的規律 再用迴圈跑</li>
 </ul>
-<p _ngcontent-dnm-c36="">大餅畫好後 就是把指針放上去轉 指到哪個 哪個就中獎所以一樣也是 css 找出中心點 把
+<p _ngcontent-wpl-c36="">大餅畫好後 就是把指針放上去轉 指到哪個 哪個就中獎所以一樣也是 css 找出中心點 把
 指針位置放上去這裡就不多說了</p>
-<h2 id="轉出得獎品" _ngcontent-dnm-c36="">轉出得獎品</h2>
-<p _ngcontent-dnm-c36="">先前我們已經利用 <code _ngcontent-dnm-c36="">angleAccu</code> 取得每塊大餅的位置我們就可以用這個角度去取得中獎品
+<h2 id="轉出得獎品" _ngcontent-wpl-c36="">轉出得獎品</h2>
+<p _ngcontent-wpl-c36="">先前我們已經利用 <code _ngcontent-wpl-c36="">angleAccu</code> 取得每塊大餅的位置我們就可以用這個角度去取得中獎品
 項</p>
-<pre _ngcontent-dnm-c36=""><code class="language-javascript" _ngcontent-dnm-c36="">press(){
+<pre _ngcontent-wpl-c36=""><code class="language-javascript" _ngcontent-wpl-c36="">press(){
   // 按下 press 後 開始轉動
   // 轉動前將上一位中將品項重置
   // 做個亂數決定要轉幾圈
@@ -272,29 +288,29 @@ getWinner( obj ){
   });
 }
 </code></pre>
-<hr _ngcontent-dnm-c36="">
-<p _ngcontent-dnm-c36="">處理到這 大致上也完成的差不多啦，剩下的就是一些細節的調整是說調細節也是需要花很
+<hr _ngcontent-wpl-c36="">
+<p _ngcontent-wpl-c36="">處理到這 大致上也完成的差不多啦，剩下的就是一些細節的調整是說調細節也是需要花很
 多時間去處理，再來就自行發揮囉～</p>
-<p _ngcontent-dnm-c36="">以上是個人絞盡腦汁後所想到的處理方式了若是看到我以上的處理方式有更好的建議也歡迎
+<p _ngcontent-wpl-c36="">以上是個人絞盡腦汁後所想到的處理方式了若是看到我以上的處理方式有更好的建議也歡迎
 分享一起討論^_^</p>
-<h2 id="後記" _ngcontent-dnm-c36="">後記</h2>
-<p _ngcontent-dnm-c36="">這次要算的數學好多啊.....常常算到一半時 腦袋就亂掉 思緒中斷後 又要重來所以花了很
+<h2 id="後記" _ngcontent-wpl-c36="">後記</h2>
+<p _ngcontent-wpl-c36="">這次要算的數學好多啊.....常常算到一半時 腦袋就亂掉 思緒中斷後 又要重來所以花了很
 多時間去處理數字這部份不過看到完成後的成果 還是很開心的啦</p>
-<!--scullyContent-end--><scully-content _ngcontent-dnm-c36=""></scully-content>
+<!--scullyContent-end--><scully-content _ngcontent-wpl-c36=""></scully-content>
             
-            <hr _ngcontent-dnm-c36="" class="my-8">
-            <p _ngcontent-dnm-c36="" class="text-lg">對這篇文章有什麼想法嗎?</p>
-            <app-blog-comments _ngcontent-dnm-c36="" _nghost-dnm-c35=""><div _ngcontent-dnm-c35="" id="blog-comments"><div class="utterances">
+            <hr _ngcontent-wpl-c36="" class="my-8">
+            <p _ngcontent-wpl-c36="" class="text-lg">對這篇文章有什麼想法嗎?</p>
+            <app-blog-comments _ngcontent-wpl-c36="" _nghost-wpl-c35=""><div _ngcontent-wpl-c35="" id="blog-comments"><div class="utterances">
     <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=mtwmt%2Fmtwmt.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2FJSBOSS%2F9f&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2FJSBOSS%2F9f&amp;title=JS%E5%9C%B0%E4%B8%8B%E5%9F%8E%EF%BC%9A9F-%E6%8A%BD%E7%8D%8E%E8%BD%89%E7%9B%A4&amp;description=JS%E5%9C%B0%E4%B8%8B%E5%9F%8E%EF%BC%9A9F-%E6%8A%BD%E7%8D%8E%E8%BD%89%E7%9B%A4&amp;og%3Atitle=JS%E5%9C%B0%E4%B8%8B%E5%9F%8E%EF%BC%9A9F-%E6%8A%BD%E7%8D%8E%E8%BD%89%E7%9B%A4" loading="lazy"></iframe>
   </div></div></app-blog-comments>
-          <script>try {window['scullyContent'] = {cssId:"_ngcontent-dnm-c36",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+          <script>try {window['scullyContent'] = {cssId:"_ngcontent-wpl-c36",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
         </div>
       </div>
     </div>
   </article>
 <!----><!---->
-<app-gotop _ngcontent-dnm-c36="" _nghost-dnm-c32=""><a _ngcontent-dnm-c32="" class="gotop" style="opacity: 1;"><i _ngcontent-dnm-c32="" class="btn bg-white"></i></a></app-gotop>
-</app-blog><!----><p _ngcontent-dnm-c29="" class="w-full bg-primary-500 h-0.5"></p><p _ngcontent-dnm-c29="" class="my-2 text-right text-xs px-2 lg:px-0"> Copyright © 2021 Mandy. All rights reserved. <br _ngcontent-dnm-c29="">Build with Angular and Scully </p></div></div></app-root>
-<script id="ScullyIO-transfer-state"></script><script src="runtime.f6893bede659fe3c7d76.js" defer=""></script><script src="polyfills.360269c4e0bb5306dff5.js" defer=""></script><script src="main.1bc56716ec83c2344848.js" defer=""></script>
+<app-gotop _ngcontent-wpl-c36="" _nghost-wpl-c32=""><a _ngcontent-wpl-c32="" class="gotop" style="opacity: 1;"><i _ngcontent-wpl-c32="" class="btn bg-white"></i></a></app-gotop>
+</app-blog><!----><p _ngcontent-wpl-c29="" class="w-full bg-primary-500 h-0.5"></p><p _ngcontent-wpl-c29="" class="my-2 text-right text-xs px-2 lg:px-0"> Copyright © 2021 Mandy. All rights reserved. <br _ngcontent-wpl-c29="">Build with Angular and Scully </p></div></div></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.c1a4ab072bfaf4a8a6f7.js" defer=""></script><script src="polyfills.360269c4e0bb5306dff5.js" defer=""></script><script src="main.1bc56716ec83c2344848.js" defer=""></script>
 
 </body></html>

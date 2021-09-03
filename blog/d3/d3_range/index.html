@@ -19,12 +19,28 @@
       border: 0;
     }
   </style>
-  <meta charset="utf-8">
-  <title>D3 Range 解析</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>@import url(https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700);html{-moz-tab-size:4;tab-size:4;line-height:1.15;-webkit-text-size-adjust:100%;}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;}html{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5;}body{font-family:inherit;line-height:inherit;}*,:after,:before{box-sizing:border-box;border:0 solid;}*,:after,:before{--tw-border-opacity:1;border-color:rgba(229,231,235,var(--tw-border-opacity));}*,:after,:before{--tw-shadow:0 0 #0000;}*,:after,:before{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;}:root{--primary:#0aa;--secondary:#4a4744;--background-color:#fff;--text-color:#444;--text-color-contrast:#fff;--gray-light:#6b7280;--gray-medium:#4b5563;--gray-dark:#374151;--table-even-row:#e5e7eb;--shadow:0 10px 15px -3px #0000001a,0 4px 6px -2px #0000000d;--text-link-color:#3b82f6;}</style><link rel="stylesheet" href="styles.9efcc06b1ed91ca25669.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.9efcc06b1ed91ca25669.css"></noscript><style>.hamburger[_ngcontent-xao-c29]{position:absolute;top:50%;transform:translateY(-50%);right:1.25rem;margin:auto;width:1.875rem;height:1.5625rem;z-index:999}.hamburger[_ngcontent-xao-c29]   span[_ngcontent-xao-c29]{top:10px;display:inline-block;cursor:pointer}.hamburger[_ngcontent-xao-c29]   span[_ngcontent-xao-c29], .hamburger[_ngcontent-xao-c29]   span[_ngcontent-xao-c29]:before{transition:.5s;position:absolute;display:block;width:30px;height:5px;background:#fff}.hamburger[_ngcontent-xao-c29]   span[_ngcontent-xao-c29]:before{content:"";top:-10px;left:0}.hamburger[_ngcontent-xao-c29]   span[_ngcontent-xao-c29]:after{transition:.5s;content:"";position:absolute;top:10px;left:0;display:block;width:30px;height:5px;background:#fff}.hamburger.active[_ngcontent-xao-c29]   span[_ngcontent-xao-c29]{transform:rotate(180deg);background-color:initial}.hamburger.active[_ngcontent-xao-c29]   span[_ngcontent-xao-c29]:before{top:-10px;transform:translateY(10.5px) rotate(45deg)}.hamburger.active[_ngcontent-xao-c29]   span[_ngcontent-xao-c29]:after{top:-10px;transform:translateY(10.5px) rotate(-45deg)}.social[_ngcontent-xao-c29]{transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-duration:.15s;transition-duration:.3s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@media (min-width: 640px){.social[_ngcontent-xao-c29]{position:static;top:0;left:0}}.social[_ngcontent-xao-c29]   li[_ngcontent-xao-c29]{display:inline-block}@media (max-width: 768px){.social[_ngcontent-xao-c29]{position:fixed;top:48px;left:0;display:block;padding-top:5rem;width:100%;height:100%;border:0;transition:.5s;transform:translateX(-100%);z-index:99;background:#fff;box-shadow:0 1px .5rem 0 #d6d6d6b3}.social.active[_ngcontent-xao-c29]{transform:translateX(0);overflow:hidden}.social[_ngcontent-xao-c29]   li[_ngcontent-xao-c29]{margin-bottom:1rem;display:block;text-align:center;line-height:2}.social[_ngcontent-xao-c29]   li[_ngcontent-xao-c29]   a[_ngcontent-xao-c29]{width:70%}}</style><style>.prose[_ngcontent-xao-c36]{font-size:1rem;line-height:1.5rem;color:rgba(107,114,128,var(--tw-text-opacity));font-family:PingFangSC-Regular,Helvetica,Helvetica Neue,Segoe UI,Hiragino Sans GB,Source Han Sans CN,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,sans-serif!important}.prose[_ngcontent-xao-c36], .prose[_ngcontent-xao-c36]   h1[_ngcontent-xao-c36]{--tw-text-opacity:1}.prose[_ngcontent-xao-c36]   h1[_ngcontent-xao-c36]{font-size:1.875rem;line-height:2.25rem;color:rgba(55,65,81,var(--tw-text-opacity))}.prose[_ngcontent-xao-c36]   h2[_ngcontent-xao-c36]{margin-top:2.5rem;margin-bottom:1rem;font-size:1.25rem}.prose[_ngcontent-xao-c36]   h2[_ngcontent-xao-c36], .prose[_ngcontent-xao-c36]   h3[_ngcontent-xao-c36]{line-height:1.75rem;font-weight:700;--tw-text-opacity:1;color:rgba(75,85,99,var(--tw-text-opacity))}.prose[_ngcontent-xao-c36]   h3[_ngcontent-xao-c36]{margin-top:1rem;font-size:1.125rem}.prose[_ngcontent-xao-c36]   h3[_ngcontent-xao-c36], .prose[_ngcontent-xao-c36]   p[_ngcontent-xao-c36]{margin-bottom:.5rem}.prose[_ngcontent-xao-c36]   p[_ngcontent-xao-c36]{margin-top:.5rem;white-space:pre-line}.prose[_ngcontent-xao-c36]   pre[_ngcontent-xao-c36]{margin-top:1rem;margin-bottom:1rem}.prose[_ngcontent-xao-c36]   img[_ngcontent-xao-c36]{margin:1rem auto}.prose[_ngcontent-xao-c36]   hr[_ngcontent-xao-c36]{margin-top:2rem;margin-bottom:2rem}.prose[_ngcontent-xao-c36]   iframe[_ngcontent-xao-c36]{margin:1rem auto .5rem;min-height:100%;max-width:100%;min-height:32rem;width:100%}.prose[_ngcontent-xao-c36]   iframe[_ngcontent-xao-c36] + p[_ngcontent-xao-c36]{margin-top:-.5rem;text-align:center}.prose[_ngcontent-xao-c36]   iframe[_ngcontent-xao-c36] + p[_ngcontent-xao-c36] > em[_ngcontent-xao-c36]{font-size:.875rem;line-height:1.25rem}.prose[_ngcontent-xao-c36]   blockquote[_ngcontent-xao-c36]{margin-top:1rem;margin-bottom:1rem;--tw-border-opacity:1;border-left:4px;border-color:rgba(156,163,175,var(--tw-border-opacity));border-style:solid;padding:.25rem .5rem;color:var(--gray-medium)}.prose[_ngcontent-xao-c36]   ol[_ngcontent-xao-c36]{list-style-type:decimal}.prose[_ngcontent-xao-c36]   ul[_ngcontent-xao-c36]{list-style-type:disc}.prose[_ngcontent-xao-c36]   ol[_ngcontent-xao-c36], .prose[_ngcontent-xao-c36]   ul[_ngcontent-xao-c36]{margin-top:1rem;margin-bottom:1rem;margin-left:1.25rem}.prose[_ngcontent-xao-c36]   ol[_ngcontent-xao-c36]   li[_ngcontent-xao-c36]:not(:last-of-type), .prose[_ngcontent-xao-c36]   ul[_ngcontent-xao-c36]   li[_ngcontent-xao-c36]:not(:last-of-type){margin-bottom:.5rem}.prose[_ngcontent-xao-c36]   [_ngcontent-xao-c36]:not(pre) > code[_ngcontent-xao-c36]{overflow-wrap:break-word;border-radius:.25rem;--tw-bg-opacity:1;background-color:rgba(243,244,246,var(--tw-bg-opacity));font-weight:100;padding:.1rem .25rem;font-size:inherit}[_nghost-xao-c36]   .toolbar-item[_ngcontent-xao-c36]{position:relative;background:#159}[_nghost-xao-c36]   .toolbar-item[_ngcontent-xao-c36]   .toolbar[_ngcontent-xao-c36]{position:absolute;top:0;right:0;color:#fff}a[_ngcontent-xao-c36]{margin:0 2px;display:inline-block;text-decoration:underline;transition:.3s}a[_ngcontent-xao-c36]:hover{text-decoration:none}table[_ngcontent-xao-c36]{margin:1rem 0 .5rem;width:100%;border-collapse:collapse}table[_ngcontent-xao-c36]   caption[_ngcontent-xao-c36]{line-height:48px;font-size:1.25rem;font-weight:700}table[_ngcontent-xao-c36]   th[_ngcontent-xao-c36]{color:var(--text-color);background:var(--table-even-row)}table[_ngcontent-xao-c36]   td[_ngcontent-xao-c36], table[_ngcontent-xao-c36]   th[_ngcontent-xao-c36]{padding:.5rem .25rem;text-align:center;line-height:1.2;border:1px solid var(--table-even-row)}</style><style>.gotop[_ngcontent-xao-c32]{position:fixed;bottom:4rem;left:50%;margin-left:28.125rem;opacity:1;transition:.3s}.gotop[_ngcontent-xao-c32]   .btn[_ngcontent-xao-c32]{width:2.5rem;height:2.5rem}.gotop[_ngcontent-xao-c32]   .btn[_ngcontent-xao-c32]:after, .gotop[_ngcontent-xao-c32]   .btn[_ngcontent-xao-c32]:before{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-45deg);margin-left:-.25rem;border-radius:.1875rem;content:"";width:1rem;height:.3125rem;background:var(--primary)}.gotop[_ngcontent-xao-c32]   .btn[_ngcontent-xao-c32]:after{transform:translate(-50%,-50%) rotate(45deg);margin-left:.25rem}@media (max-width: 1024px){.gotop[_ngcontent-xao-c32]{right:2rem;left:auto;margin:0}}</style><style></style><style>
+    <meta charset="utf-8">
+    <title>D3 Range 解析</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149155162-1"></script>
+    <script>
+      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      // ga('create','UA-149155162-1','auto');ga('send','pageview');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-149155162-1");
+    </script>
+  <style>@import url(https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700);html{-moz-tab-size:4;tab-size:4;line-height:1.15;-webkit-text-size-adjust:100%;}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;}html{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5;}body{font-family:inherit;line-height:inherit;}*,:after,:before{box-sizing:border-box;border:0 solid;}*,:after,:before{--tw-border-opacity:1;border-color:rgba(229,231,235,var(--tw-border-opacity));}*,:after,:before{--tw-shadow:0 0 #0000;}*,:after,:before{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;}:root{--primary:#0aa;--secondary:#4a4744;--background-color:#fff;--text-color:#444;--text-color-contrast:#fff;--gray-light:#6b7280;--gray-medium:#4b5563;--gray-dark:#374151;--table-even-row:#e5e7eb;--shadow:0 10px 15px -3px #0000001a,0 4px 6px -2px #0000000d;--text-link-color:#3b82f6;}</style><link rel="stylesheet" href="styles.9efcc06b1ed91ca25669.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.9efcc06b1ed91ca25669.css"></noscript><style>.hamburger[_ngcontent-brm-c29]{position:absolute;top:50%;transform:translateY(-50%);right:1.25rem;margin:auto;width:1.875rem;height:1.5625rem;z-index:999}.hamburger[_ngcontent-brm-c29]   span[_ngcontent-brm-c29]{top:10px;display:inline-block;cursor:pointer}.hamburger[_ngcontent-brm-c29]   span[_ngcontent-brm-c29], .hamburger[_ngcontent-brm-c29]   span[_ngcontent-brm-c29]:before{transition:.5s;position:absolute;display:block;width:30px;height:5px;background:#fff}.hamburger[_ngcontent-brm-c29]   span[_ngcontent-brm-c29]:before{content:"";top:-10px;left:0}.hamburger[_ngcontent-brm-c29]   span[_ngcontent-brm-c29]:after{transition:.5s;content:"";position:absolute;top:10px;left:0;display:block;width:30px;height:5px;background:#fff}.hamburger.active[_ngcontent-brm-c29]   span[_ngcontent-brm-c29]{transform:rotate(180deg);background-color:initial}.hamburger.active[_ngcontent-brm-c29]   span[_ngcontent-brm-c29]:before{top:-10px;transform:translateY(10.5px) rotate(45deg)}.hamburger.active[_ngcontent-brm-c29]   span[_ngcontent-brm-c29]:after{top:-10px;transform:translateY(10.5px) rotate(-45deg)}.social[_ngcontent-brm-c29]{transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-duration:.15s;transition-duration:.3s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@media (min-width: 640px){.social[_ngcontent-brm-c29]{position:static;top:0;left:0}}.social[_ngcontent-brm-c29]   li[_ngcontent-brm-c29]{display:inline-block}@media (max-width: 768px){.social[_ngcontent-brm-c29]{position:fixed;top:48px;left:0;display:block;padding-top:5rem;width:100%;height:100%;border:0;transition:.5s;transform:translateX(-100%);z-index:99;background:#fff;box-shadow:0 1px .5rem 0 #d6d6d6b3}.social.active[_ngcontent-brm-c29]{transform:translateX(0);overflow:hidden}.social[_ngcontent-brm-c29]   li[_ngcontent-brm-c29]{margin-bottom:1rem;display:block;text-align:center;line-height:2}.social[_ngcontent-brm-c29]   li[_ngcontent-brm-c29]   a[_ngcontent-brm-c29]{width:70%}}</style><style>.prose[_ngcontent-brm-c36]{font-size:1rem;line-height:1.5rem;color:rgba(107,114,128,var(--tw-text-opacity));font-family:PingFangSC-Regular,Helvetica,Helvetica Neue,Segoe UI,Hiragino Sans GB,Source Han Sans CN,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,sans-serif!important}.prose[_ngcontent-brm-c36], .prose[_ngcontent-brm-c36]   h1[_ngcontent-brm-c36]{--tw-text-opacity:1}.prose[_ngcontent-brm-c36]   h1[_ngcontent-brm-c36]{font-size:1.875rem;line-height:2.25rem;color:rgba(55,65,81,var(--tw-text-opacity))}.prose[_ngcontent-brm-c36]   h2[_ngcontent-brm-c36]{margin-top:2.5rem;margin-bottom:1rem;font-size:1.25rem}.prose[_ngcontent-brm-c36]   h2[_ngcontent-brm-c36], .prose[_ngcontent-brm-c36]   h3[_ngcontent-brm-c36]{line-height:1.75rem;font-weight:700;--tw-text-opacity:1;color:rgba(75,85,99,var(--tw-text-opacity))}.prose[_ngcontent-brm-c36]   h3[_ngcontent-brm-c36]{margin-top:1rem;font-size:1.125rem}.prose[_ngcontent-brm-c36]   h3[_ngcontent-brm-c36], .prose[_ngcontent-brm-c36]   p[_ngcontent-brm-c36]{margin-bottom:.5rem}.prose[_ngcontent-brm-c36]   p[_ngcontent-brm-c36]{margin-top:.5rem;white-space:pre-line}.prose[_ngcontent-brm-c36]   pre[_ngcontent-brm-c36]{margin-top:1rem;margin-bottom:1rem}.prose[_ngcontent-brm-c36]   img[_ngcontent-brm-c36]{margin:1rem auto}.prose[_ngcontent-brm-c36]   hr[_ngcontent-brm-c36]{margin-top:2rem;margin-bottom:2rem}.prose[_ngcontent-brm-c36]   iframe[_ngcontent-brm-c36]{margin:1rem auto .5rem;min-height:100%;max-width:100%;min-height:32rem;width:100%}.prose[_ngcontent-brm-c36]   iframe[_ngcontent-brm-c36] + p[_ngcontent-brm-c36]{margin-top:-.5rem;text-align:center}.prose[_ngcontent-brm-c36]   iframe[_ngcontent-brm-c36] + p[_ngcontent-brm-c36] > em[_ngcontent-brm-c36]{font-size:.875rem;line-height:1.25rem}.prose[_ngcontent-brm-c36]   blockquote[_ngcontent-brm-c36]{margin-top:1rem;margin-bottom:1rem;--tw-border-opacity:1;border-left:4px;border-color:rgba(156,163,175,var(--tw-border-opacity));border-style:solid;padding:.25rem .5rem;color:var(--gray-medium)}.prose[_ngcontent-brm-c36]   ol[_ngcontent-brm-c36]{list-style-type:decimal}.prose[_ngcontent-brm-c36]   ul[_ngcontent-brm-c36]{list-style-type:disc}.prose[_ngcontent-brm-c36]   ol[_ngcontent-brm-c36], .prose[_ngcontent-brm-c36]   ul[_ngcontent-brm-c36]{margin-top:1rem;margin-bottom:1rem;margin-left:1.25rem}.prose[_ngcontent-brm-c36]   ol[_ngcontent-brm-c36]   li[_ngcontent-brm-c36]:not(:last-of-type), .prose[_ngcontent-brm-c36]   ul[_ngcontent-brm-c36]   li[_ngcontent-brm-c36]:not(:last-of-type){margin-bottom:.5rem}.prose[_ngcontent-brm-c36]   [_ngcontent-brm-c36]:not(pre) > code[_ngcontent-brm-c36]{overflow-wrap:break-word;border-radius:.25rem;--tw-bg-opacity:1;background-color:rgba(243,244,246,var(--tw-bg-opacity));font-weight:100;padding:.1rem .25rem;font-size:inherit}[_nghost-brm-c36]   .toolbar-item[_ngcontent-brm-c36]{position:relative;background:#159}[_nghost-brm-c36]   .toolbar-item[_ngcontent-brm-c36]   .toolbar[_ngcontent-brm-c36]{position:absolute;top:0;right:0;color:#fff}a[_ngcontent-brm-c36]{margin:0 2px;display:inline-block;text-decoration:underline;transition:.3s}a[_ngcontent-brm-c36]:hover{text-decoration:none}table[_ngcontent-brm-c36]{margin:1rem 0 .5rem;width:100%;border-collapse:collapse}table[_ngcontent-brm-c36]   caption[_ngcontent-brm-c36]{line-height:48px;font-size:1.25rem;font-weight:700}table[_ngcontent-brm-c36]   th[_ngcontent-brm-c36]{color:var(--text-color);background:var(--table-even-row)}table[_ngcontent-brm-c36]   td[_ngcontent-brm-c36], table[_ngcontent-brm-c36]   th[_ngcontent-brm-c36]{padding:.5rem .25rem;text-align:center;line-height:1.2;border:1px solid var(--table-even-row)}</style><style>.gotop[_ngcontent-brm-c32]{position:fixed;bottom:4rem;left:50%;margin-left:28.125rem;opacity:1;transition:.3s}.gotop[_ngcontent-brm-c32]   .btn[_ngcontent-brm-c32]{width:2.5rem;height:2.5rem}.gotop[_ngcontent-brm-c32]   .btn[_ngcontent-brm-c32]:after, .gotop[_ngcontent-brm-c32]   .btn[_ngcontent-brm-c32]:before{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-45deg);margin-left:-.25rem;border-radius:.1875rem;content:"";width:1rem;height:.3125rem;background:var(--primary)}.gotop[_ngcontent-brm-c32]   .btn[_ngcontent-brm-c32]:after{transform:translate(-50%,-50%) rotate(45deg);margin-left:.25rem}@media (max-width: 1024px){.gotop[_ngcontent-brm-c32]{right:2rem;left:auto;margin:0}}</style><style></style><style>
       :host {
         display: none;
       }
@@ -32,32 +48,32 @@
         display: none;
       }
     </style><meta name="description" content="D3 Range 解析"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, D3"><meta property="og:title" content="D3 Range 解析"><meta property="og:description" content="D3 Range 解析"><meta property="og:type" content="article"><meta property="og:url" content="https://mtwmt.github.io/blog/d3/d3_range"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="D3 Range 解析"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="zh_tw"><meta property="og:article:published_time" content="2020/06/07"><meta property="og:article:modified_time" content="2020/06/07"><meta property="og:article:tag" content="D3"><meta property="og:article:author" content="Mandy"><script>window['ScullyIO']='generated';</script></head>
-<body scully-version="1.1.1">
-  <app-root _nghost-xao-c29="" ng-version="12.1.5"><div _ngcontent-xao-c29="" class="relative mx-auto md:max-w-5xl text-gray-700"><header _ngcontent-xao-c29="" class="sticky z-999 top-0 left-0 bg-primary-500 flex justify-between px-4 py-2 mb-5 lg:mx-5"><h1 _ngcontent-xao-c29="" class="text-white font-medium text-2xl"><a _ngcontent-xao-c29="" href="/">Mandy's Web</a></h1><a _ngcontent-xao-c29="" href="javascript:void(0);" title="MENU" class="hamburger md:hidden"><span _ngcontent-xao-c29=""></span></a><nav _ngcontent-xao-c29="" class="social"><ul _ngcontent-xao-c29="" class="md:space-x-2"><li _ngcontent-xao-c29=""><a _ngcontent-xao-c29="" class="px-4 btn md:text-white text-primary-500" href="/about">About</a></li><li _ngcontent-xao-c29=""><a _ngcontent-xao-c29="" class="px-4 btn md:text-white text-primary-500" href="/blog">Blog</a></li><li _ngcontent-xao-c29=""><a _ngcontent-xao-c29="" class="px-4 btn md:text-white text-primary-500" href="/contact">contact</a></li></ul></nav></header><div _ngcontent-xao-c29="" class="content leading-relaxed lg:mx-5"><router-outlet _ngcontent-xao-c29=""></router-outlet><app-blog _nghost-xao-c36="">
-  <app-meta _ngcontent-xao-c36="" _nghost-xao-c33=""></app-meta>
-  <article _ngcontent-xao-c36="" class="relative py-4 max-w-screen-xl mx-auto">
-    <div _ngcontent-xao-c36="" class="max-w-container mx-2">
-      <header _ngcontent-xao-c36="" class="px-4 lg:px-2">
-        <div _ngcontent-xao-c36="" class="prose text-sm max-w-none md:prose-lgspace-y-1">
-          <time _ngcontent-xao-c36="" datetime="2020/06/07">
+  <body scully-version="1.1.1">
+    <app-root _nghost-brm-c29="" ng-version="12.1.5"><div _ngcontent-brm-c29="" class="relative mx-auto md:max-w-5xl text-gray-700"><header _ngcontent-brm-c29="" class="sticky z-999 top-0 left-0 bg-primary-500 flex justify-between px-4 py-2 mb-5 lg:mx-5"><h1 _ngcontent-brm-c29="" class="text-white font-medium text-2xl"><a _ngcontent-brm-c29="" href="/">Mandy's Web</a></h1><a _ngcontent-brm-c29="" href="javascript:void(0);" title="MENU" class="hamburger md:hidden"><span _ngcontent-brm-c29=""></span></a><nav _ngcontent-brm-c29="" class="social"><ul _ngcontent-brm-c29="" class="md:space-x-2"><li _ngcontent-brm-c29=""><a _ngcontent-brm-c29="" class="px-4 btn md:text-white text-primary-500" href="/about">About</a></li><li _ngcontent-brm-c29=""><a _ngcontent-brm-c29="" class="px-4 btn md:text-white text-primary-500" href="/blog">Blog</a></li><li _ngcontent-brm-c29=""><a _ngcontent-brm-c29="" class="px-4 btn md:text-white text-primary-500" href="/contact">contact</a></li></ul></nav></header><div _ngcontent-brm-c29="" class="content leading-relaxed lg:mx-5"><router-outlet _ngcontent-brm-c29=""></router-outlet><app-blog _nghost-brm-c36="">
+  <app-meta _ngcontent-brm-c36="" _nghost-brm-c33=""></app-meta>
+  <article _ngcontent-brm-c36="" class="relative py-4 max-w-screen-xl mx-auto">
+    <div _ngcontent-brm-c36="" class="max-w-container mx-2">
+      <header _ngcontent-brm-c36="" class="px-4 lg:px-2">
+        <div _ngcontent-brm-c36="" class="prose text-sm max-w-none md:prose-lgspace-y-1">
+          <time _ngcontent-brm-c36="" datetime="2020/06/07">
             07 June 2020
           </time>
-          <h1 _ngcontent-xao-c36="" class="font-bold text-gray-700 leading-relaxed">
+          <h1 _ngcontent-brm-c36="" class="font-bold text-gray-700 leading-relaxed">
             D3 Range 解析
           </h1>
         </div>
       </header>
-      <div _ngcontent-xao-c36="" class="block lg:flex lg:flex-row-reverse lg:space-x-2">
-        <div _ngcontent-xao-c36="" class="w-full lg:w-1/4 px-4 lg:pl-0">
-          <div _ngcontent-xao-c36="" class="sticky top-32 mb-4">
-            <app-blog-nav _ngcontent-xao-c36="" _nghost-xao-c34=""><p _ngcontent-xao-c34="" class="text-xl font-semibold leading-loose">導覽列</p><!----><ul _ngcontent-xao-c34=""><li _ngcontent-xao-c34="" class="cursor-pointer"><a _ngcontent-xao-c34="" class="text-base leading-relaxed"> Sorry, could not load static page content </a><!----></li><!----></ul><!----><!----><hr _ngcontent-xao-c34="" class="block lg:hidden my-8"></app-blog-nav>
+      <div _ngcontent-brm-c36="" class="block lg:flex lg:flex-row-reverse lg:space-x-2">
+        <div _ngcontent-brm-c36="" class="w-full lg:w-1/4 px-4 lg:pl-0">
+          <div _ngcontent-brm-c36="" class="sticky top-32 mb-4">
+            <app-blog-nav _ngcontent-brm-c36="" _nghost-brm-c34=""><p _ngcontent-brm-c34="" class="text-xl font-semibold leading-loose">導覽列</p><!----><ul _ngcontent-brm-c34=""><li _ngcontent-brm-c34="" class="cursor-pointer"><a _ngcontent-brm-c34="" class="text-base leading-relaxed"> Sorry, could not load static page content </a><!----></li><!----></ul><!----><!----><hr _ngcontent-brm-c34="" class="block lg:hidden my-8"></app-blog-nav>
           </div>
         </div>
-        <div _ngcontent-xao-c36="" class="w-full lg:w-3/4 px-4 lg:pl-0">
-          <div _ngcontent-xao-c36="" class="prose">
-            <!--scullyContent-begin--><p _ngcontent-xao-c36="">d3 range 屬於 d3-array 的一部份</p>
-<p _ngcontent-xao-c36=""><a href="https://github.com/d3/d3-array/blob/master/src/range.js" _ngcontent-xao-c36="">源始碼如下</a></p>
-<pre _ngcontent-xao-c36=""><code class="language-js" _ngcontent-xao-c36="">export default function (start, stop, step) {
+        <div _ngcontent-brm-c36="" class="w-full lg:w-3/4 px-4 lg:pl-0">
+          <div _ngcontent-brm-c36="" class="prose">
+            <!--scullyContent-begin--><p _ngcontent-brm-c36="">d3 range 屬於 d3-array 的一部份</p>
+<p _ngcontent-brm-c36=""><a href="https://github.com/d3/d3-array/blob/master/src/range.js" _ngcontent-brm-c36="">源始碼如下</a></p>
+<pre _ngcontent-brm-c36=""><code class="language-js" _ngcontent-brm-c36="">export default function (start, stop, step) {
   (start = +start),
     (stop = +stop),
     (step = (n = arguments.length) &lt; 2 ? ((stop = start), (start = 0), 1) : n &lt; 3 ? 1 : +step);
@@ -72,24 +88,24 @@
   return range;
 }
 </code></pre>
-<hr _ngcontent-xao-c36="">
-<h2 id="解析" _ngcontent-xao-c36="">解析</h2>
-<h3 id="型別轉換" _ngcontent-xao-c36="">型別轉換</h3>
-<pre _ngcontent-xao-c36=""><code class="language-js" _ngcontent-xao-c36="">(start = +start),
+<hr _ngcontent-brm-c36="">
+<h2 id="解析" _ngcontent-brm-c36="">解析</h2>
+<h3 id="型別轉換" _ngcontent-brm-c36="">型別轉換</h3>
+<pre _ngcontent-brm-c36=""><code class="language-js" _ngcontent-brm-c36="">(start = +start),
 (stop = +stop),
 </code></pre>
-<p _ngcontent-xao-c36="">拆解後如下</p>
-<pre _ngcontent-xao-c36=""><code class="language-js" _ngcontent-xao-c36="">start = Number(start);
+<p _ngcontent-brm-c36="">拆解後如下</p>
+<pre _ngcontent-brm-c36=""><code class="language-js" _ngcontent-brm-c36="">start = Number(start);
 stop = Number(stop);
 </code></pre>
-<p _ngcontent-xao-c36="">因為要做計算所以
+<p _ngcontent-brm-c36="">因為要做計算所以
 將傳進來的值強制轉為數字型別</p>
-<p _ngcontent-xao-c36="">可參考 <a href="https://ithelp.ithome.com.tw/articles/10201512" _ngcontent-xao-c36="">你懂 JavaScript 嗎？#8 強制轉型（Coercion）</a></p>
-<h3 id="三元運算子" _ngcontent-xao-c36="">三元運算子</h3>
-<pre _ngcontent-xao-c36=""><code class="language-js" _ngcontent-xao-c36="">step = (n = arguments.length) &lt; 2 ? ((stop = start), (start = 0), 1) : n &lt; 3 ? 1 : +step;
+<p _ngcontent-brm-c36="">可參考 <a href="https://ithelp.ithome.com.tw/articles/10201512" _ngcontent-brm-c36="">你懂 JavaScript 嗎？#8 強制轉型（Coercion）</a></p>
+<h3 id="三元運算子" _ngcontent-brm-c36="">三元運算子</h3>
+<pre _ngcontent-brm-c36=""><code class="language-js" _ngcontent-brm-c36="">step = (n = arguments.length) &lt; 2 ? ((stop = start), (start = 0), 1) : n &lt; 3 ? 1 : +step;
 </code></pre>
-<p _ngcontent-xao-c36="">拆解後如下</p>
-<pre _ngcontent-xao-c36=""><code class="language-js" _ngcontent-xao-c36="">if ((n = arguments.length) &lt; 2) {
+<p _ngcontent-brm-c36="">拆解後如下</p>
+<pre _ngcontent-brm-c36=""><code class="language-js" _ngcontent-brm-c36="">if ((n = arguments.length) &lt; 2) {
   // 如果傳進來的參數只有一個值
   stop = start;
   start = 0;
@@ -103,19 +119,19 @@ stop = Number(stop);
   }
 }
 </code></pre>
-<ul _ngcontent-xao-c36="">
-<li _ngcontent-xao-c36="">arguments</li>
+<ul _ngcontent-brm-c36="">
+<li _ngcontent-brm-c36="">arguments</li>
 </ul>
-<p _ngcontent-xao-c36="">關於 arguments 可參考下列文章</p>
-<p _ngcontent-xao-c36=""><a href="https://pjchender.blogspot.com/2016/04/javascriptparameterargumentsspread.html" _ngcontent-xao-c36="">[筆記] 談談 JavaScript 中函式的參數(parameter),arguments 和展開運算子(spread)</a></p>
-<ul _ngcontent-xao-c36="">
-<li _ngcontent-xao-c36="">三元(條件)運算子</li>
+<p _ngcontent-brm-c36="">關於 arguments 可參考下列文章</p>
+<p _ngcontent-brm-c36=""><a href="https://pjchender.blogspot.com/2016/04/javascriptparameterargumentsspread.html" _ngcontent-brm-c36="">[筆記] 談談 JavaScript 中函式的參數(parameter),arguments 和展開運算子(spread)</a></p>
+<ul _ngcontent-brm-c36="">
+<li _ngcontent-brm-c36="">三元(條件)運算子</li>
 </ul>
-<p _ngcontent-xao-c36=""><code _ngcontent-xao-c36="">條件 ? 條件符合 (true) : 條件為否 (false)</code></p>
-<p _ngcontent-xao-c36=""><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" _ngcontent-xao-c36="">MDN: 條件運算子</a></p>
-<h3 id="迴圈" _ngcontent-xao-c36="">迴圈</h3>
-<p _ngcontent-xao-c36="">d3 這裡使用 while 迴圈</p>
-<pre _ngcontent-xao-c36=""><code class="language-js" _ngcontent-xao-c36="">var i = -1,
+<p _ngcontent-brm-c36=""><code _ngcontent-brm-c36="">條件 ? 條件符合 (true) : 條件為否 (false)</code></p>
+<p _ngcontent-brm-c36=""><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" _ngcontent-brm-c36="">MDN: 條件運算子</a></p>
+<h3 id="迴圈" _ngcontent-brm-c36="">迴圈</h3>
+<p _ngcontent-brm-c36="">d3 這裡使用 while 迴圈</p>
+<pre _ngcontent-brm-c36=""><code class="language-js" _ngcontent-brm-c36="">var i = -1,
   n = Math.max(0, Math.ceil((stop - start) / step)) | 0, //算出要跑幾次迴圈
   range = new Array(n); // 再賦予 n 個空陣列
 
@@ -123,48 +139,48 @@ while (++i &lt; n) {
   range[i] = start + i * step;
 }
 </code></pre>
-<p _ngcontent-xao-c36="">來說說 <code _ngcontent-xao-c36="">++i</code> 與 <code _ngcontent-xao-c36="">i++</code> 的差別</p>
-<blockquote _ngcontent-xao-c36="">
-<p _ngcontent-xao-c36="">++i</p>
+<p _ngcontent-brm-c36="">來說說 <code _ngcontent-brm-c36="">++i</code> 與 <code _ngcontent-brm-c36="">i++</code> 的差別</p>
+<blockquote _ngcontent-brm-c36="">
+<p _ngcontent-brm-c36="">++i</p>
 </blockquote>
-<p _ngcontent-xao-c36="">迴圈執行前 先 +1
+<p _ngcontent-brm-c36="">迴圈執行前 先 +1
 如同上面 一開始宣告 i = -1;
 所以在執行迴圈時 i 會先+1 然後再去跑迴圈
 所以這個 while 會從 0 開始跑</p>
-<blockquote _ngcontent-xao-c36="">
-<p _ngcontent-xao-c36="">i++ 後執行</p>
+<blockquote _ngcontent-brm-c36="">
+<p _ngcontent-brm-c36="">i++ 後執行</p>
 </blockquote>
-<p _ngcontent-xao-c36="">迴圈執從後 才 +1
+<p _ngcontent-brm-c36="">迴圈執從後 才 +1
 如用上述 這麼寫的話 會先從 -1 開始跑</p>
-<blockquote _ngcontent-xao-c36="">
-<p _ngcontent-xao-c36=""><code _ngcontent-xao-c36="">for</code> 與 <code _ngcontent-xao-c36="">while</code> 的差別</p>
+<blockquote _ngcontent-brm-c36="">
+<p _ngcontent-brm-c36=""><code _ngcontent-brm-c36="">for</code> 與 <code _ngcontent-brm-c36="">while</code> 的差別</p>
 </blockquote>
-<p _ngcontent-xao-c36=""><a href="https://ithelp.ithome.com.tw/articles/10191453" _ngcontent-xao-c36="">重新認識 JavaScript: Day 09 流程判斷與迴圈</a>
+<p _ngcontent-brm-c36=""><a href="https://ithelp.ithome.com.tw/articles/10191453" _ngcontent-brm-c36="">重新認識 JavaScript: Day 09 流程判斷與迴圈</a>
 在這 kuro 大大的這篇文章最後面裡有提到 這兩者的差異性 這裡就不多說了 XD</p>
-<hr _ngcontent-xao-c36="">
-<h2 id="使用函數" _ngcontent-xao-c36="">使用函數</h2>
-<blockquote _ngcontent-xao-c36="">
-<p _ngcontent-xao-c36="">帶入起始值 與 結束點，從起始值開始，每個階段的累加值</p>
+<hr _ngcontent-brm-c36="">
+<h2 id="使用函數" _ngcontent-brm-c36="">使用函數</h2>
+<blockquote _ngcontent-brm-c36="">
+<p _ngcontent-brm-c36="">帶入起始值 與 結束點，從起始值開始，每個階段的累加值</p>
 </blockquote>
-<pre _ngcontent-xao-c36=""><code class="language-js" _ngcontent-xao-c36="">d3.range(3, 70, 8);
+<pre _ngcontent-brm-c36=""><code class="language-js" _ngcontent-brm-c36="">d3.range(3, 70, 8);
 // [ 3, 11, 19, 27, 35, 43, 51, 59, 67 ]
 </code></pre>
-<blockquote _ngcontent-xao-c36="">
-<p _ngcontent-xao-c36="">如果沒有給它累加的值，則每次就只會累加 1</p>
+<blockquote _ngcontent-brm-c36="">
+<p _ngcontent-brm-c36="">如果沒有給它累加的值，則每次就只會累加 1</p>
 </blockquote>
-<pre _ngcontent-xao-c36=""><code class="language-js" _ngcontent-xao-c36="">d3.range(3, 10);
+<pre _ngcontent-brm-c36=""><code class="language-js" _ngcontent-brm-c36="">d3.range(3, 10);
 // [3, 4, 5, 6, 7, 8, 9]
 </code></pre>
-<blockquote _ngcontent-xao-c36="">
-<p _ngcontent-xao-c36="">如果只傳進來一個值</p>
+<blockquote _ngcontent-brm-c36="">
+<p _ngcontent-brm-c36="">如果只傳進來一個值</p>
 </blockquote>
-<pre _ngcontent-xao-c36=""><code class="language-js" _ngcontent-xao-c36="">d3.range(5);
+<pre _ngcontent-brm-c36=""><code class="language-js" _ngcontent-brm-c36="">d3.range(5);
 // [0, 1, 2, 3, 4]
 </code></pre>
-<hr _ngcontent-xao-c36="">
-<h2 id="typescript" _ngcontent-xao-c36="">TypeScript</h2>
-<p _ngcontent-xao-c36="">改寫出了兩種寫法，出來的值都會是一樣的，但實際上的差別在哪 老實說 我也不是很清楚，這部份若是我有答案後，會再補充上來</p>
-<pre _ngcontent-xao-c36=""><code class="language-js" _ngcontent-xao-c36="">range(start: number, stop: number = start, step: number = 1) {
+<hr _ngcontent-brm-c36="">
+<h2 id="typescript" _ngcontent-brm-c36="">TypeScript</h2>
+<p _ngcontent-brm-c36="">改寫出了兩種寫法，出來的值都會是一樣的，但實際上的差別在哪 老實說 我也不是很清楚，這部份若是我有答案後，會再補充上來</p>
+<pre _ngcontent-brm-c36=""><code class="language-js" _ngcontent-brm-c36="">range(start: number, stop: number = start, step: number = 1) {
   if( arguments.length &lt; 2 ){
     start = 0;
   }
@@ -176,7 +192,7 @@ while (++i &lt; n) {
   return range;
 }
 </code></pre>
-<pre _ngcontent-xao-c36=""><code class="language-js" _ngcontent-xao-c36="">range(start: number, stop: number = start, step: number = 1, arr: Array&lt;number&gt; = [start]) {
+<pre _ngcontent-brm-c36=""><code class="language-js" _ngcontent-brm-c36="">range(start: number, stop: number = start, step: number = 1, arr: Array&lt;number&gt; = [start]) {
   if (arguments.length &lt; 2) {
     start = 0;
     arr = [0];
@@ -190,22 +206,22 @@ while (++i &lt; n) {
   }
 }
 </code></pre>
-<p _ngcontent-xao-c36="">因為工作需求，所以要用到 d3 這個 function 來轉換資料，但又不是使用在 d3 的繪製圖表裡，直接引用 d3 一大包也不太恰當，又因是使用 ts 撰寫，直接把 range.js 摳過來用 在 tslint 會報錯 所以就稍為改寫了一下 也做個記錄</p>
-<!--scullyContent-end--><scully-content _ngcontent-xao-c36=""></scully-content>
+<p _ngcontent-brm-c36="">因為工作需求，所以要用到 d3 這個 function 來轉換資料，但又不是使用在 d3 的繪製圖表裡，直接引用 d3 一大包也不太恰當，又因是使用 ts 撰寫，直接把 range.js 摳過來用 在 tslint 會報錯 所以就稍為改寫了一下 也做個記錄</p>
+<!--scullyContent-end--><scully-content _ngcontent-brm-c36=""></scully-content>
             
-            <hr _ngcontent-xao-c36="" class="my-8">
-            <p _ngcontent-xao-c36="" class="text-lg">對這篇文章有什麼想法嗎?</p>
-            <app-blog-comments _ngcontent-xao-c36="" _nghost-xao-c35=""><div _ngcontent-xao-c35="" id="blog-comments"><div class="utterances">
+            <hr _ngcontent-brm-c36="" class="my-8">
+            <p _ngcontent-brm-c36="" class="text-lg">對這篇文章有什麼想法嗎?</p>
+            <app-blog-comments _ngcontent-brm-c36="" _nghost-brm-c35=""><div _ngcontent-brm-c35="" id="blog-comments"><div class="utterances">
     <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=mtwmt%2Fmtwmt.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2Fd3%2Fd3_range&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2Fd3%2Fd3_range&amp;title=D3%20Range%20%E8%A7%A3%E6%9E%90&amp;description=D3%20Range%20%E8%A7%A3%E6%9E%90&amp;og%3Atitle=D3%20Range%20%E8%A7%A3%E6%9E%90" loading="lazy"></iframe>
   </div></div></app-blog-comments>
-          <script>try {window['scullyContent'] = {cssId:"_ngcontent-xao-c36",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+          <script>try {window['scullyContent'] = {cssId:"_ngcontent-brm-c36",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
         </div>
       </div>
     </div>
   </article>
 <!----><!---->
-<app-gotop _ngcontent-xao-c36="" _nghost-xao-c32=""><a _ngcontent-xao-c32="" class="gotop" style="opacity: 1;"><i _ngcontent-xao-c32="" class="btn bg-white"></i></a></app-gotop>
-</app-blog><!----><p _ngcontent-xao-c29="" class="w-full bg-primary-500 h-0.5"></p><p _ngcontent-xao-c29="" class="my-2 text-right text-xs px-2 lg:px-0"> Copyright © 2021 Mandy. All rights reserved. <br _ngcontent-xao-c29="">Build with Angular and Scully </p></div></div></app-root>
-<script id="ScullyIO-transfer-state"></script><script src="runtime.f6893bede659fe3c7d76.js" defer=""></script><script src="polyfills.360269c4e0bb5306dff5.js" defer=""></script><script src="main.1bc56716ec83c2344848.js" defer=""></script>
+<app-gotop _ngcontent-brm-c36="" _nghost-brm-c32=""><a _ngcontent-brm-c32="" class="gotop" style="opacity: 1;"><i _ngcontent-brm-c32="" class="btn bg-white"></i></a></app-gotop>
+</app-blog><!----><p _ngcontent-brm-c29="" class="w-full bg-primary-500 h-0.5"></p><p _ngcontent-brm-c29="" class="my-2 text-right text-xs px-2 lg:px-0"> Copyright © 2021 Mandy. All rights reserved. <br _ngcontent-brm-c29="">Build with Angular and Scully </p></div></div></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.c1a4ab072bfaf4a8a6f7.js" defer=""></script><script src="polyfills.360269c4e0bb5306dff5.js" defer=""></script><script src="main.1bc56716ec83c2344848.js" defer=""></script>
 
 </body></html>

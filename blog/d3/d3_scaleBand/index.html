@@ -19,12 +19,28 @@
       border: 0;
     }
   </style>
-  <meta charset="utf-8">
-  <title>D3 序數比例尺 scaleBand</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>@import url(https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700);html{-moz-tab-size:4;tab-size:4;line-height:1.15;-webkit-text-size-adjust:100%;}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;}html{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5;}body{font-family:inherit;line-height:inherit;}*,:after,:before{box-sizing:border-box;border:0 solid;}*,:after,:before{--tw-border-opacity:1;border-color:rgba(229,231,235,var(--tw-border-opacity));}*,:after,:before{--tw-shadow:0 0 #0000;}*,:after,:before{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;}:root{--primary:#0aa;--secondary:#4a4744;--background-color:#fff;--text-color:#444;--text-color-contrast:#fff;--gray-light:#6b7280;--gray-medium:#4b5563;--gray-dark:#374151;--table-even-row:#e5e7eb;--shadow:0 10px 15px -3px #0000001a,0 4px 6px -2px #0000000d;--text-link-color:#3b82f6;}</style><link rel="stylesheet" href="styles.9efcc06b1ed91ca25669.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.9efcc06b1ed91ca25669.css"></noscript><style>.hamburger[_ngcontent-erk-c29]{position:absolute;top:50%;transform:translateY(-50%);right:1.25rem;margin:auto;width:1.875rem;height:1.5625rem;z-index:999}.hamburger[_ngcontent-erk-c29]   span[_ngcontent-erk-c29]{top:10px;display:inline-block;cursor:pointer}.hamburger[_ngcontent-erk-c29]   span[_ngcontent-erk-c29], .hamburger[_ngcontent-erk-c29]   span[_ngcontent-erk-c29]:before{transition:.5s;position:absolute;display:block;width:30px;height:5px;background:#fff}.hamburger[_ngcontent-erk-c29]   span[_ngcontent-erk-c29]:before{content:"";top:-10px;left:0}.hamburger[_ngcontent-erk-c29]   span[_ngcontent-erk-c29]:after{transition:.5s;content:"";position:absolute;top:10px;left:0;display:block;width:30px;height:5px;background:#fff}.hamburger.active[_ngcontent-erk-c29]   span[_ngcontent-erk-c29]{transform:rotate(180deg);background-color:initial}.hamburger.active[_ngcontent-erk-c29]   span[_ngcontent-erk-c29]:before{top:-10px;transform:translateY(10.5px) rotate(45deg)}.hamburger.active[_ngcontent-erk-c29]   span[_ngcontent-erk-c29]:after{top:-10px;transform:translateY(10.5px) rotate(-45deg)}.social[_ngcontent-erk-c29]{transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-duration:.15s;transition-duration:.3s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@media (min-width: 640px){.social[_ngcontent-erk-c29]{position:static;top:0;left:0}}.social[_ngcontent-erk-c29]   li[_ngcontent-erk-c29]{display:inline-block}@media (max-width: 768px){.social[_ngcontent-erk-c29]{position:fixed;top:48px;left:0;display:block;padding-top:5rem;width:100%;height:100%;border:0;transition:.5s;transform:translateX(-100%);z-index:99;background:#fff;box-shadow:0 1px .5rem 0 #d6d6d6b3}.social.active[_ngcontent-erk-c29]{transform:translateX(0);overflow:hidden}.social[_ngcontent-erk-c29]   li[_ngcontent-erk-c29]{margin-bottom:1rem;display:block;text-align:center;line-height:2}.social[_ngcontent-erk-c29]   li[_ngcontent-erk-c29]   a[_ngcontent-erk-c29]{width:70%}}</style><style>.prose[_ngcontent-erk-c36]{font-size:1rem;line-height:1.5rem;color:rgba(107,114,128,var(--tw-text-opacity));font-family:PingFangSC-Regular,Helvetica,Helvetica Neue,Segoe UI,Hiragino Sans GB,Source Han Sans CN,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,sans-serif!important}.prose[_ngcontent-erk-c36], .prose[_ngcontent-erk-c36]   h1[_ngcontent-erk-c36]{--tw-text-opacity:1}.prose[_ngcontent-erk-c36]   h1[_ngcontent-erk-c36]{font-size:1.875rem;line-height:2.25rem;color:rgba(55,65,81,var(--tw-text-opacity))}.prose[_ngcontent-erk-c36]   h2[_ngcontent-erk-c36]{margin-top:2.5rem;margin-bottom:1rem;font-size:1.25rem}.prose[_ngcontent-erk-c36]   h2[_ngcontent-erk-c36], .prose[_ngcontent-erk-c36]   h3[_ngcontent-erk-c36]{line-height:1.75rem;font-weight:700;--tw-text-opacity:1;color:rgba(75,85,99,var(--tw-text-opacity))}.prose[_ngcontent-erk-c36]   h3[_ngcontent-erk-c36]{margin-top:1rem;font-size:1.125rem}.prose[_ngcontent-erk-c36]   h3[_ngcontent-erk-c36], .prose[_ngcontent-erk-c36]   p[_ngcontent-erk-c36]{margin-bottom:.5rem}.prose[_ngcontent-erk-c36]   p[_ngcontent-erk-c36]{margin-top:.5rem;white-space:pre-line}.prose[_ngcontent-erk-c36]   pre[_ngcontent-erk-c36]{margin-top:1rem;margin-bottom:1rem}.prose[_ngcontent-erk-c36]   img[_ngcontent-erk-c36]{margin:1rem auto}.prose[_ngcontent-erk-c36]   hr[_ngcontent-erk-c36]{margin-top:2rem;margin-bottom:2rem}.prose[_ngcontent-erk-c36]   iframe[_ngcontent-erk-c36]{margin:1rem auto .5rem;min-height:100%;max-width:100%;min-height:32rem;width:100%}.prose[_ngcontent-erk-c36]   iframe[_ngcontent-erk-c36] + p[_ngcontent-erk-c36]{margin-top:-.5rem;text-align:center}.prose[_ngcontent-erk-c36]   iframe[_ngcontent-erk-c36] + p[_ngcontent-erk-c36] > em[_ngcontent-erk-c36]{font-size:.875rem;line-height:1.25rem}.prose[_ngcontent-erk-c36]   blockquote[_ngcontent-erk-c36]{margin-top:1rem;margin-bottom:1rem;--tw-border-opacity:1;border-left:4px;border-color:rgba(156,163,175,var(--tw-border-opacity));border-style:solid;padding:.25rem .5rem;color:var(--gray-medium)}.prose[_ngcontent-erk-c36]   ol[_ngcontent-erk-c36]{list-style-type:decimal}.prose[_ngcontent-erk-c36]   ul[_ngcontent-erk-c36]{list-style-type:disc}.prose[_ngcontent-erk-c36]   ol[_ngcontent-erk-c36], .prose[_ngcontent-erk-c36]   ul[_ngcontent-erk-c36]{margin-top:1rem;margin-bottom:1rem;margin-left:1.25rem}.prose[_ngcontent-erk-c36]   ol[_ngcontent-erk-c36]   li[_ngcontent-erk-c36]:not(:last-of-type), .prose[_ngcontent-erk-c36]   ul[_ngcontent-erk-c36]   li[_ngcontent-erk-c36]:not(:last-of-type){margin-bottom:.5rem}.prose[_ngcontent-erk-c36]   [_ngcontent-erk-c36]:not(pre) > code[_ngcontent-erk-c36]{overflow-wrap:break-word;border-radius:.25rem;--tw-bg-opacity:1;background-color:rgba(243,244,246,var(--tw-bg-opacity));font-weight:100;padding:.1rem .25rem;font-size:inherit}[_nghost-erk-c36]   .toolbar-item[_ngcontent-erk-c36]{position:relative;background:#159}[_nghost-erk-c36]   .toolbar-item[_ngcontent-erk-c36]   .toolbar[_ngcontent-erk-c36]{position:absolute;top:0;right:0;color:#fff}a[_ngcontent-erk-c36]{margin:0 2px;display:inline-block;text-decoration:underline;transition:.3s}a[_ngcontent-erk-c36]:hover{text-decoration:none}table[_ngcontent-erk-c36]{margin:1rem 0 .5rem;width:100%;border-collapse:collapse}table[_ngcontent-erk-c36]   caption[_ngcontent-erk-c36]{line-height:48px;font-size:1.25rem;font-weight:700}table[_ngcontent-erk-c36]   th[_ngcontent-erk-c36]{color:var(--text-color);background:var(--table-even-row)}table[_ngcontent-erk-c36]   td[_ngcontent-erk-c36], table[_ngcontent-erk-c36]   th[_ngcontent-erk-c36]{padding:.5rem .25rem;text-align:center;line-height:1.2;border:1px solid var(--table-even-row)}</style><style>.gotop[_ngcontent-erk-c32]{position:fixed;bottom:4rem;left:50%;margin-left:28.125rem;opacity:1;transition:.3s}.gotop[_ngcontent-erk-c32]   .btn[_ngcontent-erk-c32]{width:2.5rem;height:2.5rem}.gotop[_ngcontent-erk-c32]   .btn[_ngcontent-erk-c32]:after, .gotop[_ngcontent-erk-c32]   .btn[_ngcontent-erk-c32]:before{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-45deg);margin-left:-.25rem;border-radius:.1875rem;content:"";width:1rem;height:.3125rem;background:var(--primary)}.gotop[_ngcontent-erk-c32]   .btn[_ngcontent-erk-c32]:after{transform:translate(-50%,-50%) rotate(45deg);margin-left:.25rem}@media (max-width: 1024px){.gotop[_ngcontent-erk-c32]{right:2rem;left:auto;margin:0}}</style><style></style><style>
+    <meta charset="utf-8">
+    <title>D3 序數比例尺 scaleBand</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149155162-1"></script>
+    <script>
+      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      // ga('create','UA-149155162-1','auto');ga('send','pageview');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-149155162-1");
+    </script>
+  <style>@import url(https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700);html{-moz-tab-size:4;tab-size:4;line-height:1.15;-webkit-text-size-adjust:100%;}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;}html{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5;}body{font-family:inherit;line-height:inherit;}*,:after,:before{box-sizing:border-box;border:0 solid;}*,:after,:before{--tw-border-opacity:1;border-color:rgba(229,231,235,var(--tw-border-opacity));}*,:after,:before{--tw-shadow:0 0 #0000;}*,:after,:before{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;}:root{--primary:#0aa;--secondary:#4a4744;--background-color:#fff;--text-color:#444;--text-color-contrast:#fff;--gray-light:#6b7280;--gray-medium:#4b5563;--gray-dark:#374151;--table-even-row:#e5e7eb;--shadow:0 10px 15px -3px #0000001a,0 4px 6px -2px #0000000d;--text-link-color:#3b82f6;}</style><link rel="stylesheet" href="styles.9efcc06b1ed91ca25669.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.9efcc06b1ed91ca25669.css"></noscript><style>.hamburger[_ngcontent-qab-c29]{position:absolute;top:50%;transform:translateY(-50%);right:1.25rem;margin:auto;width:1.875rem;height:1.5625rem;z-index:999}.hamburger[_ngcontent-qab-c29]   span[_ngcontent-qab-c29]{top:10px;display:inline-block;cursor:pointer}.hamburger[_ngcontent-qab-c29]   span[_ngcontent-qab-c29], .hamburger[_ngcontent-qab-c29]   span[_ngcontent-qab-c29]:before{transition:.5s;position:absolute;display:block;width:30px;height:5px;background:#fff}.hamburger[_ngcontent-qab-c29]   span[_ngcontent-qab-c29]:before{content:"";top:-10px;left:0}.hamburger[_ngcontent-qab-c29]   span[_ngcontent-qab-c29]:after{transition:.5s;content:"";position:absolute;top:10px;left:0;display:block;width:30px;height:5px;background:#fff}.hamburger.active[_ngcontent-qab-c29]   span[_ngcontent-qab-c29]{transform:rotate(180deg);background-color:initial}.hamburger.active[_ngcontent-qab-c29]   span[_ngcontent-qab-c29]:before{top:-10px;transform:translateY(10.5px) rotate(45deg)}.hamburger.active[_ngcontent-qab-c29]   span[_ngcontent-qab-c29]:after{top:-10px;transform:translateY(10.5px) rotate(-45deg)}.social[_ngcontent-qab-c29]{transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-duration:.15s;transition-duration:.3s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@media (min-width: 640px){.social[_ngcontent-qab-c29]{position:static;top:0;left:0}}.social[_ngcontent-qab-c29]   li[_ngcontent-qab-c29]{display:inline-block}@media (max-width: 768px){.social[_ngcontent-qab-c29]{position:fixed;top:48px;left:0;display:block;padding-top:5rem;width:100%;height:100%;border:0;transition:.5s;transform:translateX(-100%);z-index:99;background:#fff;box-shadow:0 1px .5rem 0 #d6d6d6b3}.social.active[_ngcontent-qab-c29]{transform:translateX(0);overflow:hidden}.social[_ngcontent-qab-c29]   li[_ngcontent-qab-c29]{margin-bottom:1rem;display:block;text-align:center;line-height:2}.social[_ngcontent-qab-c29]   li[_ngcontent-qab-c29]   a[_ngcontent-qab-c29]{width:70%}}</style><style>.prose[_ngcontent-qab-c36]{font-size:1rem;line-height:1.5rem;color:rgba(107,114,128,var(--tw-text-opacity));font-family:PingFangSC-Regular,Helvetica,Helvetica Neue,Segoe UI,Hiragino Sans GB,Source Han Sans CN,Microsoft YaHei,STHeiti,WenQuanYi Micro Hei,sans-serif!important}.prose[_ngcontent-qab-c36], .prose[_ngcontent-qab-c36]   h1[_ngcontent-qab-c36]{--tw-text-opacity:1}.prose[_ngcontent-qab-c36]   h1[_ngcontent-qab-c36]{font-size:1.875rem;line-height:2.25rem;color:rgba(55,65,81,var(--tw-text-opacity))}.prose[_ngcontent-qab-c36]   h2[_ngcontent-qab-c36]{margin-top:2.5rem;margin-bottom:1rem;font-size:1.25rem}.prose[_ngcontent-qab-c36]   h2[_ngcontent-qab-c36], .prose[_ngcontent-qab-c36]   h3[_ngcontent-qab-c36]{line-height:1.75rem;font-weight:700;--tw-text-opacity:1;color:rgba(75,85,99,var(--tw-text-opacity))}.prose[_ngcontent-qab-c36]   h3[_ngcontent-qab-c36]{margin-top:1rem;font-size:1.125rem}.prose[_ngcontent-qab-c36]   h3[_ngcontent-qab-c36], .prose[_ngcontent-qab-c36]   p[_ngcontent-qab-c36]{margin-bottom:.5rem}.prose[_ngcontent-qab-c36]   p[_ngcontent-qab-c36]{margin-top:.5rem;white-space:pre-line}.prose[_ngcontent-qab-c36]   pre[_ngcontent-qab-c36]{margin-top:1rem;margin-bottom:1rem}.prose[_ngcontent-qab-c36]   img[_ngcontent-qab-c36]{margin:1rem auto}.prose[_ngcontent-qab-c36]   hr[_ngcontent-qab-c36]{margin-top:2rem;margin-bottom:2rem}.prose[_ngcontent-qab-c36]   iframe[_ngcontent-qab-c36]{margin:1rem auto .5rem;min-height:100%;max-width:100%;min-height:32rem;width:100%}.prose[_ngcontent-qab-c36]   iframe[_ngcontent-qab-c36] + p[_ngcontent-qab-c36]{margin-top:-.5rem;text-align:center}.prose[_ngcontent-qab-c36]   iframe[_ngcontent-qab-c36] + p[_ngcontent-qab-c36] > em[_ngcontent-qab-c36]{font-size:.875rem;line-height:1.25rem}.prose[_ngcontent-qab-c36]   blockquote[_ngcontent-qab-c36]{margin-top:1rem;margin-bottom:1rem;--tw-border-opacity:1;border-left:4px;border-color:rgba(156,163,175,var(--tw-border-opacity));border-style:solid;padding:.25rem .5rem;color:var(--gray-medium)}.prose[_ngcontent-qab-c36]   ol[_ngcontent-qab-c36]{list-style-type:decimal}.prose[_ngcontent-qab-c36]   ul[_ngcontent-qab-c36]{list-style-type:disc}.prose[_ngcontent-qab-c36]   ol[_ngcontent-qab-c36], .prose[_ngcontent-qab-c36]   ul[_ngcontent-qab-c36]{margin-top:1rem;margin-bottom:1rem;margin-left:1.25rem}.prose[_ngcontent-qab-c36]   ol[_ngcontent-qab-c36]   li[_ngcontent-qab-c36]:not(:last-of-type), .prose[_ngcontent-qab-c36]   ul[_ngcontent-qab-c36]   li[_ngcontent-qab-c36]:not(:last-of-type){margin-bottom:.5rem}.prose[_ngcontent-qab-c36]   [_ngcontent-qab-c36]:not(pre) > code[_ngcontent-qab-c36]{overflow-wrap:break-word;border-radius:.25rem;--tw-bg-opacity:1;background-color:rgba(243,244,246,var(--tw-bg-opacity));font-weight:100;padding:.1rem .25rem;font-size:inherit}[_nghost-qab-c36]   .toolbar-item[_ngcontent-qab-c36]{position:relative;background:#159}[_nghost-qab-c36]   .toolbar-item[_ngcontent-qab-c36]   .toolbar[_ngcontent-qab-c36]{position:absolute;top:0;right:0;color:#fff}a[_ngcontent-qab-c36]{margin:0 2px;display:inline-block;text-decoration:underline;transition:.3s}a[_ngcontent-qab-c36]:hover{text-decoration:none}table[_ngcontent-qab-c36]{margin:1rem 0 .5rem;width:100%;border-collapse:collapse}table[_ngcontent-qab-c36]   caption[_ngcontent-qab-c36]{line-height:48px;font-size:1.25rem;font-weight:700}table[_ngcontent-qab-c36]   th[_ngcontent-qab-c36]{color:var(--text-color);background:var(--table-even-row)}table[_ngcontent-qab-c36]   td[_ngcontent-qab-c36], table[_ngcontent-qab-c36]   th[_ngcontent-qab-c36]{padding:.5rem .25rem;text-align:center;line-height:1.2;border:1px solid var(--table-even-row)}</style><style>.gotop[_ngcontent-qab-c32]{position:fixed;bottom:4rem;left:50%;margin-left:28.125rem;opacity:1;transition:.3s}.gotop[_ngcontent-qab-c32]   .btn[_ngcontent-qab-c32]{width:2.5rem;height:2.5rem}.gotop[_ngcontent-qab-c32]   .btn[_ngcontent-qab-c32]:after, .gotop[_ngcontent-qab-c32]   .btn[_ngcontent-qab-c32]:before{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-45deg);margin-left:-.25rem;border-radius:.1875rem;content:"";width:1rem;height:.3125rem;background:var(--primary)}.gotop[_ngcontent-qab-c32]   .btn[_ngcontent-qab-c32]:after{transform:translate(-50%,-50%) rotate(45deg);margin-left:.25rem}@media (max-width: 1024px){.gotop[_ngcontent-qab-c32]{right:2rem;left:auto;margin:0}}</style><style></style><style>
       :host {
         display: none;
       }
@@ -32,46 +48,46 @@
         display: none;
       }
     </style><meta name="description" content="D3 序數比例尺 scaleBand"><meta name="robots" content="index, follow"><meta name="keywords" content="blog, Angular, Web Site, Scully, D3"><meta property="og:title" content="D3 序數比例尺 scaleBand"><meta property="og:description" content="D3 序數比例尺 scaleBand"><meta property="og:type" content="article"><meta property="og:url" content="https://mtwmt.github.io/blog/d3/d3_scaleBand"><meta property="og:image" content="https://mtwmt.github.io/assets/images/photo.jpg"><meta property="og:image:alt" content="D3 序數比例尺 scaleBand"><meta property="og:site_name" content="Mandy's Website"><meta property="og:locale" content="zh_tw"><meta property="og:article:published_time" content="2019/09/30"><meta property="og:article:modified_time" content="2019/09/30"><meta property="og:article:tag" content="D3"><meta property="og:article:author" content="Mandy"><script>window['ScullyIO']='generated';</script></head>
-<body scully-version="1.1.1">
-  <app-root _nghost-erk-c29="" ng-version="12.1.5"><div _ngcontent-erk-c29="" class="relative mx-auto md:max-w-5xl text-gray-700"><header _ngcontent-erk-c29="" class="sticky z-999 top-0 left-0 bg-primary-500 flex justify-between px-4 py-2 mb-5 lg:mx-5"><h1 _ngcontent-erk-c29="" class="text-white font-medium text-2xl"><a _ngcontent-erk-c29="" href="/">Mandy's Web</a></h1><a _ngcontent-erk-c29="" href="javascript:void(0);" title="MENU" class="hamburger md:hidden"><span _ngcontent-erk-c29=""></span></a><nav _ngcontent-erk-c29="" class="social"><ul _ngcontent-erk-c29="" class="md:space-x-2"><li _ngcontent-erk-c29=""><a _ngcontent-erk-c29="" class="px-4 btn md:text-white text-primary-500" href="/about">About</a></li><li _ngcontent-erk-c29=""><a _ngcontent-erk-c29="" class="px-4 btn md:text-white text-primary-500" href="/blog">Blog</a></li><li _ngcontent-erk-c29=""><a _ngcontent-erk-c29="" class="px-4 btn md:text-white text-primary-500" href="/contact">contact</a></li></ul></nav></header><div _ngcontent-erk-c29="" class="content leading-relaxed lg:mx-5"><router-outlet _ngcontent-erk-c29=""></router-outlet><app-blog _nghost-erk-c36="">
-  <app-meta _ngcontent-erk-c36="" _nghost-erk-c33=""></app-meta>
-  <article _ngcontent-erk-c36="" class="relative py-4 max-w-screen-xl mx-auto">
-    <div _ngcontent-erk-c36="" class="max-w-container mx-2">
-      <header _ngcontent-erk-c36="" class="px-4 lg:px-2">
-        <div _ngcontent-erk-c36="" class="prose text-sm max-w-none md:prose-lgspace-y-1">
-          <time _ngcontent-erk-c36="" datetime="2019/09/30">
+  <body scully-version="1.1.1">
+    <app-root _nghost-qab-c29="" ng-version="12.1.5"><div _ngcontent-qab-c29="" class="relative mx-auto md:max-w-5xl text-gray-700"><header _ngcontent-qab-c29="" class="sticky z-999 top-0 left-0 bg-primary-500 flex justify-between px-4 py-2 mb-5 lg:mx-5"><h1 _ngcontent-qab-c29="" class="text-white font-medium text-2xl"><a _ngcontent-qab-c29="" href="/">Mandy's Web</a></h1><a _ngcontent-qab-c29="" href="javascript:void(0);" title="MENU" class="hamburger md:hidden"><span _ngcontent-qab-c29=""></span></a><nav _ngcontent-qab-c29="" class="social"><ul _ngcontent-qab-c29="" class="md:space-x-2"><li _ngcontent-qab-c29=""><a _ngcontent-qab-c29="" class="px-4 btn md:text-white text-primary-500" href="/about">About</a></li><li _ngcontent-qab-c29=""><a _ngcontent-qab-c29="" class="px-4 btn md:text-white text-primary-500" href="/blog">Blog</a></li><li _ngcontent-qab-c29=""><a _ngcontent-qab-c29="" class="px-4 btn md:text-white text-primary-500" href="/contact">contact</a></li></ul></nav></header><div _ngcontent-qab-c29="" class="content leading-relaxed lg:mx-5"><router-outlet _ngcontent-qab-c29=""></router-outlet><app-blog _nghost-qab-c36="">
+  <app-meta _ngcontent-qab-c36="" _nghost-qab-c33=""></app-meta>
+  <article _ngcontent-qab-c36="" class="relative py-4 max-w-screen-xl mx-auto">
+    <div _ngcontent-qab-c36="" class="max-w-container mx-2">
+      <header _ngcontent-qab-c36="" class="px-4 lg:px-2">
+        <div _ngcontent-qab-c36="" class="prose text-sm max-w-none md:prose-lgspace-y-1">
+          <time _ngcontent-qab-c36="" datetime="2019/09/30">
             30 September 2019
           </time>
-          <h1 _ngcontent-erk-c36="" class="font-bold text-gray-700 leading-relaxed">
+          <h1 _ngcontent-qab-c36="" class="font-bold text-gray-700 leading-relaxed">
             D3 序數比例尺 scaleBand
           </h1>
         </div>
       </header>
-      <div _ngcontent-erk-c36="" class="block lg:flex lg:flex-row-reverse lg:space-x-2">
-        <div _ngcontent-erk-c36="" class="w-full lg:w-1/4 px-4 lg:pl-0">
-          <div _ngcontent-erk-c36="" class="sticky top-32 mb-4">
-            <app-blog-nav _ngcontent-erk-c36="" _nghost-erk-c34=""><p _ngcontent-erk-c34="" class="text-xl font-semibold leading-loose">導覽列</p><!----><ul _ngcontent-erk-c34=""><li _ngcontent-erk-c34="" class="cursor-pointer"><a _ngcontent-erk-c34="" class="text-base leading-relaxed"> Sorry, could not load static page content </a><!----></li><!----></ul><!----><!----><hr _ngcontent-erk-c34="" class="block lg:hidden my-8"></app-blog-nav>
+      <div _ngcontent-qab-c36="" class="block lg:flex lg:flex-row-reverse lg:space-x-2">
+        <div _ngcontent-qab-c36="" class="w-full lg:w-1/4 px-4 lg:pl-0">
+          <div _ngcontent-qab-c36="" class="sticky top-32 mb-4">
+            <app-blog-nav _ngcontent-qab-c36="" _nghost-qab-c34=""><p _ngcontent-qab-c34="" class="text-xl font-semibold leading-loose">導覽列</p><!----><ul _ngcontent-qab-c34=""><li _ngcontent-qab-c34="" class="cursor-pointer"><a _ngcontent-qab-c34="" class="text-base leading-relaxed"> Sorry, could not load static page content </a><!----></li><!----></ul><!----><!----><hr _ngcontent-qab-c34="" class="block lg:hidden my-8"></app-blog-nav>
           </div>
         </div>
-        <div _ngcontent-erk-c36="" class="w-full lg:w-3/4 px-4 lg:pl-0">
-          <div _ngcontent-erk-c36="" class="prose">
-            <!--scullyContent-begin--><p _ngcontent-erk-c36="">D3 的坐標不是只有數字，有時後也會用到除了數字以外的非連續性坐標這時後就有了
+        <div _ngcontent-qab-c36="" class="w-full lg:w-3/4 px-4 lg:pl-0">
+          <div _ngcontent-qab-c36="" class="prose">
+            <!--scullyContent-begin--><p _ngcontent-qab-c36="">D3 的坐標不是只有數字，有時後也會用到除了數字以外的非連續性坐標這時後就有了
 scaleBand 序數比例尺在這部份 v3 跟 v4 的版本寫了 有蠻大的落差而我是從 v5 才開始
 真正的接觸到 d3 所以還是有小小踩到了一下 v3 轉 v5 時寫法差異的雷</p>
-<hr _ngcontent-erk-c36="">
-<p _ngcontent-erk-c36="">在 scaleBand 裡有了這些控制圖表寬度的 api 直接看圖 來了解他的 api 分佈與用法</p>
-<img src="assets/images/d3/scaleBand/001.png" _ngcontent-erk-c36="">
+<hr _ngcontent-qab-c36="">
+<p _ngcontent-qab-c36="">在 scaleBand 裡有了這些控制圖表寬度的 api 直接看圖 來了解他的 api 分佈與用法</p>
+<img src="assets/images/d3/scaleBand/001.png" _ngcontent-qab-c36="">
 
-<hr _ngcontent-erk-c36="">
-<p _ngcontent-erk-c36="">再來看看 v3 跟 v4 版本寫法的差異 ( 因為沒寫過 v3 版本 若有錯誤再請指正)</p>
-<ul _ngcontent-erk-c36="">
-<li _ngcontent-erk-c36="">v4 <code _ngcontent-erk-c36="">.scaleBand</code> 取代了 v3 <code _ngcontent-erk-c36="">.scale.ordinal</code></li>
-<li _ngcontent-erk-c36="">v4 <code _ngcontent-erk-c36="">padding</code>, <code _ngcontent-erk-c36="">paddingInner</code> 和 <code _ngcontent-erk-c36="">paddingOuter</code> 取代 v3 <code _ngcontent-erk-c36="">ordinal.rangeBands</code></li>
-<li _ngcontent-erk-c36="">v4 <code _ngcontent-erk-c36="">bandwidth</code> 和 <code _ngcontent-erk-c36="">step</code> 取代 v3 <code _ngcontent-erk-c36="">ordinal.rangeBand</code>。</li>
+<hr _ngcontent-qab-c36="">
+<p _ngcontent-qab-c36="">再來看看 v3 跟 v4 版本寫法的差異 ( 因為沒寫過 v3 版本 若有錯誤再請指正)</p>
+<ul _ngcontent-qab-c36="">
+<li _ngcontent-qab-c36="">v4 <code _ngcontent-qab-c36="">.scaleBand</code> 取代了 v3 <code _ngcontent-qab-c36="">.scale.ordinal</code></li>
+<li _ngcontent-qab-c36="">v4 <code _ngcontent-qab-c36="">padding</code>, <code _ngcontent-qab-c36="">paddingInner</code> 和 <code _ngcontent-qab-c36="">paddingOuter</code> 取代 v3 <code _ngcontent-qab-c36="">ordinal.rangeBands</code></li>
+<li _ngcontent-qab-c36="">v4 <code _ngcontent-qab-c36="">bandwidth</code> 和 <code _ngcontent-qab-c36="">step</code> 取代 v3 <code _ngcontent-qab-c36="">ordinal.rangeBand</code>。</li>
 </ul>
-<hr _ngcontent-erk-c36="">
-<p _ngcontent-erk-c36="">寫法大致如下</p>
-<pre _ngcontent-erk-c36=""><code class="language-js" _ngcontent-erk-c36="">// x軸坐標比例
+<hr _ngcontent-qab-c36="">
+<p _ngcontent-qab-c36="">寫法大致如下</p>
+<pre _ngcontent-qab-c36=""><code class="language-js" _ngcontent-qab-c36="">// x軸坐標比例
 xScale = d3
   .scaleBand()
   .domain(data.map(d =&gt; d.month))
@@ -86,61 +102,61 @@ bar
   .attr('x', d =&gt; this.xScale(d.month))
   .attr('width', this.xScale.bandwidth());
 </code></pre>
-<table _ngcontent-erk-c36="">
-<thead _ngcontent-erk-c36="">
-<tr _ngcontent-erk-c36="">
-<th _ngcontent-erk-c36="">參數</th>
-<th _ngcontent-erk-c36="">說明</th>
+<table _ngcontent-qab-c36="">
+<thead _ngcontent-qab-c36="">
+<tr _ngcontent-qab-c36="">
+<th _ngcontent-qab-c36="">參數</th>
+<th _ngcontent-qab-c36="">說明</th>
 </tr>
 </thead>
-<tbody _ngcontent-erk-c36=""><tr _ngcontent-erk-c36="">
-<td _ngcontent-erk-c36="">padding</td>
-<td _ngcontent-erk-c36="">paddingInner 與 paddingOuter 兩個相加的值</td>
+<tbody _ngcontent-qab-c36=""><tr _ngcontent-qab-c36="">
+<td _ngcontent-qab-c36="">padding</td>
+<td _ngcontent-qab-c36="">paddingInner 與 paddingOuter 兩個相加的值</td>
 </tr>
-<tr _ngcontent-erk-c36="">
-<td _ngcontent-erk-c36="">paddingInner</td>
-<td _ngcontent-erk-c36="">表示內部兩個分段之間的間隔比例，預設值 0</td>
+<tr _ngcontent-qab-c36="">
+<td _ngcontent-qab-c36="">paddingInner</td>
+<td _ngcontent-qab-c36="">表示內部兩個分段之間的間隔比例，預設值 0</td>
 </tr>
-<tr _ngcontent-erk-c36="">
-<td _ngcontent-erk-c36="">paddingOuter</td>
-<td _ngcontent-erk-c36="">表示第一個分段與最後一個分段之後的間隔比別，預設值 0</td>
+<tr _ngcontent-qab-c36="">
+<td _ngcontent-qab-c36="">paddingOuter</td>
+<td _ngcontent-qab-c36="">表示第一個分段與最後一個分段之後的間隔比別，預設值 0</td>
 </tr>
-<tr _ngcontent-erk-c36="">
-<td _ngcontent-erk-c36=""><em _ngcontent-erk-c36="">align</em> (v4 新增功能 )</td>
-<td _ngcontent-erk-c36="">可以用來控制對齊方式 置左 0, 置中 0.5, 置右 1</td>
+<tr _ngcontent-qab-c36="">
+<td _ngcontent-qab-c36=""><em _ngcontent-qab-c36="">align</em> (v4 新增功能 )</td>
+<td _ngcontent-qab-c36="">可以用來控制對齊方式 置左 0, 置中 0.5, 置右 1</td>
 </tr>
-<tr _ngcontent-erk-c36="">
-<td _ngcontent-erk-c36="">round</td>
-<td _ngcontent-erk-c36="">表示啟用或關閉 取整數操作，這個在輸出域為連續值的情況下都會有</td>
+<tr _ngcontent-qab-c36="">
+<td _ngcontent-qab-c36="">round</td>
+<td _ngcontent-qab-c36="">表示啟用或關閉 取整數操作，這個在輸出域為連續值的情況下都會有</td>
 </tr>
 </tbody></table>
-<p _ngcontent-erk-c36="">當然 這幾個參數不是必需的，沒有定義也可以而這一系列的參數，回傳的是一個比例尺函
+<p _ngcontent-qab-c36="">當然 這幾個參數不是必需的，沒有定義也可以而這一系列的參數，回傳的是一個比例尺函
 數</p>
-<p _ngcontent-erk-c36="">這時後只要執行該比例尺函數，傳入某個離散數據，便可以回傳值域中對應具體的值</p>
-<p _ngcontent-erk-c36="">這比例尺函數上還有兩個比較重要的方法，分別是 <code _ngcontent-erk-c36="">bandwidth</code> 與 <code _ngcontent-erk-c36="">step</code></p>
-<p _ngcontent-erk-c36=""><code _ngcontent-erk-c36="">bandwidth</code> 每個分段的寬度 <code _ngcontent-erk-c36="">step</code> 相鄰兩個分段之前的距離可參照一開始上面的圖 比
+<p _ngcontent-qab-c36="">這時後只要執行該比例尺函數，傳入某個離散數據，便可以回傳值域中對應具體的值</p>
+<p _ngcontent-qab-c36="">這比例尺函數上還有兩個比較重要的方法，分別是 <code _ngcontent-qab-c36="">bandwidth</code> 與 <code _ngcontent-qab-c36="">step</code></p>
+<p _ngcontent-qab-c36=""><code _ngcontent-qab-c36="">bandwidth</code> 每個分段的寬度 <code _ngcontent-qab-c36="">step</code> 相鄰兩個分段之前的距離可參照一開始上面的圖 比
 較易懂</p>
-<hr _ngcontent-erk-c36="">
-<p _ngcontent-erk-c36="">參考資料：
-<a href="https://github.com/d3/d3-scale#band-scales" _ngcontent-erk-c36="">https://github.com/d3/d3-scale#band-scales</a>
-<a href="https://github.com/tianxuzhang/d3.v4-API-Translation#%E5%BA%8F%E6%95%B0%E6%AF%94%E4%BE%8B%E5%B0%BA" _ngcontent-erk-c36="">D3.js 4.x API 中文手册 序数比例尺</a>
-<a href="https://observablehq.com/@d3/d3-scaleband" _ngcontent-erk-c36="">d3.scaleBand</a>
-<a href="https://github.com/d3/d3/wiki/%E5%BA%8F%E6%95%B0%E6%AF%94%E4%BE%8B%E5%B0%BA" _ngcontent-erk-c36="">https://github.com/d3/d3/wiki/%E5%BA%8F%E6%95%B0%E6%AF%94%E4%BE%8B%E5%B0%BA</a></p>
-<!--scullyContent-end--><scully-content _ngcontent-erk-c36=""></scully-content>
+<hr _ngcontent-qab-c36="">
+<p _ngcontent-qab-c36="">參考資料：
+<a href="https://github.com/d3/d3-scale#band-scales" _ngcontent-qab-c36="">https://github.com/d3/d3-scale#band-scales</a>
+<a href="https://github.com/tianxuzhang/d3.v4-API-Translation#%E5%BA%8F%E6%95%B0%E6%AF%94%E4%BE%8B%E5%B0%BA" _ngcontent-qab-c36="">D3.js 4.x API 中文手册 序数比例尺</a>
+<a href="https://observablehq.com/@d3/d3-scaleband" _ngcontent-qab-c36="">d3.scaleBand</a>
+<a href="https://github.com/d3/d3/wiki/%E5%BA%8F%E6%95%B0%E6%AF%94%E4%BE%8B%E5%B0%BA" _ngcontent-qab-c36="">https://github.com/d3/d3/wiki/%E5%BA%8F%E6%95%B0%E6%AF%94%E4%BE%8B%E5%B0%BA</a></p>
+<!--scullyContent-end--><scully-content _ngcontent-qab-c36=""></scully-content>
             
-            <hr _ngcontent-erk-c36="" class="my-8">
-            <p _ngcontent-erk-c36="" class="text-lg">對這篇文章有什麼想法嗎?</p>
-            <app-blog-comments _ngcontent-erk-c36="" _nghost-erk-c35=""><div _ngcontent-erk-c35="" id="blog-comments"><div class="utterances">
+            <hr _ngcontent-qab-c36="" class="my-8">
+            <p _ngcontent-qab-c36="" class="text-lg">對這篇文章有什麼想法嗎?</p>
+            <app-blog-comments _ngcontent-qab-c36="" _nghost-qab-c35=""><div _ngcontent-qab-c35="" id="blog-comments"><div class="utterances">
     <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=mtwmt%2Fmtwmt.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2Fd3%2Fd3_scaleBand&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2Fd3%2Fd3_scaleBand&amp;title=D3%20%E5%BA%8F%E6%95%B8%E6%AF%94%E4%BE%8B%E5%B0%BA%20scaleBand&amp;description=D3%20%E5%BA%8F%E6%95%B8%E6%AF%94%E4%BE%8B%E5%B0%BA%20scaleBand&amp;og%3Atitle=D3%20%E5%BA%8F%E6%95%B8%E6%AF%94%E4%BE%8B%E5%B0%BA%20scaleBand" loading="lazy"></iframe>
   </div></div></app-blog-comments>
-          <script>try {window['scullyContent'] = {cssId:"_ngcontent-erk-c36",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+          <script>try {window['scullyContent'] = {cssId:"_ngcontent-qab-c36",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
         </div>
       </div>
     </div>
   </article>
 <!----><!---->
-<app-gotop _ngcontent-erk-c36="" _nghost-erk-c32=""><a _ngcontent-erk-c32="" class="gotop" style="opacity: 1;"><i _ngcontent-erk-c32="" class="btn bg-white"></i></a></app-gotop>
-</app-blog><!----><p _ngcontent-erk-c29="" class="w-full bg-primary-500 h-0.5"></p><p _ngcontent-erk-c29="" class="my-2 text-right text-xs px-2 lg:px-0"> Copyright © 2021 Mandy. All rights reserved. <br _ngcontent-erk-c29="">Build with Angular and Scully </p></div></div></app-root>
-<script id="ScullyIO-transfer-state"></script><script src="runtime.f6893bede659fe3c7d76.js" defer=""></script><script src="polyfills.360269c4e0bb5306dff5.js" defer=""></script><script src="main.1bc56716ec83c2344848.js" defer=""></script>
+<app-gotop _ngcontent-qab-c36="" _nghost-qab-c32=""><a _ngcontent-qab-c32="" class="gotop" style="opacity: 1;"><i _ngcontent-qab-c32="" class="btn bg-white"></i></a></app-gotop>
+</app-blog><!----><p _ngcontent-qab-c29="" class="w-full bg-primary-500 h-0.5"></p><p _ngcontent-qab-c29="" class="my-2 text-right text-xs px-2 lg:px-0"> Copyright © 2021 Mandy. All rights reserved. <br _ngcontent-qab-c29="">Build with Angular and Scully </p></div></div></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.c1a4ab072bfaf4a8a6f7.js" defer=""></script><script src="polyfills.360269c4e0bb5306dff5.js" defer=""></script><script src="main.1bc56716ec83c2344848.js" defer=""></script>
 
 </body></html>
