@@ -1,0 +1,9 @@
+{
+  "builders": {
+    "generate-posts-json": {
+      "implementation": "./dist/builders/src/generate-posts-json/index.js",
+      "schema": "./src/generate-posts-json/schema.json",
+      "description": "Generate json file as posts metadata."
+    }
+  }
+}
