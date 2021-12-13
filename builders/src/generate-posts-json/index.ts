@@ -30,13 +30,11 @@ async function generateBlogPostsJson(
       ? markdownPostsPath
       : markdownPostsPath + '/' + directory;
 
-    console.log('newPath', newPath);
     return readdirSync(newPath, {
       withFileTypes: true,
     })
       .filter((dirent) => dirent.isFile() && dirent.name.endsWith('.md'))
       .map((dirent) => {
-        console.log('dirent.name', dirent.name);
         return dirent.name;
       })
       .map((fileName) => {
@@ -46,7 +44,8 @@ async function generateBlogPostsJson(
       .filter((markdownMeta) => !markdownMeta?.draft)
       .map((markdownMeta) => {
         return {
-          folder: markdownMeta!.layout.toLowerCase(),
+          directory,
+          path: markdownMeta!.layout.toLowerCase(),
           slug: markdownMeta!.slug,
           title: markdownMeta!.title,
           date: markdownMeta!.date,

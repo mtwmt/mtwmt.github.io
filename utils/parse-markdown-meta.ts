@@ -38,9 +38,9 @@ export const parseMarkdownMeta = (markdownContent: string, slug: string) => {
       title: yamlMeta.title,
       date: yamlMeta.date,
       categories:
-        typeof yamlMeta.category === 'string'
-          ? [yamlMeta.category]
-          : yamlMeta.category,
+        typeof yamlMeta.categories === 'string'
+          ? [yamlMeta.categories]
+          : yamlMeta.categories,
       tags: yamlMeta.tags,
       draft: !!yamlMeta.draft,
       summary: transformMarkdown(summary, slug).slice(0, 300),

@@ -46,4 +46,5 @@ testem.log
 Thumbs.db
 
 
-/blog
+/src/assets/blog
+package-lock.json

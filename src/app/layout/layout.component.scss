@@ -1,0 +1,6 @@
+.social {
+  li {
+    @apply inline-block;
+  }
+  @apply sm:static sm:top-0 sm:left-0 transition duration-300 ease-in-out;
+}
