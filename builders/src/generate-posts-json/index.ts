@@ -49,6 +49,7 @@ async function generateBlogPostsJson(
           slug: markdownMeta!.slug,
           title: markdownMeta!.title,
           date: markdownMeta!.date,
+          update: markdownMeta!.update,
           categories: markdownMeta!.categories,
           tags: markdownMeta!.tags,
           summary: markdownMeta!.summary,

@@ -4,5 +4,6 @@ export interface MarkdownYamlMeta {
   categories: string[] | string;
   tags: string[];
   date: Date | string;
+  update: Date | string;
   draft?: boolean;
 }

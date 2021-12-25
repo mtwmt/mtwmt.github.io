@@ -1,6 +1,6 @@
 <div class="block lg:flex lg:flex-row-reverse lg:space-x-2 py-4 mb-10">
   <div class="w-full lg:w-1/4 px-4 lg:pl-0">
-    <!-- <app-blog-categories></app-blog-categories> -->
+    <app-blog-side-categories></app-blog-side-categories>
   </div>
   <div class="w-full lg:w-3/4 px-4 lg:pl-0">
     <ng-container *ngIf="page$ | async as list">
@@ -8,6 +8,7 @@
         <div class="p-4 border-b border-gray-300">
           <div class="flex justify-between items-center">
             <span class="mb-2 text-gray-700 text-sm">
+              <!-- {{ link.date }} -->
               {{ link.date | date: "mediumDate" }}
               <!-- <span *ngIf="link.readingTime">
                 - {{ link.readingTime | number: "1.0-0" }}
@@ -30,7 +31,7 @@
               "
               [routerLink]="['/categories', link.folder]"
             > -->
-            {{ link.categories[0] }}
+            <!-- {{ link.categories[0] }} -->
             <!-- </a> -->
           </div>
 
@@ -44,12 +45,13 @@
           </div>
         </div>
       </ng-container>
-      <!-- <app-pagination
-        [total]="(blogListService.fetchBlogAllList$ | async)?.length || 0"
+
+      <app-pagination
+        [total]="pageTotal || 0"
         [pageIndex]="pageIndex"
         [pageSize]="pageSize"
         (onPageIndexChange)="getPageIndex($event)"
-      ></app-pagination> -->
+      ></app-pagination>
     </ng-container>
   </div>
 </div>

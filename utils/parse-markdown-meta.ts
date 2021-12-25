@@ -31,19 +31,24 @@ export const parseMarkdownMeta = (markdownContent: string, slug: string) => {
       summary = blogContentChunks[0];
       content = blogContentChunks.slice(1).join('\r\n');
     }
-
     return <MarkdownMeta>{
       layout: yamlMeta.layout,
       slug: slug,
       title: yamlMeta.title,
       date: yamlMeta.date,
+      update: yamlMeta.update,
       categories:
         typeof yamlMeta.categories === 'string'
           ? [yamlMeta.categories]
           : yamlMeta.categories,
       tags: yamlMeta.tags,
       draft: !!yamlMeta.draft,
-      summary: transformMarkdown(summary, slug).slice(0, 300),
+      summary: transformMarkdown(summary, slug)
+        // .slice(0, 300)
+        .replace(/<[^>]*>/gm, '')
+        .replace(/\n/g, '')
+        .trim()
+        .slice(0, 100),
       content: transformMarkdown(content, slug),
       originalContent: markdownContent,
     };

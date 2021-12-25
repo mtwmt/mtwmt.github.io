@@ -1,0 +1,39 @@
+<ul class="mt-6 text-right">
+  <ng-container *ngIf="!hideSinglePage && lastIndex === 1 || lastIndex > 1">
+    <ng-container *ngFor="let page of pageRangeItem">
+      <ng-container *ngIf="page.type === 'prev' && !page.disabled">
+        <li (click)="onPageIndex(page)" class="btn-pagination ml-2 mb-4">
+          <fa-icon [icon]="['fas', 'angle-left']"></fa-icon>
+        </li>
+      </ng-container>
+
+      <ng-container *ngIf="page.type === 'prev_5'">
+        <li (click)="onPageIndex(page)" class="btn-pagination ml-2 mb-4">
+          <fa-icon [icon]="['fas', 'angle-double-left']"></fa-icon>
+        </li>
+      </ng-container>
+
+      <ng-container *ngIf="page.type === 'page'">
+        <li
+          (click)="onPageIndex(page)"
+          class="btn-pagination ml-2 mb-4"
+          [ngClass]="page.index === pageIndex ? 'btn-pagination--active' : ''"
+        >
+          {{ page.index }}
+        </li>
+      </ng-container>
+
+      <ng-container *ngIf="page.type === 'next_5'">
+        <li (click)="onPageIndex(page)" class="btn-pagination ml-2 mb-4">
+          <fa-icon [icon]="['fas', 'angle-double-right']"></fa-icon>
+        </li>
+      </ng-container>
+
+      <ng-container *ngIf="page.type === 'next' && !page.disabled">
+        <li (click)="onPageIndex(page)" class="btn-pagination ml-2 mb-4">
+          <fa-icon [icon]="['fas', 'angle-right']"></fa-icon>
+        </li>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</ul>

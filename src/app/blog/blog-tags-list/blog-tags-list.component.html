@@ -1,0 +1,24 @@
+<div class="block lg:flex lg:flex-row-reverse lg:space-x-2 py-4 mb-10">
+  <div class="w-full lg:w-1/4 px-4 lg:pl-0">
+    <app-blog-side-tags></app-blog-side-tags>
+  </div>
+  <div class="w-full lg:w-3/4 px-4 lg:pl-0">
+    <h1 class="mb-4 text-2xl font-bold leading-loose">
+      標籤：{{
+        activatedRoute.snapshot.params["tag"].toLocaleUpperCase()
+      }}
+    </h1>
+    <ul>
+      <li class="py-2" *ngFor="let link of tagsList$ | async">
+        <a [routerLink]="['/blog', link.directory, link.slug]">{{ link.update || link.date }}　{{ link.title }}</a>
+      </li>
+    </ul>
+    <app-pagination
+      [total]="(tagsAllList$ | async)?.length || 0"
+      [hideSinglePage]="true"
+      [pageIndex]="pageIndex"
+      [pageSize]="pageSize"
+      (onPageIndexChange)="getPageIndex($event)"
+    ></app-pagination>
+  </div>
+</div>

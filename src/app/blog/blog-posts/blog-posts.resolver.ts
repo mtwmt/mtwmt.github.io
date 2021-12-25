@@ -18,7 +18,7 @@ export class BlogPostsResolver implements Resolve<boolean> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any> {
-    return this.blogService.fetchBlogList().pipe(
+    return this.blogService.blogList$.pipe(
       map((list: ListInfo[]) => {
         return list.find((d) => d.slug === route.params['slug']) as ListInfo;
       }),

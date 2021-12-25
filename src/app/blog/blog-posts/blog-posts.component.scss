@@ -1,17 +1,29 @@
+:host {
+  .toolbar-item {
+    position: relative;
+    background: #159;
+    .toolbar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #fff;
+    }
+  }
+}
 
 .prose {
-  @apply text-base text-gray-800 font-sans;
+  @apply text-base text-gray-800;
 
   h1 {
     @apply text-3xl text-gray-700;
   }
 
   h2 {
-    @apply mt-10 mb-4 text-2xl font-bold text-gray-800;
+    @apply mt-10 text-2xl font-bold text-gray-800;
   }
 
   h3 {
-    @apply mt-4 mb-2 text-xl font-bold text-gray-600;
+    @apply mt-11 mb-2 text-xl font-bold text-gray-600;
   }
 
   p {
@@ -33,16 +45,16 @@
   iframe {
     @apply mt-4 mb-2 mx-auto max-w-full min-h-full;
     & + p {
-      @apply text-center mt-2-rev;
+      // @apply text-center mt-2-rev;
       & > em {
         @apply text-sm;
       }
     }
-    @apply w-full min-h-128;
+    @apply w-full min-h-[128px];
   }
 
   blockquote {
-    @apply text-gray-medium my-8 px-5 border-l-4 border-gray-200 border-solid;
+    @apply text-gray-600 my-8 px-5 border-l-4 border-gray-200 border-solid;
   }
 
   ol {
@@ -64,48 +76,34 @@
   :not(pre) > code {
     @apply px-1 bg-red-50 text-red-700 rounded break-words;
   }
-}
 
-:host {
-  .toolbar-item {
-    position: relative;
-    background: #159;
-    .toolbar {
-      position: absolute;
-      top: 0;
-      right: 0;
-      color: #fff;
+  a {
+    @apply text-primary-700
+  hover:text-opacity-70
+  transition duration-300 ease-in-out;
+  }
+
+  table {
+    margin: rem(16px) 0 rem(8px) 0;
+    width: 100%;
+    border-collapse: collapse;
+
+    caption {
+      line-height: 48px;
+      font-size: rem(20px);
+      font-weight: bold;
+    }
+    th {
+      color: var(--text-color);
+      background: var(--table-even-row);
+    }
+
+    th,
+    td {
+      padding: rem(8px) rem(4px);
+      text-align: center;
+      line-height: 1.2;
+      border: 1px solid var(--table-even-row);
     }
   }
 }
-
-a {
-  @apply text-primary-700
-  hover:text-opacity-70
-  transition duration-300 ease-in-out;
-}
-
-table {
-  margin: rem(16px) 0 rem(8px) 0;
-  width: 100%;
-  border-collapse: collapse;
-
-  caption {
-    line-height: 48px;
-    font-size: rem(20px);
-    font-weight: bold;
-  }
-  th {
-    color: var(--text-color);
-    background: var(--table-even-row);
-  }
-
-  th,
-  td {
-    padding: rem(8px) rem(4px);
-    text-align: center;
-    line-height: 1.2;
-    border: 1px solid var(--table-even-row);
-  }
-}
-

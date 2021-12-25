@@ -2,7 +2,7 @@
   <header
     class="
       sticky
-      z-999
+      z-[999]
       top-0
       left-0
       bg-primary-500
@@ -18,28 +18,51 @@
       <a [routerLink]="'/'">Mandy's Web</a>
     </h1>
     <a
-      href="javascript:void(0);"
-      class="hamburger md:hidden"
+      class="
+        absolute
+        right-5
+        top-1/2
+        -translate-y-1/2
+        w-8
+        h-7
+        cursor-pointer
+        md:hidden
+      "
       title="MENU"
       [ngClass]="isOpen ? 'active' : ''"
       (click)="toggle($event, true)"
-      ><span></span>
+      ><span
+        [ngClass]="
+          isOpen
+            ? 'bg-transparent rotate-180 before:translate-y-2.5 before:rotate-45 after:-rotate-45 after:-translate-y-2.5'
+            : ''
+        "
+        class="
+          absolute
+          top-1/2
+          -translate-y-1/2
+          bg-white
+          w-full
+          h-1
+          transition
+          duration-300
+          before:absolute
+          before:-top-2.5
+          before:w-full
+          before:h-1
+          before:bg-white
+          after:absolute after:top-2.5 after:w-full after:h-1 after:bg-white
+        "
+      ></span>
     </a>
-    <nav class="social" [ngClass]="isOpen ? 'active' : ''">
+
+    <nav class="social -translate-x-full md:translate-x-0" [ngClass]="isOpen ? 'translate-x-0' : ''">
       <ul class="md:space-x-2">
-        <!--<li><a href="price.html">報價單</a></li>-->
-        <!-- <li>
-        <label id="switch" class="switch">
-          <input type="checkbox" id="switch-slider" />
-          <span class="switch-slider round"></span>
-        </label>
-      </li> -->
-        <!-- <li><app-theme-toggle></app-theme-toggle></li> -->
         <li>
           <a
+            (click)="setNavigate()"
             class="px-4 btn md:text-white text-primary-500"
             [routerLink]="'about'"
-            (click)="setNavigate()"
             >About</a
           >
         </li>
@@ -59,15 +82,6 @@
             >Blog</a
           >
         </li>
-        <!-- <li>
-          <a
-            class="px-4 btn md:text-white text-primary-500"
-            [routerLink]="'portfolio'"
-            (click)="setNavigate()"
-            >Portfolio</a
-          >
-        </li> -->
-        <!-- <li><a class="btn" href="https://mtwmt.github.io/website/">Portfolio</a></li> -->
         <li>
           <a
             class="px-4 btn md:text-white text-primary-500"
@@ -83,8 +97,7 @@
     <router-outlet></router-outlet>
     <p class="w-full bg-primary-500 h-0.5"></p>
     <p class="my-2 text-right text-xs px-2 lg:px-0">
-      Copyright © 2021 Mandy. All rights reserved. <br />Build with Angular and
-      Scully
+      Copyright © 2021 Mandy. All rights reserved. Build with Angular
     </p>
   </div>
 </div>

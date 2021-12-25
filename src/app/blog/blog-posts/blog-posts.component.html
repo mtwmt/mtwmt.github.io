@@ -1,14 +1,10 @@
-<!-- <article class="p-10">
-  <div class="prose" [innerHTML]="postContent$ | async"></div>
-</article> -->
 <ng-container *ngIf="postMeta$ | async as post">
   <article class="relative py-4 max-w-screen-xl mx-auto">
     <div class="max-w-container mx-2">
       <div class="block lg:flex lg:flex-row-reverse lg:space-x-2">
         <div class="w-full lg:w-1/4 px-4 lg:pl-0">
           <div class="sticky top-24 mb-4">
-            <!-- <app-blog-nav></app-blog-nav> -->
-
+            <app-blog-posts-toc [contentElement]="content"></app-blog-posts-toc>
           </div>
         </div>
         <div class="w-full lg:w-3/4 px-4 lg:pl-0">
@@ -40,15 +36,14 @@
             </div>
           </header>
           <div>
-            <div class="prose" [innerHTML]="post.content"></div>
-
-
+            <div class="prose" #content [innerHTML]="postContent$ | async"></div>
             <hr class="my-8 text-gray-200" />
             <p class="text-lg">對這篇文章有什麼想法嗎?</p>
-            <!-- <app-blog-comments></app-blog-comments> -->
+            <app-blog-posts-comments></app-blog-posts-comments>
           </div>
         </div>
       </div>
     </div>
   </article>
 </ng-container>
+<app-gotop></app-gotop>

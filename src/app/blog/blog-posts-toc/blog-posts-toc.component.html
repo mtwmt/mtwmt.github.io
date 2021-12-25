@@ -1,0 +1,24 @@
+<ng-container *ngIf="headings$ | async as nav">
+  <p
+    class="my-2 pl-2 text-xl font-medium border-l-4 border-primary-500"
+    *ngIf="!!nav.length"
+  >
+    文章導覽
+  </p>
+  <ul class="">
+    <li
+      *ngFor="let header of nav; let idx = index"
+      class="cursor-pointer pl-3 leading-loose"
+    >
+      <a
+        class="block-inline"
+        [ngClass]="header.classes"
+        [class.text-primary-700]="header.active"
+        (click)="goTo(header, idx, $event)"
+      >
+        {{ header.text }}
+      </a>
+    </li>
+  </ul>
+</ng-container>
+<hr class="block lg:hidden my-8" />

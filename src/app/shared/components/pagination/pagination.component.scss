@@ -1,0 +1,9 @@
+.btn-pagination {
+  @apply w-8 h-8 inline-block text-center bg-transparent border border-primary-800 rounded text-primary-800 leading-7
+  hover:bg-primary-800 hover:text-white
+  transition duration-300 ease-in-out cursor-pointer;
+
+  &--active {
+    @apply bg-primary-800 text-white;
+  }
+}
