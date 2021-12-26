@@ -15,8 +15,7 @@ date: 2017/07/25
 > input focus 的時後 去後 label 做變化
 
 效果如下：
-<!-- {% iframe //codepen.io/mtw/embed/EvxdbW/ 100% 300 %} -->
-<!-- <iframe src="//codepen.io/mtw/embed/EvxdbW/"></iframe> -->
+
 
 ### HTML
 

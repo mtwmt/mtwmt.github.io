@@ -23,8 +23,7 @@ date: 2017/06/23
 > 完成！
 
 效果如下：
-<!-- {% iframe //codepen.io/mtw/embed/xrpXKw/ 100% 300 %} -->
-<!-- <iframe src="//codepen.io/mtw/embed/xrpXKw/"></iframe> -->
+
 
 ### HTML
 

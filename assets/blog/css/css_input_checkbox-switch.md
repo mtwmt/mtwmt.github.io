@@ -15,8 +15,7 @@ date: 2017/06/26
 > 利用 input checkbox 的 checked 特性來做到開關效果
 
 效果如下：
-<!-- {% iframe //codepen.io/mtw/embed/pwJxEw/ 100% 300 %} -->
-<!-- <iframe src="//codepen.io/mtw/embed/pwJxEw/"></iframe> -->
+
 
 ### HTML
 
