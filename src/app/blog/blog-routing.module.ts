@@ -25,7 +25,7 @@ const routes: Routes = [
         component: BlogTagsListComponent,
       },
       {
-        path: ':directory/:slug',
+        path: ':layout/:slug',
         component: BlogPostsComponent,
         resolve: { content: BlogPostsResolver },
       },

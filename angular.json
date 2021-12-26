@@ -41,7 +41,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "8kb",
+                  "maximumWarning": "2mb",
                   "maximumError": "10mb"
                 },
                 {
@@ -65,6 +65,27 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "static": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "200kb",
+                  "maximumError": "400kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.static.ts"
+                }
+              ],
+              "outputHashing": "all"
             }
           },
           "defaultConfiguration": "production"
@@ -127,6 +148,15 @@
               "optimization": false,
               "sourceMap": true,
               "extractLicenses": false
+            },
+            "static": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.static.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -136,7 +166,7 @@
           "configurations": {
             "development": {
               "browserTarget": "website:build:development",
-              "serverTarget": "website:server:development"
+              "serverTarget": "website:server:static"
             },
             "production": {
               "browserTarget": "website:build:production",
@@ -149,7 +179,8 @@
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "routes": [
-              "/"
+              "/",
+              "/blog"
             ]
           },
           "configurations": {
@@ -160,9 +191,20 @@
             "development": {
               "browserTarget": "website:build:development",
               "serverTarget": "website:server:development"
+            },
+            "static": {
+              "browserTarget": "website:build:production",
+              "serverTarget": "website:server:static"
             }
           },
           "defaultConfiguration": "production"
+        },
+        "generate-prerender-urls": {
+          "builder": "@mandy/website:generate-prerender-urls",
+          "options": {
+            "markdownPostsPath": "src/assets/blog",
+            "urlsPath": "pages.txt"
+          }
         },
         "generate-posts-json": {
           "builder": "@mandy/website:generate-posts-json",
@@ -170,6 +212,15 @@
             "markdownPostsPath": "src/assets/blog",
             "targetJsonPath": "src/assets/blog.json"
           }
+        },
+        "minify-rendered-files": {
+          "builder": "@mandy/website:minify-html-files",
+          "options": {
+            "targetPath": "dist/website/browser"
+          }
+        },
+        "static-server": {
+          "builder": "@mandy/website:static-server"
         }
       }
     }

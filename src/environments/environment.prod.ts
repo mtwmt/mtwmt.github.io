@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   url: '',
-  baseUrl: 'https://mtwmt.github.io/',
+  baseUrl: 'https://mtwmt.github.io',
   assetsUrl: 'assets',
   google: {
     GA_TRACKING_ID: 'UA-149155162-1',
