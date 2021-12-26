@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: RxJS
 title: Rxjs 各種解訂閱方式
 categories:
   - RxJS
