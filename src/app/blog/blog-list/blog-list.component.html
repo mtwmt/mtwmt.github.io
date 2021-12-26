@@ -7,15 +7,14 @@
       <ng-container *ngFor="let link of list">
         <div class="p-4 border-b border-gray-300">
           <div class="flex justify-between items-center">
-            <span class="mb-2 text-gray-700 text-sm">
-              <!-- {{ link.date }} -->
+            <span class="text-gray-700 text-sm">
               {{ link.date | date: "mediumDate" }}
               <!-- <span *ngIf="link.readingTime">
                 - {{ link.readingTime | number: "1.0-0" }}
                 {{ link.readingTime > 1 ? "mins" : "min" }}
               </span> -->
             </span>
-            <!-- <a
+            <a
               *ngIf="link.categories?.length"
               class="
                 px-2
@@ -29,18 +28,23 @@
                 ease-in-out
                 cursor-pointer
               "
-              [routerLink]="['/categories', link.folder]"
-            > -->
-            <!-- {{ link.categories[0] }} -->
-            <!-- </a> -->
+              [routerLink]="[
+                '/blog/categories',
+                link.categories[0].toLowerCase()
+              ]"
+            >
+              {{ link.categories[0] }}
+            </a>
           </div>
 
           <div>
-            <a
-              [routerLink]="['/blog', link.directory, link.slug]"
-              class="text-gray-500 font-semibold text-xl"
-            >
-              {{ link.title }}
+            <a [routerLink]="['/blog', link.directory, link.slug]">
+              <p class="text-gray-500 font-semibold leading-loose text-xl">
+                {{ link.title }}
+              </p>
+              <p class="leading-relaxed text-gray-500 text-sm">
+                {{ link.summary }}...more
+              </p>
             </a>
           </div>
         </div>

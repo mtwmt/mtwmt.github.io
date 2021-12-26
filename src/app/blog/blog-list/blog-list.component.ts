@@ -19,7 +19,7 @@ export class BlogListComponent implements OnInit {
     map((page: number) => page || 1)
   );
 
-  public page$ = this.pageIndex$.pipe(
+  public page$: Observable<ListInfo[]> = this.pageIndex$.pipe(
     switchMap((page: number) => {
       return this.blogService.blogList$.pipe(
         map((list) => {

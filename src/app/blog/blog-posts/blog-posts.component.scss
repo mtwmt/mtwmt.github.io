@@ -15,7 +15,7 @@
   @apply text-base text-gray-800;
 
   h1 {
-    @apply text-3xl text-gray-700;
+    @apply my-4 text-3xl text-gray-700;
   }
 
   h2 {
@@ -43,9 +43,8 @@
   }
 
   iframe {
-    @apply mt-4 mb-2 mx-auto max-w-full min-h-full;
+    @apply mt-4 mb-2 mx-auto h-80 max-w-full min-h-full;
     & + p {
-      // @apply text-center mt-2-rev;
       & > em {
         @apply text-sm;
       }

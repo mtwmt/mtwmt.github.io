@@ -5,6 +5,7 @@ import { ContactComponent } from '../contact/contact.component';
 import { HomeComponent } from '../home/home.component';
 import { IronmanComponent } from '../ironman/ironman.component';
 import { NotfoundComponent } from '../notfound/notfound.component';
+import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { LayoutComponent } from './layout.component';
 
 const routes: Routes = [
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: 'about',
         component: AboutComponent,
+      },
+      {
+        path: 'portfolio',
+        component: PortfolioComponent,
       },
       {
         path: 'contact',
