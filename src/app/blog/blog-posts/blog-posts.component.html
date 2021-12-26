@@ -19,7 +19,7 @@
               <div class="mt-2">
                 <a
                   *ngFor="let tag of post.tags"
-                  [routerLink]="['/', 'tags', tag.toLowerCase()]"
+                  [routerLink]="['/blog/tags', tag.toLowerCase()]"
                   class="
                     cursor-pointer
                     mr-2
