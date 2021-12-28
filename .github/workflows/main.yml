@@ -29,6 +29,9 @@ jobs:
         npm run serve:assets &
         npm run build:website
 
+    - name: Copy 404
+      run: cp ./dist/website/browser/index.html ./dist/website/browser/404.html
+
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:

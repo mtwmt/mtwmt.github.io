@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { PortfolioService } from './portfolio.service';
 
 @Component({
@@ -7,6 +8,7 @@ import { PortfolioService } from './portfolio.service';
   styleUrls: ['./portfolio.component.scss'],
 })
 export class PortfolioComponent implements OnInit {
+  readonly baseUrl = environment.assetsUrl + '/images/portfolio';
   constructor(public portfolioService: PortfolioService) {}
 
   ngOnInit(): void {

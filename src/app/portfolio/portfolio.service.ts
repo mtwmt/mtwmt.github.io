@@ -12,7 +12,7 @@ export interface Work {
 
 export interface Portfolio {
   title: string;
-  images: string;
+  image: string;
   link: string;
   device: string;
   description: string;
