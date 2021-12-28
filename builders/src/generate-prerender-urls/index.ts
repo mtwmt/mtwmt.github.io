@@ -76,7 +76,7 @@ async function generateUrls(
 
   // single post
   const postPages = posts.map((post) => {
-    return `/blog/${post?.layout.toLowerCase()}/${post?.slug}`;
+    return `/blog/${post?.layout}/${post?.slug}`;
   });
   urls.push(...postPages);
 

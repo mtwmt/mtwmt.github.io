@@ -6,7 +6,7 @@
     <h2 class="mb-8 text-2xl font-bold leading-4">2021 iThome 鐵人賽</h2>
     <ul>
       <li class="py-2" *ngFor="let link of ironmanList$ | async">
-        <a [routerLink]="['/blog', link.directory, link.slug]"
+        <a [routerLink]="['/blog', link.layout, link.slug]"
           >{{ link.update || link.date }}　{{ link.title }}</a
         >
       </li>

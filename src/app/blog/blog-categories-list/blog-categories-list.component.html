@@ -8,7 +8,7 @@
     </h1>
     <ul>
       <li class="py-2" *ngFor="let link of categoriesList$ | async">
-        <a [routerLink]="['/blog', link.directory, link.slug]"
+        <a [routerLink]="['/blog', link.layout, link.slug]"
           >{{ link.date }}　{{ link.title }}</a
         >
       </li>

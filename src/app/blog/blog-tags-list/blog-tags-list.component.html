@@ -10,7 +10,7 @@
     </h1>
     <ul>
       <li class="py-2" *ngFor="let link of tagsList$ | async">
-        <a [routerLink]="['/blog', link.directory, link.slug]">{{ link.update || link.date }}　{{ link.title }}</a>
+        <a [routerLink]="['/blog', link.layout, link.slug]">{{ link.update || link.date }}　{{ link.title }}</a>
       </li>
     </ul>
     <app-pagination

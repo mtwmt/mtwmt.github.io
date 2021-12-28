@@ -45,7 +45,7 @@ async function generateBlogPostsJson(
       .map((markdownMeta) => {
         return {
           directory,
-          path: markdownMeta!.layout.toLowerCase(),
+          layout: markdownMeta!.layout,
           slug: markdownMeta!.slug,
           title: markdownMeta!.title,
           date: markdownMeta!.date,

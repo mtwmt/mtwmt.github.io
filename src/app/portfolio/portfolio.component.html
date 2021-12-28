@@ -1,0 +1,22 @@
+<div class="container mx-auto w-full h-full">
+  <ng-container *ngIf="portfolioService.portfolio$ | async as portfolio">
+
+    <div class="relative p-4
+      md:max-w-5xl md:ml-auto md:mr-auto md:px-14
+      before:absolute before:h-full before:w-1 before:bg-primary-500
+      md:before:left-1/2 md:before:-translate-x-1/2
+    ">
+      <div>
+      <ng-container *ngFor="let timeline of portfolio; let idx = index">
+
+        <p class="md:mx-auto ">{{ timeline.year }}</p>
+        <ng-container  *ngFor="let item of timeline.portfolio; let j = index">
+        <div >
+          {{ item.title }}
+        </div>
+        </ng-container>
+      </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -19,7 +19,8 @@ import { latestByDate } from '../shared/operators/latest-by-date.operator';
 
 export interface ListInfo {
   directory: string;
-  path: string;
+  route: string;
+  layout: string;
   slug: string;
   title: string;
   date: string;
