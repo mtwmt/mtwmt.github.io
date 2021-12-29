@@ -12,6 +12,8 @@ tags:
 date: 2018/12/24
 ---
 
+## 問題
+
 最近在練習 vue 時 會去政府公開 api 取資料 但有些 api 會有跨網域讀取限的問題
 一開始在開發環境`vue-cli`有提供`http-proxy-middleware`做 proxy 處理跟網域這部份
 但到了要發佈的時後 資料出現一樣會出現異常啊啊啊啊 像這樣
@@ -19,6 +21,8 @@ date: 2018/12/24
 
 沒有主機 沒有後端資源的我們該怎麼辦呢 (抱頭)
 這時後 估狗好朋友出現了 它提供了`google app script`
+
+## 新增 google apps script
 
 首先 要先有一個 google 帳號 開啟雲端硬碟服務
 新增 `google apps script`
@@ -32,14 +36,16 @@ date: 2018/12/24
 將程式碼修改如下
 
 ```js
-function doGet(e){
+function doGet(e) {
   var param = e.parameter;
   var url = param.url;
-  var response = UrlFetchApp.fetch(decodeURIComponent(url),{
-    headers: { "Content-type" : "application/json" }
+  var response = UrlFetchApp.fetch(decodeURIComponent(url), {
+    headers: { "Content-type": "application/json" },
   });
   var data = JSON.parse(response.getContentText());
-  return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(ContentService.MimeType.JSON);
+  return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(
+    ContentService.MimeType.JSON
+  );
 }
 ```
 

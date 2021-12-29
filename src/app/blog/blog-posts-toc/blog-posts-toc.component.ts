@@ -181,9 +181,9 @@ export class BlogPostsTocComponent implements OnInit {
 
   private setClasses(header: string) {
     if (header === 'h2') {
-      return 'text-base leading-relaxed';
+      return 'text-base leading-loose';
     } else if (header === 'h3') {
-      return 'text-sm pl-2';
+      return 'text-sm pl-2 leading-relaxed';
     } else if (header === 'h4') {
       return 'text-sm pl-4';
     } else {
