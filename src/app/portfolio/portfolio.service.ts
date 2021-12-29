@@ -18,7 +18,6 @@ export interface Portfolio {
   description: string;
 }
 
-
 const _cachePortfolioKey = makeStateKey('portfolio.json');
 
 @Injectable({
@@ -41,9 +40,6 @@ export class PortfolioService {
         if (this.platformService.isServer) {
           this.transferState.set<Work[]>(_cachePortfolioKey, json);
         }
-      }),
-      tap(res => {
-        console.log('QQQ', res)
       })
     )
   ).pipe(shareReplay(1));

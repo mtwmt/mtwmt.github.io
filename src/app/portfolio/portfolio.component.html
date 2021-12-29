@@ -1,4 +1,49 @@
 <div class="container mx-auto w-full h-full">
+  <nav class="navigation">
+    <ul>
+      <li
+        *ngFor="
+          let timeline of portfolioService.portfolio$ | async as list;
+          let idx = index
+        "
+        class="navigation__item"
+        (click)="onYear(idx)"
+      >
+        {{ timeline.year }}
+      </li>
+    </ul>
+  </nav>
+
+  <div class="timeline">
+    <div
+      class="timeline__item"
+      *ngFor="
+        let timeline of portfolioService.portfolio$ | async as list;
+        let i = index
+      "
+    >
+      <p #items class="timeline__item-year">{{ timeline.year }}</p>
+      <div
+        class="timeline__item-content on"
+        *ngFor="let item of timeline.portfolio; let j = index"
+      >
+        <div class="card">
+          <figure>
+            <img [src]="baseUrl + '/' + item.image" [alt]="item.title" />
+          </figure>
+          <div class="card-summary">
+            <div class="card-category">{{ item.device }}</div>
+            <h2>{{ item.title }}</h2>
+            <div class="card-description">{{ item.description }}</div>
+          </div>
+          <a [href]="item.link" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-gotop></app-gotop>
+</div>
+<!-- <div class="container mx-auto w-full h-full">
   <ng-container *ngIf="portfolioService.portfolio$ | async as portfolio">
     <div
       class="
@@ -13,11 +58,82 @@
         <ng-container *ngFor="let timeline of portfolio; let idx = index">
           <p class="md:mx-auto">{{ timeline.year }}</p>
           <ng-container *ngFor="let item of timeline.portfolio; let j = index">
-            <p>{{ item.title }}</p>
-            <div>
-              <figure>
-                <img [src]="baseUrl + '/' + item.image" alt="">
-              </figure>
+            <div
+              class="
+                relative
+                p-1
+                mt-2
+                mr-4
+                mb-8
+                ml-6
+                bg-primary-500
+                rounded
+                translate-y-40
+                transition-all
+                before:absolute before:-left-2 before:top-2 before:w-0 before:h-0 before:border-t-4 border-
+              "
+            >
+              <p>{{ item.title }}</p>
+              <div class="card relative overflow-hidden">
+                <figure class="relative w-full h-full overflow-hidden">
+                  <img
+                    class="block w-full origin-top duration-500"
+                    [src]="baseUrl + '/' + item.image"
+                    [alt]="item.title"
+                  />
+                </figure>
+                <div
+                  class="
+                    z-10
+                    absolute
+                    top-full
+                    left-0
+                    p-4
+                    flex
+                    items-center
+                    flex-col
+                    w-full
+                    h-full
+                    text-white
+                    transition-all
+                  "
+                >
+                  <div
+                    class="
+                      absolute
+                      bottom-0
+                      left-0
+                      bg-orange-500
+                      py-1
+                      px-2
+                      text-white
+                      font-semibold
+                      uppercase
+                    "
+                  >
+                    {{ item.device }}
+                  </div>
+                  <h2
+                    class="
+                      p-2
+                      text-center text-xl
+                      leading-none
+                      bg-black bg-opacity-70
+                      rounded
+                    "
+                  >
+                    {{ item.title }}
+                  </h2>
+                  <div class="mt-4 leading-tight text-sm">
+                    {{ item.description }}
+                  </div>
+                </div>
+                <a
+                  class="absolute z-20 top-0 left-0 w-full h-full"
+                  [href]="item.link"
+                  target="_blank"
+                ></a>
+              </div>
             </div>
           </ng-container>
         </ng-container>
@@ -25,3 +141,4 @@
     </div>
   </ng-container>
 </div>
+-->

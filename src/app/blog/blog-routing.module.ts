@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotfoundComponent } from '../notfound/notfound.component';
 import { BlogCategoriesListComponent } from './blog-categories-list/blog-categories-list.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogPostsComponent } from './blog-posts/blog-posts.component';
@@ -35,6 +36,10 @@ const routes: Routes = [
         pathMatch: 'full',
       },
     ],
+  },
+  {
+    path: '**',
+    component: NotfoundComponent,
   },
 ];
 
