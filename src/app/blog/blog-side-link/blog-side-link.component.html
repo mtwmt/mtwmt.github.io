@@ -1,6 +1,6 @@
 <div class="mb-8">
   <h3 class="font-bold my-2 pl-2 text-xl border-l-4 border-primary-500">
-    類別
+    友情連結
   </h3>
   <div class="shadow p-4 bg-white">
     <a
@@ -19,10 +19,10 @@
         ease-in-out
         hover:bg-primary-500 hover:text-white
       "
-      *ngFor="let item of blogService.fetchBlogCategories$ | async"
-      [routerLink]="['/blog/categories', item.toLowerCase()]"
-      (click)="gotopPage()"
-      >{{ item }}</a
+      *ngFor="let item of friendlyLinks"
+      [href]="item.url"
+      target="_blank"
+      >{{ item.name }}</a
     >
   </div>
 </div>

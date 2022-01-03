@@ -191,7 +191,7 @@ export class BlogPostsTocComponent implements OnInit {
     }
   }
 
-  goTo(target: Heading, index: number, event: MouseEvent) {
+  goTo(target: Heading) {
     this._intersectionObserver!.observe(target.element!);
     if (!!target.text) {
       const elementTop = this.document.getElementById(
