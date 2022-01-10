@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular ElementRef、TemplateRef、viewContainerRef 的區別
 categories:
   - Angular

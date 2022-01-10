@@ -13,7 +13,7 @@ export class IronmanComponent implements OnInit {
 
   public ironmanList$ = this.blogService.blogList$.pipe(
     map((list: ListInfo[]) => {
-      return list.filter((d) => d.layout.includes('ironman2021'));
+      return list.filter((d) => d.directory.includes('ironman2021'));
     }),
   );
 

@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular Reactive Form 表單
 categories:
   - Angular

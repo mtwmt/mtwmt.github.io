@@ -1,47 +1,34 @@
 <ng-container *ngIf="postMeta$ | async as post">
-  <article class="relative py-4 max-w-screen-xl mx-auto">
-    <div class="max-w-container mx-2">
-      <div class="block lg:flex lg:flex-row-reverse lg:space-x-2">
-        <div class="w-full lg:w-1/4 px-4 lg:pl-0">
-          <div class="sticky top-24 mb-4">
-            <app-blog-posts-toc [contentElement]="content"></app-blog-posts-toc>
+  <article class="block lg:flex lg:flex-row-reverse lg:space-x-2 py-4 mb-10">
+    <div class="w-full lg:w-1/4 px-4 lg:pl-0">
+      <div class="sticky top-24 mb-4">
+        <app-blog-posts-toc [contentElement]="content"></app-blog-posts-toc>
+      </div>
+    </div>
+    <div class="w-full lg:w-3/4 px-4 lg:pl-0">
+      <header>
+        <div class="prose text-sm max-w-none md:prose-lgspace-y-1">
+          <time [dateTime]="post">
+            {{ post.date | date: "dd MMMM yyyy" }}
+          </time>
+          <h1 class="font-bold text-gray-700 leading-relaxed">
+            {{ post.title }}
+          </h1>
+          <div class="mt-2">
+            <a
+              *ngFor="let tag of post.tags"
+              [routerLink]="['/blog/tags', tag.toLowerCase()]"
+              class="cursor-pointer mr-2 px-2 py-1 text-sm bg-primary-50 text-gray-500 rounded"
+              >{{ tag }}</a
+            >
           </div>
         </div>
-        <div class="w-full lg:w-3/4 px-4 lg:pl-0">
-          <header>
-            <div class="prose text-sm max-w-none md:prose-lgspace-y-1">
-              <time [dateTime]="post">
-                {{ post.date | date: "dd MMMM yyyy" }}
-              </time>
-              <h1 class="font-bold text-gray-700 leading-relaxed">
-                {{ post.title }}
-              </h1>
-              <div class="mt-2">
-                <a
-                  *ngFor="let tag of post.tags"
-                  [routerLink]="['/blog/tags', tag.toLowerCase()]"
-                  class="
-                    cursor-pointer
-                    mr-2
-                    px-2
-                    py-1
-                    text-sm
-                    bg-primary-50
-                    text-gray-500
-                    rounded
-                  "
-                  >{{ tag }}</a
-                >
-              </div>
-            </div>
-          </header>
-          <div>
-            <div class="prose" #content [innerHTML]="postContent$ | async"></div>
-            <hr class="my-8 text-gray-200" />
-            <p class="text-lg">對這篇文章有什麼想法嗎?</p>
-            <app-blog-posts-comments></app-blog-posts-comments>
-          </div>
-        </div>
+      </header>
+      <div>
+        <div class="prose" #content [innerHTML]="postContent$ | async"></div>
+        <hr class="my-8 text-gray-200" />
+        <p class="text-lg">對這篇文章有什麼想法嗎?</p>
+        <app-blog-posts-comments></app-blog-posts-comments>
       </div>
     </div>
   </article>

@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular Reactive Forms 自訂表單驗証器
 categories:
   - Angular

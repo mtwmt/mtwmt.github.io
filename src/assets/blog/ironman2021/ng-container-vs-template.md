@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular ng-container 與 ng-template
 categories:
   - Angular

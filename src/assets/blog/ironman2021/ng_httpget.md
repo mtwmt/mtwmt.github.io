@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular 如何取得 API 資料
 categories:
   - Angular

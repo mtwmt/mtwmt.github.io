@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular 轉換 API 資料格式 (Adapter)
 categories:
   - Angular

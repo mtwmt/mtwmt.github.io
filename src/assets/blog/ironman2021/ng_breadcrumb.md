@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: 如何在 Angular 建立 Breadcrumb (麵包屑)
 categories:
   - Angular

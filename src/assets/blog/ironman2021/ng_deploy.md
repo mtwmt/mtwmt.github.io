@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: 如何使用 Github Actions 自動部署 Angular 到 Github Pages
 categories:
   - Angular

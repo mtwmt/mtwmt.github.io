@@ -1,6 +1,6 @@
 import { ListInfo } from './../blog.service';
 import { Component, OnInit } from '@angular/core';
-import { map, Observable, pluck, shareReplay, switchMap, tap } from 'rxjs';
+import { map, Observable, pluck, switchMap } from 'rxjs';
 import { BlogService } from '../blog.service';
 import { ActivatedRoute, Router } from '@angular/router';
 

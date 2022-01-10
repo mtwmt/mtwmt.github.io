@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular ng-template 與 ngTemplateOutlet
 categories:
   - Angular

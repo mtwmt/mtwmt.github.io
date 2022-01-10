@@ -22,7 +22,7 @@ export class AppComponent {
       .subscribe((url) => {
         this.metaService.updateMeta({
           title: '',
-          description: '個人學習程式設計、系統開發和讀書的經驗及心得。',
+          description: '學習紀錄',
           keywords: [],
           type: 'website',
         });

@@ -11,7 +11,6 @@ import {
   tap,
 } from 'rxjs';
 import { PlatformService } from 'src/app/shared/services/platform.service';
-import { Router } from '@angular/router';
 
 interface Heading {
   text: string;
@@ -22,9 +21,6 @@ interface Heading {
 }
 
 const HEADINGS_CACHE_KEY = makeStateKey('POST_TOC');
-
-// const findMainContentContainer = (element: HTMLElement): HTMLElement | null =>
-//   element.closest('.prose');
 
 @Component({
   selector: 'app-blog-posts-toc',
@@ -43,9 +39,11 @@ export class BlogPostsTocComponent implements OnInit {
 
   headings$ = this._contentElement$.pipe(
     switchMap((contentElement) => {
-      return this.contentObserver
-        .observe(contentElement)
-        .pipe(map(() => contentElement));
+      return this.contentObserver.observe(contentElement).pipe(
+        map(res => {
+          return contentElement;
+        })
+      );
     }),
     map((element) => {
       return {

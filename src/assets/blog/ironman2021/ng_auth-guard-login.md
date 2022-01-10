@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular 路由守衛(登入篇)
 categories:
   - Angular

@@ -105,7 +105,7 @@ export class BlogService {
       const temp = list.map((e) => e.categories);
       const newTemp = [].concat(...(temp as []));
       const categories = Array.from(new Set(newTemp));
-      return categories.filter((e) => !!e) as string[];
+      return categories.filter((e) => !!e).sort() as string[];
     })
   );
 
