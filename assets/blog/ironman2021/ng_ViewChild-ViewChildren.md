@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular ViewChild 與 ViewChildren 介紹
 categories:
   - Angular

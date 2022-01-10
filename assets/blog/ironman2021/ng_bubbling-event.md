@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular 冒泡事件
 categories:
   - Angular

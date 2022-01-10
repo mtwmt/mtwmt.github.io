@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular ngIf 與 Async Pipe
 categories:
   - Angular

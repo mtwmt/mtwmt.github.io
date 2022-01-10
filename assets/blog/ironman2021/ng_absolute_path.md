@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: 如何在 Angular 取得當前頁面的絕對路徑
 categories:
   - Angular

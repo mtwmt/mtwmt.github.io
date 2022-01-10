@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular 淺拷貝之日記文
 categories:
   - Angular

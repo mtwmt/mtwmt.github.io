@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular 筆記 css 樣式篇
 categories:
   - Angular

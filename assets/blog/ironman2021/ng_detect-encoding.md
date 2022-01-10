@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: 使用 Angular 做檔案編碼檢測 (detect-encoding)
 categories:
   - Angular

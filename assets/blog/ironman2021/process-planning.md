@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: 程式碼流程規劃之日記文
 categories:
   - life

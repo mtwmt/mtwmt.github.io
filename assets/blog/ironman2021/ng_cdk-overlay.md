@@ -1,5 +1,5 @@
 ---
-layout: ironman2021
+layout: angular
 title: Angular 客製彈出視窗
 categories:
   - Angular
