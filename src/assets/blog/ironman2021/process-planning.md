@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: life
 title: 程式碼流程規劃之日記文
 categories:
   - life
