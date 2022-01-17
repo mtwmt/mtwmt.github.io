@@ -16,9 +16,10 @@
     "build:builders": "cd builders && npm run build",
     "build:blog-posts-json": "ng run website:generate-posts-json",
     "build:urls": "ng run website:generate-prerender-urls",
+    "build:rss": "ng run website:generate-rss",
     "build:ssr": "ng build && ng run website:server",
     "build:minify-html": "ng run website:minify-rendered-files",
-    "build:website": "npm run build:blog-posts-json && npm run build:urls && npm run prerender:pages && npm run build:minify-html",
+    "build:website": "npm run build:blog-posts-json && npm run build:urls && npm run prerender:pages && npm run build:minify-html && npm run build:rss -- --rss-path ./dist/website/browser/blog/atom.xml",
     "build:deploy": "npx concurrently \"npm run serve:assets\" \"npm run build:website\" --kill-others"
   },
   "private": true,
@@ -61,17 +62,17 @@
     "@types/jasmine": "^3.10.3",
     "@types/js-yaml": "^4.0.5",
     "@types/markdown-it": "^12.2.3",
-    "@types/node": "^12.20.41",
+    "@types/node": "^12.20.42",
     "autoprefixer": "^10.4.2",
     "concurrently": "^6.5.1",
     "jasmine-core": "~3.10.0",
-    "karma": "^6.3.10",
+    "karma": "^6.3.11",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.13",
+    "tailwindcss": "^3.0.15",
     "typescript": "~4.4.3"
   }
 }

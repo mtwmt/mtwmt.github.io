@@ -29,7 +29,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/rss.xml"
             ],
             "styles": [
               "src/styles.scss"
@@ -211,6 +212,13 @@
           "options": {
             "markdownPostsPath": "src/assets/blog",
             "targetJsonPath": "src/assets/blog.json"
+          }
+        },
+        "generate-rss": {
+          "builder": "@mandy/website:generate-rss",
+          "options": {
+            "markdownPostsPath": "src/assets/blog",
+            "rssPath": "rss.xml"
           }
         },
         "minify-rendered-files": {
