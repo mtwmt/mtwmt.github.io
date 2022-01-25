@@ -4,11 +4,18 @@
         <title>Mandy's Website</title>
         <link>https://mtwmt.github.io/</link>
         <description>學習記錄</description>
-        <lastBuildDate>Mon, 17 Jan 2022 17:45:08 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Jan 2022 17:23:55 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Mandy</copyright>
+        <item>
+            <title><![CDATA[使用 RXJS 取消 http request]]></title>
+            <link>https://mtwmt.github.io/blog/rxjs/rxjs_cancel_pending_request</link>
+            <guid>https://mtwmt.github.io/blog/rxjs/rxjs_cancel_pending_request</guid>
+            <pubDate>Wed, 26 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[因為需求，有時後需要取消處理中的 http request所以就來做個筆記吧TSexport class AppComponent {  private subscription: Subscript]]></description>
+        </item>
         <item>
             <title><![CDATA[樹狀結構的各種處理 (Tree Data Structure)]]></title>
             <link>https://mtwmt.github.io/blog/js/js_tree-data</link>
