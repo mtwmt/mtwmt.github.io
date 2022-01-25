@@ -69,8 +69,8 @@
 /blog/angular/ng_shallowCopy-vs-deepCopy
 /blog/angular/ng_urlInfo
 /blog/angular/ng_ViewChild-ViewChildren
-/blog/angular/process-planning
-/blog/angular/rxjs_onDestroy
+/blog/life/process-planning
+/blog/rxjs/rxjs_onDestroy
 /blog/jquery/jqextend
 /blog/jquery/jqtrigger
 /blog/js/api_cors_error
@@ -116,6 +116,7 @@
 /blog/life/taobao
 /blog/life/working
 /blog/rxjs/rxjs
+/blog/rxjs/rxjs_cancel_pending_request
 /blog/vscode/vscode
 /blog/vscode/vscode_cdnjs
 /blog/vscode/vscode_liveserver
@@ -184,5 +185,6 @@
 /blog/tags/耳機
 /blog/tags/diy
 /blog/tags/scully
+/blog/tags/rxjs
 /blog/tags/vscode
 /blog/tags/擴充套件
