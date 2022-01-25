@@ -27,7 +27,7 @@ export class MetaService {
       { property: 'og:title', content: pageTitle },
       { property: 'og:site_name', content: siteName },
       { property: 'og:description', content: options.description },
-      { property: 'og:locale', content: 'zh-tw' },
+      { property: 'og:locale', content: 'zh_TW' },
       { name: 'twitter:card', content: 'summary' },
       { name: 'twitter:title', content: pageTitle },
       { name: 'twitter:description', content: options.description },
