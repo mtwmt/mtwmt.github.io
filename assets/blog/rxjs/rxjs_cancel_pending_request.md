@@ -2,10 +2,10 @@
 layout: rxjs
 title: 使用 RXJS 取消 http request
 categories:
-  - Angular
+  - RxJS
 tags:
   - Angular
-  - rxjs
+  - RxJS
 date: 2022/01/26
 ---
 
