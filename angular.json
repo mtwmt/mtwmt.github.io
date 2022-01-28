@@ -218,7 +218,7 @@
           "builder": "@mandy/website:generate-rss",
           "options": {
             "markdownPostsPath": "src/assets/blog",
-            "rssPath": "rss.xml"
+            "rssPath": "src/sitemap.xml"
           }
         },
         "minify-rendered-files": {
