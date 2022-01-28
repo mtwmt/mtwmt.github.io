@@ -4,11 +4,18 @@
         <title>Mandy's Website</title>
         <link>https://mtwmt.github.io/</link>
         <description>學習記錄</description>
-        <lastBuildDate>Fri, 28 Jan 2022 18:39:53 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 28 Jan 2022 19:27:20 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Mandy</copyright>
+        <item>
+            <title><![CDATA[在 Angular 文章裡幫程式碼加上語法高亮 (highlight)]]></title>
+            <link>https://mtwmt.github.io/blog/angular/ng_highlight</link>
+            <guid>https://mtwmt.github.io/blog/angular/ng_highlight</guid>
+            <pubDate>Sat, 29 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[highlight.jsInstallnpm i highlight.jsCreatecreate highlight.serviceimport hljs from &quot;highlight.]]></description>
+        </item>
         <item>
             <title><![CDATA[使用 RXJS 取消 http request]]></title>
             <link>https://mtwmt.github.io/blog/rxjs/rxjs_cancel_pending_request</link>
