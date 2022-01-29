@@ -198,7 +198,7 @@ export class BlogPostsTocComponent implements OnInit {
       this.location.replaceState(
         `${window.location.pathname}#${target.element?.id}`
       );
-      window.scrollTo({ top: elementTop, behavior: 'smooth' });
+      window.scrollTo({ top: elementTop as number - 60, behavior: 'smooth' });
     }
   }
 }

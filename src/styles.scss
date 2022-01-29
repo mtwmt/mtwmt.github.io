@@ -3,7 +3,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "highlight.js/scss/atom-one-dark";
+@import "prismjs/themes/prism-tomorrow";
+@import "prismjs/plugins/toolbar/prism-toolbar";
 
 @import "https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700";
 
