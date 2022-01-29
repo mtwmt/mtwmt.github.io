@@ -1,7 +1,7 @@
 <div class="block lg:flex lg:flex-row-reverse lg:space-x-2 py-4 mb-10">
   <div class="w-full lg:w-1/4 px-4 lg:pl-0">
     <app-blog-side-categories></app-blog-side-categories>
-    <app-blog-side-link></app-blog-side-link>
+    <app-blog-side-link class="hidden lg:block"></app-blog-side-link>
   </div>
   <div class="w-full lg:w-3/4 px-4 lg:pl-0">
     <ng-container *ngIf="page$ | async as list">
