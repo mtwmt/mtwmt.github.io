@@ -7,7 +7,6 @@ const markdown = markdownIt({
 });
 
 export const transformMarkdown = (content: string, slug: string) => {
-  const imgMap = new Map();
   const transMarkDown = markdown
     // 轉成基本的 HTML
     .render(content)
@@ -24,6 +23,8 @@ export const transformMarkdown = (content: string, slug: string) => {
     .replace(/\{% (.*?)\s%\}/g, `<img src="$1" />`)
     // lazy loading 圖片
     .replace(/<img(.*)\/>/, `<img$1 loading="lazy" />`)
+    // 幫 a 加上另開視窗
+    .replace(/a href=/g, "a target='_blank' href=")
     // {% note %} 轉換
     .replace(
       /<p>{% note (.*?) %}<\/p>(.*?)<p>{% endnote %}<\/p>/gs,
