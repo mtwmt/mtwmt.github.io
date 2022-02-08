@@ -10,7 +10,7 @@ date: 2019/03/15
 
 此篇不定時更新, 便利健忘的自己 XD
 
-# 轉 emoji 編碼
+## 轉 emoji 編碼
 
 ```javascript
 hex2char = function (code) {
@@ -34,7 +34,7 @@ hex2char = function (code) {
 
 ---
 
-# 數字在特定長度中補 0
+## 數字在特定長度中補 0
 
 - 利用 10 的次方特性產生需要的長度 再加上本身數字 再利用字串特性移除掉第一位數字
 
@@ -46,7 +46,7 @@ function getZero(str, len) {
 
 ---
 
-# 亂數取值
+## 亂數取值
 
 ```javascript
 function getRandom(min, max) {
@@ -56,7 +56,7 @@ function getRandom(min, max) {
 
 ---
 
-# 數字加逗號(千分位進位)
+## 數字加逗號(千分位進位)
 
 ```javascript
 function getNumFormat(num) {
@@ -67,7 +67,7 @@ function getNumFormat(num) {
 
 ---
 
-# 網址解析
+## 網址解析
 
 ```javascript
 function getQS(url) {
@@ -88,7 +88,7 @@ function getQS(url) {
 
 ---
 
-# 檔案大小單位轉換
+## 檔案大小單位轉換
 
 ```js
 function readablizeBytes(bytes) {
