@@ -1,190 +1,16 @@
-%clearfix {
-	&:after, &:before {
-		content: '';
-		display: block;
-		width: 100%;
-		clear: both;
-	}
-}
-
-@function rem($target, $context: 16px){
-  @if $target == 0 { @return 0 }
-  @return ($target / $context)+ 0rem;
-}
-
-@mixin pc {
-  @media (min-width: 768px) {
-    @content;
-  }
-}
-
-@mixin pad {
-  @media (max-width: 1024px) {
-    @content;
-  }
-}
-
-$unit: rem(8px);
-$timeline-bg: #00aaaa;
-$primary: var(--primary);
-
-.navigation {
-  @apply fixed;
-  position: fixed;
-  z-index: 98;
-  top: rem(120px);
-  left: 50%;
-  margin-left: rem(450px);
-
-  &__item {
-    @apply text-gray-400;
-
-    line-height: 2;
-    font-family: 'Dosis';
-    cursor: pointer;
-    &--active {
-      @apply text-gray-500;
-    }
-  }
-  @include pad {
-    right: rem(32px);
-    left: auto;
-    margin: 0;
-  }
-}
-
-.timeline {
-  position: relative;
-  padding: $unit * 2;
-  margin-top: $unit * 6;
-  margin-left: $unit * 2;
-  margin-right: $unit * 4;
-  max-width: rem(480px);
-  transition: 0.3s;
-
-  &::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: rem(5px);
-    background: $timeline-bg;
-  }
-
-  &__item {
-    @extend %clearfix;
-  }
-
-  &__item-year {
-    @apply py-0.5 px-4 text-white;
-    position: relative;
-    margin-bottom: $unit * 4;
-    max-width: 6em;
-    text-align: center;
-    font-size: rem(18px);
-    font-family: 'Dosis';
-    transition: 0.3s;
-    background: $timeline-bg;
-    border-radius: 5px;
-
-    border: 2px solid darken($timeline-bg, 10%);
-    box-shadow: 2px 2px 0 darken($timeline-bg, 10%);
-  }
-
-  &__item-content {
-    padding: $unit / 2;
-    position: relative;
-    margin-top: $unit * 2;
-    margin-right: $unit * 4;
-    margin-bottom: $unit * 8;
-    margin-left: $unit * 6;
-
-    background: $timeline-bg;
-    border-radius: 4px;
-
-    opacity: 0;
-    transition: all 0.5s ease-in-out 0.5s;
-    transform: translateY(rem(150px));
-    &.on {
-      opacity: 1;
-      transform: translateY(rem(0));
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: $unit * -2;
-      top: $unit * 2;
-      width: 0;
-      height: 0;
-      border-top: $unit * 2 solid $timeline-bg;
-      border-left: $unit * 2 solid transparent;
-    }
-  }
-
-  @include pc {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 $unit * 7;
-
-    &:before {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    &__item-year {
-      margin: 0 auto $unit * 4;
-    }
-
-    &__item-content {
-      width: 40%;
-      margin-left: $unit * 4;
-      margin-right: $unit * 4;
-
-      &:nth-child(odd) {
-        float: right;
-        margin-top: $unit * 6;
-      }
-
-      &:nth-child(even) {
-        float: left;
-        &:before {
-          border-top: $unit * 2 solid $timeline-bg;
-          border-right: $unit * 2 solid transparent;
-          right: $unit * -2;
-          left: auto;
-        }
-      }
-    }
-  }
-}
-
 .card {
-  position: relative;
-  overflow: hidden;
-
+  @apply relative overflow-hidden
+    after:block after:absolute after:top-full after:left-0 after:w-full after:h-[200%] after:pointer-events-none;
   figure {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    @apply relative w-full h-full overflow-hidden;
     img {
-      display: block;
-      width: 100%;
+      @apply block w-full;
       transform-origin: top;
       transition: transform 0.5s ease;
     }
   }
 
   &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    pointer-events: none;
     background-image: linear-gradient(
       to bottom,
       hsla(0, 0%, 0%, 0) 0%,
@@ -209,73 +35,42 @@ $primary: var(--primary);
   }
 
   &-summary {
-    z-index: 1;
-    position: absolute;
-    top: calc(100% - 4rem);
-    left: 0;
-    padding: $unit * 2;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    color: #fff;
-
+    @apply z-10 absolute top-[calc(100%-4rem)] left-0 p-4 flex items-center flex-col w-full h-full text-white;
     transition: top 0.5s ease;
-    h2 {
-      padding: $unit;
-      text-align: center;
-      font-size: rem(20px);
-      line-height: 1;
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 4px;
-    }
+  }
+
+  h2 {
+    @apply p-2 text-center text-xl leading-none bg-black bg-opacity-70 rounded;
   }
 
   &-category {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    background: #e74c3c;
-    padding: $unit $unit * 2;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
+    @apply absolute bottom-0 left-0 bg-orange-600 py-2 px-4 text-white text-sm font-semibold uppercase;
   }
 
   &-description {
-    margin-top: $unit * 2;
-    line-height: 1.2;
-    font-size: rem(14px);
+    @apply mt-4 text-sm;
   }
 
   &:hover {
     &::after {
-      top: 0;
+      @apply top-0;
     }
     figure {
       img {
-        transform: translateY($unit * -2);
+        transform: translateY(-1rem);
       }
     }
   }
 
   &:hover &-summary {
-    top: calc(50% - 48px);
+    @apply top-[calc(50%-48px)];
   }
 
   &:hover &-category {
-    bottom: calc(50% - 48px);
+    @apply bottom-[calc(50%-48px)];
   }
 
   a {
-    position: absolute;
-    z-index: 9;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    @apply absolute z-20 top-0 left-0 w-full h-full;
   }
 }

@@ -10,6 +10,9 @@
 
 
 @layer components {
+  a {
+    @apply transition-all hover:opacity-70;
+  }
   .btn {
     @apply relative py-1 inline-block font-dosis uppercase
     bg-transparent border-2 border-primary-900 rounded-md text-primary-500

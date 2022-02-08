@@ -32,7 +32,7 @@ export class PortfolioComponent implements OnInit {
 
   public onYear(idx: number): void {
     const elementTop = this.items.find((e, i) => i === idx)?.nativeElement
-      .offsetTop;
+      .offsetTop - 120;
 
     window.scrollTo({ top: elementTop, behavior: 'smooth' });
   }

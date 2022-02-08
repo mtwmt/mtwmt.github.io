@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { shareReplay } from 'rxjs';
-import { BlogService } from './blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -8,7 +6,7 @@ import { BlogService } from './blog.service';
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit {
-  constructor(private blogService: BlogService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }
