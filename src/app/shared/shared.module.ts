@@ -24,6 +24,6 @@ import { GotopComponent } from './components/gotop/gotop.component';
 })
 export class SharedModule {
   constructor(library: FaIconLibrary) {
-    library.addIconPacks(fas, far, fab);
+    library.addIconPacks(fas as any, far as any, fab as any);
   }
 }
