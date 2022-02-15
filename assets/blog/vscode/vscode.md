@@ -26,7 +26,7 @@ date: 2018/11/25
 
 主要是以前端 `html scss js 再加點vue` 做為安裝設定
 
-# 基本安裝
+## 基本安裝
 
 `(在此以個人使用習慣做安裝)`
 
@@ -46,14 +46,14 @@ date: 2018/11/25
 `git.ignoreMissingGitWarning` 忽略遺漏 Git 時的警告
 `explorer.confirmDelete` 控制總管是否須在透過垃圾桶刪除檔案時要求確認。
 
-# 掛件包
+## 掛件包
 
 - Chinese (Traditional) Language Pack for Visual Studio Code `vscode 中文繁體包`
 - Vetur `Vue 的集大成工具，寫 Vue 必裝`
 - cdnjs `檢示>命令選擇區 找libraries 快速在編輯器內插入jquery之類的路徑`
 - [Live Server](//mtwmt.github.io/vscode_liveserver/) `網頁伺服器`
 
-# 常用快捷鍵
+## 常用快捷鍵
 
 - `markdown 預覽` ctrl + shift + v（Mac 的快捷鍵是 command + shift + V）
 - `直行選取` shift + alt + 滑鼠左鍵 (shift + alt + ctrl + 方向鍵)
