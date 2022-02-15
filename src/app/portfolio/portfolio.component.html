@@ -17,7 +17,7 @@
   <ng-container
     *ngFor="
       let timeline of portfolioService.portfolio$ | async as list;
-      let idx = index
+      let index = index
     "
   >
     <div class="flex flex-col">
@@ -33,6 +33,7 @@
         <div *ngIf="!odd" class="flex w-full h-full transition duration-300">
           <div
             class="flex transition duration-300 md:flex-row-reverse md:w-1/2"
+            [ngClass]="idx !== 0 ? 'md:-mt-20 lg:-mt-60' : ''"
           >
             <div class="relative transition duration-300 md:-right-0.5">
               <div
@@ -63,7 +64,9 @@
           *ngIf="odd"
           class="flex w-full h-full transition duration-300 md:justify-end"
         >
-          <div class="flex transition duration-300 md:w-1/2">
+          <div class="flex transition duration-300 md:w-1/2"
+          [ngClass]="idx !== 0 ? 'md:-mt-44 lg:-mt-60' : ''"
+          >
             <div class="relative transition duration-300 md:-left-0.5">
               <div
                 class="h-full py-10 w-1 bg-primary-800 pointer-events-none"
@@ -91,9 +94,7 @@
 </div>
 
 <ng-template #card let-item let-idx='idx'>
-  <div class="rounded-md shadow-md border-4 border-primary-500 card"
-  [ngClass]="idx !== 0 ? 'lg:-mt-60' : ''"
-  >
+  <div class="rounded-md shadow-md border-4 border-primary-500 card">
     <figure>
       <img [src]="baseUrl + '/' + item.image" [alt]="item.title" />
     </figure>

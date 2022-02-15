@@ -4,7 +4,6 @@ title: vscode：Prettier 套件
 categories:
   - vscode
 tags:
-  - 擴充套件
   - vscode
 date: 2018/11/25
 ---

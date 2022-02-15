@@ -1,5 +1,6 @@
-import { filter } from 'rxjs/operators';
+import { debounceTime, filter } from 'rxjs/operators';
 import {
+  AfterViewInit,
   Component,
   ElementRef,
   OnInit,
@@ -8,6 +9,7 @@ import {
 } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { PortfolioService } from './portfolio.service';
+import { fromEvent } from 'rxjs';
 
 const scrollTo = (top: number, element: HTMLElement) => {
   const motionQuery = window.matchMedia('(prefers-reduced-motion)');
@@ -28,11 +30,17 @@ export class PortfolioComponent implements OnInit {
 
   constructor(public portfolioService: PortfolioService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // fromEvent(document, 'scroll')
+    //   .pipe(debounceTime(250))
+    //   .subscribe((res: any) => {
+    //     console.log('scrollTop', res.target.documentElement.scrollTop);
+    //   });
+  }
 
   public onYear(idx: number): void {
-    const elementTop = this.items.find((e, i) => i === idx)?.nativeElement
-      .offsetTop - 120;
+    const elementTop =
+      this.items.find((e, i) => i === idx)?.nativeElement.offsetTop - 80;
 
     window.scrollTo({ top: elementTop, behavior: 'smooth' });
   }

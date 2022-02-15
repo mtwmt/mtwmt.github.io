@@ -31,9 +31,10 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/CNAME",
               "src/favicon.ico",
               "src/assets",
-              "src/sitemap.xml"
+              "src/rss.xml"
             ],
             "styles": [
               "src/styles.scss"
@@ -221,7 +222,7 @@
           "builder": "@mandy/website:generate-rss",
           "options": {
             "markdownPostsPath": "src/assets/blog",
-            "rssPath": "src/sitemap.xml"
+            "rssPath": "src/rss.xml"
           }
         },
         "minify-rendered-files": {

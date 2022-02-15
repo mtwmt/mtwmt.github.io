@@ -4,7 +4,6 @@ title: vscode：cdnjs
 categories:
   - vscode
 tags:
-  - 擴充套件
   - vscode
 date: 2020/06/02
 ---
