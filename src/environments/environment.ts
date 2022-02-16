@@ -13,7 +13,7 @@ export const environment = {
   title: "Mandy's Website",
   featureImage: 'assets/images/photo.jpg',
   description: '學習記錄',
-  keywords: ['blog', 'Angular', 'Web Site'],
+  keywords: ['blog', 'Angular', 'WebSite'],
 };
 
 /*
