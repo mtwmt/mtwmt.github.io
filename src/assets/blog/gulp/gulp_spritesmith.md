@@ -1,10 +1,10 @@
 ---
 layout: gulp
-title: gulp：自動化 rwd css sprite ( 自適應雪碧圖 )
+title: Gulp：自動化 rwd css sprite ( 自適應雪碧圖 )
 categories:
-  - gulp
+  - Gulp
 tags:
-  - gulp
+  - Gulp
   - node
   - JavaScript
 date: 2017/06/26

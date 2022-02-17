@@ -1,10 +1,10 @@
 ---
 layout: gulp
-title: gulp4 與 gulp-cli
+title: Gulp4 與 gulp-cli
 categories:
-  - gulp
+  - Gulp
 tags:
-  - gulp
+  - Gulp
   - node
 date: 2019/01/24
 ---

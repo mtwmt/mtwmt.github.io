@@ -2,10 +2,9 @@
 layout: hexo
 title: hexo：Next 主題更新
 categories:
-  - hexo
+  - Hexo
 tags:
-  - hexo
-  - next
+  - Hexo
 date: 2019/07/18
 ---
 

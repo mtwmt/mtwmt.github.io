@@ -1,10 +1,10 @@
 ---
 layout: gulp
-title: gulp：gulp-iconfont ( 將 svg 轉 iconfont 字型 )
+title: Gulp：gulp-iconfont ( 將 svg 轉 iconfont 字型 )
 categories:
-  - gulp
+  - Gulp
 tags:
-  - gulp
+  - Gulp
   - node
   - JavaScript
 date: 2020/05/29

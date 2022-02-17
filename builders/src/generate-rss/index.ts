@@ -65,7 +65,7 @@ async function generateRss(
     return d2.getTime() - d1.getTime()
   })
 
-  const siteUrl = 'https://mtwmt.github.io/';
+  const siteUrl = 'https://mtwmt.com/';
   const feed = new Feed({
     title: "Mandy's Website",
     description: '學習記錄',

@@ -2,10 +2,9 @@
 layout: hexo
 title: hexo：Error:Cannot find module
 categories:
-  - hexo
+  - Hexo
 tags:
-  - hexo
-  - error
+  - Hexo
 date: 2018/12/20
 ---
 

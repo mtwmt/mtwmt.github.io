@@ -5,7 +5,7 @@ categories:
   - Angular
 tags:
   - Angular
-  - Github Actions
+  - Github
   - ironman2021
 date: 2021/10/15
 ---

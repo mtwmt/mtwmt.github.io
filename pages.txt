@@ -11,6 +11,7 @@
 /blog/angular/ng_bind
 /blog/angular/ng_dynamic
 /blog/angular/ng_emit
+/blog/angular/ng_highlight
 /blog/angular/ng_httpParams
 /blog/angular/ng_lib-build-css
 /blog/angular/ng_ngif-viewchild-undefined
@@ -38,7 +39,7 @@
 /blog/gulp/gulp_gulp-iconfont
 /blog/gulp/gulp_spritesmith
 /blog/gulp/node_del
-/blog/hexo/hexo_cannot find module
+/blog/hexo/hexo_cannot-find-module
 /blog/hexo/hexo_git_push_case
 /blog/hexo/hexo_next_copybutton
 /blog/hexo/hexo_next_update
@@ -109,6 +110,7 @@
 /blog/JSBOSS/9f
 /blog/life/A50_root
 /blog/life/createblog
+/blog/github/github_page_custom_domain
 /blog/life/headphone
 /blog/life/hexotoscully
 /blog/life/mask
@@ -141,6 +143,7 @@
 /blog/tags/angular
 /blog/tags/aggrid
 /blog/tags/angular-material
+/blog/tags/highlight
 /blog/tags/angular-library
 /blog/tags/error
 /blog/tags/life
@@ -172,7 +175,7 @@
 /blog/tags/cors
 /blog/tags/api
 /blog/tags/json
-/blog/tags/googlemap
+/blog/tags/google
 /blog/tags/es6
 /blog/tags/typescript
 /blog/tags/javascript-30-天
@@ -182,9 +185,8 @@
 /blog/tags/mobile
 /blog/tags/root
 /blog/tags/刷機
+/blog/tags/github
 /blog/tags/耳機
 /blog/tags/diy
 /blog/tags/scully
-/blog/tags/rxjs
 /blog/tags/vscode
-/blog/tags/擴充套件

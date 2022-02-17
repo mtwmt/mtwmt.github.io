@@ -35,11 +35,16 @@ export class NotfoundComponent implements OnInit {
           const fildSegment = segment.find((e: any) =>
             otherBlogPath.includes(e.path)
           );
-          return list.find((e) => e.slug === fildSegment?.path);
+
+          return (
+            list.find((e) => e.slug === fildSegment?.path) ||
+            list.find((e) => e.layout === 'JSBOSS')
+          );
         }),
-        filter( v => !!v)
+        filter((v) => !!v)
       )
       .subscribe((link) => {
+        console.log('link', link);
         this.router.navigate(['/blog', link?.layout, link?.slug]);
       });
   }

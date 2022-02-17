@@ -1,12 +1,11 @@
 ---
 layout: hexo
-title: hexo：git 上傳佈署後 檔名大小寫問題
+title: Hexo：Github 上傳佈署後 檔名大小寫問題
 categories:
-  - hexo
+  - Hexo
 tags:
-  - hexo
-  - error
-  - git
+  - Hexo
+  - Github
 date: 2020/12/06
 ---
 

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  url: '',
+  url: 'https://mtwmt.com',
   baseUrl: 'http://localhost:4201',
   assetsUrl: 'assets',
   google: {

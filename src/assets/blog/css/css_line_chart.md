@@ -6,7 +6,7 @@ categories:
 tags:
   - chart
   - css
-  - javascript
+  - JavaScript
 date: 2019/05/12
 ---
 
