@@ -83,26 +83,14 @@
   }
 
   table {
-    margin: rem(16px) 0 rem(8px) 0;
-    width: 100%;
-    border-collapse: collapse;
-
-    caption {
-      line-height: 48px;
-      font-size: rem(20px);
-      font-weight: bold;
-    }
+    @apply my-4 w-full border-collapse;
     th {
-      color: var(--text-color);
-      background: var(--table-even-row);
+      @apply text-white bg-gray-400;
     }
 
     th,
     td {
-      padding: rem(8px) rem(4px);
-      text-align: center;
-      line-height: 1.2;
-      border: 1px solid var(--table-even-row);
+      @apply py-2 px-2 leading-tight border border-solid border-gray-300;
     }
   }
 }
