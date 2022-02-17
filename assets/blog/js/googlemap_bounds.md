@@ -5,7 +5,7 @@ categories:
   - JavaScript
 tags:
   - JavaScript
-  - GoogleMap
+  - Google
 date: 2019/01/14
 ---
 

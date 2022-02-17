@@ -1,10 +1,10 @@
 ---
 layout: gulp
-title: gulp：gulp-file-include
+title: Gulp：gulp-file-include
 categories:
-  - gulp
+  - Gulp
 tags:
-  - gulp
+  - Gulp
   - node
   - JavaScript
 date: 2017/06/26

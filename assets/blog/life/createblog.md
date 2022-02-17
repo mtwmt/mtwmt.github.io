@@ -2,9 +2,9 @@
 layout: life
 title: 建置第一個blog
 categories:
-  - hexo
+  - Hexo
 tags:
-  - hexo
+  - Hexo
   - life
 date: 2017/06/20
 ---

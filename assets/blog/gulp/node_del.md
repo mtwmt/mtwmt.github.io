@@ -1,10 +1,10 @@
 ---
 layout: gulp
-title: gulp：del
+title: Gulp：del
 categories:
-  - gulp
+  - Gulp
 tags:
-  - gulp
+  - Gulp
   - node
 date: 2017/06/26
 ---
