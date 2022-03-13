@@ -1,0 +1,4 @@
+<form [formGroup]="form">
+  <input type="number" formControlName="id" />
+  <input formControlName="name" (change)="onInputChange()" />
+</form>

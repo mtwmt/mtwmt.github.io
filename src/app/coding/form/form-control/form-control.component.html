@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+  <select formControlName="type" (change)="onTypeChange()">
+    <option *ngFor="let option of options" [value]="option.id">
+      {{ option.label }}
+    </option>
+  </select>
+  <input
+    formControlName="value"
+    type="text"
+    required
+    [placeholder]=""
+    (change)="onInputChange()"
+  />
+  <i (click)="onRemoveField($event)" class="cursor-pointer">X</i>
+</form>

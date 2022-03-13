@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+  <ng-container formArrayName="combinations">
+    <ng-container *ngFor="let control of combinations.controls; let i = index">
+      <app-form-control
+        [formControlName]="i"
+        (removeField)="onRemoveField(i)"
+        (ngModelChange)="onValueChange()"
+      >
+      </app-form-control>
+    </ng-container>
+    <button class="btn px-4" (click)="onAddField()">ADD</button>
+  </ng-container>
+</form>

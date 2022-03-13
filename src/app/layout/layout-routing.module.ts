@@ -38,6 +38,11 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent,
       },
+      {
+        path: 'coding',
+        loadChildren: () =>
+          import('../coding/coding.module').then((m) => m.CodingModule),
+      },
       { path: '404', component: NotfoundComponent },
       {
         path: '**',

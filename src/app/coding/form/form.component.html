@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+  <app-default-form-control
+    formControlName="default"
+  ></app-default-form-control>
+  <!-- <app-form-group formControlName="combination"></app-form-group> -->
+
+  <!-- formArray start -->
+  <ng-container formArrayName="combination">
+    <ng-container *ngFor="let control of combination.controls; let i = index">
+      <app-form-control [formControlName]="i"> </app-form-control>
+    </ng-container>
+  </ng-container>
+  <button class="btn px-4" (click)="onAddField()">ADD</button>
+  <!-- start -->
+</form>
+<button class="btn px-4" (click)="onSubmit()">formValue</button>
