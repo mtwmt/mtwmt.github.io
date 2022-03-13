@@ -38,3 +38,4 @@ jobs:
         github_token: ${{ github.token }}
         publish_dir: ./dist/website/browser
         publish_branch: gh-pages
+        CNAME: mtwmt.com

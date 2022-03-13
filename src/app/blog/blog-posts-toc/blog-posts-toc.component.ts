@@ -2,14 +2,7 @@ import { DOCUMENT, Location } from '@angular/common';
 import { ContentObserver } from '@angular/cdk/observers';
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { makeStateKey, TransferState } from '@angular/platform-browser';
-import {
-  map,
-  Observable,
-  ReplaySubject,
-  startWith,
-  switchMap,
-  tap,
-} from 'rxjs';
+import { map, Observable, of, ReplaySubject, startWith, switchMap } from 'rxjs';
 import { PlatformService } from 'src/app/shared/services/platform.service';
 
 interface Heading {
@@ -36,14 +29,21 @@ export class BlogPostsTocComponent implements OnInit {
     this._contentElement = value;
     this._contentElement$.next(this._contentElement);
   }
+  get contentElement() {
+    return this._contentElement;
+  }
 
   headings$ = this._contentElement$.pipe(
     switchMap((contentElement) => {
-      return this.contentObserver.observe(contentElement).pipe(
-        map(res => {
-          return contentElement;
-        })
-      );
+      // TODO: 這段目前還不太了解為什麼要這麼使用
+      // return this.contentObserver.observe(contentElement).pipe(
+      //   map(res => {
+
+      //     console.log('switchMap', res, contentElement);
+      //     return contentElement;
+      //   })
+      // );
+      return of(contentElement);
     }),
     map((element) => {
       return {
@@ -198,7 +198,7 @@ export class BlogPostsTocComponent implements OnInit {
       this.location.replaceState(
         `${window.location.pathname}#${target.element?.id}`
       );
-      window.scrollTo({ top: elementTop as number - 60, behavior: 'smooth' });
+      window.scrollTo({ top: (elementTop as number) - 60, behavior: 'smooth' });
     }
   }
 }
