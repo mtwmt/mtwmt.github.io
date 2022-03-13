@@ -4,11 +4,18 @@
         <title>Mandy's Website</title>
         <link>https://mtwmt.com/</link>
         <description>學習記錄</description>
-        <lastBuildDate>Thu, 17 Feb 2022 15:04:51 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 13 Mar 2022 04:21:17 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Mandy</copyright>
+        <item>
+            <title><![CDATA[Async/Await vs RxJS 非同步取值筆記]]></title>
+            <link>https://mtwmt.com/blog/angular/async</link>
+            <guid>https://mtwmt.com/blog/angular/async</guid>
+            <pubDate>Sun, 13 Mar 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Promise在使用 async/await 一定要先了解 PromisePromise 是 es6 之後才開始有的Promise 程式碼const promise = new Promise((re]]></description>
+        </item>
         <item>
             <title><![CDATA[GitHub Pages 設定 Google Domain 個人網域]]></title>
             <link>https://mtwmt.com/blog/github/github_page_custom_domain</link>
