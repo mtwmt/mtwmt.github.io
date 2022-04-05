@@ -17,8 +17,8 @@ https://mtwmt.com/price-generator/
 ## 使用技術
 - javascript ES6
 - Gulp 4.0 
-  > 用來編譯 html、js 以及怖署到 github
+  > 用來編譯 html、js 以及部署到 github
   
 ## 套件
 - [validate](http://validatejs.org/) 驗証
-- [tabler](https://tabler.io/) css 框架
+- [tabler](https://tabler.io/) 一個架構在 bootstrap 的框架
