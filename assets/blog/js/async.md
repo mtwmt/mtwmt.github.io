@@ -27,14 +27,11 @@ const promise = new Promise((resolve, reject) => {
 將 promise 封裝後包成 function
 
 ```js
-const fetchData = (url) => {
+const fetchData = (url, data) => {
   return new Promise((resolve, reject) => {
     fetch(url)
       .then((res) => {
-        return res.json();
-      })
-      .then(function (myJson) {
-        resolve(myJson);
+        resolve(res.json());
       })
       .catch((e) => {
         reject(e);
@@ -57,14 +54,22 @@ const getData = async () => {
     const electronics = await fetchData(
       "https://fakestoreapi.com/products/category/electronics"
     );
-    console.log("data", jewelery, electronics);
+    return {
+      electronics,
+      jewelery,
+    };
   } catch (e) {
     console.log("catch", e);
+    throw new Error(e);
   }
 };
+```
 
-getData().then(() => {
-  console.log("done");
+使用 promise 可轉成 `then` 的串接
+
+```js
+getData().then((res) => {
+  console.log("done", res);
 });
 ```
 
