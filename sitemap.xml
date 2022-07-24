@@ -4,11 +4,18 @@
         <title>Mandy's Website</title>
         <link>https://mtwmt.com/</link>
         <description>學習記錄</description>
-        <lastBuildDate>Tue, 12 Apr 2022 17:50:51 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 24 Jul 2022 13:40:55 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Mandy</copyright>
+        <item>
+            <title><![CDATA[在 windows 環境下安裝 docker]]></title>
+            <link>https://mtwmt.com/blog/docker/docker_win_install</link>
+            <guid>https://mtwmt.com/blog/docker/docker_win_install</guid>
+            <pubDate>Sun, 24 Jul 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[記錄一下安裝 docker 時所遇到的問題因為工作上的一些問題 需要在電腦上安裝 docker 測試，裝了後一直噴錯打不開確認虛擬機已開啟再 cmd 上執行 docker ps 則是一直報錯打開 Do]]></description>
+        </item>
         <item>
             <title><![CDATA[報價單產生器]]></title>
             <link>https://mtwmt.com/blog/life/price-generator</link>
