@@ -39,7 +39,7 @@ date: 2022/07/24
 更新中...
 <img src="assets/images/docker/docker_win_install/007.jpg" />
 
-更新到一半，有人說 在安裝時，不要選擇 wsl2 就可以執行 docker 了，所以再次重新安裝
+更新到一半，海棉大大說 在安裝時，不要選擇 wsl2 就可以執行 docker 了，所以再次重新安裝
 <img src="assets/images/docker/docker_win_install/008.jpg" />
 
 成功!!!! 灑花!!!
