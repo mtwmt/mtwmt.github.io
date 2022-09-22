@@ -19,7 +19,7 @@
     "build:rss": "ng run website:generate-rss",
     "build:ssr": "ng build && ng run website:server",
     "build:minify-html": "ng run website:minify-rendered-files",
-    "build:website": "npm run build:blog-posts-json && npm run build:urls && npm run prerender:pages && npm run build:minify-html && npm run build:rss -- --rss-path ./dist/website/browser/sitemap.xml",
+    "build:website": "npm run build:blog-posts-json && npm run build:urls && npm run build:minify-html && npm run build:rss -- --rss-path ./dist/website/browser/sitemap.xml",
     "build:deploy": "npx concurrently \"npm run serve:assets\" \"npm run build:website\" --kill-others"
   },
   "private": true,
