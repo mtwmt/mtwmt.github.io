@@ -13,7 +13,7 @@ interface Heading {
   active: boolean;
 }
 
-const HEADINGS_CACHE_KEY = makeStateKey('POST_TOC');
+const HEADINGS_CACHE_KEY = makeStateKey<Heading[]>('POST_TOC');
 
 @Component({
   selector: 'app-blog-posts-toc',

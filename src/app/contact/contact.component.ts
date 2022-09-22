@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 import { catchError, of } from 'rxjs';
 
 @Component({
@@ -9,12 +9,12 @@ import { catchError, of } from 'rxjs';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  public form: FormGroup = new FormGroup({
-    name: new FormControl(''),
-    tel: new FormControl(''),
-    line: new FormControl(''),
-    mail: new FormControl('', [Validators.email]),
-    msg: new FormControl(''),
+  public form: UntypedFormGroup = new UntypedFormGroup({
+    name: new UntypedFormControl(''),
+    tel: new UntypedFormControl(''),
+    line: new UntypedFormControl(''),
+    mail: new UntypedFormControl('', [Validators.email]),
+    msg: new UntypedFormControl(''),
   });
 
   constructor(private http: HttpClient) {}

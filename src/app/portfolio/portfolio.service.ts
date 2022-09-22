@@ -18,7 +18,7 @@ export interface Portfolio {
   description: string;
 }
 
-const _cachePortfolioKey = makeStateKey('portfolio.json');
+const _cachePortfolioKey = makeStateKey<Work[]>('portfolio.json');
 
 @Injectable({
   providedIn: 'root',

@@ -30,7 +30,7 @@ export interface ListInfo {
   summary: string;
 }
 
-const _cacheBlogPostsKey = makeStateKey('blog.json');
+const _cacheBlogPostsKey = makeStateKey<ListInfo[]>('blog.json');
 
 @Injectable({
   providedIn: 'root',
@@ -46,7 +46,7 @@ export class BlogService {
 
   fetchBlogPosts(directory: string, slug: string): Observable<MarkdownMeta> {
     const url = `${this.baseUrl}/blog/${directory}/${slug}.md`;
-    const key = makeStateKey(slug);
+    const key = makeStateKey<string>(slug);
     const content = this.state.get<string>(key, '');
     if (content) {
       return of(parseMarkdownMeta(content, slug)!);
