@@ -9,7 +9,7 @@
     "test": "ng test",
     "postinstall": "npm link builders && npm run build:builders",
     "prerender": "ng run website:prerender",
-    "prerender:pages": "ng run website:prerender --routes-file pages.txt --configuration static",
+    "prerender:pages": "ng run website:prerender:static --routes-file pages.txt",
     "dev:ssr": "ng run website:serve-ssr",
     "serve:ssr": "node dist/website/server/main.js",
     "serve:assets": "ng run website:static-server --path ./src --port 4201",

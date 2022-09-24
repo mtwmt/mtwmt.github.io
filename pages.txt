@@ -11,6 +11,7 @@
 /blog/angular/ng_bind
 /blog/angular/ng_dynamic
 /blog/angular/ng_emit
+/blog/angular/ng_form-controlValueAccessor
 /blog/angular/ng_highlight
 /blog/angular/ng_httpParams
 /blog/angular/ng_lib-build-css
@@ -34,6 +35,7 @@
 /blog/d3/d3_range
 /blog/d3/d3_scaleBand
 /blog/d3/d3_v3tov5
+/blog/docker/docker_win_install
 /blog/gulp/gulp
 /blog/gulp/gulp_gulp-file-include
 /blog/gulp/gulp_gulp-iconfont
@@ -76,6 +78,7 @@
 /blog/jquery/jqtrigger
 /blog/js/api_cors_error
 /blog/js/api_name_change
+/blog/angular/async
 /blog/js/googlemap_bounds
 /blog/js/js_array filter
 /blog/js/js_array_append
@@ -115,6 +118,7 @@
 /blog/life/hexotoscully
 /blog/life/mask
 /blog/life/newcomputer
+/blog/life/price-generator
 /blog/life/taobao
 /blog/life/working
 /blog/rxjs/rxjs
@@ -129,6 +133,7 @@
 /blog/categories/scully
 /blog/categories/css
 /blog/categories/d3
+/blog/categories/docker
 /blog/categories/gulp
 /blog/categories/hexo
 /blog/categories/life
@@ -139,10 +144,12 @@
 /blog/categories/typescript
 /blog/categories/js30
 /blog/categories/js地下城
+/blog/categories/github
 /blog/categories/vscode
 /blog/tags/angular
 /blog/tags/aggrid
 /blog/tags/angular-material
+/blog/tags/angular-form
 /blog/tags/highlight
 /blog/tags/angular-library
 /blog/tags/error
@@ -158,16 +165,13 @@
 /blog/tags/javascript
 /blog/tags/rwd
 /blog/tags/d3
+/blog/tags/docker
 /blog/tags/gulp
 /blog/tags/node
-/blog/tags/javascript
 /blog/tags/hexo
-/blog/tags/git
-/blog/tags/next
 /blog/tags/ironman2021
 /blog/tags/pipe
 /blog/tags/typescript
-/blog/tags/github-actions
 /blog/tags/rxjs
 /blog/tags/jquery
 /blog/tags/proxy
@@ -175,6 +179,7 @@
 /blog/tags/cors
 /blog/tags/api
 /blog/tags/json
+/blog/tags/rxjs
 /blog/tags/google
 /blog/tags/es6
 /blog/tags/typescript
