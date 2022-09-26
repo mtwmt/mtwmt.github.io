@@ -4,11 +4,18 @@
         <title>Mandy's Website</title>
         <link>https://mtwmt.com/</link>
         <description>學習記錄</description>
-        <lastBuildDate>Sun, 25 Sep 2022 15:44:51 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 26 Sep 2022 17:48:12 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Mandy</copyright>
+        <item>
+            <title><![CDATA[人生第一間房：藝術漆牆面DIY]]></title>
+            <link>https://mtwmt.com/blog/home/paint</link>
+            <guid>https://mtwmt.com/blog/home/paint</guid>
+            <pubDate>Mon, 26 Sep 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[起因如上篇所述因為請師傅來刷藝術漆在太貴了，一般行情約 6000~8000 / 坪，且需要上漆的部份有電視牆面與床頭背板，加起來大約三坪上下。做完也是要上萬塊嗯…太貴了 &gt;.&lt; 摸摸口袋深]]></description>
+        </item>
         <item>
             <title><![CDATA[人生第一間房：從無到有全記錄]]></title>
             <link>https://mtwmt.com/blog/home/happyhome</link>
