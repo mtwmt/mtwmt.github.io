@@ -41,7 +41,8 @@
 /blog/gulp/gulp_gulp-iconfont
 /blog/gulp/gulp_spritesmith
 /blog/gulp/node_del
-/blog/House/happyhouse
+/blog/home/happyhome
+/blog/home/paint
 /blog/hexo/hexo_cannot-find-module
 /blog/hexo/hexo_git_push_case
 /blog/hexo/hexo_next_copybutton
@@ -136,7 +137,7 @@
 /blog/categories/d3
 /blog/categories/docker
 /blog/categories/gulp
-/blog/categories/house
+/blog/categories/home
 /blog/categories/hexo
 /blog/categories/life
 /blog/categories/rxjs
@@ -170,7 +171,7 @@
 /blog/tags/docker
 /blog/tags/gulp
 /blog/tags/node
-/blog/tags/house
+/blog/tags/home
 /blog/tags/hexo
 /blog/tags/ironman2021
 /blog/tags/pipe
