@@ -4,16 +4,23 @@
         <title>Mandy's Website</title>
         <link>https://mtwmt.com/</link>
         <description>學習記錄</description>
-        <lastBuildDate>Mon, 26 Sep 2022 18:04:29 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 27 Sep 2022 15:57:14 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Mandy</copyright>
         <item>
+            <title><![CDATA[Angular Window Resize Event (偵測視窗縮放事件)]]></title>
+            <link>https://mtwmt.com/blog/angular/ng_window_resize</link>
+            <guid>https://mtwmt.com/blog/angular/ng_window_resize</guid>
+            <pubDate>Wed, 28 Sep 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[偶然發現 Angular 有蠻多種方式可以偵到一些視窗事件，順手記錄下來template 傳送事件&lt;div (window:resize)=&quot;onResize($event)&quot]]></description>
+        </item>
+        <item>
             <title><![CDATA[人生第一間房：藝術漆牆面DIY]]></title>
             <link>https://mtwmt.com/blog/home/paint</link>
             <guid>https://mtwmt.com/blog/home/paint</guid>
-            <pubDate>Mon, 26 Sep 2022 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 27 Sep 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[起因如上篇所述因為請師傅來刷藝術漆在太貴了，一般行情約 6000~8000 / 坪，且需要上漆的部份有電視牆面與床頭背板，加起來大約三坪上下。做完也是要上萬塊嗯…太貴了 &gt;.&lt; 摸摸口袋深]]></description>
         </item>
         <item>
