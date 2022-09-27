@@ -20,6 +20,7 @@
 /blog/angular/ng_reactive_form_Error
 /blog/angular/ng_router
 /blog/angular/ng_router_change_bug
+/blog/angular/ng_window_resize
 /blog/angular/scully_comments
 /blog/angular/scully_deploy
 /blog/angular/scully_install
