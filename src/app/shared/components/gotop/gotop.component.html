@@ -8,7 +8,7 @@
     cursor-pointer
     lg:left-1/2 lg:ml-[27rem] lg:right-auto
   "
-  [ngStyle]="{ opacity: st >= hh ? 1 : 0 }"
+  [ngStyle]="{ opacity: st > hh ? 1 : 0 }"
   (click)="scrollToTop()"
 >
   <i class="btn w-10 h-10 bg-white ">
