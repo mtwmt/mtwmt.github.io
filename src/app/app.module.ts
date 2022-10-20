@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import {
   BrowserModule,
-  BrowserTransferStateModule,
 } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,7 +14,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    BrowserTransferStateModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,

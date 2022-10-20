@@ -1,78 +1,83 @@
-<div class="relative mx-auto md:max-w-5xl text-gray-700">
-  <header
-    class="sticky z-[999] top-0 left-0 bg-primary-500 flex justify-between px-4 py-2 mb-5 lg:mx-5"
-  >
-    <h1 class="font-medium text-2xl font-dosis">
-      <a class="text-white hover:opacity-100" [routerLink]="'/'">Mandy's Web</a>
-    </h1>
-    <a
-      class="absolute right-5 top-1/2 -translate-y-1/2 w-8 h-7 cursor-pointer md:hidden"
-      title="MENU"
-      [ngClass]="isOpen ? 'active' : ''"
-      (click)="toggle($event, true)"
-      ><span
-        [ngClass]="
-          isOpen
-            ? 'bg-transparent rotate-180 before:translate-y-2.5 before:rotate-45 after:-rotate-45 after:-translate-y-2.5'
-            : ''
-        "
-        class="absolute top-1/2 -translate-y-1/2 bg-white w-full h-1 transition duration-300 before:absolute before:-top-2.5 before:w-full before:h-1 before:bg-white after:absolute after:top-2.5 after:w-full after:h-1 after:bg-white"
-      ></span>
-    </a>
-
-    <nav
-      class="social -translate-x-full md:translate-x-0"
-      [ngClass]="isOpen ? 'translate-x-0' : ''"
+  <div class="relative mx-auto md:max-w-5xl">
+    <header
+      class="sticky z-[999] top-0 left-0 bg-primary-500  flex justify-between px-4 py-2 mb-5 lg:mx-5
+      dark:text-gray-200
+      "
     >
-      <ul class="md:space-x-2">
-        <li>
-          <a
-            (click)="setNavigate()"
-            class="px-4 btn md:text-white text-primary-500 hover:opacity-100"
-            [routerLink]="'about'"
-            >About</a
-          >
-        </li>
-        <li>
-          <a
-            class="px-4 btn md:text-white text-primary-500 hover:opacity-100"
-            [routerLink]="'ironman2021'"
-            (click)="setNavigate()"
-            >鐵人賽</a
-          >
-        </li>
-        <li>
-          <a
-            class="px-4 btn md:text-white text-primary-500 hover:opacity-100"
-            [routerLink]="'blog'"
-            (click)="setNavigate()"
-            >Blog</a
-          >
-        </li>
-        <li>
-          <a
-            class="px-4 btn md:text-white text-primary-500 hover:opacity-100"
-            [routerLink]="'portfolio'"
-            (click)="setNavigate()"
-            >portfolio</a
-          >
-        </li>
-        <li>
-          <a
-            class="px-4 btn md:text-white text-primary-500 hover:opacity-100"
-            [routerLink]="'contact'"
-            (click)="setNavigate()"
-            >contact</a
-          >
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <div class="content leading-relaxed lg:mx-5">
-    <router-outlet></router-outlet>
-    <p class="w-full bg-primary-500 h-0.5"></p>
-    <p class="my-2 text-right text-xs px-2 lg:px-0">
-      Copyright © 2022 Mandy. All rights reserved. Build with Angular
-    </p>
+      <h1 class="font-medium text-2xl font-dosis">
+        <a class="text-white hover:opacity-100" [routerLink]="'/'"
+          >Mandy's Web</a
+        >
+      </h1>
+      <a
+        class="absolute right-5 top-1/2 -translate-y-1/2 w-8 h-7 cursor-pointer md:hidden"
+        title="MENU"
+        [ngClass]="isOpen ? 'active' : ''"
+        (click)="toggle($event, true)"
+        ><span
+          [ngClass]="
+            isOpen
+              ? 'bg-transparent rotate-180 before:translate-y-2.5 before:rotate-45 after:-rotate-45 after:-translate-y-2.5'
+              : ''
+          "
+          class="absolute top-1/2 -translate-y-1/2 bg-white w-full h-1 transition duration-300 before:absolute before:-top-2.5 before:w-full before:h-1 before:bg-white after:absolute after:top-2.5 after:w-full after:h-1 after:bg-white"
+        ></span>
+      </a>
+
+      <nav
+        class="social -translate-x-full md:translate-x-0"
+        [ngClass]="isOpen ? 'translate-x-0' : ''"
+      >
+        <ul class="md:space-x-2">
+          <li>
+            <a
+              (click)="setNavigate()"
+              class="px-4 btn md:text-white text-primary-500 hover:opacity-100"
+              [routerLink]="'about'"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-4 btn md:text-white text-primary-500 hover:opacity-100"
+              [routerLink]="'ironman2021'"
+              (click)="setNavigate()"
+              >鐵人賽</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-4 btn md:text-white text-primary-500 hover:opacity-100"
+              [routerLink]="'blog'"
+              (click)="setNavigate()"
+              >Blog</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-4 btn md:text-white text-primary-500 hover:opacity-100"
+              [routerLink]="'portfolio'"
+              (click)="setNavigate()"
+              >portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-4 btn md:text-white text-primary-500 hover:opacity-100"
+              [routerLink]="'contact'"
+              (click)="setNavigate()"
+              >contact</a
+            >
+          </li>
+          <!-- <li class="align-bottom pl-1"><app-switch></app-switch></li> -->
+        </ul>
+      </nav>
+    </header>
+    <div class="content pb-1 leading-relaxed lg:mx-5">
+      <router-outlet></router-outlet>
+      <p class="w-full bg-primary-500 h-0.5"></p>
+      <p class="my-2 text-right text-xs px-2 lg:px-0">
+        Copyright © 2022 Mandy. All rights reserved. Build with Angular
+      </p>
+    </div>
   </div>
-</div>

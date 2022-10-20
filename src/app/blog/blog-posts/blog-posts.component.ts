@@ -32,7 +32,7 @@ export class BlogPostsComponent implements OnInit, AfterViewInit {
   postContent$ = this.postMeta$.pipe(
     map((postMeta) => {
       return this.domSanitizer.bypassSecurityTrustHtml(postMeta.content);
-    }),
+    })
   );
 
   constructor(

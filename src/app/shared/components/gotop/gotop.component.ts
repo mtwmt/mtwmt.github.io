@@ -1,5 +1,9 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 
 @Component({
   selector: 'app-gotop',
@@ -11,15 +15,18 @@ export class GotopComponent implements OnInit {
   public hh: number = 0;
 
   @HostListener('window:scroll', ['$event']) onScroll(e: Event): void {
-    this.st = this.document.documentElement.scrollTop;
-    this.hh =
-      this.document.documentElement.querySelector('header')?.offsetHeight || 0;
+    this.st = this.renderer.selectRootElement('html, body', true).scrollTop;
+    this.hh = this.renderer.selectRootElement('header', true).offsetHeight || 0;
   }
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  constructor(private renderer: Renderer2) {}
   ngOnInit(): void {}
 
   public scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.renderer.selectRootElement('body, html', true)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
   }
 }

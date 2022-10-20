@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Platform } from '@angular/cdk/platform';
+import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { AppService } from './app.service';
 import { MetaService } from './shared/services/meta.service';
 import { PlatformService } from './shared/services/platform.service';
 
@@ -11,11 +13,13 @@ declare let gtag: Function;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     private platformService: PlatformService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private appService: AppService,
+    private platform: Platform,
   ) {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationStart))
@@ -35,5 +39,24 @@ export class AppComponent {
           gtag('event', 'page_view', { page_path: event.url });
         }
       });
+  }
+
+  ngOnInit(): void {
+    this.initTheme();
+  }
+
+  initTheme(): void {
+    if (!this.platform.isBrowser) {
+      return;
+    }
+    const theme = localStorage.getItem('theme') || '';
+    this.onThemeChange(theme);
+  }
+
+  onThemeChange(theme: string = ''): void {
+    if (!this.platform.isBrowser) {
+      return;
+    }
+    this.appService.theme$.next(theme);
   }
 }

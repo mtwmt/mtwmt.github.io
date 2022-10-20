@@ -1,13 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@use "prismjs/themes/prism-tomorrow";
+@use "prismjs/plugins/toolbar/prism-toolbar";
 
-@import "prismjs/themes/prism-tomorrow";
-@import "prismjs/plugins/toolbar/prism-toolbar";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @import "https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700";
 
+@layer base {
+  html, body {
+    @apply relative w-full h-full p-0 m-0;
+  }
+}
 
 @layer components {
   a {

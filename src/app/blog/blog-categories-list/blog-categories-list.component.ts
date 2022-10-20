@@ -9,9 +9,9 @@ import { BlogService, ListInfo } from '../blog.service';
   styleUrls: ['./blog-categories-list.component.scss'],
 })
 export class BlogCategoriesListComponent implements OnInit {
-  pageIndex = 1;
-  pageSize = 15;
-  category!: string;
+  public pageIndex = 1;
+  public pageSize = 15;
+  private category!: string;
 
   private page$ = this.activatedRoute.queryParams.pipe(
     pluck('page'),
