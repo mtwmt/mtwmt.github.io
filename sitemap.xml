@@ -4,11 +4,18 @@
         <title>Mandy's Website</title>
         <link>https://mtwmt.com/</link>
         <description>學習記錄</description>
-        <lastBuildDate>Tue, 27 Sep 2022 15:57:14 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Oct 2022 17:21:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Mandy</copyright>
+        <item>
+            <title><![CDATA[使用 Angular 安裝 TailwindCSS]]></title>
+            <link>https://mtwmt.com/blog/tailwindcss/tailwind_ng_install</link>
+            <guid>https://mtwmt.com/blog/tailwindcss/tailwind_ng_install</guid>
+            <pubDate>Fri, 21 Oct 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[安裝環境Angular 14.2.3Node 14.16.1編輯器 vscode建立 Angular 新專案ng new &lt;project name&gt;cd &lt;project name]]></description>
+        </item>
         <item>
             <title><![CDATA[Angular Window Resize Event (偵測視窗縮放事件)]]></title>
             <link>https://mtwmt.com/blog/angular/ng_window_resize</link>
