@@ -1,0 +1,11 @@
+.toggle-checkbox {
+  @apply left-0 duration-300
+}
+.toggle-checkbox:checked {
+  @apply left-4 border-green-400 ;
+  // border-color: #68D391;
+}
+.toggle-checkbox:checked + .toggle-label {
+  @apply bg-green-400;
+  // background-color: #68D391;
+}

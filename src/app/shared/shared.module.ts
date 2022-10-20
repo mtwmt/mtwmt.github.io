@@ -10,9 +10,10 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GotopComponent } from './components/gotop/gotop.component';
+import { SwitchComponent } from './components/switch/switch.component';
 
 @NgModule({
-  declarations: [PaginationComponent, GotopComponent],
+  declarations: [PaginationComponent, GotopComponent, SwitchComponent],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, FontAwesomeModule],
   exports: [
     FormsModule,
@@ -20,6 +21,7 @@ import { GotopComponent } from './components/gotop/gotop.component';
     FontAwesomeModule,
     PaginationComponent,
     GotopComponent,
+    SwitchComponent,
   ],
 })
 export class SharedModule {
