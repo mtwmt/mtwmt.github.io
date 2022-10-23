@@ -124,8 +124,10 @@
 /blog/life/price-generator
 /blog/life/taobao
 /blog/life/working
+/blog/python/py_getpage
 /blog/rxjs/rxjs
 /blog/rxjs/rxjs_cancel_pending_request
+/blog/tailwindcss/tailwind_ng_install
 /blog/vscode/vscode
 /blog/vscode/vscode_cdnjs
 /blog/vscode/vscode_liveserver
@@ -149,6 +151,8 @@
 /blog/categories/js30
 /blog/categories/js地下城
 /blog/categories/github
+/blog/categories/python
+/blog/categories/tailwindcss
 /blog/categories/vscode
 /blog/tags/angular
 /blog/tags/aggrid
@@ -199,4 +203,7 @@
 /blog/tags/耳機
 /blog/tags/diy
 /blog/tags/scully
+/blog/tags/python
+/blog/tags/ironman
+/blog/tags/tailwindcss
 /blog/tags/vscode

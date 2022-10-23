@@ -28,8 +28,8 @@ cd <project name>
 npm install -D tailwindcss postcss autoprefixer
 ```
 
-寫這篇文章的時後，所安裝 TailwindCSS v3 版本
-所以這裡會以下會是 TailwindCSS v3 版介紹
+寫這篇文章的時後，所安裝的是 TailwindCSS v3 版本
+以下將是 TailwindCSS v3 版介紹
 
 ## 產生 tailwindcss 配置檔
 
