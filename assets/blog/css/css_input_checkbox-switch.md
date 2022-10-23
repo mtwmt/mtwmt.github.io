@@ -33,7 +33,7 @@ date: 2017/06/26
 
 ### SCSS
 
-```css
+```scss
 [data='checkbox-switch'] {
   position: relative;
   width: 60px;

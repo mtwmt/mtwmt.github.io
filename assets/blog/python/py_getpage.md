@@ -14,7 +14,7 @@ date: 2022/10/23
 可到 https://www.python.org/ 這裡進行下載符合作業系統的 python 使用。
 網路上有很多 python 安裝教學，這裡就不再贅述囉
 
-這裡安裝的版本是 `Python 3.10.8`
+安裝的版本是 `Python 3.10.8`
 
 ---
 
@@ -131,7 +131,7 @@ if r.status_code == 200: # 請求成功
         'url': tag.get('href', None),
       })
 
-  # 打開要存的 json 檔，注意資料夾裡要的這個檔案哦。不然會噴錯
+  # 打開要存的 json 檔，注意資料夾裡要有這個檔案哦。不然會噴錯
   f = open('ironman2022.json', 'a')
   # 把資料寫進 json裡
   f.write(json.dumps(cacheData))
