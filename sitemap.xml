@@ -4,11 +4,18 @@
         <title>Mandy's Website</title>
         <link>https://mtwmt.com/</link>
         <description>學習記錄</description>
-        <lastBuildDate>Thu, 20 Oct 2022 17:25:45 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 23 Oct 2022 08:46:20 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Mandy</copyright>
+        <item>
+            <title><![CDATA[初探 Python，用 Python 來寫個爬蟲吧]]></title>
+            <link>https://mtwmt.com/blog/python/py_getpage</link>
+            <guid>https://mtwmt.com/blog/python/py_getpage</guid>
+            <pubDate>Sun, 23 Oct 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[安裝 python可到 https://www.python.org/ 這裡進行下載符合作業系統的 python 使用。網路上有很多 python 安裝教學，這裡就不再贅述囉這裡安裝的版本是 Pyth]]></description>
+        </item>
         <item>
             <title><![CDATA[使用 Angular 安裝 TailwindCSS]]></title>
             <link>https://mtwmt.com/blog/tailwindcss/tailwind_ng_install</link>
