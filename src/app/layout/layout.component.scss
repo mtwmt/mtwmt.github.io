@@ -1,14 +1,15 @@
-.social {
-  @apply fixed top-12 left-0 block pt-20 w-full h-full border-0
-  duration-500 ease-in-out z-[99] bg-white bg-opacity-100
-  md:static md:top-0 md:left-0 md:pt-0 md:w-auto md:h-auto md:bg-transparent
-  md:duration-75;
 
-  li {
-    @apply mb-4 text-center leading-loose
-    md:inline-block md:mb-auto md:leading-normal;
-    a {
-      @apply w-4/5 md:w-auto;
-    }
-  }
-}
+// .social {
+//   @apply fixed top-12 left-0 block pt-20 w-full h-full border-0
+//   duration-500 ease-in-out z-[99] bg-white bg-opacity-100
+//   md:static md:top-0 md:left-0 md:pt-0 md:w-auto md:h-auto md:bg-transparent
+//   md:duration-75;
+
+//   li {
+//     @apply mb-4 text-center leading-loose
+//     md:inline-block md:mb-auto md:leading-normal;
+//     a {
+//       @apply w-4/5 md:w-auto;
+//     }
+//   }
+// }

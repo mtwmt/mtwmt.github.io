@@ -12,7 +12,7 @@ import { BlogSideCategoriesComponent } from './blog-side-categories/blog-side-ca
 import { BlogCategoriesListComponent } from './blog-categories-list/blog-categories-list.component';
 import { BlogSideTagsComponent } from './blog-side-tags/blog-side-tags.component';
 import { BlogTagsListComponent } from './blog-tags-list/blog-tags-list.component';
-import { BlogSideLinkComponent } from './blog-side-link/blog-side-link.component';
+import { BlogLayoutComponent } from './blog-layout/blog-layout.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,9 @@ import { BlogSideLinkComponent } from './blog-side-link/blog-side-link.component
     BlogCategoriesListComponent,
     BlogSideTagsComponent,
     BlogTagsListComponent,
-    BlogSideLinkComponent,
+    BlogLayoutComponent,
   ],
   imports: [CommonModule, BlogRoutingModule, SharedModule],
+  exports: [BlogListComponent],
 })
 export class BlogModule {}

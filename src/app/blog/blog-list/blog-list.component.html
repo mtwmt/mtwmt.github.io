@@ -1,62 +1,48 @@
-<div class="block lg:flex lg:flex-row-reverse lg:space-x-2 py-4 mb-10">
-  <div class="w-full lg:w-1/4 px-4 lg:pl-0">
-    <app-blog-side-categories></app-blog-side-categories>
-    <app-blog-side-link class="hidden lg:block"></app-blog-side-link>
+<div>
+  <div class="py-[3.35rem] px-[4vw]">
+    <h3 class="text-3xl text-black">最新文章</h3>
   </div>
-  <div class="w-full lg:w-3/4 px-4 lg:pl-0">
-    <ng-container *ngIf="page$ | async as list">
-      <ng-container *ngFor="let link of list">
-        <div class="p-4 border-b border-gray-300">
-          <div class="flex justify-between items-center">
-            <span class="text-gray-700 text-sm">
-              {{ link.date | date: "mediumDate" }}
-              <!-- <span *ngIf="link.readingTime">
+  <ng-container *ngIf="page$ | async as list">
+    <div
+      *ngFor="let link of list"
+      class="border-t border-neutral-200 py-10 px-[4vw]"
+    >
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-gray-700">
+          {{ link.date | date: "mediumDate" }}
+          <!-- <span *ngIf="link.readingTime">
                 - {{ link.readingTime | number: "1.0-0" }}
                 {{ link.readingTime > 1 ? "mins" : "min" }}
               </span> -->
-            </span>
-            <a
-              *ngIf="link.categories?.length"
-              class="
-                px-2
-                py-1
-                text-sm text-secondary
-                font-bold
-                rounded
-                hover:text-white hover:bg-primary-500
-                transition-colors
-                duration-200
-                ease-in-out
-                cursor-pointer
-              "
-              [routerLink]="[
-                '/blog/categories',
-                link.categories[0].toLowerCase()
-              ]"
-            >
-              {{ link.categories[0] }}
-            </a>
-          </div>
+        </span>
+        <a
+          *ngIf="link.categories?.length"
+          class="text-secondary cursor-pointer rounded px-2 py-1 text-sm font-bold transition-colors duration-200 ease-in-out hover:bg-primary-500 hover:text-white"
+          [routerLink]="['/blog/categories', link.categories[0].toLowerCase()]"
+        >
+          {{ link.categories[0] }}
+        </a>
+      </div>
 
-          <div>
-            <a [routerLink]="['/blog', link.layout, link.slug]">
-              <p class="text-gray-800 font-semibold leading-loose text-xl">
-                {{ link.title }}
-              </p>
-              <p class="leading-relaxed text-gray-500 text-sm">
-                {{ link.summary }}...more
-              </p>
-            </a>
-          </div>
-        </div>
-      </ng-container>
+      <div>
+        <a [routerLink]="['/blog', link.directory, link.slug]">
+          <p class="text-xl font-semibold leading-loose text-gray-800">
+            {{ link.title }}
+          </p>
+          <p class="text-sm leading-relaxed text-gray-500">
+            {{ link.summary }}...more
+          </p>
+        </a>
+      </div>
+    </div>
 
+    <div class="mt-5 border-y border-neutral-200">
       <app-pagination
         [total]="pageTotal || 0"
         [pageIndex]="pageIndex"
         [pageSize]="pageSize"
         (onPageIndexChange)="getPageIndex($event)"
       ></app-pagination>
-    </ng-container>
-  </div>
+    </div>
+  </ng-container>
 </div>

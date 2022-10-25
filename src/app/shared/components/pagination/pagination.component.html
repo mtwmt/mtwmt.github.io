@@ -1,39 +1,55 @@
-<ul class="mt-6 text-right">
-  <ng-container *ngIf="!hideSinglePage && lastIndex === 1 || lastIndex > 1">
+<nav class="flex">
+  <ng-container *ngIf="(!hideSinglePage && lastIndex === 1) || lastIndex > 1">
     <ng-container *ngFor="let page of pageRangeItem">
       <ng-container *ngIf="page.type === 'prev' && !page.disabled">
-        <li (click)="onPageIndex(page)" class="btn-pagination ml-2 mb-4">
+        <a
+          (click)="onPageIndex(page)"
+          class="flex h-12 w-10 cursor-pointer items-center justify-center border-r border-neutral-200 hover:bg-neutral-200"
+        >
           <fa-icon [icon]="['fas', 'angle-left']"></fa-icon>
-        </li>
+        </a>
       </ng-container>
 
       <ng-container *ngIf="page.type === 'prev_5'">
-        <li (click)="onPageIndex(page)" class="btn-pagination ml-2 mb-4">
+        <a
+          (click)="onPageIndex(page)"
+          class="flex h-12 w-10 cursor-pointer items-center justify-center border-r border-neutral-200 hover:bg-neutral-200"
+        >
           <fa-icon [icon]="['fas', 'angle-double-left']"></fa-icon>
-        </li>
+        </a>
       </ng-container>
 
       <ng-container *ngIf="page.type === 'page'">
-        <li
+        <a
           (click)="onPageIndex(page)"
-          class="btn-pagination ml-2 mb-4"
-          [ngClass]="page.index === pageIndex ? 'btn-pagination--active' : ''"
+          class="flex h-12 w-10 cursor-pointer items-center justify-center border-r border-neutral-200 hover:bg-neutral-200"
+          [ngClass]="
+            page.index === pageIndex
+              ? 'cursor-default border-primary-800 bg-primary-800 text-white hover:bg-primary-800 hover:opacity-100'
+              : ''
+          "
         >
           {{ page.index }}
-        </li>
+        </a>
       </ng-container>
 
       <ng-container *ngIf="page.type === 'next_5'">
-        <li (click)="onPageIndex(page)" class="btn-pagination ml-2 mb-4">
+        <a
+          (click)="onPageIndex(page)"
+          class="flex h-12 w-10 cursor-pointer items-center justify-center border-r border-neutral-200 hover:bg-neutral-200"
+        >
           <fa-icon [icon]="['fas', 'angle-double-right']"></fa-icon>
-        </li>
+        </a>
       </ng-container>
 
       <ng-container *ngIf="page.type === 'next' && !page.disabled">
-        <li (click)="onPageIndex(page)" class="btn-pagination ml-2 mb-4">
+        <a
+          (click)="onPageIndex(page)"
+          class="flex h-12 w-10 cursor-pointer items-center justify-center border-r border-neutral-200 hover:bg-neutral-200"
+        >
           <fa-icon [icon]="['fas', 'angle-right']"></fa-icon>
-        </li>
+        </a>
       </ng-container>
     </ng-container>
   </ng-container>
-</ul>
+</nav>

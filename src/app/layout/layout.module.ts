@@ -9,6 +9,7 @@ import { IronmanComponent } from '../ironman/ironman.component';
 import { NotfoundComponent } from '../notfound/notfound.component';
 import { SharedModule } from '../shared/shared.module';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
+import { BlogModule } from '../blog/blog.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,6 @@ import { PortfolioComponent } from '../portfolio/portfolio.component';
     IronmanComponent,
     PortfolioComponent,
   ],
-  imports: [CommonModule, LayoutRoutingModule, SharedModule],
+  imports: [CommonModule, LayoutRoutingModule, SharedModule, BlogModule],
 })
 export class LayoutModule {}

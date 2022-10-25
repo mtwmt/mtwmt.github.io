@@ -23,7 +23,7 @@ const routes: Routes = [
           import('../blog/blog.module').then((m) => m.BlogModule),
       },
       {
-        path: 'ironman2021',
+        path: 'blog/ironman2021',
         component: IronmanComponent,
       },
       {

@@ -1,0 +1,16 @@
+<ul class="leading-[3rem]">
+  <li
+  class="h-12 border-b border-primary-700 px-3 text-primary-50 bg-primary-900"
+  >友情連結</li>
+  <ng-container
+    *ngFor="let item of friendlyLinks"
+  >
+    <li
+      class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white"
+    >
+      <a [href]="item.url" class="block w-full" target="_blank">
+        {{ item.name }}
+      </a>
+    </li>
+  </ng-container>
+</ul>

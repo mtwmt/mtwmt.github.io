@@ -11,9 +11,15 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GotopComponent } from './components/gotop/gotop.component';
 import { SwitchComponent } from './components/switch/switch.component';
+import { FriendshipLinkComponent } from './components/friendship-link/friendship-link.component';
 
 @NgModule({
-  declarations: [PaginationComponent, GotopComponent, SwitchComponent],
+  declarations: [
+    PaginationComponent,
+    GotopComponent,
+    SwitchComponent,
+    FriendshipLinkComponent,
+  ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, FontAwesomeModule],
   exports: [
     FormsModule,
@@ -22,6 +28,7 @@ import { SwitchComponent } from './components/switch/switch.component';
     PaginationComponent,
     GotopComponent,
     SwitchComponent,
+    FriendshipLinkComponent,
   ],
 })
 export class SharedModule {

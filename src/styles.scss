@@ -9,6 +9,9 @@
 @import "https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700";
 
 @layer base {
+  * {
+    @apply box-border;
+  }
   html, body {
     @apply relative w-full h-full p-0 m-0;
   }
@@ -16,7 +19,7 @@
 
 @layer components {
   a {
-    @apply transition-all hover:opacity-70;
+    @apply transition duration-300 hover:opacity-70;
   }
   .btn {
     @apply relative py-1 inline-block font-dosis uppercase

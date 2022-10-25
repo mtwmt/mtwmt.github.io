@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-blog-side-link',
-  templateUrl: './blog-side-link.component.html',
-  styleUrls: ['./blog-side-link.component.scss'],
+  selector: 'app-friendship-link',
+  templateUrl: './friendship-link.component.html',
+  styleUrls: ['./friendship-link.component.scss'],
 })
-export class BlogSideLinkComponent implements OnInit {
+export class FriendshipLinkComponent implements OnInit {
   friendlyLinks = [
     {
       name: "Mile's Blog",
@@ -24,7 +24,6 @@ export class BlogSideLinkComponent implements OnInit {
       url: 'https://ganhuaking.tw/',
     },
   ];
-
   constructor() {}
 
   ngOnInit(): void {}

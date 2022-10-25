@@ -5,7 +5,6 @@ categories:
   - python
 tags:
   - python
-  - ironman
 date: 2022/10/23
 ---
 

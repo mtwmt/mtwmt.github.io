@@ -1,57 +1,98 @@
-<form
-  [formGroup]="form"
-  (ngSubmit)="onSubmit()"
-  class="max-w-2xl m-auto content form bg-white p-6 my-10 relative"
->
-  <h3 class="text-2xl text-gray-900 font-semibold">與我聯絡</h3>
-  <div class="md:flex md:space-x-5">
-    <div class="md:w-1/2 mt-3">
-      <input
-        formControlName="name"
-        type="text"
-        name=""
-        id=""
-        placeholder="Your Name"
-        class="border w-full p-2"
-        required
-        minlength="3"
-      />
-      <div
-        *ngIf="
-          form.get('name')?.invalid &&
-          (form.get('name')?.dirty || form.get('name')?.touched)
-        "
-      >
-        <div
-          *ngIf="form.get('name')?.errors?.['required']"
-          class="text-red-500 text-sm"
-        >
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="h-full">
+  <div class="py-[3.35rem] px-[4vw]">
+    <h3 class="text-3xl text-black">與我聯絡</h3>
+  </div>
+  <div class="border-y border-neutral-200 py-10 px-[4vw]">
+    <div class="md:flex md:space-x-5">
+      <div class="mt-3 md:w-1/2">
+        <input
+          formControlName="name"
+          type="text"
+          name=""
+          id=""
+          placeholder="Your Name"
+          class="w-full border p-2"
           required
+          minlength="3"
+        />
+        <div
+          *ngIf="
+            form.get('name')?.invalid &&
+            (form.get('name')?.dirty || form.get('name')?.touched)
+          "
+        >
+          <div
+            *ngIf="form.get('name')?.errors?.['required']"
+            class="text-sm text-red-500"
+          >
+            required
+          </div>
         </div>
       </div>
+      <div class="mt-3 md:w-1/2">
+        <input
+          formControlName="tel"
+          type="tel"
+          name=""
+          id=""
+          placeholder="Your Phone"
+          class="w-full border p-2"
+        />
+      </div>
     </div>
-    <div class="md:w-1/2 mt-3">
-      <input
-        formControlName="tel"
-        type="tel"
+    <div class="md:flex md:space-x-5">
+      <div class="mt-3 md:w-1/2">
+        <input
+          formControlName="mail"
+          type="email"
+          name=""
+          id=""
+          placeholder="Your Email"
+          class="w-full border p-2"
+          required
+        />
+        <div
+          *ngIf="
+            form.get('mail')?.invalid &&
+            (form.get('mail')?.dirty || form.get('mail')?.touched)
+          "
+        >
+          <div
+            *ngIf="form.get('mail')?.errors?.['required']"
+            class="text-sm text-red-500"
+          >
+            required
+          </div>
+          <div
+            *ngIf="form.get('mail')?.errors?.['email']"
+            class="text-sm text-red-500"
+          >
+            mail format error
+          </div>
+        </div>
+      </div>
+      <div class="mt-3 md:w-1/2">
+        <input
+          formControlName="line"
+          type="text"
+          name=""
+          id=""
+          placeholder="Your LineID"
+          class="w-full border p-2"
+        />
+      </div>
+    </div>
+    <div>
+      <textarea
+        formControlName="msg"
         name=""
         id=""
-        placeholder="Your Phone"
-        class="border w-full p-2"
-      />
-    </div>
-  </div>
-  <div class="md:flex md:space-x-5">
-    <div class="md:w-1/2 mt-3">
-      <input
-        formControlName="mail"
-        type="email"
-        name=""
-        id=""
-        placeholder="Your Email"
-        class="border w-full p-2"
+        cols="10"
+        rows="3"
+        placeholder="想跟 Mandy 說些什麼？"
+        class="mt-3 w-full border p-2"
         required
-      />
+      ></textarea>
       <div
         *ngIf="
           form.get('mail')?.invalid &&
@@ -60,63 +101,22 @@
       >
         <div
           *ngIf="form.get('mail')?.errors?.['required']"
-          class="text-red-500 text-sm"
+          class="text-sm text-red-500"
         >
           required
         </div>
-        <div
-          *ngIf="form.get('mail')?.errors?.['email']"
-          class="text-red-500 text-sm"
-        >
-          mail format error
-        </div>
       </div>
     </div>
-    <div class="md:w-1/2 mt-3">
-      <input
-        formControlName="line"
-        type="text"
-        name=""
-        id=""
-        placeholder="Your LineID"
-        class="border w-full p-2"
-      />
-    </div>
-  </div>
-  <div>
-    <textarea
-      formControlName="msg"
-      name=""
-      id=""
-      cols="10"
-      rows="3"
-      placeholder="想跟 Mandy 說些什麼？"
-      class="border p-2 mt-3 w-full"
-      required
-    ></textarea>
-    <div
-      *ngIf="
-        form.get('mail')?.invalid &&
-        (form.get('mail')?.dirty || form.get('mail')?.touched)
-      "
-    >
-      <div
-        *ngIf="form.get('mail')?.errors?.['required']"
-        class="text-red-500 text-sm"
-      >
-        required
-      </div>
-    </div>
-  </div>
 
-  <div class="text-center">
-    <button
-      [disabled]="!form.valid"
-      type="submit"
-      class="btn w-auto px-4 mt-6 p-1 text-lg"
-      [ngClass]="!form.valid ? 'disabled' : ''"
-    >
-      Submit
-    </button>
+    <div class="text-center">
+      <button
+        [disabled]="!form.valid"
+        type="submit"
+        class="btn mt-6 w-auto p-1 px-4 text-lg"
+        [ngClass]="!form.valid ? 'disabled' : ''"
+      >
+        Submit
+      </button>
+    </div>
   </div>
 </form>

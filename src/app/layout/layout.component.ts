@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from '../blog/blog.service';
 
 @Component({
   selector: 'app-layout',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
   isOpen = false;
-  constructor() {}
+  constructor(public blogService: BlogService) {
+    this.blogService.getBlogLayout$.subscribe((res) => console.log(res));
+  }
 
   ngOnInit(): void {}
 

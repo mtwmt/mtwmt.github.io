@@ -1,25 +1,27 @@
 <div class="h-full bg-white">
   <div class=" py-[3.35rem] px-[4vw]">
     <h3 class="text-3xl text-black">
-      類別：{{ activatedRoute.snapshot.params["category"].toLocaleUpperCase() }}
+      {{ title }}
     </h3>
   </div>
-  <ul class="py-10 border-y border-neutral-200">
+  <ul class="py-10 border-t border-neutral-200">
     <li
-      *ngFor="let link of categoriesList$ | async; let last = last"
+      *ngFor="let link of layoutList$ | async; let last = last"
       class="py-4 px-[4vw]"
       [ngClass]="last ? 'border-none' : ''"
     >
       <a [routerLink]="['/blog', link.directory, link.slug]"
-          >{{ link.date }}　{{ link.title }}</a
-        >
+        >{{ link.date }}　{{ link.title }}</a
+      >
     </li>
   </ul>
+  <div class="mt-5 border-y border-neutral-200">
   <app-pagination
-    [total]="(categoriesAllList$ | async)?.length || 0"
+    [total]="(layoutAllList$ | async)?.length || 0"
     [hideSinglePage]="true"
     [pageIndex]="pageIndex"
     [pageSize]="pageSize"
     (onPageIndexChange)="getPageIndex($event)"
   ></app-pagination>
+  </div>
 </div>

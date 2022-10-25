@@ -100,7 +100,7 @@ export class BlogService {
     );
   }
 
-  readonly fetchBlogCategories$ = this.blogList$.pipe(
+  readonly getBlogCategories$ = this.blogList$.pipe(
     map((list: ListInfo[]) => {
       const temp = list.map((e) => e.categories);
       const newTemp = [].concat(...(temp as []));
@@ -109,9 +109,23 @@ export class BlogService {
     })
   );
 
-  readonly fetchBlogTags$: Observable<string[]> = this.blogList$.pipe(
+  readonly getBlogTags$: Observable<string[]> = this.blogList$.pipe(
     map((list: ListInfo[]) => {
       const temp = list.map((e) => e.tags);
+      const newTemp = [].concat(...(temp as []));
+
+      let counts: any = {};
+      newTemp.forEach((e: string) => {
+        counts[e] = (counts[e] || 0) + 1;
+      });
+
+      return counts;
+    })
+  );
+
+  readonly getBlogLayout$: Observable<string[]> = this.blogList$.pipe(
+    map((list: ListInfo[]) => {
+      const temp = list.map((e) => e.layout);
       const newTemp = [].concat(...(temp as []));
 
       let counts: any = {};
