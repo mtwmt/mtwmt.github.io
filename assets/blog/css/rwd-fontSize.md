@@ -1,8 +1,8 @@
 ---
-layout: css
+layout: CSS
 title: rwd 自適應文字大小
 categories:
-  - css
+  - rwd
 tags:
   - css
   - scss

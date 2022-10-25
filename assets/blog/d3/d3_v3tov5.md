@@ -1,5 +1,5 @@
 ---
-layout: d3
+layout: D3
 title: D3 v5 與 v3 差異
 categories:
   - D3

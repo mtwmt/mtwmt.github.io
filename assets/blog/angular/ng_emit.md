@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular 組件傳值
 categories:
   - Angular

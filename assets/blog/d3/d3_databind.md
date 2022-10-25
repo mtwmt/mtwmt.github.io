@@ -1,5 +1,5 @@
 ---
-layout: d3
+layout: D3
 title: D3 資料綁定與更新
 categories:
   - D3

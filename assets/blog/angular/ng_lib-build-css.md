@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: 如何將 Angular library 裡的 scss/sass 正確導出
 categories:
   - Angular

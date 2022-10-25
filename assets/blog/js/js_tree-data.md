@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: 樹狀結構的各種處理 (Tree Data Structure)
 categories:
   - JavaScript

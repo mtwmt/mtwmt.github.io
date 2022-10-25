@@ -1,5 +1,5 @@
 ---
-layout: css
+layout: CSS
 title: 如何利用純 css 寫 switch 開關
 categories:
   - css

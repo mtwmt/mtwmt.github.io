@@ -4,7 +4,7 @@
         <title>Mandy's Website</title>
         <link>https://mtwmt.com/</link>
         <description>學習記錄</description>
-        <lastBuildDate>Sun, 23 Oct 2022 12:40:34 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Oct 2022 15:18:39 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -25,22 +25,22 @@
         </item>
         <item>
             <title><![CDATA[Angular Window Resize Event (偵測視窗縮放事件)]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_window_resize</link>
-            <guid>https://mtwmt.com/blog/angular/ng_window_resize</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_window_resize</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_window_resize</guid>
             <pubDate>Wed, 28 Sep 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[偶然發現 Angular 有蠻多種方式可以偵到一些視窗事件，順手記錄下來template 傳送事件&lt;div (window:resize)=&quot;onResize($event)&quot]]></description>
         </item>
         <item>
             <title><![CDATA[人生第一間房：藝術漆牆面DIY]]></title>
-            <link>https://mtwmt.com/blog/home/paint</link>
-            <guid>https://mtwmt.com/blog/home/paint</guid>
+            <link>https://mtwmt.com/blog/life/paint</link>
+            <guid>https://mtwmt.com/blog/life/paint</guid>
             <pubDate>Tue, 27 Sep 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[起因如上篇所述因為請師傅來刷藝術漆在太貴了，一般行情約 6000~8000 / 坪，且需要上漆的部份有電視牆面與床頭背板，加起來大約三坪上下。做完也是要上萬塊嗯…太貴了 &gt;.&lt; 摸摸口袋深]]></description>
         </item>
         <item>
             <title><![CDATA[人生第一間房：從無到有全記錄]]></title>
-            <link>https://mtwmt.com/blog/home/happyhome</link>
-            <guid>https://mtwmt.com/blog/home/happyhome</guid>
+            <link>https://mtwmt.com/blog/life/happyhome</link>
+            <guid>https://mtwmt.com/blog/life/happyhome</guid>
             <pubDate>Sun, 25 Sep 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[交屋前剛完成的工地結構隔局出來囉是磚牆格局舖上水泥上油漆建商附的是金利登的玫瑰白完工，準備驗屋交屋囉驗屋這部份沒有另外請驗屋公司，就上網爬文，將相關注意事項記下來，在驗屋的時後，代銷這裡也有跟著我們一]]></description>
         </item>
@@ -60,43 +60,43 @@
         </item>
         <item>
             <title><![CDATA[Angular ControlValueAccessor (客製表單控制項)]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_form-controlValueAccessor</link>
-            <guid>https://mtwmt.com/blog/angular/ng_form-controlValueAccessor</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_form-controlValueAccessor</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_form-controlValueAccessor</guid>
             <pubDate>Sun, 13 Mar 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[當需要做 component 裡的表單特定值的連動，就會 ControlValueAccessor 就是不可或缺的要件ControlValueAccessor建立新的 component 透過 imp]]></description>
         </item>
         <item>
             <title><![CDATA[Async/Await vs RxJS 非同步取值筆記]]></title>
-            <link>https://mtwmt.com/blog/angular/async</link>
-            <guid>https://mtwmt.com/blog/angular/async</guid>
+            <link>https://mtwmt.com/blog/JavaScript/async</link>
+            <guid>https://mtwmt.com/blog/JavaScript/async</guid>
             <pubDate>Sun, 13 Mar 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Promise在使用 async/await 一定要先了解 PromisePromise 是 es6 之後才開始有的Promise 程式碼const promise = new Promise((re]]></description>
         </item>
         <item>
             <title><![CDATA[GitHub Pages 設定 Google Domain 個人網域]]></title>
-            <link>https://mtwmt.com/blog/github/github_page_custom_domain</link>
-            <guid>https://mtwmt.com/blog/github/github_page_custom_domain</guid>
+            <link>https://mtwmt.com/blog/GitHub/github_page_custom_domain</link>
+            <guid>https://mtwmt.com/blog/GitHub/github_page_custom_domain</guid>
             <pubDate>Thu, 17 Feb 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[隔了好久，終於也買了個人網域啦～短網址就是爽！Google Domain 設定DNS 設定建立兩筆新的記錄設定四組 IP185.199.108.153185.199.109.153185.199.11]]></description>
         </item>
         <item>
             <title><![CDATA[在 Angular 文章裡幫程式碼加上語法高亮 (highlight)]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_highlight</link>
-            <guid>https://mtwmt.com/blog/angular/ng_highlight</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_highlight</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_highlight</guid>
             <pubDate>Sat, 29 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[highlight.jsInstallnpm i highlight.jsCreatecreate highlight.serviceimport hljs from &quot;highlight.]]></description>
         </item>
         <item>
             <title><![CDATA[使用 RXJS 取消 http request]]></title>
-            <link>https://mtwmt.com/blog/rxjs/rxjs_cancel_pending_request</link>
-            <guid>https://mtwmt.com/blog/rxjs/rxjs_cancel_pending_request</guid>
+            <link>https://mtwmt.com/blog/RxJS/rxjs_cancel_pending_request</link>
+            <guid>https://mtwmt.com/blog/RxJS/rxjs_cancel_pending_request</guid>
             <pubDate>Wed, 26 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[因為需求，有時後需要取消處理中的 http request所以就來做個筆記吧subscription 方式TSexport class AppComponent {  private subscrip]]></description>
         </item>
         <item>
             <title><![CDATA[樹狀結構的各種處理 (Tree Data Structure)]]></title>
-            <link>https://mtwmt.com/blog/js/js_tree-data</link>
-            <guid>https://mtwmt.com/blog/js/js_tree-data</guid>
+            <link>https://mtwmt.com/blog/JavaScript/js_tree-data</link>
+            <guid>https://mtwmt.com/blog/JavaScript/js_tree-data</guid>
             <pubDate>Wed, 27 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[最近為了處理 tree 的樹狀結構多了好幾根白頭髮，囧~~~Tree Data這是一筆 tree (樹) 的資料const data = [  {    id: &quot;1&quot;,    c]]></description>
         </item>
@@ -109,162 +109,162 @@
         </item>
         <item>
             <title><![CDATA[如何使用 Github Actions 自動部署 Angular 到 Github Pages]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_deploy</link>
-            <guid>https://mtwmt.com/blog/angular/ng_deploy</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_deploy</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_deploy</guid>
             <pubDate>Fri, 15 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Github 多了一個 Actions 的新功能，當 push 檔案到 Github 的時後，就會自動跑 CI/CD 部署這個功能真是太方便啦!!!Angular DeployAngular 有提供了]]></description>
         </item>
         <item>
             <title><![CDATA[Angular Providers]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_providers</link>
-            <guid>https://mtwmt.com/blog/angular/ng_providers</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_providers</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_providers</guid>
             <pubDate>Sun, 10 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[一直以來對 Angular Providers 這部份都還是有存在著半知半解的狀態，就趁著這次機會一次搞懂它吧！Providers 提供了四種注入方式Class Provider : useClass]]></description>
         </item>
         <item>
             <title><![CDATA[如何在 Angular 獲取 URL 資訊]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_urlInfo</link>
-            <guid>https://mtwmt.com/blog/angular/ng_urlInfo</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_urlInfo</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_urlInfo</guid>
             <pubDate>Sat, 09 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[在實作裡，很多時後我們會將一些必要資訊記錄在網址上，直接在網址裡就能得到我們要的訊息不用再透過組件將資訊層層傳遞，達到解耦合的效果。URL註：一切一切 都只是我用來舉例，不代表為鐵人賽網址真正的實際規]]></description>
         </item>
         <item>
             <title><![CDATA[如何在 Angular 建立 Breadcrumb (麵包屑)]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_breadcrumb</link>
-            <guid>https://mtwmt.com/blog/angular/ng_breadcrumb</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_breadcrumb</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_breadcrumb</guid>
             <pubDate>Fri, 08 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[麵包屑 為提供網站裡的導航，讓使用者容易了解當下所在的位置剛好也呼應前一天使用 router 的部份現在位置：首頁 / 列表 / 內容了解 router 架構Angular 裡的 router 架構 ]]></description>
         </item>
         <item>
             <title><![CDATA[Angular 路由守衛(登入篇)]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_auth-guard-login</link>
-            <guid>https://mtwmt.com/blog/angular/ng_auth-guard-login</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_auth-guard-login</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_auth-guard-login</guid>
             <pubDate>Thu, 07 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[經過了昨天的介紹，今天就來看看使用登入範例囉今天的登入資料依然是使用 FakeStoreAPI登入畫面這裡就做個簡單的驗証，沒填值就不能按按鈕&lt;form [formGroup]=&quot;fo]]></description>
         </item>
         <item>
             <title><![CDATA[Angular 路由守衛]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_auth-guard</link>
-            <guid>https://mtwmt.com/blog/angular/ng_auth-guard</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_auth-guard</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_auth-guard</guid>
             <pubDate>Wed, 06 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[我們在開發的過程中，經常會遇到需要某些權限才能進入的頁面，這時後就會需要路由守衛的機制啦，而它最常用在登入畫面時快速建立Angular CLI 提供了命令列工具，可以快速建立路由守衛框架檔案：ng g]]></description>
         </item>
         <item>
             <title><![CDATA[Angular 筆記 css 樣式篇]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_css</link>
-            <guid>https://mtwmt.com/blog/angular/ng_css</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_css</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_css</guid>
             <pubDate>Tue, 05 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[今天就只是個筆記，單純記錄寫法如何使用，以便自己日後查找，畢竟人非聖賢、會忘難免 XDcss套用 className變數為 isDark，value 必需為 booleanisDark = true;]]></description>
         </item>
         <item>
             <title><![CDATA[Angular 客製彈出視窗]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_cdk-overlay</link>
-            <guid>https://mtwmt.com/blog/angular/ng_cdk-overlay</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_cdk-overlay</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_cdk-overlay</guid>
             <pubDate>Mon, 04 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[因為我的這個 blog 需要一個彈出視窗做提示，而套件裡的樣式我都不喜歡，所以今天就來客製化一個吧！這次的彈出視窗會使用 Angular Material 裡的 cdk 來做開發前置作業安裝 cdkn]]></description>
         </item>
         <item>
             <title><![CDATA[Angular ViewChild 與 ViewChildren 介紹]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_ViewChild-ViewChildren</link>
-            <guid>https://mtwmt.com/blog/angular/ng_ViewChild-ViewChildren</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_ViewChild-ViewChildren</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_ViewChild-ViewChildren</guid>
             <pubDate>Sun, 03 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[ViewChild 這個屬性在 Angular 是屬於很常用的一部份今天就來了解一下 ViewChild 與 ViewChildren 的差別與使用方式吧！先做一個子組件HelloComponent ]]></description>
         </item>
         <item>
             <title><![CDATA[如何在 Angular 取得當前頁面的絕對路徑]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_absolute_path</link>
-            <guid>https://mtwmt.com/blog/angular/ng_absolute_path</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_absolute_path</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_absolute_path</guid>
             <pubDate>Sat, 02 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[情境當有一個連結需要另開新頁時，在 develop 或 production 需要對應到正確的路徑Angular 提供了這個方式 https://angular.tw/api/common/Locat]]></description>
         </item>
         <item>
             <title><![CDATA[Angular 淺拷貝之日記文]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_shallowCopy-vs-deepCopy</link>
-            <guid>https://mtwmt.com/blog/angular/ng_shallowCopy-vs-deepCopy</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_shallowCopy-vs-deepCopy</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_shallowCopy-vs-deepCopy</guid>
             <pubDate>Fri, 01 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[又踩雷啦啊哈哈哈哈哈。來重現一下遇到的情境吧bug 出現export class AppComponent implements OnInit {  fruit : any = {    apple:]]></description>
         </item>
         <item>
             <title><![CDATA[使用 Angular 做檔案編碼檢測 (detect-encoding)]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_detect-encoding</link>
-            <guid>https://mtwmt.com/blog/angular/ng_detect-encoding</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_detect-encoding</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_detect-encoding</guid>
             <pubDate>Thu, 30 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[來由前一陣子，後端有個需求是在檔案上傳前，需要提前知道上傳的檔案編碼 是 UTF-8 或是 ascii 等，才能決定要不要將檔案放進資料庫，或是在這之前再做一次轉檔。今天的內容跟 Angular 比較]]></description>
         </item>
         <item>
             <title><![CDATA[Angular 轉換 API 資料格式 (Adapter)]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_adapter-data</link>
-            <guid>https://mtwmt.com/blog/angular/ng_adapter-data</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_adapter-data</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_adapter-data</guid>
             <pubDate>Wed, 29 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[今天的內容屬於設計模式的一種。當我們從後端接到資料後，有時後資料格式往往不是如我們所想，所以會再加工做個轉換的動作。所以就要使用 TypeScript 來做個轉接器，轉成我們所需的資料！就拿前幾天的文]]></description>
         </item>
         <item>
             <title><![CDATA[Angular ElementRef、TemplateRef、viewContainerRef 的區別]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_ElementRef-TemplateRef-viewContainerRef</link>
-            <guid>https://mtwmt.com/blog/angular/ng_ElementRef-TemplateRef-viewContainerRef</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_ElementRef-TemplateRef-viewContainerRef</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_ElementRef-TemplateRef-viewContainerRef</guid>
             <pubDate>Tue, 28 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[今天就來聊聊 ElementRef、TemplateRef、viewContainerRef，者實說，在這之前一直都沒很認真搞懂這部份就趁著這次機會一起來看看吧！ElementRef用於檢視 HTML]]></description>
         </item>
         <item>
             <title><![CDATA[Angular ng-template 與 ngTemplateOutlet]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_ngTemplateOutlet</link>
-            <guid>https://mtwmt.com/blog/angular/ng_ngTemplateOutlet</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_ngTemplateOutlet</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_ngTemplateOutlet</guid>
             <pubDate>Mon, 27 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[ngTemplateOutletngTemplateOutlet 這裡我解釋為 ng-template 裡的插槽來看看實際上會是如何使用先來段程式碼，這裡為一筆物件資料json = {  key: `]]></description>
         </item>
         <item>
             <title><![CDATA[Angular ng-container 與 ng-template]]></title>
-            <link>https://mtwmt.com/blog/angular/ng-container-vs-template</link>
-            <guid>https://mtwmt.com/blog/angular/ng-container-vs-template</guid>
+            <link>https://mtwmt.com/blog/Angular/ng-container-vs-template</link>
+            <guid>https://mtwmt.com/blog/Angular/ng-container-vs-template</guid>
             <pubDate>Sun, 26 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[接續昨天的範例。今天要聊的是 ng-container 與 ng-template&lt;ng-container *ngIf=&quot;(products$ | async)?.length &g]]></description>
         </item>
         <item>
             <title><![CDATA[Angular ngIf 與 Async Pipe]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_if-async-as</link>
-            <guid>https://mtwmt.com/blog/angular/ng_if-async-as</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_if-async-as</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_if-async-as</guid>
             <pubDate>Sat, 25 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[情境當我們在 template 訂閱一組資料，而需要對它做一些邏輯處理的時後。不好的方式.tsexport class TemplateComponent {  products$: Observab]]></description>
         </item>
         <item>
             <title><![CDATA[Rxjs 各種解訂閱方式]]></title>
-            <link>https://mtwmt.com/blog/rxjs/rxjs_onDestroy</link>
-            <guid>https://mtwmt.com/blog/rxjs/rxjs_onDestroy</guid>
+            <link>https://mtwmt.com/blog/RxJS/rxjs_onDestroy</link>
+            <guid>https://mtwmt.com/blog/RxJS/rxjs_onDestroy</guid>
             <pubDate>Fri, 24 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[昨天說到了將資料訂閱出來渲染在頁面上的事，那麼就就來說說 RxJs 解訂閱這件事吧。這也是為了避免 memory leak，或重覆訂閱所造成的 BUG，若非有限訂閱，通常在訂閱離開後，都需要解訂閱。轉]]></description>
         </item>
         <item>
             <title><![CDATA[Angular 如何取得 API 資料]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_httpget</link>
-            <guid>https://mtwmt.com/blog/angular/ng_httpget</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_httpget</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_httpget</guid>
             <pubDate>Thu, 23 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[既然昨天已經說了 http post 這件事，那今天就來說說 http get 這部份吧！今天的資料依然使用 FakeStoreAPI樣式套用 Angular Material情境從 api 取得列表]]></description>
         </item>
         <item>
             <title><![CDATA[Angular 如何將多筆資料上傳後，取得全部回傳資料，再送到另一支 API]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_rxjs-create</link>
-            <guid>https://mtwmt.com/blog/angular/ng_rxjs-create</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_rxjs-create</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_rxjs-create</guid>
             <pubDate>Wed, 22 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[來回顧一下前幾天的日記文Angular 圖片上傳之…日記文程式碼流程規劃之…日記文與今天介紹的內容有關，如何將多筆資料上傳後，取得全部回傳資料後再將其資料整理，送到另一支 API這次將會使用 RxJS]]></description>
         </item>
         <item>
             <title><![CDATA[Angular 下拉選單如何選定預設值]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_select-default-value</link>
-            <guid>https://mtwmt.com/blog/angular/ng_select-default-value</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_select-default-value</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_select-default-value</guid>
             <pubDate>Tue, 21 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[情境當表單送出後，資料庫會記錄送出後的值，下次再進來時，會需要重現上一次所填寫過的內容，這在實作上是很常遇到的事情。解決方式原以為這是件很簡單的事，讀取資料後，直接把值填上後即可(我想得太簡單了)，當]]></description>
         </item>
         <item>
             <title><![CDATA[Angular 冒泡事件]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_bubbling-event</link>
-            <guid>https://mtwmt.com/blog/angular/ng_bubbling-event</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_bubbling-event</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_bubbling-event</guid>
             <pubDate>Mon, 20 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[今天就來個說個在新手時期很常遇到，但卻不知為什麼會發生的問題來看一下我們前幾天的表單範例，與圖上 console 的部份在操控表單的時後，發現在點選新增欄位時，連submit 也一起被觸發了！這是怎麼]]></description>
         </item>
         <item>
             <title><![CDATA[Angular Reactive Forms 自訂表單驗証器]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_formValidator</link>
-            <guid>https://mtwmt.com/blog/angular/ng_formValidator</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_formValidator</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_formValidator</guid>
             <pubDate>Sun, 19 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[有表單 當然少不了驗証，這次的情境是名字是必填欄位。手機不一定會是必填，但填了後必須符合手機的格式，09 開頭 共 10 碼來囉！！加上表單驗証在這個 form 表單的下方 新增一個驗証方式，動態驗証]]></description>
         </item>
@@ -277,64 +277,64 @@
         </item>
         <item>
             <title><![CDATA[Angular 圖片上傳之日記文]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_image-upload</link>
-            <guid>https://mtwmt.com/blog/angular/ng_image-upload</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_image-upload</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_image-upload</guid>
             <pubDate>Fri, 17 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[插播本來預定今天要發佈的文章延後了，今天要要來分享這一兩天的踩雷心路歷，花了一半天時間，連鐵人都沒時間寫，還好有一些些存檔 !這次公司專案需要做到圖片上傳這部份的處理，因這次的套件對於手動上傳沒有支援]]></description>
         </item>
         <item>
             <title><![CDATA[Angular Reactive Form 表單 setValue 與 patchValue 差異]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_form-setValue-vs-patchValue</link>
-            <guid>https://mtwmt.com/blog/angular/ng_form-setValue-vs-patchValue</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_form-setValue-vs-patchValue</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_form-setValue-vs-patchValue</guid>
             <pubDate>Thu, 16 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[今天就來說說 setValue 與 patchValue 差異這部份吧一開始不太能理解這 setValue 與 patchValue 到底差在哪裡(官網的說明讓我不是很懂，理解力太差了 XD)，不是一]]></description>
         </item>
         <item>
             <title><![CDATA[Angular Reactive Form 響應式表單 (formArray)]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_formArray</link>
-            <guid>https://mtwmt.com/blog/angular/ng_formArray</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_formArray</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_formArray</guid>
             <pubDate>Wed, 15 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[昨天介紹了 formControl 如何使用今天來介紹 formArray這部份老實說花了我不少時間才懂 XD今天要在表單裡加上喜好，喜好會有很多，所以我們來使用 formArray 處理，預設值先給]]></description>
         </item>
         <item>
             <title><![CDATA[Angular Reactive Form 響應式表單 (formControl)]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_formControl</link>
-            <guid>https://mtwmt.com/blog/angular/ng_formControl</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_formControl</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_formControl</guid>
             <pubDate>Tue, 14 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[昨天我們看了 一長串的表單使用範例都是經過理解消化後所寫出來的 code ，那麼今天就來聊一聊消化的過程吧！表單宣告一開始 建立一個新的 form 表單，它會是一組的 groupexport clas]]></description>
         </item>
         <item>
             <title><![CDATA[Angular Reactive Form 表單]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_form</link>
-            <guid>https://mtwmt.com/blog/angular/ng_form</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_form</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_form</guid>
             <pubDate>Mon, 13 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[表單表單在實作上是件常見的的處理，為什麼會寫這篇呢？實在是因為我太容易忘了 XD還記得一開始接觸到表單操控時， Angular reactive form 的官方文件它雖然寫的很清楚，但對於當時剛趟入]]></description>
         </item>
         <item>
             <title><![CDATA[JS 匯出 CSV 破版]]></title>
-            <link>https://mtwmt.com/blog/js/js_export_csv_line</link>
-            <guid>https://mtwmt.com/blog/js/js_export_csv_line</guid>
+            <link>https://mtwmt.com/blog/JavaScript/js_export_csv_line</link>
+            <guid>https://mtwmt.com/blog/JavaScript/js_export_csv_line</guid>
             <pubDate>Sun, 23 May 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[專案裡有很多需要把表格下載成 CSV 檔，最近出現了 CSV 破版的問題情境如下：原本某個儲存格裡面的內容裡面有換行，匯出成CSV時，照理說，換行應該是在當下儲存格做換行，沒想到卻變成了這樣 QQ資料]]></description>
         </item>
         <item>
             <title><![CDATA[Scully 新增留言系統]]></title>
-            <link>https://mtwmt.com/blog/angular/scully_comments</link>
-            <guid>https://mtwmt.com/blog/angular/scully_comments</guid>
+            <link>https://mtwmt.com/blog/Angular/scully_comments</link>
+            <guid>https://mtwmt.com/blog/Angular/scully_comments</guid>
             <pubDate>Sat, 15 May 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[設定 utterances這次選定了 utterances 來當留言系統，它是使用 githubissue 當成網站的留言系統先前是使用 DISQUS 覺得不是很好用，所以趁著這次翻寫時 也一起換掉了]]></description>
         </item>
         <item>
             <title><![CDATA[拋棄 jQuery 用 JS 寫一個 gotop (回到最上) 功能吧!]]></title>
-            <link>https://mtwmt.com/blog/js/js_gotop</link>
-            <guid>https://mtwmt.com/blog/js/js_gotop</guid>
+            <link>https://mtwmt.com/blog/JavaScript/js_gotop</link>
+            <guid>https://mtwmt.com/blog/JavaScript/js_gotop</guid>
             <pubDate>Mon, 10 May 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[jQuery 寫法var $gotop = $('.gotop');var $body = $('body, html');$gotop.on('click', function () {  $bod]]></description>
         </item>
         <item>
             <title><![CDATA[Scully 佈署到 github]]></title>
-            <link>https://mtwmt.com/blog/angular/scully_deploy</link>
-            <guid>https://mtwmt.com/blog/angular/scully_deploy</guid>
+            <link>https://mtwmt.com/blog/Angular/scully_deploy</link>
+            <guid>https://mtwmt.com/blog/Angular/scully_deploy</guid>
             <pubDate>Tue, 04 May 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[終於！用 scully 把先前的 Blog 翻寫完成了!!! 灑花～接著當然是要把頁面佈署到 github 讓其他人看到啦不然也只能自己自 high XD安裝首先安裝 angular-cli-ghpa]]></description>
         </item>
@@ -347,29 +347,29 @@
         </item>
         <item>
             <title><![CDATA[如何將 Angular library 裡的 scss/sass 正確導出]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_lib-build-css</link>
-            <guid>https://mtwmt.com/blog/angular/ng_lib-build-css</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_lib-build-css</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_lib-build-css</guid>
             <pubDate>Sun, 17 Jan 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[因專案越來越龐大，需要將一些共用元件抽出來做 library 放到 npm 上，在其他專案在開發時也能一起使用，以便節省開發時間。照著官網的教學建立: https://angular.tw/guide]]></description>
         </item>
         <item>
             <title><![CDATA[Angular viewchild undefined with ngIf]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_ngif-viewchild-undefined</link>
-            <guid>https://mtwmt.com/blog/angular/ng_ngif-viewchild-undefined</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_ngif-viewchild-undefined</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_ngif-viewchild-undefined</guid>
             <pubDate>Sun, 27 Dec 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[情境當 angular 裡的 範本變數裡使用到 ngIf，在執行範本變數的時後會報錯，出現 undefined，無法操控程式碼如下html&lt;app-child *ngIf=&quot;isSho]]></description>
         </item>
         <item>
             <title><![CDATA[JS Template Strings ( 模版字串 / 樣版字串 )]]></title>
-            <link>https://mtwmt.com/blog/js/js_template-strings</link>
-            <guid>https://mtwmt.com/blog/js/js_template-strings</guid>
+            <link>https://mtwmt.com/blog/JavaScript/js_template-strings</link>
+            <guid>https://mtwmt.com/blog/JavaScript/js_template-strings</guid>
             <pubDate>Tue, 08 Dec 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[過去寫法 以 jquery 為例$('#result').append(  'There are &lt;b&gt;' + basket.count + '&lt;/b&gt; ' + 'items ]]></description>
         </item>
         <item>
             <title><![CDATA[JS 解構賦值]]></title>
-            <link>https://mtwmt.com/blog/js/js_destructuring-assignment</link>
-            <guid>https://mtwmt.com/blog/js/js_destructuring-assignment</guid>
+            <link>https://mtwmt.com/blog/JavaScript/js_destructuring-assignment</link>
+            <guid>https://mtwmt.com/blog/JavaScript/js_destructuring-assignment</guid>
             <pubDate>Mon, 07 Dec 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[解構賦值，按照對應位置，進行賦值，如同鏡子般映射陣列基本用法let [a, b, c] = ['aa', 'bb', 'cc'];// a = 'aa';// b = 'bb';// c = 'cc']]></description>
         </item>
@@ -382,50 +382,50 @@
         </item>
         <item>
             <title><![CDATA[JS Object 物件的屬性特徵]]></title>
-            <link>https://mtwmt.com/blog/js/js_object_property</link>
-            <guid>https://mtwmt.com/blog/js/js_object_property</guid>
+            <link>https://mtwmt.com/blog/JavaScript/js_object_property</link>
+            <guid>https://mtwmt.com/blog/JavaScript/js_object_property</guid>
             <pubDate>Mon, 30 Nov 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[物件本身var obj = {  a: 1,  b: 2,  c: 3,};console.log('obj', obj);印出來後 如圖所示修改物件裡面屬性的值可以是 obj.a = 4 或 obj]]></description>
         </item>
         <item>
             <title><![CDATA[Angular HttpParams]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_httpParams</link>
-            <guid>https://mtwmt.com/blog/angular/ng_httpParams</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_httpParams</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_httpParams</guid>
             <pubDate>Tue, 03 Nov 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[這篇記錄著關於如何使用 Angular HttpParams且 HttpParams 接收的參數值必定要轉為字串才可以在 service.ts 引入import { HttpClient, HttpP]]></description>
         </item>
         <item>
             <title><![CDATA[Angular Router 筆記]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_router</link>
-            <guid>https://mtwmt.com/blog/angular/ng_router</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_router</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_router</guid>
             <pubDate>Tue, 20 Oct 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[在 app.module.ts 引入 RouterModuleimport { RouterModule } from '@angular/router';@NgModule({  RouterMod]]></description>
         </item>
         <item>
             <title><![CDATA[初探 Scully 建立 blog]]></title>
-            <link>https://mtwmt.com/blog/angular/scully_install</link>
-            <guid>https://mtwmt.com/blog/angular/scully_install</guid>
+            <link>https://mtwmt.com/blog/Angular/scully_install</link>
+            <guid>https://mtwmt.com/blog/Angular/scully_install</guid>
             <pubDate>Sun, 11 Oct 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[原本就是寫 Angular 框架的我，最近得知 Scully 屬 Angular 的靜態頁面產生器，激起了我的好奇心所以開始了以下路程官方文件：https://scully.io/準備使用環境    ]]></description>
         </item>
         <item>
             <title><![CDATA[Reactive Forms in Angular Disabled Warning ( 響應式表單 Disabled Warning )]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_reactive_form_Error</link>
-            <guid>https://mtwmt.com/blog/angular/ng_reactive_form_Error</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_reactive_form_Error</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_reactive_form_Error</guid>
             <pubDate>Sat, 26 Sep 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Disabled Warning當我們在使用 Angular Reactive Forms 時 如&lt;input [formControl]=&quot;formControl&quot; [di]]></description>
         </item>
         <item>
             <title><![CDATA[Angular Router Change 踩雷日記]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_router_change_bug</link>
-            <guid>https://mtwmt.com/blog/angular/ng_router_change_bug</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_router_change_bug</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_router_change_bug</guid>
             <pubDate>Sun, 13 Sep 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[最近在專案上出現了一個，點導址按鈕導頁後，出現 api 重覆打的情形而且還是在特定會在 side bar 點了才會出現這 bug奇怪了，之前做的都沒遇過這問題呀，寫的方式也都是一樣花了好多間找問題點 ]]></description>
         </item>
         <item>
             <title><![CDATA[D3 Range 解析]]></title>
-            <link>https://mtwmt.com/blog/d3/d3_range</link>
-            <guid>https://mtwmt.com/blog/d3/d3_range</guid>
+            <link>https://mtwmt.com/blog/D3/d3_range</link>
+            <guid>https://mtwmt.com/blog/D3/d3_range</guid>
             <pubDate>Sun, 07 Jun 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[d3 range 屬於 d3-array 的一部份源始碼如下export default function (start, stop, step) {  (start = +start),    (s]]></description>
         </item>
@@ -459,22 +459,22 @@
         </item>
         <item>
             <title><![CDATA[JS Array 過濾重覆值的幾種方式]]></title>
-            <link>https://mtwmt.com/blog/js/js_array filter</link>
-            <guid>https://mtwmt.com/blog/js/js_array filter</guid>
+            <link>https://mtwmt.com/blog/JavaScript/js_array filter</link>
+            <guid>https://mtwmt.com/blog/JavaScript/js_array filter</guid>
             <pubDate>Mon, 04 May 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[陣列裡 有時後會處理到把重覆的值濾掉，有以下幾種方式以這個陣列為例let arr = ['Apple', 'Banana', 'Orange', 'Mango', 'Orange', 'Apple']]]></description>
         </item>
         <item>
             <title><![CDATA[Angular Pipe (管道)]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_pipe</link>
-            <guid>https://mtwmt.com/blog/angular/ng_pipe</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_pipe</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_pipe</guid>
             <pubDate>Sun, 03 May 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[在 Angular 裡用來做一個簡單的數據轉換這次做的是數值對應 ASCII Table對照表在 terminal 裡鍵入ng g pipe my-new-pipe或ng g p my-new-pip]]></description>
         </item>
         <item>
             <title><![CDATA[JS Array 新增值的幾種方式]]></title>
-            <link>https://mtwmt.com/blog/js/js_array_append</link>
-            <guid>https://mtwmt.com/blog/js/js_array_append</guid>
+            <link>https://mtwmt.com/blog/JavaScript/js_array_append</link>
+            <guid>https://mtwmt.com/blog/JavaScript/js_array_append</guid>
             <pubDate>Wed, 29 Apr 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[在工作上時 會常常處理到陣列傳遞的情況，偶然看到一些國外的文章寫整理的蠻好的，也就此剛好記錄下來會改變原來陣列 ( 在記憶體裡是使用同一個位置 )push直接將新的值加到後面const array =]]></description>
         </item>
@@ -487,8 +487,8 @@
         </item>
         <item>
             <title><![CDATA[D3 長條圖繪製 ( Bar Chart )]]></title>
-            <link>https://mtwmt.com/blog/d3/d3_bar_chart</link>
-            <guid>https://mtwmt.com/blog/d3/d3_bar_chart</guid>
+            <link>https://mtwmt.com/blog/D3/d3_bar_chart</link>
+            <guid>https://mtwmt.com/blog/D3/d3_bar_chart</guid>
             <pubDate>Mon, 13 Apr 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[這次我們來繪製的是橫條圖！先準備一筆簡單的資料data = [  {    label: '2011',    value: 45,  },  {    label: '2012',    value]]></description>
         </item>
@@ -501,15 +501,15 @@
         </item>
         <item>
             <title><![CDATA[RxJS 概念]]></title>
-            <link>https://mtwmt.com/blog/rxjs/rxjs</link>
-            <guid>https://mtwmt.com/blog/rxjs/rxjs</guid>
+            <link>https://mtwmt.com/blog/RxJS/rxjs</link>
+            <guid>https://mtwmt.com/blog/RxJS/rxjs</guid>
             <pubDate>Fri, 27 Mar 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Observable 可觀察物件連續性發生的資料 (主體) ，沒有寫 subscribe 是不會被執行的要下了後才會被啟動 在執行過程中 隨時可以中斷行為var click$ = fromEvent(]]></description>
         </item>
         <item>
             <title><![CDATA[D3 資料綁定與更新]]></title>
-            <link>https://mtwmt.com/blog/d3/d3_databind</link>
-            <guid>https://mtwmt.com/blog/d3/d3_databind</guid>
+            <link>https://mtwmt.com/blog/D3/d3_databind</link>
+            <guid>https://mtwmt.com/blog/D3/d3_databind</guid>
             <pubDate>Mon, 28 Oct 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[玩 d3 一定要了解的 d3 的資料綁定機制不然要怎麼讓畫面跑出來呢 XDDDdata 與 datum 差別當我有一組的資料 想讓圖表依續產生時 就會用到 data 或 datum 將資料傳入 以便後]]></description>
         </item>
@@ -522,8 +522,8 @@
         </item>
         <item>
             <title><![CDATA[D3 v5 與 v3 差異]]></title>
-            <link>https://mtwmt.com/blog/d3/d3_v3tov5</link>
-            <guid>https://mtwmt.com/blog/d3/d3_v3tov5</guid>
+            <link>https://mtwmt.com/blog/D3/d3_v3tov5</link>
+            <guid>https://mtwmt.com/blog/D3/d3_v3tov5</guid>
             <pubDate>Sat, 05 Oct 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[最近因為專案需求 需要用到 D3 來畫圖表而公司用的是 v5 版本 (v4 以上的版本已不相容以下版本)剛開始初入 D3 的我 像個無頭蒼蠅般 先隨意的找了網路上的範例來練習寫了幾行 code 後 發]]></description>
         </item>
@@ -543,15 +543,15 @@
         </item>
         <item>
             <title><![CDATA[D3 序數比例尺 scaleBand]]></title>
-            <link>https://mtwmt.com/blog/d3/d3_scaleBand</link>
-            <guid>https://mtwmt.com/blog/d3/d3_scaleBand</guid>
+            <link>https://mtwmt.com/blog/D3/d3_scaleBand</link>
+            <guid>https://mtwmt.com/blog/D3/d3_scaleBand</guid>
             <pubDate>Mon, 30 Sep 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[D3 的坐標不是只有數字，有時後也會用到除了數字以外的非連續性坐標這時後就有了scaleBand 序數比例尺在這部份 v3 跟 v4 的版本寫了 有蠻大的落差而我是從 v5 才開始真正的接觸到 d3 ]]></description>
         </item>
         <item>
             <title><![CDATA[修改 Material Expansion Panel (手風琴) 標題高度]]></title>
-            <link>https://mtwmt.com/blog/angular/material_expansion-panel_edit-height</link>
-            <guid>https://mtwmt.com/blog/angular/material_expansion-panel_edit-height</guid>
+            <link>https://mtwmt.com/blog/Angular/material_expansion-panel_edit-height</link>
+            <guid>https://mtwmt.com/blog/Angular/material_expansion-panel_edit-height</guid>
             <pubDate>Mon, 16 Sep 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[因為 Material Expansion Panel 展開後的高度是使用動畫高度產生所以css設定過後 仍會被蓋過除非是下 !important但在展開的過程中 會有先變高再縮回去的不順效果在 Ma]]></description>
         </item>
@@ -578,15 +578,15 @@
         </item>
         <item>
             <title><![CDATA[Angular 動態載入組件]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_dynamic</link>
-            <guid>https://mtwmt.com/blog/angular/ng_dynamic</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_dynamic</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_dynamic</guid>
             <pubDate>Sun, 21 Jul 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[動態載入組件情境：tab 切換app.module.ts// ...略import { TaskComponent } from './tab/task/task.component';import ]]></description>
         </item>
         <item>
             <title><![CDATA[Angular 組件傳值]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_emit</link>
-            <guid>https://mtwmt.com/blog/angular/ng_emit</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_emit</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_emit</guid>
             <pubDate>Sat, 20 Jul 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[父子組件互傳( input output )一張圖說明 input 與 output 值的互相傳遞父組件 傳值給 子組件// 父組件import { Component } from '@angula]]></description>
         </item>
@@ -599,113 +599,113 @@
         </item>
         <item>
             <title><![CDATA[Angular 繫結方式]]></title>
-            <link>https://mtwmt.com/blog/angular/ng_bind</link>
-            <guid>https://mtwmt.com/blog/angular/ng_bind</guid>
+            <link>https://mtwmt.com/blog/Angular/ng_bind</link>
+            <guid>https://mtwmt.com/blog/Angular/ng_bind</guid>
             <pubDate>Wed, 17 Jul 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[Angular 共有四種資料繫結的方法內嵌繫結&lt;p&gt;{{ title }}&lt;/p&gt;屬性繫結[property]='statement'&lt;p [ngClass]=&quot]]></description>
         </item>
         <item>
             <title><![CDATA[JS地下城：11F-燈箱效果]]></title>
-            <link>https://mtwmt.com/blog/JSBOSS/11f</link>
-            <guid>https://mtwmt.com/blog/JSBOSS/11f</guid>
+            <link>https://mtwmt.com/blog/JavaScript/11f</link>
+            <guid>https://mtwmt.com/blog/JavaScript/11f</guid>
             <pubDate>Sun, 30 Jun 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[規則【特定技術】不可用 JS 框架，只能單純用原生 JS。【特定技術】需符合響應式設計。【特定技術】當螢幕伸縮(resize)時，介面與 JS 功能也需正常這次的關卡大部份就是練習 JS 的語法主要就]]></description>
         </item>
         <item>
             <title><![CDATA[JS地下城：4F-時區]]></title>
-            <link>https://mtwmt.com/blog/JSBOSS/4f</link>
-            <guid>https://mtwmt.com/blog/JSBOSS/4f</guid>
+            <link>https://mtwmt.com/blog/JavaScript/4f</link>
+            <guid>https://mtwmt.com/blog/JavaScript/4f</guid>
             <pubDate>Mon, 20 May 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[規則【特定技術】僅能使用原生 JS 開始，不能使用套件【特定技術】特別注意必須用 JS 處理各國時區【書寫能力】請寫一篇 BLOG 來介紹你的挑戰過程，並介紹 JavaScript 如何提供GMT、U]]></description>
         </item>
         <item>
             <title><![CDATA[JS地下城：1F-9x9 乘法表]]></title>
-            <link>https://mtwmt.com/blog/JSBOSS/1f</link>
-            <guid>https://mtwmt.com/blog/JSBOSS/1f</guid>
+            <link>https://mtwmt.com/blog/JavaScript/1f</link>
+            <guid>https://mtwmt.com/blog/JavaScript/1f</guid>
             <pubDate>Sat, 18 May 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[規則【特定技術】需使用 JS for 迴圈技巧，裡頭數字不能直接寫在 HTML 上，需使用 JS 印出。需使用 HTML、CSS、JS 技術介面需與設計稿一致demo 頁sourse code其實這篤]]></description>
         </item>
         <item>
             <title><![CDATA[利用 js 搭配 css 繪製折線圖]]></title>
-            <link>https://mtwmt.com/blog/css/css_line_chart</link>
-            <guid>https://mtwmt.com/blog/css/css_line_chart</guid>
+            <link>https://mtwmt.com/blog/CSS/css_line_chart</link>
+            <guid>https://mtwmt.com/blog/CSS/css_line_chart</guid>
             <pubDate>Sun, 12 May 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[概念利用 畢氏定理 畫出兩點間的斜線算斜率有兩種函數 分別為 Math.atan() 與 Math.atan2()Math.atan()Math.atan() 接受一個參數，用法如下：//slope ]]></description>
         </item>
         <item>
             <title><![CDATA[初探 Typescript]]></title>
-            <link>https://mtwmt.com/blog/js/typescript</link>
-            <guid>https://mtwmt.com/blog/js/typescript</guid>
+            <link>https://mtwmt.com/blog/JavaScript/typescript</link>
+            <guid>https://mtwmt.com/blog/JavaScript/typescript</guid>
             <pubDate>Wed, 01 May 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[interface 定義型別( 規格 )interface Person {  firstName: string;  lastName: string;}function greeter(perso]]></description>
         </item>
         <item>
             <title><![CDATA[JS地下城：10F-Chrome 應用程式(幹話產生器)]]></title>
-            <link>https://mtwmt.com/blog/JSBOSS/10f</link>
-            <guid>https://mtwmt.com/blog/JSBOSS/10f</guid>
+            <link>https://mtwmt.com/blog/JavaScript/10f</link>
+            <guid>https://mtwmt.com/blog/JavaScript/10f</guid>
             <pubDate>Sun, 14 Apr 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[規則【特定技術】請開發 Chrome extension，不需上架，投稿時請提供安裝檔放在雲端，以供 GM 下載測試。【特定技術】打開 Chrome 新頁(tab)時，會隨機顯示你自己新增的語錄，或者]]></description>
         </item>
         <item>
             <title><![CDATA[JS 常用 function 整理]]></title>
-            <link>https://mtwmt.com/blog/js/js_fn</link>
-            <guid>https://mtwmt.com/blog/js/js_fn</guid>
+            <link>https://mtwmt.com/blog/JavaScript/js_fn</link>
+            <guid>https://mtwmt.com/blog/JavaScript/js_fn</guid>
             <pubDate>Fri, 15 Mar 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[此篇不定時更新, 便利健忘的自己 XD轉 emoji 編碼hex2char = function (code) {  if (!code) return '';  var _hex2char = fu]]></description>
         </item>
         <item>
             <title><![CDATA[JS地下城：9F-抽獎轉盤]]></title>
-            <link>https://mtwmt.com/blog/JSBOSS/9f</link>
-            <guid>https://mtwmt.com/blog/JSBOSS/9f</guid>
+            <link>https://mtwmt.com/blog/JavaScript/9f</link>
+            <guid>https://mtwmt.com/blog/JavaScript/9f</guid>
             <pubDate>Tue, 12 Mar 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[規則【特定技術】2017 遊戲輪盤規則輪盤只能轉 20 次，人人有獎 Flight：1 份 Child：4份 Anything：5 份 Wifi：5 份 Wish：5 份已經被抽到的獎項，就不可再次出]]></description>
         </item>
         <item>
             <title><![CDATA[JS地下城：7F-畫版]]></title>
-            <link>https://mtwmt.com/blog/JSBOSS/7f</link>
-            <guid>https://mtwmt.com/blog/JSBOSS/7f</guid>
+            <link>https://mtwmt.com/blog/JavaScript/7f</link>
+            <guid>https://mtwmt.com/blog/JavaScript/7f</guid>
             <pubDate>Fri, 08 Mar 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[規則【特定技術】繪圖區請使用 Canvas 來設計，上方的控制列與下方的畫筆調整可不用SAVE ：點擊後可直接下載轉出的 PNG 圖片 CLEAR ALL：清除畫版樣式 UNDO、REDO：上一步、下]]></description>
         </item>
         <item>
             <title><![CDATA[JS地下城：8F-井字遊戲]]></title>
-            <link>https://mtwmt.com/blog/JSBOSS/8f</link>
-            <guid>https://mtwmt.com/blog/JSBOSS/8f</guid>
+            <link>https://mtwmt.com/blog/JavaScript/8f</link>
+            <guid>https://mtwmt.com/blog/JavaScript/8f</guid>
             <pubDate>Wed, 06 Mar 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[規則【特定技術】先手為 O，後手為 X，某方獲勝時，上方會紀錄各方的獲勝戰績【特定技術】每回合結束後，會判定結果頁(平手、Ｏ 獲勝、X 獲勝)【特定技術】需符合 RWD，能在低螢幕解析度也能遊玩，介面]]></description>
         </item>
         <item>
             <title><![CDATA[JS地下城：3F-計算機]]></title>
-            <link>https://mtwmt.com/blog/JSBOSS/3f</link>
-            <guid>https://mtwmt.com/blog/JSBOSS/3f</guid>
+            <link>https://mtwmt.com/blog/JavaScript/3f</link>
+            <guid>https://mtwmt.com/blog/JavaScript/3f</guid>
             <pubDate>Thu, 21 Feb 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[規則【特定技術】數字位數過多時，不能因此而破版，計算機功能皆須齊全這次使用 原生 JS 來挑戰這次關卡demo 頁sourse code處理的問題有以下ieee754 浮點數字數過長 不造成破版eva]]></description>
         </item>
         <item>
             <title><![CDATA[JS地下城：6F-60秒算數遊戲]]></title>
-            <link>https://mtwmt.com/blog/JSBOSS/6f</link>
-            <guid>https://mtwmt.com/blog/JSBOSS/6f</guid>
+            <link>https://mtwmt.com/blog/JavaScript/6f</link>
+            <guid>https://mtwmt.com/blog/JavaScript/6f</guid>
             <pubDate>Sun, 17 Feb 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[規則【特定技術】 0 ~ 20 秒為 1 位數計算 (5-3)，21 ~ 40 秒為 2 位數計算(30*19)，41 ~ 60 秒為 3 位數計算 (332+312)，加減乘除規則請用隨機產生，不可]]></description>
         </item>
         <item>
             <title><![CDATA[JS地下城：5F-全台空氣指標儀表板]]></title>
-            <link>https://mtwmt.com/blog/JSBOSS/5f</link>
-            <guid>https://mtwmt.com/blog/JSBOSS/5f</guid>
+            <link>https://mtwmt.com/blog/JavaScript/5f</link>
+            <guid>https://mtwmt.com/blog/JavaScript/5f</guid>
             <pubDate>Mon, 11 Feb 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[規則【特定技術】必須使用 AJAX 技術串接資料 API，不可直些寫死資料在變數上。【特定技術】上方切換城市(高雄、台北)後，下方會切換該城市的各地區這次的關卡比較大的問題點就應該就是在 CORS 的]]></description>
         </item>
         <item>
             <title><![CDATA[JS地下城：2F-時鐘]]></title>
-            <link>https://mtwmt.com/blog/JSBOSS/2f</link>
-            <guid>https://mtwmt.com/blog/JSBOSS/2f</guid>
+            <link>https://mtwmt.com/blog/JavaScript/2f</link>
+            <guid>https://mtwmt.com/blog/JavaScript/2f</guid>
             <pubDate>Thu, 07 Feb 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[規則【特定技術】需使用 JS 原生語法的 getDate() 撈取時間，不可用套件【特定技術】需使用 JS 原生語法的 setTimeout() 或 setInterval()，持續讓秒針、分針、時針]]></description>
         </item>
         <item>
             <title><![CDATA[JS30：05_Flex Panel Gallery]]></title>
-            <link>https://mtwmt.com/blog/JS30/05_Flex Panel Gallery</link>
-            <guid>https://mtwmt.com/blog/JS30/05_Flex Panel Gallery</guid>
+            <link>https://mtwmt.com/blog/JavaScript/05_Flex Panel Gallery</link>
+            <guid>https://mtwmt.com/blog/JavaScript/05_Flex Panel Gallery</guid>
             <pubDate>Tue, 29 Jan 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[Flex Panel Gallery這次要來做的 點擊圖片後 動畫展開的效果摘要了解 flex 裡的空間分配了解 js 的 toggle 與 includes 事件CSS了解 flex 裡的空間分配 ]]></description>
         </item>
@@ -718,29 +718,29 @@
         </item>
         <item>
             <title><![CDATA[JS30：07_Array Cardio Day 2]]></title>
-            <link>https://mtwmt.com/blog/JS30/07_Array-Cardio-Day-2</link>
-            <guid>https://mtwmt.com/blog/JS30/07_Array-Cardio-Day-2</guid>
+            <link>https://mtwmt.com/blog/JavaScript/07_Array-Cardio-Day-2</link>
+            <guid>https://mtwmt.com/blog/JavaScript/07_Array-Cardio-Day-2</guid>
             <pubDate>Fri, 18 Jan 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[Array Cardio (陣列練習 2)延續 04_Array Cardio Day 的後續，繼續悉其他操作陣列的方法摘要這次作者提供了 people 與 comments 兩組資料做練習練習的題目]]></description>
         </item>
         <item>
             <title><![CDATA[JS30：04_Array Cardio Day 1]]></title>
-            <link>https://mtwmt.com/blog/JS30/04_Array-Cardio-Day-1</link>
-            <guid>https://mtwmt.com/blog/JS30/04_Array-Cardio-Day-1</guid>
+            <link>https://mtwmt.com/blog/JavaScript/04_Array-Cardio-Day-1</link>
+            <guid>https://mtwmt.com/blog/JavaScript/04_Array-Cardio-Day-1</guid>
             <pubDate>Wed, 16 Jan 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[Array Cardio (陣列練習)摘要此次主要是練習陣列的一些用法分別有八個例子作者一開始在 html 上提供了三組資料給大家練習inventors是一組是發明家的列表 裡面包含 姓、名、出生年份]]></description>
         </item>
         <item>
             <title><![CDATA[利用 google.maps.LatLngBounds 讓googlemap自動縮放到適合的大小]]></title>
-            <link>https://mtwmt.com/blog/js/googlemap_bounds</link>
-            <guid>https://mtwmt.com/blog/js/googlemap_bounds</guid>
+            <link>https://mtwmt.com/blog/JavaScript/googlemap_bounds</link>
+            <guid>https://mtwmt.com/blog/JavaScript/googlemap_bounds</guid>
             <pubDate>Mon, 14 Jan 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[如何讓所有地圖標記自動縮放都在可視範圍的區域首先 可以先了解地圖的邊界值先上 codeGoogleMap event 參照html&lt;div id=&quot;map&quot;&gt;&lt;/]]></description>
         </item>
         <item>
             <title><![CDATA[利用 google apps script 做中繼點跨網域遠端取得api資料]]></title>
-            <link>https://mtwmt.com/blog/js/api_cors_error</link>
-            <guid>https://mtwmt.com/blog/js/api_cors_error</guid>
+            <link>https://mtwmt.com/blog/JavaScript/api_cors_error</link>
+            <guid>https://mtwmt.com/blog/JavaScript/api_cors_error</guid>
             <pubDate>Mon, 24 Dec 2018 00:00:00 GMT</pubDate>
             <description><![CDATA[問題最近在練習 vue 時 會去政府公開 api 取資料 但有些 api 會有跨網域讀取限的問題一開始在開發環境vue-cli有提供http-proxy-middleware做 proxy 處理跟網域]]></description>
         </item>
@@ -753,36 +753,36 @@
         </item>
         <item>
             <title><![CDATA[JS30：03_CSS Variables]]></title>
-            <link>https://mtwmt.com/blog/JS30/03_CSS-Variables</link>
-            <guid>https://mtwmt.com/blog/JS30/03_CSS-Variables</guid>
+            <link>https://mtwmt.com/blog/JavaScript/03_CSS-Variables</link>
+            <guid>https://mtwmt.com/blog/JavaScript/03_CSS-Variables</guid>
             <pubDate>Mon, 03 Dec 2018 00:00:00 GMT</pubDate>
             <description><![CDATA[CSS Variables (CSS 變數)這次認識到 input 裡更多的 type 屬性 range 、 color 因為平常不太會用到 所以特別去查了一下原來是 html5 裡新增的屬性 可參照]]></description>
         </item>
         <item>
             <title><![CDATA[JS30：02_JS and CSS Clock]]></title>
-            <link>https://mtwmt.com/blog/JS30/02_JS-and-CSS-Clock</link>
-            <guid>https://mtwmt.com/blog/JS30/02_JS-and-CSS-Clock</guid>
+            <link>https://mtwmt.com/blog/JavaScript/02_JS-and-CSS-Clock</link>
+            <guid>https://mtwmt.com/blog/JavaScript/02_JS-and-CSS-Clock</guid>
             <pubDate>Sun, 02 Dec 2018 00:00:00 GMT</pubDate>
             <description><![CDATA[JS and CSS Clock (時鐘)摘要認識 css transform與 transition 調整時鐘指針使用new Date()來讀取當前的時間認識setInterval()計時CSS 處]]></description>
         </item>
         <item>
             <title><![CDATA[JS30：01_JavaScript Drum Kit]]></title>
-            <link>https://mtwmt.com/blog/JS30/01_JavaScript-Drum-Kit</link>
-            <guid>https://mtwmt.com/blog/JS30/01_JavaScript-Drum-Kit</guid>
+            <link>https://mtwmt.com/blog/JavaScript/01_JavaScript-Drum-Kit</link>
+            <guid>https://mtwmt.com/blog/JavaScript/01_JavaScript-Drum-Kit</guid>
             <pubDate>Sat, 01 Dec 2018 00:00:00 GMT</pubDate>
             <description><![CDATA[JavaScript Drum Kit (鍵盤打鼓)摘要了解鍵盤監聽事件 keyCode(鍵盤數字代碼)鍵盤與聲音對應畫面顯示所按到的鍵 (更改樣式)CSS 排版此次排版主要是以 flex 為主FLE]]></description>
         </item>
         <item>
             <title><![CDATA[rwd 自適應文字大小]]></title>
-            <link>https://mtwmt.com/blog/css/rwd-fontSize</link>
-            <guid>https://mtwmt.com/blog/css/rwd-fontSize</guid>
+            <link>https://mtwmt.com/blog/CSS/rwd-fontSize</link>
+            <guid>https://mtwmt.com/blog/CSS/rwd-fontSize</guid>
             <pubDate>Tue, 27 Nov 2018 00:00:00 GMT</pubDate>
             <description><![CDATA[在寫 rwd 頁面縮放的時後，常常會遇到因為視窗做縮放 超出的文字會往下擠為了不破壞設計的美感，當然也希望文字能做縮放啊！那文字該如何做設定才能隨著視窗做縮放呢在這裡我選擇使用 rem 這個單位rem]]></description>
         </item>
         <item>
             <title><![CDATA[JS30：30_Whack A Mole!]]></title>
-            <link>https://mtwmt.com/blog/JS30/30_Whack-A-Mole</link>
-            <guid>https://mtwmt.com/blog/JS30/30_Whack-A-Mole</guid>
+            <link>https://mtwmt.com/blog/JavaScript/30_Whack-A-Mole</link>
+            <guid>https://mtwmt.com/blog/JavaScript/30_Whack-A-Mole</guid>
             <pubDate>Mon, 26 Nov 2018 00:00:00 GMT</pubDate>
             <description><![CDATA[Whack A Mole! (打地鼠)摘要先規劃地鼠出現時間 ( 亂數時間出現 )設定地鼠出現位置將出現時間跟地鼠出現位置整合點按鈕控制遊戲開始打地鼠計分!!初始變數設定const holes = d]]></description>
         </item>
@@ -809,15 +809,15 @@
         </item>
         <item>
             <title><![CDATA[css圓角概念]]></title>
-            <link>https://mtwmt.com/blog/css/css_border-radius</link>
-            <guid>https://mtwmt.com/blog/css/css_border-radius</guid>
+            <link>https://mtwmt.com/blog/CSS/css_border-radius</link>
+            <guid>https://mtwmt.com/blog/CSS/css_border-radius</guid>
             <pubDate>Wed, 14 Nov 2018 00:00:00 GMT</pubDate>
             <description><![CDATA[單一值就是基本的圓角四邊的值都一樣border-radius: 30%;個別指定四個不同的角度border-radius: 30% 70% 20% 40%;以順時針方式 依續由 左上 右上 右下 左下]]></description>
         </item>
         <item>
             <title><![CDATA[修改api(json)參數名稱(大小寫)]]></title>
-            <link>https://mtwmt.com/blog/js/api_name_change</link>
-            <guid>https://mtwmt.com/blog/js/api_name_change</guid>
+            <link>https://mtwmt.com/blog/JavaScript/api_name_change</link>
+            <guid>https://mtwmt.com/blog/JavaScript/api_name_change</guid>
             <pubDate>Mon, 27 Aug 2018 00:00:00 GMT</pubDate>
             <description><![CDATA[最近在跟後端合作時，常遇到 列表與明細頁的 api 相同，但所提供的 api 卻是有分大小寫，在共用上常常因為大小寫不同，而導致 js 出錯所以就只有在後端 api 吐過來的時後，先把 api 參數調]]></description>
         </item>
@@ -830,22 +830,22 @@
         </item>
         <item>
             <title><![CDATA[簡易 input focus 效果]]></title>
-            <link>https://mtwmt.com/blog/css/css_input_text_focus</link>
-            <guid>https://mtwmt.com/blog/css/css_input_text_focus</guid>
+            <link>https://mtwmt.com/blog/CSS/css_input_text_focus</link>
+            <guid>https://mtwmt.com/blog/CSS/css_input_text_focus</guid>
             <pubDate>Tue, 25 Jul 2017 00:00:00 GMT</pubDate>
             <description><![CDATA[概念input focus 的時後 去後 label 做變化效果如下： -->HTML&lt;div data=&quot;input-focus&quot;&gt;  &lt;input type=]]></description>
         </item>
         <item>
             <title><![CDATA[JS hoisting (變數提升)]]></title>
-            <link>https://mtwmt.com/blog/js/js_hoisting</link>
-            <guid>https://mtwmt.com/blog/js/js_hoisting</guid>
+            <link>https://mtwmt.com/blog/JavaScript/js_hoisting</link>
+            <guid>https://mtwmt.com/blog/JavaScript/js_hoisting</guid>
             <pubDate>Thu, 20 Jul 2017 00:00:00 GMT</pubDate>
             <description><![CDATA[foo();function foo(){  console.log(1);}var foo = function(){  console.log(2);}function foo(){  conso]]></description>
         </item>
         <item>
             <title><![CDATA[JS scope chain (範圍鏈)]]></title>
-            <link>https://mtwmt.com/blog/js/js_scopechain</link>
-            <guid>https://mtwmt.com/blog/js/js_scopechain</guid>
+            <link>https://mtwmt.com/blog/JavaScript/js_scopechain</link>
+            <guid>https://mtwmt.com/blog/JavaScript/js_scopechain</guid>
             <pubDate>Tue, 18 Jul 2017 00:00:00 GMT</pubDate>
             <description><![CDATA[function b() {  console.log(myVar);}function a() {  var myVar = 2;  b();}var myVar = 1;a();得到的結果會是**]]></description>
         </item>
@@ -865,15 +865,15 @@
         </item>
         <item>
             <title><![CDATA[rwd 自適應高度大小]]></title>
-            <link>https://mtwmt.com/blog/css/rwd-height</link>
-            <guid>https://mtwmt.com/blog/css/rwd-height</guid>
+            <link>https://mtwmt.com/blog/CSS/rwd-height</link>
+            <guid>https://mtwmt.com/blog/CSS/rwd-height</guid>
             <pubDate>Thu, 29 Jun 2017 00:00:00 GMT</pubDate>
             <description><![CDATA[常常在寫網頁的時後 我們會需要設到寬跟高但卻發生 為什麼寬能吃到 “%” 而高卻不能在 pc 版的頁面上設置就算了 因為都是固定大小但在這科技發展的時代裡 怎麼可能只有 pc 版的頁面呢!!?當然是要]]></description>
         </item>
         <item>
             <title><![CDATA[如何利用純 css 寫 switch 開關]]></title>
-            <link>https://mtwmt.com/blog/css/css_input_checkbox-switch</link>
-            <guid>https://mtwmt.com/blog/css/css_input_checkbox-switch</guid>
+            <link>https://mtwmt.com/blog/CSS/css_input_checkbox-switch</link>
+            <guid>https://mtwmt.com/blog/CSS/css_input_checkbox-switch</guid>
             <pubDate>Mon, 26 Jun 2017 00:00:00 GMT</pubDate>
             <description><![CDATA[概念利用 input checkbox 的 checked 特性來做到開關效果效果如下： -->HTML&lt;div data=&quot;checkbox-switch&quot;&gt;  &l]]></description>
         </item>
@@ -886,15 +886,15 @@
         </item>
         <item>
             <title><![CDATA[input chexcbox]]></title>
-            <link>https://mtwmt.com/blog/css/css_input_checkbox</link>
-            <guid>https://mtwmt.com/blog/css/css_input_checkbox</guid>
+            <link>https://mtwmt.com/blog/CSS/css_input_checkbox</link>
+            <guid>https://mtwmt.com/blog/CSS/css_input_checkbox</guid>
             <pubDate>Fri, 23 Jun 2017 00:00:00 GMT</pubDate>
             <description><![CDATA[概念利用 css before、after 的特性 去修改裡面的 input 樣式在 before 裡畫出一個 ✔使用矩形其中兩個長寬邊畫 border 線條再利用 css3 rotate 屬性 旋轉]]></description>
         </item>
         <item>
             <title><![CDATA[JS var 跟 let 差別 (變數宣告)]]></title>
-            <link>https://mtwmt.com/blog/js/js_varlet</link>
-            <guid>https://mtwmt.com/blog/js/js_varlet</guid>
+            <link>https://mtwmt.com/blog/JavaScript/js_varlet</link>
+            <guid>https://mtwmt.com/blog/JavaScript/js_varlet</guid>
             <pubDate>Fri, 23 Jun 2017 00:00:00 GMT</pubDate>
             <description><![CDATA[如何在 for 迴圈裡跑出利用 setTimeout 分別跑出 1~5var 全域變數 ( 在函式的區塊內 )，若找不到會向上查找，直到沒有相同的變數名稱let 區域變數 (es6 新增) 作用區在 ]]></description>
         </item>

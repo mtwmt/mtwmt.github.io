@@ -1,5 +1,5 @@
 ---
-layout: d3
+layout: D3
 title: D3 Range 解析
 categories:
   - D3

@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: JS 解構賦值
 categories:
   - JavaScript

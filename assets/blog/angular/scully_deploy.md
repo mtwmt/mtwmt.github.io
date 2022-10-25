@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Scully 佈署到 github
 categories:
   - Scully

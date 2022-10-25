@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: JS 常用 function 整理
 categories:
   - JavaScript

@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Scully 新增留言系統
 categories:
   - Scully

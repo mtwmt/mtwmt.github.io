@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular 繫結方式
 categories:
   - Angular

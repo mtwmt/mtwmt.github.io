@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: 利用 google.maps.LatLngBounds 讓googlemap自動縮放到適合的大小
 categories:
   - JavaScript

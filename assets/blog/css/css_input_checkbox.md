@@ -1,5 +1,5 @@
 ---
-layout: css
+layout: CSS
 title: input chexcbox
 categories:
   - css

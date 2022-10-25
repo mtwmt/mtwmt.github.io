@@ -1,5 +1,5 @@
 ---
-layout: github
+layout: GitHub
 title: GitHub Pages 設定 Google Domain 個人網域
 categories:
   - GitHub

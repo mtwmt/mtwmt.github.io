@@ -1,5 +1,5 @@
 ---
-layout: d3
+layout: D3
 title: D3 序數比例尺 scaleBand
 categories:
   - D3
