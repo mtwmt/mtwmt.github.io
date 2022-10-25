@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FriendshipLinkComponent implements OnInit {
   friendlyLinks = [
     {
-      name: "Mile's Blog",
+      name: "Miles' Blog",
       url: 'https://mileschou.github.io/',
     },
     {

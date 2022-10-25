@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
 import { ContactComponent } from '../contact/contact.component';
 import { HomeComponent } from '../home/home.component';
-import { IronmanComponent } from '../ironman/ironman.component';
 import { NotfoundComponent } from '../notfound/notfound.component';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { LayoutComponent } from './layout.component';
@@ -21,10 +20,6 @@ const routes: Routes = [
         path: 'blog',
         loadChildren: () =>
           import('../blog/blog.module').then((m) => m.BlogModule),
-      },
-      {
-        path: 'blog/ironman2021',
-        component: IronmanComponent,
       },
       {
         path: 'about',

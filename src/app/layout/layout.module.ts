@@ -5,7 +5,6 @@ import { LayoutComponent } from './layout.component';
 import { AboutComponent } from '../about/about.component';
 import { ContactComponent } from '../contact/contact.component';
 import { HomeComponent } from '../home/home.component';
-import { IronmanComponent } from '../ironman/ironman.component';
 import { NotfoundComponent } from '../notfound/notfound.component';
 import { SharedModule } from '../shared/shared.module';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
@@ -18,7 +17,6 @@ import { BlogModule } from '../blog/blog.module';
     HomeComponent,
     ContactComponent,
     NotfoundComponent,
-    IronmanComponent,
     PortfolioComponent,
   ],
   imports: [CommonModule, LayoutRoutingModule, SharedModule, BlogModule],
