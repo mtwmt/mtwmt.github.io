@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: JS scope chain (範圍鏈)
 categories:
   - JavaScript

@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular 動態載入組件
 categories:
   - Angular

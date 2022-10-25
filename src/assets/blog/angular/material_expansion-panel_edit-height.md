@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: 修改 Material Expansion Panel (手風琴) 標題高度
 categories:
   - Angular Material

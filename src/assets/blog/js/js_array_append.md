@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: JS Array 新增值的幾種方式
 categories:
   - JavaScript

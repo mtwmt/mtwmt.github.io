@@ -1,5 +1,5 @@
 ---
-layout: JS30
+layout: JavaScript
 title: JS30：01_JavaScript Drum Kit
 categories:
   - JS30

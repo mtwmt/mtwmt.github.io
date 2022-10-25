@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: JS var 跟 let 差別 (變數宣告)
 categories:
   - JavaScript

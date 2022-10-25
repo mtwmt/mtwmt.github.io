@@ -1,5 +1,5 @@
 ---
-layout: css
+layout: CSS
 title: 簡易 input focus 效果
 categories:
   - css

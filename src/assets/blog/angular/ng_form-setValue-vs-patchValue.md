@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular Reactive Form 表單 setValue 與 patchValue 差異
 categories:
   - Angular

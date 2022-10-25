@@ -1,10 +1,11 @@
 ---
-layout: home
+layout: life
 title: 人生第一間房：從無到有全記錄
 categories:
   - home
 tags:
   - home
+  - life
 date: 2022/09/25
 ---
 

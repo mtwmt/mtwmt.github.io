@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular 如何取得 API 資料
 categories:
   - Angular

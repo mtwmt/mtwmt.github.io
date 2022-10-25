@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Reactive Forms in Angular Disabled Warning ( 響應式表單 Disabled Warning )
 categories:
   - Angular

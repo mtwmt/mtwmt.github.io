@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: JavaScript
 title: Async/Await vs RxJS 非同步取值筆記
 categories:
   - JavaScript

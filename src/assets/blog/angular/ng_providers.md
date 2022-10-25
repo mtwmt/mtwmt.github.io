@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular Providers
 categories:
   - Angular

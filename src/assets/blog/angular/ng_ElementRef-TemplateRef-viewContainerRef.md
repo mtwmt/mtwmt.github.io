@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular ElementRef、TemplateRef、viewContainerRef 的區別
 categories:
   - Angular

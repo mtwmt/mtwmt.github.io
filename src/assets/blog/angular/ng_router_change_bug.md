@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular Router Change 踩雷日記
 categories:
   - Angular

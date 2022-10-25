@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular ViewChild 與 ViewChildren 介紹
 categories:
   - Angular

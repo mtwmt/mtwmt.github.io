@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: JS Array 過濾重覆值的幾種方式
 categories:
   - JavaScript

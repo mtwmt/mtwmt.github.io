@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular ControlValueAccessor (客製表單控制項)
 categories:
   - Angular

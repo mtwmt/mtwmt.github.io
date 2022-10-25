@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular ng-container 與 ng-template
 categories:
   - Angular

@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: JS Template Strings ( 模版字串 / 樣版字串 )
 categories:
   - JavaScript

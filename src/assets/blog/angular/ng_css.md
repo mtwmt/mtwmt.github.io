@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular 筆記 css 樣式篇
 categories:
   - Angular

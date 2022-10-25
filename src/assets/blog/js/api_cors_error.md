@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: 利用 google apps script 做中繼點跨網域遠端取得api資料
 categories:
   - api

@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular Reactive Form 響應式表單 (formControl)
 categories:
   - Angular

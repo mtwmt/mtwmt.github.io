@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: JS Object 物件的屬性特徵
 categories:
   - JavaScript

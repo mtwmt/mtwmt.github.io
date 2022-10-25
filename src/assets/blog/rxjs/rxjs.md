@@ -1,5 +1,5 @@
 ---
-layout: rxjs
+layout: RxJS
 title: RxJS 概念
 categories:
   - RxJS

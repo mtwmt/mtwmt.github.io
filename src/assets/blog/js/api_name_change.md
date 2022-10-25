@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: 修改api(json)參數名稱(大小寫)
 categories:
   - api

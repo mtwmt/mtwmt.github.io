@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: 拋棄 jQuery 用 JS 寫一個 gotop (回到最上) 功能吧!
 categories:
   - JavaScript

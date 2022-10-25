@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: JS 匯出 CSV 破版
 categories:
   - JavaScript

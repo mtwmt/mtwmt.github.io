@@ -1,5 +1,5 @@
 ---
-layout: JS30
+layout: JavaScript
 title: JS30：02_JS and CSS Clock
 categories:
   - JS30

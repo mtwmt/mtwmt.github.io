@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: JS hoisting (變數提升)
 categories:
 - JavaScript

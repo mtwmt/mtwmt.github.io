@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: 在 Angular 文章裡幫程式碼加上語法高亮 (highlight)
 categories:
   - Angular

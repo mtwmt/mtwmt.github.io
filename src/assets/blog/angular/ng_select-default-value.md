@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular 下拉選單如何選定預設值
 categories:
   - Angular

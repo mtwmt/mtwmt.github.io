@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: 使用 Angular 做檔案編碼檢測 (detect-encoding)
 categories:
   - Angular

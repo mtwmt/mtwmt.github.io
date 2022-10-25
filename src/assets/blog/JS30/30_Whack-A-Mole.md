@@ -1,5 +1,5 @@
 ---
-layout: JS30
+layout: JavaScript
 title: JS30：30_Whack A Mole!
 categories:
   - JS30

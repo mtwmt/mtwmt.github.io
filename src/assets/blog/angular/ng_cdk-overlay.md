@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular 客製彈出視窗
 categories:
   - Angular

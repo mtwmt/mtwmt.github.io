@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: 初探 Scully 建立 blog
 categories:
   - Scully

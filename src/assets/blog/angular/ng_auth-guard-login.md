@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular 路由守衛(登入篇)
 categories:
   - Angular

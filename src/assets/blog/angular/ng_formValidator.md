@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular Reactive Forms 自訂表單驗証器
 categories:
   - Angular

@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular 圖片上傳之日記文
 categories:
   - Angular

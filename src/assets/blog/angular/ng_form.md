@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular Reactive Form 表單
 categories:
   - Angular

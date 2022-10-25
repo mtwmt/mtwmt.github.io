@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular Pipe (管道)
 categories:
   - Angular

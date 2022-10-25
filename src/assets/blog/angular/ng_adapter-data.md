@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular 轉換 API 資料格式 (Adapter)
 categories:
   - Angular

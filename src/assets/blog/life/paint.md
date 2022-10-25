@@ -1,10 +1,11 @@
 ---
-layout: home
+layout: life
 title: 人生第一間房：藝術漆牆面DIY
 categories:
   - home
 tags:
   - home
+  - life
 date: 2022/09/27
 ---
 

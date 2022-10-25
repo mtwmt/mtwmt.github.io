@@ -1,5 +1,5 @@
 ---
-layout: JS30
+layout: JavaScript
 title: JS30：05_Flex Panel Gallery
 categories:
   - JS30

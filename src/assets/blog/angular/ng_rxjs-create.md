@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular 如何將多筆資料上傳後，取得全部回傳資料，再送到另一支 API
 categories:
   - Angular

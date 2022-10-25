@@ -1,5 +1,5 @@
 ---
-layout: d3
+layout: D3
 title: D3 長條圖繪製 ( Bar Chart )
 categories:
   - D3

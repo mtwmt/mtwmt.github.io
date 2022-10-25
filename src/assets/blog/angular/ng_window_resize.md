@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular Window Resize Event (偵測視窗縮放事件)
 categories:
   - Angular

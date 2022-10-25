@@ -1,5 +1,5 @@
 ---
-layout: js
+layout: JavaScript
 title: 初探 Typescript
 categories:
   - typescript

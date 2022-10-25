@@ -1,5 +1,5 @@
 ---
-layout: JS30
+layout: JavaScript
 title: JS30：07_Array Cardio Day 2
 categories:
   - JS30

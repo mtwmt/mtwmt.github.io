@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular 冒泡事件
 categories:
   - Angular

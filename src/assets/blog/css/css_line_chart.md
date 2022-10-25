@@ -1,5 +1,5 @@
 ---
-layout: css
+layout: CSS
 title: 利用 js 搭配 css 繪製折線圖
 categories:
   - css

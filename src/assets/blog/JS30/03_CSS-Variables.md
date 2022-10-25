@@ -1,5 +1,5 @@
 ---
-layout: JS30
+layout: JavaScript
 title: JS30：03_CSS Variables
 categories:
   - JS30

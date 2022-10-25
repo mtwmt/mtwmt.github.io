@@ -1,5 +1,5 @@
 ---
-layout: rxjs
+layout: RxJS
 title: 使用 RXJS 取消 http request
 categories:
   - RxJS

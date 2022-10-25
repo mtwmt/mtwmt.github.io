@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular viewchild undefined with ngIf
 categories:
   - Angular

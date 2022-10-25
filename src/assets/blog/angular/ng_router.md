@@ -1,5 +1,5 @@
 ---
-layout: angular
+layout: Angular
 title: Angular Router 筆記
 categories:
   - Angular
