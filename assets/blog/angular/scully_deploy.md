@@ -68,7 +68,7 @@ git remote set-url origin git@github.com:<your git name>/<your git repertory>
 
 若是出現 `error: No such remote 'origin'` 可用另一種方式新增
 
-```
+```bash
 git remote add origin https://github.com/<your git name>/<your git repertory>
 ```
 
