@@ -1,41 +1,41 @@
 <div
-  class="relative mx-auto h-full before:fixed before:right-0 before:top-0 before:block before:h-screen before:w-80 before:bg-primary-900 lg:max-w-7xl lg:before:w-1/2"
+  class="relative mx-auto before:fixed before:right-0 before:top-0 before:block before:h-screen before:w-80 lg:before:w-1/2 before:bg-primary-900 lg:max-w-7xl"
 >
   <header
     class="bg-primary-900 lg:flex lg:h-[180px] lg:flex-row-reverse lg:justify-between"
   >
     <div
-      class="relative w-full font-dosis transition duration-300 ease-in-out lg:flex lg:h-full lg:w-80 lg:items-center lg:justify-center lg:bg-primary-500"
+      class="relative w-full font-dosis transition duration-300 ease-in-out lg:flex lg:h-full lg:w-80 lg:items-center lg:justify-center lg:bg-primary-500 lg:transition-none"
       [ngClass]="isOpen ? '-translate-x-80 lg:translate-x-0' : 'translate-x-0'"
     >
       <h1
         class="w-40 bg-primary-500 text-center text-2xl leading-loose text-white lg:w-auto lg:text-4xl"
       >
-        Mandy's Web
+         <a [routerLink]="'/'">Mandy's Web</a>
       </h1>
       <a
         class="absolute right-5 top-1/2 h-7 w-8 -translate-y-1/2 cursor-pointer lg:hidden"
         title="MENU"
-        (click)="toggle($event, true)"
+        (click)="toggle()"
         ><span
           [ngClass]="
             isOpen
               ? 'rotate-180 bg-opacity-0 before:translate-y-2.5 before:rotate-45 after:-translate-y-2.5 after:-rotate-45'
               : ''
           "
-          class="absolute top-1/2 h-[2px] w-full -translate-y-1/2 bg-white transition duration-300 ease-in-out before:absolute before:-top-2.5 before:h-[2px] before:w-full before:bg-white after:absolute after:top-2.5 after:h-[2px] after:w-full after:bg-white"
+          class="absolute top-1/2 h-[2px] w-full -translate-y-1/2 bg-white transition duration-300 ease-in-out before:absolute before:-top-2.5 before:h-[2px] before:w-full before:bg-white after:absolute after:top-2.5 after:h-[2px] after:w-full after:bg-white lg:transition-none"
         ></span>
       </a>
     </div>
     <div
-      class="relative z-10 bg-neutral-100 py-4 text-center transition duration-300 ease-in-out dark:bg-neutral-800 lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw]"
+      class="relative z-10 bg-neutral-100 py-4 text-center transition duration-300 ease-in-out dark:bg-neutral-800 lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"
       [ngClass]="isOpen ? '-translate-x-80 lg:translate-x-0' : 'translate-x-0'"
     >
       <p class="mb-4 lg:mb-0">因為會忘，所以要寫下來</p>
       <nav class="">
         <ul class="flex justify-center font-dosis uppercase lg:justify-start">
           <li class="mx-4 text-center lg:ml-0">
-            <a [routerLink]="''" class="">
+            <a [routerLink]="'/'">
               <div
                 class="mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
               >
@@ -49,7 +49,7 @@
               <div
                 class="mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
               >
-                <fa-icon [icon]="['fas', 'question']" class="block"> </fa-icon>
+                <fa-icon [icon]="['fas', 'question']"> </fa-icon>
               </div>
               about</a
             >
@@ -59,7 +59,7 @@
               <div
                 class="mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
               >
-                <fa-icon [icon]="['fas', 'info']" class="block"> </fa-icon>
+                <fa-icon [icon]="['fas', 'info']"> </fa-icon>
               </div>
               鐵人賽</a
             >
@@ -69,7 +69,7 @@
               <div
                 class="mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
               >
-                <fa-icon [icon]="['fas', 'message']" class="block"> </fa-icon>
+                <fa-icon [icon]="['fas', 'message']"> </fa-icon>
               </div>
               submit</a
             >
@@ -78,62 +78,48 @@
       </nav>
     </div>
   </header>
-  <div class="lg:flex lg:items-stretch lg:justify-between">
-    <!-- <div class="content"> -->
-    <!-- before:fixed before:block before:h-screen before:w-full before:top-0 before:bg-neutral-50 before:-z-[1] -->
-    <article
-      class="relative z-[1] h-auto border-l border-neutral-200 bg-white transition duration-300 ease-in-out lg:h-auto lg:w-[calc(100%-20rem)]"
-      [ngClass]="isOpen ? '-translate-x-80 lg:translate-x-0' : ''"
-    >
+  <div
+    class="relative z-[2] min-h-screen bg-white transition duration-300 ease-in-out before:fixed before:top-0 before:block before:h-screen before:w-[1px] before:bg-neutral-100 lg:z-[0] lg:float-left lg:w-[calc(100%-20rem)] lg:transition-none"
+    [ngClass]="isOpen ? '-translate-x-80 lg:translate-x-0' : ''"
+  >
+    <article class="relative">
       <router-outlet></router-outlet>
     </article>
-    <aside
-      class="absolute top-12 right-0 z-0 h-auto w-80 origin-[center_right] border-r border-primary-500 border-opacity-70 bg-primary-800 transition duration-300 ease-in-out lg:relative lg:top-0 lg:mt-0"
-      [ngClass]="isOpen ? 'scale-100' : 'scale-90 lg:scale-100'"
+    <footer
+      [ngClass]="isOpen ? '-translate-x-80 lg:translate-x-0' : 'translate-x-0'"
     >
-      <div class="flex h-12 items-center bg-primary-700 px-3">
-        <input
-          placeholder="SEARCH"
-          type="text"
-          class="w-full border-none bg-primary-700 text-primary-50 placeholder:text-primary-200 focus:outline-none"
-        />
-        <fa-icon [icon]="['fas', 'magnifying-glass']" class="text-primary-200">
-        </fa-icon>
-      </div>
       <div>
-        <ul class="leading-[3rem]">
-          <ng-container
-            *ngFor="let item of blogService.getBlogLayout$ | async | keyvalue"
-          >
-            <li
-              class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white"
-            >
-              <a
-                [routerLink]="['blog', item.key.toLowerCase()]"
-                class="block w-full"
-              >
-                {{ item.key }} ({{ item.value }})
-              </a>
-            </li>
-          </ng-container>
-        </ul>
+        <p class="p-4 text-right text-xs">
+          Copyright © 2022 Mandy. All rights reserved. Build with Angular
+        </p>
       </div>
-      <div>
-        <app-friendship-link></app-friendship-link>
-      </div>
-    </aside>
+    </footer>
   </div>
-  <footer
-    class="relative z-[1] border-l border-neutral-200 lg:flex"
-    [ngClass]="isOpen ? '-translate-x-80 lg:translate-x-0' : 'translate-x-0'"
+  <aside
+    class="absolute top-12 right-0 z-[1] h-auto min-h-screen w-80 origin-[center_right] pb-8 transition duration-300 ease-in-out bg-primary-800
+    before:fixed before:top-0 before:ml-[319px] before:block before:min-h-screen before:w-[1px] before:bg-primary-500 lg:relative lg:top-0 lg:z-[0] lg:float-right lg:transition-none"
+    [ngClass]="isOpen ? 'scale-100' : 'scale-90 lg:scale-100'"
   >
-    <div class="bg-white lg:w-[calc(100%-20rem)]">
-      <p class=" p-4 text-right text-xs">
-        Copyright © 2022 Mandy. All rights reserved. Build with Angular
-      </p>
+    <!-- <app-blog-search></app-blog-search> -->
+    <div>
+      <ul class="leading-[3rem]">
+        <ng-container
+          *ngFor="let item of blogService.getBlogLayout$ | async | keyvalue"
+        >
+          <li
+            class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white"
+          >
+            <a
+              [routerLink]="['blog/categories', item.key.toLowerCase()]"
+              class="block w-full"
+              (click)="toggle()"
+            >
+              {{ item.key }} ({{ item.value }})
+            </a>
+          </li>
+        </ng-container>
+      </ul>
+      <app-friendship-link></app-friendship-link>
     </div>
-    <div
-      class="w-80 border-r border-primary-500 border-opacity-70 bg-primary-800"
-    ></div>
-  </footer>
+  </aside>
 </div>

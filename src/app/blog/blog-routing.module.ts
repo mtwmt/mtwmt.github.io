@@ -35,6 +35,11 @@ const routes: Routes = [
         component: BlogPostsComponent,
         resolve: { content: BlogPostsResolver },
       },
+      // {
+      //   path: 'search',
+      //   component: BlogPostsComponent,
+      //   resolve: { content: BlogPostsResolver },
+      // },
       {
         path: '**',
         redirectTo: 'list',

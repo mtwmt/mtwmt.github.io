@@ -1,5 +1,5 @@
 <ng-container *ngIf="postMeta$ | async as post">
-  <div class="h-full">
+  <div class="h-full min-h-[calc(100vh+64px)]">
     <div class="py-[2.35rem] px-[4vw]">
       <time [dateTime]="post">
         {{ post.date | date: "dd MMMM yyyy" }}

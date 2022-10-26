@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit, Renderer2 } from '@angular/core';
 import { BlogService } from '../blog/blog.service';
 
 @Component({
@@ -8,21 +8,11 @@ import { BlogService } from '../blog/blog.service';
 })
 export class LayoutComponent implements OnInit {
   isOpen = false;
-  constructor(public blogService: BlogService) {
-    this.blogService.getBlogLayout$.subscribe((res) => console.log(res));
-  }
+  constructor(private renderer: Renderer2, public blogService: BlogService) {}
 
   ngOnInit(): void {}
 
-  public toggle(event?: any, block = false): void {
+  public toggle(): void {
     this.isOpen = !this.isOpen;
-    if (block) {
-      event.preventDefault();
-    }
-  }
-
-  public setNavigate(): void {
-    scroll(0, 0);
-    this.toggle();
   }
 }

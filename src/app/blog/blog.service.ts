@@ -38,6 +38,7 @@ const _cacheBlogPostsKey = makeStateKey<ListInfo[]>('blog.json');
 export class BlogService {
   readonly baseUrl = `${environment.baseUrl}/assets`;
 
+  public searchList$: Subject<ListInfo[]> = new Subject<ListInfo[]>();
   constructor(
     private httpClient: HttpClient,
     private state: TransferState,
@@ -100,6 +101,20 @@ export class BlogService {
     );
   }
 
+  fetchSearch(keyword: string): Observable<any> {
+    return this.blogList$.pipe(
+      map((list: ListInfo[]) => {
+        const newList = list.filter((item) => {
+          return item.title.toLowerCase().includes(keyword);
+        });
+        return newList;
+      }),
+      tap(res => {
+        console.log('sad ', res)
+      })
+    )
+  }
+
   readonly getBlogCategories$ = this.blogList$.pipe(
     map((list: ListInfo[]) => {
       const temp = list.map((e) => e.categories);
@@ -136,4 +151,5 @@ export class BlogService {
       return counts;
     })
   );
+
 }

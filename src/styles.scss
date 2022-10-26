@@ -12,8 +12,10 @@
   * {
     @apply box-border;
   }
-  html, body {
-    @apply relative w-full h-full p-0 m-0;
+  html,
+  body {
+    @apply relative m-0 h-full w-full p-0
+    ;
   }
 }
 
@@ -22,15 +24,15 @@
     @apply transition duration-300 hover:opacity-70;
   }
   .btn {
-    @apply relative py-1 inline-block font-dosis uppercase
-    bg-transparent border-2 border-primary-900 rounded-md text-primary-500
-    text-center shadow-[2px_2px_0_#007f7f]
+    @apply relative inline-block rounded-md border-2 border-primary-900
+    bg-transparent py-1 text-center font-dosis uppercase
+    text-primary-500 shadow-[2px_2px_0_#007f7f]
     hover:top-0.5 hover:left-0.5 hover:shadow-none;
     &--active {
       @apply top-0.5 left-0.5 shadow-none;
     }
     &.disabled {
-      @apply bg-gray-100 border-gray-400 text-gray-400 shadow-none
+      @apply border-gray-400 bg-gray-100 text-gray-400 shadow-none
       hover:top-0 hover:left-0;
       &--active {
         @apply top-0 left-0;

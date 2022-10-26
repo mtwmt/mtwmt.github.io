@@ -20,6 +20,14 @@ export class FriendshipLinkComponent implements OnInit {
       url: 'https://dotblogs.com.tw/yc421206/',
     },
     {
+      name: '提姆寫程式',
+      url: 'https://hsuchihting.github.io/',
+    },
+    {
+      name: '海綿的Blog',
+      url: 'https://medium.com/@sakurasponge1220',
+    },
+    {
       name: '蔣幹話軟體',
       url: 'https://ganhuaking.tw/',
     },

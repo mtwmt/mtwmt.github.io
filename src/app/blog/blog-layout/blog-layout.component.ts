@@ -51,8 +51,6 @@ export class BlogLayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.layoutAllList$.subscribe();
-
-    this.layoutList$.subscribe((res) => console.log(res));
   }
 
   getPageIndex(index: number) {
