@@ -1,5 +1,5 @@
 <div
-  class="relative mx-auto before:fixed before:right-0 before:top-0 before:block before:h-screen before:w-80 lg:before:w-1/2 before:bg-primary-900 lg:max-w-7xl"
+  class="relative mx-auto before:fixed before:right-0 before:top-0 before:block before:h-screen before:w-80 before:bg-primary-900 lg:max-w-7xl lg:before:w-1/2"
 >
   <header
     class="bg-primary-900 lg:flex lg:h-[180px] lg:flex-row-reverse lg:justify-between"
@@ -11,7 +11,7 @@
       <h1
         class="w-40 bg-primary-500 text-center text-2xl leading-loose text-white lg:w-auto lg:text-4xl"
       >
-         <a [routerLink]="'/'">Mandy's Web</a>
+        <a [routerLink]="'/'">Mandy's Web</a>
       </h1>
       <a
         class="absolute right-5 top-1/2 h-7 w-8 -translate-y-1/2 cursor-pointer lg:hidden"
@@ -36,41 +36,41 @@
         <ul class="flex justify-center font-dosis uppercase lg:justify-start">
           <li class="mx-4 text-center lg:ml-0">
             <a [routerLink]="'/'">
-              <div
-                class="mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
+              <span
+                class="block mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
               >
-                <fa-icon [icon]="['fas', 'home']"> </fa-icon>
-              </div>
+                <fa-icon [icon]="['fas', 'home']" size="1x"> </fa-icon>
+              </span>
               home</a
             >
           </li>
           <li class="mx-4 text-center">
             <a [routerLink]="'about'">
-              <div
-                class="mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
+              <span
+                class="block mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
               >
                 <fa-icon [icon]="['fas', 'question']"> </fa-icon>
-              </div>
+              </span>
               about</a
             >
           </li>
           <li class="mx-4 text-center">
             <a [routerLink]="'blog/tags/ironman2021'">
-              <div
-                class="mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
+              <span
+                class="block mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
               >
-                <fa-icon [icon]="['fas', 'info']"> </fa-icon>
-              </div>
+                <fa-icon [icon]="['fas', 'info']" size="1x"> </fa-icon>
+              </span>
               鐵人賽</a
             >
           </li>
           <li class="mx-4 text-center">
             <a [routerLink]="'contact'">
-              <div
-                class="mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
+              <span
+                class="block mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
               >
-                <fa-icon [icon]="['fas', 'message']"> </fa-icon>
-              </div>
+                <fa-icon [icon]="['fas', 'message']" size="1x"> </fa-icon>
+              </span>
               submit</a
             >
           </li>
@@ -96,8 +96,7 @@
     </footer>
   </div>
   <aside
-    class="absolute top-12 right-0 z-[1] h-auto min-h-screen w-80 origin-[center_right] pb-8 transition duration-300 ease-in-out bg-primary-800
-    before:fixed before:top-0 before:ml-[319px] before:block before:min-h-screen before:w-[1px] before:bg-primary-500 lg:relative lg:top-0 lg:z-[0] lg:float-right lg:transition-none"
+    class="absolute top-12 right-0 z-[1] h-auto min-h-screen w-80 origin-[center_right] bg-primary-800 pb-8 transition duration-300 ease-in-out before:fixed before:top-0 before:ml-[319px] before:block before:min-h-screen before:w-[1px] before:bg-primary-500 lg:relative lg:top-0 lg:z-[0] lg:float-right lg:transition-none"
     [ngClass]="isOpen ? 'scale-100' : 'scale-90 lg:scale-100'"
   >
     <!-- <app-blog-search></app-blog-search> -->
