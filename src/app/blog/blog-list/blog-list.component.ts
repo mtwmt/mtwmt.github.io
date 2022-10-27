@@ -1,8 +1,8 @@
 import { ListInfo } from './../blog.service';
 import { Component, OnInit } from '@angular/core';
-import { map, Observable, pluck, switchMap } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
 import { BlogService } from '../blog.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-list',
@@ -15,7 +15,9 @@ export class BlogListComponent implements OnInit {
   pageTotal!: number;
 
   private pageIndex$ = this.activatedRoute.queryParams.pipe(
-    pluck('page'),
+    map((params: Params) => {
+      return params['page'];
+    }),
     map((page: number) => page || 1)
   );
 
@@ -30,8 +32,6 @@ export class BlogListComponent implements OnInit {
       );
     })
   );
-
-  // public page$: Observable<ListInfo[]> = this.blogService.fetchBlogList();
 
   constructor(
     private router: Router,

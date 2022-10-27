@@ -1,43 +1,35 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
-import { BlogService } from '../blog.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-blog-search',
   templateUrl: './blog-search.component.html',
   styleUrls: ['./blog-search.component.scss'],
 })
-export class BlogSearchComponent implements OnInit, OnDestroy {
+export class BlogSearchComponent implements OnInit {
   public keyword: string = '';
-  protected onDestroy$ = new Subject<void>();
-  constructor(private router: Router, public blogService: BlogService) {}
+  constructor(
+    private router: Router,
+    public activatedRoute: ActivatedRoute
+  ) {}
 
-  ngOnInit(): void {}
-
-  ngOnDestroy() {
-    this.onDestroy$.next();
-    this.onDestroy$.complete();
-  }
-
-  onSearchChange(keyword: string) {
-    this.blogService
-      .fetchSearch(keyword)
+  ngOnInit(): void {
+    this.activatedRoute.queryParams
       .pipe(
-        takeUntil(this.onDestroy$),
-        debounceTime(300),
-        distinctUntilChanged()
+        map((params: Params) => {
+          return params['k'];
+        })
       )
-      .subscribe((res) => {
-        this.keyword = keyword;
+      .subscribe((k) => {
+        this.keyword = k;
       });
   }
 
-  onPageChange() {
-    console.log('onPageChange');
+  onSearchChange() {
     this.router.navigate(['blog/search'], {
       queryParams: {
-        s: this.keyword,
+        k: this.keyword,
       },
     });
   }

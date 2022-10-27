@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { pluck, map, tap, concatMap, Observable, switchMap } from 'rxjs';
+import { ActivatedRoute, Router, Params } from '@angular/router';
+import { map, tap, concatMap, Observable, switchMap } from 'rxjs';
 import { BlogService, ListInfo } from '../blog.service';
 
 @Component({
@@ -14,12 +14,16 @@ export class BlogCategoriesListComponent implements OnInit {
   private category!: string;
 
   private page$ = this.activatedRoute.queryParams.pipe(
-    pluck('page'),
+    map((params: Params) => {
+      return params['page'];
+    }),
     map((page: number) => page || 1)
   );
 
   public categoriesAllList$ = this.activatedRoute.params.pipe(
-    pluck('category'),
+    map((params: Params) => {
+      return params['category'];
+    }),
     tap((category: string) => {
       this.category = category;
     }),

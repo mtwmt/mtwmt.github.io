@@ -3,7 +3,7 @@
 </p>
 <div class="pl-2">
   <ng-container
-    *ngFor="let tag of blogService.getBlogTags$ | async | keyvalue"
+    *ngFor="let tag of blogStoreService.getBlogTags$ | async | keyvalue"
   >
     <a
       class="mx-0.5"

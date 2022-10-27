@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotfoundComponent } from '../notfound/notfound.component';
 import { BlogCategoriesListComponent } from './blog-categories-list/blog-categories-list.component';
-import { BlogLayoutComponent } from './blog-layout/blog-layout.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogPostsComponent } from './blog-posts/blog-posts.component';
 import { BlogPostsResolver } from './blog-posts/blog-posts.resolver';
+import { BlogSearchListComponent } from './blog-search-list/blog-search-list.component';
 import { BlogTagsListComponent } from './blog-tags-list/blog-tags-list.component';
 import { BlogComponent } from './blog.component';
 
@@ -17,10 +17,6 @@ const routes: Routes = [
       {
         path: '',
         component: BlogListComponent,
-      },
-      {
-        path: ':layout',
-        component: BlogLayoutComponent,
       },
       {
         path: 'categories/:category',
@@ -35,11 +31,10 @@ const routes: Routes = [
         component: BlogPostsComponent,
         resolve: { content: BlogPostsResolver },
       },
-      // {
-      //   path: 'search',
-      //   component: BlogPostsComponent,
-      //   resolve: { content: BlogPostsResolver },
-      // },
+      {
+        path: 'search',
+        component: BlogSearchListComponent,
+      },
       {
         path: '**',
         redirectTo: 'list',

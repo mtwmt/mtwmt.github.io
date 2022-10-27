@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { concatMap, map, Observable, pluck, switchMap, tap } from 'rxjs';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { concatMap, map, Observable, switchMap, tap } from 'rxjs';
 import { BlogService, ListInfo } from '../blog.service';
 
 @Component({
@@ -14,12 +14,16 @@ export class BlogTagsListComponent implements OnInit {
   tag!: string;
 
   private page$ = this.activatedRoute.queryParams.pipe(
-    pluck('page'),
+    map((params: Params) => {
+      return params['page'];
+    }),
     map((page: number) => page || 1)
   );
 
   public tagsAllList$ = this.activatedRoute.params.pipe(
-    pluck('tag'),
+    map((params: Params) => {
+      return params['tag'];
+    }),
     tap((tag: string) => {
       this.tag = tag;
     }),

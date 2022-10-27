@@ -5,8 +5,7 @@
     placeholder="搜尋文章標題"
     type="text"
     class="w-full border-none bg-primary-700 text-primary-50 placeholder:text-primary-200 focus:outline-none"
-    (ngModelChange)="onSearchChange($event)"
-    (keyup.enter)="onPageChange()"
+    (keyup.enter)="onSearchChange()"
   />
   <fa-icon [icon]="['fas', 'magnifying-glass']" class="text-primary-200 cursor-pointer">
   </fa-icon>

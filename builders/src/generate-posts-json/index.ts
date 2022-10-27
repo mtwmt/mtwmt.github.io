@@ -53,6 +53,7 @@ async function generateBlogPostsJson(
           categories: markdownMeta!.categories,
           tags: markdownMeta!.tags,
           summary: markdownMeta!.summary,
+          // content: markdownMeta!.content,
         };
       });
   };

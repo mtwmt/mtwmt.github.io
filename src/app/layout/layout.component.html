@@ -32,7 +32,7 @@ after:fixed after:top-0 after:right-1/2 after:mr-[640px] after:block after:min-h
     <div>
       <ul class="leading-[3rem]">
         <ng-container
-          *ngFor="let item of blogService.getBlogLayout$ | async | keyvalue"
+          *ngFor="let item of blogStoreService.getBlogLayout$ | async | keyvalue"
         >
           <li
             class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white"

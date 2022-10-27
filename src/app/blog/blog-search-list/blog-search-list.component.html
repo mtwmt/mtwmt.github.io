@@ -1,0 +1,28 @@
+<div class="h-full min-h-screen">
+  <div class="py-[3.35rem] px-[4vw]">
+    <h3 class="text-3xl text-black">
+      搜尋：{{ activatedRoute.snapshot.queryParams["k"] }}
+    </h3>
+  </div>
+  <ng-container *ngIf="$any(queryList$ | async)?.length > 0; else empty">
+    <ul class="border-t border-neutral-200 py-10">
+      <li
+        *ngFor="let link of queryList$ | async; let last = last"
+        class="py-4 px-[4vw]"
+        [ngClass]="last ? 'border-none' : ''"
+      >
+        <a [routerLink]="['/blog', link.directory, link.slug]">
+          {{ link.update || link.date }}　
+          <span [innerHtml]="link.title | highlight: keywords:'partial'"></span>
+        </a>
+      </li>
+    </ul>
+  </ng-container>
+</div>
+<ng-template #empty>
+  <div class="border-t border-neutral-200 py-10 px-[4vw]">
+    <p>
+      目前沒有關於 {{ activatedRoute.snapshot.queryParams["k"] }} 主題的文章哦！
+    </p>
+  </div>
+</ng-template>

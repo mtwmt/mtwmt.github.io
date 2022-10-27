@@ -1,3 +1,4 @@
+import { distinctUntilChanged, filter } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { makeStateKey, TransferState } from '@angular/platform-browser';
@@ -11,6 +12,8 @@ import {
   Subject,
   shareReplay,
   iif,
+  debounceTime,
+  switchMap,
 } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { PlatformService } from 'src/app/shared/services/platform.service';
@@ -28,6 +31,7 @@ export interface ListInfo {
   tags: string[];
   categories: string[];
   summary: string;
+  content: string;
 }
 
 const _cacheBlogPostsKey = makeStateKey<ListInfo[]>('blog.json');
@@ -38,7 +42,6 @@ const _cacheBlogPostsKey = makeStateKey<ListInfo[]>('blog.json');
 export class BlogService {
   readonly baseUrl = `${environment.baseUrl}/assets`;
 
-  public searchList$: Subject<ListInfo[]> = new Subject<ListInfo[]>();
   constructor(
     private httpClient: HttpClient,
     private state: TransferState,
@@ -101,55 +104,16 @@ export class BlogService {
     );
   }
 
-  fetchSearch(keyword: string): Observable<any> {
-    return this.blogList$.pipe(
+  fetchSearchList(keyword: string) {
+    const getData$ = iif(() => !!keyword, this.blogList$, of([]));
+
+    return getData$.pipe(
       map((list: ListInfo[]) => {
         const newList = list.filter((item) => {
-          return item.title.toLowerCase().includes(keyword);
+          return item.title.toLocaleLowerCase().includes(keyword);
         });
         return newList;
-      }),
-      tap(res => {
-        console.log('sad ', res)
       })
-    )
+    );
   }
-
-  readonly getBlogCategories$ = this.blogList$.pipe(
-    map((list: ListInfo[]) => {
-      const temp = list.map((e) => e.categories);
-      const newTemp = [].concat(...(temp as []));
-      const categories = Array.from(new Set(newTemp));
-      return categories.filter((e) => !!e).sort() as string[];
-    })
-  );
-
-  readonly getBlogTags$: Observable<string[]> = this.blogList$.pipe(
-    map((list: ListInfo[]) => {
-      const temp = list.map((e) => e.tags);
-      const newTemp = [].concat(...(temp as []));
-
-      let counts: any = {};
-      newTemp.forEach((e: string) => {
-        counts[e] = (counts[e] || 0) + 1;
-      });
-
-      return counts;
-    })
-  );
-
-  readonly getBlogLayout$: Observable<string[]> = this.blogList$.pipe(
-    map((list: ListInfo[]) => {
-      const temp = list.map((e) => e.layout);
-      const newTemp = [].concat(...(temp as []));
-
-      let counts: any = {};
-      newTemp.forEach((e: string) => {
-        counts[e] = (counts[e] || 0) + 1;
-      });
-
-      return counts;
-    })
-  );
-
 }

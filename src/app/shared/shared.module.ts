@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GotopComponent } from './components/gotop/gotop.component';
 import { SwitchComponent } from './components/switch/switch.component';
 import { FriendshipLinkComponent } from './components/friendship-link/friendship-link.component';
+import { HighlightPipe } from './pipe/highlight.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FriendshipLinkComponent } from './components/friendship-link/friendship
     GotopComponent,
     SwitchComponent,
     FriendshipLinkComponent,
+    HighlightPipe,
   ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, FontAwesomeModule],
   exports: [
@@ -29,6 +31,7 @@ import { FriendshipLinkComponent } from './components/friendship-link/friendship
     GotopComponent,
     SwitchComponent,
     FriendshipLinkComponent,
+    HighlightPipe,
   ],
 })
 export class SharedModule {

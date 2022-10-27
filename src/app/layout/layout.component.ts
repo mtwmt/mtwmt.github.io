@@ -1,6 +1,6 @@
 import { Component, HostBinding, OnInit, Renderer2 } from '@angular/core';
 import { AppService } from '../app.service';
-import { BlogService } from '../blog/blog.service';
+import { BlogStoreService } from '../blog/blog-store.service';
 
 @Component({
   selector: 'app-layout',
@@ -10,7 +10,7 @@ import { BlogService } from '../blog/blog.service';
 export class LayoutComponent implements OnInit {
   constructor(
     public appService: AppService,
-    public blogService: BlogService
+    public blogStoreService: BlogStoreService
   ) {}
 
   ngOnInit(): void {}

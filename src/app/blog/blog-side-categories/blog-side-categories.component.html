@@ -19,9 +19,8 @@
         ease-in-out
         hover:bg-primary-500 hover:text-white
       "
-      *ngFor="let item of blogService.getBlogCategories$ | async"
+      *ngFor="let item of blogStoreService.getBlogCategories$ | async"
       [routerLink]="['/blog/categories', item.toLowerCase()]"
-      (click)="gotopPage()"
       >{{ item }}</a
     >
   </div>

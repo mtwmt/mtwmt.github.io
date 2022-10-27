@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../blog.service';
+import { BlogStoreService } from '../blog-store.service';
 
 @Component({
   selector: 'app-blog-side-tags',
@@ -7,7 +7,7 @@ import { BlogService } from '../blog.service';
   styleUrls: ['./blog-side-tags.component.scss'],
 })
 export class BlogSideTagsComponent implements OnInit {
-  constructor(public blogService: BlogService) {}
+  constructor(public blogStoreService: BlogStoreService) {}
 
   ngOnInit(): void {}
 }
