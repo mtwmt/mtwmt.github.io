@@ -14,12 +14,13 @@ declare let gtag: Function;
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  isOpen = false;
   constructor(
     private router: Router,
     private platformService: PlatformService,
     private metaService: MetaService,
-    private appService: AppService,
-    private platform: Platform,
+    public appService: AppService,
+    private platform: Platform
   ) {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationStart))
@@ -58,5 +59,10 @@ export class AppComponent implements OnInit {
       return;
     }
     this.appService.theme$.next(theme);
+  }
+
+  public toggle(): void {
+    this.isOpen = !this.isOpen;
+    this.appService.toggleHamburger$.next(this.isOpen);
   }
 }

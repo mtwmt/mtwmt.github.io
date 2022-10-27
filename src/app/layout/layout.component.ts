@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit, Renderer2 } from '@angular/core';
+import { AppService } from '../app.service';
 import { BlogService } from '../blog/blog.service';
 
 @Component({
@@ -7,12 +8,14 @@ import { BlogService } from '../blog/blog.service';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent implements OnInit {
-  isOpen = false;
-  constructor(private renderer: Renderer2, public blogService: BlogService) {}
+  constructor(
+    public appService: AppService,
+    public blogService: BlogService
+  ) {}
 
   ngOnInit(): void {}
 
-  public toggle(): void {
-    this.isOpen = !this.isOpen;
+  public onClose(): void {
+    this.appService.toggleHamburger$.next(false);
   }
 }

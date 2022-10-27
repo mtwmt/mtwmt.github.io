@@ -1,1 +1,90 @@
-<router-outlet></router-outlet>
+<div
+  class="relative mx-auto before:fixed before:right-0 before:top-0 before:block before:h-screen before:w-80 before:bg-primary-900 lg:max-w-7xl lg:before:w-1/2"
+>
+  <header
+    class="bg-primary-900 lg:flex lg:h-[180px] lg:flex-row-reverse lg:justify-between"
+  >
+    <div
+      class="relative w-full font-dosis transition duration-300 ease-in-out lg:flex lg:h-full lg:w-80 lg:items-center lg:justify-center lg:bg-primary-500 lg:transition-none"
+      [ngClass]="
+        (appService.toggleHamburger$ | async)
+          ? '-translate-x-80 lg:translate-x-0'
+          : 'translate-x-0'
+      "
+    >
+      <h1
+        class="w-40 bg-primary-500 text-center text-2xl leading-loose text-white lg:w-auto lg:text-4xl"
+      >
+        <a [routerLink]="'/'">Mandy's Web</a>
+      </h1>
+      <a
+        class="absolute right-5 top-1/2 h-7 w-8 -translate-y-1/2 cursor-pointer lg:hidden"
+        title="MENU"
+        (click)="toggle()"
+        ><span
+          [ngClass]="
+            (appService.toggleHamburger$ | async)
+              ? 'rotate-180 bg-opacity-0 before:translate-y-2.5 before:rotate-45 after:-translate-y-2.5 after:-rotate-45'
+              : ''
+          "
+          class="absolute top-1/2 h-[2px] w-full -translate-y-1/2 bg-white transition duration-300 ease-in-out before:absolute before:-top-2.5 before:h-[2px] before:w-full before:bg-white after:absolute after:top-2.5 after:h-[2px] after:w-full after:bg-white lg:transition-none"
+        ></span>
+      </a>
+    </div>
+    <div
+      class="relative z-10 bg-neutral-100 py-4 text-center transition duration-300 ease-in-out dark:bg-neutral-800 lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"
+      [ngClass]="
+        (appService.toggleHamburger$ | async)
+          ? '-translate-x-80 lg:translate-x-0'
+          : 'translate-x-0'
+      "
+    >
+      <p class="mb-4 lg:mb-0">因為會忘，所以要寫下來</p>
+      <nav class="">
+        <ul class="flex justify-center font-dosis uppercase lg:justify-start">
+          <li class="mx-4 text-center lg:ml-0">
+            <a [routerLink]="'/'">
+              <span
+                class="mb-2 block h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
+              >
+                <fa-icon [icon]="['fas', 'home']" size="1x"> </fa-icon>
+              </span>
+              home</a
+            >
+          </li>
+          <li class="mx-4 text-center">
+            <a [routerLink]="'about'">
+              <span
+                class="mb-2 block h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
+              >
+                <fa-icon [icon]="['fas', 'question']"> </fa-icon>
+              </span>
+              about</a
+            >
+          </li>
+          <li class="mx-4 text-center">
+            <a [routerLink]="'blog/tags/ironman2021'">
+              <span
+                class="mb-2 block h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
+              >
+                <fa-icon [icon]="['fas', 'info']" size="1x"> </fa-icon>
+              </span>
+              鐵人賽</a
+            >
+          </li>
+          <li class="mx-4 text-center">
+            <a [routerLink]="'contact'">
+              <span
+                class="mb-2 block h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
+              >
+                <fa-icon [icon]="['fas', 'message']" size="1x"> </fa-icon>
+              </span>
+              submit</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <router-outlet></router-outlet>
+</div>
