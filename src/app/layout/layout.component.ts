@@ -22,11 +22,11 @@ export class LayoutComponent implements OnInit {
       ?.scrollHeight as number;
     const headerHeight: number = this.document.querySelector('header')
       ?.clientHeight as number;
-    // const footerHeight: number = this.document.querySelector('footer')
-    //   ?.clientHeight as number;
-    this.articleHeight = bodyHeight - headerHeight;
+    const footerHeight: number = this.document.querySelector('footer')
+      ?.clientHeight as number;
+    this.articleHeight = bodyHeight - headerHeight + 150;
 
-    console.log(this.document.querySelector('html,body')?.scrollHeight);
+    // console.log(this.document.querySelector('html,body')?.scrollHeight);
   }
 
   public onClose(): void {
