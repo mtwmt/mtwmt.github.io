@@ -11,8 +11,9 @@ after:fixed after:top-0 after:right-1/2 after:mr-[640px] after:block after:min-h
         ? '-translate-x-80 lg:translate-x-0'
         : ''
     "
+    [ngStyle]="{'minHeight': articleHeight + 'px' }"
   >
-    <router-outlet></router-outlet>
+    <router-outlet class=""></router-outlet>
     <footer class="relative bg-white transition duration-300 ease-in-out lg:transition-none">
       <div>
         <p class="p-4 text-right text-xs">

@@ -22,11 +22,6 @@ const routes: Routes = [
           import('../blog/blog.module').then((m) => m.BlogModule),
       },
       {
-        path: 'ironman',
-        loadChildren: () =>
-          import('../ironman/ironman.module').then((m) => m.IronmanModule),
-      },
-      {
         path: 'about',
         component: AboutComponent,
       },
