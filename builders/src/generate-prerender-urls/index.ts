@@ -30,7 +30,6 @@ async function generateUrls(
   const urls = [
     '/about',
     '/contact',
-    '/ironman2021',
     '/404',
     '/blog',
     '/blog/list',

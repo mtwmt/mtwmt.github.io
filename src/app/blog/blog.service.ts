@@ -1,4 +1,3 @@
-import { distinctUntilChanged, filter } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { makeStateKey, TransferState } from '@angular/platform-browser';
@@ -9,11 +8,8 @@ import {
   of,
   tap,
   timeout,
-  Subject,
   shareReplay,
   iif,
-  debounceTime,
-  switchMap,
 } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { PlatformService } from 'src/app/shared/services/platform.service';

@@ -59,6 +59,8 @@ module.exports = {
 
 ### prefix: 前綴設定
 
+若有特殊需求的話，可以設定前綴，一般比較少設定。
+
 ```json
 prefix: 'tw-',
 ```
@@ -282,4 +284,3 @@ npm install -D prettier prettier-plugin-tailwindcss
 ```
 
 安裝後 prettier 也會幫忙格式化 tailwindcss 囉
-
