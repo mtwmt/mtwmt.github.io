@@ -162,3 +162,14 @@ this.activatedRoute.queryParamMap.subscribe( (params: ParamMap) => {
 ---
 
 activatedRoute 裡的 queryParamMap 跟 paramMap 都是可觀察物件 接下來就是需要理解 rxjs 後 才能活用了
+
+---
+
+## FAQ
+
+> Q: 使用 routerLinkActive 時，根路徑一直被觸發
+
+- A: 因為這是 Angular 的設計使然，所以再加上 `[routerLinkActiveOptions]="{ exact: true }"` 即可
+  參考資料：
+- [With routerLinkActive the root URL is always active](https://github.com/angular/angular/issues/9885)
+- [Angular API](https://angular.tw/api/router/RouterLinkActive)
