@@ -19,7 +19,7 @@
 }
 
 @layer components {
-  input {
+  input, textarea, select{
     -webkit-appearance: none;
     -moz-appearance: none;
   }
