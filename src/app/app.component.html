@@ -1,14 +1,12 @@
 <div
-  class="relative mx-auto before:transition
-  before:fixed before:right-0 before:top-0 before:block before:h-screen before:w-80
-  before:bg-primary-900 lg:max-w-7xl lg:before:w-1/2 "
-  >
+  class="relative mx-auto before:fixed before:right-0 before:top-0 before:block before:h-screen before:w-80 before:bg-primary-900 before:transition lg:max-w-7xl lg:before:w-1/2"
+>
   <!-- [ngClass]="(appService.toggleHamburger$ | async) ? 'before:w-80':'before:w-0 before:delay-300 lg:before:w-80'" -->
   <header
     class="bg-primary-900 lg:flex lg:h-[180px] lg:flex-row-reverse lg:justify-between"
   >
     <div
-      class="relative w-full font-dosis transition duration-300 ease-in-out lg:flex lg:h-full lg:w-80 lg:items-center lg:justify-center lg:bg-primary-500 lg:transition-none"
+      class="animation relative w-full font-dosis lg:flex lg:h-full lg:w-80 lg:items-center lg:justify-center lg:bg-primary-500 lg:transition-none"
       [ngClass]="
         (appService.toggleHamburger$ | async)
           ? '-translate-x-80 lg:translate-x-0'
@@ -30,12 +28,12 @@
               ? 'rotate-180 bg-opacity-0 before:translate-y-2.5 before:rotate-45 after:-translate-y-2.5 after:-rotate-45'
               : ''
           "
-          class="absolute top-1/2 h-[2px] w-full -translate-y-1/2 bg-white transition duration-300 ease-in-out before:absolute before:-top-2.5 before:h-[2px] before:w-full before:bg-white after:absolute after:top-2.5 after:h-[2px] after:w-full after:bg-white lg:transition-none"
+          class="animation absolute top-1/2 h-[2px] w-full -translate-y-1/2 bg-white before:absolute before:-top-2.5 before:h-[2px] before:w-full before:bg-white after:absolute after:top-2.5 after:h-[2px] after:w-full after:bg-white lg:transition-none"
         ></span>
       </a>
     </div>
     <div
-      class="relative z-10 bg-neutral-100 py-4 text-center transition duration-300 ease-in-out dark:bg-neutral-800 lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"
+      class="animation relative z-10 bg-neutral-100 py-4 text-center dark:bg-neutral-800 lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"
       [ngClass]="
         (appService.toggleHamburger$ | async)
           ? '-translate-x-80 lg:translate-x-0'
@@ -50,7 +48,8 @@
               <span
                 class="mb-2 block h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
               >
-                <fa-icon [icon]="['fas', 'home']" size="1x" class="h-12 w-12"> </fa-icon>
+                <fa-icon [icon]="['fas', 'home']" size="1x" class="h-12 w-12">
+                </fa-icon>
               </span>
               home</a
             >
@@ -60,7 +59,8 @@
               <span
                 class="mb-2 block h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
               >
-                <fa-icon [icon]="['fas', 'question']" class="h-12 w-12"> </fa-icon>
+                <fa-icon [icon]="['fas', 'question']" class="h-12 w-12">
+                </fa-icon>
               </span>
               about</a
             >
@@ -70,7 +70,8 @@
               <span
                 class="mb-2 block h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
               >
-                <fa-icon [icon]="['fas', 'info']" size="1x" class="h-12 w-12"> </fa-icon>
+                <fa-icon [icon]="['fas', 'info']" size="1x" class="h-12 w-12">
+                </fa-icon>
               </span>
               鐵人賽</a
             >
@@ -80,7 +81,12 @@
               <span
                 class="mb-2 block h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
               >
-                <fa-icon [icon]="['fas', 'message']" size="1x" class="h-12 w-12"> </fa-icon>
+                <fa-icon
+                  [icon]="['fas', 'message']"
+                  size="1x"
+                  class="h-12 w-12"
+                >
+                </fa-icon>
               </span>
               submit</a
             >

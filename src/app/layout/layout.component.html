@@ -1,20 +1,17 @@
-<div class="relative z-[1] block min-h-full lg:flex
-before:fixed before:top-0 before:left-1/2 before:ml-[640px] before:block before:min-h-screen before:h-full before:w-[1px] before:bg-primary-500
-after:fixed after:top-0 after:right-1/2 after:mr-[640px] after:block after:min-h-screen after:h-full after:w-[1px] after:bg-neutral-100
-">
+<div
+  class="relative z-[1] block min-h-full before:fixed before:top-0 before:left-1/2 before:ml-[640px] before:block before:h-full before:min-h-screen before:w-[1px] before:bg-primary-500 after:fixed after:top-0 after:right-1/2 after:mr-[640px] after:block after:h-full after:min-h-screen after:w-[1px] after:bg-neutral-100 lg:flex"
+>
   <article
-    class="relative z-[1] bg-white transition duration-300 ease-in-out lg:w-[calc(100%-20rem)] lg:transition-none
-
-    "
+    class="animation relative z-[1] bg-white lg:w-[calc(100%-20rem)] lg:transition-none"
     [ngClass]="
       (appService.toggleHamburger$ | async)
         ? '-translate-x-80 lg:translate-x-0'
         : ''
     "
-    [ngStyle]="{'minHeight': articleHeight + 'px' }"
+    [ngStyle]="{ minHeight: articleHeight + 'px' }"
   >
     <router-outlet class=""></router-outlet>
-    <footer class="relative bg-white transition duration-300 ease-in-out lg:transition-none">
+    <footer class="animation relative bg-white lg:transition-none">
       <div>
         <p class="p-4 text-right text-xs">
           Copyright © 2022 Mandy. All rights reserved. Build with Angular
@@ -22,18 +19,21 @@ after:fixed after:top-0 after:right-1/2 after:mr-[640px] after:block after:min-h
       </div>
     </footer>
   </article>
-  <aside class="
-  absolute z-0 min-h-full w-80 bg-primary-800 -top-[152px] right-0 origin-[center_right]
-  transition duration-300 ease-in-out
-
-  lg:relative lg:top-0 lg:float-right lg:transition-none"
-  [ngClass]="(appService.toggleHamburger$ | async) ? 'scale-100' : 'scale-90 lg:scale-100'"
+  <aside
+    class="animation absolute -top-[152px] right-0 z-0 min-h-full w-80 origin-[center_right] bg-primary-800 lg:relative lg:top-0 lg:float-right lg:transition-none"
+    [ngClass]="
+      (appService.toggleHamburger$ | async)
+        ? 'scale-100'
+        : 'scale-90 lg:scale-100'
+    "
   >
     <app-blog-search></app-blog-search>
     <div>
       <ul class="leading-[3rem]">
         <ng-container
-          *ngFor="let item of blogStoreService.getBlogLayout$ | async | keyvalue"
+          *ngFor="
+            let item of blogStoreService.getBlogLayout$ | async | keyvalue
+          "
         >
           <li
             class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white"

@@ -19,6 +19,11 @@
 }
 
 @layer components {
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
   a {
     @apply transition duration-300 hover:opacity-70;
   }
@@ -37,5 +42,9 @@
         @apply top-0 left-0;
       }
     }
+  }
+
+  .animation {
+    @apply transition duration-300 ease-in-out;
   }
 }

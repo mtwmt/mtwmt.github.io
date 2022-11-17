@@ -17,7 +17,7 @@
         </span>
         <a
           *ngIf="link.categories?.length"
-          class="text-secondary cursor-pointer rounded px-2 py-1 text-sm font-bold transition-colors duration-200 ease-in-out hover:bg-primary-500 hover:text-white"
+          class="text-secondary animation cursor-pointer rounded px-2 py-1 text-sm font-bold transition-colors hover:bg-primary-500 hover:text-white"
           [routerLink]="['/blog/categories', link.categories[0].toLowerCase()]"
         >
           {{ link.categories[0] }}
