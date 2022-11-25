@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, HostBinding, Inject, OnInit, Renderer2 } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { BlogStoreService } from '../blog/blog-store.service';
 
@@ -9,6 +9,14 @@ import { BlogStoreService } from '../blog/blog-store.service';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent implements OnInit {
+  @HostListener('click', ['$event'])
+  onHostClick(e: any): void {
+    const isAside = e.target.closest('aside');
+    if( !isAside ) {
+      this.onClose();
+    }
+  }
+
   articleHeight!: number;
 
   constructor(
@@ -18,6 +26,8 @@ export class LayoutComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+    // for safari
     const bodyHeight: number = this.document.querySelector('html,body')
       ?.scrollHeight as number;
     const headerHeight: number = this.document.querySelector('header')
@@ -25,8 +35,6 @@ export class LayoutComponent implements OnInit {
     const footerHeight: number = this.document.querySelector('footer')
       ?.clientHeight as number;
     this.articleHeight = bodyHeight - headerHeight + 150;
-
-    // console.log(this.document.querySelector('html,body')?.scrollHeight);
   }
 
   public onClose(): void {

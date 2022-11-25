@@ -43,6 +43,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.appService.toggleHamburger$.subscribe((isOpen) => {
+      this.isOpen = isOpen;
+    });
     this.initTheme();
   }
 
