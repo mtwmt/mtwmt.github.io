@@ -1,1 +1,27 @@
-<router-outlet></router-outlet>
+<div
+  class="relative z-[1] block min-h-full before:fixed before:top-0 before:left-1/2 before:ml-[640px] before:block before:h-full before:min-h-screen before:w-[1px] before:bg-primary-500 after:fixed after:top-0 after:right-1/2 after:mr-[640px] after:block after:h-full after:min-h-screen after:w-[1px] after:bg-neutral-100 lg:flex"
+>
+  <article
+    class="animation relative z-[1] bg-white lg:float-left lg:w-[calc(100%-20rem)] lg:transition-none"
+    [ngClass]="
+      (appService.toggleHamburger$ | async)
+        ? '-translate-x-80 lg:translate-x-0'
+        : ''
+    "
+  >
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </article>
+
+  <aside
+    class="animation absolute -top-[152px] right-0 z-0 min-h-full w-80 origin-[center_right] bg-primary-800 lg:relative lg:top-0 lg:float-right lg:transition-none"
+    [ngClass]="
+      (appService.toggleHamburger$ | async)
+        ? 'scale-100'
+        : 'scale-90 lg:scale-100'
+    "
+  >
+    <app-blog-search></app-blog-search>
+    <app-blog-side-layout></app-blog-side-layout>
+  </aside>
+</div>

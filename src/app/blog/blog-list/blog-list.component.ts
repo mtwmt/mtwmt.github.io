@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { map, Observable, switchMap } from 'rxjs';
 import { BlogService } from '../blog.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-blog-list',
@@ -36,6 +37,7 @@ export class BlogListComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    public appService: AppService,
     private blogService: BlogService
   ) {}
 

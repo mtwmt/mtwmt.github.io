@@ -17,11 +17,6 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
-        path: 'blog',
-        loadChildren: () =>
-          import('../blog/blog.module').then((m) => m.BlogModule),
-      },
-      {
         path: 'about',
         component: AboutComponent,
       },
@@ -33,12 +28,16 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent,
       },
-      { path: '404', component: NotfoundComponent },
-      {
-        path: '**',
-        component: NotfoundComponent,
-      },
     ],
+  },
+  {
+    path: 'blog',
+    loadChildren: () => import('../blog/blog.module').then((m) => m.BlogModule),
+  },
+  { path: '404', component: NotfoundComponent },
+  {
+    path: '**',
+    component: NotfoundComponent,
   },
 ];
 

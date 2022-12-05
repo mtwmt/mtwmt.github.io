@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router';
-import { map, tap, concatMap, Observable, switchMap } from 'rxjs';
+import { Params, ActivatedRoute, Router } from '@angular/router';
+import { concatMap, map, Observable, switchMap, tap } from 'rxjs';
 import { BlogService, ListInfo } from '../blog.service';
 
 @Component({
-  selector: 'app-blog-categories-list',
-  templateUrl: './blog-categories-list.component.html',
-  styleUrls: ['./blog-categories-list.component.scss'],
+  selector: 'app-blog-layout-list',
+  templateUrl: './blog-layout-list.component.html',
+  styleUrls: ['./blog-layout-list.component.scss'],
 })
-export class BlogCategoriesListComponent implements OnInit {
+export class BlogLayoutListComponent implements OnInit {
   public pageIndex = 1;
-  public pageSize = 15;
-  private category!: string;
+  public pageSize = 20;
+  private layout!: string;
 
   private page$ = this.activatedRoute.queryParams.pipe(
     map((params: Params) => {
@@ -20,21 +20,21 @@ export class BlogCategoriesListComponent implements OnInit {
     map((page: number) => page || 1)
   );
 
-  public categoriesAllList$ = this.activatedRoute.params.pipe(
+  public layoutAllList$ = this.activatedRoute.params.pipe(
     map((params: Params) => {
-      return params['category'];
+      return params['layout'];
     }),
-    tap((category: string) => {
-      this.category = category;
+    tap((layout: string) => {
+      this.layout = layout;
     }),
-    concatMap((category: string) => {
-      return this.blogService.fetchCategoriesList(category);
+    concatMap((layout: string) => {
+      return this.blogService.fetchLayoutList(layout);
     })
   );
 
-  public categoriesList$: Observable<ListInfo[]> = this.page$.pipe(
+  public layoutList$: Observable<ListInfo[]> = this.page$.pipe(
     switchMap((page: number) => {
-      return this.categoriesAllList$.pipe(
+      return this.layoutAllList$.pipe(
         map((list) => {
           this.pageIndex = +page;
           return list.slice((page - 1) * this.pageSize, page * this.pageSize);
@@ -53,7 +53,7 @@ export class BlogCategoriesListComponent implements OnInit {
 
   getPageIndex(index: number) {
     this.pageIndex = index;
-    this.router.navigate(['blog/categories', this.category], {
+    this.router.navigate(['blog/layout', this.layout], {
       queryParams: {
         page: index,
       },

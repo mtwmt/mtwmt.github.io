@@ -4,6 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { map, filter, distinctUntilChanged, switchMap, Observable, tap } from 'rxjs';
 import { BlogStoreService } from '../blog-store.service';
 import { BlogService } from '../blog.service';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-blog-search-list',
@@ -17,7 +18,8 @@ export class BlogSearchListComponent implements OnInit {
   constructor(
     public activatedRoute: ActivatedRoute,
     public blogService: BlogService,
-    public blogStoreService: BlogStoreService
+    public blogStoreService: BlogStoreService,
+    public appService: AppService
   ) {}
 
   ngOnInit(): void {

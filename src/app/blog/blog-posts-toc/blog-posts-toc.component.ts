@@ -1,9 +1,17 @@
 import { DOCUMENT, Location } from '@angular/common';
 import { ContentObserver } from '@angular/cdk/observers';
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Inject,
+  Input,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 import { makeStateKey, TransferState } from '@angular/platform-browser';
 import { map, Observable, of, ReplaySubject, startWith, switchMap } from 'rxjs';
 import { PlatformService } from 'src/app/shared/services/platform.service';
+import { AppService } from 'src/app/app.service';
 
 interface Heading {
   text: string;
@@ -21,6 +29,17 @@ const HEADINGS_CACHE_KEY = makeStateKey<Heading[]>('POST_TOC');
   styleUrls: ['./blog-posts-toc.component.scss'],
 })
 export class BlogPostsTocComponent implements OnInit {
+  public scrollTop: number = 0;
+  public headerHight: number = 0;
+  @HostListener('window:scroll', ['$event']) onScroll(e: Event): void {
+    this.scrollTop = this.renderer.selectRootElement(
+      'html, body',
+      true
+    ).scrollTop;
+    this.headerHight =
+      this.renderer.selectRootElement('header', true).offsetHeight || 0;
+  }
+
   private _contentElement!: HTMLElement;
   private _contentElement$ = new ReplaySubject<HTMLElement>(1);
 
@@ -34,23 +53,13 @@ export class BlogPostsTocComponent implements OnInit {
   }
 
   headings$ = this._contentElement$.pipe(
-    switchMap((contentElement) => {
-      // TODO: 這段目前還不太了解為什麼要這麼使用
-      // return this.contentObserver.observe(contentElement).pipe(
-      //   map(res => {
-
-      //     console.log('switchMap', res, contentElement);
-      //     return contentElement;
-      //   })
-      // );
-      return of(contentElement);
-    }),
-    map((element) => {
-      return {
-        cacheHeadings: this.getCacheHeadings(),
-        element,
-      };
-    }),
+    switchMap((contentElement) =>
+      this.contentObserver.observe(contentElement).pipe(
+        map(() => contentElement),
+        startWith(contentElement)
+      )
+    ),
+    map((element) => ({ cacheHeadings: this.getCacheHeadings(), element })),
     map((data) => {
       if (data.cacheHeadings && data.cacheHeadings.length > 0) {
         if (!this.platformService.isServer) {
@@ -85,10 +94,12 @@ export class BlogPostsTocComponent implements OnInit {
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2,
     private transferState: TransferState,
     private platformService: PlatformService,
     private contentObserver: ContentObserver,
-    private location: Location
+    private location: Location,
+    private appService: AppService
   ) {}
 
   ngOnInit(): void {}
@@ -147,7 +158,7 @@ export class BlogPostsTocComponent implements OnInit {
             headings.map((head) => {
               return {
                 ...head,
-                active: head.element?.offsetTop === visibleElement.offsetTop,
+                active: head.element === visibleElement,
               };
             })
           );
@@ -179,17 +190,19 @@ export class BlogPostsTocComponent implements OnInit {
 
   private setClasses(header: string) {
     if (header === 'h2') {
-      return 'text-base leading-loose';
+      return '';
     } else if (header === 'h3') {
-      return 'text-sm pl-2 leading-relaxed';
+      return 'indent-4';
     } else if (header === 'h4') {
-      return 'text-sm pl-4';
+      return 'indent-8';
     } else {
       return '';
     }
   }
 
-  goTo(target: Heading) {
+  public goTo(target: Heading, event: MouseEvent) {
+    event.preventDefault();
+
     this._intersectionObserver!.observe(target.element!);
     if (!!target.text) {
       const elementTop = this.document.getElementById(
@@ -198,7 +211,13 @@ export class BlogPostsTocComponent implements OnInit {
       this.location.replaceState(
         `${window.location.pathname}#${target.element?.id}`
       );
-      window.scrollTo({ top: (elementTop as number) - 60, behavior: 'smooth' });
+
+      window.scrollTo({
+        top: (elementTop as number) + this.headerHight - 20,
+        behavior: 'smooth',
+      });
+
+      this.appService.toggleHamburger$.next(false);
     }
   }
 }

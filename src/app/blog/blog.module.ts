@@ -14,6 +14,8 @@ import { BlogSideTagsComponent } from './blog-side-tags/blog-side-tags.component
 import { BlogTagsListComponent } from './blog-tags-list/blog-tags-list.component';
 import { BlogSearchComponent } from './blog-search/blog-search.component';
 import { BlogSearchListComponent } from './blog-search-list/blog-search-list.component';
+import { BlogSideLayoutComponent } from './blog-side-layout/blog-side-layout.component';
+import { BlogLayoutListComponent } from './blog-layout-list/blog-layout-list.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +30,15 @@ import { BlogSearchListComponent } from './blog-search-list/blog-search-list.com
     BlogTagsListComponent,
     BlogSearchComponent,
     BlogSearchListComponent,
+    BlogSideLayoutComponent,
+    BlogLayoutListComponent,
   ],
   imports: [CommonModule, BlogRoutingModule, SharedModule],
-  exports: [BlogListComponent, BlogSearchComponent],
+  exports: [
+    BlogListComponent,
+    BlogSearchComponent,
+    BlogSideCategoriesComponent,
+    BlogSideLayoutComponent,
+  ],
 })
 export class BlogModule {}

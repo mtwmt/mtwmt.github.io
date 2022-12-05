@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
 import { BlogStoreService } from '../blog-store.service';
-import { BlogService } from '../blog.service';
 
 @Component({
-  selector: 'app-blog-side-categories',
-  templateUrl: './blog-side-categories.component.html',
-  styleUrls: ['./blog-side-categories.component.scss'],
+  selector: 'app-blog-side-layout',
+  templateUrl: './blog-side-layout.component.html',
+  styleUrls: ['./blog-side-layout.component.scss'],
 })
-export class BlogSideCategoriesComponent implements OnInit {
+export class BlogSideLayoutComponent implements OnInit {
   constructor(
     public appService: AppService,
     public blogStoreService: BlogStoreService

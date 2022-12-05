@@ -7,7 +7,8 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { tap, map } from 'rxjs';
+import { map } from 'rxjs';
+import { AppService } from 'src/app/app.service';
 import { HighlightService } from 'src/app/shared/services/highlight.service';
 import { MetaService } from 'src/app/shared/services/meta.service';
 import { PlatformService } from 'src/app/shared/services/platform.service';
@@ -40,7 +41,8 @@ export class BlogPostsComponent implements OnInit, AfterViewInit {
     private activatedRoute: ActivatedRoute,
     private domSanitizer: DomSanitizer,
     private highlightService: HighlightService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    public appService: AppService
   ) {}
 
   ngOnInit(): void {

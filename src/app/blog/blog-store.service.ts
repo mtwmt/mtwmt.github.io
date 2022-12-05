@@ -7,14 +7,21 @@ import { BlogService, ListInfo } from './blog.service';
   providedIn: 'root',
 })
 export class BlogStoreService {
-  readonly getBlogCategories$ = this.blogService.blogList$.pipe(
-    map((list: ListInfo[]) => {
-      const temp = list.map((e) => e.categories);
-      const newTemp = [].concat(...(temp as []));
-      const categories = Array.from(new Set(newTemp));
-      return categories.filter((e) => !!e).sort() as string[];
-    })
-  );
+
+  readonly getBlogCategories$: Observable<string[]> =
+    this.blogService.blogList$.pipe(
+      map((list: ListInfo[]) => {
+        const temp = list.map((e) => e.categories);
+        const newTemp = [].concat(...(temp as []));
+
+        let counts: any = {};
+        newTemp.forEach((e: string) => {
+          counts[e] = (counts[e] || 0) + 1;
+        });
+
+        return counts;
+      })
+    );
 
   readonly getBlogTags$: Observable<string[]> = this.blogService.blogList$.pipe(
     map((list: ListInfo[]) => {

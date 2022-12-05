@@ -76,6 +76,17 @@ export class BlogService {
     )
   ).pipe(shareReplay(1));
 
+  fetchLayoutList(layout: string): Observable<ListInfo[]> {
+    return this.blogList$.pipe(
+      map((list: ListInfo[]) => {
+        const newList = list.filter((item) => {
+          return item.layout.toLocaleLowerCase() === layout.toLocaleLowerCase();
+        });
+        return newList;
+      })
+    );
+  }
+
   fetchCategoriesList(category: string): Observable<ListInfo[]> {
     return this.blogList$.pipe(
       map((list: ListInfo[]) => {

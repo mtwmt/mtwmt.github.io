@@ -1,24 +1,26 @@
 <ng-container *ngIf="headings$ | async as nav">
-  <p
-    class="my-2 pl-2 text-xl font-medium border-l-4 border-primary-500"
-    *ngIf="!!nav.length"
+  <ul
+    class="leading-[3rem]"
+    [ngClass]="scrollTop > headerHight ? 'sticky top-0' : 'relative'"
   >
-    文章導覽
-  </p>
-  <ul class="">
+    <li
+      class="h-12 border-b border-primary-700 bg-primary-900 px-3 text-primary-50"
+    >
+      文章導覽
+    </li>
     <li
       *ngFor="let header of nav; let idx = index"
-      class="cursor-pointer pl-3 leading-loose"
+      class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"
     >
-      <p
-        class="block-inline"
+      <a
+        href="#"
+        (click)="goTo(header, $event)"
+        class="block w-full cursor-pointer px-3"
         [ngClass]="header.classes"
-        [class.text-primary-700]="header.active"
-        (click)="goTo(header)"
+        [class.bg-primary-500]="header.active"
+        [class.bg-opacity-70]="header.active"
+        >{{ header.text }}</a
       >
-        {{ header.text }}
-      </p>
     </li>
   </ul>
 </ng-container>
-<hr class="block lg:hidden my-8 l" />
