@@ -50,7 +50,7 @@ class AlwaysAuthGuard implements CanActivate {
 ```ts
 const routes: Routes = [
   { path: "home", component: HomeComponent },
-  { path: "blog/:id", component: BlogCompoent, canActivate: [AlwaysAuthGuard] },
+  { path: "blog/:id", component: BlogComponent, canActivate: [AlwaysAuthGuard] },
   { path: "**", component: PageNotFoundComponent },
 ];
 ```
@@ -145,7 +145,7 @@ this.router.navigate(['list/'], { queryParams: { page: pageNumber, test: '字串
 template
 
 ```html
-<a [routerLink]="['list']" [queryParams]="{ page: pageNumber }">Prodcuts</a>
+<a [routerLink]="['list']" [queryParams]="{ page: pageNumber }">Products</a>
 ```
 
 取得參數方式
