@@ -94,12 +94,12 @@
       ></textarea>
       <div
         *ngIf="
-          form.get('mail')?.invalid &&
-          (form.get('mail')?.dirty || form.get('mail')?.touched)
+          form.get('msg')?.invalid &&
+          (form.get('msg')?.dirty || form.get('msg')?.touched)
         "
       >
         <div
-          *ngIf="form.get('mail')?.errors?.['required']"
+          *ngIf="form.get('msg')?.errors?.['required']"
           class="text-sm text-red-500"
         >
           required

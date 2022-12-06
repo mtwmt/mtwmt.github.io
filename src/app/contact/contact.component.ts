@@ -1,7 +1,11 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
-import { catchError, of } from 'rxjs';
+import {
+  UntypedFormGroup,
+  UntypedFormControl,
+  Validators,
+} from '@angular/forms';
+import { catchError, map, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
@@ -39,13 +43,16 @@ export class ContactComponent implements OnInit {
         }),
       })
       .pipe(
-        catchError((res) => {
+        catchError((res: any) => {
+          if (res.status === 200) {
+            this.form.reset();
+            alert('謝謝您的訊息，Mandy收到囉^_^');
+          } else {
+            alert('目前似乎有問題，請稍後再試');
+          }
           return of(res);
         })
       )
-      .subscribe((res) => {
-        this.form.reset();
-        alert('謝謝您的訊息，Mandy收到囉^_^');
-      });
+      .subscribe();
   }
 }
