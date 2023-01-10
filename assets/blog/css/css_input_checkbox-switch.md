@@ -27,7 +27,7 @@ date: 2017/06/26
 </div>
 ```
 
-> 可用 html 裡的 data 來當作選取器 避免 classname 過多造成混亂
+> 可用 html 裡的 data 來當作選取器 避免 className 過多造成混亂
 > 注意!! input 裡的 id 跟 label for 裡的名字記得要一樣 不然不會動 RRRR
 > 一個 id 只能取單一個名稱 所以之後要避免取相同名字哦
 

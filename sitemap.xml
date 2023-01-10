@@ -4,11 +4,18 @@
         <title>Mandy's Website</title>
         <link>https://mtwmt.com/</link>
         <description>學習記錄</description>
-        <lastBuildDate>Tue, 06 Dec 2022 15:26:41 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Jan 2023 13:22:16 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Mandy</copyright>
+        <item>
+            <title><![CDATA[使用 SCSS 建立一個 Palette 產生器!]]></title>
+            <link>https://mtwmt.com/blog/CSS/css_palette_generator</link>
+            <guid>https://mtwmt.com/blog/CSS/css_palette_generator</guid>
+            <pubDate>Tue, 10 Jan 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[建立色系色版宣告變數，以500為主色，500 以下明度會依續遞增彩度降低，驅近於白500 以上明度會依續遞減彩度降低，驅近於黑A100 ~ A700 則是改變主色的飽合度/* 可以看做是 js 裡的陣]]></description>
+        </item>
         <item>
             <title><![CDATA[初探 Python，用 Python 來寫個爬蟲吧]]></title>
             <link>https://mtwmt.com/blog/python/py_getpage</link>
