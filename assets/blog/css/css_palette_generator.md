@@ -156,16 +156,16 @@ $primary-palette: createPalette($primary-color);
 
 ## scss 內建函式補充
 
-#### color
+### color
 
-- mix: https://sass-lang.com/documentation/modules/color#mix
-- lighten: https://sass-lang.com/documentation/modules/color#lighten
-- saturate: https://sass-lang.com/documentation/modules/color#saturate
+> mix: https://sass-lang.com/documentation/modules/color#mix
+> lighten: https://sass-lang.com/documentation/modules/color#lighten
+> saturate: https://sass-lang.com/documentation/modules/color#saturate
 
 ### map
 
-- [map-merge](https://sass-lang.com/documentation/modules/map#merge): 將兩組 map 合併成一個新的 map。
+> [map-merge](https://sass-lang.com/documentation/modules/map#merge): 將兩組 map 合併成一個新的 map。
 
 ### math
 
-- floor: https://sass-lang.com/documentation/modules/math#floor
+> floor: https://sass-lang.com/documentation/modules/math#floor
