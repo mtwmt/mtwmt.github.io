@@ -37,7 +37,7 @@ $values: (
 );
 ```
 
-以上能當做是 js 裡的陣列宣告，在 scss 裡 沒有 text 與 number 的分別
+以上能當做是 js 裡的陣列宣告，在 scss 裡 沒有 string 與 number 的分別
 
 ---
 
@@ -169,5 +169,3 @@ $primary-palette: createPalette($primary-color);
 ### math
 
 - floor: https://sass-lang.com/documentation/modules/math#floor
-
----
