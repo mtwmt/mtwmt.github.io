@@ -1,6 +1,6 @@
 ---
 layout: CSS
-title: 使用 SCSS 建立一個 Palette 產生器!
+title: 使用 SCSS 建立一個 Palette 產生器
 categories:
   - css
 tags:
@@ -13,9 +13,9 @@ date: 2023/01/10
 
 宣告變數，以`500`為主色，
 
-- 500 以下明度會依續遞增彩度降低，驅近於白
-- 500 以上明度會依續遞減彩度降低，驅近於黑
-- A100 ~ A700 則是改變主色的飽合度
+> 500 以下明度會依續遞增彩度降低，驅近於白
+> 500 以上明度會依續遞減彩度降低，驅近於黑
+> A100 ~ A700 則是改變主色的飽合度
 
 ```scss
 /* 可以看做是 js 裡的陣列宣告 */
@@ -37,7 +37,7 @@ $values: (
 );
 ```
 
-以上能當做是 js 裡的陣列宣告，在 scss 裡 沒有 string 與 number 的分別
+這裡的變數宣告能當做是 js 裡的陣列，不過在 scss 裡 沒有 string 與 number 的分別
 
 ---
 
@@ -144,7 +144,7 @@ $primary-palette: createPalette($primary-color);
 
 轉成 CSS 後
 
-<img src="https://i.imgur.com/Y30eUVN.png" />
+<img src="assets/images/css/css_palette_generator/Y30eUVN.png" />
 
 ---
 
@@ -152,20 +152,24 @@ $primary-palette: createPalette($primary-color);
 
 <iframe src="//codepen.io/mtw/embed/XWBMVKL/"></iframe>
 
+參考資料：
+[SASS-only Material Angular Palette generator](https://sparagino.it/2020/06/09/sass-only-material-angular-palette-generator/)
+[MATERIAL DESIGN](http://mcg.mbitson.com/)
+
 ---
 
 ## scss 內建函式補充
 
 ### color
 
-> mix: https://sass-lang.com/documentation/modules/color#mix
-> lighten: https://sass-lang.com/documentation/modules/color#lighten
-> saturate: https://sass-lang.com/documentation/modules/color#saturate
+- mix: https://sass-lang.com/documentation/modules/color#mix
+- lighten: https://sass-lang.com/documentation/modules/color#lighten
+- saturate: https://sass-lang.com/documentation/modules/color#saturate
 
 ### map
 
-> [map-merge](https://sass-lang.com/documentation/modules/map#merge): 將兩組 map 合併成一個新的 map。
+- [map-merge](https://sass-lang.com/documentation/modules/map#merge): 將兩組 map 合併成一個新的 map。
 
 ### math
 
-> floor: https://sass-lang.com/documentation/modules/math#floor
+- floor: https://sass-lang.com/documentation/modules/math#floor

@@ -4,13 +4,13 @@
         <title>Mandy's Website</title>
         <link>https://mtwmt.com/</link>
         <description>學習記錄</description>
-        <lastBuildDate>Tue, 10 Jan 2023 15:47:46 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 10 Mar 2023 12:50:35 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Mandy</copyright>
         <item>
-            <title><![CDATA[使用 SCSS 建立一個 Palette 產生器!]]></title>
+            <title><![CDATA[使用 SCSS 建立一個 Palette 產生器]]></title>
             <link>https://mtwmt.com/blog/CSS/css_palette_generator</link>
             <guid>https://mtwmt.com/blog/CSS/css_palette_generator</guid>
             <pubDate>Tue, 10 Jan 2023 00:00:00 GMT</pubDate>
