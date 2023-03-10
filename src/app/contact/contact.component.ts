@@ -1,9 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {
-  UntypedFormGroup,
-  UntypedFormControl,
   Validators,
+  FormGroup,
+  FormControl,
 } from '@angular/forms';
 import { catchError, map, of, tap } from 'rxjs';
 
@@ -13,12 +13,12 @@ import { catchError, map, of, tap } from 'rxjs';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  public form: UntypedFormGroup = new UntypedFormGroup({
-    name: new UntypedFormControl(''),
-    tel: new UntypedFormControl(''),
-    line: new UntypedFormControl(''),
-    mail: new UntypedFormControl('', [Validators.email]),
-    msg: new UntypedFormControl(''),
+  public form: FormGroup = new FormGroup({
+    name: new FormControl(''),
+    tel: new FormControl(''),
+    line: new FormControl(''),
+    mail: new FormControl('', [Validators.email]),
+    msg: new FormControl(''),
   });
 
   constructor(private http: HttpClient) {}
@@ -27,13 +27,14 @@ export class ContactComponent implements OnInit {
 
   public onSubmit(): void {
     const url =
-      'https://script.google.com/macros/s/AKfycbyKd222L2JluG8S4A6SvmZsN1Jbd7fzp37-ziZvbiB5w_LKSI9i740RNhXXgaIPruc/exec';
+      'https://script.google.com/macros/s/AKfycbwUiOQQbBvxPHzdzkvtb97NFmCZ9KKX9zr3RRmMkKnzI7VlE_LvhhaOrmTo5WqCMfdf/exec';
     const data = {
       name: this.form.get('name')?.value,
       tel: this.form.get('tel')?.value,
       line: this.form.get('line')?.value,
       mail: this.form.get('mail')?.value,
       msg: this.form.get('msg')?.value,
+      time: new Date().toLocaleString('en', { hour12: false }),
     };
 
     this.http
