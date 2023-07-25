@@ -1,14 +1,11 @@
 ---
-import Icon from "astro-icon";
-import Header from "../components/Header.astro";
-import SearchWidget from "../components/SearchWidget.astro";
-import { SITE_TITLE } from "../consts";
-import AsideLayout from "../layouts/AsideLayout.astro";
-import ContentLayout from "../layouts/ContentLayout.astro";
-import MainLayout from "../layouts/MainLayout.astro";
-
-const url =
-  "https://script.google.com/macros/s/AKfycbwUiOQQbBvxPHzdzkvtb97NFmCZ9KKX9zr3RRmMkKnzI7VlE_LvhhaOrmTo5WqCMfdf/exec";
+import Icon from 'astro-icon';
+import Header from '../components/Header.astro';
+import SearchWidget from '../components/SearchWidget.astro';
+import { SITE_TITLE } from '../consts';
+import AsideLayout from '../layouts/AsideLayout.astro';
+import ContentLayout from '../layouts/ContentLayout.astro';
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout title={SITE_TITLE}>
@@ -80,23 +77,23 @@ const url =
         </div>
       </form>
     </div>
-  </ContentLayout>
 
-  <AsideLayout slot="aside">
-    <SearchWidget />
-  </AsideLayout>
+    <AsideLayout slot="aside">
+      <SearchWidget />
+    </AsideLayout>
+  </ContentLayout>
 </MainLayout>
 
 <script>
   // 獲取表單元素
-  const form = document.getElementById("form") as HTMLFormElement;
-  const nameError = document.getElementById("nameError") as HTMLDivElement;
-  const emailError = document.getElementById("emailError") as HTMLDivElement;
+  const form = document.getElementById('form') as HTMLFormElement;
+  const nameError = document.getElementById('nameError') as HTMLDivElement;
+  const emailError = document.getElementById('emailError') as HTMLDivElement;
   const messageError = document.getElementById(
-    "messageError"
+    'messageError'
   ) as HTMLDivElement;
 
-  form.addEventListener("submit", async (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     // 獲取表單數據
@@ -109,29 +106,29 @@ const url =
     });
 
     params.append(
-      "time",
-      new Date().toLocaleString("en", { hour12: false }).toString()
+      'time',
+      new Date().toLocaleString('en', { hour12: false }).toString()
     );
 
     const scriptID =
-      "AKfycbyy2l9PM3VTazFI0uEI4RfGWbH_vNclGlepAthmF-p88c7fzVh2hoAEpv2NUqJk0pzD";
+      'AKfycbyy2l9PM3VTazFI0uEI4RfGWbH_vNclGlepAthmF-p88c7fzVh2hoAEpv2NUqJk0pzD';
     const apiUrl = `https://script.google.com/macros/s/${scriptID}/exec?${params.toString()}`;
 
-    console.log("formData", params, params.toString());
+    console.log('formData', params, params.toString());
 
     try {
       const response = await fetch(apiUrl);
 
       if (response.ok) {
         const data = await response.json();
-        console.log("成功提交表單：", data);
+        console.log('成功提交表單：', data);
 
         form.reset();
       } else {
-        console.error("提交表單失敗");
+        console.error('提交表單失敗');
       }
     } catch (error) {
-      console.error("發送請求時出現錯誤：", error);
+      console.error('發送請求時出現錯誤：', error);
     }
   });
 </script>
