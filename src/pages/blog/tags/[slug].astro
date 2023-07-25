@@ -1,18 +1,18 @@
 ---
-import type { Props } from "astro";
-import { getCollection } from "astro:content";
-import Categories from "../../../components/Categories.astro";
-import Header from "../../../components/Header.astro";
-import SearchWidget from "../../../components/SearchWidget.astro";
-import { SITE_TITLE } from "../../../consts";
-import AsideLayout from "../../../layouts/AsideLayout.astro";
-import ContentLayout from "../../../layouts/ContentLayout.astro";
-import MainLayout from "../../../layouts/MainLayout.astro";
-import FormattedDate from "../../../components/FormattedDate.astro";
-import { sortByDate } from "../../../lib/sortFunctions";
+import type { Props } from 'astro';
+import { getCollection } from 'astro:content';
+import Categories from '../../../components/Categories.astro';
+import Header from '../../../components/Header.astro';
+import SearchWidget from '../../../components/SearchWidget.astro';
+import { SITE_TITLE } from '../../../consts';
+import AsideLayout from '../../../layouts/AsideLayout.astro';
+import ContentLayout from '../../../layouts/ContentLayout.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import FormattedDate from '../../../components/FormattedDate.astro';
+import { sortByDate } from '../../../lib/sortFunctions';
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", (data: any) => !data.data.isDraft);
+  const posts = await getCollection('blog', (data: any) => !data.data.isDraft);
   const tags = [
     ...new Set(posts.map((post: any) => post.data.tags).flat()),
   ].filter((d: string) => !!d);
@@ -25,7 +25,7 @@ export async function getStaticPaths() {
         posts: sortByDate(
           posts.filter((p) => {
             return p.data.tags
-              ?.map((tag) => tag.toLowerCase())
+              ?.map((tag: string) => tag.toLowerCase())
               .includes(t.toLowerCase());
           })
         ),
@@ -40,7 +40,7 @@ const { slug } = Astro.params;
 const { posts, tag } = Astro.props as any;
 ---
 
-<MainLayout title={tag + " | " + SITE_TITLE}>
+<MainLayout title={tag + ' | ' + SITE_TITLE}>
   <Header />
   <ContentLayout>
     <div class="h-full min-h-screen">
@@ -73,31 +73,3 @@ const { posts, tag } = Astro.props as any;
     </AsideLayout>
   </ContentLayout>
 </MainLayout>
-<!-- ---
-import { CollectionEntry, getCollection } from 'astro:content';
-
-export async function getStaticPaths() {
-  const posts = await getCollection('blog', (data: any) => !data.data.isDraft);
-  const tags = [
-    ...new Set(posts.map((post: any) => post.data.tags).flat() as string),
-  ]
-    .filter((d: string) => !!d)
-    .map((d: string) => {
-      return d.toLowerCase();
-    });
-
-  return tags.map((categories) => [
-    { params: { slug: categories }, props: { posts } },
-  ]);
-}
-type Props = CollectionEntry<'blog'>;
-const { posts } = Astro.props;
----
-
-555
-
-{
-  posts.map((d: any) => {
-    return <p>{d.id}</p>;
-  })
-} -->

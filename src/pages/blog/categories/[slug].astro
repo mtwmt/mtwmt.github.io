@@ -5,55 +5,68 @@ import MainLayout from '../../../layouts/MainLayout.astro';
 import Header from '../../../components/Header.astro';
 import AsideLayout from '../../../layouts/AsideLayout.astro';
 import ContentLayout from '../../../layouts/ContentLayout.astro';
-import Categories from "../../../components/Categories.astro";
+import Categories from '../../../components/Categories.astro';
 import SearchWidget from '../../../components/SearchWidget.astro';
+import { sortByDate } from '../../../lib/sortFunctions';
+import FormattedDate from '../../../components/FormattedDate.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', (data: any) => !data.data.isDraft);
   const categories = [
     ...new Set(posts.map((post: any) => post.data.categories).flat()),
-  ]
-  .filter((d: string) => !!d)
+  ].filter((d: string) => !!d);
 
-  return categories.map(  (c: string) => {
+  return categories.map((c: string) => {
     return {
       params: { slug: c.toLowerCase() },
       props: {
         category: c,
-        posts: posts.filter( p => {
-          return p.data.categories?.map( cat => cat.toLowerCase() ).includes(c.toLowerCase())
-        })
-      }
-    }
+        posts: sortByDate(
+          posts.filter((p) => {
+            return p.data.categories
+              ?.map((cat: string) => cat.toLowerCase())
+              .includes(c.toLowerCase());
+          })
+        ),
+      },
+    };
   });
 }
 
-const { slug } = Astro.params
+const { slug } = Astro.params;
 const { posts, category } = Astro.props;
-
 ---
-<MainLayout title={category + " | " + SITE_TITLE}>
+
+<MainLayout title={category + ' | ' + SITE_TITLE}>
   <Header />
   <ContentLayout>
     <div class="h-full min-h-screen">
-      <div class=" py-[3.35rem] px-[4vw]">
+      <div class="py-[3.35rem] px-[4vw]">
         <h3 class="text-3xl text-black">
-          類別：{category}
+          類別：{category.toUpperCase()}
         </h3>
       </div>
       <ul class="py-10 border-y border-neutral-200">
         {
-          posts.map( (p:any) => {
-            return <li class="py-4 px-[4vw]">
-              <a href={`/blog/${ p.slug }`}>{ p.data.title }</a>
-            </li>
+          posts.map((p: any) => {
+            return (
+              <li class="py-4 px-[4vw]">
+                <a href={`/blog/${p.slug}`}>
+                  <FormattedDate
+                    date={p.data.update || p.data.date}
+                    className="mr-4 text-left"
+                  />
+                  {p.data.title}
+                </a>
+              </li>
+            );
           })
         }
       </ul>
     </div>
-  </ContentLayout>
-  <AsideLayout>
+    <AsideLayout slot="aside">
     <SearchWidget />
     <Categories />
   </AsideLayout>
+  </ContentLayout>
 </MainLayout>
