@@ -69,13 +69,13 @@ export class RxjsOndestroyComponent implements OnInit, OnDestroy {
 
 ```ts
 export class RxjsOndestroyComponent implements OnInit, OnDestroy {
-  private destroy$: Subject = new Subject<void>();
+  private onDestroy$: Subject = new Subject<void>();
   private timer$: Observable<number> = timer(0, 1000);
 
   constructor() {}
 
   ngOnInit(): void {
-    this.timer$.pipe(takeUntil(this.destroy$)).subscribe((time) => {
+    this.timer$.pipe(takeUntil(this.onDestroy$)).subscribe((time) => {
       console.log("time", time);
     });
   }
