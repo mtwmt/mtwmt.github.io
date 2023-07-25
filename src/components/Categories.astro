@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+
+const categories = [
+  ...new Set(posts.map((post: any) => post.data.categories).flat()),
+]
+  .filter((d) => !!d)
+  .sort();
+---
+
+<ul class="font-dosis text-lg leading-[3rem]">
+  {
+    categories.map((c) => {
+      return (
+        <li class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white">
+          <a class="block w-full" href={`/blog/categories/${c.toLowerCase()}`}>
+            {c}
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

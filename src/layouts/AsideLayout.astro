@@ -1,0 +1,28 @@
+---
+---
+
+<aside
+  class="animation absolute -top-[152px] right-0 z-0 min-h-full w-80 origin-[center_right] bg-primary-800 scale-90 
+  lg:scale-100
+  lg:relative lg:top-0 lg:float-right lg:transition-none"
+>
+  <slot />
+</aside>
+
+<!-- <aside class="animation scale-90 origin-[center_right] bg-primary-800 
+  absolute w-[calc(20rem-1px)] top-12 right-0  overflow-hidden
+  lg:relative lg:top-0 lg:float-right lg:scale-100  lg:transition-none lg:overflow-visible
+  before:block before:fixed before:w-[1px] before:h-screen before:top-0 before:ml-[calc(20rem-2px)] before:bg-primary-800
+  ">
+  <slot />
+</aside>
+
+<style is:global lang="scss">
+  .nav-toggle:checked {
+    & ~ aside {
+      @apply scale-100;
+		}
+  }
+  
+</style>
+ -->

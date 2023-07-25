@@ -1,0 +1,41 @@
+---
+import Footer from "../components/Footer.astro";
+import AsideLayout from "./AsideLayout.astro";
+---
+
+<main
+  class="relative z-[1] block  min-h-full before:fixed before:top-0 before:left-1/2 before:ml-[640px] before:block before:h-full before:min-h-screen before:w-[1px] before:bg-primary-500 after:fixed after:top-0 after:right-1/2 after:mr-[640px] after:block after:h-full after:min-h-screen after:w-[1px] after:bg-neutral-100 lg:flex"
+>
+  <article
+    class=" min-h-[calc(100vh-180px)]  animation relative z-[1] bg-white lg:float-left lg:w-[calc(100%-20rem)] lg:transition-none"
+  >
+    <slot />
+    <Footer />
+  </article>
+  <slot name="aside" />
+</main>
+
+<style is:global lang="scss">
+  .nav-toggle:checked {
+    & ~ main > article {
+      @apply -translate-x-80 lg:translate-x-0;
+    }
+
+    & ~ main > aside {
+      @apply scale-100;
+    }
+  }
+</style>
+
+<!-- <main
+  class="animation relative z-10 bg-white w-full
+  lg:float-left lg:w-[calc(100%-20rem)] 
+  lg:transition-none before:fixed 
+  before:block before:h-screen before:w-[1px] before:top-0 before:bg-neutral-100"
+>
+  <article class="relative animation">
+    <slot />
+  </article>
+  <Footer />
+  
+</main> -->

@@ -1,0 +1,70 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+import ThemeSwitcher from "./ThemeSwitcher.astro";
+import { menu } from "../config/config.json";
+import { Icon } from "astro-icon";
+---
+
+<input id="nav-toggle" type="checkbox" class="hidden nav-toggle" />
+<header
+  class="bg-primary-900 lg:flex lg:h-[180px] lg:flex-row-reverse lg:justify-between"
+>
+  <div
+    class="translate-x-0 animation relative w-full font-dosis lg:flex lg:h-full lg:w-80 lg:items-center lg:justify-center lg:bg-primary-500 lg:transition-none"
+  >
+    <h1
+      class="w-40 bg-primary-500 text-center text-2xl leading-loose text-white lg:w-auto lg:text-4xl"
+    >
+      <a href="/">Mandy's Web</a>
+    </h1>
+    <label
+      id="hamburger"
+      for="nav-toggle"
+      title="MENU"
+      class="absolute right-5 top-1/2 h-7 w-8 -translate-y-1/2 cursor-pointer lg:hidden"
+    >
+      <span
+        class="animation absolute top-1/2 h-[2px] w-full -translate-y-1/2 bg-white before:absolute before:-top-2.5 before:h-[2px] before:w-full before:bg-white after:absolute after:top-2.5 after:h-[2px] after:w-full after:bg-white lg:transition-none"
+      ></span></label
+    >
+  </div>
+  <div
+    class="translate-x-0 animation relative z-10 bg-neutral-100 py-4 text-center dark:bg-neutral-800 lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"
+  >
+    <p class="mb-4 lg:mb-0">因為會忘，所以要寫下來</p>
+    <nav>
+      <ul class="flex justify-center font-dosis uppercase lg:justify-start">
+        {
+          menu.map((d: any) => {
+            return (
+              <li class="mx-4 text-center ">
+                <a href={d.href}>
+                  <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]">
+                    <Icon tabindex="-1" name={d.icon} class="h-6 w-6 " />
+                  </span>
+                  {d.name}
+                </a>
+              </li>
+            );
+          })
+        }
+        <!-- <ThemeSwitcher className="mr-5" /> -->
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style is:global lang="scss">
+  .nav-toggle:checked {
+    & ~ header {
+      #hamburger > span {
+        @apply rotate-180 bg-opacity-0 before:translate-y-2.5 before:rotate-45 after:-translate-y-2.5 after:-rotate-45;
+      }
+
+      > div {
+        @apply -translate-x-80 lg:translate-x-0;
+      }
+    }
+  }
+</style>

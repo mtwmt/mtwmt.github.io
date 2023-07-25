@@ -1,0 +1,104 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+import BlogSideBar from '../../components/BlogSideBar.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import AsideLayout from '../../layouts/AsideLayout.astro';
+
+// getStaticPaths 生成靜態頁面路徑
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+
+	const categories = [
+		...new Set(posts.map((post: any) => post.data.categories).flat()),
+	].filter((d) => !!d);
+
+	return posts.map((post: any) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { headings, Content } = await post.render();
+---
+
+<MainLayout title={headings}>
+	<Header />
+	<ContentLayout>
+		<div class="py-[3.35rem] px-[4vw]">
+			<h1 class="text-3xl leading-loose text-black">BLOG LIST</h1>
+		</div>
+		<div class="border-y border-neutral-200 py-10 px-[4vw]">
+			<div class="prose dark:prose-invert max-w-full">
+				<Content />
+			</div>
+		</div>
+	</ContentLayout>
+	<AsideLayout>
+		<!-- <nav class="hidden lg:block sticky top-6"> -->
+		<ul data-blog-toc class="leading-[3rem]">
+			<li
+				class="h-12 border-b border-primary-700 bg-primary-900 px-3 text-primary-50"
+			>
+				文章導覽
+			</li>
+			{
+				headings.map((h: any) => {
+					return (
+						<li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white">
+							<a class="block w-full cursor-pointer px-3" href={`#${h.slug}`}>
+								{h.text}
+							</a>
+						</li>
+					);
+				})
+			}
+			<!-- {
+				headings.map((heading: any) => (
+					<li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white">
+						{[...Array(heading.depth - 1)].map((_, i) => (
+							<span class="inline-block w-4" />
+						))}
+						<a
+							class="block w-full cursor-pointer px-3"
+							href={`#${heading.slug}`}
+						>
+							{heading.text}
+						</a>
+					</li>
+				))
+			} -->
+		</ul>
+		<!-- </nav> -->
+	</AsideLayout>
+</MainLayout>
+
+<!-- <BlogPost headings={headings} {...post.data}>
+	<div class="prose dark:prose-invert">
+		<Content />
+	</div>
+</BlogPost> -->
+
+<script>
+	const $toc = document.querySelector('[data-blog-toc]');
+
+	window.addEventListener('scroll', () => {
+		const scrollTop = window.scrollY || 0;
+		const headerHight: number =
+			document.querySelector('header')?.offsetHeight || 0;
+
+
+		if (scrollTop > headerHight) {
+			
+			$toc?.classList.add('sticky', 'top-0');
+			$toc?.classList.remove('relative');
+		} else {
+			$toc?.classList.add('relative');
+			$toc?.classList.remove('sticky', 'top-0');
+		}
+	});
+</script>

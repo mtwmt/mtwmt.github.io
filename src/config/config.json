@@ -1,0 +1,32 @@
+{
+  "settings": {
+    "pagination": 10
+  },
+  "menu": [
+    {
+      "name": "home",
+      "href": "/",
+      "icon": "ic:outline-home"
+    },
+    {
+      "name": "about",
+      "href": "/about",
+      "icon": "ic:outline-question-mark"
+    },
+    {
+      "name": "blog",
+      "href": "/blog/page/1",
+      "icon": "ic:outline-format-bold"
+    },
+    {
+      "name": "鐵人賽",
+      "href": "/blog/tags/ironman2021",
+      "icon": "ic:outline-mode-edit-outline"
+    },
+    {
+      "name": "submit",
+      "href": "/contact",
+      "icon": "ic:outline-mode-comment"
+    }
+  ]
+}

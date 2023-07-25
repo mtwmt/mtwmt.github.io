@@ -1,0 +1,40 @@
+---
+import Icon from "astro-icon";
+---
+
+<form class="form" action="">
+  <div class="flex h-12 items-center bg-primary-700 px-3">
+    <input
+      class="w-full border-none bg-primary-700 text-primary-50 placeholder:text-primary-200 focus:outline-none focus:ring-transparent"
+      placeholder="Search posts"
+      name="search"
+      id="search"
+      min="2"
+      max="24"
+    />
+    <Icon
+      tabindex="-1"
+      name="ic:outline-search"
+      class="h-6 w-6 text-primary-200 cursor-pointer"
+    />
+  </div>
+</form>
+
+<script>
+  import DOMPurify from "dompurify";
+  const form: HTMLFormElement = document.querySelector("form")!;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const searchTerm = DOMPurify.sanitize(formData.get("search")?.toString());
+    if (!searchTerm || searchTerm.length === 0) return;
+    const url = new URL("/search", window.location.origin);
+
+    url.searchParams.set("q", searchTerm);
+
+    console.log("ssss", url.toString());
+    window.location.assign(url.toString());
+  });
+
+</script>

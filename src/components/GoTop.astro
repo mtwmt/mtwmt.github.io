@@ -1,0 +1,38 @@
+---
+import { Icon } from 'astro-icon';
+---
+
+<div
+  data-gotop
+  class="cursor-pointer fixed bottom-16 right-8 z-50 transition duration-300"
+>
+  <Icon name="ic:outline-keyboard-arrow-up" class="btn w-10 h-10 bg-white" />
+</div>
+
+<script>
+  const $gotop = document.querySelector('[data-gotop]');
+  const headerHeight: number =
+    document.querySelector('header')?.offsetHeight || 0;
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY || 0;
+    if (scrollTop > headerHeight) {
+      $gotop?.classList.add('opacity-100');
+      $gotop?.classList.remove('opacity-0');
+    } else {
+      $gotop?.classList.add('opacity-0');
+      $gotop?.classList.remove('opacity-100');
+    }
+  };
+
+  handleScroll();
+  window.addEventListener('scroll', handleScroll);
+
+  $gotop?.addEventListener('click', function () {
+    document.querySelector('html, body')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
+  });
+</script>

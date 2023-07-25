@@ -1,0 +1,119 @@
+---
+import { getCollection } from "astro:content";
+import { sortByDate } from "../lib/sortFunctions";
+import config from "../config/config.json";
+import Categories from "../components/Categories.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Header from "../components/Header.astro";
+import Pagination from "../components/Pagination.astro";
+import SearchWidget from "../components/SearchWidget.astro";
+import Tags from "../components/Tags.astro";
+import { SITE_TITLE } from "../consts";
+import AsideLayout from "../layouts/AsideLayout.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+
+const pagination = config.settings.pagination;
+
+export const getSinglePage = async (collection: any) => {
+  const allPage = await getCollection(collection);
+  const removeIndex = allPage.filter((data) => data.id.match(/^(?!-)/));
+  const removeDrafts = removeIndex.filter((data) => !data.data.draft);
+  return removeDrafts;
+};
+
+const posts = await getSinglePage("blog");
+
+const { slug } = Astro.params;
+
+const sortedPosts = sortByDate(posts);
+const totalPages = Math.ceil(posts.length / pagination);
+const currentPage = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
+const indexOfLastPost = currentPage * pagination;
+const indexOfFirstPost = indexOfLastPost - pagination;
+const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+export async function getStaticPaths() {
+  const posts = await getSinglePage("blog");
+  const total = Math.ceil(posts.length / config.settings.pagination);
+
+  return Array.from(Array(total).keys()).map((idx: number) => {
+    return {
+      params: {
+        slug: (idx + 1).toString(),
+      },
+    };
+  });
+}
+---
+<MainLayout title={SITE_TITLE}>
+  <Header />
+  <ContentLayout>
+    <div class="py-[3.35rem] px-[4vw]">
+      <h3 class="text-3xl text-black">最新文章</h3>
+    </div>
+    {
+      currentPosts.map((post) => {
+        return (
+          <div class="border-t border-neutral-200 py-10 px-[4vw]">
+            <div class=" text-right">{<Tags data={post.data} />}</div>
+
+            <div class="lg:flex lg:items-center">
+              <FormattedDate date={post.data.update || post.data.date} type="graphics" className="mr-5 text-left" />
+              <div>
+                <a href={`/blog/${post.slug}/`}>
+                  <p class="text-xl font-semibold leading-loose text-gray-800">
+                    {post.data.title}
+                  </p>
+                  <p class="text-sm leading-relaxed text-gray-500">
+                    {post.body
+                      .replace(/<[^>]*>/gm, "")
+                      .replace(/[\n#]/g, "")
+                      .trim()
+                      .slice(0, 100)}
+                  </p>
+                  <p class=" text-xs text-primary-500">READ MORE</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        );
+      })
+    }
+    <div class="mt-5 border-y border-neutral-200">
+      <Pagination
+        section="./blog/page"
+        currentPage={currentPage}
+        totalPages={totalPages}
+      />
+    </div>
+    <AsideLayout slot="aside">
+      <SearchWidget />
+      <Categories />
+    </AsideLayout>
+  </ContentLayout>
+</MainLayout>
+<!-- <MainLayout title={SITE_TITLE}>
+  <Header />
+  <ContentLayout>
+    <div class="py-[3.35rem] px-[4vw]">
+      <h3 class="text-3xl text-black">最新文章</h3>
+    </div>
+    {
+      currentPosts.map((post) => (
+        <div class=" flex items-center border-t border-neutral-200 py-10 px-[4vw]">
+          <FormattedDate date={post.data.update || post.data.date} className="mr-4" />
+          <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+        </div>
+      ))
+    }
+    <div class="mt-5 border-y border-neutral-200">
+      <Pagination section="blog/page" currentPage={1} totalPages={totalPages} />
+    </div>
+
+    <AsideLayout slot="aside">
+			<SearchWidget></SearchWidget>
+		</AsideLayout>
+  </ContentLayout>
+</MainLayout> -->

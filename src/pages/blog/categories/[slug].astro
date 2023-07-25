@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import { SITE_TITLE } from '../../../consts';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Header from '../../../components/Header.astro';
+import AsideLayout from '../../../layouts/AsideLayout.astro';
+import ContentLayout from '../../../layouts/ContentLayout.astro';
+import Categories from "../../../components/Categories.astro";
+import SearchWidget from '../../../components/SearchWidget.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (data: any) => !data.data.isDraft);
+  const categories = [
+    ...new Set(posts.map((post: any) => post.data.categories).flat()),
+  ]
+  .filter((d: string) => !!d)
+
+  return categories.map(  (c: string) => {
+    return {
+      params: { slug: c.toLowerCase() },
+      props: {
+        category: c,
+        posts: posts.filter( p => {
+          return p.data.categories?.map( cat => cat.toLowerCase() ).includes(c.toLowerCase())
+        })
+      }
+    }
+  });
+}
+
+const { slug } = Astro.params
+const { posts, category } = Astro.props;
+
+---
+<MainLayout title={category + " | " + SITE_TITLE}>
+  <Header />
+  <ContentLayout>
+    <div class="h-full min-h-screen">
+      <div class=" py-[3.35rem] px-[4vw]">
+        <h3 class="text-3xl text-black">
+          類別：{category}
+        </h3>
+      </div>
+      <ul class="py-10 border-y border-neutral-200">
+        {
+          posts.map( (p:any) => {
+            return <li class="py-4 px-[4vw]">
+              <a href={`/blog/${ p.slug }`}>{ p.data.title }</a>
+            </li>
+          })
+        }
+      </ul>
+    </div>
+  </ContentLayout>
+  <AsideLayout>
+    <SearchWidget />
+    <Categories />
+  </AsideLayout>
+</MainLayout>

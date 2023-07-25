@@ -1,0 +1,19 @@
+---
+const { data } = Astro.props;
+
+---
+
+{
+  (data?.tags || []).map((tag: any) => {
+    return (
+      <a
+        href=""
+        class="px-2 py-1 mr-2 text-xs  font-normal text-primary-700  bg-primary-50 rounded-md border
+						hover:bg-white hover:border-primary-500
+            "
+      >
+        {tag}
+      </a>
+    );
+  })
+}
