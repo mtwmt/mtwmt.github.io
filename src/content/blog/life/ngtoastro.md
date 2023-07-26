@@ -31,7 +31,7 @@ date: 2023/07/26
 
 ## 佈署問題
 
-佈署時也遇到不少問題，照著官網上的設定一直跑不過 `github` 的 `action` 在這裡也紀錄一下，剛好在 `Astro` 的 issue 裡都能找到解法
+佈署時也遇到不少問題，照著官網上的設定一直跑不過 `github` 的 `actions` 在這裡也紀錄一下，剛好在 `Astro` 的 issue 裡都能找到解法
 
 - [Invalid YAML front matter in" - error with Github Pages build process](https://github.com/withastro/astro/issues/6830)
   建立了一個空的 `.nojekyll` 檔放在根目錄
