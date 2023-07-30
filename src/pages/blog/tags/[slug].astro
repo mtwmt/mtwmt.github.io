@@ -10,6 +10,7 @@ import ContentLayout from '../../../layouts/ContentLayout.astro';
 import MainLayout from '../../../layouts/MainLayout.astro';
 import FormattedDate from '../../../components/FormattedDate.astro';
 import { sortByDate } from '../../../lib/sortFunctions';
+import PageTitle from '../../../components/PageTitle.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', (data: any) => !data.data.isDraft);
@@ -43,30 +44,24 @@ const { posts, tag } = Astro.props as any;
 <MainLayout title={tag + ' | ' + SITE_TITLE}>
   <Header />
   <ContentLayout>
-    <div class="h-full min-h-screen">
-      <div class="py-[3.35rem] px-[4vw]">
-        <h3 class="text-3xl text-black">
-          標籤：{tag.toUpperCase()}
-        </h3>
-      </div>
-      <ul class="py-10 border-y border-neutral-200">
-        {
-          posts.map((p: any) => {
-            return (
-              <li class="py-4 px-[4vw]">
-                <a href={`/blog/${p.slug}`}>
-                  <FormattedDate
-                    date={p.data.update || p.data.date}
-                    className="mr-4 text-left"
-                  />
-                  {p.data.title}
-                </a>
-              </li>
-            );
-          })
-        }
-      </ul>
-    </div>
+    <PageTitle title={'標籤：' + tag.toUpperCase()} />
+    <ul class="py-10 border-y border-default">
+      {
+        posts.map((p: any) => {
+          return (
+            <li class="py-4 px-[4vw]">
+              <a href={`/blog/${p.slug}`}>
+                <FormattedDate
+                  date={p.data.update || p.data.date}
+                  className="mr-4 text-left"
+                />
+                {p.data.title}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
     <AsideLayout slot="aside">
       <SearchWidget />
       <Categories />

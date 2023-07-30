@@ -1,6 +1,6 @@
-const theme = require('./src/config/theme.json');
+const theme = require("./src/config/theme.json");
 
-let font_base = Number(theme.fonts.font_size.base.replace('px', ''));
+let font_base = Number(theme.fonts.font_size.base.replace("px", ""));
 let font_scale = Number(theme.fonts.font_size.scale);
 let h6 = font_base / font_base;
 let h5 = h6 * font_scale;
@@ -11,15 +11,25 @@ let h1 = h2 * font_scale;
 let fontPrimary, fontPrimaryType, fontSecondary, fontSecondaryType;
 if (theme.fonts.font_family.primary) {
   fontPrimary = theme.fonts.font_family.primary
-    .replace(/\+/g, ' ')
-    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, '');
+    .replace(/\+/g, " ")
+    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
   fontPrimaryType = theme.fonts.font_family.primary_type;
 }
 if (theme.fonts.font_family.secondary) {
   fontSecondary = theme.fonts.font_family.secondary
-    .replace(/\+/g, ' ')
-    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, '');
+    .replace(/\+/g, " ")
+    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
   fontSecondaryType = theme.fonts.font_family.secondary_type;
+}
+
+function withOpacity(variableName) {
+  console.log('variableName', variableName)
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgb(var(${variableName}))`;
+  };
 }
 
 /** @type {import('tailwindcss').Config} */
@@ -31,42 +41,36 @@ module.exports = {
       dosis: "Dosis",
     },
     extend: {
+      textColor: {
+        default: `var(--color-text)`,
+        light: `var(--color-light-text)`,
+        dark: `var(--color-dark-text)`,
+      },
+      backgroundColor: {
+        default: `var(--color-background)`,
+        light: `var(--color-light-background)`,
+        dark: `var(--color-dark-text)`,
+        border: `var(--color-border)`,
+      },
+      borderColor: {
+        default: `var(--color-border)`,
+      },
       colors: {
         primary: {
-          50: "#e0f5f5",
-          100: "#b3e6e6",
-          200: "#80d5d5",
-          300: "#4dc4c4",
-          400: "#26b7b7",
-          500: "#00aaaa",
-          600: "#00a3a3",
-          700: "#009999",
-          800: "#009090",
-          900: "#007f7f",
-          A100: "#adffff",
-          A200: "#7affff",
-          A400: "#47ffff",
-          A700: "#2dffff",
-        },
-        // text: theme.colors.default.text_color.default,
-        light: theme.colors.default.text_color.light,
-        dark: theme.colors.default.text_color.dark,
-        // primary: theme.colors.default.theme_color.primary,
-        // secondary: theme.colors.default.theme_color.secondary,
-        // body: theme.colors.default.theme_color.body,
-        border: theme.colors.default.theme_color.border,
-        // 'theme-light': theme.colors.default.theme_color.theme_light,
-        // 'theme-dark': theme.colors.default.theme_color.theme_dark,
-        darkmode: {
-          // text: theme.colors.darkmode.text_color.default,
-          light: theme.colors.darkmode.text_color.light,
-          dark: theme.colors.darkmode.text_color.dark,
-          // primary: theme.colors.darkmode.theme_color.primary,
-          // secondary: theme.colors.darkmode.theme_color.secondary,
-          // body: theme.colors.darkmode.theme_color.body,
-          border: theme.colors.darkmode.theme_color.border,
-          // 'theme-light': theme.colors.darkmode.theme_color.theme_light,
-          // 'theme-dark': theme.colors.darkmode.theme_color.theme_dark,
+          50: `var(--color-primary-50)`,
+          100: `var(--color-primary-100)`,
+          200: `var(--color-primary-200)`,
+          300: `var(--color-primary-300)`,
+          400: `var(--color-primary-400)`,
+          500: `var(--color-primary-500)`,
+          600: `var(--color-primary-600)`,
+          700: `var(--color-primary-700)`,
+          800: `var(--color-primary-800)`,
+          900: `var(--color-primary-900)`,
+          A100: `var(--color-primary-A100)`,
+          A200: `var(--color-primary-A200)`,
+          A400: `var(--color-primary-A400)`,
+          A700: `var(--color-primary-A700)`,
         },
       },
       // fontSize: {
@@ -80,10 +84,6 @@ module.exports = {
       //   h4: h4 + 'rem',
       //   h5: h5 + 'rem',
       //   h6: h6 + 'rem',
-      // },
-      // fontFamily: {
-      //   primary: [fontPrimary, fontPrimaryType],
-      //   secondary: [fontSecondary, fontSecondaryType],
       // },
     },
   },

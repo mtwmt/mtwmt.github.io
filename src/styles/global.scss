@@ -2,22 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700';
+@import "https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700";
 
 @layer base {
   * {
     @apply box-border;
   }
+
+  :root {
+    --color-background: #fff;
+    --color-light-background: #f5f5f5;
+    --color-text: #444;
+    --color-light-text: #717171;
+    --color-dark-text: #040404;
+    --color-border: #eaeaea;
+    --color-primary-50: #e0f5f5;
+    --color-primary-100: #b3e6e6;
+    --color-primary-200: #80d5d5;
+    --color-primary-300: #4dc4c4;
+    --color-primary-400: #26b7b7;
+    --color-primary-500: #00aaaa;
+    --color-primary-600: #00a3a3;
+    --color-primary-700: #009999;
+    --color-primary-800: #009090;
+    --color-primary-900: #007f7f;
+    --color-primary-A100: #adffff;
+    --color-primary-A200: #7affff;
+    --color-primary-A400: #47ffff;
+    --color-primary-A700: #2dffff;
+
+    &.dark {
+      --color-background: #1c1c1c;
+      --color-light-background: #404040;
+      --color-text: #fff;
+      --color-light-text: #717171;
+      --color-dark-text: #040404;
+      --color-border: #3e3e3e;
+      --color-primary-50: #b9e9e9;
+      --color-primary-100: #8dd9d9;
+      --color-primary-200: #5ac8c8;
+      --color-primary-300: #37a7a7;
+      --color-primary-400: #1d8d8d;
+      --color-primary-500: #007777;
+      --color-primary-600: #007070;
+      --color-primary-700: #006666;
+      --color-primary-800: #005d5d;
+      --color-primary-900: #004c4c;
+      --color-primary-A100: #7affff;
+      --color-primary-A200: #47ffff;
+      --color-primary-A400: #14ffff;
+      --color-primary-A700: #00f9f9;
+    }
+  }
+
   html,
   body {
     @apply relative m-0 h-full w-full p-0;
     scroll-behavior: smooth;
     &.dark {
-      @apply bg-neutral-800 text-white;
-
-      // a {
-      //   @apply text-blue-300;
-      // }
+      color-scheme: dark;
     }
   }
 }
@@ -53,6 +96,10 @@
         @apply top-0 left-0;
       }
     }
+  }
+
+  .absolute-center {
+    @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2;
   }
 }
 

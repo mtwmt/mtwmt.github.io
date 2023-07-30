@@ -1,20 +1,18 @@
 ---
-import Icon from 'astro-icon';
 import Header from '../components/Header.astro';
 import SearchWidget from '../components/SearchWidget.astro';
 import { SITE_TITLE } from '../consts';
 import AsideLayout from '../layouts/AsideLayout.astro';
 import ContentLayout from '../layouts/ContentLayout.astro';
 import MainLayout from '../layouts/MainLayout.astro';
+import PageTitle from '../components/PageTitle.astro';
 ---
 
 <MainLayout title={SITE_TITLE}>
   <Header />
   <ContentLayout>
-    <div class="py-[3.35rem] px-[4vw]">
-      <h3 class="text-3xl text-black">與我聯絡</h3>
-    </div>
-    <div class="border-t border-neutral-200 py-10 px-[4vw]">
+    <PageTitle title="與我聯絡"></PageTitle>
+    <div class="border-t border-default py-10 px-[4vw]">
       <form id="form">
         <div class="md:flex md:space-x-5">
           <div class="mt-3 md:w-1/2">

@@ -4,6 +4,7 @@ import { SITE_TITLE } from "../consts";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 import { menu } from "../config/config.json";
 import { Icon } from "astro-icon";
+import Theme from "./Theme.astro";
 ---
 
 <input id="nav-toggle" type="checkbox" class="hidden nav-toggle" />
@@ -30,7 +31,9 @@ import { Icon } from "astro-icon";
     >
   </div>
   <div
-    class="translate-x-0 animation relative z-10 bg-neutral-100 py-4 text-center dark:bg-neutral-800 lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"
+    class="translate-x-0 animation relative z-10 
+    bg-light py-4 text-center
+    lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"
   >
     <p class="mb-4 lg:mb-0">因為會忘，所以要寫下來</p>
     <nav>
@@ -41,7 +44,7 @@ import { Icon } from "astro-icon";
               <li class="mx-4 text-center ">
                 <a href={d.href}>
                   <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]">
-                    <Icon tabindex="-1" name={d.icon} class="h-6 w-6 " />
+                    <Icon name={d.icon} class="h-6 w-6 " />
                   </span>
                   {d.name}
                 </a>
@@ -49,7 +52,9 @@ import { Icon } from "astro-icon";
             );
           })
         }
-        <!-- <ThemeSwitcher className="mr-5" /> -->
+        <li class="mx-4 text-center">
+        <Theme />
+        </li>
       </ul>
     </nav>
   </div>

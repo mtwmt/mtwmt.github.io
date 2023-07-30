@@ -12,12 +12,12 @@ import MainLayout from '../layouts/MainLayout.astro';
   <ContentLayout>
     <div class="h-full min-h-screen">
       <div class="py-[3.35rem] px-[4vw]">
-        <h3 id="searchReadout" class="text-3xl text-black"></h3>
+        <h3 id="searchReadout" class="text-3xl text-default"></h3>
       </div>
       <ul
         aria-label="Search Results"
         id="searchResults"
-        class="py-10 border-y border-neutral-200"
+        class="py-10 border-y border-default"
       >
       </ul>
     </div>
@@ -92,7 +92,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       list?.length > 0
         ? generateSearchList(list, search)
         : `
-      <div class="border-neutral-200 py-10 px-[4vw]"><p>目前沒有關於 ${search} 主題的文章哦！</p></div>
+      <div class="border-default py-10 px-[4vw]"><p>目前沒有關於 ${search} 主題的文章哦！</p></div>
       `;
   }
 

@@ -1,18 +1,19 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
-import BlogSideBar from "../../components/BlogSideBar.astro";
-import MainLayout from "../../layouts/MainLayout.astro";
-import Header from "../../components/Header.astro";
-import ContentLayout from "../../layouts/ContentLayout.astro";
-import AsideLayout from "../../layouts/AsideLayout.astro";
-import GoTop from "../../components/GoTop.astro";
-import Comments from "../../components/Comments.astro";
-import { SITE_TITLE } from "../../consts";
-import FormattedDate from "../../components/FormattedDate.astro";
+import { CollectionEntry, getCollection } from 'astro:content';
+import BlogSideBar from '../../components/BlogSideBar.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import AsideLayout from '../../layouts/AsideLayout.astro';
+import GoTop from '../../components/GoTop.astro';
+import Comments from '../../components/Comments.astro';
+import { SITE_TITLE } from '../../consts';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Tags from '../../components/Tags.astro';
 
 // getStaticPaths 生成靜態頁面路徑
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getCollection('blog');
 
   const categories = [
     ...new Set(posts.map((post: any) => post.data.categories).flat()),
@@ -23,64 +24,40 @@ export async function getStaticPaths() {
     props: post,
   }));
 }
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { headings, Content } = await post.render();
 const { data } = post;
-
 ---
 
-<MainLayout title={post.data.title + " | " + SITE_TITLE}>
+<MainLayout title={post.data.title + ' | ' + SITE_TITLE}>
   <Header />
-  <!-- <div class="post-wrap flex w-full h-full"> -->
-    <ContentLayout>
-      <!-- <a onclick="window.history.back()" >回上頁</a> -->
-      <div class="py-[3.35rem] px-[4vw]">
-        <FormattedDate date={post.data.update || post.data.date} type="en" />
-       
-        <h1 class="text-3xl leading-loose text-black">{post.data.title}</h1>
-        <div class="mt-2">
-          {
-            (post.data.tags || []).map((tag: string) => {
-              return (
-                <a
-                  href={`/blog/tags/${tag.toLowerCase()}`}
-                  class="mr-2 cursor-pointer rounded bg-primary-50 px-2 py-1 text-sm text-gray-500"
-                >
-                  {tag}
-                </a>
-              );
-            })
-          }
-        </div>
-      </div>
-      <div class="border-y border-neutral-200 py-10 px-[4vw]">
-        <div class="post">
-          <Content />
-        </div>
-        <Comments />
-      </div>
+  <ContentLayout>
+    <!-- <a onclick="history.back()" >回上頁</a> -->
+    <div class="py-[3.35rem] px-[4vw]">
+      <FormattedDate date={post.data.update || post.data.date} type="en" />
 
-      <AsideLayout slot="aside">
+      <h1 class="text-3xl leading-loose text-default">{post.data.title}</h1>
+      <div class="mt-2">
+        {<Tags tags={post.data?.tags} />}
+      </div>
+    </div>
+    <div class="border-y border-default py-10 px-[4vw]">
+      <div class="post">
+        <Content />
+      </div>
+      <Comments />
+    </div>
+
+    <AsideLayout slot="aside">
       <BlogSideBar {headings} />
     </AsideLayout>
-    </ContentLayout>
-    
-  <!-- </div> -->
+  </ContentLayout>
 </MainLayout>
 <GoTop />
 
 <style is:global lang="scss">
-  // .nav-toggle:checked {
-  //   & ~ .post-wrap main {
-  //       @apply -translate-x-80 lg:translate-x-0;
-  //   }
-    
-  //   & ~ .post-wrap aside {
-  //       @apply scale-100;
-  //   }
-  // }
   [data-blog-toc] {
     .active {
       @apply bg-primary-500 bg-opacity-70;
@@ -88,18 +65,18 @@ const { data } = post;
   }
 
   .post {
-    @apply text-base text-gray-800;
+    @apply text-base text-default;
 
     h1 {
-      @apply my-4 text-3xl text-gray-700;
+      @apply my-4 text-3xl text-default;
     }
 
     h2 {
-      @apply text-2xl font-bold text-gray-800;
+      @apply text-2xl font-bold text-default;
     }
 
     h3 {
-      @apply mt-11 mb-2 text-xl font-bold text-gray-600;
+      @apply mt-11 mb-2 text-xl font-bold text-default;
     }
 
     p {
@@ -115,7 +92,7 @@ const { data } = post;
     }
 
     hr {
-      @apply my-8 text-gray-200;
+      @apply my-8 border-default;
     }
 
     iframe {
@@ -129,7 +106,7 @@ const { data } = post;
     }
 
     blockquote {
-      @apply text-gray-600 my-8 px-5 border-l-4 border-gray-200 border-solid;
+      @apply text-dark my-8 px-5 border-l-4 border-gray-200 border-solid;
     }
 
     ol {
@@ -153,101 +130,21 @@ const { data } = post;
     }
 
     a {
-      @apply text-primary-700
-  hover:text-opacity-70
-  transition duration-300 ease-in-out;
+      @apply text-primary-700 transition duration-300 ease-in-out
+       hover:text-opacity-70 dark:text-primary-200
+      ;
     }
 
     table {
       @apply my-4 w-full border-collapse;
       th {
-        @apply text-white bg-gray-400;
+        @apply text-white bg-light;
       }
 
       th,
       td {
-        @apply py-2 px-2 leading-tight border border-solid border-gray-300;
+        @apply py-2 px-2 leading-tight border border-solid border-default;
       }
     }
   }
 </style>
-
-<!-- <BlogPost headings={headings} {...post.data}>
-	<div class="prose dark:prose-invert">
-		<Content />
-	</div>
-</BlogPost> -->
-
-<!-- <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    const navLinks = document.querySelectorAll('[data-blog-toc] a');
-    const headings = document.querySelectorAll(
-      '.post h1, .post h2, .post h3, .post h4, .post h5, .post h6'
-    );
-
-    function setActiveLink() {
-      const scrollPosition = window.scrollY;
-
-      headings.forEach((heading: any) => {
-        const targetId = '#' + heading.getAttribute('id');
-        const section = heading.closest('.post');
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop) {
-          navLinks.forEach((link) => {
-            if (link.getAttribute('href') === targetId) {
-              console.log('targetId', targetId);
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
-            }
-          });
-        }
-      });
-    }
-
-    window.addEventListener('scroll', setActiveLink);
-  });
-  // const scrollTop = window.scrollY || 0;
-  // console.log('scroll111', scrollTop);
-
-  // const $toc = document.querySelectorAll('[data-blog-toc] a');
-  // const $sections = document.querySelectorAll('.post [class^="h"]')
-
-  // console.log('scroll', $toc, $sections);
-
-  // const handleScroll = () => {
-  //   const scrollTop = window.scrollY || 0;
-  //   $sections?.forEach((s) => {
-  //      const targetId = '#' + s.getAttribute('id');
-  //         const section = s.closest('.post');
-  //         const sectionTop = section?.offsetTop;
-  //         const sectionHeight = section?.offsetHeight;
-
-  //     console.log('section', sectionTop);
-  //     if( scrollTop >= sectionTop && )
-
-  //   });
-  // };
-
-  // window.addEventListener('scroll', handleScroll);
-
-  // window.addEventListener('scroll', () => {
-  //   const scrollTop = window.scrollY || 0;
-  //   const headerHight: number =
-  //     document.querySelector('header')?.offsetHeight || 0;
-
-  //   console.log('aaa', $toc, scrollTop);
-
-  //   if (scrollTop > headerHight) {
-  //     console.log('111');
-  //     $toc?.classList.add('sticky', 'top-0');
-  //     $toc?.classList.remove('relative');
-  //   } else {
-  //     console.log('222');
-  //     $toc?.classList.add('relative');
-  //     $toc?.classList.remove('sticky', 'top-0');
-  //   }
-  // });
-</script> -->

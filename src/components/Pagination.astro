@@ -76,7 +76,7 @@ let pageRangeItem: any = setPageItem(currentPage, totalPages);
             !e.disabled && (
               <a
                 href={`${section}/${currentPage - 1}`}
-                class="flex h-12 w-20 cursor-pointer items-center justify-center border-r border-neutral-200 hover:bg-neutral-200"
+                class="flex h-12 w-20 cursor-pointer items-center justify-center border-r border-default hover:bg-border"
               >
                 <Icon name="teenyicons:left-outline" class="h-4 w-4 " /> PREV
               </a>
@@ -87,7 +87,7 @@ let pageRangeItem: any = setPageItem(currentPage, totalPages);
             currentPage > 5 && (
               <a
                 href={`${section}/${currentPage - 5}`}
-                class="flex h-12 w-10 cursor-pointer items-center justify-center border-r border-neutral-200 hover:bg-neutral-200"
+                class="flex h-12 w-10 cursor-pointer items-center justify-center border-r border-default hover:bg-border"
               >
                 <Icon
                   name="teenyicons:double-caret-left-solid"
@@ -101,7 +101,7 @@ let pageRangeItem: any = setPageItem(currentPage, totalPages);
             !e.disabled && (
               <a
                 href={`${section}/${currentPage + 1}`}
-                class="flex h-12 w-20 cursor-pointer items-center justify-center border-r border-neutral-200 hover:bg-neutral-200"
+                class="flex h-12 w-20 cursor-pointer items-center justify-center border-r border-default hover:bg-border"
               >
                 NEXT
                 <Icon name="teenyicons:right-outline" class="h-4 w-4 " />
@@ -113,7 +113,7 @@ let pageRangeItem: any = setPageItem(currentPage, totalPages);
             currentPage < totalPages - 5 && (
               <a
                 href={`${section}/${currentPage + 5}`}
-                class="flex h-12 w-10 cursor-pointer items-center justify-center border-r border-neutral-200 hover:bg-neutral-200"
+                class="flex h-12 w-10 cursor-pointer items-center justify-center border-r border-default hover:bg-border"
               >
                 <Icon
                   name="teenyicons:double-caret-right-solid"
@@ -131,7 +131,7 @@ let pageRangeItem: any = setPageItem(currentPage, totalPages);
                   'cursor-default border-primary-800 bg-primary-800 text-white hover:bg-primary-800 hover:opacity-100':
                     currentPage === e.index,
                 },
-                'flex h-12 w-10 cursor-pointer items-center justify-center border-r border-neutral-200 hover:bg-neutral-200',
+                'flex h-12 w-10 cursor-pointer items-center justify-center border-r border-default hover:bg-border',
               ]}
             >
               {e.index}

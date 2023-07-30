@@ -12,6 +12,7 @@ import ContentLayout from "../../../layouts/ContentLayout.astro";
 import { SITE_TITLE } from "../../../consts";
 import Categories from "../../../components/Categories.astro";
 import Tags from "../../../components/Tags.astro";
+import PageTitle from "../../../components/PageTitle.astro";
 
 const pagination = config.settings.pagination;
 
@@ -50,30 +51,28 @@ export async function getStaticPaths() {
 <MainLayout title={SITE_TITLE}>
   <Header />
   <ContentLayout>
-    <div class="py-[3.35rem] px-[4vw]">
-      <h3 class="text-3xl text-black">BLOG LIST</h3>
-    </div>
+    <PageTitle title="BLOG LIST"></PageTitle>
     {
       currentPosts.map((post) => {
         return (
-          <div class="border-t border-neutral-200 py-10 px-[4vw]">
-            <div class=" text-right">{<Tags data={post.data} />}</div>
+          <div class="border-t border-default py-10 px-[4vw]">
+            <div class=" text-right">{<Tags tags={post.data.tags} />}</div>
 
             <div class="lg:flex lg:items-center">
               <FormattedDate date={post.data.update || post.data.date} type="graphics" className="mr-5 text-left" />
               <div>
                 <a href={`/blog/${post.slug}/`}>
-                  <p class="text-xl font-semibold leading-loose text-gray-800">
+                  <p class="text-xl font-semibold leading-loose">
                     {post.data.title}
                   </p>
-                  <p class="text-sm leading-relaxed text-gray-500">
+                  <p class="text-sm leading-relaxed text-light">
                     {post.body
                       .replace(/<[^>]*>/gm, "")
                       .replace(/[\n#]/g, "")
                       .trim()
                       .slice(0, 100)}
                   </p>
-                  <p class=" text-xs text-primary-500">READ MORE</p>
+                  <p class=" text-xs text-primary-500  dark:text-primary-300">READ MORE</p>
                 </a>
               </div>
             </div>
@@ -81,7 +80,7 @@ export async function getStaticPaths() {
         );
       })
     }
-    <div class="mt-5 border-y border-neutral-200">
+    <div class="mt-5 border-y border-default">
       <Pagination
         section="."
         currentPage={currentPage}

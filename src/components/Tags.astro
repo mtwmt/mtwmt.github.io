@@ -1,16 +1,15 @@
 ---
-const { data } = Astro.props;
-
+const { tags } = Astro.props;
 ---
 
 {
-  (data?.tags || []).map((tag: any) => {
+  (tags || []).map((tag: any) => {
     return (
       <a
         href={`/blog/tags/${tag.toLowerCase()}`}
-        class="px-2 py-1 mr-2 text-xs  font-normal text-primary-700  bg-primary-50 rounded-md border
-						hover:bg-white hover:border-primary-500
-            "
+        class="px-2 py-1 mr-2 text-xs font-normal border rounded-md border-primary-100 text-primary-500 bg-primary-50
+        dark:border-primary-400 dark:bg-primary-500 dark:text-primary-50
+        "
       >
         {tag}
       </a>

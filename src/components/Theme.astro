@@ -1,0 +1,55 @@
+---
+import { Icon } from 'astro-icon';
+const { className }: { className?: string } = Astro.props;
+---
+
+<div class={`inline-flex ${className}`}>
+  <input class="absolute opacity-0" id="theme-switcher" data-theme-switcher type="checkbox" />
+  <label class="relative" for="theme-switcher">
+    <span
+      class="cursor-pointer flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
+    >
+      <Icon
+        name="ic:outline-dark-mode"
+        class="h-6 w-6 hidden dark:block"
+      />
+      <Icon
+        name="ic:outline-light-mode"
+        class="h-6 w-6 block dark:hidden"
+      />
+    </span>
+    mode
+  </label>
+</div>
+
+<script is:inline>
+const darkMode = (() => {
+  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+    return localStorage.getItem('theme') === 'dark' ? true : false;
+  }
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return true;
+  }
+  return false;
+})();
+
+const themeSwitch = document.querySelectorAll('[data-theme-switcher]');
+
+if (darkMode) {
+  document.documentElement.classList.toggle('dark');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  [].forEach.call(themeSwitch, function (ts) {
+    ts.checked = darkMode ? true : false;
+    ts.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem(
+        'theme',
+        document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+      );
+    });
+  });
+});
+</script>
+
