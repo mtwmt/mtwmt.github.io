@@ -4,11 +4,6 @@
   },
   "menu": [
     {
-      "name": "home",
-      "href": "/",
-      "icon": "ic:outline-home"
-    },
-    {
       "name": "about",
       "href": "/about",
       "icon": "ic:outline-question-mark"
