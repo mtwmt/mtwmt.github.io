@@ -8,10 +8,13 @@ export async function get(context) {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     site: context.site,
-    items: []
-    // items: posts.map((post) => ({
-    // 	...post.data,
-    // 	link: `/blog/${post.slug}/`,
-    // })),
+    // items: []
+    items: posts.map((post) => ({
+    	// ...post.data,
+	title: post.data.title,
+        date: post.data.update || post.data.date,
+        description: post.data.description,
+    	link: `/blog/${post.slug}/`,
+    })),
   });
 }
