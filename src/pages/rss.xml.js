@@ -11,10 +11,9 @@ export async function get(context) {
     // items: []
     items: posts.map((post) => ({
     	// ...post.data,
-	title: post.data.title,
-        date: post.data.update || post.data.date,
-        description: post.data.description,
-    	link: `/blog/${post.slug}/`,
+	title: post.data?.title || '',
+        date: post.data?.update || post.data?.date,
+    	link: `/blog/${post.slug}/` || '',
     })),
   });
 }
