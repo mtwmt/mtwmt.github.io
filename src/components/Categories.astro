@@ -1,22 +1,45 @@
 ---
 import { getCollection } from "astro:content";
 
-const posts = await getCollection("blog");
+const posts = await getCollection("blog", (data: any) => !data.data.isDraft);
 
-const categories = [
-  ...new Set(posts.map((post: any) => post.data.categories).flat()),
-]
-  .filter((d) => !!d)
-  .sort();
+const calCategoriesCount = posts
+  .map((post: any) => post.data.categories)
+  .flat()
+  .reduce((acc, category) => {
+    if (acc[category]) {
+      acc[category] += 1;
+    } else {
+      acc[category] = 1;
+    }
+    return acc;
+  }, {});
+
+const categories = Object.fromEntries(
+  Object.entries(calCategoriesCount).sort((a, b) => a[0].localeCompare(b[0]))
+);
+
+
+// const categories = [
+//   ...new Set(posts.map((post: any) => post.data.categories).flat()),
+// ]
+//   .filter((d) => !!d)
+//   .sort();
+
 ---
 
 <ul class="font-dosis text-lg leading-[3rem]">
+  <!-- <li
+    class="h-12 border-b border-primary-700 px-3 text-primary-50 bg-primary-900"
+  >
+    類別：
+  </li> -->
   {
-    categories.map((c) => {
+    Object.entries(categories).map(([key, val]) => {
       return (
         <li class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white">
-          <a class="block w-full" href={`/blog/categories/${c.toLowerCase()}`}>
-            {c}
+          <a class="block w-full" href={`/blog/categories/${key.toLowerCase()}`}>
+            {key} <span class=" text-primary-200">( {val} )</span>
           </a>
         </li>
       );

@@ -102,8 +102,6 @@ import MainLayout from '../layouts/MainLayout.astro';
       new URLSearchParams(window.location.search).get('q')
     );
 
-    console.log('urlParams', urlParams);
-
     fetchSearchResults(urlParams);
     updateDocumentTitle(urlParams);
     updateSearchReadout(urlParams);

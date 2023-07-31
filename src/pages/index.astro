@@ -13,7 +13,7 @@ import AsideLayout from "../layouts/AsideLayout.astro";
 import ContentLayout from "../layouts/ContentLayout.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import PageTitle from "../components/PageTitle.astro";
-
+import FriendshipLink from "../components/FriendshipLink.astro";
 
 const pagination = config.settings.pagination;
 
@@ -48,10 +48,11 @@ export async function getStaticPaths() {
   });
 }
 ---
+
 <MainLayout title={SITE_TITLE}>
   <Header />
   <ContentLayout>
-    <PageTitle title="最新文章"></PageTitle>
+    <PageTitle title="最新文章" />
     {
       currentPosts.map((post) => {
         return (
@@ -59,7 +60,11 @@ export async function getStaticPaths() {
             <div class=" text-right">{<Tags data={post.data} />}</div>
 
             <div class="lg:flex lg:items-center">
-              <FormattedDate date={post.data.update || post.data.date} type="graphics" className="mr-5 text-left" />
+              <FormattedDate
+                date={post.data.update || post.data.date}
+                type="graphics"
+                className="mr-5 text-left"
+              />
               <div>
                 <a href={`/blog/${post.slug}/`}>
                   <p class="text-xl font-semibold leading-loose">
@@ -72,7 +77,9 @@ export async function getStaticPaths() {
                       .trim()
                       .slice(0, 100)}
                   </p>
-                  <p class=" text-xs text-primary-500 dark:text-primary-300">READ MORE</p>
+                  <p class="mt-1 text-xs text-primary-500 dark:text-primary-300">
+                    READ MORE
+                  </p>
                 </a>
               </div>
             </div>
@@ -90,6 +97,7 @@ export async function getStaticPaths() {
     <AsideLayout slot="aside">
       <SearchWidget />
       <Categories />
+      <FriendshipLink />
     </AsideLayout>
   </ContentLayout>
 </MainLayout>

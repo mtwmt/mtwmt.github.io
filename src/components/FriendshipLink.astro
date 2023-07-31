@@ -1,0 +1,47 @@
+---
+const friendlyLinks = [
+  {
+    name: "Miles' Blog",
+    url: 'https://mileschou.github.io/',
+  },
+  {
+    name: "雷N's Blog",
+    url: 'https://tedmax100.github.io/',
+  },
+  {
+    name: '余小章 @ 大內殿堂',
+    url: 'https://dotblogs.com.tw/yc421206/',
+  },
+  {
+    name: '提姆寫程式',
+    url: 'https://hsuchihting.github.io/',
+  },
+  {
+    name: '海綿的Blog',
+    url: 'https://medium.com/@sakurasponge1220',
+  },
+  {
+    name: '蔣幹話軟體',
+    url: 'https://ganhuaking.tw/',
+  },
+];
+---
+
+<ul class="font-dosis text-lg leading-[3rem]">
+  <li
+    class="h-12 border-b border-primary-700 px-3 text-primary-50 bg-primary-900"
+  >
+    友情連結
+  </li>
+  {
+    friendlyLinks.map((f) => {
+      return (
+        <li class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white">
+          <a class="block w-full" href={f.url} target="_blank">
+            {f.name}
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

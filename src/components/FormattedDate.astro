@@ -19,7 +19,7 @@ const { date, className = '', type = 'default'} = Astro.props;
 	<span class="text-6xl font-bold block">{
 		new Date(date).getDate().toString().padStart(2, '0')
 	}</span>
-		<span>{
+		<span class="whitespace-nowrap">{
 			`${date.toLocaleDateString('en-us', {
 				month: 'short',
 			})} ${new Date(date).getFullYear()}`

@@ -1,37 +1,37 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
-import BlogSideBar from '../../components/BlogSideBar.astro';
-import MainLayout from '../../layouts/MainLayout.astro';
-import Header from '../../components/Header.astro';
-import ContentLayout from '../../layouts/ContentLayout.astro';
-import AsideLayout from '../../layouts/AsideLayout.astro';
-import GoTop from '../../components/GoTop.astro';
-import Comments from '../../components/Comments.astro';
-import { SITE_TITLE } from '../../consts';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Tags from '../../components/Tags.astro';
+import { CollectionEntry, getCollection } from "astro:content";
+import BlogSideBar from "../../components/BlogSideBar.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Header from "../../components/Header.astro";
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import AsideLayout from "../../layouts/AsideLayout.astro";
+import GoTop from "../../components/GoTop.astro";
+import Comments from "../../components/Comments.astro";
+import { SITE_TITLE } from "../../consts";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Tags from "../../components/Tags.astro";
 
 // getStaticPaths 生成靜態頁面路徑
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection("blog");
 
-  const categories = [
-    ...new Set(posts.map((post: any) => post.data.categories).flat()),
-  ].filter((d) => !!d);
+  // const categories = [
+  //   ...new Set(posts.map((post: any) => post.data.categories).flat()),
+  // ].filter((d) => !!d);
 
   return posts.map((post: any) => ({
     params: { slug: post.slug },
     props: post,
   }));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { headings, Content } = await post.render();
 const { data } = post;
 ---
 
-<MainLayout title={post.data.title + ' | ' + SITE_TITLE}>
+<MainLayout title={post.data.title + " | " + SITE_TITLE}>
   <Header />
   <ContentLayout>
     <!-- <a onclick="history.back()" >回上頁</a> -->
@@ -40,7 +40,7 @@ const { data } = post;
 
       <h1 class="text-3xl leading-loose text-default">{post.data.title}</h1>
       <div class="mt-2">
-        {<Tags tags={post.data?.tags} />}
+        {(<Tags tags={post.data?.tags} />)}
       </div>
     </div>
     <div class="border-y border-default py-10 px-[4vw]">
@@ -131,8 +131,7 @@ const { data } = post;
 
     a {
       @apply text-primary-700 transition duration-300 ease-in-out
-       hover:text-opacity-70 dark:text-primary-200
-      ;
+       hover:text-opacity-70 dark:text-primary-200;
     }
 
     table {
@@ -146,5 +145,47 @@ const { data } = post;
         @apply py-2 px-2 leading-tight border border-solid border-default;
       }
     }
+
+    .copy-code {
+      @apply absolute top-0 right-0  text-white rounded-sm bg-primary-800 transition duration-300 hover:bg-primary-900 px-2 py-1 text-xs cursor-pointer;
+    }
   }
 </style>
+
+<script>
+  let copyButtonLabel = "Copy Code";
+  let codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+  for (let codeBlock of codeBlocks) {
+    let wrapper = document.createElement("div");
+    wrapper.className = "relative";
+
+    let copyButton = document.createElement("button");
+    copyButton.className = "copy-code";
+    copyButton.innerHTML = copyButtonLabel;
+
+    codeBlock.setAttribute("tabindex", "0");
+    codeBlock.appendChild(copyButton);
+    // wrap codebock with relative parent element
+    codeBlock.parentNode.insertBefore(wrapper, codeBlock);
+    wrapper.appendChild(codeBlock);
+
+    copyButton.addEventListener("click", async () => {
+      await copyCode(codeBlock, copyButton);
+    });
+  }
+
+  async function copyCode(block, button) {
+    let code = block.querySelector("code");
+    let text = code.innerText;
+
+    await navigator.clipboard.writeText(text);
+
+    // visual feedback that task is completed
+    button.innerText = "Code Copied";
+
+    setTimeout(() => {
+      button.innerText = copyButtonLabel;
+    }, 700);
+  }
+</script>

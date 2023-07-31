@@ -6,6 +6,7 @@ tags:
   - life
   - astro
 date: 2023/07/26
+update: 2023/08/01
 ---
 
 ## 又改版了
@@ -38,7 +39,8 @@ date: 2023/07/26
 
 - RSS 問題跑不過
   [Invalid YAML front matter in" - error with Github Pages build process](https://github.com/withastro/astro/issues/6833)
-  (照著上面的解法解不掉，後來把 `rss.xml.js` 這支檔裡的 items 改為空陣列才跑過... 這問題還待解)
+  (照著上面的解法解不掉，後來把 `rss.xml.js` 這支檔裡的 `items` 改為空陣列才跑過... 這問題還待解)
+  - 20230703 終於解掉了，看了[文件](https://www.npmjs.com/package/@astrojs/rss)後，原來是 `items` 裡面有一些key value 是必需要有的，加上後，就成功跑過了
 
 - github 發佈分支問題  [Branch is not allowed to deploy to github-pages](https://github.com/withastro/docs/issues/1376)
 
