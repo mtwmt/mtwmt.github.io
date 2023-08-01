@@ -13,7 +13,7 @@ date: 2021/01/17
 
 照著官網的教學建立: https://angular.tw/guide/creating-libraries
 
-```cmd
+```bash
 ng new angular-library-template --create-application=false
 cd angular-library-template
 ng g library mandy-lib

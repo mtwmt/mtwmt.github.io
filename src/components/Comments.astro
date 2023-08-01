@@ -8,12 +8,6 @@
 <script>
   const currentTheme = localStorage.getItem("theme");
 
-  if (!currentTheme) {
-    const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    currentTheme = prefersDarkMode ? "dark" : "light";
-  }
   const theme = currentTheme === "light" ? "github-light" : "github-dark";
   const script = document.createElement("script");
 
@@ -23,6 +17,5 @@
   script.setAttribute("issue-term", "pathname");
   script.setAttribute("theme", theme);
   script.setAttribute("crossorigin", "anonymous");
-  script.text = ``;
   document.querySelector("#blog-comments").appendChild(script);
 </script>
