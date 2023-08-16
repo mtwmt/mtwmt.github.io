@@ -6,16 +6,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Pagination from '../../components/Pagination.astro';
-import { sortByDate } from '../../lib/sortFunctions';
 
 const posts = (await getCollection('blog')).sort(
 	(a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 
-const pagination = 10;
-const sortedPosts = sortByDate(posts);
-const totalPages: number = Math.ceil(posts.length / pagination);
-const currentPosts = sortedPosts.slice(0, pagination);
+// const pagination = 10;
+// const sortedPosts = sortByDate(posts);
+// const totalPages: number = Math.ceil(posts.length / pagination);
+// const currentPosts = sortedPosts.slice(0, pagination);
 // console.log('getCollection', (await getCollection('blog'))[0].data);
 ---
 
