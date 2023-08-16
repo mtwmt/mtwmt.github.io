@@ -88,7 +88,6 @@ module.exports = {
     },
   },
   plugins: [
-    require("@tailwindcss/typography"),
     require("@tailwindcss/forms")({
       // strategy: "simple", // only generate global styles
       // strategy: "class", // only generate classes

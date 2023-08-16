@@ -1,6 +1,8 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-const { title } = Astro.props;
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+const { title = SITE_TITLE } = Astro.props;
 ---
 
 <html lang="en">

@@ -1,7 +1,4 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
-import ThemeSwitcher from "./ThemeSwitcher.astro";
 import { menu } from "../config/config.json";
 import { Icon } from "astro-icon";
 import Theme from "./Theme.astro";
@@ -31,9 +28,7 @@ import Theme from "./Theme.astro";
     >
   </div>
   <div
-    class="translate-x-0 animation relative z-10 
-    bg-light py-4 text-center
-    lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"
+    class="translate-x-0 animation relative z-10 bg-light py-4 text-center lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"
   >
     <p class="mb-4 lg:mb-0">因為會忘，所以要寫下來</p>
     <nav>
@@ -53,7 +48,7 @@ import Theme from "./Theme.astro";
           })
         }
         <li class="mx-4 text-center">
-        <Theme />
+          <Theme />
         </li>
       </ul>
     </nav>

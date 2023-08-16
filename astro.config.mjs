@@ -1,13 +1,19 @@
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
-
-import tailwind from '@astrojs/tailwind';
+import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://mtwmt.com',
+  site: "https://mtwmt.com",
   integrations: [
+    // expressiveCode({
+    //   frames: {
+    //     title: true,
+    //   },
+    //   shiki: true,
+    //   textMarkers: false,
+    // }),
     mdx(),
     sitemap(),
     tailwind({
@@ -15,9 +21,9 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    syntaxHighlight: 'shiki',
+    syntaxHighlight: "shiki",
     shikiConfig: {
-      theme: 'material-theme-darker',
+      theme: "material-theme-darker",
       // 啟用自動換行，避免出現捲軸
       wrap: true,
     },

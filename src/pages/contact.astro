@@ -13,6 +13,7 @@ import PageTitle from "../components/PageTitle.astro";
   <ContentLayout>
     <PageTitle title="與我聯絡" />
     <div class="border-t border-default py-10 px-[4vw]">
+      <p class="mb-4">如果您有任何想法或外包合作的意向，非常歡迎與我聯絡：）</p>
       <form id="form">
         <div class="md:flex md:space-x-5">
           <div class="mt-3 md:w-1/2">
@@ -109,7 +110,7 @@ import PageTitle from "../components/PageTitle.astro";
     );
 
     const scriptID =
-      "AKfycbyy2l9PM3VTazFI0uEI4RfGWbH_vNclGlepAthmF-p88c7fzVh2hoAEpv2NUqJk0pzD";
+      "AKfycbwgTcyjemSZL73bd7ZZSdd0pCI8M5nHnYetAuPqMpUF7du-9DYfSVBVBaTq28mP7NIY";
     const apiUrl = `https://script.google.com/macros/s/${scriptID}/exec?${params.toString()}`;
 
     try {
@@ -118,6 +119,7 @@ import PageTitle from "../components/PageTitle.astro";
       if (response.ok) {
         const data = await response.json();
         console.log("成功提交表單：", data);
+        alert('您的想法 Mandy 已經收到囉。')
 
         form.reset();
       } else {

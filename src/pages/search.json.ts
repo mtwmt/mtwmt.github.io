@@ -1,5 +1,5 @@
 import { getCollection } from "astro:content";
-import { sortByDate } from "../lib/sortFunctions";
+import { sortByDate } from "../lib/sortByDate";
 
 async function getPosts() {
   
