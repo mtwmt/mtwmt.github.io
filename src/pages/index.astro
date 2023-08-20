@@ -35,18 +35,6 @@ const indexOfLastPost = currentPage * pagination;
 const indexOfFirstPost = indexOfLastPost - pagination;
 const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
 
-export async function getStaticPaths() {
-  const posts = await getSinglePage("blog");
-  const total = Math.ceil(posts.length / config.settings.pagination);
-
-  return Array.from(Array(total).keys()).map((idx: number) => {
-    return {
-      params: {
-        slug: (idx + 1).toString(),
-      },
-    };
-  });
-}
 ---
 
 <MainLayout title={SITE_TITLE}>
@@ -88,11 +76,13 @@ export async function getStaticPaths() {
       })
     }
     <div class="mt-5 border-y border-default">
-      <Pagination
-        section="./blog/page"
-        currentPage={currentPage}
-        totalPages={totalPages}
-      />
+      <!-- <Pagination
+        
+        page={
+          url=""
+        }
+        path="/blog/page"
+      /> -->
     </div>
     <AsideLayout slot="aside">
       <SearchWidget />
