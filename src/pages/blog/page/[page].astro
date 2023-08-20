@@ -1,0 +1,81 @@
+---
+import type { GetStaticPathsOptions, Page } from 'astro';
+import { getCollection } from 'astro:content';
+import Categories from '../../../components/Categories.astro';
+import FormattedDate from '../../../components/FormattedDate.astro';
+import FriendshipLink from '../../../components/FriendshipLink.astro';
+import Header from '../../../components/Header.astro';
+import PageTitle from '../../../components/PageTitle.astro';
+import SearchWidget from '../../../components/SearchWidget.astro';
+import Tags from '../../../components/Tags.astro';
+import { SITE_TITLE } from '../../../consts';
+import AsideLayout from '../../../layouts/AsideLayout.astro';
+import ContentLayout from '../../../layouts/ContentLayout.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { sortByDate } from '../../../lib/sortByDate';
+import Pagination from '../../../components/Pagination.astro';
+
+export async function getStaticPaths(options: GetStaticPathsOptions) {
+  const { paginate } = options;
+  const posts = sortByDate(await getCollection("blog"));
+  return paginate(posts, { pageSize: 10 });
+}
+
+interface Props {
+  page: Page;
+}
+
+const { page } = Astro.props;
+const { data } = page;
+---
+
+<MainLayout title={SITE_TITLE}>
+  <Header />
+  <ContentLayout>
+    <PageTitle title="BLOG LIST" />
+    {
+      data.map((post) => {
+        return (
+          <div class="border-t border-default py-10 px-[4vw]">
+            <div class=" text-right">{<Tags tags={post.data.tags} />}</div>
+
+            <div class="lg:flex lg:items-center">
+              <FormattedDate
+                date={post.data.update || post.data.date}
+                type="graphics"
+                className="mr-5 text-left"
+              />
+              <div>
+                <a href={`/blog/${post.slug}/`}>
+                  <p class="text-xl font-semibold leading-loose">
+                    {post.data.title}
+                  </p>
+                  <p class="text-sm leading-relaxed text-light">
+                    {post.body
+                      .replace(/<[^>]*>/gm, "")
+                      .replace(/[\n#]/g, "")
+                      .trim()
+                      .slice(0, 100)}
+                  </p>
+                  <p class="mt-1 text-xs text-primary-500  dark:text-primary-300">
+                    READ MORE
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        );
+      })
+    }
+
+    <div class="mt-5 border-y border-default">
+      <Pagination {page} path="/blog/page"></Pagination>
+    </div>
+
+    <AsideLayout slot="aside">
+      <SearchWidget />
+      <Categories />
+      <FriendshipLink />
+    </AsideLayout>
+  </ContentLayout>
+</MainLayout>

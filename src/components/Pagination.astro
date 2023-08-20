@@ -1,145 +1,119 @@
 ---
-import Icon from 'astro-icon';
-type Pagination = {
-  section?: string;
-  currentPage?: number;
-  totalPages?: number;
-};
+import Icon from "astro-icon";
 
-const { section, currentPage = 1, totalPages = 1 }: Pagination = Astro.props;
+const { page, path } = Astro.props;
+const { url, currentPage, lastPage } = page;
+const { prev, next } = url;
 
-const setPageItem = (startIndex: number, endIndex: number) => {
-  const concatWithPrevNext = (listOfPage: any[]) => {
-    const prevItem = {
-      type: 'prev',
-      disabled: startIndex === 1,
-    };
-    const nextItem = {
-      type: 'next',
-      disabled: startIndex === endIndex,
-    };
-
-    return [prevItem, ...listOfPage, nextItem];
-  };
-
-  const generatePage = (start: number, end: number) => {
-    const list = [];
-    for (let i = start; i <= end; i++) {
-      list.push({
-        index: i,
-        type: 'page',
-      });
-    }
-    return list;
-  };
-
-  if (endIndex <= 9) {
-    return concatWithPrevNext(generatePage(1, endIndex));
-  } else {
-    const generateRangeItem = (selected: number, last: number) => {
-      let listOfRange = [];
-      const prevFiveItem = {
-        type: 'prev_5',
-      };
-      const nextFiveItem = {
-        type: 'next_5',
-      };
-      const firstPageItem = generatePage(1, 1);
-      const lastPageItem = generatePage(endIndex, endIndex);
-
-      if (selected < 4) {
-        listOfRange = [...generatePage(2, 5), nextFiveItem];
-      } else if (selected < last - 3) {
-        listOfRange = [
-          prevFiveItem,
-          ...generatePage(selected - 2, selected + 2),
-          nextFiveItem,
-        ];
-      } else {
-        listOfRange = [prevFiveItem, ...generatePage(last - 4, last - 1)];
-      }
-      return [...firstPageItem, ...listOfRange, ...lastPageItem];
-    };
-    return concatWithPrevNext(generateRangeItem(startIndex, endIndex));
-  }
-};
-
-let pageRangeItem: any = setPageItem(currentPage, totalPages);
+const defaultCls =
+  "flex h-12 cursor-pointer items-center justify-center border-r border-default hover:bg-border";
+const currectCls =
+  "cursor-default border-primary-800 bg-primary-800 text-white hover:bg-primary-800 hover:opacity-100";
 ---
 
 <nav class="flex">
   {
-    pageRangeItem.map((e: any) => {
-      switch (e.type) {
-        case 'prev':
-          return (
-            !e.disabled && (
-              <a
-                href={`${section}/${currentPage - 1}`}
-                class="flex h-12 w-20 cursor-pointer items-center justify-center border-r border-default hover:bg-border"
-              >
-                <Icon name="teenyicons:left-outline" class="h-4 w-4 " /> PREV
-              </a>
-            )
-          );
-        case 'prev_5':
-          return (
-            currentPage > 5 && (
-              <a
-                href={`${section}/${currentPage - 5}`}
-                class="flex h-12 w-10 cursor-pointer items-center justify-center border-r border-default hover:bg-border"
-              >
-                <Icon
-                  name="teenyicons:double-caret-left-solid"
-                  class="h-4 w-4 "
-                />
-              </a>
-            )
-          );
-        case 'next':
-          return (
-            !e.disabled && (
-              <a
-                href={`${section}/${currentPage + 1}`}
-                class="flex h-12 w-20 cursor-pointer items-center justify-center border-r border-default hover:bg-border"
-              >
-                NEXT
-                <Icon name="teenyicons:right-outline" class="h-4 w-4 " />
-              </a>
-            )
-          );
-        case 'next_5':
-          return (
-            currentPage < totalPages - 5 && (
-              <a
-                href={`${section}/${currentPage + 5}`}
-                class="flex h-12 w-10 cursor-pointer items-center justify-center border-r border-default hover:bg-border"
-              >
-                <Icon
-                  name="teenyicons:double-caret-right-solid"
-                  class="h-4 w-4 "
-                />
-              </a>
-            )
-          );
-        case 'page':
+    !!prev && (
+      <a href={prev} class={`w-20 ${defaultCls}`}>
+        <Icon name="teenyicons:left-outline" class="h-4 w-4" /> PREV
+      </a>
+    )
+  }
+
+  <!-- 1-5 -->
+  {
+    currentPage < 6 &&
+      Array.from({ length: 5 }, (_, i) => i + 1).map((idx: number) => {
+        return (
+          <a
+            href={`${path}/${idx}`}
+            class={`w-10 ${defaultCls}
+              ${currentPage === idx ? `${currectCls}` : ""}`}
+          >
+            {idx}
+          </a>
+        );
+      })
+  }
+
+  <!-- >5  -->
+  {
+    currentPage > 5 && (
+      <>
+        <a
+          href={`${path}/1`}
+          class={`w-10 ${defaultCls}
+              ${currentPage === 1 ? `${currectCls}` : ""}`}
+        >
+          1
+        </a>
+        <a href={`${path}/${currentPage - 5}`} class={`w-10 ${defaultCls}`}>
+          <Icon name="teenyicons:double-caret-left-solid" class="h-4 w-4 " />
+        </a>
+      </>
+    )
+  }
+
+  {
+    currentPage > 5 &&
+      currentPage < lastPage - 4 &&
+      Array.from({ length: lastPage }, (_, index) => index + 1)
+        .filter((page) => Math.abs(currentPage - page) <= 2)
+        .map((idx) => (
+          <a
+            href={`/blog/page/${idx}`}
+            class={`flex h-12 w-10 cursor-pointer items-center justify-center border-r border-default hover:bg-border 
+              ${
+                currentPage === idx
+                  ? "cursor-default border-primary-800 bg-primary-800 text-white hover:bg-primary-800 hover:opacity-100"
+                  : ""
+              }`}
+          >
+            {idx}
+          </a>
+        ))
+  }
+
+  {
+    currentPage < lastPage - 4 && (
+      <>
+        <a href={`${path}/${currentPage + 5}`} class={`w-10 ${defaultCls}`}>
+          <Icon name="teenyicons:double-caret-right-solid" class="h-4 w-4 " />
+        </a>
+        <a
+          href={`${path}/${lastPage}`}
+          class={`w-10 ${defaultCls} 
+              ${currentPage === lastPage ? `${currectCls}` : ""}`}
+        >
+          {lastPage}
+        </a>
+      </>
+    )
+  }
+  <!--  -->
+
+  {
+    currentPage > lastPage - 5 &&
+      Array.from({ length: 5 }, (_, i) => i + (lastPage - 4)).map(
+        (idx: number) => {
           return (
             <a
-              href={`${section}/${e.index}`}
-              class:list={[
-                {
-                  'cursor-default border-primary-800 bg-primary-800 text-white hover:bg-primary-800 hover:opacity-100':
-                    currentPage === e.index,
-                },
-                'flex h-12 w-10 cursor-pointer items-center justify-center border-r border-default hover:bg-border',
-              ]}
+              href={`${path}/${idx}`}
+              class={`w-10 ${defaultCls}
+              ${currentPage === idx ? `${currectCls}` : ""}`}
             >
-              {e.index}
+              {idx}
             </a>
           );
-        default:
-          return;
-      }
-    })
+        }
+      )
+  }
+  {
+    !!next && (
+      <a href={next} class={`w-20 ${defaultCls}`}>
+        NEXT
+        <Icon name="teenyicons:right-outline" class="h-4 w-4" />
+      </a>
+    )
   }
 </nav>
