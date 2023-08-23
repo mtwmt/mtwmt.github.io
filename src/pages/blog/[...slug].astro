@@ -36,10 +36,8 @@ export const findPrevAndNext = (arr: any, curr: any) => {
 export async function getStaticPaths() {
   const posts = sortByDate(await getCollection("blog"));
 
-
   const currentPost = posts.map((post) => {
     const getPrevAndNext = findPrevAndNext(posts, post);
-
 
     return {
       params: { slug: post.slug },
@@ -79,20 +77,30 @@ const { data } = post;
     </div>
 
     <div class="border-b border-default">
-      <div class="flex justify-between">
-        <a
-          href=`/blog/${ prev?.slug }`
-          class={`px-4 flex h-12 cursor-pointer items-center justify-center border-r border-default hover:bg-border`}
-        >
-          <Icon name="teenyicons:left-outline" class="mr-4 h-4 w-4" />{prev?.data?.title}
-        </a>
-        <a
-          href=`/blog/${ next?.slug }`
-          class={`px-4 flex h-12 cursor-pointer items-center justify-center border-l border-default hover:bg-border`}
-        >
-          { next?.data?.title }
-          <Icon name="teenyicons:right-outline" class="ml-4 h-4 w-4" />
-        </a>
+      <div class={`flex ${!!prev?.slug ? "justify-between" : "justify-end"}`}>
+        {
+          !!prev?.slug && (
+            <a
+              href={`/blog/${prev?.slug}`}
+              class={`px-4 flex h-12 cursor-pointer items-center justify-center border-r border-default hover:bg-border`}
+            >
+              <Icon name="teenyicons:left-outline" class="mr-4 h-4 w-4" />
+              {prev?.data?.title}
+            </a>
+          )
+        }
+
+        {
+          !!next?.slug && (
+            <a
+              href={`/blog/${next?.slug}`}
+              class={`px-4 flex h-12 cursor-pointer items-center justify-center border-l border-default hover:bg-border`}
+            >
+              {next?.data?.title}
+              <Icon name="teenyicons:right-outline" class="ml-4 h-4 w-4" />
+            </a>
+          )
+        }
       </div>
     </div>
 
@@ -225,7 +233,7 @@ const { data } = post;
     });
   }
 
-  async function copyCode(block:any, button:any) {
+  async function copyCode(block: any, button: any) {
     let code = block.querySelector("code");
     let text = code.innerText;
 
