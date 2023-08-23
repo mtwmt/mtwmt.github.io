@@ -10,23 +10,52 @@ import Comments from "../../components/Comments.astro";
 import { SITE_TITLE } from "../../consts";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Tags from "../../components/Tags.astro";
+import Icon from "astro-icon";
+import { sortByDate } from "../../lib/sortByDate";
+
+export const findPrevAndNext = (arr: any, curr: any) => {
+  const currentIndex = arr.findIndex((obj: any) => obj.slug === curr.slug);
+
+  if (currentIndex === -1) {
+    return null; // 物件未找到
+  }
+
+  const prevIndex = currentIndex - 1;
+  const nextIndex = currentIndex + 1;
+
+  const prev = prevIndex >= 0 ? arr[prevIndex] : null;
+  const next = nextIndex < arr.length ? arr[nextIndex] : null;
+
+  return {
+    prev,
+    next,
+  };
+};
 
 // getStaticPaths 生成靜態頁面路徑
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = sortByDate(await getCollection("blog"));
 
-  // const categories = [
-  //   ...new Set(posts.map((post: any) => post.data.categories).flat()),
-  // ].filter((d) => !!d);
 
-  return posts.map((post: any) => ({
-    params: { slug: post.slug },
-    props: post,
-  }));
+  const currentPost = posts.map((post) => {
+    const getPrevAndNext = findPrevAndNext(posts, post);
+
+
+    return {
+      params: { slug: post.slug },
+      props: {
+        post: post,
+        next: getPrevAndNext?.prev,
+        prev: getPrevAndNext?.next,
+      },
+    };
+  });
+
+  return currentPost;
 }
-type Props = CollectionEntry<"blog">;
+// type Props = CollectionEntry<"blog">;
 
-const post = Astro.props;
+const { post, next, prev } = Astro.props;
 const { headings, Content } = await post.render();
 const { data } = post;
 ---
@@ -47,6 +76,27 @@ const { data } = post;
       <div class="post">
         <Content />
       </div>
+    </div>
+
+    <div class="border-b border-default">
+      <div class="flex justify-between">
+        <a
+          href=`/blog/${ prev?.slug }`
+          class={`px-4 flex h-12 cursor-pointer items-center justify-center border-r border-default hover:bg-border`}
+        >
+          <Icon name="teenyicons:left-outline" class="mr-4 h-4 w-4" />{prev?.data?.title}
+        </a>
+        <a
+          href=`/blog/${ next?.slug }`
+          class={`px-4 flex h-12 cursor-pointer items-center justify-center border-l border-default hover:bg-border`}
+        >
+          { next?.data?.title }
+          <Icon name="teenyicons:right-outline" class="ml-4 h-4 w-4" />
+        </a>
+      </div>
+    </div>
+
+    <div class="py-[3.35rem] px-[4vw]">
       <Comments />
     </div>
 
@@ -154,7 +204,7 @@ const { data } = post;
 
 <script>
   let copyButtonLabel = "Copy Code";
-  let codeBlocks = Array.from(document.querySelectorAll("pre"));
+  let codeBlocks = Array.from(document.querySelectorAll("pre")) as any;
 
   for (let codeBlock of codeBlocks) {
     let wrapper = document.createElement("div");
@@ -175,7 +225,7 @@ const { data } = post;
     });
   }
 
-  async function copyCode(block, button) {
+  async function copyCode(block:any, button:any) {
     let code = block.querySelector("code");
     let text = code.innerText;
 
