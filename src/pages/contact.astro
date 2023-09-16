@@ -89,7 +89,7 @@ import PageTitle from "../components/PageTitle.astro";
   const nameError = document.getElementById("nameError") as HTMLDivElement;
   const emailError = document.getElementById("emailError") as HTMLDivElement;
   const messageError = document.getElementById(
-    "messageError"
+    "messageError",
   ) as HTMLDivElement;
 
   form.addEventListener("submit", async (event) => {
@@ -98,35 +98,23 @@ import PageTitle from "../components/PageTitle.astro";
     // 獲取表單數據
     const formData = new FormData(form);
 
-    const params = new URLSearchParams();
-
-    formData.forEach((value, key) => {
-      params.append(key, value.toString());
-    });
-
-    params.append(
-      "time",
-      new Date().toLocaleString("en", { hour12: false }).toString()
-    );
-
     const scriptID =
-      "AKfycbwgTcyjemSZL73bd7ZZSdd0pCI8M5nHnYetAuPqMpUF7du-9DYfSVBVBaTq28mP7NIY";
-    const apiUrl = `https://script.google.com/macros/s/${scriptID}/exec?${params.toString()}`;
+      "AKfycbxzN2G_y_bYEziNSQO7QOlsnEILGTuGC7OTzzsoePl2YC_JfK-5MWslfPpSMXepdJIR";
+    const apiUrl = `https://script.google.com/macros/s/${scriptID}/exec`;
 
-    try {
-      const response = await fetch(apiUrl);
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log("成功提交表單：", data);
-        alert('您的想法 Mandy 已經收到囉。')
-
-        form.reset();
-      } else {
-        console.error("提交表單失敗");
-      }
-    } catch (error) {
-      console.error("發送請求時出現錯誤：", error);
-    }
+    await fetch(apiUrl, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        alert('您的想法 Mandy 已經收到囉：）')
+      })
+      .catch((error) => {
+        console.error("發送請求時出現錯誤：", error);
+      });
   });
 </script>
