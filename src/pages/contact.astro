@@ -111,7 +111,8 @@ import PageTitle from "../components/PageTitle.astro";
         return res.json();
       })
       .then((data) => {
-        alert('您的想法 Mandy 已經收到囉：）')
+        alert('您的想法 Mandy 已經收到囉：）');
+        form.reset();
       })
       .catch((error) => {
         console.error("發送請求時出現錯誤：", error);
