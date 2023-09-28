@@ -73,7 +73,6 @@ import MainLayout from '../layouts/MainLayout.astro';
     if (!SEARCH_DATA) {
       try {
         const res = await fetch('/search.json');
-
         if (!res.ok) {
           throw new Error('Something went wrong…please try again');
         }

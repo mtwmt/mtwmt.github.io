@@ -69,7 +69,7 @@ git   Initialize a new git repository? (optional)
       ● Yes  ○ No
 ```
 
-安裝完成後切換到專業資料夾
+安裝完成後切換到專案資料夾
 
 ### 開始執行
 

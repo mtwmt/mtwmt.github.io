@@ -1,6 +1,6 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
-import BlogSideBar from "../../components/BlogSideBar.astro";
+import { getEntry, getEntries, CollectionEntry, getCollection, getEntryBySlug } from "astro:content";
+import Toc from "../../components/Toc.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import Header from "../../components/Header.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
@@ -56,8 +56,8 @@ export async function getStaticPaths() {
 const { post, next, prev } = Astro.props;
 const { headings, Content } = await post.render();
 const { data } = post;
----
 
+---
 <MainLayout title={post.data.title + " | " + SITE_TITLE}>
   <Header />
   <ContentLayout>
@@ -109,7 +109,7 @@ const { data } = post;
     </div>
 
     <AsideLayout slot="aside">
-      <BlogSideBar {headings} />
+      <Toc {headings} />
     </AsideLayout>
   </ContentLayout>
 </MainLayout>
@@ -130,11 +130,11 @@ const { data } = post;
     }
 
     h2 {
-      @apply mt-11 text-2xl font-bold text-default;
+      @apply mt-10 text-2xl font-bold text-default;
     }
 
     h3 {
-      @apply mt-11 mb-2 text-xl font-bold text-default;
+      @apply mt-10 mb-2 text-xl font-bold text-default;
     }
 
     p {
@@ -184,7 +184,7 @@ const { data } = post;
     }
 
     :not(pre) > code {
-      @apply px-1 bg-red-50 text-red-700 rounded break-words;
+      @apply mx-1 px-1 bg-orange-50 text-orange-700 rounded break-words dark:bg-orange-900 dark:text-orange-50;
     }
 
     a {
@@ -211,6 +211,15 @@ const { data } = post;
 </style>
 
 <script>
+  const post = document.querySelectorAll('.post');
+
+  post.forEach(el => {
+    const links = el.querySelectorAll('a');
+    links.forEach(link => {
+      link.setAttribute('target', '_blank');
+    });
+  });
+
   let copyButtonLabel = "Copy Code";
   let codeBlocks = Array.from(document.querySelectorAll("pre")) as any;
 

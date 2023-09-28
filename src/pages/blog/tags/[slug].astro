@@ -49,7 +49,7 @@ const { posts, tag } = Astro.props as any;
       {
         posts.map((p: any) => {
           return (
-            <li class="py-4 px-[4vw]">
+            <li class="py-2 px-[4vw]">
               <a href={`/blog/${p.slug}`}>
                 <FormattedDate
                   date={p.data.update || p.data.date}
