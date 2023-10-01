@@ -11,7 +11,7 @@ update: 2021/10/20
 20211020 更新
 
 排了三個月的顯卡終於到貨啦!!!
-<img src="/assets/images/life/newcomputer/014.png" width="300px"/>
+<img src="assets/images/life/newcomputer/014.png" width="300px"/>
 
 20211015 收到通知
 <img src="/assets/images/life/newcomputer/015.png" width="300px"/>

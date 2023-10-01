@@ -17,7 +17,12 @@ import Pagination from '../../../components/Pagination.astro';
 
 export async function getStaticPaths(options: GetStaticPathsOptions) {
   const { paginate } = options;
-  const posts = sortByDate(await getCollection("blog"));
+  const posts = sortByDate((await getCollection("blog")))
+  .filter(p => {
+    const regex = /ironman/i
+    return !p.data.tags.some((tag:string) => regex.test(tag));
+  })
+
   return paginate(posts, { pageSize: 10 });
 }
 

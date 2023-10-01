@@ -1,0 +1,59 @@
+---
+import Icon from "astro-icon";
+import Header from "../../../components/Header.astro";
+import PageTitle from "../../../components/PageTitle.astro";
+import SearchWidget from "../../../components/SearchWidget.astro";
+import { SITE_TITLE } from "../../../consts";
+import AsideLayout from "../../../layouts/AsideLayout.astro";
+import ContentLayout from "../../../layouts/ContentLayout.astro";
+import MainLayout from "../../../layouts/MainLayout.astro";
+
+const list = [
+  {
+    year: 2023,
+    topic: "從零開始學習 Astro, 打造個人Blog (部落格)",
+    topicUrl: "tags/ironman2023",
+  },
+  {
+    year: 2021,
+    topic: "Angular 常見問題大小事",
+    topicUrl: "tags/ironman2021",
+  },
+];
+---
+<MainLayout title={SITE_TITLE}>
+  <Header />
+  <ContentLayout>
+    <PageTitle title="鐵人賽系列文" />
+    <div class="border-t border-default py-10 px-[4vw]">
+      {
+        list.map((item, index) => {
+          return (
+            <div class="relative flex pb-12">
+              {list.length - 1 !== index && (
+                <div class="absolute inset-0 flex h-full w-10 items-center justify-center">
+                  <div class="pointer-events-none h-full w-1 bg-light" />
+                </div>
+              )}
+
+              <div class="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary-500 text-white">
+                <Icon name="grommet-icons:info" class="h-6 w-6" />
+              </div>
+              <div class="flex-grow pl-4">
+                <h2 class="title-font mb-1 font-medium tracking-wider">
+                  {item.year}
+                </h2>
+                <a href={item.topicUrl} class="leading-relaxed">
+                  {item.topic}
+                </a>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+    <AsideLayout slot="aside">
+      <SearchWidget />
+    </AsideLayout>
+  </ContentLayout>
+</MainLayout>

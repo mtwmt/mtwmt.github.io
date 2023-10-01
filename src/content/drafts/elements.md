@@ -1,7 +1,11 @@
 ---
-title: 'Elements'
-date: 2023/07/02
+title: "Elements"
+date: 2023/10/01
+tags: 
+- test
 ---
+
+`code`
 
 # Heading 1
 
@@ -123,8 +127,8 @@ img {
 #### JavaScript
 
 ```javascript
-window.addEventListener('load', (e) => {
-  document.querySelector('.preloader').style.display = 'none';
+window.addEventListener("load", (e) => {
+  document.querySelector(".preloader").style.display = "none";
 });
 ```
 
@@ -143,5 +147,4 @@ window.addEventListener('load', (e) => {
 import HeaderLink from '../../components/HeaderLink.astro';
 
 <HeaderLink href="#" onclick="alert('clicked!')">
-  Embedded component in MDX
-</HeaderLink>
+  Embedded component in M
