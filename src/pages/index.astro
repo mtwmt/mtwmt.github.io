@@ -1,5 +1,5 @@
 ---
-import { project, ironman } from "../config/config.json";
+import { ironman } from "../config/config.json";
 import { getCollection } from "astro:content";
 import { sortByDate } from "../lib/sortByDate";
 import config from "../config/config.json";
@@ -28,6 +28,41 @@ const posts = sortByDate(await getCollection("blog"))
 .slice(0,5);
 
 const { slug } = Astro.params;
+
+
+const project = [
+  {
+    site: 'IT 鐵人賽歷屆主題搜尋',
+    url: '//mtwmt.com/ironman/',
+    year: '2022',
+    skill: [
+      {
+        name:'Angular',
+        style: 'bg-red-400/10 text-red-700 dark:text-red-400'
+      },
+      {
+        name:'Tailwindcss',
+        style: 'bg-sky-400/10 text-sky-700 dark:text-sky-400'
+      }
+    ]
+  },
+  {
+    site: '報價單產生器',
+    url: '//mtwmt.com/price-generator/',
+    year: '2022',
+    skill: [
+      {
+        name:'jQuery',
+        style: 'bg-blue-400/10 text-blue-700 dark:text-blue-400'
+      },
+      {
+        name:'Bootstrap',
+        style: 'bg-indigo-400/10 text-indigo-700 dark:text-indigo-400'
+      }
+    ]
+  },
+];
+
 
 ---
 <MainLayout title={SITE_TITLE}>
