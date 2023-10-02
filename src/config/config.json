@@ -18,5 +18,49 @@
       "href": "/contact",
       "icon": "ic:outline-mode-comment"
     }
+  ],
+  "project": [
+    {
+      "site": "IT 鐵人賽歷屆主題搜尋",
+      "url": "//mtwmt.com/ironman/",
+      "year": "2022",
+      "skill": [
+        {
+          "name": "Angular",
+          "style": "bg-red-400/10 text-red-700 dark:text-red-400"
+        },
+        {
+          "name": "Tailwindcss",
+          "style": "bg-sky-400/10 text-sky-700 dark:text-sky-400"
+        }
+      ]
+    },
+    {
+      "site": "報價單產生器",
+      "url": "//mtwmt.com/price-generator/",
+      "year": "2022",
+      "skill": [
+        {
+          "name": "jQuery",
+          "style": "bg-blue-400/10 text-blue-700 dark:text-blue-400"
+        },
+        {
+          "name": "Bootstrap",
+          "style": "bg-indigo-400/10 text-indigo-700 dark:text-indigo-400"
+        }
+      ]
+    }
+  ],
+  "ironman": [
+    {
+      "year": 2023,
+      "topic": "從零開始學習 Astro, 打造個人Blog (部落格)",
+      "topicUrl": "blog/tags/ironman2023"
+    },
+    {
+      "year": 2021,
+      "topic": "Angular 常見問題大小事",
+      "topicUrl": "blog/tags/ironman2021"
+    }
   ]
 }
