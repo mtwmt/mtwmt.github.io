@@ -14,11 +14,6 @@
       "icon": "ic:outline-format-bold"
     },
     {
-      "name": "鐵人賽",
-      "href": "/blog/tags",
-      "icon": "ic:outline-mode-edit-outline"
-    },
-    {
       "name": "submit",
       "href": "/contact",
       "icon": "ic:outline-mode-comment"
