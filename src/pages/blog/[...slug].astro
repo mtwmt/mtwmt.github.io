@@ -58,7 +58,14 @@ const { headings, Content } = await post.render();
 const { data } = post;
 
 ---
-<MainLayout title={post.data.title + " | " + SITE_TITLE}>
+<MainLayout title={post.data.title + " | " + SITE_TITLE} description={
+  post.body
+  .replace(/<[^>]*>/gm, "")
+  .replace(/[\n#]/g, "")
+  .replace(/\s/g, "")
+  .trim()
+  .slice(0, 100)
+}>
   <Header />
   <ContentLayout>
     <!-- <a onclick="history.back()" >回上頁</a> -->

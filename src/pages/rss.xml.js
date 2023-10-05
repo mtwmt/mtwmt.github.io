@@ -12,7 +12,13 @@ export async function get(context) {
       // ...post.data,
       title: post.data?.title || "",
       pubDate: post.data?.update || post.data?.date,
-      description: "",
+      description: post.body
+        .replace(/<[^>]*>/gm, "")
+        .replace(/[\n#]/g, "")
+        .replace(/\s/g, "")
+        .trim()
+        .slice(0, 100),
+      content: sanitizeHtml(parser.render(post.body)),
       link: `/blog/${post.slug}/` || "",
     })),
   });
