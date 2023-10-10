@@ -18,7 +18,7 @@ export async function get(context) {
         .replace(/\s/g, "")
         .trim()
         .slice(0, 100),
-      content: sanitizeHtml(parser.render(post.body)),
+      content: parser.render(post.body),
       link: `/blog/${post.slug}/` || "",
     })),
   });
