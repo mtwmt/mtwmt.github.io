@@ -14,6 +14,7 @@ import ContentLayout from '../../../layouts/ContentLayout.astro';
 import MainLayout from '../../../layouts/MainLayout.astro';
 import { sortByDate } from '../../../lib/sortByDate';
 import Pagination from '../../../components/Pagination.astro';
+import PostPreview from '../../../components/PostPreview.astro';
 
 export async function getStaticPaths(options: GetStaticPathsOptions) {
   const { paginate } = options;
@@ -32,6 +33,7 @@ interface Props {
 
 const { page } = Astro.props;
 const { data } = page;
+console.log('213',data[0])
 ---
 
 <MainLayout title={SITE_TITLE}>
@@ -48,9 +50,10 @@ const { data } = page;
               <FormattedDate
                 date={post.data.update || post.data.date}
                 type="graphics"
-                className="mr-5 text-left"
+                className="inline-block mr-5 text-left"
               />
               <div>
+                <PostPreview className="text-light" content={post.body} />
                 <a href={`/blog/${post.slug}/`}>
                   <p class="text-xl font-semibold leading-loose">
                     {post.data.title}

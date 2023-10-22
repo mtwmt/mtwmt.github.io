@@ -89,6 +89,7 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/forms")({
+      strategy: "base",
       // strategy: "simple", // only generate global styles
       // strategy: "class", // only generate classes
     }),

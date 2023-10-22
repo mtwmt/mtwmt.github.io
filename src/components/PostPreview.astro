@@ -1,0 +1,11 @@
+---
+import { getReadingTime } from '../lib/readingtime.js'
+
+export interface Props {
+  content: any;
+  className?: string;
+}
+const { content, className = '' } = Astro.props;
+
+---
+<p class=`${className}`>{getReadingTime(content)} minutes to read</p>
