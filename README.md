@@ -58,6 +58,5 @@ All blog posts are stored in `src/content/blog` directory.
 **Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
 **Styling** - [TailwindCSS](https://tailwindcss.com/)  
 **Code Formatting** - [Prettier](https://prettier.io/)  
-**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  
 **Linting** - [ESLint](https://eslint.org)
 
