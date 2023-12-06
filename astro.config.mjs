@@ -6,14 +6,17 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://mtwmt.com",
-  markdown: {
-    syntaxHighlight: "shiki",
-    shikiConfig: {
-      theme: "material-theme-darker",
-      // 啟用自動換行，避免出現捲軸
-      wrap: true,
-    },
+  prefetch: true,
+  experimental: {
+    contentCollectionCache: true,
   },
+  // markdown: {
+  //   shikiConfig: {
+  //     theme: "material-theme-darker",
+  //     // 啟用自動換行，避免出現捲軸
+  //     wrap: true,
+  //   },
+  // },
   integrations: [
     // expressiveCode({
     //   frames: {

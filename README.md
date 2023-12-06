@@ -59,4 +59,3 @@ All blog posts are stored in `src/content/blog` directory.
 **Styling** - [TailwindCSS](https://tailwindcss.com/)  
 **Code Formatting** - [Prettier](https://prettier.io/)  
 **Linting** - [ESLint](https://eslint.org)
-
