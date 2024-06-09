@@ -10,9 +10,10 @@ import Comments from "../../components/Comments.astro";
 import { SITE_TITLE } from "../../consts";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Tags from "../../components/Tags.astro";
-import Icon from "astro-icon";
+import { Icon } from "astro-icon/components";
 import { sortByDate } from "../../lib/sortByDate";
 import PostPreview from "../../components/PostPreview.astro";
+
 
 export const findPrevAndNext = (arr: any, curr: any) => {
   const currentIndex = arr.findIndex((obj: any) => obj.slug === curr.slug);
@@ -58,9 +59,7 @@ const { post, next, prev } = Astro.props;
 const { headings, Content } = await post.render();
 const { data } = post;
 
-console.log('sad', post.body)
 ---
-
 <MainLayout title={post.data.title + " | " + SITE_TITLE} description={
   post.body
   .replace(/<[^>]*>/gm, "")
