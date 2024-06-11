@@ -27,13 +27,13 @@ import {Icon} from "astro-icon/components";
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-    const searchTerm = DOMPurify.sanitize(formData.get("search")?.toString());
+    const searchTerm = DOMPurify.sanitize(formData.get("search")?.toString() as string);
     if (!searchTerm || searchTerm.length === 0) return;
     const url = new URL("/search", window.location.origin);
-
     url.searchParams.set("q", searchTerm);
 
-    window.location.assign(url.toString());
+
+    // window.location.assign(url.toString());
   });
 
 </script>
