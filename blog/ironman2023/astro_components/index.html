@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.14.1"><!-- Canonical URL --><link rel="canonical" href="https://mtwmt.com/blog/ironman2023/astro_components/"><!-- Primary Meta Tags --><title>認識 Astro Components (組件) | Mandy&#39;s Website</title><meta name="title" content="認識 Astro Components (組件) | Mandy's Website"><meta name="description" content="今天，我們將進一步深入了解Astro的組件。什麼是Astro組件？Astro組件是Astro專案的基本構建塊，它們是僅支持HTML的模板組件，沒有客戶端運行時。您可以通過文件擴展名`.astro`識別"><meta name="robots" content="index, follow"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.com/blog/ironman2023/astro_components/"><meta property="og:title" content="認識 Astro Components (組件) | Mandy's Website"><meta property="og:description" content="今天，我們將進一步深入了解Astro的組件。什麼是Astro組件？Astro組件是Astro專案的基本構建塊，它們是僅支持HTML的模板組件，沒有客戶端運行時。您可以通過文件擴展名`.astro`識別"><meta property="og:image" content="https://mtwmt.com/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://mtwmt.com/blog/ironman2023/astro_components/"><meta property="twitter:title" content="認識 Astro Components (組件) | Mandy's Website"><meta property="twitter:description" content="今天，我們將進一步深入了解Astro的組件。什麼是Astro組件？Astro組件是Astro專案的基本構建塊，它們是僅支持HTML的模板組件，沒有客戶端運行時。您可以通過文件擴展名`.astro`識別"><meta property="twitter:image" content="https://mtwmt.com/placeholder-social.jpg"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BBA8qn6T.js"></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-N8NEZBWT3S"></script><script type="module">window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a("js",new Date);a("config","G-N8NEZBWT3S");</script><link rel="stylesheet" href="/_astro/about.BnbaqN3h.css"><script type="module" src="/_astro/page.CPvyyiTs.js"></script></head> <body class="bg-default text-default"> <div class="relative mx-auto 
+      before:fixed before:right-0 before:top-0 before:block before:w-80 
+      lg:before:h-screen before:bg-primary-900 before:transition 
+      lg:max-w-7xl lg:before:w-1/2">  <input id="nav-toggle" type="checkbox" class="hidden nav-toggle"> <header class="bg-primary-900 lg:flex lg:h-[180px] lg:flex-row-reverse lg:justify-between"> <div class="translate-x-0 animation relative w-full font-dosis lg:flex lg:h-full lg:w-80 lg:items-center lg:justify-center lg:bg-primary-500 lg:transition-none"> <h2 class="w-40 bg-primary-500 text-center text-2xl leading-loose text-white lg:w-auto lg:text-4xl"> <a href="/">Mandy's Web</a> </h2> <label id="hamburger" for="nav-toggle" title="MENU" class="absolute right-5 top-1/2 h-7 w-8 -translate-y-1/2 cursor-pointer lg:hidden"> <span class="animation absolute top-1/2 h-[2px] w-full -translate-y-1/2 bg-white before:absolute before:-top-2.5 before:h-[2px] before:w-full before:bg-white after:absolute after:top-2.5 after:h-[2px] after:w-full after:bg-white lg:transition-none"></span></label> </div> <div class="translate-x-0 animation relative z-10 bg-light py-4 text-center lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"> <p class="mb-4 lg:mb-0">因為會忘，所以要寫下來</p> <nav> <ul class="flex justify-center font-dosis uppercase lg:justify-start"> <li class="mx-4 text-center "> <a href="/about"> <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-6 w-6 " data-icon="ic:outline-question-mark">  <symbol id="ai:ic:outline-question-mark"><path fill="currentColor" d="M11.07 12.85c.77-1.39 2.25-2.21 3.11-3.44c.91-1.29.4-3.7-2.18-3.7c-1.69 0-2.52 1.28-2.87 2.34L6.54 6.96C7.25 4.83 9.18 3 11.99 3c2.35 0 3.96 1.07 4.78 2.41c.7 1.15 1.11 3.3.03 4.9c-1.2 1.77-2.35 2.31-2.97 3.45c-.25.46-.35.76-.35 2.24h-2.89c-.01-.78-.13-2.05.48-3.15M14 20c0 1.1-.9 2-2 2s-2-.9-2-2s.9-2 2-2s2 .9 2 2"/></symbol><use  xlink:href="#ai:ic:outline-question-mark"></use>  </svg> </span> about </a> </li><li class="mx-4 text-center "> <a href="/blog/page/1"> <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-6 w-6 " data-icon="ic:outline-format-bold">  <symbol id="ai:ic:outline-format-bold"><path fill="currentColor" d="M15.6 10.79c.97-.67 1.65-1.77 1.65-2.79c0-2.26-1.75-4-4-4H7v14h7.04c2.09 0 3.71-1.7 3.71-3.79c0-1.52-.86-2.82-2.15-3.42M10 6.5h3c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-3zm3.5 9H10v-3h3.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5"/></symbol><use  xlink:href="#ai:ic:outline-format-bold"></use>  </svg> </span> blog </a> </li><li class="mx-4 text-center "> <a href="/contact"> <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-6 w-6 " data-icon="ic:outline-mode-comment">  <symbol id="ai:ic:outline-mode-comment"><path fill="currentColor" d="M20 17.17L18.83 16H4V4h16zM20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2"/></symbol><use  xlink:href="#ai:ic:outline-mode-comment"></use>  </svg> </span> submit </a> </li> <li class="mx-4 text-center"> <div class="inline-flex undefined"> <input class="absolute opacity-0" id="theme-switcher" data-theme-switcher type="checkbox"> <label class="relative" for="theme-switcher"> <span class="cursor-pointer flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-6 w-6 hidden dark:block" data-icon="ic:outline-dark-mode">  <symbol id="ai:ic:outline-dark-mode"><path fill="currentColor" d="M9.37 5.51A7.4 7.4 0 0 0 9.1 7.5c0 4.08 3.32 7.4 7.4 7.4c.68 0 1.35-.09 1.99-.27A7.01 7.01 0 0 1 12 19c-3.86 0-7-3.14-7-7c0-2.93 1.81-5.45 4.37-6.49M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26a5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1"/></symbol><use  xlink:href="#ai:ic:outline-dark-mode"></use>  </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-6 w-6 block dark:hidden" data-icon="ic:outline-light-mode">  <symbol id="ai:ic:outline-light-mode"><path fill="currentColor" d="M12 9c1.65 0 3 1.35 3 3s-1.35 3-3 3s-3-1.35-3-3s1.35-3 3-3m0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5s5-2.24 5-5s-2.24-5-5-5M2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1m18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1M11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1m0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1M5.99 4.58a.996.996 0 0 0-1.41 0a.996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41zm12.37 12.37a.996.996 0 0 0-1.41 0a.996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41zm1.06-10.96a.996.996 0 0 0 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0zM7.05 18.36a.996.996 0 0 0 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0z"/></symbol><use  xlink:href="#ai:ic:outline-light-mode"></use>  </svg> </span>
+mode
+</label> </div> <script type="module">const a=()=>{const e=(()=>typeof localStorage<"u"&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":!!window.matchMedia("(prefers-color-scheme: dark)").matches),c=document.querySelectorAll("[data-theme-switcher]");e()&&document.documentElement.classList.add("dark"),[].forEach.call(c,function(t){t.checked=!!e(),t.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),localStorage.setItem("theme",document.documentElement.classList.contains("dark")?"dark":"light")})})};document.addEventListener("astro:after-swap",a);a();</script> </li> </ul> </nav> </div> </header>  <main class="relative z-[1] block min-h-full overflow-hidden
+  before:fixed before:top-0 before:left-1/2 before:ml-[640px] before:block before:h-full before:min-h-screen before:w-[1px] 
+  before:bg-primary-500 after:fixed after:top-0 after:right-1/2 
+  after:mr-[640px] after:block after:h-full after:min-h-screen after:w-[1px] after:bg-border lg:flex"> <article class=" min-h-[calc(100vh-180px)]  animation relative z-[1] bg-default lg:float-left lg:w-[calc(100%-20rem)] lg:transition-none">   <div class="py-[3.35rem] px-[4vw]"> <time>Sep 6, 2023</time><!-- <div class=` ${className}`>
+	<span class="text-6xl font-bold block">{
+		new Date(date).getDate().toString().padStart(2, '0')
+	}</span>
+	<span>{
+		`${date.toLocaleDateString('en-us', {
+			month: 'short',
+		})} ${new Date(date).getFullYear()}`
+	}</span>
+</div>  --> <h1 class="text-3xl leading-loose text-default">認識 Astro Components (組件)</h1> <p class>4 minutes to read</p> <div class="mt-2"> <a href="/blog/tags/astro" class="px-2 py-1 mr-2 text-xs font-normal border rounded-md border-primary-100 text-primary-500 bg-primary-50
+        dark:border-primary-400 dark:bg-primary-500 dark:text-primary-50
+        ">Astro</a><a href="/blog/tags/ironman2023" class="px-2 py-1 mr-2 text-xs font-normal border rounded-md border-primary-100 text-primary-500 bg-primary-50
+        dark:border-primary-400 dark:bg-primary-500 dark:text-primary-50
+        ">ironman2023</a> </div> </div> <div class="border-y border-default py-10 px-[4vw]"> <div class="post"> <p>今天，我們將進一步深入了解 Astro 的組件。</p>
+<h2 id="什麼是-astro-組件">什麼是 Astro 組件？</h2>
+<p>Astro 組件是 Astro 專案的基本構建塊，它們是僅支持 HTML 的模板組件，沒有客戶端運行時。您可以通過文件擴展名 <code>.astro</code> 識別 Astro 組件。</p>
+<h3 id="特性">特性：</h3>
+<ul>
+<li>非常靈活，可包含可重複使用的 UI 元素。</li>
+<li>可以只包含一小段 HTML 代碼，例如一系列常見的 <code>&#x3C;meta></code> 標籤，用於方便地處理 SEO。</li>
+<li>甚至可以包含整個頁面佈局。
+最重要的是，Astro 組件不會在客戶端渲染，而是在建置時或使用伺服器端渲染（SSR）時生成 HTML。
+這意味著您可以在組件前端程式碼中包含 JavaScript 代碼，但所有這些代碼都將在最終傳送到用戶瀏覽器的頁面中被剝離。這帶來一個更快的網站，預設情況下不添加任何 JavaScript 脚印。</li>
+</ul>
+<p>當 Astro 組件需要客戶端交互性時，您可以添加標准的 HTML <code>&#x3C;script></code> 標籤或 <code>UI</code> 框架組件。</p>
+<h2 id="component-結構">Component 結構</h2>
+<p>一個 Astro 組件由兩個主要部分組成：<code>組件腳本（Component Script）</code>和<code>組件模板（Component Template）</code>。這兩個部分分別扮演著不同的角色，但合在一起提供了一個易於使用且表達力強大的框架，用於處理您可能想要構建的任何內容。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#6A737D">// Component script (JavaScript)</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- Component Template (HTML + JS + CSS ) --></span></span>
+<span class="line"></span></code></pre>
+<h3 id="component-script-組件腳本">Component script (組件腳本)</h3>
+<p>Astro 使用代碼區塊 <code>---</code> 來識別 Astro 組件中的組件腳本。
+如果使用過 Markdown，您可能已經對類似概念的 <code>frontmatter</code> 比較熟悉。
+Astro 的組件腳本就是直接受到這個概念的啟發。這個部分可以用於以下目的：</p>
+<ul>
+<li>導入其他 Astro 組件</li>
+<li>導入其他框架組件，比如 React</li>
+<li>導入數據，比如一個 JSON 文件</li>
+<li>從 API 或數據庫中獲取內容</li>
+<li>建立變數，將在模板(Template)中引用</li>
+</ul>
+<h3 id="component-template-元件樣板">Component Template (元件樣板)</h3>
+<p>組件模板位於代碼區塊之下，決定了組件的 HTML 輸出。在組件模板中，您可以編寫純 HTML，並支持以下功能：</p>
+<ul>
+<li>JavaScript 表達式</li>
+<li>Astro 的 <code>&#x3C;style></code> 和 <code>&#x3C;script></code> 標籤</li>
+<li>導入的組件</li>
+<li>特殊的 <code>Astro</code> 指令</li>
+<li>在組件腳本中定義的數據和變數可以在組件模板中使用，生成動態創建的 HTML。</li>
+</ul>
+<hr>
+<h2 id="建立一個-button-元件">建立一個 Button 元件</h2>
+<p>讓我們看一個實際的例子，如何建立一個 Astro 組件。</p>
+<ul>
+<li>在 <code>src/components</code> 裡建立一個 <code>Button.astro</code> 檔案</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">title</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Astro.props;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">>{title}&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span></code></pre>
+<ul>
+<li>現在，我們可以在 <code>src/pages</code> 中引用剛剛建立的 Button 組件。</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Button </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../components/Button.astro"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">Button</span><span style="color:#B392F0"> title</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Button 1"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">Button</span><span style="color:#B392F0"> title</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Button 2"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">Button</span><span style="color:#B392F0"> title</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Button 3"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<hr>
+<h2 id="component-props">Component Props</h2>
+<p>在 Astro 組件中，<code>props</code> 用來作為屬性傳遞。這讓您可以輕鬆地向組件傳遞<code>數據</code>和<code>參數</code>，以自訂其行為。</p>
+<hr>
+<h2 id="slots">Slots</h2>
+<p><code>&#x3C;slot></code> 元素是外部 HTML 內容的佔位符，允許您將子元素從其他檔案注入到組件模板中。
+預設情況下，傳遞給組件的所有子元素都將在 <code>&#x3C;slot></code> 中呈現。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Header </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./Header.astro"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Logo </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./Logo.astro"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Footer </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./Footer.astro"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">title</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Astro.props;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"content-wrapper"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">Header</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">Logo</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>{title}&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#6A737D">  &#x3C;!-- 子元素將在這裡渲染 --></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">Footer</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Wrapper </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../components/Wrapper.astro"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">Wrapper</span><span style="color:#B392F0"> title</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Fred's Page"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>All about Fred&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Here is some stuff about Fred.&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#79B8FF">Wrapper</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>這種模式是 Astro 佈局組件的基礎：整個 HTML 內容可以使用 <somelayoutcomponent></somelayoutcomponent> 標籤<code>包裹</code>起來，並傳送到組件中以在其中呈現公共頁面元素。</p>
+<h3 id="帶有名稱的-slots">帶有名稱的 Slots</h3>
+<p>Astro 組件還可以具有帶有名稱的插槽。這使您只能將具有相應插槽名稱的 HTML 元素傳遞到插槽位置。</p>
+<p>使用 <code>name</code> 屬性來命名插槽：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Header </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./Header.astro"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Logo </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./Logo.astro"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Footer </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./Footer.astro"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">title</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Astro.props;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"content-wrapper"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">Header</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"after-header"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#6A737D">  &#x3C;!-- 子元素帶有 `slot="after-header"` 屬性將在這裡渲染 --></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">Logo</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>{title}&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#6A737D">  &#x3C;!-- 子元素沒有 `slot` 屬性，或帶有 `slot="default"` 屬性將在這裡渲染 --></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">Footer</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"after-footer"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#6A737D">  &#x3C;!-- 子元素帶有 `slot="after-footer"` 屬性將在這裡渲染 --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Wrapper </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../components/Wrapper.astro"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">Wrapper</span><span style="color:#B392F0"> title</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Fred's Page"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">img</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://my.photo/fred.jpg"</span><span style="color:#B392F0"> slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"after-header"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>All about Fred&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Here is some stuff about Fred.&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#B392F0"> slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"after-footer"</span><span style="color:#E1E4E8">>Copyright 2022&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#79B8FF">Wrapper</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>使用 <code>slot="my-slot"</code> 屬性在子元素上，指定要傳遞到組件中相應的 <code>&#x3C;slot name="my-slot" /></code> 佔位符中。</p>
+<blockquote>
+<p>請注意，帶有名稱的插槽必須是組件的直接子元素。您不能通過嵌套元素傳遞帶有名稱的插槽。</p>
+</blockquote>
+<p>提示：帶有名稱的插槽也可以傳遞給 UI 框架組件！</p>
+<h3 id="插槽的回退內容">插槽的回退內容</h3>
+<p>插槽還可以渲染回退內容。當沒有匹配的子元素傳遞給插槽時，<code>&#x3C;slot></code> 元素將渲染其自己的佔位符子元素。這是一個很有用的功能，可以確保即使沒有提供子元素，組件也能正常工作。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- src/components/Wrapper.astro --></span></span>
+<span class="line"><span style="color:#E1E4E8">---</span></span>
+<span class="line"><span style="color:#E1E4E8">import Header from "./Header.astro";</span></span>
+<span class="line"><span style="color:#E1E4E8">import Logo from "./Logo.astro";</span></span>
+<span class="line"><span style="color:#E1E4E8">import Footer from "./Footer.astro";</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">const { title } = Astro.props;</span></span>
+<span class="line"><span style="color:#E1E4E8">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"content-wrapper"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">Header</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">Logo</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>{title}&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>This is my fallback content, if there is no child passed into slot&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">slot</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">Footer</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="轉移插槽">轉移插槽</h3>
+<p>插槽可以轉移到其他組件，這在創建嵌套佈局時特別有用。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">html</span><span style="color:#B392F0"> lang</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"en"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> charset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"utf-8"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">link</span><span style="color:#B392F0"> rel</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"icon"</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"image/svg+xml"</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"/favicon.svg"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"viewport"</span><span style="color:#B392F0"> content</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"width=device-width"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"generator"</span><span style="color:#B392F0"> content</span><span style="color:#E1E4E8">={Astro.generator} /></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"head"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseLayout </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./BaseLayout.astro"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">BaseLayout</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"head"</span><span style="color:#B392F0"> slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"head"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#79B8FF">BaseLayout</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>現在，傳遞給 <code>HomeLayout</code> 的預設和 <code>head</code> 插槽將轉移到 <code>BaseLayout</code> 父組件中。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> HomeLayout </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../layouts/HomeLayout.astro"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">HomeLayout</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">title</span><span style="color:#B392F0"> slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"head"</span><span style="color:#E1E4E8">>Astro&#x3C;/</span><span style="color:#85E89D">title</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>Astro&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#79B8FF">HomeLayout</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h2 id="html-組件">HTML 組件</h2>
+<p>Astro 支援將 <code>.html</code> 文件作為組件導入和使用，或將這些文件放在 <code>src/pages/</code> 子目錄中作為頁面。如果您想要重用沒有使用框架建立的現有站點的代碼，或者確保您的組件不具有動態功能，您可能會使用 <code>HTML</code> 組件。</p>
+<p>HTML 組件必須僅包含有效的 HTML，因此缺少關鍵的 Astro 組件功能：</p>
+<ul>
+<li>它們不支援 <code>frontmatter</code>、伺服器端導入或動態表達式。</li>
+<li>任何 <code>&#x3C;script></code> 標籤都將保持未打包，被視為 <code>is:inline</code>。</li>
+<li>它們只能引用位於 <code>public/</code> 文件夾中的資源。</li>
+</ul>
+<hr>
+<h2 id="總結">總結</h2>
+<p>今天我們瞭解了 Astro 組件的概念和結構。我們學會了如何建立和使用 Astro 組件，以及如何使用插槽在組件中注入不同的內容。</p>
+<h2 id="參考資料">參考資料</h2>
+<p><a href="https://docs.astro.build/en/core-concepts/astro-components/">Astro Components</a></p> </div> </div> <div class="border-b border-default"> <div class="flex justify-between"> <a href="/blog/ironman2023/astro_architecture" class="px-4 flex h-12 cursor-pointer items-center justify-center border-r border-default hover:bg-border"> <svg width="1em" height="1em" viewBox="0 0 15 15" class="mr-4 h-4 w-4" data-icon="teenyicons:left-outline">  <symbol id="ai:teenyicons:left-outline"><path fill="none" stroke="currentColor" stroke-linecap="square" d="M10 14L3 7.5L10 1"/></symbol><use  xlink:href="#ai:teenyicons:left-outline"></use>  </svg> 了解 Astro 專案的架構 </a> <a href="/blog/ironman2023/astro_page" class="px-4 flex h-12 cursor-pointer items-center justify-center border-l border-default hover:bg-border"> 認識 Astro Pages (頁面) <svg width="1em" height="1em" viewBox="0 0 15 15" class="ml-4 h-4 w-4" data-icon="teenyicons:right-outline">  <symbol id="ai:teenyicons:right-outline"><path fill="none" stroke="currentColor" stroke-linecap="square" d="m5 14l7-6.5L5 1"/></symbol><use  xlink:href="#ai:teenyicons:right-outline"></use>  </svg> </a> </div> </div> <div class="py-[3.35rem] px-[4vw]"> <!-- <hr class="my-8 text-gray-200" /> --><p class="text-lg">對這篇文章有什麼想法嗎?</p> <div id="blog-comments"></div> <script type="module">const e=localStorage.getItem("theme"),r=e==="light"?"github-light":"github-dark",t=document.createElement("script");t.type="text/javascript";t.src="https://utteranc.es/client.js";t.setAttribute("repo","mtwmt/mtwmt.github.io");t.setAttribute("issue-term","pathname");t.setAttribute("theme",r);t.setAttribute("crossorigin","anonymous");document.querySelector("#blog-comments")?.appendChild(t);</script> </div>   <footer class="animation relative bg-default lg:transition-none"> <div> <p class="p-4 text-right text-xs">
+Copyright © 2025 Mandy. All rights reserved. Build with Astro
+</p> </div> </footer> </article> <aside class="animation absolute -top-[152px] right-0 z-0 min-h-full w-80 origin-[center_right] bg-primary-800 scale-90 
+  lg:scale-100
+  lg:relative lg:top-0 lg:float-right lg:transition-none">  <ul data-blog-toc class="leading-[3rem] sticky top-0"><li class="h-12 border-b border-primary-700 bg-primary-900 px-3 text-primary-50">
+文章導覽
+</li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#什麼是-astro-組件" aria-label="Scroll to section: 什麼是 Astro 組件？">什麼是 Astro 組件？</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 indent-4" href="#特性" aria-label="Scroll to section: 特性：">特性：</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#component-結構" aria-label="Scroll to section: Component 結構">Component 結構</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 indent-4" href="#component-script-組件腳本" aria-label="Scroll to section: Component script (組件腳本)">Component script (組件腳本)</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 indent-4" href="#component-template-元件樣板" aria-label="Scroll to section: Component Template (元件樣板)">Component Template (元件樣板)</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#建立一個-button-元件" aria-label="Scroll to section: 建立一個 Button 元件">建立一個 Button 元件</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#component-props" aria-label="Scroll to section: Component Props">Component Props</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#slots" aria-label="Scroll to section: Slots">Slots</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 indent-4" href="#帶有名稱的-slots" aria-label="Scroll to section: 帶有名稱的 Slots">帶有名稱的 Slots</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 indent-4" href="#插槽的回退內容" aria-label="Scroll to section: 插槽的回退內容">插槽的回退內容</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 indent-4" href="#轉移插槽" aria-label="Scroll to section: 轉移插槽">轉移插槽</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#html-組件" aria-label="Scroll to section: HTML 組件">HTML 組件</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#總結" aria-label="Scroll to section: 總結">總結</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#參考資料" aria-label="Scroll to section: 參考資料">參考資料</a></li></ul><script type="module">const n=e=>{for(let t of e){const{id:o}=t.target,r=document.querySelector(`[data-blog-toc] a[href="#${o}"]`);if(!r)return;t.isIntersecting&&(document.querySelectorAll("[data-blog-toc] a").forEach(c=>c.classList.remove("active")),r.classList.add("active"))}},s={root:null,rootMargin:"0px 0px -180px",threshold:1},a=new IntersectionObserver(n,s);document.querySelectorAll("article :is(h2,h3,h4)").forEach(e=>a.observe(e));</script><!-- https://www.fazzaamiarso.me/blog/toc-astro-spy/#create-the-component --><!-- <script>
+    //---------------   Click Expand   ---------------
+    let toggler = document.getElementsByClassName("toc_expand");
+    for (let i = 0; i < toggler.length; i++) {
+      toggler[i].addEventListener("click", function(e) {
+        this.parentElement.parentElement.querySelector("ul")?.classList.toggle("hidden");
+        this.parentElement.classList.toggle("expanded");
+        e.preventDefault()
+      });
+    }
+
+
+    //---------------   Scroll Spy   ---------------
+    function escape_href(href){
+        //the # bothers CSS.escape in case of id starting with a number
+        return `#${CSS.escape(href.replace('#',''))}`
+    }
+
+    const article = document.querySelector( 'article.content' )
+    const hrefs = document.getElementsByClassName("toc_href");
+    const targets = [...hrefs].map(el => article.querySelector(escape_href(el.getAttribute('href'))))
+    
+    article.addEventListener("scroll", (event) => {
+        let spy = null//if no element on screen, keep last match and do nothing
+        for ( let t in targets ){//find first within visible scroll
+            if(targets[ t ].offsetTop > article.scrollTop){
+                spy = targets[ t ]
+                break
+            }
+        }
+        if(spy){
+            document.querySelector(".toc_href.active")?.classList.remove("active");
+            document.querySelector(".heading.active")?.classList.remove("active");
+            const id = spy.id
+            //console.log(id)
+            document.querySelector(`a[href="#${id}"].toc_href`)?.classList.add("active")
+            document.getElementById(id)?.classList.add("active")
+        }
+    })
+
+    const href_els = document.querySelectorAll(".toc_href");
+    href_els.forEach(element => {
+        element.addEventListener('mouseenter',()=>{
+            const href = element.getAttribute('href')
+            const id = href.slice(1,href.length)
+            document.getElementById(id)?.classList.add("hover")
+        })        
+        element.addEventListener('mouseout',()=>{
+            const href = element.getAttribute('href')
+            const id = href.slice(1,href.length)
+            document.getElementById(id)?.classList.remove("hover")
+        })        
+    });
+</script> -->  </aside> <!-- <aside class="animation scale-90 origin-[center_right] bg-primary-800 
+  absolute w-[calc(20rem-1px)] top-12 right-0  overflow-hidden
+  lg:relative lg:top-0 lg:float-right lg:scale-100  lg:transition-none lg:overflow-visible
+  before:block before:fixed before:w-[1px] before:h-screen before:top-0 before:ml-[calc(20rem-2px)] before:bg-primary-800
+  ">
+  <slot />
+</aside>
+
+<style is:global lang="scss">
+  .nav-toggle:checked {
+    & ~ aside {
+      @apply scale-100;
+		}
+  }
+  
+</style>
+ --> </main>   </div> </body></html> <div data-gotop class="cursor-pointer fixed bottom-16 right-8 z-50 transition duration-300"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="btn w-10 h-10 bg-white" data-icon="ic:outline-keyboard-arrow-up">  <symbol id="ai:ic:outline-keyboard-arrow-up"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></symbol><use  xlink:href="#ai:ic:outline-keyboard-arrow-up"></use>  </svg> </div> <script type="module">const o=document.querySelector("[data-gotop]"),t=document.querySelector("header")?.offsetHeight||0,e=()=>{(window.scrollY||0)>t?(o?.classList.add("opacity-100"),o?.classList.remove("opacity-0")):(o?.classList.add("opacity-0"),o?.classList.remove("opacity-100"))};e();window.addEventListener("scroll",e);o?.addEventListener("click",function(){document.querySelector("html, body")?.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"})});</script> <script type="module">const n=document.querySelectorAll(".post");n.forEach(e=>{e.querySelectorAll("a").forEach(t=>{t.setAttribute("target","_blank")})});let c="Copy Code",l=Array.from(document.querySelectorAll("pre"));for(let e of l){let o=document.createElement("div");o.className="relative";let t=document.createElement("button");t.className="copy-code",t.innerHTML=c,e.setAttribute("tabindex","0"),e.appendChild(t),e.parentNode?.insertBefore(o,e),o.appendChild(e),t.addEventListener("click",async()=>{await a(e,t)})}async function a(e,o){let r=e.querySelector("code")?.innerText||"";await navigator.clipboard.writeText(r),o.innerText="Code Copied",setTimeout(()=>{o.innerText=c},700)}</script>

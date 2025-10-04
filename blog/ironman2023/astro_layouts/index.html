@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.14.1"><!-- Canonical URL --><link rel="canonical" href="https://mtwmt.com/blog/ironman2023/astro_layouts/"><!-- Primary Meta Tags --><title>認識 Astro Layouts (佈局) | Mandy&#39;s Website</title><meta name="title" content="認識 Astro Layouts (佈局) | Mandy's Website"><meta name="description" content="什麼是佈局（Layouts）？在Astro中，佈局是一種特殊的組件，旨在提供可重複使用的UI結構，通常用於頁面模板。我們經常使用&#34;佈局&#34;一詞來指稱提供頁面中共享元素的Astro組件，例如`頁首(hea"><meta name="robots" content="index, follow"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.com/blog/ironman2023/astro_layouts/"><meta property="og:title" content="認識 Astro Layouts (佈局) | Mandy's Website"><meta property="og:description" content="什麼是佈局（Layouts）？在Astro中，佈局是一種特殊的組件，旨在提供可重複使用的UI結構，通常用於頁面模板。我們經常使用&#34;佈局&#34;一詞來指稱提供頁面中共享元素的Astro組件，例如`頁首(hea"><meta property="og:image" content="https://mtwmt.com/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://mtwmt.com/blog/ironman2023/astro_layouts/"><meta property="twitter:title" content="認識 Astro Layouts (佈局) | Mandy's Website"><meta property="twitter:description" content="什麼是佈局（Layouts）？在Astro中，佈局是一種特殊的組件，旨在提供可重複使用的UI結構，通常用於頁面模板。我們經常使用&#34;佈局&#34;一詞來指稱提供頁面中共享元素的Astro組件，例如`頁首(hea"><meta property="twitter:image" content="https://mtwmt.com/placeholder-social.jpg"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BBA8qn6T.js"></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-N8NEZBWT3S"></script><script type="module">window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a("js",new Date);a("config","G-N8NEZBWT3S");</script><link rel="stylesheet" href="/_astro/about.BnbaqN3h.css"><script type="module" src="/_astro/page.CPvyyiTs.js"></script></head> <body class="bg-default text-default"> <div class="relative mx-auto 
+      before:fixed before:right-0 before:top-0 before:block before:w-80 
+      lg:before:h-screen before:bg-primary-900 before:transition 
+      lg:max-w-7xl lg:before:w-1/2">  <input id="nav-toggle" type="checkbox" class="hidden nav-toggle"> <header class="bg-primary-900 lg:flex lg:h-[180px] lg:flex-row-reverse lg:justify-between"> <div class="translate-x-0 animation relative w-full font-dosis lg:flex lg:h-full lg:w-80 lg:items-center lg:justify-center lg:bg-primary-500 lg:transition-none"> <h2 class="w-40 bg-primary-500 text-center text-2xl leading-loose text-white lg:w-auto lg:text-4xl"> <a href="/">Mandy's Web</a> </h2> <label id="hamburger" for="nav-toggle" title="MENU" class="absolute right-5 top-1/2 h-7 w-8 -translate-y-1/2 cursor-pointer lg:hidden"> <span class="animation absolute top-1/2 h-[2px] w-full -translate-y-1/2 bg-white before:absolute before:-top-2.5 before:h-[2px] before:w-full before:bg-white after:absolute after:top-2.5 after:h-[2px] after:w-full after:bg-white lg:transition-none"></span></label> </div> <div class="translate-x-0 animation relative z-10 bg-light py-4 text-center lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"> <p class="mb-4 lg:mb-0">因為會忘，所以要寫下來</p> <nav> <ul class="flex justify-center font-dosis uppercase lg:justify-start"> <li class="mx-4 text-center "> <a href="/about"> <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-6 w-6 " data-icon="ic:outline-question-mark">  <symbol id="ai:ic:outline-question-mark"><path fill="currentColor" d="M11.07 12.85c.77-1.39 2.25-2.21 3.11-3.44c.91-1.29.4-3.7-2.18-3.7c-1.69 0-2.52 1.28-2.87 2.34L6.54 6.96C7.25 4.83 9.18 3 11.99 3c2.35 0 3.96 1.07 4.78 2.41c.7 1.15 1.11 3.3.03 4.9c-1.2 1.77-2.35 2.31-2.97 3.45c-.25.46-.35.76-.35 2.24h-2.89c-.01-.78-.13-2.05.48-3.15M14 20c0 1.1-.9 2-2 2s-2-.9-2-2s.9-2 2-2s2 .9 2 2"/></symbol><use  xlink:href="#ai:ic:outline-question-mark"></use>  </svg> </span> about </a> </li><li class="mx-4 text-center "> <a href="/blog/page/1"> <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-6 w-6 " data-icon="ic:outline-format-bold">  <symbol id="ai:ic:outline-format-bold"><path fill="currentColor" d="M15.6 10.79c.97-.67 1.65-1.77 1.65-2.79c0-2.26-1.75-4-4-4H7v14h7.04c2.09 0 3.71-1.7 3.71-3.79c0-1.52-.86-2.82-2.15-3.42M10 6.5h3c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-3zm3.5 9H10v-3h3.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5"/></symbol><use  xlink:href="#ai:ic:outline-format-bold"></use>  </svg> </span> blog </a> </li><li class="mx-4 text-center "> <a href="/contact"> <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-6 w-6 " data-icon="ic:outline-mode-comment">  <symbol id="ai:ic:outline-mode-comment"><path fill="currentColor" d="M20 17.17L18.83 16H4V4h16zM20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2"/></symbol><use  xlink:href="#ai:ic:outline-mode-comment"></use>  </svg> </span> submit </a> </li> <li class="mx-4 text-center"> <div class="inline-flex undefined"> <input class="absolute opacity-0" id="theme-switcher" data-theme-switcher type="checkbox"> <label class="relative" for="theme-switcher"> <span class="cursor-pointer flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-6 w-6 hidden dark:block" data-icon="ic:outline-dark-mode">  <symbol id="ai:ic:outline-dark-mode"><path fill="currentColor" d="M9.37 5.51A7.4 7.4 0 0 0 9.1 7.5c0 4.08 3.32 7.4 7.4 7.4c.68 0 1.35-.09 1.99-.27A7.01 7.01 0 0 1 12 19c-3.86 0-7-3.14-7-7c0-2.93 1.81-5.45 4.37-6.49M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26a5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1"/></symbol><use  xlink:href="#ai:ic:outline-dark-mode"></use>  </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="h-6 w-6 block dark:hidden" data-icon="ic:outline-light-mode">  <symbol id="ai:ic:outline-light-mode"><path fill="currentColor" d="M12 9c1.65 0 3 1.35 3 3s-1.35 3-3 3s-3-1.35-3-3s1.35-3 3-3m0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5s5-2.24 5-5s-2.24-5-5-5M2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1m18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1M11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1m0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1M5.99 4.58a.996.996 0 0 0-1.41 0a.996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41zm12.37 12.37a.996.996 0 0 0-1.41 0a.996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41zm1.06-10.96a.996.996 0 0 0 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0zM7.05 18.36a.996.996 0 0 0 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0z"/></symbol><use  xlink:href="#ai:ic:outline-light-mode"></use>  </svg> </span>
+mode
+</label> </div> <script type="module">const a=()=>{const e=(()=>typeof localStorage<"u"&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":!!window.matchMedia("(prefers-color-scheme: dark)").matches),c=document.querySelectorAll("[data-theme-switcher]");e()&&document.documentElement.classList.add("dark"),[].forEach.call(c,function(t){t.checked=!!e(),t.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),localStorage.setItem("theme",document.documentElement.classList.contains("dark")?"dark":"light")})})};document.addEventListener("astro:after-swap",a);a();</script> </li> </ul> </nav> </div> </header>  <main class="relative z-[1] block min-h-full overflow-hidden
+  before:fixed before:top-0 before:left-1/2 before:ml-[640px] before:block before:h-full before:min-h-screen before:w-[1px] 
+  before:bg-primary-500 after:fixed after:top-0 after:right-1/2 
+  after:mr-[640px] after:block after:h-full after:min-h-screen after:w-[1px] after:bg-border lg:flex"> <article class=" min-h-[calc(100vh-180px)]  animation relative z-[1] bg-default lg:float-left lg:w-[calc(100%-20rem)] lg:transition-none">   <div class="py-[3.35rem] px-[4vw]"> <time>Sep 8, 2023</time><!-- <div class=` ${className}`>
+	<span class="text-6xl font-bold block">{
+		new Date(date).getDate().toString().padStart(2, '0')
+	}</span>
+	<span>{
+		`${date.toLocaleDateString('en-us', {
+			month: 'short',
+		})} ${new Date(date).getFullYear()}`
+	}</span>
+</div>  --> <h1 class="text-3xl leading-loose text-default">認識 Astro Layouts (佈局)</h1> <p class>5 minutes to read</p> <div class="mt-2"> <a href="/blog/tags/astro" class="px-2 py-1 mr-2 text-xs font-normal border rounded-md border-primary-100 text-primary-500 bg-primary-50
+        dark:border-primary-400 dark:bg-primary-500 dark:text-primary-50
+        ">Astro</a><a href="/blog/tags/ironman2023" class="px-2 py-1 mr-2 text-xs font-normal border rounded-md border-primary-100 text-primary-500 bg-primary-50
+        dark:border-primary-400 dark:bg-primary-500 dark:text-primary-50
+        ">ironman2023</a> </div> </div> <div class="border-y border-default py-10 px-[4vw]"> <div class="post"> <h2 id="什麼是佈局layouts">什麼是佈局（Layouts）？</h2>
+<p>在 Astro 中，佈局是一種特殊的組件，旨在提供可重複使用的 UI 結構，通常用於頁面模板。我們經常使用 “佈局” 一詞來指稱提供頁面中共享元素的 Astro 組件，例如<code>頁首 (header)</code>、<code>導航欄</code>和<code>頁尾 (footer)</code>。一個典型的 Astro 佈局組件可以為 <code>Astro``、Markdown</code> 或 <code>MDX</code> 頁面提供以下內容：</p>
+<ul>
+<li>頁面外殼（包括 <code>&#x3C;html></code>、<code>&#x3C;head></code> 和 <code>&#x3C;body></code> 標籤）。</li>
+<li>一個 <code>&#x3C;slot /></code>，用於指定個別頁面內容應該注入的位置。</li>
+</ul>
+<p>但是，佈局組件並不限於此！它們可以像任何其他 Astro 組件一樣接受 props，導入和使用其他組件，包括 UI 框架組件和客戶端腳本。您甚至可以將佈局組件視為部分 UI 模板，它們不必提供完整的頁面外殼。</p>
+<h2 id="創建佈局組件">創建佈局組件</h2>
+<p>通常，佈局組件被放置在 Astro 項目的 <code>src/layouts</code> 目錄中以便更好地組織代碼，但這不是強制性的。您可以選擇將它們放在項目的任何位置。如果需要，您還可以將佈局組件與頁面一起放在一起，只需在佈局名稱前添加下劃線 <code>_</code>。</p>
+<p>以下是一個 layout 的範例：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- layouts/MySiteLayout.astro --></span></span>
+<span class="line"><span style="color:#E1E4E8">---</span></span>
+<span class="line"><span style="color:#E1E4E8">import BaseHead from '../components/BaseHead.astro';</span></span>
+<span class="line"><span style="color:#E1E4E8">import Footer from '../components/Footer.astro';</span></span>
+<span class="line"><span style="color:#E1E4E8">const { title } = Astro.props</span></span>
+<span class="line"><span style="color:#E1E4E8">---</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">html</span><span style="color:#B392F0"> lang</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"en"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> charset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"utf-8"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"viewport"</span><span style="color:#B392F0"> content</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"width=device-width, initial-scale=1"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#79B8FF">BaseHead</span><span style="color:#B392F0"> title</span><span style="color:#E1E4E8">={title}/></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">nav</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">a</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"#"</span><span style="color:#E1E4E8">>Home&#x3C;/</span><span style="color:#85E89D">a</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">a</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"#"</span><span style="color:#E1E4E8">>Posts&#x3C;/</span><span style="color:#85E89D">a</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">a</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"#"</span><span style="color:#E1E4E8">>Contact&#x3C;/</span><span style="color:#85E89D">a</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">nav</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>{title}&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">article</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#E1E4E8"> /> </span><span style="color:#6A737D">&#x3C;!-- 個別頁面內容將在此處插入 --></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">article</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#79B8FF">Footer</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>接著使用上面的佈局組件，只需在頁面內容中引用它們即可，並傳遞所需的 <code>props</code>。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> MySiteLayout </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '../layouts/MySiteLayout.astro'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">MySiteLayout</span><span style="color:#B392F0"> title</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Home Page"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>My page content, wrapped in a layout!&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#79B8FF">MySiteLayout</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h2 id="markdownmdx-佈局">Markdown/MDX 佈局</h2>
+<p>佈局對於 Markdown 和 MDX 頁面特別有用，否則這些頁面將沒有任何頁面格式。</p>
+<p>在 Markdown 和 MDX 文件中，可以使用 layout 屬性來指定頁面使用的佈局組件。這個 layout 屬性可以接受來自頁面 frontmatter 的值，讓您可以動態指定佈局。</p>
+<p>以下是一個示例 Markdown 文件中的 <code>layout</code> 屬性的使用：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#E1E4E8">---</span></span>
+<span class="line"><span style="color:#85E89D">layout</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">../layouts/BaseLayout.astro</span></span>
+<span class="line"><span style="color:#85E89D">title</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Hello, World!"</span></span>
+<span class="line"><span style="color:#85E89D">author</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Matthew Phillips"</span></span>
+<span class="line"><span style="color:#85E89D">date</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"09 Aug 2022"</span></span>
+<span class="line"><span style="color:#E1E4E8">---</span></span></code></pre>
+<h3 id="markdownmdx-佈局組件通常包括以下元素">Markdown/MDX 佈局組件通常包括以下元素：</h3>
+<ul>
+<li>Frontmatter 屬性：用於訪問 Markdown 或 MDX 文檔的 <code>frontmatter</code> 和其他數據。</li>
+<li>默認的 <code>&#x3C;slot /></code>：指示 Markdown/MDX 內容應該呈現的位置。</li>
+</ul>
+<p>以下是一個示例 <code>Markdown</code> 佈局組件的結構：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#6A737D">// 1. frontmatter prop用於訪問frontmatter和其他數據</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">frontmatter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Astro.props;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D">    &#x3C;!-- 在此處添加其他Head元素，例如樣式和meta標籤。 --></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">title</span><span style="color:#E1E4E8">>{frontmatter.title}&#x3C;/</span><span style="color:#85E89D">title</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D">    &#x3C;!-- 在此處添加其他UI組件，例如常見的頁首和頁尾。 --></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>{frontmatter.title} by {frontmatter.author}&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D">    &#x3C;!-- 2. 渲染的HTML將傳遞到默認插槽。 --></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Written on: {frontmatter.date}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="markdown-佈局-props">Markdown 佈局 Props</h3>
+<p>對於 Markdown 和 MDX 佈局，Astro 提供了一系列有用的 props，這些 props 允許您輕鬆訪問有關頁面的信息。
+以下是這些 props 的詳細說明：</p>
+<ul>
+<li>file: 該文件的絕對路徑（例如 /home/user/projects/…/file.md）。</li>
+<li>url: 如果是頁面，則是頁面的 URL（例如 /en/guides/markdown-content）。</li>
+<li>frontmatter: 包含來自 Markdown 或 MDX 文檔的所有 frontmatter 的對象。</li>
+<li>frontmatter.file: 與頂級 file 屬性相同。</li>
+<li>frontmatter.url: 與頂級 url 屬性相同。</li>
+<li>headings: 包含 Markdown 或 MDX 文檔中的標題（從 h1 到 h6）的列表，每個標題都具有相關聯的元數據。該列表遵循以下類型：{ depth: number; slug: string; text: string }[]。</li>
+<li>rawContent(): 一個函數，返回原始 Markdown 文檔的字符串。（僅限 Markdown）</li>
+<li>compiledContent(): 一個函數，返回已編譯為 HTML 字符串的 Markdown 文檔。（僅限 Markdown）</li>
+</ul>
+<p>以下是範例是 <code>Markdown</code> 或 <code>MDX</code> 佈局中可能會傳遞給 Astro.props 的資訊：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#E1E4E8">Astro.props = {</span></span>
+<span class="line"><span style="color:#B392F0">  file</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"/home/user/projects/.../file.md"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  url</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"/en/guides/markdown-content/"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  frontmatter</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#6A737D">    /** 部落格文章的frontmatter */</span></span>
+<span class="line"><span style="color:#B392F0">    title</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Astro 0.18 Release"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    date</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Tuesday, July 27 2021"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    author</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Matthew Phillips"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    description</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Astro 0.18 is our biggest release since Astro launch."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">    /** 生成的值 */</span></span>
+<span class="line"><span style="color:#B392F0">    file</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"/home/user/projects/.../file.md"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    url</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"/en/guides/markdown-content/"</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  headings</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#9ECBFF">      "depth"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Astro 0.18 Release"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "slug"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"astro-018-release"</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#9ECBFF">      "depth"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Responsive partial hydration"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "slug"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"responsive-partial-hydration"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    /* ... */</span></span>
+<span class="line"><span style="color:#E1E4E8">  ],</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  /** 僅適用於Markdown */</span></span>
+<span class="line"><span style="color:#B392F0">  rawContent</span><span style="color:#E1E4E8">: () </span><span style="color:#F97583">=></span><span style="color:#9ECBFF"> "# Astro 0.18 Release</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">A little over a month ago, the first public beta [...]"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  compiledContent</span><span style="color:#E1E4E8">: () </span><span style="color:#F97583">=></span><span style="color:#9ECBFF"> "&#x3C;h1>Astro 0.18 Release&#x3C;/h1></span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">&#x3C;p>A little over a month ago, the first public beta [...]&#x3C;/p>"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="手動引用佈局-mdx">手動引用佈局 (MDX)</h3>
+<p>如果需要向 MDX 佈局傳遞一些不能或不應存在於 frontmatter 中的信息，您可以導入並像任何其他組件一樣使用 <code>&#x3C;Layout /></code> 組件，然後傳遞這些額外的 props。
+如以下範例：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#B392F0">layout</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'../../layouts/BaseLayout.astro'</span></span>
+<span class="line"><span style="color:#B392F0">title</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'My first MDX post'</span></span>
+<span class="line"><span style="color:#B392F0">publishDate</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'21 September 2022'</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#E1E4E8">import BaseLayout from '../../layouts/BaseLayout.astro';</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">function fancyJsHelper() {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#9ECBFF"> "Try doing that with YAML!"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">BaseLayout</span><span style="color:#B392F0"> title</span><span style="color:#E1E4E8">={frontmatter.title} </span><span style="color:#B392F0">fancyJsHelper</span><span style="color:#E1E4E8">={fancyJsHelper}></span></span>
+<span class="line"><span style="color:#E1E4E8">  Welcome to my new Astro blog, using MDX!</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#79B8FF">BaseLayout</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>然後，您可以在佈局中通過 <code>Astro.props</code> 使用這些值，MDX 內容將注入到您的 <code>&#x3C;slot /></code> 組件所指定的位置中。</p>
+<p>如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">title</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">fancyJsHelper</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Astro.props;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>{title}&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#E1E4E8"> /> </span><span style="color:#6A737D">&#x3C;!-- 個別頁面內容將在此處注入 --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>{</span><span style="color:#B392F0">fancyJsHelper</span><span style="color:#E1E4E8">()}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- --></span></span></code></pre>
+<h3 id="使用一個佈局用於mdmdx-和astro">使用一個佈局用於.md，.mdx 和.astro</h3>
+<p>一個 Astro 佈局組件可以編寫為接收來自<code>.md</code> 和<code>.mdx</code> 文件的 frontmatter 對象，以及來自.astro 文件傳遞的任何命名 props。</p>
+<p>在以下示例中，佈局將從頂層 frontmatter 或 Astro.props 中顯示頁面標題：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">title</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Astro.props.frontmatter </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> Astro.props;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>{title}&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h2 id="嵌套佈局">嵌套佈局</h2>
+<p>佈局組件不必包含整個頁面的 HTML，它們可以進一步拆分為較小的組件，以實現更靈活的頁面模板。這在需要共享代碼時非常有用。
+例如，您可以使用一個名為 <code>BlogPostLayout.astro</code> 的佈局組件為文章的標題、日期和作者添加樣式，然後再使用一個名為 <code>BaseLayout.astro</code> 的佈局組件處理頁面的其餘部分，例如導航、頁尾、SEO 元標籤、全局樣式和字體。這樣的方式，您可以輕鬆將從文章接收的 props 傳遞到其他佈局，就像處理任何其他嵌套組件一樣。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseLayout </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './BaseLayout.astro'</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> {</span><span style="color:#79B8FF">frontmatter</span><span style="color:#E1E4E8">} </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Astro.props;</span></span>
+<span class="line"><span style="color:#6A737D">---</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">BaseLayout</span><span style="color:#B392F0"> url</span><span style="color:#E1E4E8">={frontmatter.url}></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>{frontmatter.title}&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>Post author: {frontmatter.author}&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">slot</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#79B8FF">BaseLayout</span><span style="color:#E1E4E8">></span></span></code></pre>
+<hr>
+<h2 id="總結">總結</h2>
+<p>本文介紹了 Astro 的佈局系統，用於提供可重複使用的 UI 結構，通常用於頁面模板。您已經學會了如何在 Astro 項目中定義佈局，並如何透過 frontmatter 或 props 從 Markdown、MDX 和 Astro 頁面中訪問這些佈局。這將有助於更好地組織您的代碼，使您的項目更加靈活和易於維護。</p>
+<h2 id="參考資料">參考資料</h2>
+<p><a href="https://docs.astro.build/en/core-concepts/layouts/">Astro Layouts</a></p> </div> </div> <div class="border-b border-default"> <div class="flex justify-between"> <a href="/blog/ironman2023/astro_page" class="px-4 flex h-12 cursor-pointer items-center justify-center border-r border-default hover:bg-border"> <svg width="1em" height="1em" viewBox="0 0 15 15" class="mr-4 h-4 w-4" data-icon="teenyicons:left-outline">  <symbol id="ai:teenyicons:left-outline"><path fill="none" stroke="currentColor" stroke-linecap="square" d="M10 14L3 7.5L10 1"/></symbol><use  xlink:href="#ai:teenyicons:left-outline"></use>  </svg> 認識 Astro Pages (頁面) </a> <a href="/blog/ironman2023/astro_template" class="px-4 flex h-12 cursor-pointer items-center justify-center border-l border-default hover:bg-border"> 了解 Astro 語法元素 (Template) <svg width="1em" height="1em" viewBox="0 0 15 15" class="ml-4 h-4 w-4" data-icon="teenyicons:right-outline">  <symbol id="ai:teenyicons:right-outline"><path fill="none" stroke="currentColor" stroke-linecap="square" d="m5 14l7-6.5L5 1"/></symbol><use  xlink:href="#ai:teenyicons:right-outline"></use>  </svg> </a> </div> </div> <div class="py-[3.35rem] px-[4vw]"> <!-- <hr class="my-8 text-gray-200" /> --><p class="text-lg">對這篇文章有什麼想法嗎?</p> <div id="blog-comments"></div> <script type="module">const e=localStorage.getItem("theme"),r=e==="light"?"github-light":"github-dark",t=document.createElement("script");t.type="text/javascript";t.src="https://utteranc.es/client.js";t.setAttribute("repo","mtwmt/mtwmt.github.io");t.setAttribute("issue-term","pathname");t.setAttribute("theme",r);t.setAttribute("crossorigin","anonymous");document.querySelector("#blog-comments")?.appendChild(t);</script> </div>   <footer class="animation relative bg-default lg:transition-none"> <div> <p class="p-4 text-right text-xs">
+Copyright © 2025 Mandy. All rights reserved. Build with Astro
+</p> </div> </footer> </article> <aside class="animation absolute -top-[152px] right-0 z-0 min-h-full w-80 origin-[center_right] bg-primary-800 scale-90 
+  lg:scale-100
+  lg:relative lg:top-0 lg:float-right lg:transition-none">  <ul data-blog-toc class="leading-[3rem] sticky top-0"><li class="h-12 border-b border-primary-700 bg-primary-900 px-3 text-primary-50">
+文章導覽
+</li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#什麼是佈局layouts" aria-label="Scroll to section: 什麼是佈局（Layouts）？">什麼是佈局（Layouts）？</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#創建佈局組件" aria-label="Scroll to section: 創建佈局組件">創建佈局組件</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#markdownmdx-佈局" aria-label="Scroll to section: Markdown/MDX 佈局">Markdown/MDX 佈局</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 indent-4" href="#markdownmdx-佈局組件通常包括以下元素" aria-label="Scroll to section: Markdown/MDX 佈局組件通常包括以下元素：">Markdown/MDX 佈局組件通常包括以下元素：</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 indent-4" href="#markdown-佈局-props" aria-label="Scroll to section: Markdown 佈局 Props">Markdown 佈局 Props</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 indent-4" href="#手動引用佈局-mdx" aria-label="Scroll to section: 手動引用佈局 (MDX)">手動引用佈局 (MDX)</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 indent-4" href="#使用一個佈局用於mdmdx-和astro" aria-label="Scroll to section: 使用一個佈局用於.md，.mdx 和.astro">使用一個佈局用於.md，.mdx 和.astro</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#嵌套佈局" aria-label="Scroll to section: 嵌套佈局">嵌套佈局</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#總結" aria-label="Scroll to section: 總結">總結</a></li><li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 " href="#參考資料" aria-label="Scroll to section: 參考資料">參考資料</a></li></ul><script type="module">const n=e=>{for(let t of e){const{id:o}=t.target,r=document.querySelector(`[data-blog-toc] a[href="#${o}"]`);if(!r)return;t.isIntersecting&&(document.querySelectorAll("[data-blog-toc] a").forEach(c=>c.classList.remove("active")),r.classList.add("active"))}},s={root:null,rootMargin:"0px 0px -180px",threshold:1},a=new IntersectionObserver(n,s);document.querySelectorAll("article :is(h2,h3,h4)").forEach(e=>a.observe(e));</script><!-- https://www.fazzaamiarso.me/blog/toc-astro-spy/#create-the-component --><!-- <script>
+    //---------------   Click Expand   ---------------
+    let toggler = document.getElementsByClassName("toc_expand");
+    for (let i = 0; i < toggler.length; i++) {
+      toggler[i].addEventListener("click", function(e) {
+        this.parentElement.parentElement.querySelector("ul")?.classList.toggle("hidden");
+        this.parentElement.classList.toggle("expanded");
+        e.preventDefault()
+      });
+    }
+
+
+    //---------------   Scroll Spy   ---------------
+    function escape_href(href){
+        //the # bothers CSS.escape in case of id starting with a number
+        return `#${CSS.escape(href.replace('#',''))}`
+    }
+
+    const article = document.querySelector( 'article.content' )
+    const hrefs = document.getElementsByClassName("toc_href");
+    const targets = [...hrefs].map(el => article.querySelector(escape_href(el.getAttribute('href'))))
+    
+    article.addEventListener("scroll", (event) => {
+        let spy = null//if no element on screen, keep last match and do nothing
+        for ( let t in targets ){//find first within visible scroll
+            if(targets[ t ].offsetTop > article.scrollTop){
+                spy = targets[ t ]
+                break
+            }
+        }
+        if(spy){
+            document.querySelector(".toc_href.active")?.classList.remove("active");
+            document.querySelector(".heading.active")?.classList.remove("active");
+            const id = spy.id
+            //console.log(id)
+            document.querySelector(`a[href="#${id}"].toc_href`)?.classList.add("active")
+            document.getElementById(id)?.classList.add("active")
+        }
+    })
+
+    const href_els = document.querySelectorAll(".toc_href");
+    href_els.forEach(element => {
+        element.addEventListener('mouseenter',()=>{
+            const href = element.getAttribute('href')
+            const id = href.slice(1,href.length)
+            document.getElementById(id)?.classList.add("hover")
+        })        
+        element.addEventListener('mouseout',()=>{
+            const href = element.getAttribute('href')
+            const id = href.slice(1,href.length)
+            document.getElementById(id)?.classList.remove("hover")
+        })        
+    });
+</script> -->  </aside> <!-- <aside class="animation scale-90 origin-[center_right] bg-primary-800 
+  absolute w-[calc(20rem-1px)] top-12 right-0  overflow-hidden
+  lg:relative lg:top-0 lg:float-right lg:scale-100  lg:transition-none lg:overflow-visible
+  before:block before:fixed before:w-[1px] before:h-screen before:top-0 before:ml-[calc(20rem-2px)] before:bg-primary-800
+  ">
+  <slot />
+</aside>
+
+<style is:global lang="scss">
+  .nav-toggle:checked {
+    & ~ aside {
+      @apply scale-100;
+		}
+  }
+  
+</style>
+ --> </main>   </div> </body></html> <div data-gotop class="cursor-pointer fixed bottom-16 right-8 z-50 transition duration-300"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="btn w-10 h-10 bg-white" data-icon="ic:outline-keyboard-arrow-up">  <symbol id="ai:ic:outline-keyboard-arrow-up"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></symbol><use  xlink:href="#ai:ic:outline-keyboard-arrow-up"></use>  </svg> </div> <script type="module">const o=document.querySelector("[data-gotop]"),t=document.querySelector("header")?.offsetHeight||0,e=()=>{(window.scrollY||0)>t?(o?.classList.add("opacity-100"),o?.classList.remove("opacity-0")):(o?.classList.add("opacity-0"),o?.classList.remove("opacity-100"))};e();window.addEventListener("scroll",e);o?.addEventListener("click",function(){document.querySelector("html, body")?.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"})});</script> <script type="module">const n=document.querySelectorAll(".post");n.forEach(e=>{e.querySelectorAll("a").forEach(t=>{t.setAttribute("target","_blank")})});let c="Copy Code",l=Array.from(document.querySelectorAll("pre"));for(let e of l){let o=document.createElement("div");o.className="relative";let t=document.createElement("button");t.className="copy-code",t.innerHTML=c,e.setAttribute("tabindex","0"),e.appendChild(t),e.parentNode?.insertBefore(o,e),o.appendChild(e),t.addEventListener("click",async()=>{await a(e,t)})}async function a(e,o){let r=e.querySelector("code")?.innerText||"";await navigator.clipboard.writeText(r),o.innerText="Code Copied",setTimeout(()=>{o.innerText=c},700)}</script>
