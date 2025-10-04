@@ -28,7 +28,7 @@ Astro 組件是 Astro 專案的基本構建塊，它們是僅支持 HTML 的模�
 
 一個 Astro 組件由兩個主要部分組成：`組件腳本（Component Script）`和`組件模板（Component Template）`。這兩個部分分別扮演著不同的角色，但合在一起提供了一個易於使用且表達力強大的框架，用於處理您可能想要構建的任何內容。
 
-```Astro
+```astro
 ---
 // Component script (JavaScript)
 ---

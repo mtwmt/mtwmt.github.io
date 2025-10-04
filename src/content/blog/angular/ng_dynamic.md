@@ -13,7 +13,7 @@ date: 2019/07/21
 
 app.module.ts
 
-```JS
+```javascript
 // ...略
 import { TaskComponent } from './tab/task/task.component';
 import { AnalysisComponent } from './tab/analysis/analysis.component';
@@ -53,7 +53,7 @@ component.html
 
 component.ts `新增預載入的component`
 
-```JS
+```javascript
 // ...略
 import { TaskComponent } from './task/task.component';
 import { AnalysisComponent } from './analysis/analysis.component';

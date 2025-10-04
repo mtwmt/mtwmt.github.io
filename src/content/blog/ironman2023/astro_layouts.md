@@ -23,7 +23,7 @@ date: 2023/09/08
 
 以下是一個 layout 的範例：
 
-```Astro
+```astro
 <!-- layouts/MySiteLayout.astro -->
 ---
 import BaseHead from '../components/BaseHead.astro';
@@ -53,7 +53,7 @@ const { title } = Astro.props
 
 接著使用上面的佈局組件，只需在頁面內容中引用它們即可，並傳遞所需的 `props`。
 
-```Astro
+```astro
 ---
 import MySiteLayout from '../layouts/MySiteLayout.astro';
 ---
@@ -86,7 +86,7 @@ date: "09 Aug 2022"
 
 以下是一個示例 `Markdown` 佈局組件的結構：
 
-```Astro
+```astro
 ---
 // 1. frontmatter prop用於訪問frontmatter和其他數據
 const { frontmatter } = Astro.props;

@@ -68,14 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <style lang="scss" is:global>
+  @reference "../styles/tailwind.css";
+
   .theme-switcher {
     @apply inline-flex;
 
     label {
       @apply relative inline-block h-4 w-6 cursor-pointer rounded-2xl bg-border lg:w-10;
-      // border-radius: 1rem;
-      // --tw-bg-opacity: 1;
-      // background-color: rgb(234 234 234 / var(--tw-bg-opacity));
     }
 
     input {
@@ -84,9 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     span {
       @apply absolute -top-1 left-0 flex h-6 w-6 items-center justify-center rounded-full bg-dark transition-all duration-300 dark:bg-white;
-      // border-radius: 9999px;
-      // --tw-bg-opacity: 1;
-      // background-color: rgb(4 4 4 / var(--tw-bg-opacity));
     }
 
     input:checked + label {

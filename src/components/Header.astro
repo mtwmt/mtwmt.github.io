@@ -34,18 +34,16 @@ import Theme from "./Theme.astro";
     <nav>
       <ul class="flex justify-center font-dosis uppercase lg:justify-start">
         {
-          menu.map((d: any) => {
-            return (
-              <li class="mx-4 text-center ">
-                <a href={d.href}>
-                  <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]">
-                    <Icon name={d.icon} class="h-6 w-6 " />
-                  </span>
-                  {d.name}
-                </a>
-              </li>
-            );
-          })
+          menu.map((d) => (
+            <li class="mx-4 text-center ">
+              <a href={d.href}>
+                <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]">
+                  <Icon name={d.icon} class="h-6 w-6 " />
+                </span>
+                {d.name}
+              </a>
+            </li>
+          ))
         }
         <li class="mx-4 text-center">
           <Theme />
@@ -56,10 +54,12 @@ import Theme from "./Theme.astro";
 </header>
 
 <style is:global lang="scss">
+  @reference "../styles/tailwind.css";
+
   .nav-toggle:checked {
     & ~ header {
       #hamburger > span {
-        @apply rotate-180 bg-opacity-0 before:translate-y-2.5 before:rotate-45 after:-translate-y-2.5 after:-rotate-45;
+        @apply rotate-180 bg-transparent before:translate-y-2.5 before:rotate-45 after:-translate-y-2.5 after:-rotate-45;
       }
 
       > div {

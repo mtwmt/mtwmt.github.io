@@ -20,7 +20,7 @@ async function getPosts() {
    
 }
 
-export async function get({}) {
+export async function GET({}) {
   return new Response(JSON.stringify(await getPosts()), {
     status: 200,
     headers: {

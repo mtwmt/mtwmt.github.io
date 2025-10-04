@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font families */
+  --font-dosis: "Dosis", sans-serif;
+
+  /* Primary color palette */
+  --color-primary-50: #e0f5f5;
+  --color-primary-100: #b3e6e6;
+  --color-primary-200: #80d5d5;
+  --color-primary-300: #4dc4c4;
+  --color-primary-400: #26b7b7;
+  --color-primary-500: #00aaaa;
+  --color-primary-600: #00a3a3;
+  --color-primary-700: #009999;
+  --color-primary-800: #009090;
+  --color-primary-900: #007f7f;
+
+  /* Additional primary shades */
+  --color-primary-a100: #adffff;
+  --color-primary-a200: #7affff;
+  --color-primary-a400: #47ffff;
+  --color-primary-a700: #2dffff;
+
+  /* Light color palette */
+  --color-light-50: #fff;
+  --color-light-100: #f5f5f5;
+  --color-light-200: #ddd;
+  --color-light-300: #717171;
+  --color-light-400: #444;
+  --color-light-500: #040404;
+}

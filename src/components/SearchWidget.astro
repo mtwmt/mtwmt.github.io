@@ -31,9 +31,7 @@ import {Icon} from "astro-icon/components";
     if (!searchTerm || searchTerm.length === 0) return;
     const url = new URL("/search", window.location.origin);
     url.searchParams.set("q", searchTerm);
-
-
-    // window.location.assign(url.toString());
+    window.location.assign(url.toString());
   });
 
 </script>

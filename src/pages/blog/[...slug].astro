@@ -15,8 +15,10 @@ import { sortByDate } from "../../lib/sortByDate";
 import PostPreview from "../../components/PostPreview.astro";
 
 
-export const findPrevAndNext = (arr: any, curr: any) => {
-  const currentIndex = arr.findIndex((obj: any) => obj.slug === curr.slug);
+import type { CollectionEntry } from 'astro:content';
+
+export const findPrevAndNext = (arr: CollectionEntry<'blog'>[], curr: CollectionEntry<'blog'>) => {
+  const currentIndex = arr.findIndex((obj) => obj.slug === curr.slug);
 
   if (currentIndex === -1) {
     return null; // 物件未找到
@@ -126,101 +128,6 @@ const { data } = post;
 </MainLayout>
 <GoTop />
 
-<style is:global lang="scss">
-  [data-blog-toc] {
-    .active {
-      @apply bg-primary-500 bg-opacity-70;
-    }
-  }
-
-  .post {
-    @apply text-base text-default;
-
-    h1 {
-      @apply my-4 text-3xl text-default;
-    }
-
-    h2 {
-      @apply mt-10 text-2xl font-bold text-default;
-    }
-
-    h3 {
-      @apply mt-10 mb-2 text-xl font-bold text-default;
-    }
-
-    p {
-      @apply my-4 leading-loose whitespace-pre-line;
-    }
-
-    pre {
-      @apply my-4 p-4 rounded-md;
-    }
-
-    img {
-      @apply my-4 mx-auto;
-    }
-
-    hr {
-      @apply my-8 border-default;
-    }
-
-    iframe {
-      @apply mt-4 mb-2 mx-auto h-80 max-w-full min-h-full;
-      & + p {
-        & > em {
-          @apply text-sm;
-        }
-      }
-      @apply w-full min-h-[128px];
-    }
-
-    blockquote {
-      @apply text-dark my-8 px-5 border-l-4 border-gray-200 border-solid;
-    }
-
-    ol {
-      @apply list-decimal;
-    }
-
-    ul {
-      @apply list-disc;
-    }
-
-    ol,
-    ul {
-      @apply ml-5 my-4;
-      & li:not(:last-of-type) {
-        @apply mb-2;
-      }
-    }
-
-    :not(pre) > code {
-      @apply mx-1 px-1 bg-orange-50 text-orange-700 rounded break-words dark:bg-orange-900 dark:text-orange-50;
-    }
-
-    a {
-      @apply text-primary-700 transition duration-300 ease-in-out
-       hover:text-opacity-70 dark:text-primary-200;
-    }
-
-    table {
-      @apply my-4 w-full border-collapse;
-      th {
-        @apply text-white bg-light;
-      }
-
-      th,
-      td {
-        @apply py-2 px-2 leading-tight border border-solid border-default;
-      }
-    }
-
-    .copy-code {
-      @apply absolute top-0 right-0  text-white rounded-sm bg-primary-800 transition duration-300 hover:bg-primary-900 px-2 py-1 text-xs cursor-pointer;
-    }
-  }
-</style>
-
 <script>
   const post = document.querySelectorAll('.post');
 
@@ -232,7 +139,7 @@ const { data } = post;
   });
 
   let copyButtonLabel = "Copy Code";
-  let codeBlocks = Array.from(document.querySelectorAll("pre")) as any;
+  let codeBlocks = Array.from(document.querySelectorAll("pre"));
 
   for (let codeBlock of codeBlocks) {
     let wrapper = document.createElement("div");
@@ -244,8 +151,8 @@ const { data } = post;
 
     codeBlock.setAttribute("tabindex", "0");
     codeBlock.appendChild(copyButton);
-    // wrap codebock with relative parent element
-    codeBlock.parentNode.insertBefore(wrapper, codeBlock);
+    // wrap codeblock with relative parent element
+    codeBlock.parentNode?.insertBefore(wrapper, codeBlock);
     wrapper.appendChild(codeBlock);
 
     copyButton.addEventListener("click", async () => {
@@ -253,9 +160,9 @@ const { data } = post;
     });
   }
 
-  async function copyCode(block: any, button: any) {
+  async function copyCode(block: HTMLPreElement, button: HTMLButtonElement) {
     let code = block.querySelector("code");
-    let text = code.innerText;
+    let text = code?.innerText || "";
 
     await navigator.clipboard.writeText(text);
 

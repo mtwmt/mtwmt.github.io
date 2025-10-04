@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700");
+@import "./tailwind.css";
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  :root {
+    /* Runtime CSS variables for custom utilities */
+    --color-default: #444;
+    --color-light: #717171;
+    --color-dark: #040404;
+    --color-background: #fff;
+    --color-light-background: #f5f5f5;
+    --color-border: #ddd;
+  }
+
+  :root.dark {
+    /* Dark mode overrides */
+    --color-default: #fff;
+    --color-light: #fff;
+    --color-dark: #B4AFB6;
+    --color-background: #1c1c1c;
+    --color-light-background: #404040;
+    --color-border: #666;
+
+    /* Override primary colors for dark mode */
+    --color-primary-50: #b9e9e9;
+    --color-primary-100: #8dd9d9;
+    --color-primary-200: #5ac8c8;
+    --color-primary-300: #37a7a7;
+    --color-primary-400: #1d8d8d;
+    --color-primary-500: #007777;
+    --color-primary-600: #007070;
+    --color-primary-700: #006666;
+    --color-primary-800: #005d5d;
+    --color-primary-900: #004c4c;
+    --color-primary-a100: #7affff;
+    --color-primary-a200: #47ffff;
+    --color-primary-a400: #14ffff;
+    --color-primary-a700: #00f9f9;
+  }
+
+  html,
+  body {
+    @apply relative m-0 h-full w-full p-0;
+    scroll-behavior: smooth;
+  }
+
+  html.dark,
+  body.dark {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  input,
+  textarea,
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  a {
+    @apply transition duration-300 hover:opacity-70;
+  }
+
+  .animation {
+    @apply transition duration-300 ease-in-out;
+  }
+
+  .btn {
+    @apply relative inline-block rounded-md border-2 border-primary-900
+    bg-transparent py-1 text-center font-dosis uppercase
+    text-primary-500 shadow-[2px_2px_0_#007f7f]
+    hover:top-0.5 hover:left-0.5 hover:shadow-none;
+  }
+
+  .btn--active {
+    @apply top-0.5 left-0.5 shadow-none;
+  }
+
+  .btn.disabled {
+    @apply border-gray-400 bg-gray-100 text-gray-400 shadow-none
+    hover:top-0 hover:left-0;
+  }
+
+  .btn.disabled--active {
+    @apply top-0 left-0;
+  }
+
+  .absolute-center {
+    @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  }
+}
+
+/* Custom utilities defined outside @layer to allow @apply usage */
+.text-default {
+  color: var(--color-default);
+}
+.text-light {
+  color: var(--color-light);
+}
+.text-dark {
+  color: var(--color-dark);
+}
+
+.bg-default {
+  background-color: var(--color-background);
+}
+.bg-light {
+  background-color: var(--color-light-background);
+}
+
+.border-default {
+  border-color: var(--color-border);
+}
+
+/* Blog post styles */
+[data-blog-toc] .active {
+  background-color: var(--color-primary-500);
+  opacity: 0.7;
+}
+
+.post {
+  @apply text-base;
+  color: var(--color-default);
+}
+
+.post h1 {
+  @apply my-4 text-3xl;
+  color: var(--color-default);
+}
+
+.post h2 {
+  @apply mt-10 text-2xl font-bold;
+  color: var(--color-default);
+}
+
+.post h3 {
+  @apply mt-10 mb-2 text-xl font-bold;
+  color: var(--color-default);
+}
+
+.post p {
+  @apply my-4 leading-loose whitespace-pre-line;
+}
+
+.post pre {
+  @apply my-4 p-4 rounded-md;
+}
+
+.post img {
+  @apply my-4 mx-auto;
+}
+
+.post hr {
+  @apply my-8;
+  border-color: var(--color-border);
+}
+
+.post iframe {
+  @apply mt-4 mb-2 mx-auto h-80 max-w-full min-h-full w-full min-h-[128px];
+}
+
+.post iframe + p > em {
+  @apply text-sm;
+}
+
+.post blockquote {
+  @apply my-8 px-5 border-l-4 border-gray-200 border-solid;
+  color: var(--color-dark);
+}
+
+.post ol {
+  @apply list-decimal ml-5 my-4;
+}
+
+.post ul {
+  @apply list-disc ml-5 my-4;
+}
+
+.post ol li:not(:last-of-type),
+.post ul li:not(:last-of-type) {
+  @apply mb-2;
+}
+
+.post :not(pre) > code {
+  @apply mx-1 px-1 bg-orange-50 text-orange-700 rounded break-words dark:bg-orange-900 dark:text-orange-50;
+}
+
+.post a {
+  @apply text-primary-700 transition duration-300 ease-in-out
+   hover:text-primary-700/70 dark:text-primary-200;
+}
+
+.post table {
+  @apply my-4 w-full border-collapse;
+}
+
+.post table th {
+  @apply text-white;
+  background-color: var(--color-light-background);
+}
+
+.post table th,
+.post table td {
+  @apply py-2 px-2 leading-tight border border-solid;
+  border-color: var(--color-border);
+}
+
+.post .copy-code {
+  @apply absolute top-0 right-0  text-white rounded-sm bg-primary-800 transition duration-300 hover:bg-primary-900 px-2 py-1 text-xs cursor-pointer;
+}
+
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+/* body {
+  font-family: Verdana, sans-serif;
+  margin: auto;
+  padding: 20px;
+  max-width: 65ch;
+  text-align: left;
+  background-color: #fff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: #444;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  color: #222;
+}
+a {
+  color: #3273dc;
+}
+nav a {
+  margin-right: 10px;
+}
+textarea {
+  width: 100%;
+  font-size: 16px;
+}
+input {
+  font-size: 16px;
+}
+content {
+  line-height: 1.6;
+}
+table {
+  width: 100%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+code {
+  padding: 2px 5px;
+  background-color: #f2f2f2;
+}
+pre {
+  padding: 1rem;
+}
+pre > code {
+  all: unset;
+}
+blockquote {
+  border: 1px solid #999;
+  color: #222;
+  padding: 2px 0px 2px 20px;
+  margin: 0px;
+  font-style: italic;
+} */

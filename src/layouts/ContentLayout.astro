@@ -3,7 +3,7 @@ import Footer from "../components/Footer.astro";
 ---
 
 <main
-  class="relative z-[1] block  min-h-full overflow-hidden
+  class="relative z-[1] block min-h-full overflow-hidden
   before:fixed before:top-0 before:left-1/2 before:ml-[640px] before:block before:h-full before:min-h-screen before:w-[1px] 
   before:bg-primary-500 after:fixed after:top-0 after:right-1/2 
   after:mr-[640px] after:block after:h-full after:min-h-screen after:w-[1px] after:bg-border lg:flex"
@@ -18,6 +18,8 @@ import Footer from "../components/Footer.astro";
 </main>
 
 <style is:global lang="scss">
+  @reference "../styles/tailwind.css";
+
   .nav-toggle:checked {
     & ~ main > article {
       @apply -translate-x-80 lg:translate-x-0;
