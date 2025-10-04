@@ -7,10 +7,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
-  issues: write
-  pull-requests: write
 
 jobs:
   release:
@@ -36,7 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
 
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     needs: release
     steps:
@@ -45,16 +41,18 @@ jobs:
         with:
           ref: master
 
-      - name: Build with Astro
-        uses: withastro/action@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
+      - name: Install dependencies and build
+        run: |
+          npm ci
+          npm run build
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v3
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
