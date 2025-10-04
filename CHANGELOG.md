@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/mtwmt/mtwmt.github.io/compare/v1.0.0...v1.0.1) (2025-10-04)
+
+
+### Bug Fixes
+
+* search ([e8fe7cb](https://github.com/mtwmt/mtwmt.github.io/commit/e8fe7cb6765b98957d4ad4d9a04bd8a0415516b6))
+
 # 1.0.0 (2025-10-04)
 
 
