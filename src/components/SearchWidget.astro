@@ -2,7 +2,7 @@
 import {Icon} from "astro-icon/components";
 ---
 
-<form class="form" action="">
+<form class="form search-form" action="">
   <div class="flex h-12 items-center bg-primary-700 px-3">
     <input
       class="w-full border-none bg-primary-700 text-primary-50 placeholder:text-primary-200 focus:outline-none focus:ring-transparent"
@@ -12,26 +12,34 @@ import {Icon} from "astro-icon/components";
       min="2"
       max="24"
     />
-    <Icon
-      tabindex="-1"
-      name="ic:outline-search"
-      class="h-6 w-6 text-primary-200 cursor-pointer"
-    />
+    <button type="submit" class="border-none bg-transparent p-0" aria-label="Search">
+      <Icon
+        name="ic:outline-search"
+        class="h-6 w-6 text-primary-200 cursor-pointer"
+      />
+    </button>
   </div>
 </form>
 
 <script>
   import DOMPurify from "dompurify";
-  const form: HTMLFormElement = document.querySelector("form")!;
 
-  form?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const searchTerm = DOMPurify.sanitize(formData.get("search")?.toString() as string);
-    if (!searchTerm || searchTerm.length === 0) return;
-    const url = new URL("/search", window.location.origin);
-    url.searchParams.set("q", searchTerm);
-    window.location.assign(url.toString());
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector<HTMLFormElement>(".search-form");
+
+    if (!form) return;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const searchInput = formData.get("search")?.toString() || "";
+      const searchTerm = DOMPurify.sanitize(searchInput);
+
+      if (!searchTerm || searchTerm.trim().length === 0) return;
+
+      const url = new URL("/search", window.location.origin);
+      url.searchParams.set("q", searchTerm.trim());
+      window.location.assign(url.toString());
+    });
   });
-
 </script>

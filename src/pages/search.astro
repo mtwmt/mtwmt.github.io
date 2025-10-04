@@ -22,7 +22,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       </ul>
     </div>
     <AsideLayout slot="aside">
-      <!-- <SearchWidget /> -->
+      <SearchWidget />
     </AsideLayout>
   </ContentLayout>
 </MainLayout>
@@ -32,7 +32,13 @@ import MainLayout from '../layouts/MainLayout.astro';
   import { SITE_TITLE } from '../consts';
   import { hightLight } from '../lib/highlight';
 
-  let SEARCH_DATA: any;
+  interface SearchResult {
+    slug: string;
+    title: string;
+    date: string | Date;
+  }
+
+  let SEARCH_DATA: SearchResult[];
 
   const search: HTMLInputElement = document.querySelector('#search')!;
   const searchReadout: Element = document.querySelector('#searchReadout')!;
@@ -48,9 +54,9 @@ import MainLayout from '../layouts/MainLayout.astro';
     searchReadout.textContent = searchText;
   }
 
-  const generateSearchList = (results: any, search: string) => {
+  const generateSearchList = (results: SearchResult[], search: string) => {
     return results
-      .map((r: any) => {
+      .map((r) => {
         const { title, date, slug } = r;
         const dateAsDate = new Date(date);
         return `<li class="py-4 px-[4vw]">
@@ -84,7 +90,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       }
     }
 
-    const list = SEARCH_DATA.filter((s: any) => {
+    const list = SEARCH_DATA.filter((s) => {
       return s.title.toLowerCase().includes(search.toLowerCase());
     });
     resultsList!.innerHTML =
@@ -97,14 +103,20 @@ import MainLayout from '../layouts/MainLayout.astro';
 
   // event listeners
   window.addEventListener('DOMContentLoaded', () => {
-    const urlParams = DOMPurify.sanitize(
-      new URLSearchParams(window.location.search).get('q')
-    );
+    const queryParam = new URLSearchParams(window.location.search).get('q');
+    const urlParams = queryParam ? DOMPurify.sanitize(queryParam) : '';
 
-    fetchSearchResults(urlParams);
-    updateDocumentTitle(urlParams);
-    updateSearchReadout(urlParams);
-    search.value = urlParams;
+    if (!search) {
+      console.error('Search input not found');
+      return;
+    }
+
+    if (urlParams && urlParams.trim().length > 0) {
+      fetchSearchResults(urlParams.trim());
+      updateDocumentTitle(urlParams.trim());
+      updateSearchReadout(urlParams.trim());
+      search.value = urlParams.trim();
+    }
     search.focus();
   });
 </script>
