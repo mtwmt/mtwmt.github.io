@@ -1,0 +1,68 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface BreadcrumbItem {
+  label: string;
+  href?: string;
+  icon?: string;
+}
+
+export interface Props {
+  items: BreadcrumbItem[];
+  separator?: string;
+  separatorIcon?: string;
+  className?: string;
+  maxItems?: number;
+}
+
+const {
+  items,
+  separator = '/',
+  separatorIcon,
+  className = '',
+  maxItems,
+} = Astro.props;
+
+// Handle maxItems collapsing
+let displayItems = items;
+if (maxItems && items.length > maxItems) {
+  const firstItems = items.slice(0, 1);
+  const lastItems = items.slice(-(maxItems - 1));
+  displayItems = [...firstItems, { label: '...', collapsed: true }, ...lastItems];
+}
+---
+
+<nav aria-label="Breadcrumb" class={className}>
+  <ol class="flex flex-wrap items-center gap-2 text-sm">
+    {displayItems.map((item, index) => (
+      <li class="flex items-center gap-2">
+        {item.collapsed ? (
+          <span class="text-light font-bold">...</span>
+        ) : item.href ? (
+          <a
+            href={item.href}
+            class="inline-flex items-center gap-1.5 px-2 py-1 rounded text-primary-700 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors font-medium"
+          >
+            {item.icon && <Icon name={item.icon} class="w-4 h-4" />}
+            <span>{item.label}</span>
+          </a>
+        ) : (
+          <span class="inline-flex items-center gap-1.5 px-2 py-1 text-default font-bold">
+            {item.icon && <Icon name={item.icon} class="w-4 h-4" />}
+            <span>{item.label}</span>
+          </span>
+        )}
+
+        {index < displayItems.length - 1 && (
+          <span class="text-light" aria-hidden="true">
+            {separatorIcon ? (
+              <Icon name={separatorIcon} class="w-4 h-4" />
+            ) : (
+              separator
+            )}
+          </span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

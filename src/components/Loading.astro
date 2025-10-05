@@ -1,0 +1,70 @@
+---
+export interface Props {
+  variant?: 'spinner' | 'dots' | 'ring' | 'bars';
+  size?: 'sm' | 'md' | 'lg';
+  color?: 'primary' | 'accent' | 'neutral';
+  className?: string;
+  text?: string;
+}
+
+const {
+  variant = 'spinner',
+  size = 'md',
+  color = 'primary',
+  className = '',
+  text,
+} = Astro.props;
+
+const sizeClasses = {
+  sm: 'w-6 h-6',
+  md: 'w-10 h-10',
+  lg: 'w-16 h-16',
+};
+
+const colorClasses = {
+  primary: 'border-primary-500',
+  accent: 'border-accent-500',
+  neutral: 'border-gray-900 dark:border-gray-200',
+};
+
+const textColorClasses = {
+  primary: 'text-primary-700 dark:text-primary-400',
+  accent: 'text-accent-700 dark:text-accent-400',
+  neutral: 'text-gray-900 dark:text-gray-200',
+};
+---
+
+<div class={`flex flex-col items-center justify-center gap-3 ${className}`}>
+  {variant === 'spinner' && (
+    <div class={`${sizeClasses[size]} border-4 ${colorClasses[color]} border-t-transparent rounded-full animate-spin`}></div>
+  )}
+
+  {variant === 'dots' && (
+    <div class="flex gap-2">
+      <div class={`${size === 'sm' ? 'w-2 h-2' : size === 'md' ? 'w-3 h-3' : 'w-4 h-4'} rounded-full ${colorClasses[color].replace('border-', 'bg-')} animate-bounce [animation-delay:0ms]`}></div>
+      <div class={`${size === 'sm' ? 'w-2 h-2' : size === 'md' ? 'w-3 h-3' : 'w-4 h-4'} rounded-full ${colorClasses[color].replace('border-', 'bg-')} animate-bounce [animation-delay:150ms]`}></div>
+      <div class={`${size === 'sm' ? 'w-2 h-2' : size === 'md' ? 'w-3 h-3' : 'w-4 h-4'} rounded-full ${colorClasses[color].replace('border-', 'bg-')} animate-bounce [animation-delay:300ms]`}></div>
+    </div>
+  )}
+
+  {variant === 'ring' && (
+    <div class={`relative ${sizeClasses[size]}`}>
+      <div class={`absolute inset-0 border-4 ${colorClasses[color]} opacity-20 rounded-full`}></div>
+      <div class={`absolute inset-0 border-4 ${colorClasses[color]} border-t-transparent rounded-full animate-spin`}></div>
+    </div>
+  )}
+
+  {variant === 'bars' && (
+    <div class="flex gap-1 items-end">
+      <div class={`${size === 'sm' ? 'w-1 h-4' : size === 'md' ? 'w-1.5 h-6' : 'w-2 h-8'} ${colorClasses[color].replace('border-', 'bg-')} animate-pulse [animation-delay:0ms]`}></div>
+      <div class={`${size === 'sm' ? 'w-1 h-6' : size === 'md' ? 'w-1.5 h-8' : 'w-2 h-10'} ${colorClasses[color].replace('border-', 'bg-')} animate-pulse [animation-delay:150ms]`}></div>
+      <div class={`${size === 'sm' ? 'w-1 h-4' : size === 'md' ? 'w-1.5 h-6' : 'w-2 h-8'} ${colorClasses[color].replace('border-', 'bg-')} animate-pulse [animation-delay:300ms]`}></div>
+    </div>
+  )}
+
+  {text && (
+    <p class={`text-sm font-bold ${textColorClasses[color]}`}>
+      {text}
+    </p>
+  )}
+</div>

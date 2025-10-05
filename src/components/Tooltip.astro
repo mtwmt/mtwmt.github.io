@@ -1,0 +1,65 @@
+---
+export interface Props {
+  text: string;
+  position?: 'top' | 'bottom' | 'left' | 'right';
+  className?: string;
+  color?: 'primary' | 'accent' | 'neutral';
+}
+
+const {
+  text,
+  position = 'top',
+  className = '',
+  color = 'neutral',
+} = Astro.props;
+
+const colorClasses = {
+  primary: 'bg-primary-600 text-white border-primary-700',
+  accent: 'bg-accent-600 text-white border-accent-700',
+  neutral: 'bg-gray-900 text-white dark:bg-gray-200 dark:text-gray-900 border-gray-900 dark:border-gray-200',
+};
+
+const positionClasses = {
+  top: 'bottom-full left-1/2 -translate-x-1/2 mb-2',
+  bottom: 'top-full left-1/2 -translate-x-1/2 mt-2',
+  left: 'right-full top-1/2 -translate-y-1/2 mr-2',
+  right: 'left-full top-1/2 -translate-y-1/2 ml-2',
+};
+
+const arrowClasses = {
+  top: 'top-full left-1/2 -translate-x-1/2 border-l-transparent border-r-transparent border-b-transparent',
+  bottom: 'bottom-full left-1/2 -translate-x-1/2 border-l-transparent border-r-transparent border-t-transparent',
+  left: 'left-full top-1/2 -translate-y-1/2 border-t-transparent border-b-transparent border-r-transparent',
+  right: 'right-full top-1/2 -translate-y-1/2 border-t-transparent border-b-transparent border-l-transparent',
+};
+
+const arrowColorClasses = {
+  primary: {
+    top: 'border-t-primary-600',
+    bottom: 'border-b-primary-600',
+    left: 'border-l-primary-600',
+    right: 'border-r-primary-600',
+  },
+  accent: {
+    top: 'border-t-accent-600',
+    bottom: 'border-b-accent-600',
+    left: 'border-l-accent-600',
+    right: 'border-r-accent-600',
+  },
+  neutral: {
+    top: 'border-t-gray-900 dark:border-t-gray-200',
+    bottom: 'border-b-gray-900 dark:border-b-gray-200',
+    left: 'border-l-gray-900 dark:border-l-gray-200',
+    right: 'border-r-gray-900 dark:border-r-gray-200',
+  },
+};
+---
+
+<div class={`relative inline-block group ${className}`}>
+  <slot />
+
+  <div class={`absolute ${positionClasses[position]} z-50 px-3 py-2 text-xs font-bold whitespace-nowrap rounded border-2 ${colorClasses[color]} shadow-[2px_2px_0_rgba(0,0,0,0.15)] dark:shadow-[2px_2px_0_rgba(255,255,255,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200`}>
+    {text}
+    <div class={`absolute w-0 h-0 border-4 ${arrowClasses[position]} ${arrowColorClasses[color][position]}`}></div>
+  </div>
+</div>

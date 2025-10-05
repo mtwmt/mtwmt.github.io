@@ -11,8 +11,8 @@ const { headings } = Astro.props;
 
 {
   !!headings.length && (
-    <ul data-blog-toc class="leading-[3rem] sticky top-0">
-      <li class="h-12 border-b border-primary-700 bg-primary-900 px-3 text-primary-50">
+    <ul data-blog-toc class="leading-normal sticky top-0 max-h-screen overflow-y-auto">
+      <li class="min-h-12 border-b border-primary-700 bg-primary-900 px-3 py-3 text-primary-50 flex items-center break-words">
         文章導覽
       </li>
       {headings.map(({ depth, slug, text }) => {
@@ -34,9 +34,9 @@ const { headings } = Astro.props;
             break;
         }
         return (
-          <li class="h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white">
+          <li class="min-h-12 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white">
             <a
-              class={`block w-full cursor-pointer px-3 ${cls}`}
+              class={`block w-full cursor-pointer px-3 py-3 break-words ${cls}`}
               href={`#${slug}`}
               aria-label={`Scroll to section: ${text}`}
             >

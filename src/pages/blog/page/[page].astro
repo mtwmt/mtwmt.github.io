@@ -1,28 +1,27 @@
 ---
-import type { GetStaticPathsOptions, Page } from 'astro';
-import { getCollection } from 'astro:content';
-import Categories from '../../../components/Categories.astro';
-import FormattedDate from '../../../components/FormattedDate.astro';
-import FriendshipLink from '../../../components/FriendshipLink.astro';
-import Header from '../../../components/Header.astro';
-import PageTitle from '../../../components/PageTitle.astro';
-import SearchWidget from '../../../components/SearchWidget.astro';
-import Tags from '../../../components/Tags.astro';
-import { SITE_TITLE } from '../../../consts';
-import AsideLayout from '../../../layouts/AsideLayout.astro';
-import ContentLayout from '../../../layouts/ContentLayout.astro';
-import MainLayout from '../../../layouts/MainLayout.astro';
-import { sortByDate } from '../../../lib/sortByDate';
-import Pagination from '../../../components/Pagination.astro';
-import PostPreview from '../../../components/PostPreview.astro';
+import type { GetStaticPathsOptions, Page } from "astro";
+import { getCollection } from "astro:content";
+import Categories from "../../../components/Categories.astro";
+import FormattedDate from "../../../components/FormattedDate.astro";
+import FriendshipLink from "../../../components/FriendshipLink.astro";
+import Header from "../../../components/Header.astro";
+import PageTitle from "../../../components/PageTitle.astro";
+import Tags from "../../../components/Tags.astro";
+import { SITE_TITLE } from "../../../consts";
+import AsideLayout from "../../../layouts/AsideLayout.astro";
+import ContentLayout from "../../../layouts/ContentLayout.astro";
+import MainLayout from "../../../layouts/MainLayout.astro";
+import { sortByDate } from "../../../lib/sortByDate";
+import Pagination from "../../../components/Pagination.astro";
+import PostPreview from "../../../components/PostPreview.astro";
+import Divider from "../../../components/Divider.astro";
 
 export async function getStaticPaths(options: GetStaticPathsOptions) {
   const { paginate } = options;
-  const posts = sortByDate((await getCollection("blog")))
-  .filter(p => {
-    const regex = /ironman/i
-    return !p.data.tags.some((tag:string) => regex.test(tag));
-  })
+  const posts = sortByDate(await getCollection("blog")).filter((p) => {
+    const regex = /ironman/i;
+    return !p.data.tags.some((tag: string) => regex.test(tag));
+  });
 
   return paginate(posts, { pageSize: 10 });
 }
@@ -33,50 +32,74 @@ interface Props {
 
 const { page } = Astro.props;
 const { data } = page;
+
+// 傳統日曆配色：週日紅色、週六藍色、平日深色
+function getDateColor(date: Date) {
+  const day = date.getDay();
+  if (day === 0) return "text-error-600 dark:text-error-400"; // 週日 - 紅色
+  if (day === 6) return "text-info-600 dark:text-info-400"; // 週六 - 藍色
+  return "text-primary-700 dark:text-primary-300"; // 平日 - 灰色
+}
 ---
 
 <MainLayout title={SITE_TITLE}>
   <Header />
   <ContentLayout>
-    <PageTitle title="BLOG LIST" />
-    {
-      data.map((post) => {
-        return (
-          <div class="border-t border-default py-10 px-[4vw]">
-            <div class=" text-right">{<Tags tags={post.data.tags} />}</div>
+    <PageTitle title="BLOG LIST" icon="ic:outline-article" />
+    <div class="px-[4vw]">
+      {
+        data.map((post, index) => {
+          return (
+            <>
+              {index > 0 && <Divider variant="solid" spacing="sm" />}
 
-            <div class="lg:flex lg:items-center">
-              <FormattedDate
-                date={post.data.update || post.data.date}
-                type="graphics"
-                className="inline-block mr-5 text-left"
-              />
-              <div>
-                <PostPreview className="text-light" content={post.body} />
-                <a href={`/blog/${post.slug}/`}>
-                  <p class="text-xl font-semibold leading-loose">
-                    {post.data.title}
-                  </p>
-                  <p class="text-sm leading-relaxed text-light">
-                    {post.body
-                      .replace(/<[^>]*>/gm, "")
-                      .replace(/[\n#]/g, "")
-                      .trim()
-                      .slice(0, 100)}
-                  </p>
-                  <p class="mt-1 text-xs text-primary-500  dark:text-primary-300">
-                    READ MORE
-                  </p>
-                </a>
-              </div>
-            </div>
-          </div>
-        );
-      })
-    }
+              <article>
+                <div class="text-right mb-4">
+                  <Tags tags={post.data.tags} />
+                </div>
 
-    <div class="mt-5 border-y border-default">
-      <Pagination {page} path="/blog/page"></Pagination>
+                <div class="lg:flex lg:items-center lg:gap-6">
+                  <FormattedDate
+                    date={post.data.update || post.data.date}
+                    type="graphics"
+                    className={`inline-block text-left font-bold ${getDateColor(post.data.update || post.data.date)}`}
+                  />
+
+                  <div class="flex-1 mt-4 lg:mt-0">
+                    <PostPreview
+                      className="text-gray-500 dark:text-gray-400 text-xs"
+                      content={post.body}
+                    />
+
+                    <a href={`/blog/${post.slug}/`} class="block">
+                      <h2 class="text-xl font-semibold leading-loose text-gray-900 dark:text-white line-clamp-2">
+                        {post.data.title}
+                      </h2>
+
+                      <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400 line-clamp-3">
+                        {post.body
+                          .replace(/<[^>]*>/gm, "")
+                          .replace(/[\n#]/g, "")
+                          .trim()
+                          .slice(0, 100)}
+                      </p>
+
+                      <span class="mt-1 text-xs text-primary-600  dark:text-primary-400">
+                        READ MORE
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </>
+          );
+        })
+      }
+    </div>
+
+    <Divider variant="solid" spacing="md" />
+    <div class="px-[4vw] py-4">
+      <Pagination {page} path="/blog/page" />
     </div>
 
     <AsideLayout slot="aside">

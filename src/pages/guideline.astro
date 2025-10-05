@@ -1,0 +1,1635 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Header from "../components/Header.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
+import { Icon } from 'astro-icon/components';
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
+import Badge from "../components/Badge.astro";
+import Tags from "../components/Tags.astro";
+import Hero from "../components/Hero.astro";
+import Input from "../components/Input.astro";
+import Alert from "../components/Alert.astro";
+import GoTop from "../components/GoTop.astro";
+import Toc from "../components/Toc.astro";
+import AsideLayout from "../layouts/AsideLayout.astro";
+import Divider from "../components/Divider.astro";
+import Tooltip from "../components/Tooltip.astro";
+import Loading from "../components/Loading.astro";
+import Dropdown from "../components/Dropdown.astro";
+import Modal from "../components/Modal.astro";
+import Timeline from "../components/Timeline.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+// Table of Contents headings
+const headings = [
+  { depth: 2, slug: 'colors', text: '🎨 色彩系統' },
+  { depth: 2, slug: 'comic-style', text: '🎨 Comic 風格樣式系統' },
+  { depth: 2, slug: 'buttons', text: '🔘 按鈕系統' },
+  { depth: 2, slug: 'cards', text: '🎴 卡片系統' },
+  { depth: 2, slug: 'spacing', text: '📏 間距與排版' },
+  { depth: 2, slug: 'grid', text: '📱 響應式網格' },
+  { depth: 2, slug: 'tags', text: '🏷️ Tag vs Badge 標籤系統' },
+  { depth: 2, slug: 'input', text: '📝 Input 表單組件' },
+  { depth: 2, slug: 'alert', text: '💬 Alert 提示組件' },
+  { depth: 2, slug: 'hero', text: '🎭 Hero 區塊組件' },
+  { depth: 2, slug: 'divider', text: '➖ Divider 分隔線組件' },
+  { depth: 2, slug: 'tooltip', text: '💭 Tooltip 提示框組件' },
+  { depth: 2, slug: 'loading', text: '⏳ Loading 載入組件' },
+  { depth: 2, slug: 'dropdown', text: '📋 Dropdown 下拉選單組件' },
+  { depth: 2, slug: 'modal', text: '🪟 Modal 彈窗組件' },
+  { depth: 2, slug: 'timeline', text: '📅 Timeline 時間軸組件' },
+  { depth: 2, slug: 'breadcrumbs', text: '🍞 Breadcrumbs 麵包屑組件' },
+  { depth: 2, slug: 'components', text: '✅ 完整組件清單' },
+];
+---
+
+<MainLayout title="Design Guideline - Mandy's Web">
+  <Header />
+  <ContentLayout>
+    <!-- Hero Section -->
+    <Hero
+      title="Design Guideline"
+      subtitle="漫畫風格設計系統"
+      description="以 #00aaaa 為核心的 Teal 配色 × 粗黑漫畫線條"
+    />
+
+    <div class="px-[4vw] py-12 md:py-16">
+
+      <!-- 🎨 色彩系統 -->
+      <section id="colors" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-black mb-4 uppercase tracking-wide">🎨 色彩系統</h2>
+        <p class="text-light mb-12 font-medium">保持品牌 DNA (#00aaaa)，延伸完整色階與互補色系 + 漫畫風格視覺</p>
+
+        <!-- Primary Colors -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold mb-3">Primary Colors (Teal)</h3>
+          <p class="text-light mb-6">核心品牌色 - 互動元素、連結、按鈕（切換暗黑模式查看變化）</p>
+
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <!-- 直接使用 Tailwind class，暗黑模式會自動切換 -->
+            <div>
+              <div class="relative rounded-xl shadow-md overflow-hidden bg-primary-50 h-24">
+                <div class="absolute bottom-3 left-3 text-gray-800 dark:text-gray-200">
+                  <div class="font-bold text-lg">50</div>
+                  <div class="text-xs opacity-75">最淺背景</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="relative rounded-xl shadow-md overflow-hidden bg-primary-100 h-24">
+                <div class="absolute bottom-3 left-3 text-gray-800 dark:text-gray-200">
+                  <div class="font-bold text-lg">100</div>
+                  <div class="text-xs opacity-75">淺背景</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="relative rounded-xl shadow-md overflow-hidden bg-primary-200 h-24">
+                <div class="absolute bottom-3 left-3 text-gray-800 dark:text-white">
+                  <div class="font-bold text-lg">200</div>
+                  <div class="text-xs opacity-75">淺色裝飾</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="relative rounded-xl shadow-md overflow-hidden bg-primary-300 h-24">
+                <div class="absolute bottom-3 left-3 text-white">
+                  <div class="font-bold text-lg">300</div>
+                  <div class="text-xs opacity-90">中淺色</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="relative rounded-xl shadow-md overflow-hidden bg-primary-400 h-24">
+                <div class="absolute bottom-3 left-3 text-white">
+                  <div class="font-bold text-lg">400</div>
+                  <div class="text-xs opacity-90">中等強調</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- primary-500 核心色 - 滿版顯示 -->
+            <div class="md:col-span-5">
+              <div class="relative rounded-xl shadow-lg overflow-hidden bg-primary-500 h-32 ring-4 ring-primary-300 dark:ring-primary-700">
+                <div class="absolute top-3 right-3">
+                  <Icon name="la:star" class="w-8 h-8 text-white" />
+                </div>
+                <div class="absolute bottom-3 left-3 text-white">
+                  <div class="font-bold text-2xl">primary-500</div>
+                  <div class="text-sm opacity-90">✨ 核心主色 (#00aaaa → 暗黑模式 #007777)</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="relative rounded-xl shadow-md overflow-hidden bg-primary-600 h-24">
+                <div class="absolute bottom-3 left-3 text-white">
+                  <div class="font-bold text-lg">600</div>
+                  <div class="text-xs opacity-90">稍深</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="relative rounded-xl shadow-md overflow-hidden bg-primary-700 h-24">
+                <div class="absolute bottom-3 left-3 text-white">
+                  <div class="font-bold text-lg">700</div>
+                  <div class="text-xs opacity-90">Hover 狀態</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="relative rounded-xl shadow-md overflow-hidden bg-primary-800 h-24">
+                <div class="absolute bottom-3 left-3 text-white">
+                  <div class="font-bold text-lg">800</div>
+                  <div class="text-xs opacity-90">深色強調</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="relative rounded-xl shadow-md overflow-hidden bg-primary-900 h-24">
+                <div class="absolute bottom-3 left-3 text-white">
+                  <div class="font-bold text-lg">900</div>
+                  <div class="text-xs opacity-90">最深（陰影）</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <Alert color="info" title="💡 暗黑模式變化">
+            所有 primary 色階在暗黑模式下會自動調整，primary-500 從 <code class="px-2 py-1 bg-primary-100 dark:bg-primary-900 rounded">#00aaaa</code> 變為 <code class="px-2 py-1 bg-primary-100 dark:bg-primary-900 rounded">#007777</code>
+          </Alert>
+        </div>
+
+        <!-- Semantic Colors (語意化顏色) -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold mb-6">Semantic Colors (語意化顏色)</h3>
+          <p class="text-light mb-8">完整的語意化顏色系統，支援 50-950 色階</p>
+
+          <div class="space-y-12">
+            <!-- Success -->
+            <div>
+              <h4 class="text-xl font-bold mb-3 text-success-700 dark:text-success-400">Success (成功/綠色)</h4>
+              <div class="grid grid-cols-5 md:grid-cols-11 gap-2 mb-4">
+                <div class="text-center">
+                  <div class="h-16 bg-success-50 rounded-lg border border-gray-200"></div>
+                  <p class="text-xs text-light mt-1">50</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-success-100 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">100</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-success-200 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">200</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-success-300 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">300</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-success-400 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">400</p>
+                </div>
+                <div class="text-center md:col-span-1 col-span-5">
+                  <div class="h-16 bg-success-500 rounded-lg ring-2 ring-success-600 flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">✓ 500</span>
+                  </div>
+                  <p class="text-xs font-bold text-success-600 mt-1">主色</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-success-600 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">600</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-success-700 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">700</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-success-800 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">800</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-success-900 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">900</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-success-950 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">950</p>
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <Badge color="success">成功狀態</Badge>
+                <Badge color="success" outline={true}>完成</Badge>
+              </div>
+            </div>
+
+            <!-- Warning -->
+            <div>
+              <h4 class="text-xl font-bold mb-3 text-warning-700 dark:text-warning-400">Warning (警告/黃色)</h4>
+              <div class="grid grid-cols-5 md:grid-cols-11 gap-2 mb-4">
+                <div class="text-center">
+                  <div class="h-16 bg-warning-50 rounded-lg border border-gray-200"></div>
+                  <p class="text-xs text-light mt-1">50</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-warning-100 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">100</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-warning-200 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">200</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-warning-300 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">300</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-warning-400 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">400</p>
+                </div>
+                <div class="text-center md:col-span-1 col-span-5">
+                  <div class="h-16 bg-warning-500 rounded-lg ring-2 ring-warning-600 flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">⚠ 500</span>
+                  </div>
+                  <p class="text-xs font-bold text-warning-600 mt-1">主色</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-warning-600 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">600</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-warning-700 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">700</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-warning-800 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">800</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-warning-900 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">900</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-warning-950 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">950</p>
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <Badge color="warning">注意事項</Badge>
+                <Badge color="warning" outline={true}>待處理</Badge>
+              </div>
+            </div>
+
+            <!-- Error -->
+            <div>
+              <h4 class="text-xl font-bold mb-3 text-error-700 dark:text-error-400">Error (錯誤/紅色)</h4>
+              <div class="grid grid-cols-5 md:grid-cols-11 gap-2 mb-4">
+                <div class="text-center">
+                  <div class="h-16 bg-error-50 rounded-lg border border-gray-200"></div>
+                  <p class="text-xs text-light mt-1">50</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-error-100 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">100</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-error-200 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">200</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-error-300 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">300</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-error-400 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">400</p>
+                </div>
+                <div class="text-center md:col-span-1 col-span-5">
+                  <div class="h-16 bg-error-500 rounded-lg ring-2 ring-error-600 flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">✕ 500</span>
+                  </div>
+                  <p class="text-xs font-bold text-error-600 mt-1">主色</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-error-600 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">600</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-error-700 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">700</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-error-800 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">800</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-error-900 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">900</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-error-950 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">950</p>
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <Badge color="error">錯誤</Badge>
+                <Badge color="error" outline={true}>失敗</Badge>
+              </div>
+            </div>
+
+            <!-- Info -->
+            <div>
+              <h4 class="text-xl font-bold mb-3 text-info-700 dark:text-info-400">Info (資訊/藍色)</h4>
+              <div class="grid grid-cols-5 md:grid-cols-11 gap-2 mb-4">
+                <div class="text-center">
+                  <div class="h-16 bg-info-50 rounded-lg border border-gray-200"></div>
+                  <p class="text-xs text-light mt-1">50</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-info-100 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">100</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-info-200 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">200</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-info-300 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">300</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-info-400 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">400</p>
+                </div>
+                <div class="text-center md:col-span-1 col-span-5">
+                  <div class="h-16 bg-info-500 rounded-lg ring-2 ring-info-600 flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">ⓘ 500</span>
+                  </div>
+                  <p class="text-xs font-bold text-info-600 mt-1">主色</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-info-600 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">600</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-info-700 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">700</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-info-800 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">800</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-info-900 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">900</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-info-950 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">950</p>
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <Badge color="info">提示</Badge>
+                <Badge color="info" outline={true}>資訊</Badge>
+              </div>
+            </div>
+
+            <!-- Accent -->
+            <div>
+              <h4 class="text-xl font-bold mb-3 text-accent-700 dark:text-accent-400">Accent (強調/橘色)</h4>
+              <div class="grid grid-cols-5 md:grid-cols-11 gap-2 mb-4">
+                <div class="text-center">
+                  <div class="h-16 bg-accent-50 rounded-lg border border-gray-200"></div>
+                  <p class="text-xs text-light mt-1">50</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-accent-100 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">100</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-accent-200 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">200</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-accent-300 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">300</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-accent-400 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">400</p>
+                </div>
+                <div class="text-center md:col-span-1 col-span-5">
+                  <div class="h-16 bg-accent-500 rounded-lg ring-2 ring-accent-600 flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">🔥 500</span>
+                  </div>
+                  <p class="text-xs font-bold text-accent-600 mt-1">主色</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-accent-600 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">600</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-accent-700 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">700</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-accent-800 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">800</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-accent-900 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">900</p>
+                </div>
+                <div class="text-center">
+                  <div class="h-16 bg-accent-950 rounded-lg"></div>
+                  <p class="text-xs text-light mt-1">950</p>
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <Badge color="accent">CTA 按鈕</Badge>
+                <Badge color="accent" outline={true}>日期</Badge>
+              </div>
+            </div>
+          </div>
+
+          <Alert color="info" title="💡 使用建議" className="mt-8">
+            <ul class="space-y-1 ml-5 list-disc text-sm">
+              <li><strong>50-100</strong>: 淺色背景、卡片</li>
+              <li><strong>200-400</strong>: 裝飾、邊框、淺色文字</li>
+              <li><strong>500</strong>: 主色調、按鈕、連結</li>
+              <li><strong>600-700</strong>: Hover 狀態、深色文字</li>
+              <li><strong>800-950</strong>: 陰影、深色背景</li>
+            </ul>
+          </Alert>
+        </div>
+
+        <!-- Accent Colors (舊版，可移除或保留作為參考) -->
+        <div class="mb-16 hidden">
+          <h3 class="text-2xl font-bold mb-3">Accent Colors (Orange)</h3>
+          <p class="text-light mb-6">輔助色系 - 使用 CSS 變數定義（日期、CTA、強調元素）</p>
+
+          <div class="grid grid-cols-3 gap-4 mb-6">
+            <!-- 使用 CSS 變數 var(--color-accent-*) -->
+            <div>
+              <div
+                class="relative h-24 rounded-xl shadow-md flex items-end justify-center pb-4"
+                style="background-color: var(--color-accent-light)"
+              >
+                <div class="text-white font-bold">Light</div>
+              </div>
+              <p class="text-xs text-light mt-2 text-center">--color-accent-light</p>
+              <p class="text-xs text-light text-center">淺橘（日期背景）</p>
+            </div>
+
+            <div>
+              <div
+                class="relative h-24 rounded-xl shadow-md flex items-end justify-center pb-4 ring-4 ring-orange-300 dark:ring-orange-700"
+                style="background-color: var(--color-accent)"
+              >
+                <div class="text-white font-bold">Main ✨</div>
+              </div>
+              <p class="text-xs text-light mt-2 text-center">--color-accent</p>
+              <p class="text-xs text-light text-center">主橘色（CTA）</p>
+            </div>
+
+            <div>
+              <div
+                class="relative h-24 rounded-xl shadow-md flex items-end justify-center pb-4"
+                style="background-color: var(--color-accent-dark)"
+              >
+                <div class="text-white font-bold">Dark</div>
+              </div>
+              <p class="text-xs text-light mt-2 text-center">--color-accent-dark</p>
+              <p class="text-xs text-light text-center">深橘（Hover）</p>
+            </div>
+          </div>
+
+          <Alert color="warning" title="💡 為什麼選橘色？">
+            <ul class="space-y-1 ml-5 list-disc">
+              <li>與 Teal (#00aaaa) 形成強烈視覺對比（互補色）</li>
+              <li>溫暖色調平衡冷色調主色</li>
+              <li>橘色常用於「行動號召」(CTA) 按鈕</li>
+            </ul>
+          </Alert>
+        </div>
+
+        <!-- Neutral Colors -->
+        <div>
+          <h3 class="text-2xl font-bold mb-3">Neutral Colors</h3>
+          <p class="text-light mb-6">灰階系統 - 文字、背景、邊框（符合 WCAG AA 標準）</p>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="p-6 rounded-xl border-2 border-default bg-default">
+              <div class="text-default font-bold mb-1">主背景</div>
+              <code class="text-xs text-light">--color-background</code>
+            </div>
+            <div class="p-6 rounded-xl border-2 border-default bg-light">
+              <div class="text-default font-bold mb-1">卡片背景</div>
+              <code class="text-xs text-light">--color-light-background</code>
+            </div>
+            <div class="p-6 rounded-xl border-4 border-default bg-default">
+              <div class="text-default font-bold mb-1">邊框色</div>
+              <code class="text-xs text-light">--color-border</code>
+              <p class="text-xs text-light mt-1">（看邊框顏色）</p>
+            </div>
+            <div class="p-6 rounded-xl bg-light border border-default">
+              <div class="text-default font-bold mb-1">主文字</div>
+              <code class="text-xs text-light">text-default</code>
+              <p class="text-xs text-light mt-2">對比度 7.4:1 ✅ AAA</p>
+            </div>
+            <div class="p-6 rounded-xl bg-light border border-default">
+              <div class="text-light font-bold mb-1">次要文字</div>
+              <code class="text-xs text-light">text-light</code>
+              <p class="text-xs text-light mt-2">對比度 4.6:1 ✅ AA</p>
+            </div>
+            <div class="p-6 rounded-xl bg-light border border-default">
+              <div class="text-dark font-bold mb-1">強調文字</div>
+              <code class="text-xs text-light">text-dark</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dark Mode Toggle -->
+        <Alert color="info" title="🌓 暗黑模式測試" className="mt-12">
+          請切換頁面右上角的暗黑模式開關，觀察色彩在不同模式下的表現
+        </Alert>
+      </section>
+
+      <!-- 🎨 Manga 風格樣式系統 -->
+      <section id="comic-style" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">🎨 Comic 風格樣式系統</h2>
+        <p class="text-light mb-12">日本漫畫風格：細線條 + 柔和陰影 + 留白</p>
+
+        <div class="space-y-12">
+          <!-- 陰影系統 -->
+          <div>
+            <h3 class="text-2xl font-bold mb-6">陰影系統 (Shadows)</h3>
+            <p class="text-light mb-6">使用柔和漸層陰影，提升層次感</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="p-6 bg-light rounded-lg">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg comic-shadow-sm mb-3">
+                  <p class="text-default font-bold">Small</p>
+                </div>
+                <code class="text-xs text-light">comic-shadow-sm</code>
+                <p class="text-xs text-light mt-1">0 1px 4px rgba(0,0,0,0.08)</p>
+              </div>
+
+              <div class="p-6 bg-light rounded-lg">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg comic-shadow mb-3">
+                  <p class="text-default font-bold">Default</p>
+                </div>
+                <code class="text-xs text-light">comic-shadow</code>
+                <p class="text-xs text-light mt-1">0 2px 8px + 0 4px 12px</p>
+              </div>
+
+              <div class="p-6 bg-light rounded-lg">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg comic-shadow-lg mb-3">
+                  <p class="text-default font-bold">Large</p>
+                </div>
+                <code class="text-xs text-light">comic-shadow-lg</code>
+                <p class="text-xs text-light mt-1">0 4px 16px + 0 8px 24px</p>
+              </div>
+
+              <div class="p-6 bg-light rounded-lg">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg comic-shadow-xl mb-3">
+                  <p class="text-default font-bold">Extra Large</p>
+                </div>
+                <code class="text-xs text-light">comic-shadow-xl</code>
+                <p class="text-xs text-light mt-1">0 8px 32px + 0 12px 48px</p>
+              </div>
+            </div>
+
+            <Alert color="info" title="💡 CSS 變數使用" className="mt-6">
+              可直接使用 CSS 變數：<code class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">box-shadow: var(--comic-shadow);</code>
+            </Alert>
+          </div>
+
+          <!-- 邊框系統 -->
+          <div>
+            <h3 class="text-2xl font-bold mb-6">邊框系統 (Borders)</h3>
+            <p class="text-light mb-6">細邊框設計，符合 Manga 風格</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="p-6 bg-light rounded-lg">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg comic-border mb-3">
+                  <p class="text-default font-bold">Default Border</p>
+                  <p class="text-light text-sm">1px 細邊框</p>
+                </div>
+                <code class="text-xs text-light">comic-border</code>
+                <p class="text-xs text-light mt-1">border border-gray-300</p>
+              </div>
+
+              <div class="p-6 bg-light rounded-lg">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg comic-border-thick mb-3">
+                  <p class="text-default font-bold">Thick Border</p>
+                  <p class="text-light text-sm">2px 中等邊框</p>
+                </div>
+                <code class="text-xs text-light">comic-border-thick</code>
+                <p class="text-xs text-light mt-1">border-2 border-gray-400</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 圓角系統 -->
+          <div>
+            <h3 class="text-2xl font-bold mb-6">圓角系統 (Border Radius)</h3>
+            <p class="text-light mb-6">統一的圓角規範 - 漸進式圓角設計</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="p-6 bg-light rounded-lg">
+                <div class="h-40 bg-primary-500 dark:bg-primary-600 mb-4 flex items-center justify-center border-4 border-gray-900 dark:border-white relative" style="border-radius: 6px;">
+                  <span class="text-white font-bold text-2xl">6px</span>
+                  <div class="absolute top-2 right-2 w-12 h-12 border-4 border-yellow-400" style="border-radius: 50%;"></div>
+                </div>
+                <code class="text-sm font-bold text-default block mb-1">--comic-border-radius-sm (6px)</code>
+                <p class="text-sm text-light">用於：Badge、小組件、Tag</p>
+              </div>
+
+              <div class="p-6 bg-light rounded-lg">
+                <div class="h-40 bg-primary-500 dark:bg-primary-600 mb-4 flex items-center justify-center border-4 border-gray-900 dark:border-white relative" style="border-radius: 8px;">
+                  <span class="text-white font-bold text-2xl">8px</span>
+                  <div class="absolute top-2 right-2 w-12 h-12 border-4 border-yellow-400" style="border-radius: 50%;"></div>
+                </div>
+                <code class="text-sm font-bold text-default block mb-1">--comic-border-radius (8px)</code>
+                <p class="text-sm text-light">用於：Button、Input、Alert</p>
+              </div>
+
+              <div class="p-6 bg-light rounded-lg">
+                <div class="h-40 bg-primary-500 dark:bg-primary-600 mb-4 flex items-center justify-center border-4 border-gray-900 dark:border-white relative" style="border-radius: 12px;">
+                  <span class="text-white font-bold text-2xl">12px</span>
+                  <div class="absolute top-2 right-2 w-12 h-12 border-4 border-yellow-400" style="border-radius: 50%;"></div>
+                </div>
+                <code class="text-sm font-bold text-default block mb-1">--comic-border-radius-lg (12px)</code>
+                <p class="text-sm text-light">用於：Card、Panel</p>
+              </div>
+
+              <div class="p-6 bg-light rounded-lg">
+                <div class="h-40 bg-primary-500 dark:bg-primary-600 mb-4 flex items-center justify-center border-4 border-gray-900 dark:border-white relative" style="border-radius: 16px;">
+                  <span class="text-white font-bold text-2xl">16px</span>
+                  <div class="absolute top-2 right-2 w-12 h-12 border-4 border-yellow-400" style="border-radius: 50%;"></div>
+                </div>
+                <code class="text-sm font-bold text-default block mb-1">--comic-border-radius-xl (16px)</code>
+                <p class="text-sm text-light">用於：Hero、Modal、大型容器</p>
+              </div>
+            </div>
+
+            <Alert color="info" title="💡 圓角設計原則" className="mt-6">
+              <ul class="space-y-2 text-sm">
+                <li><strong>6px (sm)</strong>：小型元素，細緻柔和</li>
+                <li><strong>8px (default)</strong>：標準互動元素，平衡感最佳</li>
+                <li><strong>12px (lg)</strong>：中大型容器，視覺友善</li>
+                <li><strong>16px (xl)</strong>：大型區塊，強烈視覺層次</li>
+              </ul>
+              <p class="text-xs text-light mt-3">💡 黃色圓圈標示右上角，方便觀察圓角弧度差異</p>
+            </Alert>
+          </div>
+
+          <!-- 間距系統 -->
+          <div>
+            <h3 class="text-2xl font-bold mb-6">間距系統 (Spacing)</h3>
+            <p class="text-light mb-6">統一的間距尺度</p>
+
+            <div class="space-y-3">
+              <div class="flex items-center gap-4">
+                <div class="w-24 text-right">
+                  <code class="text-xs text-light">xs / 4px</code>
+                </div>
+                <div class="h-8 bg-primary-500" style="width: var(--spacing-xs);"></div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-24 text-right">
+                  <code class="text-xs text-light">sm / 8px</code>
+                </div>
+                <div class="h-8 bg-primary-500" style="width: var(--spacing-sm);"></div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-24 text-right">
+                  <code class="text-xs text-light">md / 16px</code>
+                </div>
+                <div class="h-8 bg-primary-500" style="width: var(--spacing-md);"></div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-24 text-right">
+                  <code class="text-xs text-light">lg / 24px</code>
+                </div>
+                <div class="h-8 bg-primary-500" style="width: var(--spacing-lg);"></div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-24 text-right">
+                  <code class="text-xs text-light">xl / 32px</code>
+                </div>
+                <div class="h-8 bg-primary-500" style="width: var(--spacing-xl);"></div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-24 text-right">
+                  <code class="text-xs text-light">2xl / 48px</code>
+                </div>
+                <div class="h-8 bg-primary-500" style="width: var(--spacing-2xl);"></div>
+              </div>
+            </div>
+
+            <Alert color="info" title="💡 使用範例" className="mt-6">
+              <code class="text-xs">padding: var(--spacing-md); margin: var(--spacing-lg);</code>
+            </Alert>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🔘 按鈕系統 -->
+      <section id="buttons" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">🔘 按鈕系統</h2>
+        <p class="text-light mb-12">統一的互動元素樣式 - 使用 Button 組件</p>
+
+        <!-- Button Component 展示 -->
+        <div class="mb-12">
+          <h3 class="text-xl font-bold mb-4">Button 組件 (新)</h3>
+          <div class="space-y-6">
+            <!-- Primary -->
+            <div>
+              <p class="text-sm text-light mb-3">variant="primary" (3D 陰影效果)</p>
+              <div class="flex flex-wrap gap-4">
+                <Button variant="primary">Default</Button>
+                <Button variant="primary" active={true}>Active</Button>
+                <Button variant="primary" disabled={true}>Disabled</Button>
+              </div>
+              <pre class="mt-3 p-3 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Button variant="primary"&gt;Default&lt;/Button&gt;</code></pre>
+            </div>
+
+            <!-- Accent -->
+            <div>
+              <p class="text-sm text-light mb-3">variant="accent" (橘色 CTA)</p>
+              <div class="flex flex-wrap gap-4">
+                <Button variant="accent">立即查看</Button>
+                <Button variant="accent" disabled={true}>Disabled</Button>
+              </div>
+              <pre class="mt-3 p-3 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Button variant="accent"&gt;立即查看&lt;/Button&gt;</code></pre>
+            </div>
+
+            <!-- Outline -->
+            <div>
+              <p class="text-sm text-light mb-3">variant="outline"</p>
+              <div class="flex flex-wrap gap-4">
+                <Button variant="outline">了解更多</Button>
+                <Button variant="outline" disabled={true}>Disabled</Button>
+              </div>
+              <pre class="mt-3 p-3 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Button variant="outline"&gt;了解更多&lt;/Button&gt;</code></pre>
+            </div>
+
+            <!-- Ghost -->
+            <div>
+              <p class="text-sm text-light mb-3">variant="ghost"</p>
+              <div class="flex flex-wrap gap-4">
+                <Button variant="ghost">取消</Button>
+                <Button variant="ghost" disabled={true}>Disabled</Button>
+              </div>
+              <pre class="mt-3 p-3 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Button variant="ghost"&gt;取消&lt;/Button&gt;</code></pre>
+            </div>
+
+            <!-- Link -->
+            <div>
+              <p class="text-sm text-light mb-3">variant="link"</p>
+              <div class="flex flex-wrap gap-4">
+                <Button variant="link" href="#">查看更多</Button>
+              </div>
+              <pre class="mt-3 p-3 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Button variant="link" href="#"&gt;查看更多&lt;/Button&gt;</code></pre>
+            </div>
+
+            <!-- Sizes -->
+            <div>
+              <p class="text-sm text-light mb-3">尺寸：size="sm|md|lg"</p>
+              <div class="flex flex-wrap items-center gap-4">
+                <Button variant="primary" size="sm">Small</Button>
+                <Button variant="primary" size="md">Medium</Button>
+                <Button variant="primary" size="lg">Large</Button>
+              </div>
+              <pre class="mt-3 p-3 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Button size="sm|md|lg"&gt;...&lt;/Button&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🎴 卡片系統 -->
+      <section id="cards" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">🎴 卡片系統</h2>
+        <p class="text-light mb-12">統一的內容容器設計 - 使用 Card 組件</p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <!-- Project Card -->
+          <div>
+            <h3 class="text-lg font-bold mb-4 text-light">Variant: Project</h3>
+            <Card
+              variant="project"
+              title="精典小遊戲"
+              href="//mtwmt.com/game/"
+              year="2025"
+              hasPushpin={true}
+              skills={[
+                {name: 'Angular', color: 'info'},
+                {name: 'Tailwind', color: 'primary'}
+              ]}
+            />
+            <pre class="mt-4 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Card variant="project" title="..." year="2025" /&gt;</code></pre>
+          </div>
+
+          <!-- Post Card -->
+          <div>
+            <h3 class="text-lg font-bold mb-4 text-light">Variant: Post</h3>
+            <Card
+              variant="post"
+              title="文章標題範例"
+              href="/blog"
+              date={new Date('2025-01-15')}
+              tags={['Angular', 'TypeScript']}
+            />
+            <pre class="mt-4 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Card variant="post" title="..." date={new Date()} /&gt;</code></pre>
+          </div>
+
+          <!-- Default Card -->
+          <div>
+            <h3 class="text-lg font-bold mb-4 text-light">Variant: Default</h3>
+            <Card
+              variant="default"
+              title="預設卡片樣式"
+              description="這是一個標準的卡片組件，可用於各種內容展示場景。"
+              icon="ic:outline-info"
+            />
+            <pre class="mt-4 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Card variant="default" title="..." description="..." /&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Card 規範 -->
+        <Alert color="info" title="📐 Card Manga 風格設計規範 (Comic Book Style)">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <strong>視覺樣式：</strong>
+              <ul class="mt-2 space-y-1 ml-4 list-disc text-sm">
+                <li>圓角：<code class="px-2 py-1 bg-info-50 dark:bg-info-900 rounded">8px rounded-md</code> (適中硬朗)</li>
+                <li>邊框：<code class="px-2 py-1 bg-info-50 dark:bg-info-900 rounded">2px border-gray-900</code> (粗黑線條)</li>
+                <li>背景：<code class="px-2 py-1 bg-info-50 dark:bg-info-900 rounded">bg-white</code> (純白高對比)</li>
+                <li>陰影：<code class="px-2 py-1 bg-info-50 dark:bg-info-900 rounded">4px 4px 0 rgba(0,0,0,0.15)</code> (硬陰影偏移)</li>
+                <li>標題：<code class="px-2 py-1 bg-info-50 dark:bg-info-900 rounded">font-bold</code> (粗體強調)</li>
+              </ul>
+            </div>
+            <div>
+              <strong>互動效果：</strong>
+              <ul class="mt-2 space-y-1 ml-4 list-disc text-sm">
+                <li>上移距離：<code class="px-2 py-1 bg-info-50 dark:bg-info-900 rounded">-translate-y-1</code> (明顯動態)</li>
+                <li>陰影增強：<code class="px-2 py-1 bg-info-50 dark:bg-info-900 rounded">6px 6px 0</code> (更大偏移)</li>
+                <li>過渡時間：<code class="px-2 py-1 bg-info-50 dark:bg-info-900 rounded">200ms</code> (快速反應)</li>
+                <li>硬陰影特色：<strong>無模糊效果</strong>，純偏移</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-sm text-light mt-4">💡 <strong>Comic Book 風格精髓</strong>：粗黑邊框 + 硬陰影偏移 + 高對比 + 明確層次</p>
+          <Alert color="warning" title="🌗 暗色模式特別處理" className="mt-4">
+            <p class="text-sm">暗色模式下，陰影從<strong>黑色反轉為白色</strong>：</p>
+            <ul class="mt-2 space-y-1 ml-5 list-disc text-sm">
+              <li>亮色模式：<code class="px-2 py-1 bg-warning-50 dark:bg-warning-900 rounded">4px 4px 0 rgba(0,0,0,0.15)</code></li>
+              <li>暗色模式：<code class="px-2 py-1 bg-warning-50 dark:bg-warning-900 rounded">4px 4px 0 rgba(255,255,255,0.1)</code></li>
+            </ul>
+            <p class="text-xs text-light mt-2">白色陰影在深色背景上才能顯示層次感</p>
+          </Alert>
+        </Alert>
+      </section>
+
+      <!-- 📏 間距與排版 -->
+      <section id="spacing" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">📏 間距與排版</h2>
+        <p class="text-light mb-12">統一的空間節奏</p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="font-bold mb-3">Section Spacing</h3>
+            <div class="h-16 md:h-24 bg-primary-500 rounded-lg mb-2"></div>
+            <code class="text-sm">4rem (md:6rem)</code>
+          </div>
+          <div>
+            <h3 class="font-bold mb-3">Card Spacing</h3>
+            <div class="h-6 md:h-8 bg-primary-500 rounded-lg mb-2"></div>
+            <code class="text-sm">1.5rem (md:2rem)</code>
+          </div>
+          <div>
+            <h3 class="font-bold mb-3">Element Spacing</h3>
+            <div class="h-4 bg-primary-500 rounded-lg mb-2"></div>
+            <code class="text-sm">1rem</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- 📱 響應式網格 -->
+      <section id="grid" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">📱 響應式網格</h2>
+        <p class="text-light mb-12">斷點：sm(640px) / md(768px) / lg(1024px) / xl(1280px)</p>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="font-bold mb-4">2 Columns (mobile: 1, desktop: 2)</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="h-24 bg-primary-400 rounded-xl flex items-center justify-center text-white font-bold">
+                Column 1
+              </div>
+              <div class="h-24 bg-primary-400 rounded-xl flex items-center justify-center text-white font-bold">
+                Column 2
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-bold mb-4">3 Columns (mobile: 1, tablet: 2, desktop: 3)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="h-24 rounded-xl flex items-center justify-center text-white font-bold" style="background-color: #ff6f00;">
+                Column 1
+              </div>
+              <div class="h-24 rounded-xl flex items-center justify-center text-white font-bold" style="background-color: #ff6f00;">
+                Column 2
+              </div>
+              <div class="h-24 rounded-xl flex items-center justify-center text-white font-bold" style="background-color: #ff6f00;">
+                Column 3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🏷️ Tag vs Badge 標籤系統 -->
+      <section id="tags" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">🏷️ Tag vs Badge 標籤系統</h2>
+        <p class="text-light mb-12">兩種不同用途的標籤組件</p>
+
+        <Alert color="info" title="💡 Tag 與 Badge 的差異" className="mb-8">
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <strong class="block mb-2">Tag（標籤）</strong>
+              <ul class="space-y-1 ml-4 list-disc">
+                <li>用途：內容分類、導航</li>
+                <li>外觀：方形 <code>rounded-md</code></li>
+                <li>互動：可點擊，有 # 前綴</li>
+                <li>範例：部落格文章標籤</li>
+              </ul>
+            </div>
+            <div>
+              <strong class="block mb-2">Badge（徽章）</strong>
+              <ul class="space-y-1 ml-4 list-disc">
+                <li>用途：狀態指示、標記</li>
+                <li>外觀：圓形 <code>rounded-full</code></li>
+                <li>互動：通常不可點擊</li>
+                <li>範例：技能標記、狀態顯示</li>
+              </ul>
+            </div>
+          </div>
+        </Alert>
+
+        <!-- Tags 組件範例 -->
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Tags（標籤）組件</h3>
+            <p class="text-light mb-4">用於文章分類、導航的標籤</p>
+
+            <div class="p-6 bg-light rounded-xl mb-4">
+              <Tags tags={['JavaScript', 'Astro', 'TailwindCSS', 'TypeScript']} />
+            </div>
+
+            <pre class="p-3 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Tags tags={['JavaScript', 'Astro', 'TailwindCSS']} /&gt;</code></pre>
+          </div>
+
+          <!-- Badge 組件範例 -->
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Badge（徽章）組件</h3>
+            <p class="text-light mb-4">用於狀態指示、技能標記的徽章</p>
+
+            <!-- Variants -->
+            <div class="mb-6">
+              <h4 class="text-lg font-bold mb-3">顏色變體</h4>
+              <div class="flex flex-wrap gap-3 mb-3">
+                <Badge color="primary">Primary</Badge>
+                <Badge color="accent">Accent</Badge>
+                <Badge color="success">Success</Badge>
+                <Badge color="warning">Warning</Badge>
+                <Badge color="error">Error</Badge>
+                <Badge color="info">Info</Badge>
+                <Badge color="neutral">Neutral</Badge>
+              </div>
+              <pre class="p-3 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Badge color="primary|accent|success|..."&gt;...&lt;/Badge&gt;</code></pre>
+            </div>
+
+            <!-- Outline -->
+            <div class="mb-6">
+              <h4 class="text-lg font-bold mb-3">外框樣式</h4>
+              <div class="flex flex-wrap gap-3 mb-3">
+                <Badge color="primary" outline={true}>Primary</Badge>
+                <Badge color="accent" outline={true}>Accent</Badge>
+                <Badge color="success" outline={true}>Success</Badge>
+              </div>
+              <pre class="p-3 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Badge outline={true}&gt;...&lt;/Badge&gt;</code></pre>
+            </div>
+
+            <!-- Sizes -->
+            <div>
+              <h4 class="text-lg font-bold mb-3">尺寸</h4>
+              <div class="flex flex-wrap items-center gap-3 mb-3">
+                <Badge color="primary" size="sm">Small</Badge>
+                <Badge color="primary" size="md">Medium</Badge>
+                <Badge color="primary" size="lg">Large</Badge>
+              </div>
+              <pre class="p-3 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Badge size="sm|md|lg"&gt;...&lt;/Badge&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 📝 Input 表單組件 -->
+      <section id="input" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">📝 Input 表單組件</h2>
+        <p class="text-light mb-12">統一的表單輸入元素</p>
+
+        <div class="space-y-6 max-w-2xl">
+          <Input
+            label="使用者名稱"
+            type="text"
+            placeholder="請輸入使用者名稱"
+            required={true}
+          />
+
+          <Input
+            label="電子郵件"
+            type="email"
+            placeholder="example@email.com"
+            helpText="我們不會分享您的電子郵件"
+          />
+
+          <Input
+            label="密碼"
+            type="password"
+            error="密碼長度至少需要 8 個字元"
+          />
+
+          <Input
+            label="已停用輸入框"
+            type="text"
+            value="無法編輯"
+            disabled={true}
+          />
+        </div>
+
+        <pre class="mt-6 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Input label="..." type="text" placeholder="..." required={true} /&gt;</code></pre>
+      </section>
+
+      <!-- 💬 Alert 提示組件 -->
+      <section id="alert" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">💬 Alert 提示組件</h2>
+        <p class="text-light mb-12">訊息提示與通知</p>
+
+        <div class="space-y-4">
+          <Alert color="info" title="資訊提示">
+            這是一個資訊提示框，用於顯示一般性資訊。
+          </Alert>
+
+          <Alert color="success" title="操作成功">
+            您的變更已成功儲存！
+          </Alert>
+
+          <Alert color="warning" title="注意事項">
+            此操作可能會影響現有資料，請謹慎操作。
+          </Alert>
+
+          <Alert color="error" title="錯誤訊息">
+            發生錯誤，請稍後再試或聯繫客服。
+          </Alert>
+
+          <Alert color="info" dismissible={true}>
+            這個提示可以被關閉（點擊右側 X 按鈕）。
+          </Alert>
+        </div>
+
+        <pre class="mt-6 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Alert variant="info|success|warning|error" title="..." dismissible={true}&gt;
+  訊息內容
+&lt;/Alert&gt;</code></pre>
+      </section>
+
+      <!-- 🎭 Hero 區塊組件 -->
+      <section id="hero" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">🎭 Hero 區塊組件</h2>
+        <p class="text-light mb-12">頁面英雄區塊</p>
+
+        <div class="space-y-8 -mx-[4vw]">
+          <Hero
+            variant="primary"
+            size="md"
+            title="歡迎來到 Mandy's Web"
+            description="前端工程師的技術筆記與實作分享"
+            align="center"
+          >
+            <Button variant="accent" size="lg">開始探索</Button>
+            <Button variant="outline" size="lg">了解更多</Button>
+          </Hero>
+
+          <Hero
+            variant="gradient"
+            size="sm"
+            title="漸層背景樣式"
+            subtitle="Gradient Hero"
+            align="left"
+          />
+
+          <Hero
+            variant="default"
+            size="sm"
+            title="淺色背景樣式"
+            description="適用於內頁區塊"
+            icon="ic:outline-info"
+            align="center"
+          />
+        </div>
+
+        <pre class="mt-6 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Hero variant="primary|gradient|default" size="sm|md|lg" title="..." align="left|center|right"&gt;
+  &lt;Button&gt;...&lt;/Button&gt;
+&lt;/Hero&gt;</code></pre>
+      </section>
+
+      <!-- ➖ Divider 分隔線組件 -->
+      <section id="divider" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">➖ Divider 分隔線組件</h2>
+        <p class="text-light mb-12">內容分隔線</p>
+
+        <div class="space-y-8">
+          <!-- Solid -->
+          <div>
+            <h3 class="text-xl font-bold mb-3">實線分隔 (variant="solid")</h3>
+            <Divider variant="solid" />
+          </div>
+
+          <!-- With Text -->
+          <div>
+            <h3 class="text-xl font-bold mb-3">帶文字分隔</h3>
+            <Divider variant="solid" text="OR" />
+          </div>
+
+          <!-- Dashed -->
+          <div>
+            <h3 class="text-xl font-bold mb-3">虛線分隔 (variant="dashed")</h3>
+            <Divider variant="dashed" />
+          </div>
+
+          <!-- Gradient -->
+          <div>
+            <h3 class="text-xl font-bold mb-3">漸層分隔 (variant="gradient")</h3>
+            <Divider variant="gradient" />
+          </div>
+
+          <!-- Spacing -->
+          <div>
+            <h3 class="text-xl font-bold mb-3">間距設定 (spacing="sm|md|lg")</h3>
+            <div class="bg-light p-6 rounded-lg space-y-4">
+              <div>Small Spacing</div>
+              <Divider spacing="sm" />
+              <div>Medium Spacing</div>
+              <Divider spacing="md" />
+              <div>Large Spacing</div>
+              <Divider spacing="lg" />
+              <div>End</div>
+            </div>
+          </div>
+        </div>
+
+        <pre class="mt-6 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Divider variant="solid|dashed|dotted|gradient" text="OR" spacing="sm|md|lg" /&gt;</code></pre>
+      </section>
+
+      <!-- 💭 Tooltip 提示框組件 -->
+      <section id="tooltip" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">💭 Tooltip 提示框組件</h2>
+        <p class="text-light mb-12">滑鼠懸停提示</p>
+
+        <div class="space-y-8">
+          <!-- Positions -->
+          <div>
+            <h3 class="text-xl font-bold mb-3">位置設定 (position="top|bottom|left|right")</h3>
+            <div class="flex flex-wrap gap-8 items-center justify-center p-12 bg-light rounded-lg">
+              <Tooltip text="Top tooltip" position="top">
+                <Button variant="outline">Top</Button>
+              </Tooltip>
+              <Tooltip text="Bottom tooltip" position="bottom">
+                <Button variant="outline">Bottom</Button>
+              </Tooltip>
+              <Tooltip text="Left tooltip" position="left">
+                <Button variant="outline">Left</Button>
+              </Tooltip>
+              <Tooltip text="Right tooltip" position="right">
+                <Button variant="outline">Right</Button>
+              </Tooltip>
+            </div>
+          </div>
+
+          <!-- Colors -->
+          <div>
+            <h3 class="text-xl font-bold mb-3">顏色設定 (color="primary|accent|neutral")</h3>
+            <div class="flex flex-wrap gap-6 p-12 bg-light rounded-lg justify-center">
+              <Tooltip text="Primary color" color="primary">
+                <Button variant="primary">Primary</Button>
+              </Tooltip>
+              <Tooltip text="Accent color" color="accent">
+                <Button variant="accent">Accent</Button>
+              </Tooltip>
+              <Tooltip text="Neutral color" color="neutral">
+                <Button variant="ghost">Neutral</Button>
+              </Tooltip>
+            </div>
+          </div>
+        </div>
+
+        <pre class="mt-6 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Tooltip text="提示文字" position="top|bottom|left|right" color="primary|accent|neutral"&gt;
+  &lt;Button&gt;Hover me&lt;/Button&gt;
+&lt;/Tooltip&gt;</code></pre>
+      </section>
+
+      <!-- ⏳ Loading 載入組件 -->
+      <section id="loading" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">⏳ Loading 載入組件</h2>
+        <p class="text-light mb-12">載入指示器</p>
+
+        <div class="space-y-8">
+          <!-- Variants -->
+          <div>
+            <h3 class="text-xl font-bold mb-3">樣式變體 (variant="spinner|dots|ring|bars")</h3>
+            <div class="grid md:grid-cols-4 gap-8 p-8 bg-light rounded-lg">
+              <div class="flex flex-col items-center gap-3">
+                <Loading variant="spinner" />
+                <code class="text-xs">spinner</code>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <Loading variant="dots" />
+                <code class="text-xs">dots</code>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <Loading variant="ring" />
+                <code class="text-xs">ring</code>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <Loading variant="bars" />
+                <code class="text-xs">bars</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sizes -->
+          <div>
+            <h3 class="text-xl font-bold mb-3">尺寸設定 (size="sm|md|lg")</h3>
+            <div class="flex gap-12 items-end p-8 bg-light rounded-lg justify-center">
+              <div class="flex flex-col items-center gap-3">
+                <Loading size="sm" />
+                <code class="text-xs">small</code>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <Loading size="md" />
+                <code class="text-xs">medium</code>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <Loading size="lg" />
+                <code class="text-xs">large</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colors -->
+          <div>
+            <h3 class="text-xl font-bold mb-3">顏色設定 (color="primary|accent|neutral")</h3>
+            <div class="flex gap-12 p-8 bg-light rounded-lg justify-center">
+              <Loading color="primary" text="Primary" />
+              <Loading color="accent" text="Accent" />
+              <Loading color="neutral" text="Neutral" />
+            </div>
+          </div>
+
+          <!-- With Text -->
+          <div>
+            <h3 class="text-xl font-bold mb-3">帶文字</h3>
+            <div class="p-8 bg-light rounded-lg flex justify-center">
+              <Loading variant="spinner" size="lg" text="載入中..." />
+            </div>
+          </div>
+        </div>
+
+        <pre class="mt-6 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Loading variant="spinner|dots|ring|bars" size="sm|md|lg" color="primary|accent|neutral" text="載入中..." /&gt;</code></pre>
+      </section>
+
+      <!-- 📋 Dropdown 下拉選單組件 -->
+      <section id="dropdown" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">📋 Dropdown 下拉選單組件</h2>
+        <p class="text-light mb-12">下拉選單</p>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-xl font-bold mb-3">基本用法</h3>
+            <div class="p-8 bg-light rounded-lg flex gap-6">
+              <Dropdown
+                label="選單"
+                items={[
+                  { label: '首頁', href: '/', icon: 'ic:outline-home' },
+                  { label: '部落格', href: '/blog', icon: 'ic:outline-article' },
+                  { divider: true },
+                  { label: '關於', href: '/about', icon: 'ic:outline-info' },
+                ]}
+              />
+
+              <Dropdown
+                label="更多選項"
+                position="right"
+                color="accent"
+                items={[
+                  { label: '設定', icon: 'ic:outline-settings' },
+                  { label: '個人資料', icon: 'ic:outline-person' },
+                  { divider: true },
+                  { label: '登出', icon: 'ic:outline-logout' },
+                ]}
+              />
+            </div>
+          </div>
+        </div>
+
+        <pre class="mt-6 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Dropdown
+  label="選單"
+  position="left|right"
+  color="primary|accent|neutral"
+  items={[
+    { label: '首頁', href: '/', icon: 'ic:outline-home' },
+    { divider: true },
+    { label: '關於', href: '/about' }
+  ]}
+/&gt;</code></pre>
+      </section>
+
+      <!-- 🪟 Modal 彈窗組件 -->
+      <section id="modal" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">🪟 Modal 彈窗組件</h2>
+        <p class="text-light mb-12">彈出視窗</p>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-xl font-bold mb-3">基本用法</h3>
+            <div class="flex gap-4">
+              <Button variant="primary" data-modal-open="demo-modal-sm">開啟小彈窗 (sm)</Button>
+              <Button variant="accent" data-modal-open="demo-modal-md">開啟中彈窗 (md)</Button>
+              <Button variant="outline" data-modal-open="demo-modal-lg">開啟大彈窗 (lg)</Button>
+            </div>
+          </div>
+        </div>
+
+        <pre class="mt-6 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Button data-modal-open="my-modal"&gt;開啟彈窗&lt;/Button&gt;
+
+&lt;Modal id="my-modal" title="標題" size="sm|md|lg|xl"&gt;
+  內容...
+  &lt;div slot="footer"&gt;
+    &lt;Button data-modal-close&gt;關閉&lt;/Button&gt;
+  &lt;/div&gt;
+&lt;/Modal&gt;</code></pre>
+      </section>
+
+      <!-- 📅 Timeline 時間軸組件 -->
+      <section id="timeline" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">📅 Timeline 時間軸組件</h2>
+        <p class="text-light mb-12">時間軸展示</p>
+
+        <div class="p-8 bg-light rounded-lg">
+          <Timeline
+            items={[
+              {
+                title: '專案啟動',
+                description: '開始規劃與設計階段',
+                date: '2025-01-01',
+                icon: 'ic:outline-rocket-launch',
+                color: 'primary'
+              },
+              {
+                title: '開發階段',
+                description: '核心功能開發與測試',
+                date: '2025-01-10',
+                icon: 'ic:outline-code',
+                color: 'info'
+              },
+              {
+                title: '測試優化',
+                description: '完整測試與效能優化',
+                date: '2025-01-15',
+                icon: 'ic:outline-bug-report',
+                color: 'warning'
+              },
+              {
+                title: '正式上線',
+                description: '部署至生產環境',
+                date: '2025-01-20',
+                icon: 'ic:outline-check-circle',
+                color: 'success'
+              }
+            ]}
+          />
+        </div>
+
+        <pre class="mt-6 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Timeline
+  items=&#123;[
+    &#123;
+      title: '標題',
+      description: '描述',
+      date: '2025-01-01',
+      icon: 'ic:outline-check',
+      color: 'primary|accent|success|warning|error|info|neutral'
+    &#125;
+  ]&#125;
+/&gt;</code></pre>
+      </section>
+
+      <!-- 🍞 Breadcrumbs 麵包屑組件 -->
+      <section id="breadcrumbs" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">🍞 Breadcrumbs 麵包屑組件</h2>
+        <p class="text-light mb-12">導航路徑指示</p>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-bold mb-3">基本用法</h3>
+            <div class="p-6 bg-light rounded-lg">
+              <Breadcrumbs
+                items={[
+                  { label: '首頁', href: '/', icon: 'ic:outline-home' },
+                  { label: '部落格', href: '/blog' },
+                  { label: '文章分類', href: '/blog/category' },
+                  { label: '當前文章' }
+                ]}
+              />
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-3">自訂分隔符號</h3>
+            <div class="p-6 bg-light rounded-lg space-y-4">
+              <Breadcrumbs
+                items={[
+                  { label: '首頁', href: '/' },
+                  { label: '產品', href: '/products' },
+                  { label: '分類' }
+                ]}
+                separator=">"
+              />
+              <Breadcrumbs
+                items={[
+                  { label: '首頁', href: '/' },
+                  { label: '文檔', href: '/docs' },
+                  { label: '指南' }
+                ]}
+                separatorIcon="ic:outline-chevron-right"
+              />
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-3">最大項目數限制</h3>
+            <div class="p-6 bg-light rounded-lg">
+              <Breadcrumbs
+                items={[
+                  { label: '首頁', href: '/' },
+                  { label: '層級1', href: '/level1' },
+                  { label: '層級2', href: '/level2' },
+                  { label: '層級3', href: '/level3' },
+                  { label: '層級4', href: '/level4' },
+                  { label: '當前頁面' }
+                ]}
+                maxItems={4}
+              />
+            </div>
+          </div>
+        </div>
+
+        <pre class="mt-6 p-4 bg-light rounded-lg text-xs overflow-x-auto"><code>&lt;Breadcrumbs
+  items=&#123;[
+    &#123; label: '首頁', href: '/', icon: 'ic:outline-home' &#125;,
+    &#123; label: '部落格', href: '/blog' &#125;,
+    &#123; label: '當前頁面' &#125;
+  ]&#125;
+  separator="&gt;" // 或 separatorIcon="ic:outline-chevron-right"
+  maxItems=&#123;4&#125; // 超過會折疊顯示
+/&gt;</code></pre>
+      </section>
+
+      <!-- ✅ 組件清單 -->
+      <section id="components" class="mb-24">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">✅ 完整組件清單</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <Card variant="default" icon="ic:outline-check-circle" title="✅ 已建立組件">
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-orange-50 dark:bg-orange-900 rounded">Card.astro</code> - 卡片組件
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-orange-50 dark:bg-orange-900 rounded">Button.astro</code> - 按鈕組件
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-orange-50 dark:bg-orange-900 rounded">Badge.astro</code> - 徽章組件
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-orange-50 dark:bg-orange-900 rounded">Hero.astro</code> - 英雄區塊
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-orange-50 dark:bg-orange-900 rounded">Input.astro</code> - 輸入框組件
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-orange-50 dark:bg-orange-900 rounded">Alert.astro</code> - 提示組件
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-primary-50 dark:bg-primary-900 rounded">Divider.astro</code> - 分隔線
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-primary-50 dark:bg-primary-900 rounded">Tooltip.astro</code> - 提示框
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-primary-50 dark:bg-primary-900 rounded">Loading.astro</code> - 載入指示器
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-primary-50 dark:bg-primary-900 rounded">Dropdown.astro</code> - 下拉選單
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-primary-50 dark:bg-primary-900 rounded">Modal.astro</code> - 彈窗
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-success-50 dark:bg-success-900 rounded">Timeline.astro</code> - 時間軸
+              </li>
+              <li class="flex items-center gap-2">
+                <Icon name="ic:outline-check-circle" class="w-5 h-5 text-green-500" />
+                <code class="px-2 py-1 bg-success-50 dark:bg-success-900 rounded">Breadcrumbs.astro</code> - 麵包屑
+              </li>
+            </ul>
+          </Card>
+
+          <Card variant="default" icon="ic:outline-folder" title="📦 現有組件">
+            <ul class="space-y-2 text-sm text-light">
+              <li>• Header.astro - 頁首</li>
+              <li>• Footer.astro - 頁尾</li>
+              <li>• Tags.astro - 標籤列表</li>
+              <li>• FormattedDate.astro - 日期格式化</li>
+              <li>• Pagination.astro - 分頁</li>
+              <li>• SearchWidget.astro - 搜尋小工具</li>
+              <li>• ThemeSwitcher.astro - 主題切換</li>
+              <li>• Toc.astro - 目錄</li>
+            </ul>
+          </Card>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Aside slot for TOC -->
+    <AsideLayout slot="aside">
+      <Toc headings={headings} />
+    </AsideLayout>
+  </ContentLayout>
+
+  <!-- Modal Instances -->
+  <Modal id="demo-modal-sm" title="小彈窗範例" size="sm">
+    <p class="text-default">這是一個小尺寸的彈窗 (size="sm")。</p>
+    <div slot="footer">
+      <Button variant="ghost" data-modal-close>關閉</Button>
+      <Button variant="primary" data-modal-close>確認</Button>
+    </div>
+  </Modal>
+
+  <Modal id="demo-modal-md" title="中彈窗範例" size="md">
+    <p class="text-default mb-4">這是一個中等尺寸的彈窗 (size="md")。</p>
+    <p class="text-light">彈窗可以包含任何內容，包括表單、圖片、文字等。</p>
+    <div slot="footer">
+      <Button variant="ghost" data-modal-close>取消</Button>
+      <Button variant="accent" data-modal-close>儲存</Button>
+    </div>
+  </Modal>
+
+  <Modal id="demo-modal-lg" title="大彈窗範例" size="lg">
+    <div class="space-y-4">
+      <p class="text-default">這是一個大尺寸的彈窗 (size="lg")。</p>
+      <Alert color="info" title="提示">
+        點擊彈窗外的區域或按 ESC 鍵也可以關閉彈窗。
+      </Alert>
+      <Input label="範例輸入" placeholder="在彈窗中也可以使用表單元素" />
+    </div>
+    <div slot="footer">
+      <Button variant="outline" data-modal-close>關閉</Button>
+    </div>
+  </Modal>
+</MainLayout>
+<GoTop />

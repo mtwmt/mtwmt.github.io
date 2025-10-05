@@ -10,14 +10,14 @@ const { className }: { className?: string } = Astro.props;
     data-theme-switcher
     type="checkbox"
   />
-  <label class="relative" for="theme-switcher">
+  <label class="relative cursor-pointer group" for="theme-switcher">
     <span
-      class="cursor-pointer flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]"
+      class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border-2 border-gray-900 dark:border-gray-200 bg-white dark:bg-gray-900 text-center shadow-[3px_3px_0_rgba(0,0,0,0.25)] dark:shadow-[3px_3px_0_rgba(255,255,255,0.2)] transition-all duration-150 group-hover:shadow-[1px_1px_0_rgba(0,0,0,0.25)] dark:group-hover:shadow-[1px_1px_0_rgba(255,255,255,0.2)] group-hover:translate-x-[2px] group-hover:translate-y-[2px]"
     >
-      <Icon name="ic:outline-dark-mode" class="h-6 w-6 hidden dark:block" />
-      <Icon name="ic:outline-light-mode" class="h-6 w-6 block dark:hidden" />
+      <Icon name="ic:outline-dark-mode" class="h-6 w-6 hidden dark:block text-gray-200" />
+      <Icon name="ic:outline-light-mode" class="h-6 w-6 block dark:hidden text-gray-800" />
     </span>
-     mode
+    <span class="uppercase text-xs font-bold">mode</span>
   </label>
 </div>
 

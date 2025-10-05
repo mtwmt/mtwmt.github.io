@@ -2,22 +2,29 @@
 import {Icon} from "astro-icon/components";
 ---
 
-<form class="form search-form" action="">
-  <div class="flex h-12 items-center bg-primary-700 px-3">
-    <input
-      class="w-full border-none bg-primary-700 text-primary-50 placeholder:text-primary-200 focus:outline-none focus:ring-transparent"
-      placeholder="Search posts"
-      name="search"
-      id="search"
-      min="2"
-      max="24"
-    />
-    <button type="submit" class="border-none bg-transparent p-0" aria-label="Search">
+<form class="form search-form mb-6" action="">
+  <div class="relative">
+    <div class="flex h-12 items-center bg-primary-700 px-3 rounded-lg hover:bg-primary-600 transition-colors focus-within:ring-2 focus-within:ring-primary-400">
       <Icon
         name="ic:outline-search"
-        class="h-6 w-6 text-primary-200 cursor-pointer"
+        class="h-5 w-5 text-primary-200 mr-2"
       />
-    </button>
+      <input
+        class="w-full border-none bg-transparent text-primary-50 placeholder:text-primary-300 focus:outline-none"
+        placeholder="搜尋文章... (按 / 聚焦)"
+        name="search"
+        id="search"
+        min="2"
+        max="24"
+        autocomplete="off"
+      />
+      <button type="submit" class="border-none bg-transparent p-0 ml-2 hover:opacity-70 transition-opacity" aria-label="Search">
+        <Icon
+          name="ph:arrow-right"
+          class="h-5 w-5 text-primary-200"
+        />
+      </button>
+    </div>
   </div>
 </form>
 
@@ -26,14 +33,28 @@ import {Icon} from "astro-icon/components";
 
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector<HTMLFormElement>(".search-form");
+    const searchInput = document.querySelector<HTMLInputElement>("#search");
 
-    if (!form) return;
+    if (!form || !searchInput) return;
+
+    // 鍵盤快捷鍵：按 / 聚焦搜尋框
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "/" && document.activeElement !== searchInput) {
+        e.preventDefault();
+        searchInput.focus();
+      }
+
+      // ESC 取消聚焦
+      if (e.key === "Escape" && document.activeElement === searchInput) {
+        searchInput.blur();
+      }
+    });
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const formData = new FormData(form);
-      const searchInput = formData.get("search")?.toString() || "";
-      const searchTerm = DOMPurify.sanitize(searchInput);
+      const searchInputValue = formData.get("search")?.toString() || "";
+      const searchTerm = DOMPurify.sanitize(searchInputValue);
 
       if (!searchTerm || searchTerm.trim().length === 0) return;
 

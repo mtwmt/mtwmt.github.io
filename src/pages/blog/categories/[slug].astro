@@ -41,7 +41,7 @@ const { posts, category } = Astro.props;
 <MainLayout title={category + ' | ' + SITE_TITLE}>
   <Header />
   <ContentLayout>
-    <PageTitle title={'類別：' + category.toUpperCase()} />
+    <PageTitle title={'類別：' + category.toUpperCase()} icon="ic:outline-folder" />
     <ul class="py-10 border-y border-default">
       {
         posts.map((p: any) => {

@@ -1,0 +1,60 @@
+---
+export interface Props {
+  variant?: 'primary' | 'accent' | 'outline' | 'ghost' | 'link';
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  className?: string;
+  target?: string;
+  active?: boolean;
+}
+
+const {
+  variant = 'primary',
+  size = 'md',
+  href,
+  type = 'button',
+  disabled = false,
+  className = '',
+  target,
+  active = false,
+} = Astro.props;
+
+const sizeClasses = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-3 text-base',
+  lg: 'px-8 py-4 text-lg',
+};
+
+const variantClasses = {
+  primary: `btn border-gray-900 dark:border-gray-200 bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700 ${active ? 'btn--active' : ''}`,
+  accent: 'btn border-accent-600 dark:border-accent-700 bg-accent-500 text-white hover:bg-accent-600 active:bg-accent-700 [--tw-shadow-color:rgba(194,65,12,0.4)] dark:[--tw-shadow-color:rgba(251,146,60,0.5)]',
+  outline: 'btn border-primary-500 text-primary-700 dark:text-primary-300 bg-transparent hover:bg-primary-50 dark:hover:bg-primary-900/20 active:bg-primary-100 dark:active:bg-primary-900/30',
+  ghost: 'btn border-transparent text-primary-700 dark:text-primary-300 bg-transparent hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-300 dark:hover:border-primary-700 active:bg-primary-100 dark:active:bg-primary-900/30',
+  link: 'text-primary-700 dark:text-primary-400 font-semibold hover:text-primary-500 active:text-primary-800 dark:active:text-primary-300 transition-colors underline-offset-4 hover:underline',
+};
+
+const disabledClasses = disabled ? 'disabled' : '';
+
+const classes = `${variantClasses[variant]} ${sizeClasses[size]} ${disabledClasses} ${className}`.trim();
+---
+
+{href ? (
+  <a
+    href={href}
+    target={target}
+    class={classes}
+    aria-disabled={disabled}
+  >
+    <slot />
+  </a>
+) : (
+  <button
+    type={type}
+    disabled={disabled}
+    class={classes}
+  >
+    <slot />
+  </button>
+)}

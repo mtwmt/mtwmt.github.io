@@ -13,6 +13,8 @@ import Tags from "../../components/Tags.astro";
 import { Icon } from "astro-icon/components";
 import { sortByDate } from "../../lib/sortByDate";
 import PostPreview from "../../components/PostPreview.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Divider from "../../components/Divider.astro";
 
 
 import type { CollectionEntry } from 'astro:content';
@@ -73,8 +75,15 @@ const { data } = post;
 
   <Header />
   <ContentLayout>
-    <!-- <a onclick="history.back()" >回上頁</a> -->
     <div class="py-[3.35rem] px-[4vw]">
+      <!-- <Breadcrumbs
+        items={[
+          { label: '首頁', href: '/', icon: 'ic:outline-home' },
+          { label: '部落格', href: '/blog/page/1' },
+          { label: post.data.title }
+        ]}
+        className="mb-6"
+      /> -->
       <FormattedDate date={post.data.update || post.data.date} type="en" />
       <h1 class="text-3xl leading-loose text-default">{post.data.title}</h1>
       <PostPreview content={post.body} />
@@ -83,13 +92,18 @@ const { data } = post;
         {(<Tags tags={post.data?.tags} />)}
       </div>
     </div>
-    <div class="border-y border-default py-10 px-[4vw]">
+
+    <Divider variant="solid" spacing="sm"/>
+
+    <div class="py-10 px-[4vw]">
       <div class="post">
         <Content />
       </div>
     </div>
 
-    <div class="border-b border-default">
+    <Divider />
+
+    <div>
       <div class={`flex ${!!prev?.slug ? "justify-between" : "justify-end"}`}>
         {
           !!prev?.slug && (

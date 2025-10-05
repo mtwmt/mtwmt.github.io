@@ -1,0 +1,81 @@
+---
+export interface Props {
+  type?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search';
+  name?: string;
+  id?: string;
+  label?: string;
+  placeholder?: string;
+  value?: string | number;
+  required?: boolean;
+  disabled?: boolean;
+  error?: string;
+  helpText?: string;
+  className?: string;
+  inputClassName?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const {
+  type = 'text',
+  name,
+  id,
+  label,
+  placeholder,
+  value,
+  required = false,
+  disabled = false,
+  error,
+  helpText,
+  className = '',
+  inputClassName = '',
+  size = 'md',
+} = Astro.props;
+
+const inputId = id || name || `input-${Math.random().toString(36).substr(2, 9)}`;
+
+const sizeClasses = {
+  sm: 'px-3 py-1.5 text-sm',
+  md: 'px-4 py-2 text-base',
+  lg: 'px-5 py-3 text-lg',
+};
+
+const baseInputClasses = 'w-full rounded-md border-2 transition-all duration-200 comic-shadow-sm';
+const stateClasses = error
+  ? 'border-red-600 dark:border-red-500 focus:border-red-700 dark:focus:border-red-400 focus:ring-2 focus:ring-red-500/50 dark:focus:ring-red-400/50 focus:shadow-[3px_3px_0_rgba(220,38,38,0.2)]'
+  : 'border-gray-900 dark:border-gray-200 focus:border-primary-600 dark:focus:border-primary-400 focus:ring-2 focus:ring-primary-500/50 dark:focus:ring-primary-400/50 focus:shadow-[3px_3px_0_rgba(0,170,170,0.2)]';
+const disabledClasses = disabled ? 'bg-gray-100 dark:bg-gray-800 cursor-not-allowed opacity-60' : 'bg-white dark:bg-gray-900 focus:outline-none';
+
+const inputClasses = `${baseInputClasses} ${sizeClasses[size]} ${stateClasses} ${disabledClasses} ${inputClassName}`.trim();
+---
+
+<div class={`flex flex-col gap-1.5 ${className}`}>
+  {label && (
+    <label for={inputId} class="text-sm font-medium text-default">
+      {label}
+      {required && <span class="text-red-500 ml-1">*</span>}
+    </label>
+  )}
+
+  <input
+    type={type}
+    id={inputId}
+    name={name}
+    placeholder={placeholder}
+    value={value}
+    required={required}
+    disabled={disabled}
+    class={inputClasses}
+  />
+
+  {error && (
+    <p class="text-sm text-red-600 dark:text-red-400">
+      {error}
+    </p>
+  )}
+
+  {helpText && !error && (
+    <p class="text-sm text-light">
+      {helpText}
+    </p>
+  )}
+</div>

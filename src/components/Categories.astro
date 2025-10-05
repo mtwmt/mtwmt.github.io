@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Icon } from 'astro-icon/components';
 
 const posts = await getCollection("blog", (data: any) => !data.data.isDraft);
 
@@ -15,27 +16,57 @@ const calCategoriesCount = posts
     return acc;
   }, {});
 
-const categories = Object.fromEntries(
-  Object.entries(calCategoriesCount).sort((a, b) => a[0].localeCompare(b[0]))
-);
+// 按文章數量排序，顯示熱門分類
+const categoriesSorted = Object.entries(calCategoriesCount).sort((a: any, b: any) => b[1] - a[1]);
+const topCategories = categoriesSorted.slice(0, 8);
+const otherCategories = categoriesSorted.slice(8);
 
 ---
 
-<ul class="font-dosis text-lg leading-[3rem]">
-  <!-- <li
-    class="h-12 border-b border-primary-700 px-3 text-primary-50 bg-primary-900"
-  >
-    類別：
-  </li> -->
-  {
-    Object.entries(categories).map(([key, val]) => {
-      return (
-        <li class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white">
-          <a class="block w-full" href={`/blog/categories/${key.toLowerCase()}`}>
-            {key} <span class=" text-primary-200">( {val} )</span>
-          </a>
-        </li>
-      );
-    })
+<div class="categories-widget">
+  <ul class="font-dosis text-lg leading-[3rem]">
+    {
+      topCategories.map(([key, val]) => {
+        return (
+          <li class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white transition-colors">
+            <a class="block w-full" href={`/blog/categories/${key.toLowerCase()}`}>
+              {key} <span class="text-primary-200">( {val} )</span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+
+  {otherCategories.length > 0 && (
+    <details class="border-t border-primary-700">
+      <summary class="h-12 px-3 text-primary-50 cursor-pointer hover:bg-primary-700 transition-colors flex items-center justify-between">
+        <span>更多分類 ({otherCategories.length})</span>
+        <Icon name="ph:caret-down" class="w-5 h-5 details-icon" />
+      </summary>
+      <ul class="font-dosis text-lg leading-[3rem]">
+        {
+          otherCategories.map(([key, val]) => {
+            return (
+              <li class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white transition-colors">
+                <a class="block w-full" href={`/blog/categories/${key.toLowerCase()}`}>
+                  {key} <span class="text-primary-200">( {val} )</span>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </details>
+  )}
+</div>
+
+<style>
+  details[open] .details-icon {
+    transform: rotate(180deg);
   }
-</ul>
+
+  .details-icon {
+    transition: transform 0.3s ease;
+  }
+</style>

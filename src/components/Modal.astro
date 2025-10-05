@@ -1,0 +1,129 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  id: string;
+  title?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  className?: string;
+  showCloseButton?: boolean;
+}
+
+const {
+  id,
+  title,
+  size = 'md',
+  className = '',
+  showCloseButton = true,
+} = Astro.props;
+
+const sizeClasses = {
+  sm: 'max-w-md',
+  md: 'max-w-lg',
+  lg: 'max-w-2xl',
+  xl: 'max-w-4xl',
+};
+---
+
+<div
+  id={id}
+  class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 dark:bg-gray-950/70 backdrop-blur-sm opacity-0 invisible transition-all duration-300 modal-overlay"
+  data-modal
+>
+  <div
+    class={`relative w-full ${sizeClasses[size]} bg-white dark:bg-gray-800 border-2 border-gray-900 dark:border-gray-200 rounded-md shadow-[6px_6px_0_rgba(0,0,0,0.2)] dark:shadow-[6px_6px_0_rgba(255,255,255,0.2)] transform scale-95 transition-transform duration-300 modal-content ${className}`}
+  >
+    {(title || showCloseButton) && (
+      <div class="flex items-center justify-between p-4 border-b-2 border-gray-900 dark:border-gray-200">
+        {title && (
+          <h3 class="text-xl font-bold text-gray-900 dark:text-gray-200">
+            {title}
+          </h3>
+        )}
+        {showCloseButton && (
+          <button
+            type="button"
+            class="ml-auto inline-flex items-center justify-center w-8 h-8 text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors"
+            data-modal-close
+            aria-label="關閉"
+          >
+            <Icon name="ic:outline-close" class="w-5 h-5" />
+          </button>
+        )}
+      </div>
+    )}
+
+    <div class="p-6">
+      <slot />
+    </div>
+
+    {Astro.slots.has('footer') && (
+      <div class="flex items-center justify-end gap-3 p-4 border-t-2 border-gray-900 dark:border-gray-200">
+        <slot name="footer" />
+      </div>
+    )}
+  </div>
+</div>
+
+<script>
+  function initModals() {
+    const modals = document.querySelectorAll('[data-modal]');
+
+    modals.forEach((modal) => {
+      const modalId = modal.id;
+      const closeButtons = modal.querySelectorAll('[data-modal-close]');
+      const overlay = modal as HTMLElement;
+      const content = modal.querySelector('.modal-content') as HTMLElement;
+
+      // Open modal function
+      const openModal = () => {
+        overlay.classList.remove('opacity-0', 'invisible');
+        content.classList.remove('scale-95');
+        content.classList.add('scale-100');
+        document.body.style.overflow = 'hidden';
+      };
+
+      // Close modal function
+      const closeModal = () => {
+        overlay.classList.add('opacity-0', 'invisible');
+        content.classList.remove('scale-100');
+        content.classList.add('scale-95');
+        document.body.style.overflow = '';
+      };
+
+      // Close button clicks
+      closeButtons.forEach((btn) => {
+        btn.addEventListener('click', closeModal);
+      });
+
+      // Click outside to close
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          closeModal();
+        }
+      });
+
+      // ESC key to close
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !overlay.classList.contains('invisible')) {
+          closeModal();
+        }
+      });
+
+      // Global open function
+      (window as any)[`open_${modalId}`] = openModal;
+      (window as any)[`close_${modalId}`] = closeModal;
+
+      // Listen for open triggers
+      document.querySelectorAll(`[data-modal-open="${modalId}"]`).forEach((trigger) => {
+        trigger.addEventListener('click', openModal);
+      });
+    });
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', initModals);
+
+  // Re-initialize after navigation (for SPAs)
+  document.addEventListener('astro:page-load', initModals);
+</script>

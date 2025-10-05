@@ -1,0 +1,82 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  color?: 'info' | 'success' | 'warning' | 'error';
+  title?: string;
+  dismissible?: boolean;
+  className?: string;
+  icon?: string;
+}
+
+const {
+  color = 'info',
+  title,
+  dismissible = false,
+  className = '',
+  icon,
+} = Astro.props;
+
+const colorConfig = {
+  info: {
+    container: 'bg-blue-50 border-blue-200 dark:bg-blue-900/20 dark:border-blue-800',
+    icon: 'text-blue-600 dark:text-blue-400',
+    title: 'text-blue-900 dark:text-blue-300',
+    text: 'text-blue-800 dark:text-blue-400',
+    defaultIcon: 'ic:outline-info',
+  },
+  success: {
+    container: 'bg-green-50 border-green-200 dark:bg-green-900/20 dark:border-green-800',
+    icon: 'text-green-600 dark:text-green-400',
+    title: 'text-green-900 dark:text-green-300',
+    text: 'text-green-800 dark:text-green-400',
+    defaultIcon: 'ic:outline-check-circle',
+  },
+  warning: {
+    container: 'bg-yellow-50 border-yellow-200 dark:bg-yellow-900/20 dark:border-yellow-800',
+    icon: 'text-yellow-600 dark:text-yellow-400',
+    title: 'text-yellow-900 dark:text-yellow-300',
+    text: 'text-yellow-800 dark:text-yellow-400',
+    defaultIcon: 'ic:outline-warning',
+  },
+  error: {
+    container: 'bg-red-50 border-red-200 dark:bg-red-900/20 dark:border-red-800',
+    icon: 'text-red-600 dark:text-red-400',
+    title: 'text-red-900 dark:text-red-300',
+    text: 'text-red-800 dark:text-red-400',
+    defaultIcon: 'ic:outline-error',
+  },
+};
+
+const config = colorConfig[color];
+const iconName = icon || config.defaultIcon;
+---
+
+<div class={`relative p-4 rounded-md border-2 comic-shadow ${config.container} ${className}`} role="alert" style="border-radius: var(--comic-border-radius);">
+  <div class="flex gap-3">
+    <Icon name={iconName} class={`w-6 h-6 flex-shrink-0 ${config.icon}`} />
+
+    <div class="flex-1 min-w-0">
+      {title && (
+        <h3 class={`font-bold mb-1 ${config.title}`}>
+          {title}
+        </h3>
+      )}
+
+      <div class={`text-sm leading-relaxed ${config.text}`}>
+        <slot />
+      </div>
+    </div>
+
+    {dismissible && (
+      <button
+        type="button"
+        class={`flex-shrink-0 ${config.icon} hover:opacity-70 transition-opacity`}
+        aria-label="關閉"
+        onclick="this.closest('[role=alert]').remove()"
+      >
+        <Icon name="ic:outline-close" class="w-5 h-5" />
+      </button>
+    )}
+  </div>
+</div>

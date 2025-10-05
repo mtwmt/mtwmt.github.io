@@ -1,0 +1,88 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface TimelineItem {
+  title: string;
+  description?: string;
+  date?: string;
+  href?: string;
+  icon?: string;
+  color?:
+    | "primary"
+    | "accent"
+    | "success"
+    | "warning"
+    | "error"
+    | "info"
+    | "neutral";
+}
+
+export interface Props {
+  items: TimelineItem[];
+  className?: string;
+  variant?: "left" | "center";
+}
+
+const { items, className = "", variant = "left" } = Astro.props;
+
+const colorClasses = {
+  primary: "bg-primary-500 border-primary-600",
+  accent: "bg-accent-500 border-accent-600",
+  success: "bg-success-500 border-success-600",
+  warning: "bg-warning-500 border-warning-600",
+  error: "bg-error-500 border-error-600",
+  info: "bg-info-500 border-info-600",
+  neutral: "bg-gray-500 border-gray-600",
+};
+---
+
+<div class={`relative ${className}`}>
+  {
+    items.map((item, index) => (
+      <div
+        class={`relative flex gap-6 ${index !== items.length - 1 ? "pb-8" : ""}`}
+      >
+        {/* Timeline Line */}
+        {index !== items.length - 1 && (
+          <div class="absolute inset-0 flex h-full w-10 items-center justify-center">
+            <div class="pointer-events-none h-full w-0.5 bg-gray-300 dark:bg-gray-600" />
+          </div>
+        )}
+
+        {/* Icon/Dot */}
+        <div class="relative z-10 flex-shrink-0">
+          <div
+            class={`w-10 h-10 rounded-full border-2 ${colorClasses[item.color || "primary"]} flex items-center justify-center shadow-[2px_2px_0_rgba(0,0,0,0.15)] dark:shadow-[2px_2px_0_rgba(255,255,255,0.15)]`}
+          >
+            {item.icon ? (
+              <Icon name={item.icon} class="w-6 h-6 text-white" />
+            ) : (
+              <div class="w-2 h-2 bg-white rounded-full" />
+            )}
+          </div>
+        </div>
+
+        {/* Content */}
+        <div class="flex-1 pb-2">
+          {item.date && (
+            <p class="text-xs font-bold text-light mb-1">{item.date}</p>
+          )}
+          <h3 class="text-lg font-bold text-default mb-2">{item.title}</h3>
+          {item.description &&
+            (item.href ? (
+              <a
+                href={item.href}
+                class="text-sm text-light leading-relaxed hover:text-primary-500 transition-colors"
+              >
+                {item.description}
+              </a>
+            ) : (
+              <p class="text-sm text-light leading-relaxed">
+                {item.description}
+              </p>
+            ))}
+        </div>
+      </div>
+    ))
+  }
+</div>

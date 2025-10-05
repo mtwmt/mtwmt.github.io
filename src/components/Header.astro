@@ -28,19 +28,19 @@ import Theme from "./Theme.astro";
     >
   </div>
   <div
-    class="translate-x-0 animation relative z-10 bg-light py-4 text-center lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"
+    class="translate-x-0 animation relative z-10 bg-gray-100 dark:bg-gray-800 py-4 text-center lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"
   >
     <p class="mb-4 lg:mb-0">因為會忘，所以要寫下來</p>
     <nav>
       <ul class="flex justify-center font-dosis uppercase lg:justify-start">
         {
           menu.map((d) => (
-            <li class="mx-4 text-center ">
-              <a href={d.href}>
-                <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border border-neutral-300 text-center leading-[46px]">
-                  <Icon name={d.icon} class="h-6 w-6 " />
+            <li class="mx-4 text-center">
+              <a href={d.href} class="group">
+                <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border-2 border-gray-900 dark:border-gray-200 bg-white dark:bg-gray-900 text-center shadow-[3px_3px_0_rgba(0,0,0,0.25)] dark:shadow-[3px_3px_0_rgba(255,255,255,0.2)] transition-all duration-150 group-hover:shadow-[1px_1px_0_rgba(0,0,0,0.25)] dark:group-hover:shadow-[1px_1px_0_rgba(255,255,255,0.2)] group-hover:translate-x-[2px] group-hover:translate-y-[2px]">
+                  <Icon name={d.icon} class="h-6 w-6 text-gray-800 dark:text-gray-200" />
                 </span>
-                {d.name}
+                <span class="text-xs font-bold">{d.name}</span>
               </a>
             </li>
           ))

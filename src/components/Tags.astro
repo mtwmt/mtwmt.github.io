@@ -1,18 +1,42 @@
 ---
+import Badge from './Badge.astro';
 const { tags } = Astro.props;
+
+// 根據標籤名稱自動配色
+const getTagColor = (tag: string): 'primary' | 'accent' | 'success' | 'warning' | 'error' | 'info' | 'neutral' => {
+  const tagLower = tag.toLowerCase();
+
+  // 前端框架 - 紅色
+  if (['angular', 'react', 'vue', 'svelte'].includes(tagLower)) return 'error';
+
+  // 建置工具 - 橙色
+  if (['astro', 'next.js', 'nextjs', 'vite', 'webpack', 'rollup'].includes(tagLower)) return 'accent';
+
+  // CSS 框架 - 青綠色
+  if (['tailwindcss', 'tailwind', 'bootstrap', 'css'].includes(tagLower)) return 'primary';
+
+  // 樣式工具 - 藍色
+  if (['scss', 'sass', 'postcss', 'less'].includes(tagLower)) return 'info';
+
+  // 開發工具 - 黃色
+  if (['git', 'npm', 'yarn', 'pnpm'].includes(tagLower)) return 'warning';
+
+  // 視覺化 - 綠色
+  if (['echarts', 'chart.js', 'd3', 'd3.js'].includes(tagLower)) return 'success';
+
+  // 其他 - 灰色
+  return 'neutral';
+};
 ---
 
-{
-  (tags || []).map((tag: any) => {
-    return (
-      <a
-        href={`/blog/tags/${tag.toLowerCase()}`}
-        class="px-2 py-1 mr-2 text-xs font-normal border rounded-md border-primary-100 text-primary-500 bg-primary-50
-        dark:border-primary-400 dark:bg-primary-500 dark:text-primary-50
-        "
-      >
-        {tag}
-      </a>
-    );
-  })
-}
+<div class="inline-flex flex-wrap gap-2">
+  {(tags || []).map((tag: any) => (
+    <Badge
+      color={getTagColor(tag)}
+      size="sm"
+      href={`/blog/tags/${tag.toLowerCase()}`}
+    >
+      #{tag}
+    </Badge>
+  ))}
+</div>

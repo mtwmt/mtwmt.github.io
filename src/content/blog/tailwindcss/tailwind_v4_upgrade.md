@@ -88,6 +88,9 @@ TailwindCSS v4 **不支援 Sass 預處理器**處理 `@theme` 指令。當 Sass 
 /* src/styles/tailwind.css */
 @import "tailwindcss";
 
+/* 定義 dark mode variant - 當 html 有 .dark class 時生效 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Font families - 注意：使用 --font-* 而非 --font-family-* */
   --font-dosis: "Dosis", sans-serif;

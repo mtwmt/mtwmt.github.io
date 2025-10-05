@@ -1,0 +1,56 @@
+---
+export interface Props {
+  variant?: 'solid' | 'dashed' | 'dotted' | 'gradient';
+  orientation?: 'horizontal' | 'vertical';
+  text?: string;
+  className?: string;
+  spacing?: 'sm' | 'md' | 'lg';
+}
+
+const {
+  variant = 'solid',
+  orientation = 'horizontal',
+  text,
+  className = '',
+  spacing = 'md',
+} = Astro.props;
+
+const spacingClasses = {
+  sm: orientation === 'horizontal' ? 'my-4' : 'mx-4',
+  md: orientation === 'horizontal' ? 'my-8' : 'mx-8',
+  lg: orientation === 'horizontal' ? 'my-12' : 'mx-12',
+};
+
+const variantClasses = {
+  solid: 'border-gray-300 dark:border-gray-600',
+  dashed: 'border-gray-300 dark:border-gray-600 border-dashed',
+  dotted: 'border-gray-300 dark:border-gray-600 border-dotted',
+  gradient: 'border-0 h-[1px] bg-gradient-to-r from-transparent via-primary-500 to-transparent',
+};
+
+const orientationClasses = {
+  horizontal: 'w-full border-t',
+  vertical: 'h-full border-l inline-block',
+};
+---
+
+{orientation === 'horizontal' && !text && (
+  <hr class={`${orientationClasses[orientation]} ${variantClasses[variant]} ${spacingClasses[spacing]} ${className}`} />
+)}
+
+{orientation === 'horizontal' && text && (
+  <div class={`relative ${spacingClasses[spacing]} ${className}`}>
+    <div class="absolute inset-0 flex items-center" aria-hidden="true">
+      <div class={`w-full border-t ${variantClasses[variant]}`}></div>
+    </div>
+    <div class="relative flex justify-center">
+      <span class="bg-white dark:bg-gray-900 px-4 text-sm font-bold text-gray-900 dark:text-gray-200 uppercase tracking-wider">
+        {text}
+      </span>
+    </div>
+  </div>
+)}
+
+{orientation === 'vertical' && (
+  <div class={`${orientationClasses[vertical]} ${variantClasses[variant]} ${spacingClasses[spacing]} ${className}`}></div>
+)}

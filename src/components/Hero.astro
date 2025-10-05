@@ -1,0 +1,84 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  align?: 'left' | 'center' | 'right';
+  size?: 'sm' | 'md' | 'lg';
+  variant?: 'primary' | 'gradient' | 'default';
+  className?: string;
+  icon?: string;
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  align = 'left',
+  size = 'md',
+  variant = 'primary',
+  className = '',
+  icon,
+} = Astro.props;
+
+const alignClasses = {
+  left: 'text-left',
+  center: 'text-center',
+  right: 'text-right',
+};
+
+const sizeClasses = {
+  sm: 'py-12 md:py-16',
+  md: 'py-16 md:py-24',
+  lg: 'py-24 md:py-32',
+};
+
+const variantClasses = {
+  primary: 'bg-primary-500',
+  gradient: 'bg-gradient-to-br from-primary-400 to-primary-600',
+  default: 'bg-light',
+};
+
+const titleSizeClasses = {
+  sm: 'text-3xl md:text-4xl',
+  md: 'text-4xl md:text-6xl',
+  lg: 'text-5xl md:text-7xl',
+};
+
+const textColorClass = variant === 'default' ? 'text-default' : 'text-white';
+const subtitleColorClass = variant === 'default' ? 'text-light' : 'text-white/90';
+---
+
+<section class={`${variantClasses[variant]} ${sizeClasses[size]} ${className} px-4 comic-border-thick border-b-2 border-b-gray-300 dark:border-b-gray-700 relative overflow-hidden`}>
+  <div class={`max-w-7xl mx-auto relative z-10 ${alignClasses[align]}`}>
+    {icon && (
+      <div class={`mb-6 ${align === 'center' ? 'flex justify-center' : align === 'right' ? 'flex justify-end' : ''}`}>
+        <Icon name={icon} class={`w-16 h-16 md:w-20 md:h-20 ${variant === 'default' ? 'text-primary-500' : 'text-white'}`} />
+      </div>
+    )}
+
+    {subtitle && (
+      <p class={`text-xl md:text-2xl mb-4 ${variant === 'default' ? 'text-light' : 'text-white'} font-bold`}>
+        {subtitle}
+      </p>
+    )}
+
+    <h1 class={`${titleSizeClasses[size]} font-bold mb-6 ${textColorClass} tracking-wide`}>
+      {title}
+    </h1>
+
+    {description && (
+      <p class={`text-lg md:text-xl max-w-3xl ${align === 'center' ? 'mx-auto' : ''} ${variant === 'default' ? 'text-light' : 'text-white/95'} font-medium`}>
+        {description}
+      </p>
+    )}
+
+    {Astro.slots.has('default') && (
+      <div class={`mt-8 ${align === 'center' ? 'flex justify-center gap-4' : 'flex gap-4'} ${align === 'right' ? 'justify-end' : ''}`}>
+        <slot />
+      </div>
+    )}
+  </div>
+</section>

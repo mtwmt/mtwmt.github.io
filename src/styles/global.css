@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700&display=swap");
 @import "./tailwind.css";
 
 @layer base {
@@ -7,39 +7,86 @@
   }
 
   :root {
-    /* Runtime CSS variables for custom utilities */
-    --color-default: #444;
-    --color-light: #717171;
-    --color-dark: #040404;
-    --color-background: #fff;
-    --color-light-background: #f5f5f5;
-    --color-border: #ddd;
+    /* ====================================
+       Semantic Colors (語意化顏色變數)
+       提升對比度至 WCAG AA 標準
+       ==================================== */
+
+    /* 文字顏色 */
+    --color-default: #1f2937; /* 主文字 (gray-800) */
+    --color-light: #6b7280; /* 次要文字 (gray-500) */
+    --color-dark: #111827; /* 強調文字 (gray-900) */
+
+    /* 背景顏色 */
+    --color-background: #ffffff; /* 主背景 */
+    --color-light-background: #f9fafb; /* 卡片背景 (gray-50) */
+
+    /* 邊框顏色 */
+    --color-border: #e5e7eb; /* 一般邊框 (gray-200) */
+    --color-border-light: #f3f4f6; /* 淺邊框 (gray-100) */
+
+    /* ====================================
+       Comic Book Style Variables (漫畫風格)
+       粗黑邊框 + 硬陰影偏移 + 高對比
+       ==================================== */
+    --comic-border-width: 2px;
+    --comic-border-radius: 0.5rem; /* 8px */
+    --comic-border-radius-sm: 0.25rem; /* 4px */
+    --comic-border-radius-lg: 0.75rem; /* 12px */
+    --comic-border-radius-xl: 1rem; /* 16px */
+
+    /* Comic Book 硬陰影 - 偏移式，無模糊 */
+    --comic-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+    --comic-shadow-sm: 2px 2px 0 rgba(0, 0, 0, 0.12);
+    --comic-shadow-lg: 6px 6px 0 rgba(0, 0, 0, 0.2);
+    --comic-shadow-xl: 8px 8px 0 rgba(0, 0, 0, 0.25);
+
+    /* Spacing */
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem; /* 8px */
+    --spacing-md: 1rem; /* 16px */
+    --spacing-lg: 1.5rem; /* 24px */
+    --spacing-xl: 2rem; /* 32px */
+    --spacing-2xl: 3rem; /* 48px */
   }
 
   :root.dark {
-    /* Dark mode overrides */
-    --color-default: #fff;
-    --color-light: #fff;
-    --color-dark: #B4AFB6;
-    --color-background: #1c1c1c;
-    --color-light-background: #404040;
-    --color-border: #666;
+    /* ====================================
+       Dark Mode Color Overrides
+       優化暗黑模式對比度
+       ==================================== */
 
-    /* Override primary colors for dark mode */
-    --color-primary-50: #b9e9e9;
-    --color-primary-100: #8dd9d9;
-    --color-primary-200: #5ac8c8;
-    --color-primary-300: #37a7a7;
-    --color-primary-400: #1d8d8d;
-    --color-primary-500: #007777;
-    --color-primary-600: #007070;
-    --color-primary-700: #006666;
-    --color-primary-800: #005d5d;
-    --color-primary-900: #004c4c;
-    --color-primary-a100: #7affff;
-    --color-primary-a200: #47ffff;
-    --color-primary-a400: #14ffff;
-    --color-primary-a700: #00f9f9;
+    /* 文字顏色 */
+    --color-default: #f9fafb; /* 主文字 (gray-50) */
+    --color-light: #9ca3af; /* 次要文字 (gray-400) */
+    --color-dark: #ffffff; /* 強調文字 */
+
+    /* 背景顏色 */
+    --color-background: #111827; /* 主背景 (gray-900) */
+    --color-light-background: #1f2937; /* 卡片背景 (gray-800) */
+
+    /* 邊框顏色 */
+    --color-border: #374151; /* 一般邊框 (gray-700) */
+    --color-border-light: #4b5563; /* 淺邊框 (gray-600) */
+
+    /* Primary colors for dark mode */
+    --color-primary-50: #b3ebeb; /* 淺色文字 */
+    --color-primary-100: #80dddd;
+    --color-primary-200: #4dd0d0;
+    --color-primary-300: #26c5c5;
+    --color-primary-400: #00b8b8;
+    --color-primary-500: #007272; /* Logo 區塊深 Teal */
+    --color-primary-600: #009393;
+    --color-primary-700: #00a0a0;
+    --color-primary-800: #006666; /* TOC 側邊欄深 Teal */
+    --color-primary-900: #005252;
+    --color-primary-950: #004040;
+
+    /* Comic Book 硬陰影 for dark mode (白色陰影) */
+    --comic-shadow: 4px 4px 0 rgba(255, 255, 255, 0.15);
+    --comic-shadow-sm: 2px 2px 0 rgba(255, 255, 255, 0.12);
+    --comic-shadow-lg: 6px 6px 0 rgba(255, 255, 255, 0.2);
+    --comic-shadow-xl: 8px 8px 0 rgba(255, 255, 255, 0.25);
   }
 
   html,
@@ -69,25 +116,92 @@
   .animation {
     @apply transition duration-300 ease-in-out;
   }
+}
 
+@layer utilities {
+  /* ========================================
+     🎨 Comic Book 風格核心樣式系統
+     特色：粗黑邊框 + 硬陰影偏移 + 高對比
+     ======================================== */
+
+  /* Comic Book 硬陰影 - 偏移式，無模糊 */
+  .comic-shadow {
+    box-shadow: var(--comic-shadow);
+  }
+
+  .comic-shadow-sm {
+    box-shadow: var(--comic-shadow-sm);
+  }
+
+  .comic-shadow-lg {
+    box-shadow: var(--comic-shadow-lg);
+  }
+
+  .comic-shadow-xl {
+    box-shadow: var(--comic-shadow-xl);
+  }
+
+  /* Comic 粗邊框（模擬漫畫分格框）*/
+  .comic-border {
+    @apply border-2 border-gray-900 dark:border-gray-200;
+  }
+
+  .comic-border-thick {
+    @apply border-[3px] border-gray-900 dark:border-gray-200;
+  }
+
+  /* Comic Book 風按鈕 */
   .btn {
-    @apply relative inline-block rounded-md border-2 border-primary-900
-    bg-transparent py-1 text-center font-dosis uppercase
-    text-primary-500 shadow-[2px_2px_0_#007f7f]
-    hover:top-0.5 hover:left-0.5 hover:shadow-none;
+    @apply relative inline-block font-bold tracking-wide
+    border-2
+    rounded-md
+    transition-all duration-200 ease-out;
+    box-shadow: var(--comic-shadow);
+  }
+
+  .btn:hover:not(:disabled) {
+    @apply translate-y-1;
+    box-shadow: var(--comic-shadow-sm);
+  }
+
+  .btn:active:not(:disabled) {
+    @apply translate-y-1;
+    box-shadow: var(--comic-shadow-sm);
   }
 
   .btn--active {
-    @apply top-0.5 left-0.5 shadow-none;
+    @apply translate-y-1;
+    box-shadow: var(--comic-shadow-sm);
   }
 
   .btn.disabled {
-    @apply border-gray-400 bg-gray-100 text-gray-400 shadow-none
-    hover:top-0 hover:left-0;
+    @apply cursor-not-allowed bg-gray-400 dark:bg-gray-600 border-gray-500 dark:border-gray-500 text-gray-200 dark:text-gray-400;
+    opacity: 0.7;
   }
 
-  .btn.disabled--active {
-    @apply top-0 left-0;
+  /* Comic Book 風卡片 */
+  .comic-card {
+    @apply bg-white dark:bg-gray-800 border-2 border-gray-900 dark:border-gray-200
+    transition-all duration-200 rounded-md;
+    position: relative;
+    box-shadow: var(--comic-shadow);
+  }
+
+  .comic-card:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--comic-shadow-lg);
+  }
+
+  @keyframes star-twinkle {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.1);
+    }
   }
 
   .absolute-center {

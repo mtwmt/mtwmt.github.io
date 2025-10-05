@@ -44,7 +44,7 @@ const { posts, tag } = Astro.props as any;
 <MainLayout title={tag + ' | ' + SITE_TITLE}>
   <Header />
   <ContentLayout>
-    <PageTitle title={'標籤：' + tag.toUpperCase()} />
+    <PageTitle title={'標籤：' + tag.toUpperCase()} icon="ic:outline-local-offer" />
     <ul class="py-10 border-y border-default">
       {
         posts.map((p: any) => {

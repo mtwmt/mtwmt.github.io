@@ -1,57 +1,73 @@
 ---
 import {Icon} from 'astro-icon/components';
 import Header from '../components/Header.astro';
-import SearchWidget from '../components/SearchWidget.astro';
 import { SITE_TITLE } from '../consts';
 import AsideLayout from '../layouts/AsideLayout.astro';
 import ContentLayout from '../layouts/ContentLayout.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 import PageTitle from '../components/PageTitle.astro';
 import FriendshipLink from '../components/FriendshipLink.astro';
+import Divider from '../components/Divider.astro';
+import Badge from '../components/Badge.astro';
 ---
 
 <MainLayout title={SITE_TITLE}>
   <Header />
   <ContentLayout>
-    <PageTitle title="ABOUT MANDY" />
-    <div class="border-t border-default py-10 px-[4vw]">
-      <p class="mt-2">前端工程師</p>
-      <p>這裡紀錄著一些個人學習記錄</p>
-      <p class="mt-3">感謝一路上幫助我的朋友們!!!</p>
-      <p>歡迎與我交流!!!</p>
+    <PageTitle title="ABOUT MANDY" icon="ic:outline-person" />
+    <Divider variant="solid" spacing="sm"/>
+    <div class="py-10 px-[4vw]">
+      <div class="prose dark:prose-invert max-w-none">
+        <p class="text-lg">前端工程師</p>
+        <p>這裡紀錄著一些個人學習記錄</p>
+        <p>感謝一路上幫助我的朋友們!!!</p>
+        <p>歡迎與我交流!!!</p>
 
-      <p class="mt-6 text-lg font-bold">技能：</p>
-      <ul class="mt-1">
-        <li>Angular</li>
-        <li>Tailwindcss</li>
-        <li>SCSS</li>
-        <li>Git</li>
-        <li>Astro</li>
-        <li>ECharts</li>
-        <li>AgGrid</li>
-      </ul>
+        <h3 class="flex items-center gap-2 mt-8 mb-4">
+          <Icon name="ic:outline-code" class="w-6 h-6 text-primary-500" />
+          <span>技能</span>
+        </h3>
+        <div class="flex flex-wrap gap-2 not-prose">
+          <Badge color="error">Angular</Badge>
+          <Badge color="primary">Tailwindcss</Badge>
+          <Badge color="info">SCSS</Badge>
+          <Badge color="warning">Git</Badge>
+          <Badge color="accent">Astro</Badge>
+          <Badge color="success">ECharts</Badge>
+          <Badge color="neutral">AgGrid</Badge>
+        </div>
 
-      <p class="mt-6 text-lg font-bold">本站使用技術：</p>
-      <ul class="mt-1">
-        <li><a href="https://astro.build/" target="_black">Astro</a></li>
-        <li>
-          <a href="https://tailwindcss.com/" target="_black">Tailwindcss</a>
-        </li>
-      </ul>
+        <h3 class="flex items-center gap-2 mt-8 mb-4">
+          <Icon name="ic:outline-construction" class="w-6 h-6 text-primary-500" />
+          <span>本站使用技術</span>
+        </h3>
+        <div class="flex flex-wrap gap-2 not-prose">
+          <a href="https://astro.build/" target="_blank">
+            <Badge color="accent">Astro</Badge>
+          </a>
+          <a href="https://tailwindcss.com/" target="_blank">
+            <Badge color="primary">Tailwindcss</Badge>
+          </a>
+        </div>
 
-      <div class="mt-6 space-x-4">
-        <a class="text-blue-500" href="//github.com/mtwmt" target="_blank">
-          <Icon
-            name="mdi:github"
-            class="inline-block w-16 text-gray-500 transition duration-300 hover:text-primary-800 dark:hover:text-primary-400"
-          />
-        </a>
-        <a href="mailto:mtwmt@hotmail.com" target="_blank">
-          <Icon
-            name="mdi:at"
-            class="inline-block w-16 text-gray-500 transition duration-300 hover:text-primary-800 dark:hover:text-primary-400"
-          />
-        </a>
+        <h3 class="flex items-center gap-2 mt-8 mb-4">
+          <Icon name="ic:outline-contact-mail" class="w-6 h-6 text-primary-500" />
+          <span>聯絡方式</span>
+        </h3>
+        <div class="flex gap-4 not-prose">
+          <a href="//github.com/mtwmt" target="_blank" class="group">
+            <Icon
+              name="mdi:github"
+              class="w-14 h-14 text-gray-600 dark:text-gray-400 transition-all duration-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 group-hover:scale-110"
+            />
+          </a>
+          <a href="mailto:mtwmt@hotmail.com" target="_blank" class="group">
+            <Icon
+              name="mdi:at"
+              class="w-14 h-14 text-gray-600 dark:text-gray-400 transition-all duration-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 group-hover:scale-110"
+            />
+          </a>
+        </div>
       </div>
     </div>
 
