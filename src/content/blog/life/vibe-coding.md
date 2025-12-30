@@ -15,20 +15,19 @@ date: 2025/12/30
 
 ## 最近用 AI 做了什麼
 
-**報價單產生器加上會員系統（Firebase + Firestore）**
+### 報價單產生器加上會員系統（Firebase + Firestore）
 
 這是早期的 side project，最近用 AI 幫它加上了會員系統——也是實際上有在運作！以前光想到後端、資料庫、身份驗證就頭痛，現在實現它了！
 
-**AI 漫畫翻譯軟體（Python + Gemini API）**
+### AI 漫畫翻譯軟體（Python + Gemini API）
 
 因為書友的需求，看他將圖片一張一張的拖曳到 AI 對話框轉檔實在太不符合經濟效益了、所以就使用 Python + Gemini API 寫了個批次轉檔的翻譯工具，節省重工。
 
-
-**書櫃日誌 App（Expo React Native + Apps Script + SQLite）**
+### 書櫃日誌 App（Expo React Native + Apps Script + SQLite）**
 
 管理漫畫小說收藏的手機 App，從資料庫設計、ISBN 掃描到雲端備份，整個架構都是跟 AI 討論出來的。
 
-**機械手臂監控系統（React + Three.js）**
+### 機械手臂監控系統（React + Three.js）
 
 一個 3D 的工業監控介面。React 沒正式寫過，Three.js 完全沒碰過，就這樣一路問 AI、一路改，也做出來了 XD
 
