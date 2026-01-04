@@ -23,7 +23,7 @@ date: 2025/12/30
 
 因為書友的需求，看他將圖片一張一張的拖曳到 AI 對話框轉檔實在太不符合經濟效益了、所以就使用 Python + Gemini API 寫了個批次轉檔的翻譯工具，節省重工。
 
-### 書櫃日誌 App（Expo React Native + Apps Script + SQLite）**
+### 書櫃日記 App（Expo React Native + Apps Script + SQLite）
 
 管理漫畫小說收藏的手機 App，從資料庫設計、ISBN 掃描到雲端備份，整個架構都是跟 AI 討論出來的。
 
