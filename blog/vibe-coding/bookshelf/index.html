@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.16.11"><!-- Canonical URL --><link rel="canonical" href="https://mtwmt.com/blog/vibe-coding/bookshelf/"><!-- Primary Meta Tags --><title>Vibe Coding 之旅：從零打造書櫃日記 App | Mandy&#39;s Website</title><meta name="title" content="Vibe Coding 之旅：從零打造書櫃日記 App | Mandy's Website"><meta name="description" content=">「以前一個前端工程師很難獨立完成App+Backend+DB+LandingPage。現在，我做到了。」身為一個寫了多年Angular的前端工程師，我從沒想過有一天能獨立完成一款手機App——從UI"><meta name="robots" content="index, follow"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://mtwmt.com/blog/vibe-coding/bookshelf/"><meta property="og:title" content="Vibe Coding 之旅：從零打造書櫃日記 App | Mandy's Website"><meta property="og:description" content=">「以前一個前端工程師很難獨立完成App+Backend+DB+LandingPage。現在，我做到了。」身為一個寫了多年Angular的前端工程師，我從沒想過有一天能獨立完成一款手機App——從UI"><meta property="og:image" content="https://mtwmt.com/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://mtwmt.com/blog/vibe-coding/bookshelf/"><meta property="twitter:title" content="Vibe Coding 之旅：從零打造書櫃日記 App | Mandy's Website"><meta property="twitter:description" content=">「以前一個前端工程師很難獨立完成App+Backend+DB+LandingPage。現在，我做到了。」身為一個寫了多年Angular的前端工程師，我從沒想過有一天能獨立完成一款手機App——從UI"><meta property="twitter:image" content="https://mtwmt.com/placeholder-social.jpg"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DxD8ucBX.js"></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-N8NEZBWT3S"></script><script type="module">window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a("js",new Date);a("config","G-N8NEZBWT3S");</script><link rel="stylesheet" href="/_astro/about.Cq0XEYtp.css"><script type="module" src="/_astro/page.DTPp-pk-.js"></script></head> <body class="bg-default text-default"> <div class="relative mx-auto 
+      before:fixed before:right-0 before:top-0 before:block before:w-80 
+      lg:before:h-screen before:bg-primary-900 before:transition 
+      lg:max-w-7xl lg:before:w-1/2">  <input id="nav-toggle" type="checkbox" class="hidden nav-toggle"> <header class="bg-primary-900 lg:flex lg:h-[180px] lg:flex-row-reverse lg:justify-between"> <div class="translate-x-0 animation relative w-full font-dosis lg:flex lg:h-full lg:w-80 lg:items-center lg:justify-center lg:bg-primary-500 lg:transition-none"> <h2 class="w-40 bg-primary-500 text-center text-2xl leading-loose text-white lg:w-auto lg:text-4xl"> <a href="/">Mandy's Web</a> </h2> <label id="hamburger" for="nav-toggle" title="MENU" class="absolute right-5 top-1/2 h-7 w-8 -translate-y-1/2 cursor-pointer lg:hidden"> <span class="animation absolute top-1/2 h-[2px] w-full -translate-y-1/2 bg-white before:absolute before:-top-2.5 before:h-[2px] before:w-full before:bg-white after:absolute after:top-2.5 after:h-[2px] after:w-full after:bg-white lg:transition-none"></span></label> </div> <div class="translate-x-0 animation relative z-10 bg-gray-100 dark:bg-gray-800 py-4 text-center lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"> <p class="mb-4 lg:mb-0">因為會忘，所以要寫下來</p> <nav> <ul class="flex justify-center font-dosis uppercase lg:justify-start"> <li class="mx-4 text-center"> <a href="/about" class="group"> <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border-2 border-gray-900 dark:border-gray-200 bg-white dark:bg-gray-900 text-center shadow-[3px_3px_0_rgba(0,0,0,0.25)] dark:shadow-[3px_3px_0_rgba(255,255,255,0.2)] transition-all duration-150 group-hover:shadow-[1px_1px_0_rgba(0,0,0,0.25)] dark:group-hover:shadow-[1px_1px_0_rgba(255,255,255,0.2)] group-hover:translate-x-[2px] group-hover:translate-y-[2px]"> <svg width="1em" height="1em" class="h-6 w-6 text-gray-800 dark:text-gray-200" data-icon="ic:outline-question-mark">   <symbol id="ai:ic:outline-question-mark" viewBox="0 0 24 24"><path fill="currentColor" d="M11.07 12.85c.77-1.39 2.25-2.21 3.11-3.44c.91-1.29.4-3.7-2.18-3.7c-1.69 0-2.52 1.28-2.87 2.34L6.54 6.96C7.25 4.83 9.18 3 11.99 3c2.35 0 3.96 1.07 4.78 2.41c.7 1.15 1.11 3.3.03 4.9c-1.2 1.77-2.35 2.31-2.97 3.45c-.25.46-.35.76-.35 2.24h-2.89c-.01-.78-.13-2.05.48-3.15M14 20c0 1.1-.9 2-2 2s-2-.9-2-2s.9-2 2-2s2 .9 2 2"/></symbol><use href="#ai:ic:outline-question-mark"></use>  </svg> </span> <span class="text-xs font-bold">about</span> </a> </li><li class="mx-4 text-center"> <a href="/blog/page/1" class="group"> <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border-2 border-gray-900 dark:border-gray-200 bg-white dark:bg-gray-900 text-center shadow-[3px_3px_0_rgba(0,0,0,0.25)] dark:shadow-[3px_3px_0_rgba(255,255,255,0.2)] transition-all duration-150 group-hover:shadow-[1px_1px_0_rgba(0,0,0,0.25)] dark:group-hover:shadow-[1px_1px_0_rgba(255,255,255,0.2)] group-hover:translate-x-[2px] group-hover:translate-y-[2px]"> <svg width="1em" height="1em" class="h-6 w-6 text-gray-800 dark:text-gray-200" data-icon="ic:outline-format-bold">   <symbol id="ai:ic:outline-format-bold" viewBox="0 0 24 24"><path fill="currentColor" d="M15.6 10.79c.97-.67 1.65-1.77 1.65-2.79c0-2.26-1.75-4-4-4H7v14h7.04c2.09 0 3.71-1.7 3.71-3.79c0-1.52-.86-2.82-2.15-3.42M10 6.5h3c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-3zm3.5 9H10v-3h3.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5"/></symbol><use href="#ai:ic:outline-format-bold"></use>  </svg> </span> <span class="text-xs font-bold">blog</span> </a> </li><li class="mx-4 text-center"> <a href="/contact" class="group"> <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border-2 border-gray-900 dark:border-gray-200 bg-white dark:bg-gray-900 text-center shadow-[3px_3px_0_rgba(0,0,0,0.25)] dark:shadow-[3px_3px_0_rgba(255,255,255,0.2)] transition-all duration-150 group-hover:shadow-[1px_1px_0_rgba(0,0,0,0.25)] dark:group-hover:shadow-[1px_1px_0_rgba(255,255,255,0.2)] group-hover:translate-x-[2px] group-hover:translate-y-[2px]"> <svg width="1em" height="1em" class="h-6 w-6 text-gray-800 dark:text-gray-200" data-icon="ic:outline-mode-comment">   <symbol id="ai:ic:outline-mode-comment" viewBox="0 0 24 24"><path fill="currentColor" d="M20 17.17L18.83 16H4V4h16zM20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2"/></symbol><use href="#ai:ic:outline-mode-comment"></use>  </svg> </span> <span class="text-xs font-bold">submit</span> </a> </li> <li class="mx-4 text-center"> <div class="inline-flex undefined"> <input class="absolute opacity-0" id="theme-switcher" data-theme-switcher type="checkbox"> <label class="relative cursor-pointer group" for="theme-switcher"> <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border-2 border-gray-900 dark:border-gray-200 bg-white dark:bg-gray-900 text-center shadow-[3px_3px_0_rgba(0,0,0,0.25)] dark:shadow-[3px_3px_0_rgba(255,255,255,0.2)] transition-all duration-150 group-hover:shadow-[1px_1px_0_rgba(0,0,0,0.25)] dark:group-hover:shadow-[1px_1px_0_rgba(255,255,255,0.2)] group-hover:translate-x-[2px] group-hover:translate-y-[2px]"> <svg width="1em" height="1em" class="h-6 w-6 hidden dark:block text-gray-200" data-icon="ic:outline-dark-mode">   <symbol id="ai:ic:outline-dark-mode" viewBox="0 0 24 24"><path fill="currentColor" d="M9.37 5.51A7.4 7.4 0 0 0 9.1 7.5c0 4.08 3.32 7.4 7.4 7.4c.68 0 1.35-.09 1.99-.27A7.01 7.01 0 0 1 12 19c-3.86 0-7-3.14-7-7c0-2.93 1.81-5.45 4.37-6.49M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26a5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1"/></symbol><use href="#ai:ic:outline-dark-mode"></use>  </svg> <svg width="1em" height="1em" class="h-6 w-6 block dark:hidden text-gray-800" data-icon="ic:outline-light-mode">   <symbol id="ai:ic:outline-light-mode" viewBox="0 0 24 24"><path fill="currentColor" d="M12 9c1.65 0 3 1.35 3 3s-1.35 3-3 3s-3-1.35-3-3s1.35-3 3-3m0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5s5-2.24 5-5s-2.24-5-5-5M2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1m18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1M11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1m0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1M5.99 4.58a.996.996 0 0 0-1.41 0a.996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41zm12.37 12.37a.996.996 0 0 0-1.41 0a.996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41zm1.06-10.96a.996.996 0 0 0 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0zM7.05 18.36a.996.996 0 0 0 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0z"/></symbol><use href="#ai:ic:outline-light-mode"></use>  </svg> </span> <span class="uppercase text-xs font-bold">mode</span> </label> </div> <script type="module">const a=()=>{const e=(()=>typeof localStorage<"u"&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":!!window.matchMedia("(prefers-color-scheme: dark)").matches),c=document.querySelectorAll("[data-theme-switcher]");e()&&document.documentElement.classList.add("dark"),[].forEach.call(c,function(t){t.checked=!!e(),t.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),localStorage.setItem("theme",document.documentElement.classList.contains("dark")?"dark":"light")})})};document.addEventListener("astro:after-swap",a);a();</script> </li> </ul> </nav> </div> </header>  <main class="relative z-[1] block min-h-screen bg-primary-800
+  before:fixed before:top-0 before:left-1/2 before:ml-[640px] before:block before:h-full before:min-h-screen before:w-[1px]
+  before:bg-primary-500 after:fixed after:top-0 after:right-1/2
+  after:mr-[640px] after:block after:h-full after:min-h-screen after:w-[1px] after:bg-border lg:flex"> <article class=" min-h-[calc(100vh-180px)]  animation relative z-[1] bg-default lg:float-left lg:w-[calc(100%-20rem)] lg:transition-none">  <div class="py-[3.35rem] px-[4vw]"> <!-- <Breadcrumbs
+        items={[
+          { label: '首頁', href: '/', icon: 'ic:outline-home' },
+          { label: '部落格', href: '/blog/page/1' },
+          { label: post.data.title }
+        ]}
+        className="mb-6"
+      /> --> <time>Jan 18, 2026</time><!-- <div class=` ${className}`>
+	<span class="text-6xl font-bold block">{
+		new Date(date).getDate().toString().padStart(2, '0')
+	}</span>
+	<span>{
+		`${date.toLocaleDateString('en-us', {
+			month: 'short',
+		})} ${new Date(date).getFullYear()}`
+	}</span>
+</div>  --> <h1 class="text-3xl leading-loose text-default">Vibe Coding 之旅：從零打造書櫃日記 App</h1> <p class>5 minutes to read</p> <div class="mt-2"> <div class="inline-flex flex-wrap gap-2"> <a href="/blog/tags/vibe coding" class="inline-block font-bold rounded whitespace-nowrap transition-all duration-200 shadow-[2px_2px_0_rgba(0,0,0,0.15)] dark:shadow-[2px_2px_0_rgba(255,255,255,0.15)] hover:shadow-[3px_3px_0_rgba(0,0,0,0.2)] dark:hover:shadow-[3px_3px_0_rgba(255,255,255,0.2)] px-2 py-0.5 text-[10px] bg-gray-200 text-gray-800 dark:bg-gray-700/50 dark:text-gray-200 border-2 border-gray-600 dark:border-gray-500">
+#vibe coding</a><a href="/blog/tags/react native" class="inline-block font-bold rounded whitespace-nowrap transition-all duration-200 shadow-[2px_2px_0_rgba(0,0,0,0.15)] dark:shadow-[2px_2px_0_rgba(255,255,255,0.15)] hover:shadow-[3px_3px_0_rgba(0,0,0,0.2)] dark:hover:shadow-[3px_3px_0_rgba(255,255,255,0.2)] px-2 py-0.5 text-[10px] bg-gray-200 text-gray-800 dark:bg-gray-700/50 dark:text-gray-200 border-2 border-gray-600 dark:border-gray-500">
+#react native</a><a href="/blog/tags/expo" class="inline-block font-bold rounded whitespace-nowrap transition-all duration-200 shadow-[2px_2px_0_rgba(0,0,0,0.15)] dark:shadow-[2px_2px_0_rgba(255,255,255,0.15)] hover:shadow-[3px_3px_0_rgba(0,0,0,0.2)] dark:hover:shadow-[3px_3px_0_rgba(255,255,255,0.2)] px-2 py-0.5 text-[10px] bg-gray-200 text-gray-800 dark:bg-gray-700/50 dark:text-gray-200 border-2 border-gray-600 dark:border-gray-500">
+#expo</a><a href="/blog/tags/cloudflare" class="inline-block font-bold rounded whitespace-nowrap transition-all duration-200 shadow-[2px_2px_0_rgba(0,0,0,0.15)] dark:shadow-[2px_2px_0_rgba(255,255,255,0.15)] hover:shadow-[3px_3px_0_rgba(0,0,0,0.2)] dark:hover:shadow-[3px_3px_0_rgba(255,255,255,0.2)] px-2 py-0.5 text-[10px] bg-gray-200 text-gray-800 dark:bg-gray-700/50 dark:text-gray-200 border-2 border-gray-600 dark:border-gray-500">
+#cloudflare</a><a href="/blog/tags/app development" class="inline-block font-bold rounded whitespace-nowrap transition-all duration-200 shadow-[2px_2px_0_rgba(0,0,0,0.15)] dark:shadow-[2px_2px_0_rgba(255,255,255,0.15)] hover:shadow-[3px_3px_0_rgba(0,0,0,0.2)] dark:hover:shadow-[3px_3px_0_rgba(255,255,255,0.2)] px-2 py-0.5 text-[10px] bg-gray-200 text-gray-800 dark:bg-gray-700/50 dark:text-gray-200 border-2 border-gray-600 dark:border-gray-500">
+#app development</a> </div> </div> </div> <hr class="w-full border-t border-gray-300 dark:border-gray-600 my-4 "> <div class="py-10 px-[4vw]"> <div class="post"> <blockquote>
+<p>「以前一個前端工程師很難獨立完成 App + Backend + DB + Landing Page。現在，我做到了。」</p>
+</blockquote>
+<p>身為一個寫了多年 Angular 的前端工程師，我從沒想過有一天能獨立完成一款手機 App——從 UI 到後端、從資料庫到雲端部署，以及 Landing Page，全部自己搞定。</p>
+<p><strong>開發時程：約 2 個月（業餘時間）</strong></p>
+<p>這篇文章記錄了我從 2025 年底開始，如何用 <strong>Vibe Coding</strong> 模式與 AI 協作，從零打造了「書櫃日記」這款漫畫收藏管理 App 的完整歷程，以及我對 AI 時代工程師角色的反思。</p>
+<hr>
+<h2 id="緣起收藏狂的痛點與前端的野心">緣起：收藏狂的痛點與前端的野心</h2>
+<p>這幾年開始沉迷於收藏紙本漫畫，收著收著就遇到了一個問題：<strong>家裡藏書越來越多，根本記不住哪些買過、哪些還缺</strong>。</p>
+<p>市面上的 App 不支援「系列進度追蹤」（我收了海賊王 1~85 集，還缺哪幾本？），也沒辦法區分「愛藏版」、「新裝版」。我想要的很簡單：<strong>掃條碼、自動抓資料、然後告訴我還差哪幾本。</strong></p>
+<p>同時，身為工程師，我一直有個「想做 App」的念頭。看著 React Native、Flutter 逐漸成熟，我幾度想跳進去，但每次都被環境設定、學習新語言與原生生態系勸退。</p>
+<p>直到 2024 年，AI 工具成熟。我嘗試了 <strong>Vibe Coding</strong>——不再一個人造輪子，而是與 AI 結對開發，讓我專注在**「我想要什麼」<strong>，而 AI 負責</strong>「怎麼實現」**。這個模式讓我終於跨出舒適圈，完成了這個產品。</p>
+<hr>
+<h2 id="產品概覽不只是一個-app">產品概覽：不只是一個 App</h2>
+<p>「書櫃日記」不只是一個手機 App，它是一個 End-to-End 的完整系統：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">模組</th><th align="left">技術棧</th><th align="left">說明</th></tr></thead><tbody><tr><td align="left"><strong>App</strong></td><td align="left">React Native + Expo</td><td align="left">核心功能，目前提供 APK 下載，支援條碼掃描 (Vision Camera / MLKit)、離線管理</td></tr><tr><td align="left"><strong>Local DB</strong></td><td align="left">SQLite (expo-sqlite)</td><td align="left">離線優先架構，資料儲存於手機端</td></tr><tr><td align="left"><strong>雲端 API</strong></td><td align="left">Cloudflare Workers + Hono</td><td align="left">Serverless 後端，處理資料同步</td></tr><tr><td align="left"><strong>ISBN 資料庫</strong></td><td align="left">Cloudflare D1 + R2</td><td align="left">公共書籍資料庫，儲存使用者掃描的 ISBN 資訊</td></tr><tr><td align="left"><strong>圖片 CDN</strong></td><td align="left">Cloudflare Workers</td><td align="left">封面圖自動 WebP 壓縮與快取，減少 85% 體積</td></tr><tr><td align="left"><strong>爬蟲代理</strong></td><td align="left">Google Apps Script</td><td align="left">整合多個外部 ISBN API，解決 CORS 問題</td></tr><tr><td align="left"><strong>Landing Page</strong></td><td align="left">Vite + React + Tailwind v4</td><td align="left">產品官網</td></tr></tbody></table>
+<hr>
+<h2 id="架構設計前端思維的延伸">架構設計：前端思維的延伸</h2>
+<h3 id="1-為什麼選-react-native--expo">1. 為什麼選 React Native + Expo？</h3>
+<p>身為前端，我對 React 生態非常熟悉。React Native 讓我能用熟悉的 JSX 與 Hooks 開發 App，而 <strong>Expo</strong> 更是神器——它把原生配置都封裝好了，尤其是 <strong>Expo Router</strong>，讓我可以用類似 Next.js 的檔案路由方式組織畫面，幾乎沒有學習曲線。</p>
+<h3 id="2-為什麼選-local-first-sqlite">2. 為什麼選 Local-First (SQLite)?</h3>
+<p>漫畫店裡的訊號通常不好。我希望使用者可以在<strong>完全離線</strong>的情況下掃描書籍、管理收藏，等到有網路時再同步。SQLite 作為手機端的資料庫，輕量且極快。</p>
+<h3 id="3-為什麼選-cloudflare-d1--workers">3. 為什麼選 Cloudflare D1 + Workers？</h3>
+<p>我不想管 Server。Cloudflare 的 Serverless 生態讓我可以用<strong>極低成本</strong>運行後端。D1 本身基於 SQLite，這讓我的 Local DB 與 Cloud DB 共用幾乎相同的 Schema，大幅降低維護複雜度。</p>
+<hr>
+<h2 id="核心功能開發ai-協作的真實體驗">核心功能開發：AI 協作的真實體驗</h2>
+<h3 id="1-三層級資料結構系列--作品--集數">1. 三層級資料結構：系列 → 作品 → 集數</h3>
+<p>漫畫收藏最麻煩的是「層級」。一般的書籍 API 把每本書視為獨立資料，但漫畫是「一套」的。我需要：</p>
+<ul>
+<li><strong>L1 系列 (Series)</strong>：例如「小學館少年漫畫」。</li>
+<li><strong>L2 作品 (Work)</strong>：例如「名偵探柯南」。</li>
+<li><strong>L3 集數 (Volume)</strong>：例如「第 1 集」。</li>
+</ul>
+<p>我向 AI 描述這個需求，它快速生成了 SQLite Schema、TypeScript Type 定義，以及計算進度條的 Hook。我只需要專注在「進度條顏色該怎麼變化」這種體驗層面的決策。</p>
+<h3 id="2-isbn-掃描與眾人協作">2. ISBN 掃描與眾人協作</h3>
+<p>這是 App 的靈魂功能。但現實是<strong>沒有一個 API 能完美涵蓋所有繁體中文書籍</strong>。</p>
+<p>於是我設計了一個架構：</p>
+<ol>
+<li><strong>GAS 中繼層</strong>：依序查詢 Google Books, Open Library 等來源，清洗資料。</li>
+<li><strong>公共資料庫回饋</strong>：當使用者掃描並新增一本書，這筆資料會同步到我的 D1 公共資料庫。</li>
+<li><strong>後人乘涼</strong>：後續使用者掃描同一本書時，直接從 D1 秒速抓取，不用再等外部 API。</li>
+</ol>
+<h3 id="3-解鎖第一次的成就">3. 解鎖「第一次」的成就</h3>
+<p>對前端仔來說，這次開發解鎖了很多生涯第一次：</p>
+<ul>
+<li>第一次設計正規化資料庫 Schema</li>
+<li>第一次寫後端 API (Hono)</li>
+<li>第一次處理圖片壓縮與 CDN</li>
+<li>第一次打包 Android APK 並公開下載</li>
+</ul>
+<hr>
+<h2 id="踩坑實錄ai-無法一步到位的地方">踩坑實錄：AI 無法一步到位的地方</h2>
+<p>Vibe Coding 並非萬能。AI 給的方案有時是通用的，但在特定場景下會失效，這時就需要工程師的 Debug 能力。</p>
+<h3 id="1-跨平台軟體鍵盤遮擋">1. 跨平台軟體鍵盤遮擋</h3>
+<p>在 React Native 開發中，軟體鍵盤彈出時遮住輸入框是經典痛點，而且 iOS 與 Android 的行為完全不同。
+AI 建議的 <code>KeyboardAvoidingView</code> 雖然是標準解法，但經常在特定情境下失效。</p>
+<ul>
+<li><strong>Android</strong>：需要調整 <code>AndroidManifest.xml</code> 中的 <code>windowSoftInputMode</code> 設定才能生效。</li>
+<li><strong>iOS</strong>：需要精確計算 <code>behavior="padding"</code> 的 offset。</li>
+</ul>
+<p>這讓我學到：<strong>AI 給的通用解法，通常無法完美處理跨平台的 Edge Case，還是得針對不同平台調校。</strong></p>
+<h3 id="2-d1-同步的時間戳記地獄">2. D1 同步的時間戳記地獄</h3>
+<p>有一段時間，同步到 D1 的 <code>createdAt</code> 欄位總是 <code>NULL</code>。追蹤後發現，SQLite 的時間是字串，而我在同步邏輯中沒有正確處理時區與 ISO 格式轉換。這類全鏈路的資料流問題，AI 很難一開始就預見，需要人工排查。</p>
+<h3 id="3-tailwindcss-v4-的新語法">3. TailwindCSS v4 的新語法</h3>
+<p>Landing Page 開發時，剛好遇上 Tailwind v4 發布。AI 的資料庫還停留在 v3，即使我貼了文件給它，它有時還是會寫出舊的 <code>bg-gradient-to-r</code>。v4 其實改成了 <code>bg-linear-to-r</code>，且不再需要 <code>tailwind.config.js</code>。這花了我不少時間手動修正。</p>
+<hr>
+<h2 id="學到的事跨界開發的真實體悟">學到的事：跨界開發的真實體悟</h2>
+<h3 id="1-架構設計比寫-code-更重要">1. 架構設計比寫 Code 更重要</h3>
+<p>以前做前端，通常是接 API、畫畫面，較少參與資料庫設計。這次自己設計 DB Schema，才深刻體會到「資料結構決定應用程式的命運」。一開始命名不精確（IP、SeriesGroup 混用），導致後續重構花了好幾倍的時間。<strong>先想好名詞定義、畫好 ER 圖，比急著寫 Code 重要太多。</strong></p>
+<h3 id="2-ai-能帶你入門但不能帶你精通">2. AI 能帶你入門，但不能帶你精通</h3>
+<p>AI 最大的價值是「降低門檻」。以前看到 React Native 文件就頭暈，現在可以直接問 AI 怎麼開始。但當遇到效能瓶頸、記憶體洩漏或特定平台的 Bug 時，還是得靠工程師的基本功去查文件、看 Source Code。<strong>AI 是加速器，不是自動駕駛。</strong></p>
+<h3 id="3-完成比完美重要">3. 完成比完美重要</h3>
+<p>作為工程師，我們很容易陷入「還不夠完美」的焦慮，想把功能修到 100 分才發布。但這次為了趕 v1.0 上線，我學會了做出取捨。iOS 版本還在等待開發者帳號審核，Android 上架也需要測試門檻，但我選擇先<strong>打包 APK 直接提供下載</strong>。雖然不是最正規的發布方式，但這能讓想要用的人立刻就能用。<strong>先讓產品上線（無論形式為何）與真實世界碰撞，比死守在開發環境裡重要。</strong></p>
+<hr>
+<h2 id="uiux-的堅持溫暖書房美學">UI/UX 的堅持：溫暖書房美學</h2>
+<p>我不希望 App 看起來像冷冰冰的資料庫工具。我告訴 AI：「我要一種『溫暖書房』的感覺，有木頭質感、柔和燈光。」</p>
+<p>我們定義了一套設計系統：</p>
+<ul>
+<li><strong>主色調</strong>：陶土橘 (#C67B5C)、森林綠 (#5C8C6B)。</li>
+<li><strong>質感</strong>：暖棕色漸層搭配 Noise 紋理，以及半透明的玻璃擬態卡片。</li>
+</ul>
+<p>為了 Landing Page 的效能，我還將 Demo 影片用 ffmpeg 轉為 WebM 格式，體積從 34MB 降到 5.7MB，減少了 83%。</p>
+<hr>
+<h2 id="結語ai-時代工程師的新價值">結語：AI 時代工程師的新價值</h2>
+<p>回顧這段歷程，我最大的收穫是重新思考了<strong>工程師的角色</strong>。</p>
+<p>在 AI 之前，我需要花大量時間查語法、寫 Boilerplate。在 AI 之後，我可以：</p>
+<ol>
+<li>用<strong>自然語言描述需求</strong>，快速產出原型。</li>
+<li>用<strong>技術判斷力 Review</strong> 程式碼，挑出架構與安全問題。</li>
+<li>把時間花在<strong>架構設計、產品決策、使用者體驗</strong>這些高價值的事情上。</li>
+</ol>
+<p>AI 不是取代工程師，而是放大工程師的產能。</p>
+<hr>
+<h2 id="體驗書櫃日記">體驗書櫃日記</h2>
+<p>如果你也是漫畫愛好者，歡迎下載試用！</p>
+<ul>
+<li><strong><a href="https://mtwmt.com/bookshelf-diary/">前往官網 (Landing Page)</a></strong>：查看完整功能介紹與下載 APK。</li>
+<li><strong>技術交流</strong>：如果你對 React Native、Cloudflare 或 AI 協作開發有任何疑問，歡迎交流想法。</li>
+</ul> </div> </div> <hr class="w-full border-t border-gray-300 dark:border-gray-600 my-8 "> <div> <div class="flex justify-between"> <a href="/blog/vibe-coding/webp_compression" class="px-4 flex h-12 cursor-pointer items-center justify-center border-r border-default hover:bg-border"> <svg width="1em" height="1em" class="mr-4 h-4 w-4" data-icon="teenyicons:left-outline">   <symbol id="ai:teenyicons:left-outline" viewBox="0 0 15 15"><path fill="none" stroke="currentColor" stroke-linecap="square" d="M10 14L3 7.5L10 1"/></symbol><use href="#ai:teenyicons:left-outline"></use>  </svg> Cloudflare Workers 圖片壓縮實戰：減少 85% 的踩坑歷程 </a>  </div> </div> <div class="py-[3.35rem] px-[4vw]"> <!-- <hr class="my-8 text-gray-200" /> --><p class="text-lg">對這篇文章有什麼想法嗎?</p> <div id="blog-comments"></div> <script type="module">const e=localStorage.getItem("theme"),r=e==="light"?"github-light":"github-dark",t=document.createElement("script");t.type="text/javascript";t.src="https://utteranc.es/client.js";t.setAttribute("repo","mtwmt/mtwmt.github.io");t.setAttribute("issue-term","pathname");t.setAttribute("theme",r);t.setAttribute("crossorigin","anonymous");document.querySelector("#blog-comments")?.appendChild(t);</script> </div>   <footer class="animation relative bg-default lg:transition-none"> <div> <p class="p-4 text-right text-xs">
+Copyright © 2026 Mandy. All rights reserved. Build with Astro
+</p> </div> </footer> </article> <aside class="animation absolute -top-[152px] right-0 z-0 w-80 origin-[center_right] bg-primary-800 scale-90
+  lg:scale-100
+  lg:relative lg:top-0 lg:float-right lg:transition-none">  <ul data-blog-toc class="leading-normal sticky top-0 max-h-screen overflow-y-auto"><li class="min-h-12 border-b border-primary-700 bg-primary-900 px-3 py-3 text-primary-50 flex items-center break-words font-bold">
+文章導覽
+</li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words font-medium" href="#緣起收藏狂的痛點與前端的野心" aria-label="Scroll to section: 緣起：收藏狂的痛點與前端的野心">緣起：收藏狂的痛點與前端的野心</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words font-medium" href="#產品概覽不只是一個-app" aria-label="Scroll to section: 產品概覽：不只是一個 App">產品概覽：不只是一個 App</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words font-medium" href="#架構設計前端思維的延伸" aria-label="Scroll to section: 架構設計：前端思維的延伸">架構設計：前端思維的延伸</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words pl-6 text-sm" href="#1-為什麼選-react-native--expo" aria-label="Scroll to section: 1. 為什麼選 React Native + Expo？">1. 為什麼選 React Native + Expo？</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words pl-6 text-sm" href="#2-為什麼選-local-first-sqlite" aria-label="Scroll to section: 2. 為什麼選 Local-First (SQLite)?">2. 為什麼選 Local-First (SQLite)?</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words pl-6 text-sm" href="#3-為什麼選-cloudflare-d1--workers" aria-label="Scroll to section: 3. 為什麼選 Cloudflare D1 + Workers？">3. 為什麼選 Cloudflare D1 + Workers？</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words font-medium" href="#核心功能開發ai-協作的真實體驗" aria-label="Scroll to section: 核心功能開發：AI 協作的真實體驗">核心功能開發：AI 協作的真實體驗</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words pl-6 text-sm" href="#1-三層級資料結構系列--作品--集數" aria-label="Scroll to section: 1. 三層級資料結構：系列 → 作品 → 集數">1. 三層級資料結構：系列 → 作品 → 集數</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words pl-6 text-sm" href="#2-isbn-掃描與眾人協作" aria-label="Scroll to section: 2. ISBN 掃描與眾人協作">2. ISBN 掃描與眾人協作</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words pl-6 text-sm" href="#3-解鎖第一次的成就" aria-label="Scroll to section: 3. 解鎖「第一次」的成就">3. 解鎖「第一次」的成就</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words font-medium" href="#踩坑實錄ai-無法一步到位的地方" aria-label="Scroll to section: 踩坑實錄：AI 無法一步到位的地方">踩坑實錄：AI 無法一步到位的地方</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words pl-6 text-sm" href="#1-跨平台軟體鍵盤遮擋" aria-label="Scroll to section: 1. 跨平台軟體鍵盤遮擋">1. 跨平台軟體鍵盤遮擋</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words pl-6 text-sm" href="#2-d1-同步的時間戳記地獄" aria-label="Scroll to section: 2. D1 同步的時間戳記地獄">2. D1 同步的時間戳記地獄</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words pl-6 text-sm" href="#3-tailwindcss-v4-的新語法" aria-label="Scroll to section: 3. TailwindCSS v4 的新語法">3. TailwindCSS v4 的新語法</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words font-medium" href="#學到的事跨界開發的真實體悟" aria-label="Scroll to section: 學到的事：跨界開發的真實體悟">學到的事：跨界開發的真實體悟</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words pl-6 text-sm" href="#1-架構設計比寫-code-更重要" aria-label="Scroll to section: 1. 架構設計比寫 Code 更重要">1. 架構設計比寫 Code 更重要</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words pl-6 text-sm" href="#2-ai-能帶你入門但不能帶你精通" aria-label="Scroll to section: 2. AI 能帶你入門，但不能帶你精通">2. AI 能帶你入門，但不能帶你精通</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words pl-6 text-sm" href="#3-完成比完美重要" aria-label="Scroll to section: 3. 完成比完美重要">3. 完成比完美重要</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words font-medium" href="#uiux-的堅持溫暖書房美學" aria-label="Scroll to section: UI/UX 的堅持：溫暖書房美學">UI/UX 的堅持：溫暖書房美學</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words font-medium" href="#結語ai-時代工程師的新價值" aria-label="Scroll to section: 結語：AI 時代工程師的新價值">結語：AI 時代工程師的新價值</a></li><li class="min-h-10 border-b border-primary-700 text-primary-50 hover:bg-primary-700 hover:text-white"><a class="block w-full cursor-pointer px-3 py-2 break-words font-medium" href="#體驗書櫃日記" aria-label="Scroll to section: 體驗書櫃日記">體驗書櫃日記</a></li></ul><script type="module">const n=e=>{for(let t of e){const{id:r}=t.target,o=document.querySelector(`[data-blog-toc] a[href="#${r}"]`);if(!o)return;t.isIntersecting&&(document.querySelectorAll("[data-blog-toc] a").forEach(c=>c.classList.remove("active")),o.classList.add("active"))}},a={root:null,rootMargin:"0px 0px -180px",threshold:1},l=new IntersectionObserver(n,a);document.querySelectorAll("article :is(h2,h3)").forEach(e=>l.observe(e));document.querySelectorAll("[data-blog-toc] a").forEach(e=>{e.addEventListener("click",()=>{const t=document.getElementById("nav-toggle");t&&window.innerWidth<1024&&(t.checked=!1)})});</script>  </aside> <!-- <aside class="animation scale-90 origin-[center_right] bg-primary-800 
+  absolute w-[calc(20rem-1px)] top-12 right-0  overflow-hidden
+  lg:relative lg:top-0 lg:float-right lg:scale-100  lg:transition-none lg:overflow-visible
+  before:block before:fixed before:w-[1px] before:h-screen before:top-0 before:ml-[calc(20rem-2px)] before:bg-primary-800
+  ">
+  <slot />
+</aside>
+
+<style is:global lang="scss">
+  .nav-toggle:checked {
+    & ~ aside {
+      @apply scale-100;
+		}
+  }
+  
+</style>
+ --> </main>   </div> </body></html> <div data-gotop class="cursor-pointer fixed bottom-16 right-8 z-50 transition duration-300"> <svg width="1em" height="1em" class="btn w-10 h-10 bg-white dark:text-primary-500" data-icon="ic:outline-keyboard-arrow-up">   <symbol id="ai:ic:outline-keyboard-arrow-up" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></symbol><use href="#ai:ic:outline-keyboard-arrow-up"></use>  </svg> </div> <script type="module">const o=document.querySelector("[data-gotop]"),t=document.querySelector("header")?.offsetHeight||0,e=()=>{(window.scrollY||0)>t?(o?.classList.add("opacity-100"),o?.classList.remove("opacity-0")):(o?.classList.add("opacity-0"),o?.classList.remove("opacity-100"))};e();window.addEventListener("scroll",e);o?.addEventListener("click",function(){document.querySelector("html, body")?.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"})});</script> <script type="module">const n=document.querySelectorAll(".post");n.forEach(e=>{e.querySelectorAll("a").forEach(t=>{t.setAttribute("target","_blank")})});let c="Copy Code",l=Array.from(document.querySelectorAll("pre"));for(let e of l){let o=document.createElement("div");o.className="relative";let t=document.createElement("button");t.className="copy-code",t.innerHTML=c,e.setAttribute("tabindex","0"),e.appendChild(t),e.parentNode?.insertBefore(o,e),o.appendChild(e),t.addEventListener("click",async()=>{await a(e,t)})}async function a(e,o){let r=e.querySelector("code")?.innerText||"";await navigator.clipboard.writeText(r),o.innerText="Code Copied",setTimeout(()=>{o.innerText=c},700)}</script>
