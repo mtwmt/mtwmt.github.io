@@ -75,6 +75,16 @@ const { headings } = Astro.props;
   document
     .querySelectorAll('article :is(h2,h3,h4)')
     .forEach((heading) => headingObserver.observe(heading));
+
+  // 點擊 TOC 連結時自動關閉 sidebar (僅手機版)
+  document.querySelectorAll('[data-blog-toc] a').forEach((link) => {
+    link.addEventListener('click', () => {
+      const navToggle = document.getElementById('nav-toggle') as HTMLInputElement;
+      if (navToggle && window.innerWidth < 1024) {
+        navToggle.checked = false;
+      }
+    });
+  });
 </script>
 <!-- https://www.fazzaamiarso.me/blog/toc-astro-spy/#create-the-component -->
 

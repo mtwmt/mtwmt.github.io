@@ -1,0 +1,27 @@
+# 專案核心規則 (Project Rules)
+
+本檔案包含 AI 必須強制遵守的核心專案規則。
+
+## 1. 防止幻覺與 API 過時 (Anti-Hallucination)
+
+-   **Astro v5**: 必須查閱官方文件。路由與 Content Layer 已更新，嚴禁使用 v2/v3 舊語法。
+    -   API Routes 必須使用大寫 export: `export async function GET() {}`
+-   **Tailwind CSS v4**: 
+    -   ❌ **沒有** `tailwind.config.js` (請勿嘗試讀取或建立此檔案)。
+    -   ✅ 使用 `@tailwindcss/vite` 與 CSS 變數配置 (`src/styles/tailwind.css`)。
+    -   ✅ 在 `.astro` 中使用 `@apply` 時，必須包含 `@import "tailwindcss";`。
+-   **React Native (如適用)**: 必須考慮 Android 與 iOS 的平台差異 (如 `KeyboardAvoidingView`)。
+
+## 2. 設計系統 (Design System)
+
+-   **風格**: Teal Comic (Mandy's Website Theme)。
+-   **核心元素**:
+    -   **主色調**: Teal (`#00aaaa`)。
+    -   **結構**: Comic Book 風格 (粗黑邊框 `.comic-border` + 硬陰影 `.comic-shadow`)。
+    -   **字體**: Dosis (Title), sans-serif (Body)。
+-   詳見 `.agent/skills/bookshelf-theme/SKILL.md` (需更新)。
+
+## 3. 程式碼品質
+
+-   **繁體中文**: 所有回答與文件必須使用繁體中文 (Traditional Chinese)。
+-   **查證優先**: 遇到不確定的語法，優先使用 `search_web` 或 `read_url_content` 查證。
