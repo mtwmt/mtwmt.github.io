@@ -170,5 +170,5 @@ AI 不是取代工程師，而是放大工程師的產能。
 
 如果你也是漫畫愛好者，歡迎下載試用！
 
-- **[前往官網 (Landing Page)](https://bookshelf-diary.pages.dev/)**：查看完整功能介紹與下載 APK。
+- **[前往官網 (Landing Page)](https://mtwmt.com/bookshelf-diary/)**：查看完整功能介紹與下載 APK。
 - **技術交流**：如果你對 React Native、Cloudflare 或 AI 協作開發有任何疑問，歡迎交流想法。

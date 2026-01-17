@@ -3,7 +3,7 @@ title: Cloudflare Workers 圖片壓縮實戰：減少 85% 的踩坑歷程
 categories:
   - vibe coding
 tags:
-　- vibe coding
+  - vibe coding
   - Cloudflare
   - Google Apps Script
 date: 2026/01/12
