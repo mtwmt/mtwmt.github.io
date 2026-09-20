@@ -24,6 +24,8 @@ export default defineConfig({
       },
     }),
     mdx(),
-    sitemap(),
+    sitemap({
+      customPages: ["https://mtwmt.com/price-generator/"],
+    }),
   ],
 });
