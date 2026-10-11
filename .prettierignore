@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+design/
+package-lock.json
+# 文章及靜態資產保留原始內容，不由程式格式化工具重寫。
+src/content/
+public/
+
+# 歷史紀錄與備份文件不是格式化目標。
+CHANGELOG.md
+DRAGONBALL_THEME.md

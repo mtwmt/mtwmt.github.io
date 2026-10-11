@@ -1,0 +1,58 @@
+---
+import { home } from "../../data/home";
+---
+
+<section
+  id="welcome"
+  aria-labelledby="welcome-title"
+  class:list={[
+    "welcome absolute left-[6%] top-[26%] z-5 w-85 max-w-[calc(100%-40px)] rounded-md border border-paper/48 bg-linear-100 from-paper/87 to-paper/57 px-8 pt-6.75 pb-7.5 backdrop-blur-[5px]",
+    "transition-[opacity,transform] duration-[300ms,400ms]",
+    "compact:left-[7%] compact:top-1/4",
+    "touch:left-5 touch:top-1/4 touch:w-70 touch:p-6",
+    "short:top-[calc(98px+max(0px,env(safe-area-inset-top)-16px))] short:left-5 short:w-[min(360px,calc(100%-40px))] short:max-h-[calc(100svh-124px-max(0px,env(safe-area-inset-top)-16px))] short:overflow-y-auto short:overscroll-contain short:px-5.5 short:py-4",
+    "[&.dismissed]:invisible [&.dismissed]:pointer-events-none [&.dismissed]:translate-y-5 [&.dismissed]:opacity-0 group-[.scene-failed]:hidden",
+  ]}
+>
+  <p class="mb-3 text-2xs font-medium tracking-[2px] touch:mb-3.75 touch:tracking-[1.4px] short:mb-2.5">
+    {home.eyebrow}
+  </p>
+  <h1
+    class="mb-6 font-display text-welcome leading-[1.05] font-normal tracking-[-2px] touch:text-welcome-mobile short:mb-2.5 short:text-welcome-compact"
+    id="welcome-title"
+  >
+    {home.name}
+    <span class="text-paper-accent">.</span>
+  </h1>
+  <p class="my-3 text-xs leading-[2.1] touch:my-2.75 touch:text-caption short:my-2 short:text-caption short:leading-[1.7]">
+    {home.introduction.map((line) => (
+      <span class="block text-balance">{line}</span>
+    ))}
+  </p>
+  <button
+    id="start-exploring"
+    disabled
+    class="my-4.25 flex w-52.5 justify-between rounded bg-paper-button px-5 py-3.75 text-label text-paper-cta-text shadow-[0_5px_20px] shadow-paper-ink/13 hover:bg-paper-button-hover touch:w-47.5 touch:px-4.25 touch:py-3.5 short:my-2.5 short:px-4.25 short:py-2.5"
+  >
+    {home.loadingLabel} <span>↗</span>
+  </button>
+  <div class="flex items-center gap-2.5 text-2xs">
+    <button
+      type="button"
+      data-open="projects"
+      class="cursor-pointer border-b border-paper-link-line pb-1 hover:text-paper-coral"
+    >
+      {home.worksLabel}
+    </button>
+    <span aria-hidden="true" class="pb-1 text-paper-muted">
+      ·
+    </span>
+    <a
+      class="border-b border-paper-link-line pb-1 hover:text-paper-coral"
+      href="/blog/page/1/"
+      data-astro-reload
+    >
+      {home.readingLabel}
+    </a>
+  </div>
+</section>

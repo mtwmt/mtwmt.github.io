@@ -1,0 +1,39 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { notes } from "../data/notes";
+import { SITE_TITLE } from "../consts";
+import "../styles/notes.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const { title = notes.title, description = notes.description, noindex = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-Hant" class="notes-page">
+  <head>
+    <BaseHead title={`${title} | ${SITE_TITLE}`} description={description} {noindex} />
+  </head>
+  <body class="m-0 flex min-h-svh flex-col bg-note-paper font-paper-sans text-note-ink antialiased">
+    <a
+      href="#notes-content"
+      class="sr-only z-20 focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:bg-note-paper focus:p-3"
+    >
+      跳到主要內容
+    </a>
+    <Header />
+    <main
+      id="notes-content"
+      class="mx-auto w-full max-w-6xl flex-1 px-5 pt-9 pb-12 sm:px-9 sm:pt-12 lg:px-14"
+    >
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

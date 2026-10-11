@@ -1,0 +1,12 @@
+<div
+  data-yezi-not-found
+  aria-hidden="true"
+  class="h-60 w-36 shrink-0 sm:h-96 sm:w-72 [&_canvas]:block [&_canvas]:size-full"
+></div>
+
+<script>
+  import { initializeNotFoundCharacter } from "../../scripts/island/not-found";
+
+  initializeNotFoundCharacter();
+  document.addEventListener("astro:page-load", initializeNotFoundCharacter);
+</script>

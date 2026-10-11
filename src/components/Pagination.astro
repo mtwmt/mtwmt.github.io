@@ -1,116 +1,72 @@
 ---
-import {Icon} from "astro-icon/components";
-
-const { page, path } = Astro.props;
-const { url, currentPage, lastPage } = page;
-const { prev, next } = url;
-
-// Comic Book 風格：粗邊框 + 硬陰影 + 按下效果
-const defaultCls =
-  "flex h-12 min-w-12 cursor-pointer items-center justify-center gap-1 font-bold border-2 border-gray-600 dark:border-gray-400 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-150 shadow-[3px_3px_0_rgba(0,0,0,0.25)] dark:shadow-[3px_3px_0_rgba(255,255,255,0.15)] hover:shadow-[1px_1px_0_rgba(0,0,0,0.25)] dark:hover:shadow-[1px_1px_0_rgba(255,255,255,0.15)] hover:translate-x-[2px] hover:translate-y-[2px]";
-const currectCls =
-  "!cursor-default !border-primary-600 dark:!border-primary-500 !bg-primary-500 dark:!bg-primary-600 !text-white hover:!bg-primary-500 dark:hover:!bg-primary-600 hover:!translate-x-0 hover:!translate-y-0 !shadow-[4px_4px_0_rgba(0,0,0,0.35)] dark:!shadow-[4px_4px_0_rgba(255,255,255,0.25)]";
+interface Props {
+  path?: string;
+  page: { currentPage: number; lastPage: number; url: { prev?: string; next?: string } };
+}
+const { page, path = "/blog/page" } = Astro.props;
+const basePath = path.replace(/\/$/, "");
+// 靜態網站使用目錄路徑，統一尾斜線以避免 ClientRouter 遇到重新導向。
+const previousUrl = page.url.prev ? `${basePath}/${page.currentPage - 1}/` : undefined;
+const nextUrl = page.url.next ? `${basePath}/${page.currentPage + 1}/` : undefined;
+const start = Math.max(1, Math.min(page.currentPage - 2, page.lastPage - 4));
+const pages = Array.from({ length: Math.min(5, page.lastPage) }, (_, index) => start + index);
 ---
 
-<nav class="flex gap-2 flex-wrap">
-  {
-    !!prev && (
-      <a href={prev} class={`w-20 rounded ${defaultCls}`}>
-        <Icon name="teenyicons:left-outline" class="h-4 w-4" /> PREV
+{page.lastPage > 1 && (
+  <nav
+    aria-label="文章分頁"
+    class="mt-10 flex flex-wrap items-center gap-1 border-t border-note-line pt-5 text-sm"
+  >
+    {previousUrl && (
+      <a
+        href={previousUrl}
+        aria-label="上一頁"
+        class="grid size-11 place-items-center rounded-sm text-note-muted hover:bg-note-soft"
+      >
+        ←
       </a>
-    )
-  }
-
-  <!-- 1-5 -->
-  {
-    currentPage < 6 &&
-      Array.from({ length: 5 }, (_, i) => i + 1).map((idx: number) => {
-        return (
-          <a
-            href={`${path}/${idx}`}
-            class={`w-12 rounded ${defaultCls}
-              ${currentPage === idx ? `${currectCls}` : ""}`}
-          >
-            {idx}
-          </a>
-        );
-      })
-  }
-
-  <!-- >5  -->
-  {
-    currentPage > 5 && (
+    )}
+    {start > 1 && (
       <>
-        <a
-          href={`${path}/1`}
-          class={`w-12 rounded ${defaultCls}
-              ${currentPage === 1 ? `${currectCls}` : ""}`}
-        >
+        <a href={`${basePath}/1/`} class="grid size-11 place-items-center hover:bg-note-soft">
           1
         </a>
-        <a href={`${path}/${currentPage - 5}`} class={`w-12 rounded ${defaultCls}`}>
-          <Icon name="teenyicons:double-caret-left-solid" class="h-4 w-4" />
-        </a>
+        {start > 2 && <span class="px-1 text-note-muted">…</span>}
       </>
-    )
-  }
-
-  {
-    currentPage > 5 &&
-      currentPage < lastPage - 4 &&
-      Array.from({ length: lastPage }, (_, index) => index + 1)
-        .filter((page) => Math.abs(currentPage - page) <= 2)
-        .map((idx) => (
-          <a
-            href={`/blog/page/${idx}`}
-            class={`w-12 rounded ${defaultCls}
-              ${currentPage === idx ? `${currectCls}` : ""}`}
-          >
-            {idx}
-          </a>
-        ))
-  }
-
-  {
-    currentPage < lastPage - 4 && (
-      <>
-        <a href={`${path}/${currentPage + 5}`} class={`w-12 rounded ${defaultCls}`}>
-          <Icon name="teenyicons:double-caret-right-solid" class="h-4 w-4" />
-        </a>
-        <a
-          href={`${path}/${lastPage}`}
-          class={`w-12 rounded ${defaultCls}
-              ${currentPage === lastPage ? `${currectCls}` : ""}`}
-        >
-          {lastPage}
-        </a>
-      </>
-    )
-  }
-  <!--  -->
-
-  {
-    currentPage > lastPage - 5 &&
-      Array.from({ length: 5 }, (_, i) => i + (lastPage - 4)).map(
-        (idx: number) => {
-          return (
-            <a
-              href={`${path}/${idx}`}
-              class={`w-12 rounded ${defaultCls}
-              ${currentPage === idx ? `${currectCls}` : ""}`}
-            >
-              {idx}
-            </a>
-          );
-        }
-      )
-  }
-  {
-    !!next && (
-      <a href={next} class={`w-20 rounded ${defaultCls}`}>
-        NEXT
-        <Icon name="teenyicons:right-outline" class="h-4 w-4" />
+    )}
+    {pages.map((number) => (
+      <a
+        href={`${basePath}/${number}/`}
+        aria-current={number === page.currentPage ? "page" : undefined}
+        class:list={[
+          "grid size-11 place-items-center rounded-sm",
+          number === page.currentPage
+            ? "bg-note-ink text-note-paper hover:opacity-100"
+            : "text-note-muted hover:bg-note-soft",
+        ]}
+      >
+        {number}
       </a>
-    )
-  }
-</nav>
+    ))}
+    {pages[pages.length - 1] < page.lastPage && (
+      <>
+        {pages[pages.length - 1] < page.lastPage - 1 && <span class="px-1 text-note-muted">…</span>}
+        <a
+          href={`${basePath}/${page.lastPage}/`}
+          class="grid size-11 place-items-center hover:bg-note-soft"
+        >
+          {page.lastPage}
+        </a>
+      </>
+    )}
+    {nextUrl && (
+      <a
+        href={nextUrl}
+        aria-label="下一頁"
+        class="grid size-11 place-items-center rounded-sm text-note-muted hover:bg-note-soft"
+      >
+        →
+      </a>
+    )}
+  </nav>
+)}

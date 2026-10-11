@@ -1,0 +1,47 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+/** 筆記版型的表單欄位：label、必填標記與輸入框樣式集中在這裡。 */
+type Props = {
+  label: string;
+  name: string;
+  multiline?: boolean;
+} & HTMLAttributes<"input"> &
+  Pick<HTMLAttributes<"textarea">, "rows">;
+
+const {
+  label,
+  name,
+  multiline = false,
+  required,
+  rows = 6,
+  class: className,
+  ...rest
+} = Astro.props;
+const id = `field-${name}`;
+const fieldClasses =
+  "mt-2 w-full rounded-sm border border-note-line bg-note-paper px-4 py-3 text-base text-note-ink placeholder:text-note-muted/70 transition-colors focus:border-note-accent focus:outline-none";
+---
+
+<div class={className}>
+  <label for={id} class="block text-sm font-medium">
+    {label}
+    {required && (
+      <span class="ml-1 text-note-accent" aria-hidden="true">
+        *
+      </span>
+    )}
+  </label>
+  {multiline ? (
+    <textarea
+      id={id}
+      name={name}
+      rows={rows}
+      required={required}
+      placeholder={rest.placeholder}
+      class:list={[fieldClasses, "resize-y"]}
+    />
+  ) : (
+    <input id={id} name={name} required={required} class={fieldClasses} {...rest} />
+  )}
+</div>

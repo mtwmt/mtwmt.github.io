@@ -1,0 +1,73 @@
+---
+import "../styles/tailwind.css";
+
+const animationModes = [
+  { id: "idle", label: "靜止" },
+  { id: "walk", label: "走路" },
+  { id: "run", label: "跑步" },
+  { id: "jump", label: "跳躍" },
+  { id: "run-jump", label: "跑步跳躍" },
+  { id: "wave", label: "揮手" },
+  { id: "wind", label: "風吹紙角" },
+  { id: "sit", label: "坐下" },
+  { id: "hold", label: "404 扶頭" },
+  { id: "collapse", label: "404 低頭坐姿" },
+];
+
+const buttonClasses =
+  "cursor-pointer rounded-[24px] border border-preview-ink/[0.251] bg-transparent px-[18px] py-[9px] text-[13px] text-inherit aria-pressed:bg-preview-ink aria-pressed:text-preview-selected focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-preview-focus [@media(max-width:580px)]:px-4";
+---
+
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>頁仔模型檢查</title>
+  </head>
+  <body class="m-0 bg-preview-paper font-[system-ui] leading-[normal] text-preview-ink">
+    <main class="mx-auto max-w-[1920px] px-8 py-7 [@media(max-width:580px)]:px-4 [@media(max-width:580px)]:py-[22px]">
+      <header class="flex items-center justify-between gap-5">
+        <div>
+          <p class="m-0 mb-2 text-[11px] tracking-[0.22em] opacity-65">YEZI / CHARACTER 09</p>
+          <h1 class="m-0 text-[23px] font-[550] [@media(max-width:580px)]:text-[20px]">
+            頁仔 · 造型與動畫
+          </h1>
+        </div>
+        <a
+          href="/"
+          class="text-[13px] text-inherit no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-preview-focus"
+        >
+          回到小島 ↗
+        </a>
+      </header>
+
+      <nav aria-label="角色動畫" class="mt-6 mb-1 flex flex-wrap gap-2">
+        {animationModes.map(({ id, label }) => (
+          <button
+            data-mode={id}
+            aria-pressed={id === "idle" ? "true" : "false"}
+            class={buttonClasses}
+          >
+            {label}
+          </button>
+        ))}
+        <button id="detail-view" aria-pressed="false" class={buttonClasses}>
+          放大衣服與配件
+        </button>
+      </nav>
+
+      <!-- WebGL 建立的 section、標題與 canvas 由容器的 utility 統一排版。 -->
+      <div
+        id="views"
+        class="grid grid-cols-4 gap-3 [@media(max-width:1100px)]:grid-cols-2 [@media(max-width:580px)]:grid-cols-1 [&_section]:min-w-0 [&_h2]:m-0 [&_h2]:mt-4 [&_h2]:text-center [&_h2]:text-[14px] [&_h2]:font-medium [&_canvas]:block [&_canvas]:h-auto [&_canvas]:w-full"
+      ></div>
+    </main>
+  </body>
+</html>
+
+<script>
+  import { initializeCharacterPreview } from "../scripts/island/character-preview";
+  initializeCharacterPreview();
+</script>

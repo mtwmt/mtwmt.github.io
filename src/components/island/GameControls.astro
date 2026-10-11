@@ -1,0 +1,44 @@
+---
+const keyClass =
+  "inline-block rounded-xs border border-paper/55 bg-paper-ink/10 px-1.25 py-0.75 font-paper-sans text-3xs";
+---
+
+<div
+  id="game-controls"
+  class="absolute bottom-17 left-9 flex items-center gap-5 text-2xs text-paper drop-shadow-sm compact:bottom-14 compact:left-5.5 compact:gap-3 compact:text-3xs touch:hidden group-[.scene-failed]:hidden"
+>
+  <span class="flex items-center gap-1">
+    <kbd class={keyClass}>W</kbd>
+    <kbd class={keyClass}>A</kbd>
+    <kbd class={keyClass}>S</kbd>
+    <kbd class={keyClass}>D</kbd> 移動
+  </span>
+  <span class="flex items-center gap-1">
+    <kbd class={keyClass}>SPACE</kbd> 跳躍
+  </span>
+  <span>拖曳 轉動視角</span>
+  <span class="flex items-center gap-1">
+    <kbd class={keyClass}>E</kbd> 互動
+  </span>
+</div>
+<div class="hidden touch:block touch:group-not-[.playing]:invisible touch:group-not-[.playing]:pointer-events-none group-[.scene-failed]:hidden">
+  <div
+    id="joystick"
+    role="group"
+    aria-label="觸控方向搖桿"
+    class="absolute bottom-19 left-7.5 size-27.5 touch-none rounded-full border border-paper/60 bg-paper/15 backdrop-blur-xs before:absolute before:left-1/2 before:h-full before:w-px before:bg-paper/15 after:absolute after:top-1/2 after:h-px after:w-full after:bg-paper/15 short:bottom-10.5"
+  >
+    <span
+      id="joystick-thumb"
+      class="absolute top-8 left-8 size-11 rounded-full border border-paper/65 bg-paper/45 shadow-sm"
+    ></span>
+    <span class="absolute inset-x-0 -bottom-6 text-center text-2xs text-paper">移動</span>
+  </div>
+  <button
+    id="jump-button"
+    aria-label="跳躍"
+    class="absolute right-7.5 bottom-23 size-16 rounded-full border border-paper/55 bg-paper/30 text-2xl text-paper backdrop-blur-xs short:bottom-13"
+  >
+    ↑<small class="mt-0.75 block text-3xs leading-none">跳躍</small>
+  </button>
+</div>

@@ -1,0 +1,144 @@
+@reference "./tailwind.css";
+
+/* 只在筆記版型切換語意色票，首頁的 paper 色票維持原本的用途。 */
+@layer base {
+  .notes-page {
+    color-scheme: light;
+    --note-paper: var(--color-paper-panel);
+    --note-ground: var(--color-paper-soft);
+    --note-ink: var(--color-paper-ink);
+    --note-muted: #667561;
+    --note-line: var(--color-paper-line);
+    --note-accent: var(--color-paper-accent);
+    --note-soft: #edf0e4;
+  }
+
+  .notes-page.dark {
+    color-scheme: dark;
+    --note-paper: #223830;
+    --note-ground: #172a24;
+    --note-ink: #e5e9db;
+    --note-muted: #adb9a6;
+    --note-line: #415449;
+    --note-accent: #e1a184;
+    --note-soft: #2d4439;
+  }
+
+  .notes-page :is(a, button, summary):focus-visible {
+    @apply outline-2 outline-offset-4 outline-note-accent;
+  }
+
+  .notes-page {
+    scroll-padding-top: 2rem;
+  }
+}
+
+/* Markdown 沒有元件 classes，集中用 Tailwind 定義文章元素的排版。 */
+@layer components {
+  .note-prose {
+    @apply min-w-0 text-base leading-loose break-words text-note-ink;
+  }
+
+  .note-prose :is(h1, h2, h3, h4, h5, h6) {
+    @apply scroll-mt-8 font-paper-serif font-medium text-note-ink;
+  }
+
+  .note-prose h1 {
+    @apply mt-12 mb-5 text-3xl leading-relaxed;
+  }
+
+  .note-prose h2 {
+    @apply mt-12 mb-4 text-2xl leading-relaxed;
+  }
+
+  .note-prose h3 {
+    @apply mt-9 mb-3 text-xl leading-relaxed;
+  }
+
+  .note-prose :is(h4, h5, h6) {
+    @apply mt-7 mb-3 text-lg;
+  }
+
+  .note-prose p {
+    @apply my-5;
+  }
+
+  .note-prose > :first-child {
+    @apply mt-0;
+  }
+
+  .note-prose a {
+    @apply text-note-accent underline decoration-note-accent/40 underline-offset-4 hover:decoration-note-accent;
+  }
+
+  .note-prose :is(ul, ol) {
+    @apply my-5 pl-6;
+  }
+
+  .note-prose ul {
+    @apply list-disc;
+  }
+
+  .note-prose ol {
+    @apply list-decimal;
+  }
+
+  .note-prose li {
+    @apply my-2 pl-1;
+  }
+
+  .note-prose :is(ul, ol) :is(ul, ol) {
+    @apply my-2;
+  }
+
+  .note-prose blockquote {
+    @apply my-7 border-l-2 border-note-accent bg-note-soft px-5 py-2 text-note-muted;
+  }
+
+  .note-prose hr {
+    @apply my-10 border-note-line;
+  }
+
+  .note-prose :not(pre) > code {
+    @apply rounded bg-note-soft px-1.5 py-0.5 text-sm text-note-accent;
+  }
+
+  .note-prose pre {
+    @apply my-6 max-w-full overflow-x-auto rounded border border-note-line bg-note-soft px-5 pt-12 pb-5 text-sm leading-7;
+  }
+
+  /* Shiki 雙主題只切換 token 顏色，程式碼容器沿用紙感色票。 */
+  .note-prose pre span {
+    color: var(--shiki-light, inherit);
+  }
+
+  .dark .note-prose pre span {
+    color: var(--shiki-dark, inherit);
+  }
+
+  .note-prose img {
+    @apply mx-auto my-7 h-auto max-w-full rounded;
+  }
+
+  .note-prose iframe {
+    @apply my-7 aspect-video w-full max-w-full;
+  }
+
+  .note-prose table {
+    @apply my-7 block max-w-full overflow-x-auto border-collapse text-sm leading-relaxed;
+  }
+
+  .note-prose :is(th, td) {
+    @apply border border-note-line px-4 py-3 text-left;
+  }
+
+  .note-prose th {
+    @apply bg-note-soft font-medium;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-page {
+    scroll-behavior: auto;
+  }
+}

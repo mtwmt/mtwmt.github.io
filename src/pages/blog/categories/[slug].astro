@@ -1,67 +1,36 @@
 ---
-import { getCollection } from 'astro:content';
-import { SITE_TITLE } from '../../../consts';
-import MainLayout from '../../../layouts/MainLayout.astro';
-import Header from '../../../components/Header.astro';
-import AsideLayout from '../../../layouts/AsideLayout.astro';
-import ContentLayout from '../../../layouts/ContentLayout.astro';
-import Categories from '../../../components/Categories.astro';
-import SearchWidget from '../../../components/SearchWidget.astro';
-import { sortByDate } from '../../../lib/sortByDate';
-import FormattedDate from '../../../components/FormattedDate.astro';
-import PageTitle from '../../../components/PageTitle.astro';
+import { getCollection, type CollectionEntry } from "astro:content";
+import NotesLayout from "../../../layouts/NotesLayout.astro";
+import NoteList from "../../../components/notes/NoteList.astro";
+import { sortByDate } from "../../../lib/sortByDate";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', (data: any) => !data.data.isDraft);
-  const categories = [
-    ...new Set(posts.map((post: any) => post.data.categories).flat()),
-  ].filter((d: string) => !!d);
-
-  return categories.map((c: string) => {
-    return {
-      params: { slug: c.toLowerCase() },
-      props: {
-        category: c,
-        posts: sortByDate(
-          posts.filter((p) => {
-            return p.data.categories
-              ?.map((cat: string) => cat.toLowerCase())
-              .includes(c.toLowerCase());
-          })
+  const posts = await getCollection("blog");
+  const categories = new Map<string, string>();
+  for (const post of posts) {
+    for (const category of post.data.categories ?? [])
+      categories.set(category.toLowerCase(), category);
+  }
+  return [...categories].map(([slug, category]) => ({
+    params: { slug },
+    props: {
+      category,
+      posts: sortByDate(
+        posts.filter((post) =>
+          (post.data.categories ?? []).some((name) => name.toLowerCase() === slug),
         ),
-      },
-    };
-  });
+      ),
+    },
+  }));
 }
 
-const { slug } = Astro.params;
+interface Props {
+  posts: CollectionEntry<"blog">[];
+  category: string;
+}
 const { posts, category } = Astro.props;
 ---
 
-<MainLayout title={category + ' | ' + SITE_TITLE}>
-  <Header />
-  <ContentLayout>
-    <PageTitle title={'類別：' + category.toUpperCase()} icon="ic:outline-folder" />
-    <ul class="py-10 border-y border-default">
-      {
-        posts.map((p: any) => {
-          return (
-            <li class="py-4 px-[4vw]">
-              <a href={`/blog/${p.slug}`}>
-                <FormattedDate
-                  date={p.data.update || p.data.date}
-                  className="mr-4 text-left"
-                />
-                {p.data.title}
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-    <AsideLayout slot="aside">
-      <!-- <SearchWidget /> -->
-      <Categories />
-    </AsideLayout>
-  </ContentLayout>
-</MainLayout>
+<NotesLayout title={`分類：${category}`}>
+  <NoteList {posts} title={`分類：${category}`} selectedCategory={category} />
+</NotesLayout>

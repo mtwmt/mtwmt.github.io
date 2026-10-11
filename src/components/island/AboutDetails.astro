@@ -1,0 +1,36 @@
+---
+import { about } from "../../data/about";
+---
+
+<div class="space-y-2 text-xs leading-loose text-paper-muted">
+  {about.introduction.map((paragraph) => (
+    <p>{paragraph}</p>
+  ))}
+</div>
+
+<h3 class="mt-7 mb-3 font-paper-serif text-lg font-medium">技能</h3>
+<ul class="flex flex-wrap gap-2" aria-label="技能">
+  {about.skills.map((skill) => (
+    <li class="rounded-sm border border-paper-line bg-paper-soft/60 px-3 py-1.5 text-caption">
+      {skill}
+    </li>
+  ))}
+</ul>
+
+<h3 class="mt-7 mb-3 font-paper-serif text-lg font-medium">本站使用技術</h3>
+<ul class="flex flex-wrap gap-2">
+  {about.technologies.map((technology) => (
+    <li>
+      <a
+        href={technology.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block rounded-sm border border-paper-line px-3 py-1.5 text-caption hover:bg-paper-soft"
+      >
+        {technology.name} ↗
+      </a>
+    </li>
+  ))}
+</ul>
+
+<h3 class="mt-7 font-paper-serif text-lg font-medium">聯絡方式</h3>

@@ -1,66 +1,157 @@
 ---
-import {Icon} from "astro-icon/components";
+import { Icon } from "astro-icon/components";
+import Button from "./Button.astro";
+import { search } from "../data/search";
+import { notes } from "../data/notes";
 ---
 
-<form class="form search-form mb-6" action="">
-  <div class="relative">
-    <div class="flex h-12 items-center bg-primary-700 px-3 rounded-lg hover:bg-primary-600 transition-colors focus-within:ring-2 focus-within:ring-primary-400">
-      <Icon
-        name="ic:outline-search"
-        class="h-5 w-5 text-primary-200 mr-2"
-      />
-      <input
-        class="w-full border-none bg-transparent text-primary-50 placeholder:text-primary-300 focus:outline-none"
-        placeholder="搜尋文章... (按 / 聚焦)"
-        name="search"
-        id="search"
-        min="2"
-        max="24"
-        autocomplete="off"
-      />
-      <button type="submit" class="border-none bg-transparent p-0 ml-2 hover:opacity-70 transition-opacity" aria-label="Search">
-        <Icon
-          name="ph:arrow-right"
-          class="h-5 w-5 text-primary-200"
+<div class="mb-9">
+  <form
+    data-note-search
+    role="search"
+    aria-label={search.title}
+    action="/search/"
+    method="get"
+    class="flex items-end gap-3"
+  >
+    <div class="min-w-0 flex-1">
+      <label for="search-query" class="mb-2 block text-sm text-note-muted">
+        {search.label}
+      </label>
+      <div class="flex min-h-12 items-center gap-3 rounded-sm border border-note-line bg-note-soft px-4 focus-within:border-note-accent">
+        <Icon name="ic:outline-search" class="size-5 shrink-0 text-note-muted" />
+        <input
+          type="search"
+          id="search-query"
+          name="q"
+          maxlength="100"
+          autocomplete="off"
+          placeholder={search.placeholder}
+          class="min-h-12 min-w-0 flex-1 border-0 bg-transparent text-base text-note-ink placeholder:text-note-muted focus:outline-none"
         />
-      </button>
+      </div>
     </div>
-  </div>
-</form>
+    <Button type="submit" size="sm" class="min-h-12">
+      {search.submit}
+    </Button>
+  </form>
+  <p
+    data-search-status
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+    class="mt-4 text-sm text-note-muted"
+  >
+    {search.hint}
+  </p>
+  <noscript>
+    <p class="mt-3 text-sm text-note-muted">
+      {search.requiresJavaScript}{" "}
+      <a href="/blog/page/1/" class="text-note-accent underline">
+        {notes.all}
+      </a>
+    </p>
+  </noscript>
+</div>
 
 <script>
-  import DOMPurify from "dompurify";
+  import { search } from "../data/search";
+  import { SITE_TITLE } from "../consts";
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector<HTMLFormElement>(".search-form");
-    const searchInput = document.querySelector<HTMLInputElement>("#search");
+  let cleanup: (() => void) | undefined;
 
-    if (!form || !searchInput) return;
+  function initSearch(): void {
+    cleanup?.();
+    const form = document.querySelector<HTMLFormElement>("[data-note-search]");
+    const input = form?.querySelector<HTMLInputElement>("input[name=q]");
+    const status = document.querySelector<HTMLElement>("[data-search-status]");
+    const layout = document.querySelector<HTMLElement>("[data-search-results]");
+    if (!form || !input || !status || !layout) return;
+    const controller = new AbortController();
+    const articles = [...layout.querySelectorAll<HTMLElement>("article[data-search-title]")];
+    const years = [...layout.querySelectorAll<HTMLHeadingElement>("h2[data-search-year]")];
 
-    // 鍵盤快捷鍵：按 / 聚焦搜尋框
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "/" && document.activeElement !== searchInput) {
-        e.preventDefault();
-        searchInput.focus();
+    function highlightTitle(link: HTMLAnchorElement, title: string, query: string): void {
+      // 用文字節點與 mark 標示關鍵字，不把使用者輸入當成 HTML 或正規表示式。
+      const lower = title.toLocaleLowerCase();
+      const fragments: Node[] = [];
+      let position = 0;
+      let index = lower.indexOf(query);
+      while (index !== -1) {
+        fragments.push(document.createTextNode(title.slice(position, index)));
+        const mark = document.createElement("mark");
+        mark.className = "rounded-sm bg-note-ground px-0.5 text-note-accent";
+        mark.textContent = title.slice(index, index + query.length);
+        fragments.push(mark);
+        position = index + query.length;
+        index = lower.indexOf(query, position);
       }
+      fragments.push(document.createTextNode(title.slice(position)));
+      link.replaceChildren(...fragments);
+    }
 
-      // ESC 取消聚焦
-      if (e.key === "Escape" && document.activeElement === searchInput) {
-        searchInput.blur();
+    function render(): void {
+      if (!input || !layout || !status) return;
+      const query = input.value.trim();
+      const normalized = query.toLocaleLowerCase();
+      let count = 0;
+      const visibleYears = new Set<string>();
+      for (const article of articles) {
+        const title = article.dataset.searchTitle ?? "";
+        const matches = normalized.length > 0 && title.toLocaleLowerCase().includes(normalized);
+        article.hidden = !matches;
+        if (!matches) continue;
+        count += 1;
+        visibleYears.add(article.dataset.searchYear ?? "");
+        const link = article.querySelector<HTMLAnchorElement>("[data-search-title-link]");
+        if (link) highlightTitle(link, title, normalized);
       }
-    });
+      for (const year of years) year.hidden = !visibleYears.has(year.dataset.searchYear ?? "");
+      layout.hidden = count === 0;
+      status.textContent = !query
+        ? search.hint
+        : count > 0
+          ? `${search.resultLabel}：${count} ${search.countUnit}`
+          : search.empty;
+      document.title = query
+        ? `${search.title}：${query} | ${SITE_TITLE}`
+        : `${search.title} | ${SITE_TITLE}`;
+    }
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const searchInputValue = formData.get("search")?.toString() || "";
-      const searchTerm = DOMPurify.sanitize(searchInputValue);
+    input.value = (new URLSearchParams(location.search).get("q") ?? "").slice(0, input.maxLength);
+    render();
+    input.addEventListener("input", render, { signal: controller.signal });
+    form.addEventListener(
+      "submit",
+      (event) => {
+        event.preventDefault();
+        const url = new URL(location.href);
+        const query = input.value.trim();
+        if (query) url.searchParams.set("q", query);
+        else url.searchParams.delete("q");
+        // 保留 Astro 的 history state，返回搜尋頁時仍能還原已送出的關鍵字。
+        history.replaceState(history.state, "", url);
+        render();
+      },
+      { signal: controller.signal },
+    );
+    document.addEventListener(
+      "keydown",
+      (event) => {
+        const target = event.target;
+        const editing =
+          target instanceof HTMLElement &&
+          (target.isContentEditable || target.matches("input, textarea, select"));
+        if (event.key === "/" && !editing && !event.ctrlKey && !event.metaKey && !event.altKey) {
+          event.preventDefault();
+          input.focus();
+        } else if (event.key === "Escape" && document.activeElement === input) input.blur();
+      },
+      { signal: controller.signal },
+    );
+    cleanup = () => controller.abort();
+  }
 
-      if (!searchTerm || searchTerm.trim().length === 0) return;
-
-      const url = new URL("/search", window.location.origin);
-      url.searchParams.set("q", searchTerm.trim());
-      window.location.assign(url.toString());
-    });
-  });
+  document.addEventListener("astro:page-load", initSearch);
+  document.addEventListener("astro:before-swap", () => cleanup?.());
 </script>

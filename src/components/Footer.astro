@@ -1,10 +1,12 @@
 ---
-const today = new Date();
+const year = new Date().getFullYear();
 ---
-<footer class="animation relative bg-default lg:transition-none">
-  <div>
-    <p class="p-4 text-right text-xs">
-      Copyright © {today.getFullYear()} Mandy. All rights reserved. Build with Astro
-    </p>
+
+<footer class="mx-auto w-full max-w-6xl px-5 pb-6 sm:px-9 lg:px-14">
+  <div class="flex items-center justify-between border-t border-note-line pt-5 text-xs text-note-muted">
+    <span>© {year} Mandy</span>
+    <a href="#notes-content" class="py-2 hover:text-note-accent">
+      回到頂端 ↑
+    </a>
   </div>
 </footer>

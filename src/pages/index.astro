@@ -1,188 +1,134 @@
 ---
-import { ironman } from "../config/config.json";
-import { getCollection } from "astro:content";
-import { sortByDate } from "../lib/sortByDate";
-import config from "../config/config.json";
-import Categories from "../components/Categories.astro";
-import Header from "../components/Header.astro";
-import SearchWidget from "../components/SearchWidget.astro";
-import { SITE_TITLE } from "../consts";
-import AsideLayout from "../layouts/AsideLayout.astro";
-import ContentLayout from "../layouts/ContentLayout.astro";
-import MainLayout from "../layouts/MainLayout.astro";
-import PageTitle from "../components/PageTitle.astro";
-import FriendshipLink from "../components/FriendshipLink.astro";
-import Card from "../components/Card.astro";
-import Timeline from "../components/Timeline.astro";
-import Divider from "../components/Divider.astro";
-
-const pagination = config.settings.pagination;
-
-const posts = sortByDate(await getCollection("blog"))
-  .filter((p) => {
-    const regex = /ironman/i;
-    return !p.data.tags.some((tag: string) => regex.test(tag));
-  })
-  .slice(0, 5);
-
-type BadgeColor =
-  | "primary"
-  | "accent"
-  | "success"
-  | "warning"
-  | "error"
-  | "info"
-  | "neutral";
-
-const project: Array<{
-  site: string;
-  url: string;
-  year: string;
-  skill: Array<{
-    name: string;
-    color: BadgeColor;
-  }>;
-}> = [
-  {
-    site: "書櫃日記 (App)",
-    url: "//mtwmt.com/bookshelf-diary/",
-    year: "2026",
-    skill: [
-      {
-        name: "React Native",
-        color: "error",
-      },
-      {
-        name: "Expo",
-        color: "accent",
-      },
-      {
-        name: "Cloudflare",
-        color: "info",
-      },
-      {
-        name: "Hono",
-        color: "success",
-      },
-    ],
-  },
-  {
-    site: "精典小遊戲",
-    url: "//mtwmt.com/game/",
-    year: "2025",
-    skill: [
-      {
-        name: "Angular",
-        color: "info",
-      },
-      {
-        name: "Tailwindcss",
-        color: "primary",
-      },
-    ],
-  },
-  {
-    site: "報價單產生器",
-    url: "//mtwmt.com/price-generator/",
-    year: "2022",
-    skill: [
-      {
-        name: "Angular",
-        color: "info",
-      },
-      {
-        name: "Bootstrap",
-        color: "primary",
-      },
-    ],
-  },
-  {
-    site: "IT 鐵人賽歷屆主題搜尋",
-    url: "//mtwmt.com/ironman/",
-    year: "2022",
-    skill: [
-      {
-        name: "Angular",
-        color: "error",
-      },
-      {
-        name: "Tailwindcss",
-        color: "info",
-      },
-    ],
-  },
-];
+import { projects } from "../data/projects";
+import "../styles/island.css";
+import Fonts from "../components/Fonts.astro";
+import { home } from "../data/home";
+import { landmarks } from "../data/island";
+import WelcomeCard from "../components/island/WelcomeCard.astro";
+import ContentDialog from "../components/island/ContentDialog.astro";
+import GameHeader from "../components/island/GameHeader.astro";
+import MiniMap from "../components/island/MiniMap.astro";
+import GameControls from "../components/island/GameControls.astro";
 ---
 
-<MainLayout title={SITE_TITLE}>
-  <Header />
-  <ContentLayout>
-    <PageTitle title="PROJECTs" icon="ic:outline-work" />
-    <div class="pb-4 px-[4vw]">
-      <div class="flex flex-wrap">
-        {
-          project.map((d, i) => {
-            return (
-              <div class="w-full md:w-1/2">
-                <div class={`mb-8 ${i % 2 === 0 ? "md:mr-4" : "md:ml-4"}`}>
-                  <Card
-                    variant="project"
-                    title={d.site}
-                    href={d.url}
-                    year={d.year}
-                    hasPushpin={true}
-                    skills={d.skill.map((s) => ({
-                      name: s.name,
-                      color: s.color,
-                    }))}
-                  />
-                </div>
-              </div>
-            );
-          })
-        }
+<!doctype html>
+<html lang="zh-Hant" class="island-page h-full overflow-hidden bg-paper-sky">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{home.title}</title>
+    <meta name="description" content={home.description} />
+    <meta property="og:title" content={home.shareTitle} />
+    <meta property="og:description" content={home.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mtwmt.com/" />
+    <link rel="canonical" href="https://mtwmt.com/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <Fonts />
+    <link rel="alternate" type="application/rss+xml" title="Mandy's Web" href="/rss.xml" />
+  </head>
+  <body class="m-0 h-full overflow-hidden font-paper-sans text-sm text-paper-ink">
+    <main
+      class="game-shell group relative h-svh w-full overflow-hidden"
+      aria-label="Mandy 的作品與筆記"
+    >
+      <div
+        id="island-stage"
+        class="absolute inset-0 touch-none outline-none focus-visible:outline-2 focus-visible:outline-paper-coral/60 focus-visible:-outline-offset-4 [&_canvas]:block [&_canvas]:size-full [&_canvas]:cursor-grab [&_canvas:active]:cursor-grabbing"
+        tabindex="0"
+        role="region"
+        aria-label="3D 探索世界。WASD 或方向鍵移動，空白鍵跳躍，拖曳畫面轉動鏡頭，E 與附近地標互動。"
+      >
+        <div
+          id="landmarks"
+          class="pointer-events-none absolute inset-0 overflow-hidden group-[.scene-failed]:hidden"
+          hidden
+        >
+          {landmarks.map((place) => (
+            <button
+              class="pointer-events-auto absolute top-0 left-0 flex items-center gap-2.5 rounded-sm border border-paper/50 bg-paper/90 px-3 py-2.5 whitespace-nowrap shadow-md transition-opacity duration-150 will-change-transform after:absolute after:-bottom-6 after:left-1/2 after:h-6 after:w-px after:bg-paper/65 touch:gap-1.75 touch:px-2.25 touch:py-1.75 touch:after:-bottom-4 touch:after:h-4"
+              data-place={place.id}
+            >
+              <b class="text-3xs font-medium tracking-wide compact:hidden">{place.title}</b>
+              <small class="border-l border-paper-line pl-2.25 text-2xs compact:border-0 compact:pl-0 touch:text-3xs">
+                {place.subtitle}
+              </small>
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
-    <Divider className="my-8" />
-    <PageTitle title="鐵人賽系列文" icon="ic:outline-emoji-events" />
-    <div class="py-10 px-[4vw]">
-      <Timeline
-        items={ironman.map((item) => ({
-          title: String(item.year),
-          description: item.topic,
-          href: item.topicUrl,
-          icon: "grommet-icons:info",
-          color: "primary" as const,
-        }))}
-      />
-    </div>
-    <Divider className="my-8" />
-    <PageTitle title="NEWs" icon="ic:outline-newspaper" />
-    <div class="pb-4 px-[4vw]">
-      <div class="flex flex-wrap">
-        {
-          posts.map((post, i) => {
-            return (
-              <div class="w-full md:w-1/2">
-                <div class={`mb-8 ${i % 2 === 0 ? "md:mr-4" : "md:ml-4"}`}>
-                  <Card
-                    variant="post"
-                    title={post.data.title}
-                    href={`/blog/${post.slug}/`}
-                    date={post.data.update || post.data.date}
-                    tags={post.data.tags}
-                  />
-                </div>
-              </div>
-            );
-          })
-        }
+      <GameHeader />
+      <div class="pointer-events-none absolute top-28 left-9 flex items-center gap-2 rounded-xs bg-paper/60 px-2.5 py-1.75 text-caption tracking-wide compact:top-26.5 compact:left-6 touch:top-[calc(82px+var(--hud-safe-offset))] touch:left-4.5 touch:px-1.75 touch:py-1.25 touch:text-4xs short:group-not-[.playing]:invisible">
+        <span class="size-1.25 rounded-full bg-paper-coral"></span>
+        <span id="current-location">起點廣場</span>
+        <small class="ml-2 text-5xs tracking-widest opacity-60 compact:hidden">
+          MANDY'S LITTLE WORLD
+        </small>
       </div>
-    </div>
-    <AsideLayout slot="aside">
-      <SearchWidget />
-      <Categories />
-      <FriendshipLink />
-    </AsideLayout>
-  </ContentLayout>
-</MainLayout>
+      <WelcomeCard />
+      <div
+        id="scene-status"
+        role="status"
+        class="absolute top-1/2 left-1/2 z-10 -translate-1/2 rounded-lg bg-paper/90 px-7 py-5 text-center text-xs touch:text-caption group-[.scene-failed]:w-82.5 group-[.scene-failed]:max-w-[90%]"
+      >
+        <span class="inline-block size-6.5 animate-spin rounded-full border-2 border-paper-sage border-t-transparent group-[.scene-failed]:hidden"></span>
+        <p class="mt-2.5">正在打開世界…</p>
+        <div
+          id="scene-fallback-actions"
+          hidden
+          class="mt-4.5 flex flex-wrap justify-center gap-2.5"
+        >
+          <button data-open="projects" class="rounded-sm bg-paper-ink px-4 py-3 text-xs text-paper">
+            查看作品
+          </button>
+          <a
+            href="/blog/page/1/"
+            data-astro-reload
+            class="rounded-sm bg-paper-ink px-4 py-3 text-xs text-paper"
+          >
+            閱讀筆記 ↗
+          </a>
+        </div>
+      </div>
+      <div class="pointer-events-none absolute inset-0 bg-paper-vignette" aria-hidden="true"></div>
+      <button
+        id="interact"
+        hidden
+        class="absolute bottom-30 left-1/2 z-6 flex -translate-x-1/2 items-center gap-4 rounded-md border border-paper bg-paper/95 px-4.5 py-3.25 text-label whitespace-nowrap shadow-lg touch:bottom-56 touch:gap-2.5 touch:px-3.25 touch:py-2.5 touch:text-caption touch:short:bottom-12.5 group-[.scene-failed]:hidden"
+      >
+        <kbd class="grid size-6.5 place-items-center rounded-xs bg-paper-ink font-paper-sans text-3xs text-paper touch:size-5.5 touch:text-[0px] touch:after:text-xs touch:after:content-['↗']">
+          E
+        </kbd>
+        <span id="interact-label">看看附近</span>
+        <span class="ml-4 touch:hidden">↗</span>
+      </button>
+      <div
+        id="island-toast"
+        role="status"
+        aria-live="polite"
+        class="pointer-events-none absolute top-35 left-1/2 z-8 w-max max-w-[min(500px,86%)] -translate-x-1/2 rounded-md bg-paper-ink/95 p-0 text-xs leading-relaxed text-paper opacity-0 transition-opacity duration-200 [&.visible]:px-5 [&.visible]:py-3 [&.visible]:opacity-100 touch:top-auto touch:bottom-71 touch:max-w-[86%] touch:text-caption touch:short:bottom-27.5"
+      ></div>
+      <MiniMap />
+      <GameControls />
+      <p class="pointer-events-none absolute right-9 bottom-4 left-9 m-0 flex justify-between text-4xs tracking-widest text-paper/65 compact:right-5.5 compact:left-5.5 touch:bottom-[max(15px,env(safe-area-inset-bottom))] touch:text-6xs touch:tracking-wide">
+        EXPLORE AT YOUR OWN PACE{" "}
+        <span class="tracking-wide touch:text-5xs">© {new Date().getFullYear()} Mandy</span>
+      </p>
+      <noscript>
+        <section class="absolute inset-0 z-20 overflow-auto bg-paper p-[10%] [&_a]:block [&_a]:border-b [&_a]:border-paper-line [&_a]:p-3.5">
+          <h1>Mandy</h1>
+          <p>探索需要 JavaScript，你也可以直接開啟內容。</p>
+          <a href="/blog/page/1/">閱讀筆記</a>
+          {projects.map((p) => (
+            <a href={p.href}>{p.title}</a>
+          ))}
+        </section>
+      </noscript>
+    </main>
+    <ContentDialog />
+    <script>
+      import { initIsland } from "../scripts/island/index";
+      initIsland();
+    </script>
+  </body>
+</html>

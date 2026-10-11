@@ -1,0 +1,25 @@
+---
+interface Props {
+  categories: Array<{ slug: string; name: string; count: number }>;
+  selected?: string;
+}
+const { categories, selected } = Astro.props;
+---
+
+<ul>
+  {categories.map((category) => (
+    <li>
+      <a
+        href={`/blog/categories/${encodeURIComponent(category.slug)}/`}
+        aria-current={selected?.toLowerCase() === category.slug ? "page" : undefined}
+        class:list={[
+          "flex min-h-11 items-center justify-between gap-3 py-2 hover:text-note-accent",
+          selected?.toLowerCase() === category.slug ? "text-note-accent" : "text-note-muted",
+        ]}
+      >
+        <span>{category.name}</span>
+        <span class="text-xs">{category.count}</span>
+      </a>
+    </li>
+  ))}
+</ul>

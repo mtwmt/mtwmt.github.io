@@ -1,30 +1,16 @@
+import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 import { sortByDate } from "../lib/sortByDate";
 
-async function getPosts() {
-  
-  const posts = await getCollection("blog")
-  const sortedPosts = sortByDate(posts);
+/** 文章索引（標題、網址代號、日期），建置時產生靜態 JSON。 */
+export const GET: APIRoute = async () => {
+  const posts = sortByDate(await getCollection("blog")).map((post) => ({
+    slug: post.id,
+    title: post.data.title,
+    date: post.data.date,
+  }));
 
-  return sortedPosts.map((post) => {
-    return {
-      slug: post.slug,
-      title: post.data.title,
-      date: post.data.date,
-      // article: post.body
-      //   .replace(/<[^>]*>/gm, "")
-      //   .replace(/[\n#]/g, "")
-      //   .trim(),
-    };
+  return new Response(JSON.stringify(posts), {
+    headers: { "Content-Type": "application/json" },
   });
-   
-}
-
-export async function GET({}) {
-  return new Response(JSON.stringify(await getPosts()), {
-    status: 200,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-}
+};

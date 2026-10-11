@@ -1,0 +1,112 @@
+---
+import { panels, helpInstructions, type ContentPanel } from "../../data/home";
+import { projects } from "../../data/projects";
+import { ironman } from "../../data/ironman";
+import { friends } from "../../data/friends";
+import AboutDetails from "./AboutDetails.astro";
+
+const entries: [string, ContentPanel][] = Object.entries(panels);
+const actionClasses =
+  "rounded-sm px-4.5 py-3 text-caption focus-visible:outline-2 focus-visible:outline-paper-coral focus-visible:outline-offset-5";
+const primaryActionClasses = "bg-paper-ink text-paper";
+const secondaryActionClasses = "bg-paper-soft text-paper-ink";
+const actionGroupClasses = "mt-7 flex flex-wrap gap-2.5";
+---
+
+<!-- 固定內容直接以 Astro 產生；TS 僅切換目前開啟的面板。 -->
+<dialog
+  id="island-dialog"
+  aria-labelledby="dialog-title"
+  class="fixed inset-y-0 right-0 left-auto m-0 h-svh max-h-svh w-105 max-w-full overflow-auto border-0 border-l border-paper-edge bg-paper-panel/98 px-9 pt-20 pb-9 text-paper-ink shadow-paper-panel backdrop:bg-paper-overlay/13 backdrop:backdrop-blur-xs touch:w-full touch:px-7 touch:pb-8.75"
+>
+  <button
+    class="dialog-close absolute top-5.75 right-5.25 size-11 rounded-full border border-paper-border text-[27px] hover:bg-paper-hover hover:text-paper-coral focus-visible:outline-2 focus-visible:outline-paper-coral focus-visible:outline-offset-5"
+    data-dialog-close
+    aria-label="關閉視窗"
+  >
+    ×
+  </button>
+  <p
+    class="mt-0 mb-4.5 text-4xs leading-[1.8] font-medium tracking-[2px] text-paper-coral"
+    id="dialog-eyebrow"
+  ></p>
+  <h2
+    id="dialog-title"
+    class="mt-0 mb-4.5 font-paper-serif text-[28px] leading-[1.6] font-medium text-balance touch:text-[26px]"
+  ></h2>
+  <p id="dialog-description" class="mt-3 mb-5.75 text-xs leading-loose text-paper-muted"></p>
+  {entries.map(([id, panel]) => (
+    <section data-dialog-panel={id} hidden>
+      <div>
+        {id === "about" && <AboutDetails />}
+        {id === "projects" &&
+          projects.map((project) => (
+            <a
+              class="flex items-center justify-between border-b border-paper-line py-5.5 text-base hover:text-paper-coral focus-visible:outline-2 focus-visible:outline-paper-coral focus-visible:outline-offset-5"
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>
+                {project.title}
+                <small class="mt-2.25 block text-3xs text-paper-muted">
+                  {project.category} · {project.tags.join(" / ")}
+                </small>
+              </span>
+              <span>↗</span>
+            </a>
+          ))}
+        {id === "ironman" &&
+          ironman.map((series) => (
+            <a
+              class="flex items-center justify-between gap-4 border-b border-paper-line py-5.5 text-base hover:text-paper-coral focus-visible:outline-2 focus-visible:outline-paper-coral focus-visible:outline-offset-5"
+              href={series.href}
+              data-astro-reload
+            >
+              <span>
+                {series.topic}
+                <small class="mt-2.25 block text-3xs text-paper-muted">{series.year} 鐵人賽</small>
+              </span>
+              <span>↗</span>
+            </a>
+          ))}
+        {id === "friends" &&
+          friends.map((friend) => (
+            <a
+              class="flex items-center justify-between border-b border-paper-line py-4.5 text-base hover:text-paper-coral focus-visible:outline-2 focus-visible:outline-paper-coral focus-visible:outline-offset-5"
+              href={friend.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>{friend.name}</span>
+              <span>↗</span>
+            </a>
+          ))}
+        {id === "help" && (
+          <ul class="my-3.25 list-disc pl-4.5 text-label leading-[2.7]">
+            {helpInstructions.map((text) => (
+              <li>{text}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <div class={id === "about" ? "mt-3 flex flex-wrap gap-2.5" : actionGroupClasses}>
+        {panel.links.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              actionClasses,
+              link.secondary ? secondaryActionClasses : primaryActionClasses,
+            ]}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noopener noreferrer" : undefined}
+            data-astro-reload
+          >
+            {link.text}
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+  <span class="mt-10 block text-3xs tracking-[1px] text-paper-footnote">ESC 關閉，繼續散步</span>
+</dialog>

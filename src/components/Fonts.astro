@@ -1,0 +1,10 @@
+---
+// 首頁與筆記頁共用的 Google Fonts。放在 <head> 用 <link> 載入，
+// 比在 CSS 裡 @import 少一層等待（瀏覽器不用先下載 CSS 才發現字型）。
+const href =
+  "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;500;600&display=swap";
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href={href} />

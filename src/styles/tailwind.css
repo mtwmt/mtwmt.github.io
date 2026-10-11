@@ -1,109 +1,88 @@
 @import "tailwindcss";
 
-/* 定義 dark mode variant - 當 html 有 .dark class 時生效 */
+/* 深色模式由 <html class="dark"> 控制（筆記頁的主題切換按鈕）。 */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* 3D 首頁的紙材質色票。只影響使用 paper-* utilities 的元件。 */
 @theme {
-  /* ====================================
-     Font Families
-     ==================================== */
-  --font-dosis: "Dosis", sans-serif;
+  --color-paper: #fff8e8;
+  --color-paper-ink: #284b43;
+  --color-paper-coral: #c36b4b;
+  --color-paper-muted: #6e7c6a;
+  --color-paper-line: #d7d7c0;
+  --color-paper-button: #2c5147;
+  --color-paper-button-hover: #386655;
+  --color-paper-accent: #a95e42;
+  --color-paper-soft: #e8ecdf;
+  --color-paper-panel: #faf6ea;
+  --color-paper-sky: #c4e2e2;
+  --color-paper-sage: #84977c;
+  --font-paper-sans: "Noto Sans TC", sans-serif;
+  --font-paper-serif: "Noto Serif TC", serif;
+  --font-display: Georgia, "Times New Roman", serif;
+}
 
-  /* ====================================
-     Primary Color Palette (Teal)
-     核心品牌色：#00aaaa
-     ==================================== */
-  --color-primary-50: #e6f7f7;
-  --color-primary-100: #b3ebeb;
-  --color-primary-200: #80dddd;
-  --color-primary-300: #4dd0d0;
-  --color-primary-400: #26c5c5;
-  --color-primary-500: #00aaaa;  /* 主品牌色 */
-  --color-primary-600: #00a0a0;
-  --color-primary-700: #009393;
-  --color-primary-800: #008787;
-  --color-primary-900: #007272;
-  --color-primary-950: #005252;
+/* 首頁支援滑鼠、窄螢幕及觸控裝置；橫向低螢幕另縮小操作區。 */
+@custom-variant compact (@media (max-width: 850px));
+@custom-variant touch {
+  @media (max-width: 600px), (pointer: coarse) {
+    @slot;
+  }
+}
+@custom-variant short (@media (max-height: 500px));
 
-  /* ====================================
-     Semantic Colors (語意化顏色)
-     ==================================== */
+@theme {
+  --color-paper-brand: #244e45;
+  --color-paper-cta-text: #fff7e4;
+  --color-paper-link-line: #516d57;
+  --color-paper-map-shadow: #254b42;
+  --color-paper-map-divider: #627755;
+  --color-map-land: #ddd9b2;
+  --color-map-outline: #748977;
+  --color-map-path: #f6efcf;
+  --color-map-grid: #c4bf95;
+  --color-map-place: #3c6657;
+  --color-map-note: #c97555;
+  --color-map-player: #2e584e;
+  --color-map-player-ring: #fff8e9;
+  --color-preview-paper: #e5e0da;
+  --color-preview-ink: #284c46;
+  --color-preview-selected: #fff7e9;
+  --color-preview-focus: #b16a48;
+  --background-image-paper-vignette: linear-gradient(
+    #32544d12,
+    transparent 25%,
+    transparent 78%,
+    #20483e38
+  );
+}
 
-  /* Success (綠色) */
-  --color-success-50: #f0fdf4;
-  --color-success-100: #dcfce7;
-  --color-success-200: #bbf7d0;
-  --color-success-300: #86efac;
-  --color-success-400: #4ade80;
-  --color-success-500: #22c55e;  /* 主成功色 */
-  --color-success-600: #16a34a;
-  --color-success-700: #15803d;
-  --color-success-800: #166534;
-  --color-success-900: #14532d;
-  --color-success-950: #052e16;
+@theme {
+  --color-paper-edge: #fffdf1;
+  --color-paper-border: #ccd1ba;
+  --color-paper-hover: #e9eddc;
+  --color-paper-footnote: #88917a;
+  --color-paper-overlay: #183f38;
+  --shadow-paper-panel: -20px 0 70px #1d443b24;
+  --text-2xs: 0.625rem;
+  --text-3xs: 0.5625rem;
+  --text-4xs: 0.5rem;
+  --text-5xs: 0.4375rem;
+  --text-6xs: 0.375rem;
+  --text-caption: 0.6875rem;
+  --text-label: 0.8125rem;
+  --text-welcome: 4rem;
+  --text-welcome-mobile: 3.5rem;
+  --text-welcome-compact: 2.625rem;
+}
 
-  /* Warning (黃色) */
-  --color-warning-50: #fefce8;
-  --color-warning-100: #fef9c3;
-  --color-warning-200: #fef08a;
-  --color-warning-300: #fde047;
-  --color-warning-400: #facc15;
-  --color-warning-500: #eab308;  /* 主警告色 */
-  --color-warning-600: #ca8a04;
-  --color-warning-700: #a16207;
-  --color-warning-800: #854d0e;
-  --color-warning-900: #713f12;
-  --color-warning-950: #422006;
-
-  /* Error (紅色) */
-  --color-error-50: #fef2f2;
-  --color-error-100: #fee2e2;
-  --color-error-200: #fecaca;
-  --color-error-300: #fca5a5;
-  --color-error-400: #f87171;
-  --color-error-500: #ef4444;  /* 主錯誤色 */
-  --color-error-600: #dc2626;
-  --color-error-700: #b91c1c;
-  --color-error-800: #991b1b;
-  --color-error-900: #7f1d1d;
-  --color-error-950: #450a0a;
-
-  /* Info (藍色) */
-  --color-info-50: #eff6ff;
-  --color-info-100: #dbeafe;
-  --color-info-200: #bfdbfe;
-  --color-info-300: #93c5fd;
-  --color-info-400: #60a5fa;
-  --color-info-500: #3b82f6;  /* 主資訊色 */
-  --color-info-600: #2563eb;
-  --color-info-700: #1d4ed8;
-  --color-info-800: #1e40af;
-  --color-info-900: #1e3a8a;
-  --color-info-950: #172554;
-
-  /* Accent (橘色 - 互補色) */
-  --color-accent-50: #fff7ed;
-  --color-accent-100: #ffedd5;
-  --color-accent-200: #fed7aa;
-  --color-accent-300: #fdba74;
-  --color-accent-400: #fb923c;
-  --color-accent-500: #f97316;  /* 主強調色 */
-  --color-accent-600: #ea580c;
-  --color-accent-700: #c2410c;
-  --color-accent-800: #9a3412;
-  --color-accent-900: #7c2d12;
-  --color-accent-950: #431407;
-
-  /* Neutral (中性灰) */
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
-  --color-neutral-950: #0a0a0a;
+/* 筆記頁共用語意色，實際亮／暗值由 notes-page 決定。 */
+@theme inline {
+  --color-note-paper: var(--note-paper);
+  --color-note-ground: var(--note-ground);
+  --color-note-ink: var(--note-ink);
+  --color-note-muted: var(--note-muted);
+  --color-note-line: var(--note-line);
+  --color-note-accent: var(--note-accent);
+  --color-note-soft: var(--note-soft);
 }

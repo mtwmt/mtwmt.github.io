@@ -1,0 +1,13 @@
+<!-- 最小 inline script 在首次繪製前讀取主題；互動邏輯集中在 Theme.astro。 -->
+<script is:inline data-astro-rerun>
+  (() => {
+    let preference = null;
+    try {
+      preference = localStorage.getItem("theme");
+    } catch {}
+    const dark =
+      preference === "dark" ||
+      (preference !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+    document.documentElement.classList.toggle("dark", dark);
+  })();
+</script>

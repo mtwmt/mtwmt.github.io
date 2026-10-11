@@ -1,0 +1,33 @@
+@import "./tailwind.css";
+
+/* 僅保留整頁基礎行為；元件版面、RWD、狀態與動畫都在 Astro 的 Tailwind classes。 */
+@layer base {
+  .island-page {
+    color-scheme: light;
+    --hud-safe-offset: max(0px, calc(env(safe-area-inset-top) - 16px));
+  }
+
+  .island-page :is(button, a) {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    cursor: pointer;
+  }
+
+  .island-page :is(button, a):focus-visible {
+    outline: 2px solid var(--color-paper-coral);
+    outline-offset: 5px;
+  }
+
+  .island-page button:disabled {
+    cursor: wait;
+    opacity: 0.55;
+  }
+
+  .island-page :is(button, a):hover {
+    color: var(--color-paper-coral);
+  }
+
+  .island-page [hidden] {
+    display: none !important;
+  }
+}

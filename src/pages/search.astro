@@ -1,122 +1,16 @@
 ---
-import Header from '../components/Header.astro';
-import SearchWidget from '../components/SearchWidget.astro';
-import { SITE_TITLE } from '../consts';
-import AsideLayout from '../layouts/AsideLayout.astro';
-import ContentLayout from '../layouts/ContentLayout.astro';
-import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from "astro:content";
+import NotesLayout from "../layouts/NotesLayout.astro";
+import NoteList from "../components/notes/NoteList.astro";
+import SearchWidget from "../components/SearchWidget.astro";
+import { search } from "../data/search";
+import { sortByDate } from "../lib/sortByDate";
+
+const posts = sortByDate(await getCollection("blog"));
 ---
 
-<MainLayout title={SITE_TITLE}>
-  <Header />
-  <ContentLayout>
-    <div class="h-full min-h-screen">
-      <div class="py-[3.35rem] px-[4vw]">
-        <h3 id="searchReadout" class="text-3xl text-default"></h3>
-      </div>
-      <ul
-        aria-label="Search Results"
-        id="searchResults"
-        class="py-10 border-y border-default"
-      >
-      </ul>
-    </div>
-    <AsideLayout slot="aside">
-      <SearchWidget />
-    </AsideLayout>
-  </ContentLayout>
-</MainLayout>
-
-<script>
-  import DOMPurify from 'dompurify';
-  import { SITE_TITLE } from '../consts';
-  import { hightLight } from '../lib/highlight';
-
-  interface SearchResult {
-    slug: string;
-    title: string;
-    date: string | Date;
-  }
-
-  let SEARCH_DATA: SearchResult[];
-
-  const search: HTMLInputElement = document.querySelector('#search')!;
-  const searchReadout: Element = document.querySelector('#searchReadout')!;
-  const resultsList: Element = document.querySelector('#searchResults')!;
-
-  // functions
-  function updateDocumentTitle(search: string) {
-    document.title = search ? `${SITE_TITLE} | 搜尋 “${search}”` : SITE_TITLE;
-  }
-
-  function updateSearchReadout(search: string) {
-    const searchText = search ? `搜尋：${search}` : '';
-    searchReadout.textContent = searchText;
-  }
-
-  const generateSearchList = (results: SearchResult[], search: string) => {
-    return results
-      .map((r) => {
-        const { title, date, slug } = r;
-        const dateAsDate = new Date(date);
-        return `<li class="py-4 px-[4vw]">
-								<time datetime="${dateAsDate.toISOString()}">
-									${dateAsDate.toLocaleDateString('en-us', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric',
-                  })}
-								</time>
-								<a href="/blog/${slug}/">${hightLight(title, search, 'partial')}</a>
-							</li>`;
-      })
-      .join('');
-  };
-
-  async function fetchSearchResults(search: string) {
-    if (search?.length === 0) return;
-    // searchResults.innerHTML = SPINNER;
-    if (!SEARCH_DATA) {
-      try {
-        const res = await fetch('/search.json');
-        if (!res.ok) {
-          throw new Error('Something went wrong…please try again');
-        }
-        const data = await res.json();
-
-        SEARCH_DATA = data;
-      } catch (e) {
-        console.error(e);
-      }
-    }
-
-    const list = SEARCH_DATA.filter((s) => {
-      return s.title.toLowerCase().includes(search.toLowerCase());
-    });
-    resultsList!.innerHTML =
-      list?.length > 0
-        ? generateSearchList(list, search)
-        : `
-      <div class="border-default py-10 px-[4vw]"><p>目前沒有關於 ${search} 主題的文章哦！</p></div>
-      `;
-  }
-
-  // event listeners
-  window.addEventListener('DOMContentLoaded', () => {
-    const queryParam = new URLSearchParams(window.location.search).get('q');
-    const urlParams = queryParam ? DOMPurify.sanitize(queryParam) : '';
-
-    if (!search) {
-      console.error('Search input not found');
-      return;
-    }
-
-    if (urlParams && urlParams.trim().length > 0) {
-      fetchSearchResults(urlParams.trim());
-      updateDocumentTitle(urlParams.trim());
-      updateSearchReadout(urlParams.trim());
-      search.value = urlParams.trim();
-    }
-    search.focus();
-  });
-</script>
+<NotesLayout title={search.title} description={search.description} noindex>
+  <NoteList {posts} title={search.title} searchable showCategories={false}>
+    <SearchWidget slot="controls" />
+  </NoteList>
+</NotesLayout>

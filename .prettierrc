@@ -1,8 +1,9 @@
 {
   "plugins": ["prettier-plugin-astro"],
+  "printWidth": 100,
   "overrides": [
     {
-      "files": ["*.astro"],
+      "files": "*.astro",
       "options": {
         "parser": "astro"
       }

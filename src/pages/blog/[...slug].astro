@@ -1,190 +1,160 @@
 ---
-import { getCollection } from "astro:content";
-import Toc from "../../components/Toc.astro";
-import MainLayout from "../../layouts/MainLayout.astro";
-import Header from "../../components/Header.astro";
-import ContentLayout from "../../layouts/ContentLayout.astro";
-import AsideLayout from "../../layouts/AsideLayout.astro";
-import GoTop from "../../components/GoTop.astro";
-import Comments from "../../components/Comments.astro";
-import { SITE_TITLE } from "../../consts";
-import FormattedDate from "../../components/FormattedDate.astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import NotesLayout from "../../layouts/NotesLayout.astro";
 import Tags from "../../components/Tags.astro";
-import { Icon } from "astro-icon/components";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Toc from "../../components/Toc.astro";
+import Comments from "../../components/Comments.astro";
+import { notes } from "../../data/notes";
 import { sortByDate } from "../../lib/sortByDate";
-import PostPreview from "../../components/PostPreview.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import Divider from "../../components/Divider.astro";
+import { getNoteExcerpt } from "../../lib/notes";
+import { getReadingTime } from "../../lib/readingtime";
 
-
-import type { CollectionEntry } from 'astro:content';
-
-export const findPrevAndNext = (arr: CollectionEntry<'blog'>[], curr: CollectionEntry<'blog'>) => {
-  const currentIndex = arr.findIndex((obj) => obj.slug === curr.slug);
-
-  if (currentIndex === -1) {
-    return null; // 物件未找到
-  }
-
-  const prevIndex = currentIndex - 1;
-  const nextIndex = currentIndex + 1;
-
-  const prev = prevIndex >= 0 ? arr[prevIndex] : null;
-  const next = nextIndex < arr.length ? arr[nextIndex] : null;
-
-  return {
-    prev,
-    next,
-  };
-};
-
-// getStaticPaths 生成靜態頁面路徑
 export async function getStaticPaths() {
   const posts = sortByDate(await getCollection("blog"));
-
-  const currentPost = posts.map((post) => {
-    const getPrevAndNext = findPrevAndNext(posts, post);
-
-    return {
-      params: { slug: post.slug },
-      props: {
-        post: post,
-        next: getPrevAndNext?.prev,
-        prev: getPrevAndNext?.next,
-      },
-    };
-  });
-
-  return currentPost;
+  return posts.map((post, index) => ({
+    params: { slug: post.id },
+    props: { post, next: posts[index - 1], prev: posts[index + 1] },
+  }));
 }
-// type Props = CollectionEntry<"blog">;
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  next?: CollectionEntry<"blog">;
+  prev?: CollectionEntry<"blog">;
+}
 
 const { post, next, prev } = Astro.props;
-const { headings, Content } = await post.render();
-const { data } = post;
-
+const { headings, Content } = await render(post);
+const date = post.data.update ?? post.data.date;
+const hasToc = headings.some((heading) => heading.depth === 2 || heading.depth === 3);
 ---
-<MainLayout title={post.data.title + " | " + SITE_TITLE} description={
-  post.body
-  .replace(/<[^>]*>/gm, "")
-  .replace(/[\n#]/g, "")
-  .replace(/\s/g, "")
-  .trim()
-  .slice(0, 100)
-}>
 
-  <Header />
-  <ContentLayout>
-    <div class="py-[3.35rem] px-[4vw]">
-      <!-- <Breadcrumbs
-        items={[
-          { label: '首頁', href: '/', icon: 'ic:outline-home' },
-          { label: '部落格', href: '/blog/page/1' },
-          { label: post.data.title }
-        ]}
-        className="mb-6"
-      /> -->
-      <FormattedDate date={post.data.update || post.data.date} type="en" />
-      <h1 class="text-3xl leading-loose text-default">{post.data.title}</h1>
-      <PostPreview content={post.body} />
-
-      <div class="mt-2">
-        {(<Tags tags={post.data?.tags} />)}
+<NotesLayout title={post.data.title} description={getNoteExcerpt(post.body)}>
+  <article>
+    <a
+      href="/blog/page/1/"
+      class="mb-8 inline-flex min-h-11 items-center gap-2 text-sm text-note-muted hover:text-note-accent"
+    >
+      ← {notes.back}
+    </a>
+    <header class="mb-9 sm:mb-12">
+      <Tags tags={post.data.tags} />
+      <h1 class="mt-3 mb-6 font-paper-serif text-3xl leading-relaxed font-medium sm:text-4xl">
+        {post.data.title}
+      </h1>
+      <div class="flex flex-wrap items-center gap-3 text-sm text-note-muted">
+        <FormattedDate {date} type="note" />
+        <span aria-hidden="true">·</span>
+        <span>約 {getReadingTime(post.body)} 分鐘閱讀</span>
       </div>
-    </div>
-
-    <Divider variant="solid" spacing="sm"/>
-
-    <div class="py-10 px-[4vw]">
-      <div class="post">
-        <Content />
-      </div>
-    </div>
-
-    <Divider />
-
-    <div>
-      <div class={`flex ${!!prev?.slug ? "justify-between" : "justify-end"}`}>
-        {
-          !!prev?.slug && (
-            <a
-              href={`/blog/${prev?.slug}`}
-              class={`px-4 flex h-12 cursor-pointer items-center justify-center border-r border-default hover:bg-border`}
-            >
-              <Icon name="teenyicons:left-outline" class="mr-4 h-4 w-4" />
-              {prev?.data?.title}
+    </header>
+    <Toc {headings} mobile />
+    <div
+      class:list={[
+        "grid items-start gap-12",
+        hasToc ? "lg:grid-cols-[minmax(0,1fr)_200px] lg:gap-14" : "mx-auto max-w-3xl",
+      ]}
+    >
+      <div class="min-w-0">
+        <div
+          data-note-body
+          data-copy-label={notes.copy}
+          data-copied-label={notes.copied}
+          data-copy-failed-label={notes.copyFailed}
+          class="note-prose"
+        >
+          <Content />
+        </div>
+        <nav
+          aria-label="相鄰文章"
+          class="mt-14 grid gap-6 border-t border-note-line pt-6 sm:grid-cols-2"
+        >
+          {prev && (
+            <a href={`/blog/${prev.id}/`} class="text-sm leading-relaxed hover:text-note-accent">
+              <span class="mb-2 block text-xs text-note-muted">← {notes.previous}</span>
+              {prev.data.title}
             </a>
-          )
-        }
-
-        {
-          !!next?.slug && (
+          )}
+          {next && (
             <a
-              href={`/blog/${next?.slug}`}
-              class={`px-4 flex h-12 cursor-pointer items-center justify-center border-l border-default hover:bg-border`}
+              href={`/blog/${next.id}/`}
+              class="text-sm leading-relaxed hover:text-note-accent sm:col-start-2 sm:text-right"
             >
-              {next?.data?.title}
-              <Icon name="teenyicons:right-outline" class="ml-4 h-4 w-4" />
+              <span class="mb-2 block text-xs text-note-muted">{notes.next} →</span>
+              {next.data.title}
             </a>
-          )
-        }
+          )}
+        </nav>
+        <section aria-label={notes.comments} class="mt-12 border-t border-note-line pt-7">
+          <Comments />
+        </section>
       </div>
+      {hasToc && (
+        <aside class="hidden self-stretch lg:block">
+          <Toc {headings} />
+        </aside>
+      )}
     </div>
-
-    <div class="py-[3.35rem] px-[4vw]">
-      <Comments />
-    </div>
-
-    <AsideLayout slot="aside">
-      <Toc {headings} />
-    </AsideLayout>
-  </ContentLayout>
-</MainLayout>
-<GoTop />
+  </article>
+</NotesLayout>
 
 <script>
-  const post = document.querySelectorAll('.post');
+  function initNoteBody(): void {
+    const body = document.querySelector<HTMLElement>("[data-note-body]");
+    if (!body || body.dataset.initialized) return;
+    body.dataset.initialized = "true";
 
-  post.forEach(el => {
-    const links = el.querySelectorAll('a');
-    links.forEach(link => {
-      link.setAttribute('target', '_blank');
-    });
-  });
+    // 寬表格保留欄位寬度，由容器捲動；不讓整個手機頁面溢出。
+    for (const table of body.querySelectorAll<HTMLTableElement>("table")) {
+      const wrapper = document.createElement("div");
+      wrapper.className = "my-7 max-w-full overflow-x-auto";
+      wrapper.setAttribute("role", "region");
+      wrapper.setAttribute("aria-label", "文章表格，可橫向捲動");
+      wrapper.tabIndex = 0;
+      table.before(wrapper);
+      wrapper.append(table);
+      table.className = "!my-0 !table min-w-[36rem]";
+    }
 
-  let copyButtonLabel = "Copy Code";
-  let codeBlocks = Array.from(document.querySelectorAll("pre"));
+    for (const link of body.querySelectorAll<HTMLAnchorElement>("a[href]")) {
+      const url = new URL(link.href, location.href);
+      if (url.origin !== location.origin && ["https:", "http:"].includes(url.protocol)) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      }
+    }
 
-  for (let codeBlock of codeBlocks) {
-    let wrapper = document.createElement("div");
-    wrapper.className = "relative";
+    for (const pre of body.querySelectorAll<HTMLPreElement>("pre")) {
+      const code = pre.querySelector("code");
+      if (!code) continue;
+      const wrapper = document.createElement("div");
+      wrapper.className = "relative min-w-0";
+      pre.before(wrapper);
+      wrapper.append(pre);
+      pre.tabIndex = 0;
+      const button = document.createElement("button");
+      const label = body.dataset.copyLabel ?? "複製程式碼";
+      button.type = "button";
+      button.textContent = label;
+      button.className =
+        "absolute top-2 right-2 min-h-9 cursor-pointer rounded border border-note-line bg-note-soft px-3 py-1 text-xs text-note-muted hover:text-note-accent";
+      button.setAttribute("aria-live", "polite");
+      wrapper.append(button);
 
-    let copyButton = document.createElement("button");
-    copyButton.className = "copy-code";
-    copyButton.innerHTML = copyButtonLabel;
-
-    codeBlock.setAttribute("tabindex", "0");
-    codeBlock.appendChild(copyButton);
-    // wrap codeblock with relative parent element
-    codeBlock.parentNode?.insertBefore(wrapper, codeBlock);
-    wrapper.appendChild(codeBlock);
-
-    copyButton.addEventListener("click", async () => {
-      await copyCode(codeBlock, copyButton);
-    });
+      button.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(code.textContent ?? "");
+          button.textContent = body.dataset.copiedLabel ?? "已複製";
+        } catch {
+          button.textContent = body.dataset.copyFailedLabel ?? "複製失敗，請重試";
+        }
+        window.setTimeout(() => {
+          button.textContent = label;
+        }, 1600);
+      });
+    }
   }
 
-  async function copyCode(block: HTMLPreElement, button: HTMLButtonElement) {
-    let code = block.querySelector("code");
-    let text = code?.innerText || "";
-
-    await navigator.clipboard.writeText(text);
-
-    // visual feedback that task is completed
-    button.innerText = "Code Copied";
-
-    setTimeout(() => {
-      button.innerText = copyButtonLabel;
-    }, 700);
-  }
+  document.addEventListener("astro:page-load", initNoteBody);
 </script>

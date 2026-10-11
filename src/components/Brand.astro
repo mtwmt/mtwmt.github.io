@@ -1,0 +1,47 @@
+---
+import { home } from "../data/home";
+
+interface Props {
+  variant?: "game" | "notes";
+}
+const { variant = "notes" } = Astro.props;
+const game = variant === "game";
+---
+
+<a
+  href="/"
+  data-astro-reload
+  aria-label={`${home.brand} 首頁`}
+  class:list={[
+    "flex items-center gap-3",
+    game
+      ? "pointer-events-auto rounded-[5px] border border-paper/33 bg-paper/74 pt-2.25 pr-3.75 pb-2.75 pl-2.75 text-paper-brand text-shadow-[0_1px_16px] text-shadow-paper/47 backdrop-blur-[10px] touch:gap-2.25 touch:px-2.5 touch:py-1.75"
+      : "hover:opacity-100",
+  ]}
+>
+  <span
+    class:list={[
+      "font-display leading-none italic",
+      game
+        ? "text-[52px] tracking-[-5px] compact:text-welcome-compact touch:text-[41px]"
+        : "text-[46px] tracking-[-4px] sm:text-[52px]",
+    ]}
+  >
+    m<span class={game ? "text-paper-coral" : "text-note-accent"}>.</span>
+  </span>
+  <span
+    class:list={[
+      "tracking-[2px]",
+      game
+        ? "text-label font-bold compact:text-2xs touch:text-3xs touch:tracking-[1px]"
+        : "text-xs font-medium",
+    ]}
+  >
+    {home.brand}
+    {game && (
+      <small class="mt-1.5 block text-3xs font-normal tracking-[1px] compact:text-5xs touch:hidden">
+        {home.tagline}
+      </small>
+    )}
+  </span>
+</a>

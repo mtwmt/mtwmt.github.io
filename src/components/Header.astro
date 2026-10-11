@@ -1,70 +1,38 @@
 ---
-import { menu } from "../config/config.json";
 import { Icon } from "astro-icon/components";
 import Theme from "./Theme.astro";
+import Brand from "./Brand.astro";
+import { notes } from "../data/notes";
+
+const { pathname } = Astro.url;
+const isSearch = pathname.startsWith("/search");
+const isBlog = pathname.startsWith("/blog");
 ---
 
-<input id="nav-toggle" type="checkbox" class="hidden nav-toggle" />
-<header
-  class="bg-primary-900 lg:flex lg:h-[180px] lg:flex-row-reverse lg:justify-between"
->
-  <div
-    class="translate-x-0 animation relative w-full font-dosis lg:flex lg:h-full lg:w-80 lg:items-center lg:justify-center lg:bg-primary-500 lg:transition-none"
-  >
-    <h2
-      class="w-40 bg-primary-500 text-center text-2xl leading-loose text-white lg:w-auto lg:text-4xl"
-    >
-      <a href="/">Mandy's Web</a>
-    </h2>
-    <label
-      id="hamburger"
-      for="nav-toggle"
-      title="MENU"
-      class="absolute right-5 top-1/2 h-7 w-8 -translate-y-1/2 cursor-pointer lg:hidden"
-    >
-      <span
-        class="animation absolute top-1/2 h-[2px] w-full -translate-y-1/2 bg-white before:absolute before:-top-2.5 before:h-[2px] before:w-full before:bg-white after:absolute after:top-2.5 after:h-[2px] after:w-full after:bg-white lg:transition-none"
-      ></span></label
-    >
-  </div>
-  <div
-    class="translate-x-0 animation relative z-10 bg-gray-100 dark:bg-gray-800 py-4 text-center lg:flex lg:w-[calc(100%-20rem)] lg:flex-row-reverse lg:items-center lg:justify-between lg:px-[4vw] lg:transition-none"
-  >
-    <p class="mb-4 lg:mb-0">因為會忘，所以要寫下來</p>
-    <nav>
-      <ul class="flex justify-center font-dosis uppercase lg:justify-start">
-        {
-          menu.map((d) => (
-            <li class="mx-4 text-center">
-              <a href={d.href} class="group">
-                <span class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border-2 border-gray-900 dark:border-gray-200 bg-white dark:bg-gray-900 text-center shadow-[3px_3px_0_rgba(0,0,0,0.25)] dark:shadow-[3px_3px_0_rgba(255,255,255,0.2)] transition-all duration-150 group-hover:shadow-[1px_1px_0_rgba(0,0,0,0.25)] dark:group-hover:shadow-[1px_1px_0_rgba(255,255,255,0.2)] group-hover:translate-x-[2px] group-hover:translate-y-[2px]">
-                  <Icon name={d.icon} class="h-6 w-6 text-gray-800 dark:text-gray-200" />
-                </span>
-                <span class="text-xs font-bold">{d.name}</span>
-              </a>
-            </li>
-          ))
-        }
-        <li class="mx-4 text-center">
-          <Theme />
-        </li>
-      </ul>
+<header class="border-b border-note-line/50 bg-note-ground">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 sm:px-9 sm:py-6">
+    <Brand />
+    <nav aria-label="主要導覽" class="flex items-center gap-4 text-xs sm:gap-6">
+      <a
+        href="/blog/page/1/"
+        aria-current={isBlog ? "page" : undefined}
+        class:list={["py-2 hover:text-note-accent", isBlog && "border-b border-note-accent"]}
+      >
+        {notes.title}
+      </a>
+      <a
+        href="/search/"
+        aria-label="搜尋筆記"
+        aria-current={isSearch ? "page" : undefined}
+        class:list={["grid size-10 place-items-center sm:size-11", isSearch && "text-note-accent"]}
+      >
+        <Icon name="ic:outline-search" class="size-5" />
+      </a>
+      <!-- 首頁是全螢幕 3D，需要完整載入，不走 ClientRouter。 -->
+      <a href="/" data-astro-reload class="hidden hover:text-note-accent sm:inline">
+        {notes.home} →
+      </a>
+      <Theme />
     </nav>
   </div>
 </header>
-
-<style is:global lang="scss">
-  @reference "../styles/tailwind.css";
-
-  .nav-toggle:checked {
-    & ~ header {
-      #hamburger > span {
-        @apply rotate-180 bg-transparent before:translate-y-2.5 before:rotate-45 after:-translate-y-2.5 after:-rotate-45;
-      }
-
-      > div {
-        @apply -translate-x-80 lg:translate-x-0;
-      }
-    }
-  }
-</style>

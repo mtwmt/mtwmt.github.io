@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+import Brand from "../Brand.astro";
+---
+
+<header class="game-header pointer-events-none absolute inset-x-8 top-6 z-4 flex items-center justify-between compact:inset-x-5 compact:top-5 touch:inset-x-4.5 touch:top-[max(16px,env(safe-area-inset-top))]">
+  <Brand variant="game" />
+  <nav
+    aria-label="小島設定"
+    class="pointer-events-auto flex items-center rounded-[5px] border border-paper/33 bg-paper/74 px-1 py-1.25 shadow-[0_3px_18px] shadow-paper-brand/6 backdrop-blur-[12px] compact:py-0.75"
+  >
+    <!-- 白天／夜晚，與筆記頁的深色模式共用同一個設定 -->
+    <button
+      id="night-toggle"
+      type="button"
+      aria-label="切換成夜晚"
+      aria-pressed="false"
+      class="group grid min-h-9 w-9 place-items-center p-1.25 touch:w-8"
+    >
+      <Icon name="ic:outline-dark-mode" class="size-4 group-aria-pressed:hidden" />
+      <Icon name="ic:outline-light-mode" class="hidden size-4 group-aria-pressed:block" />
+    </button>
+    <button
+      id="help-toggle"
+      aria-label="操作說明"
+      class="min-h-9 w-9 border-l border-paper-ink/13 p-1.25 text-caption touch:w-8"
+    >
+      ?
+    </button>
+  </nav>
+</header>

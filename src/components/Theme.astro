@@ -1,63 +1,42 @@
 ---
 import { Icon } from "astro-icon/components";
-const { className }: { className?: string } = Astro.props;
 ---
 
-<div class={`inline-flex ${className}`}>
-  <input
-    class="absolute opacity-0"
-    id="theme-switcher"
-    data-theme-switcher
-    type="checkbox"
-  />
-  <label class="relative cursor-pointer group" for="theme-switcher">
-    <span
-      class="flex justify-center items-center mb-2 h-12 w-12 rounded-[50%] border-2 border-gray-900 dark:border-gray-200 bg-white dark:bg-gray-900 text-center shadow-[3px_3px_0_rgba(0,0,0,0.25)] dark:shadow-[3px_3px_0_rgba(255,255,255,0.2)] transition-all duration-150 group-hover:shadow-[1px_1px_0_rgba(0,0,0,0.25)] dark:group-hover:shadow-[1px_1px_0_rgba(255,255,255,0.2)] group-hover:translate-x-[2px] group-hover:translate-y-[2px]"
-    >
-      <Icon name="ic:outline-dark-mode" class="h-6 w-6 hidden dark:block text-gray-200" />
-      <Icon name="ic:outline-light-mode" class="h-6 w-6 block dark:hidden text-gray-800" />
-    </span>
-    <span class="uppercase text-xs font-bold">mode</span>
-  </label>
-</div>
+<button
+  type="button"
+  data-theme-toggle
+  aria-label="切換深色模式"
+  aria-pressed="false"
+  class="grid size-11 cursor-pointer place-items-center rounded-full border border-note-line transition-colors hover:bg-note-paper"
+>
+  <Icon name="ic:outline-dark-mode" class="size-4.5 dark:hidden" />
+  <Icon name="ic:outline-light-mode" class="hidden size-4.5 dark:block" />
+</button>
 
 <script>
-const toggleTheme = () => {
-  const darkMode = (() => {
-    if (
-      typeof localStorage !== "undefined" &&
-      localStorage.getItem("theme")
-    ) {
-      return localStorage.getItem("theme") === "dark" ? true : false;
+  function updateThemeControls(): void {
+    const dark = document.documentElement.classList.contains("dark");
+    for (const button of document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]")) {
+      button.setAttribute("aria-pressed", String(dark));
+      button.setAttribute("aria-label", dark ? "切換淺色模式" : "切換深色模式");
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return true;
-    }
-    return false;
-  });
-
-  const themeSwitch = document.querySelectorAll("[data-theme-switcher]");
-
-  if (darkMode()) {
-    document.documentElement.classList.add("dark");
   }
 
-  [].forEach.call(themeSwitch, function (ts:any) {
-    ts.checked = darkMode() ? true : false;
-    ts.addEventListener("click", () => {
-      document.documentElement.classList.toggle("dark");
-      localStorage.setItem(
-        "theme",
-        document.documentElement.classList.contains("dark")
-          ? "dark"
-          : "light",
-      );
-    });
-  });
-};
+  function initTheme(): void {
+    updateThemeControls();
+    for (const button of document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]")) {
+      if (button.dataset.initialized) continue;
+      button.dataset.initialized = "true";
+      button.addEventListener("click", () => {
+        const dark = document.documentElement.classList.toggle("dark");
+        try {
+          localStorage.setItem("theme", dark ? "dark" : "light");
+        } catch {}
+        updateThemeControls();
+        document.dispatchEvent(new Event("theme:change"));
+      });
+    }
+  }
 
-document.addEventListener("astro:after-swap", toggleTheme);
-
-// 初始執行一次
-toggleTheme();
+  document.addEventListener("astro:page-load", initTheme);
 </script>

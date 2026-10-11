@@ -1,70 +1,33 @@
 ---
-import type { Props } from 'astro';
-import { getCollection } from 'astro:content';
-import Categories from '../../../components/Categories.astro';
-import Header from '../../../components/Header.astro';
-import SearchWidget from '../../../components/SearchWidget.astro';
-import { SITE_TITLE } from '../../../consts';
-import AsideLayout from '../../../layouts/AsideLayout.astro';
-import ContentLayout from '../../../layouts/ContentLayout.astro';
-import MainLayout from '../../../layouts/MainLayout.astro';
-import FormattedDate from '../../../components/FormattedDate.astro';
-import { sortByDate } from '../../../lib/sortByDate';
-import PageTitle from '../../../components/PageTitle.astro';
+import { getCollection, type CollectionEntry } from "astro:content";
+import NotesLayout from "../../../layouts/NotesLayout.astro";
+import NoteList from "../../../components/notes/NoteList.astro";
+import { sortByDate } from "../../../lib/sortByDate";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', (data: any) => !data.data.isDraft);
-  const tags = [
-    ...new Set(posts.map((post: any) => post.data.tags).flat()),
-  ].filter((d: string) => !!d);
-
-  const tagsList = tags.map((t: string) => {
-    return {
-      params: { slug: t.toLowerCase() },
-      props: {
-        tag: t,
-        posts: sortByDate(
-          posts.filter((p) => {
-            return p.data.tags
-              ?.map((tag: string) => tag.toLowerCase())
-              .includes(t.toLowerCase());
-          })
-        ),
-      },
-    };
-  });
-
-  return tagsList;
+  const posts = await getCollection("blog");
+  const tags = new Map<string, string>();
+  for (const post of posts) {
+    for (const tag of post.data.tags ?? []) tags.set(tag.toLowerCase(), tag);
+  }
+  return [...tags].map(([slug, tag]) => ({
+    params: { slug },
+    props: {
+      tag,
+      posts: sortByDate(
+        posts.filter((post) => (post.data.tags ?? []).some((name) => name.toLowerCase() === slug)),
+      ),
+    },
+  }));
 }
 
-const { slug } = Astro.params;
-const { posts, tag } = Astro.props as any;
+interface Props {
+  posts: CollectionEntry<"blog">[];
+  tag: string;
+}
+const { posts, tag } = Astro.props;
 ---
 
-<MainLayout title={tag + ' | ' + SITE_TITLE}>
-  <Header />
-  <ContentLayout>
-    <PageTitle title={'標籤：' + tag.toUpperCase()} icon="ic:outline-local-offer" />
-    <ul class="py-10 border-y border-default">
-      {
-        posts.map((p: any) => {
-          return (
-            <li class="py-2 px-[4vw]">
-              <a href={`/blog/${p.slug}`}>
-                <FormattedDate
-                  date={p.data.update || p.data.date}
-                  className="mr-4 text-left"
-                />
-                {p.data.title}
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-    <AsideLayout slot="aside">
-      <!-- <SearchWidget /> -->
-      <Categories />
-    </AsideLayout>
-  </ContentLayout>
-</MainLayout>
+<NotesLayout title={`標籤：${tag}`}>
+  <NoteList {posts} title={`標籤：${tag}`} />
+</NotesLayout>

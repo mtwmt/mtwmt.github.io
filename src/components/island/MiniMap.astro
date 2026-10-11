@@ -1,0 +1,81 @@
+---
+import { landmarks } from "../../data/island";
+---
+
+<aside
+  aria-label="小島地圖"
+  class:list={[
+    "minimap absolute right-7.5 bottom-14.5 w-47.5 rounded-md border border-paper/57 bg-paper/79 px-3.25 pt-3.25 pb-2 shadow-[0_5px_25px] shadow-paper-map-shadow/10 backdrop-blur-[12px]",
+    "compact:right-5 compact:bottom-13.5 compact:w-40",
+    "touch:top-[calc(117px+var(--hud-safe-offset))] touch:right-4 touch:bottom-auto touch:w-27 touch:bg-paper/70 touch:p-2",
+    "touch:short:top-[calc(103px+var(--hud-safe-offset))]",
+    "touch:group-[:not(.playing)]:invisible touch:group-[:not(.playing)]:pointer-events-none touch:group-[:not(.playing)]:opacity-30 group-[.scene-failed]:hidden",
+  ]}
+>
+  <div class="flex justify-between text-4xs tracking-[1.3px] touch:text-6xs touch:tracking-[0.7px]">
+    <span>ISLAND MAP</span>
+    <span class="text-3xs">N ↑</span>
+  </div>
+  <svg
+    class="my-1.75 block w-full touch:my-1.25"
+    viewBox="0 0 180 120"
+    aria-label="位置地圖"
+    role="img"
+  >
+    <path
+      d="M14 17 Q65 1 163 13L171 96Q100 120 13 105Z"
+      class="fill-map-land stroke-map-outline"
+      stroke-width="1"
+    />
+    <path
+      d="M41 43 71 70 96 68 104 36M95 69l40 13M70 69l-29 21"
+      fill="none"
+      class="stroke-map-path"
+      stroke-width="7"
+      stroke-linecap="round"
+    />
+    <path
+      d="M91 18v88"
+      fill="none"
+      class="stroke-map-grid"
+      stroke-width="1"
+      stroke-dasharray="2 3"
+    />
+    <circle cx="48" cy="48" r="7" class="fill-map-place" />
+    <circle cx="103" cy="27" r="7" class="fill-map-note" />
+    <circle cx="135" cy="70" r="7" class="fill-map-place" />
+    <!-- 座標換算同 world.ts：x = 90 + 世界X × 2.85，y = 62 + 世界Z × 2.6 -->
+    <rect x="29" y="63" width="12" height="11" rx="2" class="fill-map-note" />
+    <path
+      d="M153 63v15M153 66h7l2 2-2 2h-7"
+      class="stroke-map-place"
+      stroke-width="2"
+      fill="none"
+    />
+    <g id="map-player" transform="translate(90 91)">
+      <circle r="8" class="fill-map-player-ring opacity-50" />
+      <path
+        d="m0-6 4 10-4-2-4 2Z"
+        class="fill-map-player stroke-map-player-ring"
+        stroke-width="1.5"
+      />
+    </g>
+  </svg>
+  <div class="flex flex-wrap justify-between gap-x-1.5 touch:gap-x-1">
+    {landmarks.map((place) => (
+      <button
+        class="py-1.5 text-3xs touch:text-4xs"
+        data-travel={place.id}
+        aria-label={place.travelLabel}
+      >
+        {place.mapLabel}
+      </button>
+    ))}
+  </div>
+  <button
+    id="reset-view"
+    class="mt-1.25 w-full border-t border-paper-map-divider/19 pt-2.25 text-3xs touch:pt-1.75 touch:text-4xs"
+  >
+    ↺ 回到起點
+  </button>
+</aside>

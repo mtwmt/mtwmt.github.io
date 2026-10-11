@@ -1,0 +1,28 @@
+---
+import type { MarkdownHeading } from "astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+  mobile?: boolean;
+}
+const { headings, mobile = false } = Astro.props;
+---
+
+<ul>
+  {headings.map((heading) => (
+    <li>
+      <a
+        data-toc-link
+        href={`#${heading.slug}`}
+        class:list={[
+          "block leading-relaxed",
+          "border-l border-note-line text-note-muted hover:text-note-accent [&[aria-current]]:border-note-accent [&[aria-current]]:text-note-accent",
+          mobile ? "py-2 text-sm" : "py-2.5",
+          heading.depth === 3 ? "pl-6 pr-3" : "px-3",
+        ]}
+      >
+        {heading.text}
+      </a>
+    </li>
+  ))}
+</ul>

@@ -1,72 +1,50 @@
 ---
 import { getCollection } from "astro:content";
-import { Icon } from 'astro-icon/components';
+import CategoryLinks from "./CategoryLinks.astro";
+import { notes } from "../data/notes";
 
-const posts = await getCollection("blog", (data: any) => !data.data.isDraft);
-
-const calCategoriesCount = posts
-  .map((post: any) => post.data.categories)
-  .flat()
-  .reduce((acc, category) => {
-    if (acc[category]) {
-      acc[category] += 1;
-    } else {
-      acc[category] = 1;
-    }
-    return acc;
-  }, {});
-
-// 按文章數量排序，顯示熱門分類
-const categoriesSorted = Object.entries(calCategoriesCount).sort((a: any, b: any) => b[1] - a[1]);
-const topCategories = categoriesSorted.slice(0, 8);
-const otherCategories = categoriesSorted.slice(8);
-
+interface Props {
+  selected?: string;
+}
+const { selected } = Astro.props;
+const posts = await getCollection("blog");
+const counts = new Map<string, { name: string; count: number }>();
+for (const post of posts) {
+  for (const name of post.data.categories ?? []) {
+    const key = name.toLowerCase();
+    const existing = counts.get(key);
+    counts.set(key, { name: existing?.name ?? name, count: (existing?.count ?? 0) + 1 });
+  }
+}
+const categories = [...counts]
+  .map(([slug, category]) => ({ slug, ...category }))
+  .sort((a, b) => b.count - a.count);
 ---
 
-<div class="categories-widget">
-  <ul class="font-dosis text-lg leading-[3rem]">
-    {
-      topCategories.map(([key, val]) => {
-        return (
-          <li class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white transition-colors">
-            <a class="block w-full" href={`/blog/categories/${key.toLowerCase()}`}>
-              {key} <span class="text-primary-200">( {val} )</span>
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
-
-  {otherCategories.length > 0 && (
-    <details class="border-t border-primary-700">
-      <summary class="h-12 px-3 text-primary-50 cursor-pointer hover:bg-primary-700 transition-colors flex items-center justify-between">
-        <span>更多分類 ({otherCategories.length})</span>
-        <Icon name="ph:caret-down" class="w-5 h-5 details-icon" />
-      </summary>
-      <ul class="font-dosis text-lg leading-[3rem]">
-        {
-          otherCategories.map(([key, val]) => {
-            return (
-              <li class="h-12 border-b border-primary-700 px-3 text-primary-50 hover:bg-primary-700 hover:text-white transition-colors">
-                <a class="block w-full" href={`/blog/categories/${key.toLowerCase()}`}>
-                  {key} <span class="text-primary-200">( {val} )</span>
-                </a>
-              </li>
-            );
-          })
-        }
-      </ul>
+<nav aria-label={notes.categories} class="relative rounded-sm bg-note-soft p-5 text-sm lg:p-6">
+  <span
+    aria-hidden="true"
+    class="absolute -top-1.5 right-5 h-7 w-4 bg-note-accent [clip-path:polygon(0_0,100%_0,100%_100%,50%_78%,0_100%)]"
+  ></span>
+  <h2 class="mb-3 text-sm font-medium">{notes.categories}</h2>
+  <a
+    href="/blog/page/1/"
+    aria-current={!selected ? "page" : undefined}
+    class="flex min-h-11 items-center text-note-muted hover:text-note-accent"
+  >
+    {notes.all}
+  </a>
+  <CategoryLinks categories={categories.slice(0, 8)} {selected} />
+  {categories.length > 8 && (
+    <details class="mt-3 border-t border-note-line pt-3">
+      <summary class="min-h-11 cursor-pointer py-2 text-xs text-note-muted">更多分類</summary>
+      <CategoryLinks categories={categories.slice(8)} {selected} />
     </details>
   )}
-</div>
-
-<style>
-  details[open] .details-icon {
-    transform: rotate(180deg);
-  }
-
-  .details-icon {
-    transition: transform 0.3s ease;
-  }
-</style>
+  <a
+    href="/blog/tags/"
+    class="mt-4 block border-t border-note-line pt-4 text-xs text-note-muted hover:text-note-accent"
+  >
+    {notes.series} ↗
+  </a>
+</nav>

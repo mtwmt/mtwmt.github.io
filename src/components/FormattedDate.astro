@@ -1,52 +1,33 @@
 ---
-export interface Props {
-	date: Date;
-	className?: string;
-	type?: 'default' | 'graphics' | 'en'
-}
+import { formatNoteDate } from "../lib/notes";
 
-const { date, className = '', type = 'default'} = Astro.props;
+interface Props {
+  date: Date;
+  className?: string;
+  type?: "default" | "graphics" | "en" | "note" | "short";
+}
+const { date, className = "", type = "default" } = Astro.props;
+const noteDate = formatNoteDate(date);
+const label = type === "note" || type === "short" ? noteDate : undefined;
+const text =
+  type === "note"
+    ? noteDate
+    : type === "short"
+      ? noteDate.slice(5)
+      : type === "en"
+        ? date.toLocaleDateString("en-us", { year: "numeric", month: "short", day: "numeric" })
+        : `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}`;
 ---
 
-{
-	type === 'default' && <time class=`${className}`>
-		{ date.getFullYear()}/{ (date.getMonth() + 1).toString().padStart(2, '0') }/{date.getDate().toString().padStart(2, '0')}
-	</time>
-}
-
-{
-	type === 'graphics' && <div class=`${className}`>
-	<span class="text-6xl font-bold block">{
-		new Date(date).getDate().toString().padStart(2, '0')
-	}</span>
-		<span class="whitespace-nowrap">{
-			`${date.toLocaleDateString('en-us', {
-				month: 'short',
-			})} ${new Date(date).getFullYear()}`
-		}</span>
-	</div> 
-}
-
-{
-	type === 'en' && <time>
-	{
-		date.toLocaleDateString("en-us", {
-			year: "numeric",
-			month: "short",
-			day: "numeric",
-		})
-	}
+<time datetime={date.toISOString()} aria-label={label} class={className}>
+  {type === "graphics" ? (
+    <>
+      <span class="block text-6xl font-bold">{String(date.getDate()).padStart(2, "0")}</span>
+      <span class="whitespace-nowrap">
+        {date.toLocaleDateString("en-us", { month: "short" })} {date.getFullYear()}
+      </span>
+    </>
+  ) : (
+    text
+  )}
 </time>
-}
-
-
-<!-- <div class=` ${className}`>
-	<span class="text-6xl font-bold block">{
-		new Date(date).getDate().toString().padStart(2, '0')
-	}</span>
-	<span>{
-		`${date.toLocaleDateString('en-us', {
-			month: 'short',
-		})} ${new Date(date).getFullYear()}`
-	}</span>
-</div>  -->
