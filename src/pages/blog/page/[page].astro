@@ -20,7 +20,9 @@ interface Props {
 const { page } = Astro.props;
 ---
 
-<NotesLayout>
+<NotesLayout
+  title={page.currentPage === 1 ? notes.title : `${notes.title}（第 ${page.currentPage} 頁）`}
+>
   <NoteList posts={page.data} title={notes.title}>
     <Pagination {page} />
   </NoteList>

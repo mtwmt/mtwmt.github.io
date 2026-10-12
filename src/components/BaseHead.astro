@@ -3,16 +3,39 @@ import "../styles/tailwind.css";
 import { ClientRouter } from "astro:transitions";
 import ThemePreference from "./ThemePreference.astro";
 import Fonts from "./Fonts.astro";
+import Analytics from "./Analytics.astro";
+import { SITE_TITLE } from "../consts";
 
 export interface Props {
   title: string;
   description: string;
   image?: string;
   noindex?: boolean;
+  /** 文章頁才傳：輸出 og:type=article、發布／更新時間與結構化資料。 */
+  article?: {
+    headline: string;
+    published: Date;
+    modified?: Date;
+  };
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description, image = "/placeholder-social.jpg", noindex = false } = Astro.props;
+const { title, description, image = "/og-image.jpg", noindex = false, article } = Astro.props;
+const imageURL = new URL(image, Astro.site);
+
+// Google 用來判斷文章標題、作者與日期的結構化資料（schema.org BlogPosting）。
+const articleData = article && {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: article.headline,
+  description,
+  image: imageURL,
+  url: canonicalURL,
+  datePublished: article.published.toISOString(),
+  dateModified: (article.modified ?? article.published).toISOString(),
+  inLanguage: "zh-Hant",
+  author: { "@type": "Person", name: "Mandy", url: Astro.site },
+};
 ---
 
 <!-- Global Metadata -->
@@ -24,7 +47,7 @@ const { title, description, image = "/placeholder-social.jpg", noindex = false }
 <link
   rel="alternate"
   type="application/rss+xml"
-  title="Mandy's Web"
+  title={SITE_TITLE}
   href={new URL("rss.xml", Astro.site)}
 />
 <link rel="sitemap" href="/sitemap-index.xml" />
@@ -41,37 +64,31 @@ const { title, description, image = "/placeholder-social.jpg", noindex = false }
 <meta name="robots" content={noindex ? "noindex, follow" : "index, follow"} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:type" content={article ? "article" : "website"} />
+<meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={imageURL} />
+{article && (
+  <>
+    <meta property="article:published_time" content={article.published.toISOString()} />
+    {/* sitemap 的 lastmod 從這個值讀取，見 astro.config.mjs */}
+    <meta
+      property="article:modified_time"
+      content={(article.modified ?? article.published).toISOString()}
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(articleData)} />
+  </>
+)}
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageURL} />
 
 <ClientRouter />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N8NEZBWT3S"></script>
-<script>
-  const dataLayer = (window.dataLayer = window.dataLayer || []);
-  // gtag 使用 arguments 物件排入佇列，保留官方標籤載入前後的處理方式。
-  function gtag(..._args: unknown[]) {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-
-  gtag("config", "G-N8NEZBWT3S");
-</script>
-
-<!-- Google AdSense -->
-<script
-  async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6122423986436599"
-  crossorigin="anonymous"
-></script>
+<Analytics />

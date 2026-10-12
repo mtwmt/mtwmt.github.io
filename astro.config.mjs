@@ -1,3 +1,4 @@
+import { existsSync, readFileSync } from "node:fs";
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
@@ -20,6 +21,20 @@ const devOnlyPages = {
   },
 };
 
+// sitemap 的 lastmod：建置完成後才產生 sitemap，此時直接讀文章頁 HTML 裡
+// BaseHead 輸出的 article:modified_time（來自 frontmatter 的 update ?? date），
+// 不必在這裡再解析一次 Markdown。非文章頁沒有這個值，就不寫 lastmod。
+const distDir = new URL("./dist/", import.meta.url);
+function readModifiedTime(pageUrl) {
+  const file = new URL(`.${new URL(pageUrl).pathname}index.html`, distDir);
+  if (!existsSync(file)) return undefined;
+  const html = readFileSync(file, "utf8");
+  return html.match(/property="article:modified_time" content="([^"]+)"/)?.[1];
+}
+
+// 設了 noindex 的頁面不放進 sitemap，避免給搜尋引擎互相矛盾的訊號。
+const sitemapExcluded = ["/search/", "/yezi-check"];
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://mtwmt.com",
@@ -27,6 +42,8 @@ export default defineConfig({
   // 關於我已整合進首頁小島的「關於我的小屋」面板；舊網址轉回首頁，避免外部連結變成 404。
   redirects: {
     "/about": "/",
+    // 筆記列表從第 1 頁開始；/blog 只負責轉址。
+    "/blog": "/blog/page/1/",
   },
   markdown: {
     shikiConfig: {
@@ -47,10 +64,13 @@ export default defineConfig({
     mdx(),
     devOnlyPages,
     sitemap({
-      // 保險：即使開發頁面意外被建置，也不列入 sitemap
       filter: (page) => {
         const { pathname } = new URL(page);
-        return !pathname.startsWith("/yezi-check");
+        return !sitemapExcluded.some((path) => pathname.startsWith(path));
+      },
+      serialize: (item) => {
+        const lastmod = readModifiedTime(item.url);
+        return lastmod ? { ...item, lastmod } : item;
       },
       customPages: ["https://mtwmt.com/price-generator/"],
     }),

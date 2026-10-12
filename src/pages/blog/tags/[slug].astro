@@ -3,6 +3,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import NotesLayout from "../../../layouts/NotesLayout.astro";
 import NoteList from "../../../components/notes/NoteList.astro";
 import { sortByDate } from "../../../lib/sortByDate";
+import { describeNotes } from "../../../lib/notes";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -28,6 +29,6 @@ interface Props {
 const { posts, tag } = Astro.props;
 ---
 
-<NotesLayout title={`標籤：${tag}`}>
+<NotesLayout title={`標籤：${tag}`} description={describeNotes(`標籤「${tag}」`, posts)}>
   <NoteList {posts} title={`標籤：${tag}`} />
 </NotesLayout>

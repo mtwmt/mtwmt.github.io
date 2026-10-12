@@ -9,6 +9,7 @@ export const notes = {
   categories: "分類",
   all: "所有筆記",
   series: "系列文章",
+  seriesDescription: "Mandy 參加 iThome 鐵人賽寫的系列文章，依年份整理。",
   toc: "關於這篇筆記",
   previous: "上一篇",
   next: "下一篇",

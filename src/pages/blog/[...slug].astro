@@ -30,7 +30,11 @@ const date = post.data.update ?? post.data.date;
 const hasToc = headings.some((heading) => heading.depth === 2 || heading.depth === 3);
 ---
 
-<NotesLayout title={post.data.title} description={getNoteExcerpt(post.body)}>
+<NotesLayout
+  title={post.data.title}
+  description={getNoteExcerpt(post.body)}
+  article={{ headline: post.data.title, published: post.data.date, modified: post.data.update }}
+>
   <article>
     <a
       href="/blog/page/1/"

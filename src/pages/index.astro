@@ -2,6 +2,8 @@
 import { projects } from "../data/projects";
 import "../styles/island.css";
 import Fonts from "../components/Fonts.astro";
+import Analytics from "../components/Analytics.astro";
+import { SITE_TITLE } from "../consts";
 import { home } from "../data/home";
 import { landmarks } from "../data/island";
 import WelcomeCard from "../components/island/WelcomeCard.astro";
@@ -9,6 +11,8 @@ import ContentDialog from "../components/island/ContentDialog.astro";
 import GameHeader from "../components/island/GameHeader.astro";
 import MiniMap from "../components/island/MiniMap.astro";
 import GameControls from "../components/island/GameControls.astro";
+
+const shareImage = new URL("/og-image.jpg", Astro.site);
 ---
 
 <!doctype html>
@@ -22,10 +26,17 @@ import GameControls from "../components/island/GameControls.astro";
     <meta property="og:description" content={home.description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mtwmt.com/" />
+    <meta property="og:site_name" content={SITE_TITLE} />
+    <meta property="og:image" content={shareImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={home.shareTitle} />
+    <meta name="twitter:description" content={home.description} />
+    <meta name="twitter:image" content={shareImage} />
     <link rel="canonical" href="https://mtwmt.com/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <Fonts />
-    <link rel="alternate" type="application/rss+xml" title="Mandy's Web" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="/rss.xml" />
+    <Analytics />
   </head>
   <body class="m-0 h-full overflow-hidden font-paper-sans text-sm text-paper-ink">
     <main
@@ -116,7 +127,7 @@ import GameControls from "../components/island/GameControls.astro";
       </p>
       <noscript>
         <section class="absolute inset-0 z-20 overflow-auto bg-paper p-[10%] [&_a]:block [&_a]:border-b [&_a]:border-paper-line [&_a]:p-3.5">
-          <h1>Mandy</h1>
+          <h2>Mandy</h2>
           <p>探索需要 JavaScript，你也可以直接開啟內容。</p>
           <a href="/blog/page/1/">閱讀筆記</a>
           {projects.map((p) => (

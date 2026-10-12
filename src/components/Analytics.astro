@@ -1,0 +1,24 @@
+---
+// Google Analytics 與 AdSense。首頁自帶 <head>（不經過 BaseHead），兩邊都引用這個元件，
+// 確保首頁的流量也會被記錄。
+---
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N8NEZBWT3S"></script>
+<script>
+  const dataLayer = (window.dataLayer = window.dataLayer || []);
+  // gtag 使用 arguments 物件排入佇列，保留官方標籤載入前後的處理方式。
+  function gtag(..._args: unknown[]) {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-N8NEZBWT3S");
+</script>
+
+<!-- Google AdSense -->
+<script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6122423986436599"
+  crossorigin="anonymous"
+></script>

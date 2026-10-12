@@ -19,3 +19,12 @@ export function getNoteExcerpt(content: string | undefined): string {
     .trim()
     .slice(0, 130);
 }
+
+/** 標籤、分類頁的 meta description：列出篇數與最新幾篇的標題，避免每頁共用同一句。 */
+export function describeNotes(label: string, posts: { data: { title: string } }[]): string {
+  const titles = posts
+    .slice(0, 3)
+    .map((post) => `〈${post.data.title}〉`)
+    .join("、");
+  return `${label}共 ${posts.length} 篇筆記，包含${titles}${posts.length > 3 ? "等" : ""}。`;
+}
