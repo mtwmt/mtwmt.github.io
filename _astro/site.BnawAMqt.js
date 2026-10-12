@@ -1,0 +1,1 @@
+var e={email:`mtwmt@hotmail.com`,github:`https://github.com/mtwmt`,formEndpoint:`https://script.google.com/macros/s/AKfycbz411s_MI3t6B2-4fKV5O139Me4cFEIa0PCDV0SlRD_XPYfhepA3P9J3c4KDoVJElgA/exec`,formKey:`mtwmt-contact-v1`};export{e as t};
