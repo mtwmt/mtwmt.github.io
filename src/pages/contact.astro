@@ -19,10 +19,9 @@ import { contactPage } from "../data/contactPage";
       </h2>
       <p class="mt-2 text-xs text-note-muted">{contactPage.formHint}</p>
 
-      <!-- 有 JavaScript 時改用 fetch 送出並顯示結果；沒有時表單直接送到 action。 -->
+      <!-- 送出網址只放在打包後的腳本裡，不寫進 HTML 的 action，避免機器人爬到後直接 POST。 -->
       <form
         data-contact-form
-        action={contact.formEndpoint}
         method="post"
         class="mt-6 grid gap-6 sm:grid-cols-2"
         data-sending-label={contactPage.sending}
@@ -60,6 +59,11 @@ import { contactPage } from "../data/contactPage";
           placeholder="想跟 Mandy 說些什麼？例如：專案需求、合作提案、技術諮詢等…"
           required
         />
+        <!-- 蜜罐欄位：真人看不到也不會填，機器人常會自動填入。 -->
+        <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+          <label for="field-website">網站</label>
+          <input id="field-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
         <div class="flex flex-wrap items-center justify-between gap-4 sm:col-span-2">
           <p data-contact-status role="status" class="text-sm text-note-muted"></p>
           <Button type="submit" class="px-6">
@@ -93,12 +97,18 @@ import { contactPage } from "../data/contactPage";
 </NotesLayout>
 
 <script>
+  import { contact } from "../data/site";
+
+  /** 從開啟頁面到送出少於這個毫秒數，視為機器人。 */
+  const MIN_FILL_MS = 3000;
+
   // ClientRouter 換頁後也要綁定；dataset 避免同一個表單重複綁定。
   function initContactForm(): void {
     const form = document.querySelector<HTMLFormElement>("[data-contact-form]");
     const status = document.querySelector<HTMLElement>("[data-contact-status]");
     if (!form || !status || form.dataset.ready) return;
     form.dataset.ready = "true";
+    const openedAt = Date.now();
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -110,8 +120,17 @@ import { contactPage } from "../data/contactPage";
       }
       status.textContent = "";
 
+      const data = new FormData(form);
+      const looksLikeBot = Boolean(data.get("website")) || Date.now() - openedAt < MIN_FILL_MS;
+      data.delete("website");
+      // Apps Script 只收帶有 formKey 的資料；直接 POST 到網址的機器人不會有這個欄位。
+      data.set("formKey", contact.formKey);
+
       try {
-        await fetch(form.action, { method: "POST", body: new FormData(form) });
+        // 機器人一樣顯示成功，但不真的送出，避免牠換方式重試。
+        if (!looksLikeBot) {
+          await fetch(contact.formEndpoint, { method: "POST", body: data });
+        }
         status.textContent = form.dataset.successLabel ?? "";
         form.reset();
       } catch (error) {
