@@ -771,12 +771,16 @@ export function createWorld(
   }
   // 朋友的路標：木柱上疊著指向島外不同方向的箭頭板，每片寫一位朋友。
   const signpost = paper.group(7.3, ISLAND_SURFACE, 1.2);
-  addBox(0.08, 1.95, 0.08, 0, 0.975, 0, "wood", 0.01, signpost);
+  const BOARD_BASE = 0.5,
+    BOARD_GAP = 0.19;
+  // 木柱高度跟著朋友數量伸縮，最上面的箭頭板上方固定留一截柱頭。
+  const poleHeight = BOARD_BASE + Math.max(friends.length - 1, 0) * BOARD_GAP + 0.31;
+  addBox(0.08, poleHeight, 0.08, 0, poleHeight / 2, 0, "wood", 0.01, signpost);
   const boards: THREE.Object3D[] = [];
   friends.forEach((friend, index) => {
     // 角度以東方（+X）為中心向南北展開；0 弧度指向正東。
     const yawAngle = (index % 2 ? 1 : -1) * (0.25 + Math.floor(index / 2) * 0.32);
-    const board = paper.group(0, 0.5 + index * 0.19, 0, signpost);
+    const board = paper.group(0, BOARD_BASE + index * BOARD_GAP, 0, signpost);
     board.rotation.y = yawAngle;
     const length = 0.9,
       half = 0.07;
